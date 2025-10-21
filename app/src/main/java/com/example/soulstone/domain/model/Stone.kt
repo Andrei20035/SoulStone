@@ -1,10 +1,9 @@
 package com.example.soulstone.domain.model
 
 import android.net.Uri
-import java.util.UUID
 
 data class Stone(
-    val id: UUID,
+    val id: Int,
     val name: String,
     val image:  Uri,
     val description: String,
