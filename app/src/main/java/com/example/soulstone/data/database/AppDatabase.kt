@@ -4,17 +4,21 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.soulstone.data.converters.Converters
+import com.example.soulstone.data.dao.BenefitDao
+import com.example.soulstone.data.dao.ChakraDao
+import com.example.soulstone.data.dao.ChineseZodiacSignDao
 import com.example.soulstone.data.dao.StoneDao
+import com.example.soulstone.data.dao.ZodiacSignDao
 import com.example.soulstone.data.entities.Benefit
+import com.example.soulstone.data.entities.Chakra
+import com.example.soulstone.data.entities.ChineseZodiacSign
+import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.entities.ZodiacSign
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
 import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
-import com.example.soulstone.domain.model.Chakra
-import com.example.soulstone.domain.model.ChineseZodiacSign
-import com.example.soulstone.domain.model.Stone
-import com.example.soulstone.domain.model.ZodiacSign
 
 @Database(
     entities = [
@@ -35,4 +39,8 @@ import com.example.soulstone.domain.model.ZodiacSign
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun stoneDao(): StoneDao
+    abstract fun benefitDao(): BenefitDao
+    abstract fun chakraDao(): ChakraDao
+    abstract fun zodiacSignDao(): ZodiacSignDao
+    abstract fun chineseZodiacSignDao(): ChineseZodiacSignDao
 }

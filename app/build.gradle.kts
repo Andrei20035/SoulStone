@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
 
     implementation(libs.room.runtime)
-    implementation(libs.room.compiler)
+    kapt(libs.room.compiler)
     implementation(libs.room.ktx)
 
     testImplementation(libs.junit)

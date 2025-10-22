@@ -24,10 +24,14 @@ data class StoneWithDetails(
     val translations: List<StoneTranslation>,
 
     @Relation(
-        parentColumn = "id",
+        parentColumn = "id", // Key of the parent (Stone)
         entity = ZodiacSign::class,
-        entityColumn = "id",
-        associateBy = Junction(StoneZodiacCrossRef::class)
+        entityColumn = "id", // Key of the child (ZodiacSign)
+        associateBy = Junction(
+            value = StoneZodiacCrossRef::class,
+            parentColumn = "stoneId",  // <-- Column in junction for the Stone
+            entityColumn = "zodiacSignId" // <-- Column in junction for the ZodiacSign
+        )
     )
     val zodiacSigns: List<ZodiacSign>,
 
@@ -35,7 +39,11 @@ data class StoneWithDetails(
         parentColumn = "id",
         entity = ChineseZodiacSign::class,
         entityColumn = "id",
-        associateBy = Junction(StoneChineseZodiacCrossRef::class)
+        associateBy = Junction(
+            value = StoneChineseZodiacCrossRef::class,
+            parentColumn = "stoneId",  // <-- Column in junction for the Stone
+            entityColumn = "chineseZodiacSignId" // <-- Column in junction for the ChineseZodiacSign
+        )
     )
     val chineseZodiacSigns: List<ChineseZodiacSign>,
 
@@ -43,7 +51,11 @@ data class StoneWithDetails(
         parentColumn = "id",
         entity = Benefit::class,
         entityColumn = "id",
-        associateBy = Junction(StoneBenefitCrossRef::class)
+        associateBy = Junction(
+            value = StoneBenefitCrossRef::class,
+            parentColumn = "stoneId",  // <-- Column in junction for the Stone
+            entityColumn = "benefitId" // <-- Column in junction for the Benefit
+        )
     )
     val benefits: List<Benefit>,
 
@@ -51,7 +63,11 @@ data class StoneWithDetails(
         parentColumn = "id",
         entity = Chakra::class,
         entityColumn = "id",
-        associateBy = Junction(StoneChakraCrossRef::class)
+        associateBy = Junction(
+            value = StoneChakraCrossRef::class,
+            parentColumn = "stoneId",  // <-- Column in junction for the Stone
+            entityColumn = "chakraId" // <-- Column in junction for the Chakra
+        )
     )
     val chakras: List<Chakra>
 )

@@ -7,8 +7,8 @@ data class Stone(
     val name: String,
     val image:  Uri,
     val description: String,
-    val zodiacSign: ZodiacSign,
-    val chineseZodiacSign: ChineseZodiacSign,
+    val zodiacSign: List<ZodiacSign>,
+    val chineseZodiacSign: List<ChineseZodiacSign>,
     val benefits: List<StoneBenefit>,
     val chakras: List<Chakra>
 )
