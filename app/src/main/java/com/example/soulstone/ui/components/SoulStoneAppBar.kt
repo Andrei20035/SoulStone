@@ -1,0 +1,411 @@
+package com.example.soulstone.screens.components
+
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.example.soulstone.R
+import com.example.soulstone.screens.navigation.AppScreen
+import com.example.soulstone.ui.theme.SoulStoneTheme
+import kotlinx.coroutines.delay
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Composable
+fun SoulStoneTopBar(
+    navController: NavController,
+    onNavigateToSettings: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+
+    val currentDate = remember { LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }
+    var currentTime by remember {
+        mutableStateOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")))
+    }
+    LaunchedEffect(Unit) {
+        while(true) {
+            currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
+            delay(1000L)
+        }
+    }
+
+    // State for language dropdown
+    var languageExpanded by remember { mutableStateOf(false) }
+    var selectedLanguage by remember { mutableStateOf("English") }
+
+    // State for Gemstones Index dropdown
+    var gemstonesIndexExpanded by remember { mutableStateOf(false) }
+    var selectedGemstoneIndex by remember { mutableStateOf("Gemstones Index") }
+
+    Surface(
+        modifier = modifier
+            .fillMaxWidth()
+            .statusBarsPadding()
+            .padding(top = 30.dp),
+        color = MaterialTheme.colorScheme.background,
+        shadowElevation = 0.dp
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 54.dp, vertical = 4.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                // Home Icon
+                IconButton(
+                    onClick = {
+                        navController.navigate(AppScreen.Home.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    modifier = Modifier.size(54.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.home),
+                        contentDescription = "Home",
+                        contentScale = ContentScale.Fit
+                    )
+                }
+
+                Spacer(Modifier.width(15.dp))
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = currentDate,
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 29.sp,
+                        color = Color.Black
+                    )
+                    Spacer(Modifier.width(25.dp))
+                    Text(
+                        text = currentTime,
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 29.sp,
+                        color = Color.Black
+                    )
+                }
+
+                Spacer(Modifier.weight(1f))
+
+                Box {
+                    CustomDropdownButton(
+                        text = selectedGemstoneIndex,
+                        onClick = { gemstonesIndexExpanded = true }
+                    )
+                    DropdownMenu(
+                        expanded = gemstonesIndexExpanded,
+                        onDismissRequest = { gemstonesIndexExpanded = false }
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text("All Gemstones") },
+                            onClick = {
+                                selectedGemstoneIndex = "All Gemstones"
+                                gemstonesIndexExpanded = false
+                                navController.navigate(AppScreen.GemstoneIndex.route) {
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Filter by Type") },
+                            onClick = {
+                                selectedGemstoneIndex = "Filter by Type"
+                                gemstonesIndexExpanded = false
+                                // TODO: Navigate to a filtered gemstone list
+                            }
+                        )
+                    }
+                }
+
+                Spacer(Modifier.width(20.dp))
+
+                // Language Dropdown
+                Box {
+                    CustomDropdownButton(
+                        text = selectedLanguage,
+                        onClick = { languageExpanded = true }
+                    )
+                    DropdownMenu(
+                        expanded = languageExpanded,
+                        onDismissRequest = { languageExpanded = false }
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text("Spanish") },
+                            onClick = {
+                                selectedLanguage = "Spanish"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("English") },
+                            onClick = {
+                                selectedLanguage = "English"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("French") },
+                            onClick = {
+                                selectedLanguage = "French"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("Italian") },
+                            onClick = {
+                                selectedLanguage = "Italian"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("German") },
+                            onClick = {
+                                selectedLanguage = "German"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("Polish") },
+                            onClick = {
+                                selectedLanguage = "Polish"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                        DropdownMenuItem(
+                            text = { Text("Russian") },
+                            onClick = {
+                                selectedLanguage = "Russian"; languageExpanded =
+                                false /* TODO: Change app locale */
+                            })
+                    }
+                }
+
+                Spacer(Modifier.width(20.dp))
+
+                Image(
+                    painter = painterResource(R.drawable.admin_menu),
+                    contentDescription = "Admin menu",
+                    modifier = Modifier
+                        .size(48.dp)
+                        .clickable {
+                            onNavigateToSettings()
+                        },
+                    contentScale = ContentScale.Fit
+                )
+            }
+
+            Spacer(Modifier.height(38.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                GradientButton(
+                    text = "Horoscope Monthly Birthstones",
+                    onClick = {
+                        navController.navigate(AppScreen.Home.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    isSelected = currentRoute == AppScreen.Home.route // Highlight if active
+                )
+
+                GradientButton(
+                    text = "Chinese Annual Birthstones",
+                    onClick = {
+                        navController.navigate(AppScreen.ChineseBirthstones.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    isSelected = currentRoute == AppScreen.ChineseBirthstones.route
+                )
+
+                GradientButton(
+                    text = "Stones Uses and Properties",
+                    onClick = {
+                        navController.navigate(AppScreen.StoneUses.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    isSelected = currentRoute == AppScreen.StoneUses.route
+                )
+
+                GradientButton(
+                    text = "Seven Chakras Stones",
+                    onClick = {
+                        navController.navigate(AppScreen.SevenChakraStones.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
+                    isSelected = currentRoute == AppScreen.SevenChakraStones.route
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun GradientButton(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    isSelected: Boolean = false
+) {
+    val gradientColors = listOf(Color(0xFF502DF6), Color(0xFFB927FC))
+
+    Button(
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+        contentPadding = PaddingValues(),
+        modifier = modifier
+            .height(80.dp)
+            .width(300.dp)
+            .clip(RoundedCornerShape(50.dp))
+            .background(
+                brush = Brush.horizontalGradient(gradientColors),
+                shape = RoundedCornerShape(50.dp)
+            )
+            .border(
+                width = if (isSelected) 2.dp else 0.dp,
+                color = if (isSelected) MaterialTheme.colorScheme.primary else Color.Transparent,
+                shape = RoundedCornerShape(50.dp)
+            )
+    ) {
+        Text(
+            text = text,
+            color = Color.White,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center,
+            lineHeight = 28.sp,
+            modifier = Modifier.padding(horizontal = 30.dp)
+        )
+    }
+}
+
+@Composable
+fun CustomDropdownButton(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .clip(RoundedCornerShape(50.dp))
+            .background(Color.White)
+            .border(4.dp, Color.Black, RoundedCornerShape(50.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 18.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = text,
+            color = Color.Black,
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Medium
+        )
+        Spacer(Modifier.width(24.dp))
+        Icon(
+            painter = painterResource(R.drawable.dropdown),
+            contentDescription = null,
+            tint = Color.Black,
+            modifier = Modifier.size(32.dp)
+        )
+    }
+}
+
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Preview(
+    name = "24 inch Full HD (1920x1080)",
+    widthDp = 1920 / 3,
+    heightDp = 1080 / 3,
+    showBackground = true,
+    showSystemUi = true,
+)
+@Composable
+fun PreviewSoulStoneTopBar() {
+    SoulStoneTheme {
+        SoulStoneTopBar(navController = rememberNavController(), onNavigateToSettings = {})
+    }
+}

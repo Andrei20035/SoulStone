@@ -53,8 +53,10 @@ dependencies {
     implementation(libs.androidx.compose.material3)
 
     implementation(libs.room.runtime)
+    implementation(libs.androidx.compose.foundation.layout)
     kapt(libs.room.compiler)
     implementation(libs.room.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
