@@ -30,6 +30,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.soulstone.R
+import com.example.soulstone.domain.model.ZodiacSign
+import com.example.soulstone.domain.model.ZodiacSignEnum
+import com.example.soulstone.screens.navigation.AppScreen
 import kotlin.math.atan2
 import kotlin.math.sqrt
 
@@ -55,7 +58,12 @@ fun HomeScreen(
                 .wrapContentHeight(Alignment.CenterVertically),
             color = Color(0xFF2B4F84)
         )
-        ClickableZodiacWheel(navController = navController)
+        ClickableZodiacWheel(
+            onSignClick = {
+                clickedSign ->
+                navController.navigate(AppScreen.HoroscopeSignDetails)
+            }
+        )
         Text(
             text = "Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras",
             fontSize = 50.sp,
@@ -111,8 +119,8 @@ fun HomeScreen(
 
 @Composable
 fun ClickableZodiacWheel(
-    navController: NavController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onSignClick: (ZodiacSignEnum) -> Unit
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -152,22 +160,22 @@ fun ClickableZodiacWheel(
 
 
                             Log.d("UNGHI", angleDeg.toString())
-                            val clickedSign = when (angleDeg) {
-                                in 0f..30f -> "Virgo"
-                                in 30f..60f -> "Leo"
-                                in 60f..90f -> "Cancer"
-                                in 90f..120f -> "Gemini"
-                                in 120f..150f -> "Taurus"
-                                in 150f..180f -> "Aries"
-                                in 180f..210f -> "Pisces"
-                                in 210f..240f -> "Aquarius"
-                                in 240f..270f -> "Capricorn"
-                                in 270f..300f -> "Sagittarius"
-                                in 300f..330f -> "Scorpio"
-                                else -> "Libra"
+                            val clickedSign: ZodiacSignEnum = when (angleDeg) {
+                                in 0f..30f -> ZodiacSignEnum.VIRGO
+                                in 30f..60f -> ZodiacSignEnum.LEO
+                                in 60f..90f -> ZodiacSignEnum.CANCER
+                                in 90f..120f -> ZodiacSignEnum.GEMINI
+                                in 120f..150f -> ZodiacSignEnum.TAURUS
+                                in 150f..180f -> ZodiacSignEnum.ARIES
+                                in 180f..210f -> ZodiacSignEnum.PISCES
+                                in 210f..240f -> ZodiacSignEnum.AQUARIUS
+                                in 240f..270f -> ZodiacSignEnum.CAPRICORN
+                                in 270f..300f -> ZodiacSignEnum.SAGITTARIUS
+                                in 300f..330f -> ZodiacSignEnum.SCORPIO
+                                else -> ZodiacSignEnum.LIBRA
                             }
-                            println("A APĂSAT PE: $clickedSign")
-                            // navigateToZodiac(navController, clickedSign)
+                            println("A APASAT PE: $clickedSign")
+                            onSignClick(clickedSign)
                         } else {
                             println("Click în afara zonei active.")
                         }

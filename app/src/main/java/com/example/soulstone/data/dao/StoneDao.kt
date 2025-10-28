@@ -9,119 +9,138 @@ import androidx.room.Transaction
 import androidx.room.Update
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.model.LanguageCode
+import com.example.soulstone.data.model.TranslatedStone
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
 import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
 import com.example.soulstone.data.wrappers.StoneWithDetails
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface StoneDao {
 
-    // -- Stone functions --
-    @Transaction
-    @Query("SELECT * FROM stones")
-    suspend fun getAllStones(): List<StoneWithDetails>
+    // --- Main App List Queries (Simple JOINs) ---
 
-    @Transaction
-    @Query("SELECT * FROM stones WHERE id = :stoneId")
-    suspend fun getStoneById(stoneId: Int): StoneWithDetails?
-
-    @Transaction
+    /**
+     * Fetches a list of all stones, translated into the specified language.
+     * Used for the main "All Stones" list.
+     */
     @Query("""
-        SELECT DISTINCT stones.* FROM stones 
-        INNER JOIN stone_translations ON stones.id = stone_translations.stoneId
-        WHERE stone_translations.languageCode = :lang
-        AND (stone_translations.name LIKE '%' || :query || '%' 
-             OR stone_translations.description LIKE '%' || :query || '%')
+        SELECT
+            s.id AS id, 
+            s.name AS keyName, 
+            s.imageUri AS imageUri,
+            t.name AS translatedName,
+            t.description AS description,
+            t.languageCode AS languageCode
+        FROM stones AS s
+        JOIN stone_translations AS t ON s.id = t.stoneId
+        WHERE t.languageCode = :language
+        ORDER BY t.name ASC
     """)
-    suspend fun searchStones(lang: String, query: String): List<StoneWithDetails>
+    fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>>
+
+    /**
+     * Fetches a single stone with its translation.
+     */
+    @Query("""
+        SELECT
+            s.id AS id, 
+            s.name AS keyName, 
+            s.imageUri AS imageUri,
+            t.name AS translatedName,
+            t.description AS description,
+            t.languageCode AS languageCode
+        FROM stones AS s
+        JOIN stone_translations AS t ON s.id = t.stoneId
+        WHERE s.name = :keyName AND t.languageCode = :language
+        LIMIT 1
+    """)
+    suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?
+
+
+    // --- Filtered List Queries (3-Table JOINs) ---
+
+    /**
+     * Fetches all stones associated with a specific Benefit (by its keyName),
+     * translated into the specified language.
+     */
+    @Query("""
+        SELECT
+            s.id AS id, 
+            s.name AS keyName, 
+            s.imageUri AS imageUri,
+            st.name AS translatedName,
+            st.description AS description,
+            st.languageCode AS languageCode
+        FROM stones AS s
+        JOIN stone_translations AS st ON s.id = st.stoneId
+        JOIN stone_benefit_cross_ref AS sb ON s.id = sb.stoneId
+        JOIN benefits AS b ON sb.benefitId = b.id
+        WHERE b.name = :benefitKeyName AND st.languageCode = :language
+        ORDER BY st.name ASC
+    """)
+    fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+
+    /**
+     * Fetches all stones associated with a specific Chakra (by its sanskritName),
+     * translated into the specified language.
+     */
+    @Query("""
+        SELECT
+            s.id AS id, 
+            s.name AS keyName, 
+            s.imageUri AS imageUri,
+            st.name AS translatedName,
+            st.description AS description,
+            st.languageCode AS languageCode
+        FROM stones AS s
+        JOIN stone_translations AS st ON s.id = st.stoneId
+        JOIN stone_chakra_cross_ref AS sc ON s.id = sc.stoneId
+        JOIN chakras AS c ON sc.chakraId = c.id
+        WHERE c.sanskritName = :chakraSanskritName AND st.languageCode = :language
+        ORDER BY st.name ASC
+    """)
+    fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+
+    // ... (You can add similar queries for ZodiacSign and ChineseZodiacSign) ...
+
+
+    // --- Detail Screen Query (@Transaction) ---
+
+    /**
+     * Fetches the full details for a single stone, including all its
+     * translations and related *key* objects (Benefit, Chakra, etc.).
+     * The Repository will be responsible for translating the related lists.
+     */
+    @Transaction
+    @Query("SELECT * FROM stones WHERE name = :keyName LIMIT 1")
+    suspend fun getStoneDetails(keyName: String): StoneWithDetails?
+
+
+    // --- Admin/Helper Queries ---
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertStone(stone: Stone): Long
+    suspend fun insertStone(stone: Stone)
 
-    @Transaction
-    suspend fun insertFullStone(
-        stone: Stone,
-        translations: List<StoneTranslation>,
-        benefitIds: List<Int>,
-        chakraIds: List<Int>,
-        zodiacSignIds: List<Int>,
-        chineseZodiacSignIds: List<Int>
-    ) {
-        // 1. Insert the parent Stone and get its new ID
-        val newStoneId = insertStone(stone).toInt()
-
-        // 2. Assign the new ID to all translations and insert them
-        val translationsWithId = translations.map { it.copy(stoneId = newStoneId) }
-        // Note: It's more efficient to have a DAO function that inserts a List
-        // @Insert suspend fun insertTranslations(translations: List<StoneTranslation>)
-        insertTranslations(translationsWithId)
-
-        // 3. Create and insert the Benefit cross-references
-        val benefitCrossRefs = benefitIds.map { id ->
-            StoneBenefitCrossRef(stoneId = newStoneId, benefitId = id)
-        }
-        insertBenefitCrossRefs(benefitCrossRefs)
-
-        // 4. Create and insert the Chakra cross-references
-        val chakraCrossRefs = chakraIds.map { id ->
-            StoneChakraCrossRef(stoneId = newStoneId, chakraId = id)
-        }
-        insertChakraCrossRefs(chakraCrossRefs)
-
-        // 5. Create and insert the Zodiac Sign cross-references
-        val zodiacCrossRefs = zodiacSignIds.map { id ->
-            StoneZodiacCrossRef(stoneId = newStoneId, zodiacSignId = id)
-        }
-        insertZodiacCrossRefs(zodiacCrossRefs)
-
-        // 6. Create and insert the Chinese Zodiac Sign cross-references
-        val chineseZodiacCrossRefs = chineseZodiacSignIds.map { id ->
-            StoneChineseZodiacCrossRef(stoneId = newStoneId, chineseZodiacSignId = id)
-        }
-        insertChineseZodiacCrossRefs(chineseZodiacCrossRefs)
-    }
-
-    @Delete
-    suspend fun deleteStone(stone: Stone)
-
-    // -- Translation functions --
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTranslation(translation: StoneTranslation)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTranslations(translations: List<StoneTranslation>)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertBenefitCrossRef(crossRef: StoneBenefitCrossRef)
 
-    @Update
-    suspend fun updateTranslation(translation: StoneTranslation)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertChakraCrossRef(crossRef: StoneChakraCrossRef)
 
-    // --- Functions for benefit relationships ---
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertBenefitCrossRefs(joins: List<StoneBenefitCrossRef>)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertZodiacCrossRef(crossRef: StoneZodiacCrossRef)
 
-    @Delete
-    suspend fun deleteBenefitCrossRefs(joins: List<StoneBenefitCrossRef>)
-
-    // --- Functions for chakra relationships ---
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertChakraCrossRefs(joins: List<StoneChakraCrossRef>)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertChineseZodiacCrossRef(crossRef: StoneChineseZodiacCrossRef)
 
     @Delete
-    suspend fun deleteChakraCrossRefs(joins: List<StoneChakraCrossRef>)
-
-    // --- Functions for Zodiac sign relationships ---
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertZodiacCrossRefs(joins: List<StoneZodiacCrossRef>)
-
-    @Delete
-    suspend fun deleteZodiacCrossRefs(joins: List<StoneZodiacCrossRef>)
-
-    // --- Functions for chinese zodiac sign relationships ---
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertChineseZodiacCrossRefs(joins: List<StoneChineseZodiacCrossRef>)
-
-    @Delete
-    suspend fun deleteChineseZodiacCrossRefs(joins: List<StoneChineseZodiacCrossRef>)
-
+    suspend fun deleteBenefitCrossRef(crossRef: StoneBenefitCrossRef)
+    // ... (add other delete/update methods as needed) ...
 }

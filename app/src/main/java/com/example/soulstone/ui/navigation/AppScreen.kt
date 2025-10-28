@@ -11,4 +11,7 @@ sealed class AppScreen(val route: String) {
     object ChakraDetails : AppScreen("chakra_details")
     object ChineseSignDetails : AppScreen("chinese_sign_details")
     object GemstoneIndex : AppScreen("gemstone_index")
+    object Login : AppScreen("login")
+    object Dashboard : AppScreen("dashboard")
+    object AddStone : AppScreen("add_stone")
 }

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -36,6 +37,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
     }
     buildFeatures {
         compose = true
@@ -51,10 +53,15 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.datastore.preferences)
 
     implementation(libs.room.runtime)
     implementation(libs.androidx.compose.foundation.layout)
+    implementation(libs.androidx.datastore.core)
     kapt(libs.room.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.room.ktx)
     implementation(libs.androidx.navigation.compose)
 

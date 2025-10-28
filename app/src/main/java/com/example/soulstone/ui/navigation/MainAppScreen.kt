@@ -7,23 +7,41 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.screens.components.SoulStoneTopBar
 import com.example.soulstone.screens.horoscope_monthly_birthstones.HomeScreen
 import com.example.soulstone.screens.navigation.AppScreen
+import com.example.soulstone.ui.components.AppBarViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun MainAppScreen(onNavigateToAdmin: () -> Unit) {
+fun MainAppScreen() {
     val mainNavController = rememberNavController()
+    val appBarViewModel: AppBarViewModel = hiltViewModel()
 
     Scaffold(
         topBar = {
             SoulStoneTopBar(
                 navController = mainNavController,
-                onNavigateToSettings = onNavigateToAdmin
+                viewModel = appBarViewModel,
+                onNavigateToSettings = {
+                    mainNavController.navigate(AppScreen.Login.route) { /*...*/ }
+                },
+                onNavigateHome = {
+                    mainNavController.navigate(AppScreen.Home.route) { /*...*/ }
+                },
+                onNavigateChinese = {
+                    mainNavController.navigate(AppScreen.ChineseBirthstones.route) { /*...*/ }
+                },
+                onNavigateStoneUses = {
+                    mainNavController.navigate(AppScreen.StoneUses.route) { /*...*/ }
+                },
+                onNavigateChakras = {
+                    mainNavController.navigate(AppScreen.SevenChakraStones.route) { /*...*/ }
+                }
             )
         }
     ) { innerPadding ->

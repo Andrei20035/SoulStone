@@ -31,6 +31,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -47,12 +48,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.screens.navigation.AppScreen
+import com.example.soulstone.ui.components.AppBarViewModel
 import com.example.soulstone.ui.theme.SoulStoneTheme
 import kotlinx.coroutines.delay
 import java.time.LocalDate
@@ -62,10 +65,17 @@ import java.time.format.DateTimeFormatter
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun SoulStoneTopBar(
+    modifier: Modifier = Modifier,
     navController: NavController,
     onNavigateToSettings: () -> Unit,
-    modifier: Modifier = Modifier
+    onNavigateHome: () -> Unit,
+    onNavigateChinese: () -> Unit,
+    onNavigateStoneUses: () -> Unit,
+    onNavigateChakras: () -> Unit,
+    viewModel: AppBarViewModel = hiltViewModel(),
 ) {
+    val uiState by viewModel.uiState.collectAsState()
+
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
@@ -82,11 +92,6 @@ fun SoulStoneTopBar(
 
     // State for language dropdown
     var languageExpanded by remember { mutableStateOf(false) }
-    var selectedLanguage by remember { mutableStateOf("English") }
-
-    // State for Gemstones Index dropdown
-    var gemstonesIndexExpanded by remember { mutableStateOf(false) }
-    var selectedGemstoneIndex by remember { mutableStateOf("Gemstones Index") }
 
     Surface(
         modifier = modifier
@@ -153,36 +158,9 @@ fun SoulStoneTopBar(
 
                 Box {
                     CustomDropdownButton(
-                        text = selectedGemstoneIndex,
-                        onClick = { gemstonesIndexExpanded = true }
+                        text = "Gemstone Index",
+                        onClick = {}
                     )
-                    DropdownMenu(
-                        expanded = gemstonesIndexExpanded,
-                        onDismissRequest = { gemstonesIndexExpanded = false }
-                    ) {
-                        DropdownMenuItem(
-                            text = { Text("All Gemstones") },
-                            onClick = {
-                                selectedGemstoneIndex = "All Gemstones"
-                                gemstonesIndexExpanded = false
-                                navController.navigate(AppScreen.GemstoneIndex.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
-                                    }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            }
-                        )
-                        DropdownMenuItem(
-                            text = { Text("Filter by Type") },
-                            onClick = {
-                                selectedGemstoneIndex = "Filter by Type"
-                                gemstonesIndexExpanded = false
-                                // TODO: Navigate to a filtered gemstone list
-                            }
-                        )
-                    }
                 }
 
                 Spacer(Modifier.width(20.dp))
@@ -190,7 +168,7 @@ fun SoulStoneTopBar(
                 // Language Dropdown
                 Box {
                     CustomDropdownButton(
-                        text = selectedLanguage,
+                        text = uiState.selectedLanguage,
                         onClick = { languageExpanded = true }
                     )
                     DropdownMenu(
@@ -200,44 +178,44 @@ fun SoulStoneTopBar(
                         DropdownMenuItem(
                             text = { Text("Spanish") },
                             onClick = {
-                                selectedLanguage = "Spanish"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("Spanish")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("English") },
                             onClick = {
-                                selectedLanguage = "English"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("English")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("French") },
                             onClick = {
-                                selectedLanguage = "French"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("French")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Italian") },
                             onClick = {
-                                selectedLanguage = "Italian"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("Italian")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("German") },
                             onClick = {
-                                selectedLanguage = "German"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("German")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Polish") },
                             onClick = {
-                                selectedLanguage = "Polish"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("Polish")
+                                languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Russian") },
                             onClick = {
-                                selectedLanguage = "Russian"; languageExpanded =
-                                false /* TODO: Change app locale */
+                                viewModel.onLanguageSelected("Russian")
+                                languageExpanded = false
                             })
                     }
                 }
@@ -265,57 +243,61 @@ fun SoulStoneTopBar(
             ) {
                 GradientButton(
                     text = "Horoscope Monthly Birthstones",
-                    onClick = {
-                        navController.navigate(AppScreen.Home.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    },
+                    onClick = onNavigateHome,
+//                    onClick = {
+//                        navController.navigate(AppScreen.Home.route) {
+//                            popUpTo(navController.graph.findStartDestination().id) {
+//                                saveState = true
+//                            }
+//                            launchSingleTop = true
+//                            restoreState = true
+//                        }
+//                    },
                     isSelected = currentRoute == AppScreen.Home.route // Highlight if active
                 )
 
                 GradientButton(
                     text = "Chinese Annual Birthstones",
-                    onClick = {
-                        navController.navigate(AppScreen.ChineseBirthstones.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    },
+                    onClick = onNavigateChinese,
+//                    onClick = {
+//                        navController.navigate(AppScreen.ChineseBirthstones.route) {
+//                            popUpTo(navController.graph.findStartDestination().id) {
+//                                saveState = true
+//                            }
+//                            launchSingleTop = true
+//                            restoreState = true
+//                        }
+//                    },
                     isSelected = currentRoute == AppScreen.ChineseBirthstones.route
                 )
 
                 GradientButton(
                     text = "Stones Uses and Properties",
-                    onClick = {
-                        navController.navigate(AppScreen.StoneUses.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    },
+                    onClick = onNavigateStoneUses,
+//                    onClick = {
+//                        navController.navigate(AppScreen.StoneUses.route) {
+//                            popUpTo(navController.graph.findStartDestination().id) {
+//                                saveState = true
+//                            }
+//                            launchSingleTop = true
+//                            restoreState = true
+//                        }
+//                    },
                     isSelected = currentRoute == AppScreen.StoneUses.route
                 )
 
                 GradientButton(
                     text = "Seven Chakras Stones",
-                    onClick = {
-                        navController.navigate(AppScreen.SevenChakraStones.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    },
+                    onClick = onNavigateChakras,
+//                    onClick = {
+//                        navController.navigate(AppScreen.SevenChakraStones.route) {
+//                            popUpTo(navController.graph.findStartDestination().id) {
+//                                saveState = true
+//                            }
+//                            launchSingleTop = true
+//                            restoreState = true
+//                        }
+//                    },
                     isSelected = currentRoute == AppScreen.SevenChakraStones.route
                 )
             }

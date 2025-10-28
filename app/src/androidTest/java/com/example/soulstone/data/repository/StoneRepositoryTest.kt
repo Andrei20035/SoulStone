@@ -26,7 +26,7 @@ class StoneRepositoryTest : DbTest() {
         db.zodiacSignDao().insertZodiacSign(ZodiacSign(name = "Aries"))
         db.chineseZodiacSignDao().insertChineseZodiacSign(ChineseZodiacSign(name = "Dragon"))
 
-        val repo = StoneRepository(db.stoneDao())
+        val repo = StoneRepositoryImpl(db.stoneDao())
         repo.insertFullStone(
             stone = Stone(imageUri = "content://image/stone2"),
             translations = listOf(
