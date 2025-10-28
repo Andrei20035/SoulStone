@@ -15,10 +15,13 @@ import com.example.soulstone.screens.components.SoulStoneTopBar
 import com.example.soulstone.screens.horoscope_monthly_birthstones.HomeScreen
 import com.example.soulstone.screens.navigation.AppScreen
 import com.example.soulstone.ui.components.AppBarViewModel
+import com.example.soulstone.ui.screens.chinese_birthstones.ChineseBirthstonesScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun MainAppScreen() {
+fun MainAppScreen(
+    onNavigateToAdmin: () -> Unit
+) {
     val mainNavController = rememberNavController()
     val appBarViewModel: AppBarViewModel = hiltViewModel()
 
@@ -27,9 +30,7 @@ fun MainAppScreen() {
             SoulStoneTopBar(
                 navController = mainNavController,
                 viewModel = appBarViewModel,
-                onNavigateToSettings = {
-                    mainNavController.navigate(AppScreen.Login.route) { /*...*/ }
-                },
+                onNavigateToAdmin = onNavigateToAdmin,
                 onNavigateHome = {
                     mainNavController.navigate(AppScreen.Home.route) { /*...*/ }
                 },
@@ -54,7 +55,9 @@ fun MainAppScreen() {
             composable(AppScreen.Home.route) {
                 HomeScreen(navController = mainNavController)
             }
-//            composable(AppScreen.ChineseBirthstones.route) { ChineseBirthstonesScreen() }
+            composable(AppScreen.ChineseBirthstones.route) {
+                ChineseBirthstonesScreen(navController = mainNavController)
+            }
 //            composable(AppScreen.StoneUses.route) { StoneUsesScreen() }
 //            composable(AppScreen.StoneForX.route) { StoneForXScreen() }
 //            composable(AppScreen.SevenChakraStones.route) { SevenChakraStonesScreen() }

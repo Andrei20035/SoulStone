@@ -34,7 +34,7 @@ fun SoulStoneAppUI(modifier: Modifier = Modifier) {
 
         composable(Graph.ADMIN) {
             AdminSection(
-                onNavigateBack = {
+                onExitAdmin = {
                     appNavController.popBackStack()
                 }
             )

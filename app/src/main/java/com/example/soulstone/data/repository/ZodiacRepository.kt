@@ -1,6 +1,7 @@
 package com.example.soulstone.data.repository
 
 import com.example.soulstone.data.entities.ZodiacSign
+import com.example.soulstone.domain.model.ZodiacSignDetails
 import com.example.soulstone.domain.model.ZodiacSignEnum
 import kotlinx.coroutines.flow.Flow
 
@@ -12,7 +13,7 @@ interface ZodiacRepository {
     /**
      * Fetches the details for a specific sign from the database.
      */
-    suspend fun getSignDetails(sign: ZodiacSignEnum): ZodiacSign
+    suspend fun getSignDetails(sign: ZodiacSignEnum): ZodiacSignDetails
 
     /**
      * Inserts a new zodiac sign into the database.

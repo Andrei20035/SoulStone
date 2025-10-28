@@ -2,6 +2,7 @@ package com.example.soulstone.data.repository
 
 import com.example.soulstone.data.dao.ZodiacSignDao
 import com.example.soulstone.data.entities.ZodiacSign
+import com.example.soulstone.domain.model.ZodiacSignDetails
 import com.example.soulstone.domain.model.ZodiacSignEnum
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -24,10 +25,17 @@ class ZodiacRepositoryImpl @Inject constructor(
      * Throws an exception if the sign isn't found, to satisfy the
      * non-nullable return type.
      */
-    override suspend fun getSignDetails(sign: ZodiacSignEnum): ZodiacSign {
+    override suspend fun getSignDetails(sign: ZodiacSignEnum): ZodiacSignDetails {
         // Use the enum's ordinal (0 for ARIES, 1 for TAURUS, etc.) as the ID
-        return zodiacSignDao.getZodiacSignById(sign.ordinal)
-            ?: throw IllegalStateException("Zodiac sign ${sign.name} not found in database.")
+//        return zodiacSignDao.getZodiacSignById(sign.ordinal)
+//            ?: throw IllegalStateException("Zodiac sign ${sign.name} not found in database.")
+        return ZodiacSignDetails(
+            name = TODO(),
+            startDate = TODO(),
+            endDate = TODO(),
+            element = TODO(),
+            iconResId = TODO()
+        )
     }
 
     override suspend fun insertZodiacSign(sign: ZodiacSign) {

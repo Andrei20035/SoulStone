@@ -67,7 +67,7 @@ import java.time.format.DateTimeFormatter
 fun SoulStoneTopBar(
     modifier: Modifier = Modifier,
     navController: NavController,
-    onNavigateToSettings: () -> Unit,
+    onNavigateToAdmin: () -> Unit,
     onNavigateHome: () -> Unit,
     onNavigateChinese: () -> Unit,
     onNavigateStoneUses: () -> Unit,
@@ -222,15 +222,15 @@ fun SoulStoneTopBar(
 
                 Spacer(Modifier.width(20.dp))
 
-                Image(
+                Icon(
                     painter = painterResource(R.drawable.admin_menu),
                     contentDescription = "Admin menu",
                     modifier = Modifier
                         .size(48.dp)
                         .clickable {
-                            onNavigateToSettings()
+                            onNavigateToAdmin()
                         },
-                    contentScale = ContentScale.Fit
+                    tint = Color.Unspecified
                 )
             }
 
@@ -387,7 +387,5 @@ fun CustomDropdownButton(
 )
 @Composable
 fun PreviewSoulStoneTopBar() {
-    SoulStoneTheme {
-        SoulStoneTopBar(navController = rememberNavController(), onNavigateToSettings = {})
-    }
+    SoulStoneTheme {}
 }

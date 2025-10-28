@@ -1,6 +1,7 @@
 package com.example.soulstone.ui.screens.horoscope_monthly_birthstones
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.soulstone.data.repository.ZodiacRepository
 import com.example.soulstone.domain.model.ZodiacSignDetails
 import com.example.soulstone.domain.model.ZodiacSignEnum
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -51,7 +52,7 @@ class ZodiacViewModel @Inject constructor(
 
             // 4. Send a one-time event to trigger navigation
             // We pass the route, which we get from the enum.
-            _navigationEvent.emit(sign.route)
+            _navigationEvent.emit(sign.name)
         }
     }
 }

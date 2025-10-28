@@ -1,6 +1,7 @@
 package com.example.soulstone.domain.model
 
 import android.net.Uri
+import com.example.soulstone.data.entities.ZodiacSign
 
 data class Stone(
     val id: Int,

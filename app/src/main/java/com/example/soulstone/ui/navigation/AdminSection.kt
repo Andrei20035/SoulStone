@@ -12,33 +12,40 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.screens.navigation.AdminScreen
 
-@OptIn(ExperimentalMaterial3Api::class)
+// This composable lives in your Graph.ADMIN route
 @Composable
-fun AdminSection(onNavigateBack: () -> Unit) {
+fun AdminSection(
+    onExitAdmin: () -> Unit // Callback to go back to Graph.MAIN
+) {
     val adminNavController = rememberNavController()
 
-    Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Admin") }, /* ... */ )
-        }
-    ) { innerPadding ->
-        NavHost(
-            navController = adminNavController,
-            startDestination = AdminScreen.Login.route,
-            modifier = Modifier.padding(innerPadding)
-        ) {
-//            composable(AdminScreen.Login.route) { AdminLoginScreen() }
-//            composable(AdminScreen.Dashboard.route) { AdminDashboardScreen() }
-//            composable(AdminScreen.AddStone.route) { AdminAddStoneScreen() }
+    NavHost(
+        navController = adminNavController,
+        startDestination = "admin_login" // Start of the admin flow
+    ) {
+
+//        composable("admin_login") {
+//            // Your LoginScreen
+//            LoginScreen(
+//                onLoginSuccess = {
+//                    // When login is good, go to the dashboard
+//                    adminNavController.navigate("admin_dashboard") {
+//                        // Clear the login screen from the back stack
+//                        popUpTo("admin_login") { inclusive = true }
+//                    }
+//                },
+//                // You might also want a back button here
+//                onNavigateBack = onExitAdmin
+//            )
+//        }
 //
-//            // Edit Stone screen (with argument)
-//            composable(
-//                route = AdminScreen.EditStone.route,
-//                arguments = listOf(navArgument("stoneId") { type = NavType.StringType })
-//            ) { backStackEntry ->
-//                val stoneId = backStackEntry.arguments?.getString("stoneId")
-//                AdminEditStoneScreen(stoneId = stoneId)
-//            }
-        }
+//        composable("admin_dashboard") {
+//            // This is your original AdminSection
+//            AdminSection(
+//                onNavigateBack = onExitAdmin // Use this to exit the admin graph
+//            )
+//        }
+
+        // ... you can add other admin screens here
     }
 }

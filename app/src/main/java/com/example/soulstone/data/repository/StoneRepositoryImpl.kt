@@ -3,38 +3,75 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.StoneDao
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.model.LanguageCode
+import com.example.soulstone.data.model.TranslatedStone
+import com.example.soulstone.data.relations.StoneBenefitCrossRef
+import com.example.soulstone.data.relations.StoneChakraCrossRef
+import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
+import com.example.soulstone.data.relations.StoneZodiacCrossRef
+import com.example.soulstone.data.wrappers.StoneWithDetails
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton // Ensures only one instance of the repository exists
 class StoneRepositoryImpl @Inject constructor(
-    private val stoneDao: StoneDao
+    private val stoneDao: StoneDao // The DAO is provided by Hilt
 ) : StoneRepository {
 
-    override suspend fun getAllStones() = stoneDao.getAllStones()
+    // --- Main App List Queries ---
 
-    override suspend fun getStoneById(id: Int) = stoneDao.getStoneById(id)
+    override fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>> {
+        return stoneDao.getAllTranslatedStones(language)
+    }
 
-    override suspend fun search(lang: String, query: String) =
-        stoneDao.searchStones(lang, query)
+    override fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>> {
+        return stoneDao.getStonesForBenefit(benefitKeyName, language)
+    }
 
-    override suspend fun insertFullStone(
-        stone: Stone,
-        translations: List<StoneTranslation>,
-        benefitIds: List<Int>,
-        chakraIds: List<Int>,
-        zodiacSignIds: List<Int>,
-        chineseZodiacSignIds: List<Int>
-    ) = stoneDao.insertFullStone(
-        stone,
-        translations,
-        benefitIds,
-        chakraIds,
-        zodiacSignIds,
-        chineseZodiacSignIds
-    )
+    override fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>> {
+        return stoneDao.getStonesForChakra(chakraSanskritName, language)
+    }
 
-    override suspend fun insertTranslation(translation: StoneTranslation) =
+
+    // --- Detail Screen Query ---
+
+    override suspend fun getStoneDetails(keyName: String): StoneWithDetails? {
+        return stoneDao.getStoneDetails(keyName)
+    }
+
+    override suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone? {
+        return stoneDao.getTranslatedStone(keyName, language)
+    }
+
+
+    // --- Admin/Write Operations ---
+
+    override suspend fun insertStone(stone: Stone) {
+        stoneDao.insertStone(stone)
+    }
+
+    override suspend fun insertTranslation(translation: StoneTranslation) {
         stoneDao.insertTranslation(translation)
+    }
 
-    override suspend fun deleteStone(stone: Stone) =
-        stoneDao.deleteStone(stone)
+    override suspend fun insertBenefitCrossRef(crossRef: StoneBenefitCrossRef) {
+        stoneDao.insertBenefitCrossRef(crossRef)
+    }
+
+    override suspend fun insertChakraCrossRef(crossRef: StoneChakraCrossRef) {
+        stoneDao.insertChakraCrossRef(crossRef)
+    }
+
+    override suspend fun insertZodiacCrossRef(crossRef: StoneZodiacCrossRef) {
+        stoneDao.insertZodiacCrossRef(crossRef)
+    }
+
+    override suspend fun insertChineseZodiacCrossRef(crossRef: StoneChineseZodiacCrossRef) {
+        stoneDao.insertChineseZodiacCrossRef(crossRef)
+    }
+
+    override suspend fun deleteBenefitCrossRef(crossRef: StoneBenefitCrossRef) {
+        stoneDao.deleteBenefitCrossRef(crossRef)
+    }
 }

@@ -1,10 +1,8 @@
-package com.example.soulstone.screens.horoscope_monthly_birthstones
+package com.example.soulstone.ui.screens.chinese_birthstones
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,17 +25,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.domain.model.ZodiacSignEnum
+import com.example.soulstone.screens.horoscope_monthly_birthstones.ClickableZodiacWheel
 import com.example.soulstone.screens.navigation.AppScreen
 import kotlin.math.atan2
 import kotlin.math.sqrt
 
 @Composable
-fun HomeScreen(
-    navController: NavHostController
+fun ChineseBirthstonesScreen(
+    navController: NavHostController = rememberNavController()
 ) {
     Column(
         modifier = Modifier
@@ -46,7 +45,7 @@ fun HomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Energy stones of good fortune according to your birth date",
+            text = "Chinese Horoscope Energy Stones for Good Luck According to Your Birth Year",
             fontSize = 80.sp,
             lineHeight = 90.sp,
             textAlign = TextAlign.Center,
@@ -55,11 +54,11 @@ fun HomeScreen(
                 .height(500.dp)
 //                .background(Color.Yellow)
                 .wrapContentHeight(Alignment.CenterVertically),
-            color = Color(0xFF2B4F84)
+            color = Color(0xFFED1C24)
         )
-        ClickableZodiacWheel(
+        ClickableChineseZodiacWheel(
             onSignClick = {
-                clickedSign ->
+                    clickedSign ->
                 navController.navigate(AppScreen.HoroscopeSignDetails)
             }
         )
@@ -117,7 +116,7 @@ fun HomeScreen(
 }
 
 @Composable
-fun ClickableZodiacWheel(
+fun ClickableChineseZodiacWheel(
     modifier: Modifier = Modifier,
     onSignClick: (ZodiacSignEnum) -> Unit
 ) {
@@ -139,7 +138,7 @@ fun ClickableZodiacWheel(
         Log.d("OUTER RADIUS", outerRadius.toString())
 
         Image(
-            painter = painterResource(id = R.drawable.zodiac),
+            painter = painterResource(id = R.drawable.chinese_zodiac),
             contentDescription = "Zodiac Wheel",
             contentScale = ContentScale.Fit,
             modifier = Modifier
