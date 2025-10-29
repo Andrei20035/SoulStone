@@ -2,9 +2,7 @@ package com.example.soulstone.screens.horoscope_monthly_birthstones
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,10 +25,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.soulstone.R
-import com.example.soulstone.domain.model.ZodiacSignEnum
+import com.example.soulstone.util.ZodiacSign
 import com.example.soulstone.screens.navigation.AppScreen
 import kotlin.math.atan2
 import kotlin.math.sqrt
@@ -119,7 +116,7 @@ fun HomeScreen(
 @Composable
 fun ClickableZodiacWheel(
     modifier: Modifier = Modifier,
-    onSignClick: (ZodiacSignEnum) -> Unit
+    onSignClick: (ZodiacSign) -> Unit
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -159,19 +156,19 @@ fun ClickableZodiacWheel(
 
 
                             Log.d("UNGHI", angleDeg.toString())
-                            val clickedSign: ZodiacSignEnum = when (angleDeg) {
-                                in 0f..30f -> ZodiacSignEnum.VIRGO
-                                in 30f..60f -> ZodiacSignEnum.LEO
-                                in 60f..90f -> ZodiacSignEnum.CANCER
-                                in 90f..120f -> ZodiacSignEnum.GEMINI
-                                in 120f..150f -> ZodiacSignEnum.TAURUS
-                                in 150f..180f -> ZodiacSignEnum.ARIES
-                                in 180f..210f -> ZodiacSignEnum.PISCES
-                                in 210f..240f -> ZodiacSignEnum.AQUARIUS
-                                in 240f..270f -> ZodiacSignEnum.CAPRICORN
-                                in 270f..300f -> ZodiacSignEnum.SAGITTARIUS
-                                in 300f..330f -> ZodiacSignEnum.SCORPIO
-                                else -> ZodiacSignEnum.LIBRA
+                            val clickedSign: ZodiacSign = when (angleDeg) {
+                                in 0f..30f -> ZodiacSign.VIRGO
+                                in 30f..60f -> ZodiacSign.LEO
+                                in 60f..90f -> ZodiacSign.CANCER
+                                in 90f..120f -> ZodiacSign.GEMINI
+                                in 120f..150f -> ZodiacSign.TAURUS
+                                in 150f..180f -> ZodiacSign.ARIES
+                                in 180f..210f -> ZodiacSign.PISCES
+                                in 210f..240f -> ZodiacSign.AQUARIUS
+                                in 240f..270f -> ZodiacSign.CAPRICORN
+                                in 270f..300f -> ZodiacSign.SAGITTARIUS
+                                in 300f..330f -> ZodiacSign.SCORPIO
+                                else -> ZodiacSign.LIBRA
                             }
                             println("A APASAT PE: $clickedSign")
                             onSignClick(clickedSign)

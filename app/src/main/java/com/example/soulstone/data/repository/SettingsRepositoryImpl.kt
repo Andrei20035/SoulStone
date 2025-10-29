@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.soulstone.util.LanguageCode
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -30,10 +31,10 @@ class SettingsRepositoryImpl @Inject constructor(
 ) : SettingsRepository {
 
     private object PreferencesKeys {
-        val SELECTED_LANGUAGE = stringPreferencesKey("selected_language")
+        val SELECTED_LANGUAGE_CODE = stringPreferencesKey("selected_language_code")
     }
 
-    override val language: Flow<String> = context.dataStore.data
+    override val language: Flow<LanguageCode> = context.dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 emit(emptyPreferences())
@@ -42,12 +43,13 @@ class SettingsRepositoryImpl @Inject constructor(
             }
         }
         .map { preferences ->
-            preferences[PreferencesKeys.SELECTED_LANGUAGE] ?: "English"
+            val code = preferences[PreferencesKeys.SELECTED_LANGUAGE_CODE]
+            LanguageCode.fromCode(code)
         }
 
-    override suspend fun saveLanguage(language: String) {
+    override suspend fun saveLanguage(language: LanguageCode) {
         context.dataStore.edit { preferences ->
-            preferences[PreferencesKeys.SELECTED_LANGUAGE] = language
+            preferences[PreferencesKeys.SELECTED_LANGUAGE_CODE] = language.code
         }
     }
 }

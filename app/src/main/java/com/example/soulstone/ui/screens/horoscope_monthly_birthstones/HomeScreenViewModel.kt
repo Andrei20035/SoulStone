@@ -1,9 +1,12 @@
 package com.example.soulstone.ui.screens.horoscope_monthly_birthstones
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.soulstone.LocalLanguage
+import com.example.soulstone.data.pojos.TranslatedZodiacSign
 import com.example.soulstone.data.repository.ZodiacSignRepository
 import com.example.soulstone.domain.model.ZodiacSignDetails
-import com.example.soulstone.domain.model.ZodiacSignEnum
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.util.ZodiacSign
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,7 +19,7 @@ import javax.inject.Inject
 
 data class ZodiacUiState(
     val isLoading: Boolean = false,
-    val selectedSignDetails: ZodiacSignDetails? = null
+    val selectedSignDetails: TranslatedZodiacSign? = null
 )
 
 @HiltViewModel
@@ -27,31 +30,21 @@ class ZodiacViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(ZodiacUiState())
     val uiState: StateFlow<ZodiacUiState> = _uiState.asStateFlow()
 
-    // A one-time event flow to tell the UI to navigate.
     private val _navigationEvent = MutableSharedFlow<String>()
     val navigationEvent = _navigationEvent.asSharedFlow()
 
-    /**
-     * This is called by the UI when a sign is clicked.
-     */
-    fun onSignSelected(sign: ZodiacSignEnum) {
+    fun onSignSelected(sign: ZodiacSign, language: LanguageCode) {
         viewModelScope.launch {
-            // 1. Set loading state
             _uiState.update { it.copy(isLoading = true) }
 
-            // 2. Fetch the data from the repository
-            val details = repository.getSignDetails(sign)
+            val details = repository.getTranslatedZodiacSign(sign.signName, language)
 
-            // 3. Update the state with the new details
             _uiState.update {
                 it.copy(
                     isLoading = false,
                     selectedSignDetails = details
                 )
             }
-
-            // 4. Send a one-time event to trigger navigation
-            // We pass the route, which we get from the enum.
             _navigationEvent.emit(sign.name)
         }
     }

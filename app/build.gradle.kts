@@ -56,10 +56,12 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.lifecycle.runtime.compose)
 
     implementation(libs.room.runtime)
     implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.androidx.datastore.core)
+    implementation(libs.androidx.appcompat)
     kapt(libs.room.compiler)
     kapt(libs.hilt.compiler)
     implementation(libs.room.ktx)

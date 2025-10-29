@@ -1,7 +1,6 @@
-package com.example.soulstone.domain.model
+package com.example.soulstone.util
 
-
-enum class ZodiacSignEnum(val signName: String) {
+enum class ZodiacSign(val signName: String) {
     ARIES("Aries"),
     TAURUS("Taurus"),
     GEMINI("Gemini"),

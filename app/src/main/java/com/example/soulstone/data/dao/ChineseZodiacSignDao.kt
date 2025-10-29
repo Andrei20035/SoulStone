@@ -46,6 +46,19 @@ interface ChineseZodiacSignDao {
         WHERE c.name = :keyName AND t.languageCode = :language
     """)
     suspend fun getTranslatedChineseSign(keyName: String, language: LanguageCode): TranslatedChineseZodiacSign?
+
+    @Query("""
+        SELECT 
+            c.id AS id, 
+            c.name AS keyName, 
+            c.recentYears AS recentYears,
+            t.name AS translatedName,
+            t.description AS description,
+            t.languageCode AS languageCode
+        FROM chinese_zodiac_signs AS c
+        JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
+        WHERE c.name = :keyName AND t.languageCode = :language
+    """)
     fun getTranslatedChineseSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedChineseZodiacSign?>
 
 

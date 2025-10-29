@@ -48,6 +48,21 @@ interface ChakraDao {
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
     """)
     suspend fun getTranslatedChakra(sanskritName: String, language: LanguageCode): TranslatedChakra?
+
+    @Query("""
+        SELECT 
+            c.id AS id, 
+            c.sanskritName AS sanskritName, 
+            t.name AS name,
+            t.rulingPlanet AS rulingPlanet,
+            t.color AS color,
+            t.location AS location,
+            t.description AS description,
+            t.languageCode AS languageCode
+        FROM chakras AS c
+        JOIN chakra_translations AS t ON c.id = t.chakraId
+        WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
+    """)
     fun getTranslatedChakraFlow(sanskritName: String, language: LanguageCode): Flow<TranslatedChakra?>
 
 

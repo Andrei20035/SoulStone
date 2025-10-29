@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.ui.navigation.AdminSection
-import com.example.soulstone.ui.navigation.MainAppScreen
+import com.example.soulstone.ui.navigation.MainAppSection
 
 object Graph {
     const val MAIN = "main_graph"
@@ -25,7 +25,7 @@ fun SoulStoneAppUI(modifier: Modifier = Modifier) {
         modifier = modifier
     ) {
         composable(Graph.MAIN) {
-            MainAppScreen(
+            MainAppSection(
                 onNavigateToAdmin = {
                     appNavController.navigate(Graph.ADMIN)
                 }

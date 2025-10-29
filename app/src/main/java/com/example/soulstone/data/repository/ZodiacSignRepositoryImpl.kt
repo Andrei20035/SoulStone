@@ -6,8 +6,9 @@ import com.example.soulstone.data.entities.ZodiacSignTranslation
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedZodiacSign
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class ZodiacSignRepositoryImpl(
+class ZodiacSignRepositoryImpl @Inject constructor(
     private val dao: ZodiacSignDao
 ) : ZodiacSignRepository {
 

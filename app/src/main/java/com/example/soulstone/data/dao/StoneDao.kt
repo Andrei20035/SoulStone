@@ -50,6 +50,20 @@ interface StoneDao {
         LIMIT 1
     """)
     suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?
+
+    @Query("""
+        SELECT
+            s.id AS id, 
+            s.name AS keyName, 
+            s.imageUri AS imageUri,
+            t.name AS translatedName,
+            t.description AS description,
+            t.languageCode AS languageCode
+        FROM stones AS s
+        JOIN stone_translations AS t ON s.id = t.stoneId
+        WHERE s.name = :keyName AND t.languageCode = :language
+        LIMIT 1
+    """)
     fun getTranslatedStoneFlow(keyName: String, language: LanguageCode): Flow<TranslatedStone?>
 
 
@@ -93,7 +107,6 @@ interface StoneDao {
 
     // --- Detail Screen Query (@Transaction) ---
 
-    @Transaction
     @Query("SELECT * FROM stones WHERE name = :keyName LIMIT 1")
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?
 

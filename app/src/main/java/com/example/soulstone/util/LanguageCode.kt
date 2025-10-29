@@ -7,5 +7,11 @@ enum class LanguageCode(val code: String) {
     ITALIAN("it"),
     GERMAN("de"),
     POLISH("pl"),
-    RUSSIAN("ru")
+    RUSSIAN("ru");
+
+    companion object {
+        fun fromCode(code: String?): LanguageCode {
+            return entries.find {it.code == code } ?: ENGLISH
+        }
+    }
 }

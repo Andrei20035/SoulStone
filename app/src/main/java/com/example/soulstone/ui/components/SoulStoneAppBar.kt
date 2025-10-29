@@ -53,10 +53,12 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.soulstone.LocalLanguage
 import com.example.soulstone.R
 import com.example.soulstone.screens.navigation.AppScreen
 import com.example.soulstone.ui.components.AppBarViewModel
 import com.example.soulstone.ui.theme.SoulStoneTheme
+import com.example.soulstone.util.LanguageCode
 import kotlinx.coroutines.delay
 import java.time.LocalDate
 import java.time.LocalTime
@@ -74,7 +76,6 @@ fun SoulStoneTopBar(
     onNavigateChakras: () -> Unit,
     viewModel: AppBarViewModel = hiltViewModel(),
 ) {
-    val uiState by viewModel.uiState.collectAsState()
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -168,7 +169,7 @@ fun SoulStoneTopBar(
                 // Language Dropdown
                 Box {
                     CustomDropdownButton(
-                        text = uiState.selectedLanguage,
+                        text = LocalLanguage.current.name,
                         onClick = { languageExpanded = true }
                     )
                     DropdownMenu(
@@ -178,43 +179,43 @@ fun SoulStoneTopBar(
                         DropdownMenuItem(
                             text = { Text("Spanish") },
                             onClick = {
-                                viewModel.onLanguageSelected("Spanish")
+                                viewModel.onLanguageSelected(LanguageCode.SPANISH)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("English") },
                             onClick = {
-                                viewModel.onLanguageSelected("English")
+                                viewModel.onLanguageSelected(LanguageCode.ENGLISH)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("French") },
                             onClick = {
-                                viewModel.onLanguageSelected("French")
+                                viewModel.onLanguageSelected(LanguageCode.FRENCH)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Italian") },
                             onClick = {
-                                viewModel.onLanguageSelected("Italian")
+                                viewModel.onLanguageSelected(LanguageCode.ITALIAN)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("German") },
                             onClick = {
-                                viewModel.onLanguageSelected("German")
+                                viewModel.onLanguageSelected(LanguageCode.GERMAN)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Polish") },
                             onClick = {
-                                viewModel.onLanguageSelected("Polish")
+                                viewModel.onLanguageSelected(LanguageCode.POLISH)
                                 languageExpanded = false
                             })
                         DropdownMenuItem(
                             text = { Text("Russian") },
                             onClick = {
-                                viewModel.onLanguageSelected("Russian")
+                                viewModel.onLanguageSelected(LanguageCode.RUSSIAN)
                                 languageExpanded = false
                             })
                     }
