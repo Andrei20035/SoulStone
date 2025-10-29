@@ -17,10 +17,6 @@ interface BenefitDao {
 
     // --- Main App Queries (using JOINs) ---
 
-    /**
-     * Fetches a list of all benefits, translated into the specified language.
-     * This is the main query you'll use to display a list of benefits in the app.
-     */
     @Query("""
         SELECT 
             b.id AS id, 
@@ -34,9 +30,6 @@ interface BenefitDao {
     """)
     fun getAllTranslatedBenefits(language: LanguageCode): Flow<List<TranslatedBenefit>>
 
-    /**
-     * Fetches a single benefit, translated into the specified language, by its stable English name.
-     */
     @Query("""
         SELECT 
             b.id AS id, 
@@ -48,31 +41,33 @@ interface BenefitDao {
         WHERE b.name = :keyName AND t.languageCode = :language
     """)
     suspend fun getTranslatedBenefit(keyName: String, language: LanguageCode): TranslatedBenefit?
+    fun getTranslatedBenefitFlow(keyName: String, language: LanguageCode): Flow<TranslatedBenefit?>
 
 
     // --- Admin/Helper Queries for Benefit table ---
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertBenefit(benefit: Benefit)
+    suspend fun insertBenefit(benefit: Benefit): Long?
 
     @Update
-    suspend fun updateBenefit(benefit: Benefit)
+    suspend fun updateBenefit(benefit: Benefit): Int
 
     @Delete
-    suspend fun deleteBenefit(benefit: Benefit)
+    suspend fun deleteBenefit(benefit: Benefit): Int
 
     @Query("SELECT * FROM benefits WHERE name = :keyName LIMIT 1")
-    suspend fun getBenefitByName(keyName: String): Benefit?
+    suspend fun findBenefitByName(keyName: String): Benefit?
 
 
     // --- Admin/Helper Queries for BenefitTranslation table ---
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTranslation(translation: BenefitTranslation)
+    suspend fun insertTranslation(translation: BenefitTranslation): Long?
 
     @Update
-    suspend fun updateTranslation(translation: BenefitTranslation)
+    suspend fun updateTranslation(translation: BenefitTranslation): Int
 
     @Delete
-    suspend fun deleteTranslation(translation: BenefitTranslation)
+    suspend fun deleteTranslation(translation: BenefitTranslation): Int
+
+    @Query("SELECT * FROM benefit_translations WHERE benefitId = :benefitId AND languageCode = :languageCode LIMIT 1")
+    suspend fun findTranslation(benefitId: Int, languageCode: LanguageCode): BenefitTranslation?
 }
