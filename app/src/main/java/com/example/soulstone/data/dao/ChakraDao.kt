@@ -5,7 +5,10 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
+import com.example.soulstone.data.entities.Benefit
+import com.example.soulstone.data.entities.BenefitTranslation
 import com.example.soulstone.data.entities.Chakra
 import com.example.soulstone.data.entities.ChakraTranslation
 import com.example.soulstone.data.model.LanguageCode
@@ -16,12 +19,6 @@ import kotlinx.coroutines.flow.Flow
 interface ChakraDao {
 
     // --- Main App Queries (using JOINs) ---
-
-    /**
-     * Fetches a list of all chakras, translated into the specified language.
-     * This is the main query you'll use to display a list of chakras in the app.
-     * They are ordered by ID, which should be (1-7, Root to Crown).
-     */
     @Query("""
         SELECT 
             c.id AS id, 
@@ -39,10 +36,6 @@ interface ChakraDao {
     """)
     fun getAllTranslatedChakras(language: LanguageCode): Flow<List<TranslatedChakra>>
 
-    /**
-     * Fetches a single chakra, translated into the specified language,
-     * by its stable Sanskrit name.
-     */
     @Query("""
         SELECT 
             c.id AS id, 
@@ -58,31 +51,42 @@ interface ChakraDao {
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
     """)
     suspend fun getTranslatedChakra(sanskritName: String, language: LanguageCode): TranslatedChakra?
+    fun getTranslatedChakraFlow(sanskritName: String, language: LanguageCode): Flow<TranslatedChakra?>
 
 
     // --- Admin/Helper Queries for Chakra table ---
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertChakra(chakra: Chakra)
-
-    @Update
-    suspend fun updateChakra(chakra: Chakra)
+    @Insert
+    suspend fun insertChakra(chakra: Chakra): Long?
 
     @Delete
-    suspend fun deleteChakra(chakra: Chakra)
+    suspend fun deleteChakra(chakra: Chakra): Int
 
     @Query("SELECT * FROM chakras WHERE sanskritName = :sanskritName LIMIT 1")
-    suspend fun getChakraBySanskritName(sanskritName: String): Chakra?
+    suspend fun findChakraBySanskritName(sanskritName: String): Chakra?
 
 
     // --- Admin/Helper Queries for ChakraTranslation table ---
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTranslation(translation: ChakraTranslation)
+    @Insert
+    suspend fun insertTranslations(translations: List<ChakraTranslation>)
 
     @Update
-    suspend fun updateTranslation(translation: ChakraTranslation)
+    suspend fun updateTranslation(translation: ChakraTranslation): Int
 
-    @Delete
-    suspend fun deleteTranslation(translation: ChakraTranslation)
+    @Transaction
+    suspend fun insertChakraWithTranslations(
+        chakra: Chakra,
+        translations: List<ChakraTranslation>
+    ) {
+        val newChakraId = insertChakra(chakra)
+        if(newChakraId == null) {
+            throw IllegalStateException(
+                "Failed to insert chakra '${chakra.sanskritName}', it might already exist."
+            )
+        }
+        val translationsWithId = translations.map {
+            it.copy(chakraId = newChakraId.toInt())
+        }
+        insertTranslations(translationsWithId)
+    }
 }

@@ -14,7 +14,7 @@ import com.example.soulstone.data.model.LanguageCode
         childColumns = ["benefitId"],
         onDelete = ForeignKey.CASCADE
     )],
-    indices = [Index("benefitId")]
+    indices = [Index(value = ["benefitId", "languageCode"], unique = true)]
 )
 data class BenefitTranslation(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

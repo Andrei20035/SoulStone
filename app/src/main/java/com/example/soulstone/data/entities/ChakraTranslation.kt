@@ -15,7 +15,7 @@ import com.example.soulstone.data.model.LanguageCode
         childColumns = ["chakraId"],
         onDelete = ForeignKey.CASCADE
     )],
-    indices = [Index("chakraId")]
+    indices = [Index(value = ["chakraId", "languageCode"], unique = true)]
 )
 data class ChakraTranslation(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

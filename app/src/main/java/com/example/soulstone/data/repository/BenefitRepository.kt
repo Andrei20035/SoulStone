@@ -14,6 +14,9 @@ interface BenefitRepository {
     suspend fun insertBenefit(benefit: Benefit): Long? // ID of the new row
     suspend fun deleteBenefit(benefit: Benefit): Int
     suspend fun findBenefitByName(keyName: String): Benefit?
-    suspend fun insertTranslation(translation: BenefitTranslation): Long?
-    suspend fun deleteTranslation(translation: BenefitTranslation): Int
+    suspend fun insertTranslations(translations: List<BenefitTranslation>)
+
+    suspend fun updateTranslation(translation: BenefitTranslation): Int
+
+    suspend fun insertBenefitWithTranslations(benefit: Benefit, translations: List<BenefitTranslation>)
 }

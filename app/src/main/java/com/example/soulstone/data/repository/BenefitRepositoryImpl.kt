@@ -33,12 +33,12 @@ class BenefitRepositoryImpl @Inject constructor(
     }
 
     override suspend fun insertBenefit(benefit: Benefit): Long? {
-        val existingBenefit = dao.findBenefitByName(benefit.name)
+        val newId = insertBenefit(benefit)
 
-        if(existingBenefit == null) {
-            return dao.insertBenefit(benefit)
+        if (newId == -1L) {
+            return findBenefitByName(benefit.name)!!.id.toLong()
         } else {
-            return existingBenefit.id.toLong()
+            return newId
         }
     }
 
@@ -50,18 +50,18 @@ class BenefitRepositoryImpl @Inject constructor(
         return dao.findBenefitByName(keyName)
     }
 
-    override suspend fun insertTranslation(translation: BenefitTranslation): Long? {
-        val existingTranslation = dao.findTranslation(translation.benefitId, translation.languageCode)
-
-        if (existingTranslation == null) {
-            return dao.insertTranslation(translation)
-        } else {
-            val updatedTranslation = translation.copy(id = existingTranslation.id)
-            return dao.updateTranslation(updatedTranslation).toLong()
-        }
+    override suspend fun insertTranslations(translations: List<BenefitTranslation>) {
+        return dao.insertTranslations(translations)
     }
 
-    override suspend fun deleteTranslation(translation: BenefitTranslation): Int {
-        return dao.deleteTranslation(translation)
+    override suspend fun updateTranslation(translation: BenefitTranslation): Int {
+        return dao.updateTranslation(translation)
+    }
+
+    override suspend fun insertBenefitWithTranslations(
+        benefit: Benefit,
+        translations: List<BenefitTranslation>
+    ) {
+        return dao.insertBenefitWithTranslations(benefit, translations)
     }
 }

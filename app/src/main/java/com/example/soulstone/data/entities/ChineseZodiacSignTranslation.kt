@@ -14,7 +14,7 @@ import com.example.soulstone.data.model.LanguageCode
         childColumns = ["chineseSignId"],
         onDelete = ForeignKey.CASCADE
     )],
-    indices = [Index("chineseSignId")]
+    indices = [Index(value = ["chineseSignId", "languageCode"], unique = true)]
 )
 data class ChineseZodiacSignTranslation(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

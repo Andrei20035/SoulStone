@@ -4,8 +4,8 @@ import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.data.repository.SettingsRepositoryImpl
 import com.example.soulstone.data.repository.StoneRepository
 import com.example.soulstone.data.repository.StoneRepositoryImpl
-import com.example.soulstone.data.repository.ZodiacRepository
-import com.example.soulstone.data.repository.ZodiacRepositoryImpl
+import com.example.soulstone.data.repository.ZodiacSignRepository
+import com.example.soulstone.data.repository.ZodiacSignRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -39,6 +39,6 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindZodiacRepository(
-        zodiacRepositoryImpl: ZodiacRepositoryImpl
-    ): ZodiacRepository
+        zodiacRepositoryImpl: ZodiacSignRepositoryImpl
+    ): ZodiacSignRepository
 }

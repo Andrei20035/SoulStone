@@ -5,7 +5,10 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
+import com.example.soulstone.data.entities.Chakra
+import com.example.soulstone.data.entities.ChakraTranslation
 import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.ChineseZodiacSignTranslation
 import com.example.soulstone.data.model.LanguageCode
@@ -17,10 +20,6 @@ interface ChineseZodiacSignDao {
 
     // --- Main App Queries (using JOINs) ---
 
-    /**
-     * Fetches a list of all Chinese zodiac signs, translated into the specified language.
-     * This is the main query you'll use to display a list of signs in the app.
-     */
     @Query("""
         SELECT 
             c.id AS id, 
@@ -36,10 +35,6 @@ interface ChineseZodiacSignDao {
     """)
     fun getAllTranslatedChineseSigns(language: LanguageCode): Flow<List<TranslatedChineseZodiacSign>>
 
-    /**
-     * Fetches a single Chinese zodiac sign, translated into the specified language,
-     * by its stable English name.
-     */
     @Query("""
         SELECT 
             c.id AS id, 
@@ -53,18 +48,19 @@ interface ChineseZodiacSignDao {
         WHERE c.name = :keyName AND t.languageCode = :language
     """)
     suspend fun getTranslatedChineseSign(keyName: String, language: LanguageCode): TranslatedChineseZodiacSign?
+    fun getTranslatedChineseSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedChineseZodiacSign?>
 
 
     // --- Admin/Helper Queries for ChineseZodiacSign table ---
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertChineseSign(sign: ChineseZodiacSign)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertChineseSign(sign: ChineseZodiacSign): Long?
 
     @Update
-    suspend fun updateChineseSign(sign: ChineseZodiacSign)
+    suspend fun updateChineseSign(sign: ChineseZodiacSign): Int
 
     @Delete
-    suspend fun deleteChineseSign(sign: ChineseZodiacSign)
+    suspend fun deleteChineseSign(sign: ChineseZodiacSign): Int
 
     @Query("SELECT * FROM chinese_zodiac_signs WHERE name = :keyName LIMIT 1")
     suspend fun getChineseSignByName(keyName: String): ChineseZodiacSign?
@@ -72,12 +68,26 @@ interface ChineseZodiacSignDao {
 
     // --- Admin/Helper Queries for ChineseZodiacSignTranslation table ---
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTranslation(translation: ChineseZodiacSignTranslation)
+    @Insert
+    suspend fun insertTranslations(translation: List<ChineseZodiacSignTranslation>)
 
     @Update
-    suspend fun updateTranslation(translation: ChineseZodiacSignTranslation)
+    suspend fun updateTranslation(translation: ChineseZodiacSignTranslation): Int
 
-    @Delete
-    suspend fun deleteTranslation(translation: ChineseZodiacSignTranslation)
+    @Transaction
+    suspend fun insertChineseSignWithTranslations(
+        chineseSign: ChineseZodiacSign,
+        translations: List<ChineseZodiacSignTranslation>
+    ) {
+        val newChineseSignId = insertChineseSign(chineseSign)
+        if(newChineseSignId == null) {
+            throw IllegalStateException(
+                "Failed to insert chinese sign '${chineseSign.name}', it might already exist."
+            )
+        }
+        val translationsWithId = translations.map {
+            it.copy(chineseSignId = newChineseSignId.toInt())
+        }
+        insertTranslations(translationsWithId)
+    }
 }

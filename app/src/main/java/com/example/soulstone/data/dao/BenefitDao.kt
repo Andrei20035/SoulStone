@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
 import com.example.soulstone.data.entities.Benefit
 import com.example.soulstone.data.entities.BenefitTranslation
@@ -46,10 +47,8 @@ interface BenefitDao {
 
     // --- Admin/Helper Queries for Benefit table ---
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBenefit(benefit: Benefit): Long?
-
-    @Update
-    suspend fun updateBenefit(benefit: Benefit): Int
 
     @Delete
     suspend fun deleteBenefit(benefit: Benefit): Int
@@ -60,14 +59,30 @@ interface BenefitDao {
 
     // --- Admin/Helper Queries for BenefitTranslation table ---
 
-    suspend fun insertTranslation(translation: BenefitTranslation): Long?
+    @Insert
+    suspend fun insertTranslations(translations: List<BenefitTranslation>)
 
     @Update
     suspend fun updateTranslation(translation: BenefitTranslation): Int
 
-    @Delete
-    suspend fun deleteTranslation(translation: BenefitTranslation): Int
+    @Transaction
+    suspend fun insertBenefitWithTranslations(
+        benefit: Benefit,
+        translations: List<BenefitTranslation>
+    ) {
 
-    @Query("SELECT * FROM benefit_translations WHERE benefitId = :benefitId AND languageCode = :languageCode LIMIT 1")
-    suspend fun findTranslation(benefitId: Int, languageCode: LanguageCode): BenefitTranslation?
+        val newBenefitId = insertBenefit(benefit)
+
+        if(newBenefitId == null) {
+            throw IllegalStateException(
+                "Failed to insert benefit '${benefit.name}', it might already exist."
+            )
+        }
+
+        val translationsWithId = translations.map {
+            it.copy(benefitId = newBenefitId.toInt())
+        }
+
+        insertTranslations(translationsWithId)
+    }
 }
