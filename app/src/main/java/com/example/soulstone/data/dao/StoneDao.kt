@@ -6,27 +6,20 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import androidx.room.Update
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedStone
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedStone
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
 import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
-import com.example.soulstone.data.wrappers.StoneWithDetails
+import com.example.soulstone.data.pojos.StoneWithDetails
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface StoneDao {
 
-    // --- Main App List Queries (Simple JOINs) ---
-
-    /**
-     * Fetches a list of all stones, translated into the specified language.
-     * Used for the main "All Stones" list.
-     */
     @Query("""
         SELECT
             s.id AS id, 
@@ -42,9 +35,7 @@ interface StoneDao {
     """)
     fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>>
 
-    /**
-     * Fetches a single stone with its translation.
-     */
+
     @Query("""
         SELECT
             s.id AS id, 
@@ -59,14 +50,11 @@ interface StoneDao {
         LIMIT 1
     """)
     suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?
+    fun getTranslatedStoneFlow(keyName: String, language: LanguageCode): Flow<TranslatedStone?>
 
 
     // --- Filtered List Queries (3-Table JOINs) ---
 
-    /**
-     * Fetches all stones associated with a specific Benefit (by its keyName),
-     * translated into the specified language.
-     */
     @Query("""
         SELECT
             s.id AS id, 
@@ -84,10 +72,6 @@ interface StoneDao {
     """)
     fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>>
 
-    /**
-     * Fetches all stones associated with a specific Chakra (by its sanskritName),
-     * translated into the specified language.
-     */
     @Query("""
         SELECT
             s.id AS id, 
@@ -105,16 +89,10 @@ interface StoneDao {
     """)
     fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>>
 
-    // ... (You can add similar queries for ZodiacSign and ChineseZodiacSign) ...
 
 
     // --- Detail Screen Query (@Transaction) ---
 
-    /**
-     * Fetches the full details for a single stone, including all its
-     * translations and related *key* objects (Benefit, Chakra, etc.).
-     * The Repository will be responsible for translating the related lists.
-     */
     @Transaction
     @Query("SELECT * FROM stones WHERE name = :keyName LIMIT 1")
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?

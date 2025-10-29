@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.example.soulstone.data.model.LanguageCode
+import com.example.soulstone.util.LanguageCode
 
 
 @Entity(

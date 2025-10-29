@@ -9,8 +9,8 @@ import androidx.room.Transaction
 import androidx.room.Update
 import com.example.soulstone.data.entities.ZodiacSign
 import com.example.soulstone.data.entities.ZodiacSignTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedZodiacSign
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedZodiacSign
 import kotlinx.coroutines.flow.Flow
 
 @Dao

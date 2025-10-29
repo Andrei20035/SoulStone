@@ -1,4 +1,4 @@
-package com.example.soulstone.data.model
+package com.example.soulstone.util
 
 enum class LanguageCode(val code: String) {
     ENGLISH("en"),

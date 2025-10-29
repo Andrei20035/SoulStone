@@ -3,8 +3,8 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.ChakraDao
 import com.example.soulstone.data.entities.Chakra
 import com.example.soulstone.data.entities.ChakraTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedChakra
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedChakra
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.example.soulstone.data.wrappers
+package com.example.soulstone.data.pojos
 
 import androidx.room.Embedded
 import androidx.room.Junction
@@ -71,4 +71,3 @@ data class StoneWithDetails(
     )
     val chakras: List<Chakra>
 )
-

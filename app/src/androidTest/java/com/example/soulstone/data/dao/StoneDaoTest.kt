@@ -8,7 +8,7 @@ import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
 import com.example.soulstone.data.entities.ZodiacSign
-import com.example.soulstone.data.model.LanguageCode
+import com.example.soulstone.util.LanguageCode
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

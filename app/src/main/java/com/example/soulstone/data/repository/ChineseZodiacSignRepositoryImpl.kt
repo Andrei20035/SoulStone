@@ -3,8 +3,8 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.ChineseZodiacSignDao
 import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.ChineseZodiacSignTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedChineseZodiacSign
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedChineseZodiacSign
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

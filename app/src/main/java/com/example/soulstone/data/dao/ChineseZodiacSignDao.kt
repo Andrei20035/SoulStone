@@ -7,12 +7,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import com.example.soulstone.data.entities.Chakra
-import com.example.soulstone.data.entities.ChakraTranslation
 import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.ChineseZodiacSignTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedChineseZodiacSign
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedChineseZodiacSign
 import kotlinx.coroutines.flow.Flow
 
 @Dao

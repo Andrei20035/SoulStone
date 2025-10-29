@@ -3,8 +3,8 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.BenefitDao
 import com.example.soulstone.data.entities.Benefit
 import com.example.soulstone.data.entities.BenefitTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedBenefit
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedBenefit
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

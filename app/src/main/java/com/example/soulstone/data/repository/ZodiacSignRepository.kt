@@ -2,10 +2,8 @@ package com.example.soulstone.data.repository
 
 import com.example.soulstone.data.entities.ZodiacSign
 import com.example.soulstone.data.entities.ZodiacSignTranslation
-import com.example.soulstone.data.model.LanguageCode
-import com.example.soulstone.data.model.TranslatedZodiacSign
-import com.example.soulstone.domain.model.ZodiacSignDetails
-import com.example.soulstone.domain.model.ZodiacSignEnum
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedZodiacSign
 import kotlinx.coroutines.flow.Flow
 
 

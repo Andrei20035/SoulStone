@@ -1,4 +1,6 @@
-package com.example.soulstone.data.model
+package com.example.soulstone.data.pojos
+
+import com.example.soulstone.util.LanguageCode
 
 data class TranslatedStone(
     // Fields from the main Stone table

@@ -1,5 +1,11 @@
 package com.example.soulstone.di
 
+import com.example.soulstone.data.repository.BenefitRepository
+import com.example.soulstone.data.repository.BenefitRepositoryImpl
+import com.example.soulstone.data.repository.ChakraRepository
+import com.example.soulstone.data.repository.ChakraRepositoryImpl
+import com.example.soulstone.data.repository.ChineseZodiacSignRepository
+import com.example.soulstone.data.repository.ChineseZodiacSignRepositoryImpl
 import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.data.repository.SettingsRepositoryImpl
 import com.example.soulstone.data.repository.StoneRepository
@@ -26,6 +32,24 @@ abstract class RepositoryModule {
      */
     @Binds
     @Singleton
+    abstract fun bindBenefitRepository(
+        benefitRepositoryImpl: BenefitRepositoryImpl
+    ): BenefitRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindChakraRepository(
+        chakraRepositoryImpl: ChakraRepositoryImpl
+    ): ChakraRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindChineseZodiacSignRepository(
+        chineseZodiacSignRepositoryImpl: ChineseZodiacSignRepositoryImpl
+    ): ChineseZodiacSignRepository
+
+    @Binds
+    @Singleton
     abstract fun bindSettingsRepository(
         settingsRepositoryImpl: SettingsRepositoryImpl
     ): SettingsRepository
@@ -38,7 +62,7 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindZodiacRepository(
-        zodiacRepositoryImpl: ZodiacSignRepositoryImpl
+    abstract fun bindZodiacSignRepository(
+        zodiacSignRepositoryImpl: ZodiacSignRepositoryImpl
     ): ZodiacSignRepository
 }

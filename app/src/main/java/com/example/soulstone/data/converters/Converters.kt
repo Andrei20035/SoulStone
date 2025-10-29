@@ -1,7 +1,7 @@
 package com.example.soulstone.data.converters
 
 import androidx.room.TypeConverter
-import com.example.soulstone.data.model.LanguageCode
+import com.example.soulstone.util.LanguageCode
 
 class Converters {
     @TypeConverter
