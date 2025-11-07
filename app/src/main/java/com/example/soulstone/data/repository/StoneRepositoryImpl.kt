@@ -28,8 +28,8 @@ class StoneRepositoryImpl @Inject constructor(
         return stoneDao.getAllTranslatedStones(language)
     }
 
-    override fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>> {
-        return stoneDao.getStonesForBenefit(benefitKeyName, language)
+    override fun getStonesForBenefit(benefitId: Int, language: LanguageCode): Flow<List<TranslatedStone>> {
+        return stoneDao.getStonesForBenefit(benefitId, language)
     }
 
     override fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>> {

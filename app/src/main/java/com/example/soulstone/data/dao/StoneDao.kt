@@ -70,21 +70,21 @@ interface StoneDao {
     // --- Filtered List Queries (3-Table JOINs) ---
 
     @Query("""
-        SELECT
-            s.id AS id, 
-            s.name AS keyName, 
-            s.imageUri AS imageUri,
-            st.name AS translatedName,
-            st.description AS description,
-            st.languageCode AS languageCode
-        FROM stones AS s
-        JOIN stone_translations AS st ON s.id = st.stoneId
-        JOIN stone_benefit_cross_ref AS sb ON s.id = sb.stoneId
-        JOIN benefits AS b ON sb.benefitId = b.id
-        WHERE b.name = :benefitKeyName AND st.languageCode = :language
-        ORDER BY st.name ASC
-    """)
-    fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+    SELECT
+        s.id AS id, 
+        s.name AS keyName, 
+        s.imageUri AS imageUri,
+        st.name AS translatedName,
+        st.description AS description,
+        st.languageCode AS languageCode
+    FROM stones AS s
+    JOIN stone_translations AS st ON s.id = st.stoneId
+    JOIN stone_benefit_cross_ref AS sb ON s.id = sb.stoneId
+    JOIN benefits AS b ON sb.benefitId = b.id
+    WHERE b.id = :benefitId AND st.languageCode = :language
+    ORDER BY st.name ASC
+""")
+    fun getStonesForBenefit(benefitId: Int, language: LanguageCode): Flow<List<TranslatedStone>>
 
     @Query("""
         SELECT

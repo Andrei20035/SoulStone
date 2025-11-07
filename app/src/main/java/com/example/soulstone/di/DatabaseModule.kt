@@ -13,6 +13,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Provider
 import javax.inject.Singleton
 
 @Module
@@ -25,16 +26,30 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideAppDatabase(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
+        // 1. Hilt will inject the callback we're about to provide
+        dbCallback: AppDatabase.ZodiacDatabaseCallback
     ): AppDatabase {
         return Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "soulstone_database" // Your database file name
+            "soulstone_database"
         )
-            .fallbackToDestructiveMigration() // Use this for development
-            // .addMigrations(...) // Or this, for production
+            .fallbackToDestructiveMigration()
+            // 2. THIS IS THE CRITICAL FIX: Add the callback
+            .addCallback(dbCallback)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabaseCallback(
+        @ApplicationContext context: Context,
+        // Give the callback a *Provider* of the database
+        // This lazily provides the DB and breaks the dependency cycle.
+        dbProvider: Provider<AppDatabase>
+    ): AppDatabase.ZodiacDatabaseCallback {
+        return AppDatabase.ZodiacDatabaseCallback(context, dbProvider)
     }
 
     /**

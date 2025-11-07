@@ -2,6 +2,7 @@ package com.example.soulstone.ui.screens.chinese_birthstones
 
 import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,10 +29,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
-import com.example.soulstone.screens.navigation.AppScreen
+import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ZodiacViewModel
 import com.example.soulstone.util.ChineseZodiacSign
 import kotlin.math.atan2
 import kotlin.math.sqrt
@@ -37,6 +43,19 @@ import kotlin.math.sqrt
 fun ChineseBirthstonesScreen(
     navController: NavHostController = rememberNavController()
 ) {
+    val viewModel: ChineseViewModel = hiltViewModel()
+
+    val signIdToNavigate by viewModel.navigationEvent.collectAsState()
+
+    LaunchedEffect(signIdToNavigate) {
+        if (signIdToNavigate != null) {
+            navController.navigate(
+                AppScreen.ChineseSignDetails.createRoute(signIdToNavigate!!)
+            )
+            viewModel.onNavigationHandled()
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -57,8 +76,7 @@ fun ChineseBirthstonesScreen(
         )
         ClickableChineseZodiacWheel(
             onSignClick = {
-                    clickedSign ->
-                navController.navigate(AppScreen.HoroscopeSignDetails.route)
+                    clickedSign -> viewModel.onSignClicked(clickedSign)
             }
         )
         Text(

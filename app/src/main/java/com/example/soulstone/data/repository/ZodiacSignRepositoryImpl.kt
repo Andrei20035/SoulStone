@@ -11,6 +11,9 @@ import javax.inject.Inject
 class ZodiacSignRepositoryImpl @Inject constructor(
     private val dao: ZodiacSignDao
 ) : ZodiacSignRepository {
+    override suspend fun getSignByName(signName: String): ZodiacSign? {
+        return dao.getZodiacSignByName(signName)
+    }
 
     override fun getAllTranslatedZodiacSigns(language: LanguageCode): Flow<List<TranslatedZodiacSign>> {
         return dao.getAllTranslatedZodiacSigns(language)
@@ -41,5 +44,9 @@ class ZodiacSignRepositoryImpl @Inject constructor(
 
     override suspend fun deleteZodiacSign(sign: ZodiacSign): Int {
         return dao.deleteZodiacSign(sign)
+    }
+
+    override suspend fun dbInitialization() {
+        dao.getSignCount()
     }
 }

@@ -25,6 +25,20 @@ class BenefitRepositoryImpl @Inject constructor(
         return dao.getTranslatedBenefit(keyName, language)
     }
 
+    override suspend fun getTranslatedBenefitById(
+        benefitId: Int,
+        language: LanguageCode
+    ): TranslatedBenefit? {
+        return dao.getTranslatedBenefitById(benefitId, language)
+    }
+
+    override fun getTranslatedBenefitFlowById(
+        benefitId: Int,
+        language: LanguageCode
+    ): Flow<TranslatedBenefit?> {
+        return dao.getTranslatedBenefitFlowById(benefitId, language)
+    }
+
     override fun getTranslatedBenefitFlow(
         keyName: String,
         language: LanguageCode

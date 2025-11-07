@@ -1,8 +1,7 @@
-package com.example.soulstone.screens.horoscope_monthly_birthstones
+package com.example.soulstone.ui.screens.seven_chakra_stones
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -36,37 +35,41 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
+import com.example.soulstone.domain.model.Chakra
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.ZodiacSign
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ZodiacViewModel
+import com.example.soulstone.util.ChakraEnum
+import com.example.soulstone.util.ZodiacSign
 import kotlinx.coroutines.launch
 import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.pow
+import kotlin.math.sin
 import kotlin.math.sqrt
 
+
+private data class ChakraCircle(
+    val chakra: ChakraEnum,
+    val centerX: Float,
+    val centerY: Float,
+    val radius: Float
+)
+
+// Helper function to convert degrees to radians for trigonometry
+private fun Float.toRadians() = this * (Math.PI / 180f).toFloat()
+
 @Composable
-fun HomeScreen(
+fun SevenChakraScreen(
     navController: NavHostController = rememberNavController()
 ) {
-    val viewModel: ZodiacViewModel = hiltViewModel()
+    val viewModel: SevenChakraViewModel = hiltViewModel()
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
-
-    val signIdToNavigate by viewModel.navigationEvent.collectAsState()
-
-    LaunchedEffect(signIdToNavigate) {
-        if (signIdToNavigate != null) {
-            navController.navigate(
-                AppScreen.HoroscopeSignDetails.createRoute(signIdToNavigate!!)
-            )
-            viewModel.onNavigationHandled()
-        }
-    }
 
     LaunchedEffect(Unit) {
         viewModel.uiEvent.collect { event ->
@@ -78,6 +81,11 @@ fun HomeScreen(
                             duration = SnackbarDuration.Short
                         )
                     }
+                }
+                is UiEvent.NavigateToChakraDetails -> {
+                    navController.navigate(
+                        AppScreen.ChakraDetails.createRoute(event.chakraId)
+                    )
                 }
                 else -> {}
             }
@@ -94,7 +102,7 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Energy stones of good fortune according to your birth date",
+                text = "Seven Chakra Stones Energetic stones for good fortune according to the seven chakras",
                 fontSize = 80.sp,
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
@@ -105,9 +113,9 @@ fun HomeScreen(
                     .wrapContentHeight(Alignment.CenterVertically),
                 color = Color(0xFF2B4F84)
             )
-            ClickableZodiacWheel(
-                onSignClick = {
-                    clickedSign -> viewModel.onSignClicked(clickedSign)
+            ClickableChakraWheel(
+                onChakraClick = {
+                        clickedChakra -> viewModel.onChakraClicked(clickedChakra)
                 }
             )
             Text(
@@ -118,7 +126,7 @@ fun HomeScreen(
                 modifier = Modifier
                     .fillMaxWidth(0.95f)
                     .height(300.dp)
-    //                .background(Color.Yellow)
+                    //                .background(Color.Yellow)
                     .wrapContentHeight(Alignment.CenterVertically),
                 color = Color.Black
             )
@@ -166,66 +174,113 @@ fun HomeScreen(
 }
 
 @Composable
-fun ClickableZodiacWheel(
+fun ClickableChakraWheel(
     modifier: Modifier = Modifier,
-    onSignClick: (ZodiacSign) -> Unit
+    onChakraClick: (ChakraEnum) -> Unit // Changed to return your Chakra enum
 ) {
     BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
-            .aspectRatio(1f),
+            .aspectRatio(1f), // Keep it a square
         contentAlignment = Alignment.Center
     ) {
         val imageSizePx = constraints.maxWidth.toFloat()
-        val centerX = imageSizePx / 2f
-        val centerY = imageSizePx / 2f
-        Log.d("CENTER X", centerX.toString())
-        Log.d("CENTER Y", centerY.toString())
+        val boxCenterX = imageSizePx / 2f
+        val boxCenterY = imageSizePx / 2f
 
-        val innerRadius = imageSizePx * 0.22f
-        val outerRadius = imageSizePx * 0.5f
-        Log.d("INNER RADIUS", innerRadius.toString())
-        Log.d("OUTER RADIUS", outerRadius.toString())
+        // --- Define the 7 Chakra Circles ---
+
+        // This is the radius of the chakra "buttons" themselves
+        // You may need to adjust this value!
+        val chakraButtonRadius = imageSizePx * 0.12f // 12% of the total width
+
+        // This is the radius of the large circle that the 6 outer chakras sit on
+        // You may need to adjust this value!
+        val outerRingRadius = imageSizePx * 0.37f
+
+        // Create a list of all 7 chakra circles with their calculated positions
+        val chakraCircles = listOf(
+            // 1. Crown (Center)
+            ChakraCircle(ChakraEnum.CROWN, boxCenterX, boxCenterY, chakraButtonRadius),
+
+            // 2. Root (Bottom) - 90 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.ROOT,
+                centerX = boxCenterX + cos(90f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(90f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            ),
+
+            // 3. Sacral (Bottom-Right) - 30 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.SACRAL,
+                centerX = boxCenterX + cos(30f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(30f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            ),
+
+            // 4. Solar Plexus (Bottom-Left) - 150 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.SOLAR_PLEXUS,
+                centerX = boxCenterX + cos(150f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(150f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            ),
+
+            // 5. Heart (Top-Left) - 210 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.HEART,
+                centerX = boxCenterX + cos(210f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(210f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            ),
+
+            // 6. Third Eye (Top) - 270 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.THIRD_EYE,
+                centerX = boxCenterX + cos(270f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(270f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            ),
+
+            // 7. Throat (Top-Right) - 330 degrees
+            ChakraCircle(
+                chakra = ChakraEnum.THROAT,
+                centerX = boxCenterX + cos(330f.toRadians()) * outerRingRadius,
+                centerY = boxCenterY + sin(330f.toRadians()) * outerRingRadius,
+                radius = chakraButtonRadius
+            )
+        )
 
         Image(
-            painter = painterResource(id = R.drawable.zodiac),
-            contentDescription = "Zodiac Wheel",
+            // TODO: Make sure your new chakra image is named 'chakra_wheel'
+            // and is in the res/drawable folder
+            painter = painterResource(id = R.drawable.chakras),
+            contentDescription = "Chakra Wheel",
             contentScale = ContentScale.Fit,
             modifier = Modifier
                 .fillMaxSize()
                 .pointerInput(Unit) {
                     detectTapGestures { offset ->
-                        val x = offset.x - centerX
-                        val y = offset.y - centerY
+                        val clickX = offset.x
+                        val clickY = offset.y
 
-                        val radius = sqrt(x * x + y * y)
+                        // Find the first chakra circle that the user tapped on
+                        val clickedChakra = chakraCircles.find { circle ->
+                            // Calculate distance from click to the circle's center
+                            val distance = sqrt(
+                                (clickX - circle.centerX).pow(2) +
+                                        (clickY - circle.centerY).pow(2)
+                            )
+                            // Check if the distance is within the circle's radius
+                            distance <= circle.radius
+                        }
 
-                        if (radius in innerRadius..outerRadius) {
-                            val angleRad = atan2(y, x)
-
-                            var angleDeg = Math.toDegrees(angleRad.toDouble()).toFloat()
-                            angleDeg = (angleDeg + 360) % 360
-
-
-                            Log.d("UNGHI", angleDeg.toString())
-                            val clickedSign: ZodiacSign = when (angleDeg) {
-                                in 0f..30f -> ZodiacSign.VIRGO
-                                in 30f..60f -> ZodiacSign.LEO
-                                in 60f..90f -> ZodiacSign.CANCER
-                                in 90f..120f -> ZodiacSign.GEMINI
-                                in 120f..150f -> ZodiacSign.TAURUS
-                                in 150f..180f -> ZodiacSign.ARIES
-                                in 180f..210f -> ZodiacSign.PISCES
-                                in 210f..240f -> ZodiacSign.AQUARIUS
-                                in 240f..270f -> ZodiacSign.CAPRICORN
-                                in 270f..300f -> ZodiacSign.SAGITTARIUS
-                                in 300f..330f -> ZodiacSign.SCORPIO
-                                else -> ZodiacSign.LIBRA
-                            }
-                            println("A APASAT PE: $clickedSign")
-                            onSignClick(clickedSign)
+                        if (clickedChakra != null) {
+                            Log.d("CHAKRA_WHEEL", "Clicked on: ${clickedChakra.chakra.name}")
+                            onChakraClick(clickedChakra.chakra)
                         } else {
-                            println("Click în afara zonei active.")
+                            Log.d("CHAKRA_WHEEL", "Clicked on empty space.")
                         }
                     }
                 }

@@ -123,4 +123,7 @@ interface ZodiacSignDao {
         insertTranslations(translationsWithId)
     }
 
+    @Query("SELECT COUNT(*) FROM zodiac_signs")
+    suspend fun getSignCount(): Int
+
 }

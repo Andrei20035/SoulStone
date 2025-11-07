@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface StoneRepository {
     fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>>
-    fun getStonesForBenefit(benefitKeyName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+    fun getStonesForBenefit(benefitId: Int, language: LanguageCode): Flow<List<TranslatedStone>>
     fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>>
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?
     suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?

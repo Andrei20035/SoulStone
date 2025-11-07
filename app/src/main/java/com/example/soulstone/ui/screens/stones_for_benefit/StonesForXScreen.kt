@@ -1,0 +1,332 @@
+package com.example.soulstone.ui.screens.stones_for_benefit
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import coil3.compose.AsyncImage
+import com.example.soulstone.R
+import com.example.soulstone.data.pojos.TranslatedBenefit
+import com.example.soulstone.data.pojos.TranslatedStone
+import com.example.soulstone.ui.events.UiEvent
+import com.example.soulstone.ui.navigation.AppScreen
+import kotlinx.coroutines.launch
+
+@Composable
+fun StonesForXScreen(
+    navController: NavHostController = rememberNavController()
+) {
+    val viewModel: StonesForXViewModel = hiltViewModel()
+    val uiState by viewModel.uiState.collectAsState()
+
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+
+    LaunchedEffect(Unit) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.ShowSnackbar -> {
+                    scope.launch {
+                        snackbarHostState.showSnackbar(event.message)
+                    }
+                }
+                // Handle Benefit navigation
+                is UiEvent.NavigateToBenefit -> {
+                    navController.navigate(
+                        AppScreen.StoneForX.createRoute(event.benefitId)
+                    ) {
+                        popUpTo(navController.currentDestination!!.id) {
+                            inclusive = true
+                        }
+                    }
+                }
+                // Handle Stone Detail navigation
+                is UiEvent.NavigateToStoneDetail -> {
+                    navController.navigate(
+                        AppScreen.StoneDetails.createRoute(event.stoneId)
+                    )
+                }
+                else -> {}
+            }
+        }
+    }
+    StoneForBenefitScreenContent(
+        uiState = uiState,
+        snackbarHostState = snackbarHostState,
+        onBenefitClicked = viewModel::onBenefitClicked,
+        onStoneClicked = viewModel::onStoneClicked
+    )
+
+
+}
+
+@Composable
+fun StoneForBenefitScreenContent(
+    uiState: StonesForXUiState,
+    snackbarHostState: SnackbarHostState,
+    onBenefitClicked: (Int) -> Unit, // Expects an Int
+    onStoneClicked: (Int) -> Unit // Expects an Int
+) {
+    Scaffold(
+//        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // --- STATIC HEADER ---
+            Text(
+                text = "Stone Uses and Properties",
+                fontSize = 80.sp,
+                lineHeight = 90.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .width(1000.dp)
+                    .height(200.dp) // Reduced height
+                    .wrapContentHeight(Alignment.CenterVertically),
+                color = Color(0xFF2B4F84)
+            )
+
+            // --- DYNAMIC SUBTITLE ---
+            Text(
+                text = if (uiState.isBenefitsLoading) "Loading..." else uiState.benefitName,
+                fontSize = 60.sp,
+                lineHeight = 70.sp,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .height(150.dp)
+                    .fillMaxWidth()
+                    .wrapContentHeight(Alignment.CenterVertically),
+                color = Color(0xFF2B4F84)
+            )
+
+            // --- THIS IS THE FIX (Part 3) ---
+            // Wrap the Row in a Box that has the weight
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize() // Fill the parent Box
+                ) {
+                    // --- LEFT COLUMN (Stones Grid) ---
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        if (uiState.isStonesLoading) {
+                            CircularProgressIndicator()
+                        } else {
+                            LazyVerticalGrid(
+                                columns = GridCells.Fixed(2), // 2 columns for stones
+                                modifier = Modifier.fillMaxSize(),
+                                verticalArrangement = Arrangement.spacedBy(0.dp),
+                                horizontalArrangement = Arrangement.spacedBy(0.dp)
+                            ) {
+                                items(uiState.stones) { stone ->
+                                    StoneItem(
+                                        stone = stone,
+                                        onStoneClicked = { onStoneClicked(stone.id) }
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    // Spacer between columns
+                    Spacer(modifier = Modifier.width(48.dp))
+
+                    // --- RIGHT COLUMN (Benefits List) ---
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight(),
+                        contentAlignment = Alignment.CenterEnd
+                    ) {
+                        if (uiState.isBenefitsLoading) {
+                            CircularProgressIndicator()
+                        } else {
+                            LazyColumn(
+                                modifier = Modifier.fillMaxSize(),
+                                verticalArrangement = Arrangement.spacedBy(12.dp)
+                            ) {
+                                items(uiState.allBenefits) { benefit -> // Iterate over all benefits
+                                    BenefitChip(
+                                        benefit = benefit,
+                                        onClick = { onBenefitClicked(benefit.id) }
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Spacer(Modifier.height(100.dp))
+            Text(
+                text = "Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras",
+                fontSize = 50.sp,
+                lineHeight = 60.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth(0.95f)
+                    .height(350.dp)
+//                                    .background(Color.Yellow)
+                    .wrapContentHeight(Alignment.CenterVertically),
+                color = Color.Black
+            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(horizontal = 120.dp)
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.facebook),
+                    contentDescription = "Facebook",
+                    modifier = Modifier.height(80.dp)
+                )
+                Spacer(Modifier.width(15.dp))
+                Image(
+                    painter = painterResource(R.drawable.instagram),
+                    contentDescription = "Instagram",
+                    modifier = Modifier.height(85.dp)
+
+                )
+                Spacer(Modifier.width(15.dp))
+                Text(
+                    "Mandala.Art.Spain",
+                    color = Color.Black,
+                    fontSize = 60.sp
+                )
+                Spacer(Modifier.weight(1f))
+                Text(
+                    "696121347",
+                    color = Color.Black,
+                    fontSize = 60.sp
+                )
+                Spacer(Modifier.width(15.dp))
+                Image(
+                    painter = painterResource(R.drawable.logo),
+                    contentDescription = "Logo",
+                    modifier = Modifier.height(85.dp)
+
+                )
+            }
+        }
+    }
+}
+
+// --- NEW COMPOSABLES FOR THIS SCREEN ---
+
+@Composable
+fun StoneItem(
+    stone: TranslatedStone, // Use your TranslatedStone POJO
+    onStoneClicked: () -> Unit // NEW: Add this
+) {
+    Column(
+        modifier = Modifier
+            .height(220.dp)
+            .border(
+                width = 0.5.dp,
+                color = Color.Black,
+                shape = RectangleShape
+            )
+            .clip(RectangleShape)
+            .clickable(onClick = onStoneClicked)
+            .padding(8.dp)
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        AsyncImage(
+            model = stone.imageUri,
+            contentDescription = stone.translatedName,
+            contentScale = ContentScale.FillHeight,
+            modifier = Modifier
+                .height(110.dp),
+            // Add optional placeholders
+            placeholder = painterResource(id = R.drawable.dog), // TODO: Change this
+            error = painterResource(id = R.drawable.rat) // TODO: Change this
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = stone.translatedName,
+            textAlign = TextAlign.Center,
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            fontSize = 30.sp,
+            color = Color.Black
+        )
+    }
+}
+
+@Composable
+fun BenefitChip(
+    benefit: TranslatedBenefit,
+    onClick: () -> Unit
+) {
+    Text(
+        text = benefit.translatedName,
+        fontSize = 24.sp,
+        color = Color(0xFF2B4F84),
+        textAlign = TextAlign.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .border(
+                width = 1.dp,
+                color = Color(0xFF2B4F84),
+                shape = RoundedCornerShape(50)
+            )
+            .clip(RoundedCornerShape(50))
+            .clickable { onClick() }
+            .padding(vertical = 12.dp, horizontal = 16.dp)
+    )
+}

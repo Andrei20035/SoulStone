@@ -66,6 +66,8 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.room.ktx)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.coil)
+    implementation(libs.coil.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -74,4 +76,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.sqlite.bundled)
 }

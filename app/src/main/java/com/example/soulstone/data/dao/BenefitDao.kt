@@ -22,6 +22,7 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
+            b.imageResId as imageResId,
             t.name AS translatedName,
             t.languageCode AS languageCode
         FROM benefits AS b
@@ -35,6 +36,7 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
+            b.imageResId AS imageResId,
             t.name AS translatedName,
             t.languageCode AS languageCode
         FROM benefits AS b
@@ -47,6 +49,7 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
+            b.imageResId AS imageResId,
             t.name AS translatedName,
             t.languageCode AS languageCode
         FROM benefits AS b
@@ -54,6 +57,32 @@ interface BenefitDao {
         WHERE b.name = :keyName AND t.languageCode = :language
     """)
     fun getTranslatedBenefitFlow(keyName: String, language: LanguageCode): Flow<TranslatedBenefit?>
+
+    @Query("""
+        SELECT 
+            b.id AS id, 
+            b.name AS keyName, 
+            b.imageResId AS imageResId,
+            t.name AS translatedName,
+            t.languageCode AS languageCode
+        FROM benefits AS b
+        JOIN benefit_translations AS t ON b.id = t.benefitId
+        WHERE b.id = :benefitId AND t.languageCode = :language
+    """)
+    suspend fun getTranslatedBenefitById(benefitId: Int, language: LanguageCode): TranslatedBenefit?
+
+    @Query("""
+        SELECT 
+            b.id AS id, 
+            b.name AS keyName, 
+            b.imageResId AS imageResId,
+            t.name AS translatedName,
+            t.languageCode AS languageCode
+        FROM benefits AS b
+        JOIN benefit_translations AS t ON b.id = t.benefitId
+        WHERE b.id = :benefitId AND t.languageCode = :language
+    """)
+    fun getTranslatedBenefitFlowById(benefitId: Int, language: LanguageCode): Flow<TranslatedBenefit?>
 
 
     // --- Admin/Helper Queries for Benefit table ---

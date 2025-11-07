@@ -10,6 +10,9 @@ import kotlinx.coroutines.flow.Flow
 interface BenefitRepository {
     fun getAllTranslatedBenefits(language: LanguageCode): Flow<List<TranslatedBenefit>>
     suspend fun getTranslatedBenefit(keyName: String, language: LanguageCode): TranslatedBenefit?
+
+    suspend fun getTranslatedBenefitById(benefitId: Int, language: LanguageCode): TranslatedBenefit?
+    fun getTranslatedBenefitFlowById(benefitId: Int, language: LanguageCode): Flow<TranslatedBenefit?>
     fun getTranslatedBenefitFlow(keyName: String, language: LanguageCode): Flow<TranslatedBenefit?>
     suspend fun insertBenefit(benefit: Benefit): Long? // ID of the new row
     suspend fun deleteBenefit(benefit: Benefit): Int

@@ -13,5 +13,7 @@ data class ChineseZodiacSign(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
     val recentYears: String,
-    @DrawableRes val iconResId: Int
+    @DrawableRes val iconResId: Int,
+    @DrawableRes val iconResIdBorder: Int,
+    @DrawableRes val iconResIdColor: Int
 )

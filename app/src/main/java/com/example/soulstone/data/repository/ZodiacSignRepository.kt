@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface ZodiacSignRepository {
-
+    suspend fun getSignByName(signName: String): ZodiacSign?
     fun getAllTranslatedZodiacSigns(language: LanguageCode): Flow<List<TranslatedZodiacSign>>
     fun getTranslatedZodiacSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedZodiacSign?>
     suspend fun getTranslatedZodiacSign(keyName: String, language: LanguageCode): TranslatedZodiacSign?
@@ -19,4 +19,6 @@ interface ZodiacSignRepository {
     suspend fun updateTranslation(translation: ZodiacSignTranslation): Int
     suspend fun updateZodiacSign(sign: ZodiacSign): Int
     suspend fun deleteZodiacSign(sign: ZodiacSign): Int
+
+    suspend fun dbInitialization()
 }
