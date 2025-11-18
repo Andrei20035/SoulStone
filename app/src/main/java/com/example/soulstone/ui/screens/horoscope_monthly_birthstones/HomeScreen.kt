@@ -209,18 +209,18 @@ fun ClickableZodiacWheel(
 
                             Log.d("UNGHI", angleDeg.toString())
                             val clickedSign: ZodiacSign = when (angleDeg) {
-                                in 0f..30f -> ZodiacSign.VIRGO
-                                in 30f..60f -> ZodiacSign.LEO
+                                in 0f..30f -> ZodiacSign.TAURUS
+                                in 30f..60f -> ZodiacSign.GEMINI
                                 in 60f..90f -> ZodiacSign.CANCER
-                                in 90f..120f -> ZodiacSign.GEMINI
-                                in 120f..150f -> ZodiacSign.TAURUS
-                                in 150f..180f -> ZodiacSign.ARIES
-                                in 180f..210f -> ZodiacSign.PISCES
-                                in 210f..240f -> ZodiacSign.AQUARIUS
+                                in 90f..120f -> ZodiacSign.LEO
+                                in 120f..150f -> ZodiacSign.VIRGO
+                                in 150f..180f -> ZodiacSign.LIBRA
+                                in 180f..210f -> ZodiacSign.SCORPIO
+                                in 210f..240f -> ZodiacSign.SAGITTARIUS
                                 in 240f..270f -> ZodiacSign.CAPRICORN
-                                in 270f..300f -> ZodiacSign.SAGITTARIUS
-                                in 300f..330f -> ZodiacSign.SCORPIO
-                                else -> ZodiacSign.LIBRA
+                                in 270f..300f -> ZodiacSign.AQUARIUS
+                                in 300f..330f -> ZodiacSign.PISCES
+                                else -> ZodiacSign.ARIES
                             }
                             println("A APASAT PE: $clickedSign")
                             onSignClick(clickedSign)
