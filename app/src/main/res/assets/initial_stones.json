@@ -1,0 +1,1082 @@
+[
+  {
+    "image_name": "agate",
+    "translations": {
+      "en": { "name": "Agate", "desc": "It provides physical, emotional, and intellectual balance. It is good for harmonizing the positive and the negative. It fosters self-confidence and helps with concentration. Heals inner anger and fosters love and courage. Unlocks all chakras." },
+      "es": { "name": "Ágata", "desc": "Proporciona equilibrio físico, emocional e intelectual. Es buena para armonizar lo positivo y lo negativo. Fomenta la autoconfianza y ayuda a la concentración. Cura la ira interna y fomenta el amor y el coraje. Desbloquea todos los chakras." },
+      "fr": { "name": "Agate", "desc": "Elle procure un équilibre physique, émotionnel et intellectuel. Elle harmonise le positif et le négatif. Elle favorise la confiance en soi et la concentration. Elle apaise la colère intérieure et encourage l'amour et le courage." },
+      "it": { "name": "Agata", "desc": "Fornisce equilibrio fisico, emotivo e intellettuale. È ottima per armonizzare il positivo e il negativo. Promuove la fiducia in se stessi e aiuta la concentrazione. Cura la rabbia interiore e favorisce l'amore e il coraggio." },
+      "de": { "name": "Achat", "desc": "Sorgt für körperliches, emotionales und intellektuelles Gleichgewicht. Harmonisiert positive und negative Energien. Fördert Selbstvertrauen und Konzentration. Heilt innere Wut und fördert Liebe und Mut." },
+      "pl": { "name": "Agat", "desc": "Zapewnia równowagę fizyczną, emocjonalną i intelektualną. Harmonizuje energię pozytywną i negatywną. Wzmacnia pewność siebie i koncentrację. Leczy wewnętrzny gniew oraz wspiera miłość i odwagę." },
+      "ru": { "name": "Агат", "desc": "Обеспечивает физическое, эмоциональное и интеллектуальное равновесие. Гармонизирует позитивное и негативное. Способствует уверенности в себе и концентрации. Исцеляет внутренний гнев, способствует любви и мужеству." }
+    }
+  },
+  {
+    "image_name": "amazonite",
+    "translations": {
+      "en": { "name": "Amazonite", "desc": "Amazonite is associated with the 4th and 5th chakras. It is a relaxing, refreshing and loving stone. It helps to release from attachments and blockages, and fosters emotional balance and self-confidence." },
+      "es": { "name": "Amazonita", "desc": "La amazonita está asociada con el 4º y 5º chakra. Es una piedra relajante, refrescante y amorosa. Ayuda a liberarse de apegos y bloqueos, y fomenta el equilibrio emocional y la autoconfianza." },
+      "fr": { "name": "Amazonite", "desc": "L'amazonite est associée aux 4ème et 5ème chakras. C'est une pierre relaxante et aimante. Elle aide à se libérer des attachements et des blocages, favorisant l'équilibre émotionnel et la confiance en soi." },
+      "it": { "name": "Amazzonite", "desc": "L'amazzonite è associata al 4° e 5° chakra. È una pietra rilassante e amorevole. Aiuta a liberarsi da attaccamenti e blocchi, favorendo l'equilibrio emotivo e la fiducia in se stessi." },
+      "de": { "name": "Amazonit", "desc": "Der Amazonit ist dem 4. und 5. Chakra zugeordnet. Er ist ein entspannender und liebevoller Stein. Er hilft, Bindungen und Blockaden zu lösen und fördert emotionales Gleichgewicht und Selbstvertrauen." },
+      "pl": { "name": "Amazonit", "desc": "Amazonit jest związany z 4. i 5. czakrą. To kamień relaksujący i pełen miłości. Pomaga uwolnić się od przywiązań i blokad, wspierając równowagę emocjonalną i pewność siebie." },
+      "ru": { "name": "Амазонит", "desc": "Амазонит связан с 4-й и 5-й чакрами. Это расслабляющий и наполненный любовью камень. Помогает освободиться от привязанностей и блоков, способствует эмоциональному равновесию и уверенности." }
+    }
+  },
+  {
+    "image_name": "amber",
+    "translations": {
+      "en": { "name": "Amber", "desc": "Amber is not a crystal but fossilized resin. It is a powerful healer and cleanser that draws disease from the body. It absorbs negative energy and transmutes it into positive forces that stimulate the body to heal itself." },
+      "es": { "name": "Ámbar", "desc": "El ámbar es resina fosilizada. Es un poderoso sanador y limpiador que extrae la enfermedad del cuerpo. Absorbe la energía negativa y la transmuta en fuerzas positivas que estimulan la autocuración del cuerpo." },
+      "fr": { "name": "Ambre", "desc": "L'ambre est une résine fossilisée. C'est un puissant guérisseur qui tire la maladie hors du corps. Il absorbe l'énergie négative et la transforme en forces positives qui stimulent l'autoguérison." },
+      "it": { "name": "Ambra", "desc": "L'ambra è resina fossilizzata. È un potente guaritore che estrae la malattia dal corpo. Assorbe l'energia negativa e la trasforma in forze positive che stimolano il corpo a guarire se stesso." },
+      "de": { "name": "Bernstein", "desc": "Bernstein ist fossiles Harz. Er ist ein mächtiger Heiler, der Krankheiten aus dem Körper zieht. Er absorbiert negative Energie und wandelt sie in positive Kräfte um, die die Selbstheilung anregen." },
+      "pl": { "name": "Bursztyn", "desc": "Bursztyn to skamieniała żywica. Jest potężnym uzdrowicielem, który wyciąga choroby z ciała. Pochłania negatywną energię i przekształca ją w siły pozytywne, stymulując organizm do samoleczenia." },
+      "ru": { "name": "Янтарь", "desc": "Янтарь — это окаменевшая смола. Мощный целитель, вытягивающий болезни из тела. Поглощает негативную энергию и преобразует ее в позитивные силы, стимулирующие самоисцеление." }
+    }
+  },
+  {
+    "image_name": "amethyst",
+    "translations": {
+      "en": { "name": "Amethyst", "desc": "Perfect for meditation, connecting with the spiritual, and warding off negative energies. It brings common sense to your decisions, boosts memory, helps with motivation, and opens the throat and crown chakras." },
+      "es": { "name": "Amatista", "desc": "Perfecta para la meditación, la conexión espiritual y para alejar las energías negativas. Aporta sentido común a tus decisiones, mejora la memoria, ayuda con la motivación y abre los chakras de la garganta y la corona." },
+      "fr": { "name": "Améthyste", "desc": "Parfaite pour la méditation et la spiritualité, elle éloigne les énergies négatives. Elle apporte du bon sens aux décisions, stimule la mémoire, aide à la motivation et ouvre les chakras de la gorge et de la couronne." },
+      "it": { "name": "Ametista", "desc": "Perfetta per la meditazione e la connessione spirituale, allontana le energie negative. Porta buon senso nelle decisioni, migliora la memoria, aiuta la motivazione e apre i chakra della gola e della corona." },
+      "de": { "name": "Amethyst", "desc": "Perfekt für Meditation und spirituelle Verbindung. Wehrt negative Energien ab. Bringt gesunden Menschenverstand in Entscheidungen, stärkt das Gedächtnis, hilft bei der Motivation und öffnet Hals- und Kronenchakra." },
+      "pl": { "name": "Ametyst", "desc": "Idealny do medytacji i łączenia się z duchowością, odstrasza negatywne energie. Wnosi rozsądek do decyzji, poprawia pamięć, pomaga w motywacji oraz otwiera czakry gardła i korony." },
+      "ru": { "name": "Аметист", "desc": "Идеален для медитации и духовной связи, отгоняет негативные энергии. Привносит здравый смысл в решения, улучшает память, помогает с мотивацией и открывает горловую и коронную чакры." }
+    }
+  },
+  {
+    "image_name": "angelite",
+    "translations": {
+      "en": { "name": "Angelite", "desc": "Angelite is a stone of inspiration for peace and brotherhood. It is often used to balance the throat and third eye chakras. It facilitates communication and telepathy and benefits the thyroid." },
+      "es": { "name": "Angelita", "desc": "La angelita es una piedra de inspiración para la paz y la hermandad. Se usa para equilibrar los chakras de la garganta y el tercer ojo. Facilita la comunicación, la telepatía y beneficia a la tiroides." },
+      "fr": { "name": "Angélite", "desc": "L'angélite inspire la paix et la fraternité. Elle équilibre les chakras de la gorge et du troisième œil. Elle facilite la communication, la télépathie et est bénéfique pour la thyroïde." },
+      "it": { "name": "Angelite", "desc": "L'angelite ispira pace e fratellanza. È usata per bilanciare i chakra della gola e del terzo occhio. Facilita la comunicazione e la telepatia, ed è benefica per la tiroide." },
+      "de": { "name": "Angelit", "desc": "Angelit ist ein Stein der Inspiration für Frieden und Brüderlichkeit. Er gleicht Hals- und Stirnchakra aus, erleichtert Kommunikation und Telepathie und unterstützt die Schilddrüse." },
+      "pl": { "name": "Angelit", "desc": "Angelit to kamień inspiracji dla pokoju i braterstwa. Równoważy czakry gardła i trzeciego oka. Ułatwia komunikację i telepatię oraz korzystnie wpływa na tarczycę." },
+      "ru": { "name": "Ангелит", "desc": "Ангелит — камень вдохновения, мира и братства. Балансирует горловую чакру и чакру третьего глаза. Облегчает коммуникацию и телепатию, полезен для щитовидной железы." }
+    }
+  },
+  {
+    "image_name": "apatite",
+    "translations": {
+      "en": { "name": "Apatite", "desc": "Apatite increases creativity and brings knowledge. It increases energy reserves and motivation. It helps overcome alienation, relieves pain and anger, and reduces emotional exhaustion." },
+      "es": { "name": "Apatita", "desc": "La apatita aumenta la creatividad y aporta conocimiento. Incrementa las reservas de energía y la motivación. Ayuda a superar la alienación, alivia el dolor y la ira, y reduce el agotamiento emocional." },
+      "fr": { "name": "Apatite", "desc": "L'apatite accroît la créativité et la connaissance. Elle augmente les réserves d'énergie et la motivation. Elle aide à surmonter l'aliénation, soulage la douleur et la colère, et réduit l'épuisement émotionnel." },
+      "it": { "name": "Apatite", "desc": "L'apatite aumenta la creatività e porta conoscenza. Incrementa le riserve di energia e la motivazione. Aiuta a superare l'alienazione, allevia dolore e rabbia, e riduce l'esaurimento emotivo." },
+      "de": { "name": "Apatit", "desc": "Apatit steigert Kreativität und Wissen. Er erhöht Energiereserven und Motivation. Er hilft, Entfremdung zu überwinden, lindert Schmerz und Wut und reduziert emotionale Erschöpfung." },
+      "pl": { "name": "Apatyt", "desc": "Apatyt zwiększa kreatywność i wiedzę. Zwiększa rezerwy energii i motywację. Pomaga przezwyciężyć wyobcowanie, łagodzi ból i gniew oraz zmniejsza wyczerpanie emocjonalne." },
+      "ru": { "name": "Апатит", "desc": "Апатит повышает креативность и несет знания. Увеличивает запасы энергии и мотивацию. Помогает преодолеть отчуждение, снимает боль и гнев, уменьшает эмоциональное истощение." }
+    }
+  },
+  {
+    "image_name": "aquamarine",
+    "translations": {
+      "en": { "name": "Aquamarine", "desc": "A talisman for courage, stress reduction, and mental relaxation. Resonates with sensitive people, sharpening intuition and clairvoyance. Improves mood, hope, and optimism." },
+      "es": { "name": "Aguamarina", "desc": "Un talismán para el coraje, la reducción del estrés y la relajación mental. Resuena con personas sensibles, agudizando la intuición. Mejora el estado de ánimo, la esperanza y el optimismo." },
+      "fr": { "name": "Aigue-marine", "desc": "Talisman de courage, elle réduit le stress et détend l'esprit. Elle résonne avec les personnes sensibles, aiguisant l'intuition. Elle améliore l'humeur, l'espoir et l'optimisme." },
+      "it": { "name": "Acquamarina", "desc": "Un talismano per il coraggio, riduce lo stress e rilassa la mente. Risuona con le persone sensibili, affinando l'intuito. Migliora l'umore, la speranza e l'ottimismo." },
+      "de": { "name": "Aquamarin", "desc": "Ein Talisman für Mut, Stressabbau und geistige Entspannung. Er schärft die Intuition bei sensiblen Menschen. Verbessert die Stimmung, Hoffnung und den Optimismus." },
+      "pl": { "name": "Akwamaryn", "desc": "Talizman odwagi, redukcji stresu i relaksu umysłu. Rezonuje z osobami wrażliwymi, wyostrzając intuicję. Poprawia nastrój, nadzieję i optymizm." },
+      "ru": { "name": "Аквамарин", "desc": "Талисман мужества, снижает стресс и расслабляет ум. Резонирует с чувствительными людьми, обостряя интуицию. Улучшает настроение, вселяет надежду и оптимизм." }
+    }
+  },
+  {
+    "image_name": "aventurine",
+    "translations": {
+      "en": { "name": "Aventurine", "desc": "A stone of prosperity that reinforces leadership qualities and decisiveness. It promotes compassion and empathy and encourages perseverance. It stabilizes one's state of mind and stimulates perception." },
+      "es": { "name": "Aventurina", "desc": "Piedra de prosperidad que refuerza el liderazgo y la decisión. Promueve la compasión, la empatía y fomenta la perseverancia. Estabiliza el estado mental y estimula la percepción." },
+      "fr": { "name": "Aventurine", "desc": "Pierre de prospérité qui renforce le leadership et la décision. Elle favorise la compassion, l'empathie et la persévérance. Elle stabilise l'état d'esprit et stimule la perception." },
+      "it": { "name": "Avventurina", "desc": "Pietra della prosperità che rafforza la leadership e la decisione. Promuove compassione, empatia e perseveranza. Stabilizza lo stato mentale e stimola la percezione." },
+      "de": { "name": "Aventurin", "desc": "Ein Stein des Wohlstands, der Führungsqualitäten und Entschlossenheit stärkt. Er fördert Mitgefühl, Empathie und Ausdauer. Stabilisiert den Geisteszustand und regt die Wahrnehmung an." },
+      "pl": { "name": "Awenturyn", "desc": "Kamień dobrobytu, wzmacniający cechy przywódcze i zdecydowanie. Promuje współczucie, empatię i wytrwałość. Stabilizuje stan umysłu i stymuluje percepcję." },
+      "ru": { "name": "Авантюрин", "desc": "Камень процветания, усиливающий лидерские качества и решительность. Способствует состраданию, эмпатии и настойчивости. Стабилизирует душевное состояние и стимулирует восприятие." }
+    }
+  },
+  {
+    "image_name": "black_obsidian",
+    "translations": {
+      "en": { "name": "Black Obsidian", "desc": "A powerful and creative stone. It grounds the soul and spiritual forces into the physical plane. It forces facing up to one’s true self and repels negative energy and unloving thoughts." },
+      "es": { "name": "Obsidiana Negra", "desc": "Una piedra poderosa y creativa. Ancla el alma y las fuerzas espirituales en el plano físico. Obliga a afrontar el verdadero yo y repele la energía negativa y los pensamientos desamorosos." },
+      "fr": { "name": "Obsidienne Noire", "desc": "Pierre puissante et créative. Elle ancre l'âme et les forces spirituelles dans le plan physique. Elle oblige à faire face à son vrai moi et repousse les énergies négatives." },
+      "it": { "name": "Ossidiana Nera", "desc": "Pietra potente e creativa. Ancorando l'anima e le forze spirituali al piano fisico. Costringe ad affrontare il vero sé e respinge l'energia negativa e i pensieri non amorevoli." },
+      "de": { "name": "Schwarzer Obsidian", "desc": "Ein kraftvoller, kreativer Stein. Er erdet die Seele im physischen Bereich. Zwingt dazu, sich dem wahren Selbst zu stellen und wehrt negative Energie und lielose Gedanken ab." },
+      "pl": { "name": "Czarny Obsydian", "desc": "Potężny i kreatywny kamień. Uziemia duszę i siły duchowe w sferze fizycznej. Zmusza do zmierzenia się z prawdziwym ja i odpycha negatywną energię." },
+      "ru": { "name": "Черный Обсидиан", "desc": "Мощный и творческий камень. Заземляет душу и духовные силы в физическом плане. Заставляет взглянуть в лицо своему истинному Я и отталкивает негативную энергию." }
+    }
+  },
+  {
+    "image_name": "black_tourmaline",
+    "translations": {
+      "en": { "name": "Black Tourmaline", "desc": "Protects against cell phones, electromagnetic smog, radiation, and negative energies of all kinds. It grounds energy and increases physical vitality, dispersing tension and stress." },
+      "es": { "name": "Turmalina Negra", "desc": "Protege contra teléfonos móviles, niebla electromagnética, radiación y energías negativas. Enraíza la energía, aumenta la vitalidad física y dispersa la tensión y el estrés." },
+      "fr": { "name": "Tourmaline Noire", "desc": "Protège contre les ondes électromagnétiques, les radiations et les énergies négatives. Elle ancre l'énergie, augmente la vitalité physique et disperse la tension et le stress." },
+      "it": { "name": "Tormalina Nera", "desc": "Protegge da cellulari, smog elettromagnetico, radiazioni ed energie negative. Radica l'energia, aumenta la vitalità fisica e disperde tensione e stress." },
+      "de": { "name": "Schwarzer Turmalin", "desc": "Schützt vor Handystrahlung, Elektrosmog und negativen Energien aller Art. Erdet Energie, steigert die körperliche Vitalität und baut Spannungen und Stress ab." },
+      "pl": { "name": "Czarny Turmalin", "desc": "Chroni przed smogiem elektromagnetycznym, promieniowaniem i negatywną energią. Uziemia energię, zwiększa witalność fizyczną oraz rozprasza napięcie i stres." },
+      "ru": { "name": "Черный Турмалин", "desc": "Защищает от электромагнитного излучения, радиации и негативных энергий. Заземляет энергию, повышает физическую жизнеспособность, снимает напряжение и стресс." }
+    }
+  },
+  {
+    "image_name": "bloodstone",
+    "translations": {
+      "en": { "name": "Bloodstone", "desc": "An excellent blood cleanser and a powerful healing stone. It heightens intuition and increases creativity. It is grounding and protecting. Bloodstone draws off negative environmental energy." },
+      "es": { "name": "Piedra de Sangre", "desc": "Excelente limpiador de la sangre y poderosa piedra curativa. Aumenta la intuición y la creatividad. Es una piedra de anclaje y protección que extrae la energía ambiental negativa." },
+      "fr": { "name": "Héliotrope (Pierre de Sang)", "desc": "Excellent purificateur sanguin et puissante pierre de guérison. Elle accroît l'intuition et la créativité. Elle ancre, protège et absorbe les énergies environnementales négatives." },
+      "it": { "name": "Eliotropio", "desc": "Eccellente depuratore del sangue e potente pietra curativa. Aumenta l'intuizione e la creatività. Radica, protegge e assorbe l'energia ambientale negativa." },
+      "de": { "name": "Blutjaspis", "desc": "Ein hervorragender Blutreiniger und mächtiger Heilstein. Er steigert Intuition und Kreativität. Er wirkt erdend, schützend und zieht negative Umweltenergien ab." },
+      "pl": { "name": "Krwawnik", "desc": "Doskonały środek oczyszczający krew i potężny kamień leczniczy. Zwiększa intuicję i kreatywność. Uziemia, chroni i wyciąga negatywną energię z otoczenia." },
+      "ru": { "name": "Гелиотроп", "desc": "Отличный очиститель крови и мощный целительный камень. Усиливает интуицию и креативность. Заземляет, защищает и вытягивает негативную энергию из окружающей среды." }
+    }
+  },
+  {
+    "image_name": "blue_agate",
+    "translations": {
+      "en": { "name": "Blue Agate", "desc": "A cooling and calming stone that brings peace of mind. It activates the throat chakra, allowing free expression of thoughts and feelings. It neutralizes anger and infection." },
+      "es": { "name": "Ágata Azul", "desc": "Piedra refrescante y calmante que aporta paz mental. Activa el chakra de la garganta, permitiendo la libre expresión de pensamientos y sentimientos. Neutraliza la ira y las infecciones." },
+      "fr": { "name": "Agate Bleue", "desc": "Pierre apaisante qui apporte la paix de l'esprit. Elle active le chakra de la gorge, permettant l'expression libre des pensées. Elle neutralise la colère et l'infection." },
+      "it": { "name": "Agata Blu", "desc": "Pietra rinfrescante e calmante che porta pace mentale. Attiva il chakra della gola, permettendo la libera espressione. Neutralizza la rabbia e le infezioni." },
+      "de": { "name": "Blauachat", "desc": "Ein kühlender, beruhigender Stein, der Seelenfrieden bringt. Aktiviert das Halschakra für freien Ausdruck. Neutralisiert Wut und Infektionen." },
+      "pl": { "name": "Niebieski Agat", "desc": "Kojący i uspokajający kamień, który przynosi spokój ducha. Aktywuje czakrę gardła, umożliwiając swobodne wyrażanie myśli. Neutralizuje gniew i infekcje." },
+      "ru": { "name": "Голубой Агат", "desc": "Охлаждающий и успокаивающий камень, приносящий душевный покой. Активирует горловую чакру, позволяя свободно выражать мысли. Нейтрализует гнев и инфекции." }
+    }
+  },
+  {
+    "image_name": "blue_calcite",
+    "translations": {
+      "en": { "name": "Blue Calcite", "desc": "Promotes calm and relaxation. It amplifies and cleanses energies, eliminating accumulated energetic toxins. It is a spiritual stone that enhances psychic abilities and channeling." },
+      "es": { "name": "Calcita Azul", "desc": "Promueve la calma y la relajación. Amplifica y limpia las energías, eliminando toxinas energéticas acumuladas. Es una piedra espiritual que mejora las capacidades psíquicas." },
+      "fr": { "name": "Calcite Bleue", "desc": "Favorise le calme et la relaxation. Elle amplifie et purifie les énergies, éliminant les toxines énergétiques. C'est une pierre spirituelle qui améliore les capacités psychiques." },
+      "it": { "name": "Calcite Blu", "desc": "Promuove calma e relax. Amplifica e purifica le energie, eliminando le tossine energetiche accumulate. È una pietra spirituale che migliora le capacità psichiche." },
+      "de": { "name": "Blauer Calcit", "desc": "Fördert Ruhe und Entspannung. Verstärkt und reinigt Energien, beseitigt energetische Toxine. Ein spiritueller Stein, der psychische Fähigkeiten verbessert." },
+      "pl": { "name": "Niebieski Kalcyt", "desc": "Promuje spokój i relaks. Wzmacnia i oczyszcza energię, usuwając nagromadzone toksyny energetyczne. To kamień duchowy, który wzmacnia zdolności psychiczne." },
+      "ru": { "name": "Голубой Кальцит", "desc": "Способствует спокойствию и расслаблению. Усиливает и очищает энергию, устраняя энергетические токсины. Духовный камень, усиливающий экстрасенсорные способности." }
+    }
+  },
+  {
+    "image_name": "blue_chalcedony",
+    "translations": {
+      "en": { "name": "Blue Chalcedony", "desc": "A creative stone that imparts mental flexibility and verbal dexterity. It stimulates the ability to learn new languages and improves memory. Promotes a feeling of brotherhood and goodwill." },
+      "es": { "name": "Calcedonia Azul", "desc": "Piedra creativa que imparte flexibilidad mental y destreza verbal. Estimula el aprendizaje de idiomas y mejora la memoria. Promueve la hermandad y la buena voluntad." },
+      "fr": { "name": "Calcédoine Bleue", "desc": "Pierre créative offrant souplesse mentale et dextérité verbale. Elle aide à apprendre les langues et améliore la mémoire. Elle favorise la fraternité et la bienveillance." },
+      "it": { "name": "Calcedonio Blu", "desc": "Pietra creativa che conferisce flessibilità mentale e destrezza verbale. Stimola l'apprendimento delle lingue e migliora la memoria. Promuove fratellanza e benevolenza." },
+      "de": { "name": "Blauer Chalcedon", "desc": "Ein kreativer Stein, der geistige Flexibilität und verbale Gewandtheit verleiht. Fördert das Sprachenlernen und Gedächtnis. Unterstützt Brüderlichkeit und Wohlwollen." },
+      "pl": { "name": "Niebieski Chalcedon", "desc": "Kreatywny kamień dający elastyczność umysłową i biegłość werbalną. Ułatwia naukę języków i poprawia pamięć. Promuje poczucie braterstwa i dobrej woli." },
+      "ru": { "name": "Голубой Халцедон", "desc": "Творческий камень, придающий гибкость ума и словесную ловкость. Стимулирует изучение языков и улучшает память. Способствует чувству братства и доброжелательности." }
+    }
+  },
+  {
+    "image_name": "blue_kyanite",
+    "translations": {
+      "en": { "name": "Blue Kyanite", "desc": "Blue kyanite is associated with emotional calm, helping to dissolve tension and promoting a state of tranquility. Use it during stressful times to find inner peace. Kyanite helps balance our chakras so that vital energy flows freely throughout our being." },
+      "es": { "name": "Cianita Azul", "desc": "La cianita azul se asocia con la calma emocional, ayudando a disolver la tensión y promoviendo la tranquilidad. Úsala en momentos de estrés para encontrar la paz interior. Ayuda a equilibrar los chakras para que la energía vital fluya libremente." },
+      "fr": { "name": "Cyanite Bleue", "desc": "La cyanite bleue est associée au calme émotionnel, aidant à dissoudre les tensions. Utilisez-la pendant les périodes de stress pour trouver la paix intérieure. Elle aide à équilibrer nos chakras pour que l'énergie vitale circule librement." },
+      "it": { "name": "Cianite Blu", "desc": "La cianite blu è associata alla calma emotiva, aiuta a sciogliere la tensione e promuove la tranquillità. Usala nei momenti di stress per trovare la pace interiore. Aiuta a bilanciare i chakra affinché l'energia vitale fluisca liberamente." },
+      "de": { "name": "Blauer Kyanit", "desc": "Blauer Kyanit wird mit emotionaler Ruhe assoziiert, löst Spannungen und fördert Gelassenheit. Nutzen Sie ihn in stressigen Zeiten, um inneren Frieden zu finden. Er hilft, die Chakren auszugleichen, damit die Lebensenergie frei fließen kann." },
+      "pl": { "name": "Niebieski Kyanit", "desc": "Niebieski kyanit kojarzony jest ze spokojem emocjonalnym, pomagając rozpuścić napięcie. Używaj go w stresujących chwilach, aby znaleźć wewnętrzny spokój. Pomaga zrównoważyć czakry, aby energia życiowa przepływała swobodnie." },
+      "ru": { "name": "Голубой Кианит", "desc": "Голубой кианит связан с эмоциональным спокойствием, помогая снять напряжение. Используйте его в стрессовые времена для обретения внутреннего мира. Помогает сбалансировать чакры, чтобы жизненная энергия текла свободно." }
+    }
+  },
+  {
+    "image_name": "bronzite",
+    "translations": {
+      "en": { "name": "Bronzite", "desc": "Bronzite helps with life's major challenges. It's a stone that returns energy to its source, protecting against negativity and bringing back positivity. It blocks feelings of insecurity and counterproductive thoughts. Bronzite is highly stabilizing." },
+      "es": { "name": "Broncita", "desc": "La broncita ayuda con los grandes desafíos de la vida. Devuelve la energía a su fuente, protegiendo contra la negatividad y recuperando la positividad. Bloquea la inseguridad y los pensamientos contraproducentes. Es altamente estabilizadora." },
+      "fr": { "name": "Bronzite", "desc": "La bronzite aide à relever les grands défis. Elle renvoie l'énergie à sa source, protégeant contre la négativité. Elle bloque les sentiments d'insécurité et les pensées contre-productives. La bronzite est très stabilisante." },
+      "it": { "name": "Bronzite", "desc": "La bronzite aiuta nelle grandi sfide della vita. Restituisce l'energia alla fonte, proteggendo dalla negatività. Blocca i sentimenti di insicurezza e i pensieri controproducenti. È altamente stabilizzante." },
+      "de": { "name": "Bronzit", "desc": "Bronzit hilft bei großen Herausforderungen. Er gibt Energie an den Ursprung zurück, schützt vor Negativität und bringt Positivität zurück. Er blockiert Unsicherheit und kontraproduktive Gedanken und wirkt stark stabilisierend." },
+      "pl": { "name": "Bronzyt", "desc": "Bronzyt pomaga w życiowych wyzwaniach. Zwraca energię do źródła, chroniąc przed negatywnością i przywracając pozytywne nastawienie. Blokuje uczucie niepewności i myśli bezużyteczne. Jest silnie stabilizujący." },
+      "ru": { "name": "Бронзит", "desc": "Бронзит помогает справляться с серьезными жизненными вызовами. Возвращает энергию к источнику, защищая от негатива. Блокирует чувство неуверенности и контрпродуктивные мысли. Обладает сильным стабилизирующим эффектом." }
+    }
+  },
+  {
+    "image_name": "carnelian",
+    "translations": {
+      "en": { "name": "Carnelian", "desc": "Carnelian restores vitality and motivation, and stimulates creativity. It gives courage, promotes positive life choices, dispels apathy and motivates for success. It helps clarify perception and sharpens concentration." },
+      "es": { "name": "Cornalina", "desc": "La cornalina restaura la vitalidad y la motivación, y estimula la creatividad. Infunde coraje, promueve opciones de vida positivas, disipa la apatía y motiva para el éxito. Ayuda a clarificar la percepción y agudiza la concentración." },
+      "fr": { "name": "Cornaline", "desc": "La cornaline restaure la vitalité et la motivation, et stimule la créativité. Elle donne du courage, favorise les choix de vie positifs, dissipe l'apathie et motive pour le succès. Elle clarifie la perception et aiguise la concentration." },
+      "it": { "name": "Corniola", "desc": "La corniola ripristina vitalità e motivazione, e stimola la creatività. Dà coraggio, promuove scelte di vita positive, dissipa l'apatia e motiva al successo. Aiuta a chiarire la percezione e affina la concentrazione." },
+      "de": { "name": "Karneol", "desc": "Karneol stellt Vitalität und Motivation wieder her und regt die Kreativität an. Er gibt Mut, fördert positive Lebensentscheidungen, vertreibt Apathie und motiviert zum Erfolg. Er schärft die Wahrnehmung und Konzentration." },
+      "pl": { "name": "Karnelian", "desc": "Karnelian przywraca witalność i motywację oraz stymuluje kreatywność. Dodaje odwagi, promuje pozytywne wybory życiowe, rozprasza apatię i motywuje do sukcesu. Pomaga wyostrzyć percepcję i koncentrację." },
+      "ru": { "name": "Сердолик", "desc": "Сердолик восстанавливает жизненные силы и мотивацию, стимулирует творчество. Придает смелость, способствует позитивному жизненному выбору, разгоняет апатию и мотивирует на успех. Помогает прояснить восприятие." }
+    }
+  },
+  {
+    "image_name": "chrysocolla",
+    "translations": {
+      "en": { "name": "Chrysocolla", "desc": "Chrysocolla is considered the stone of femininity and symbolizes the element of water. It helps to balance the hormones and provides a calming and cleansing energy. It promotes inner peace and facilitates meditation." },
+      "es": { "name": "Crisocola", "desc": "La crisocola es la piedra de la feminidad y simboliza el agua. Ayuda a equilibrar las hormonas y proporciona una energía calmante y limpiadora. Promueve la paz interior y facilita la meditación." },
+      "fr": { "name": "Chrysocolle", "desc": "La chrysocolle est la pierre de la féminité et symbolise l'eau. Elle aide à équilibrer les hormones et procure une énergie apaisante. Elle favorise la paix intérieure et facilite la méditation." },
+      "it": { "name": "Crisocolla", "desc": "La crisocolla è la pietra della femminilità e simboleggia l'acqua. Aiuta a bilanciare gli ormoni e fornisce un'energia calmante. Promuove la pace interiore e facilita la meditazione." },
+      "de": { "name": "Chrysokoll", "desc": "Chrysokoll gilt als Stein der Weiblichkeit und symbolisiert das Wasser. Er hilft, Hormone auszugleichen und liefert beruhigende Energie. Er fördert inneren Frieden und erleichtert die Meditation." },
+      "pl": { "name": "Chryzokola", "desc": "Chryzokola uważana jest za kamień kobiecości i symbolizuje wodę. Pomaga zrównoważyć hormony i zapewnia kojącą energię. Promuje wewnętrzny spokój i ułatwia medytację." },
+      "ru": { "name": "Хризоколла", "desc": "Хризоколла считается камнем женственности и символизирует воду. Помогает сбалансировать гормоны и дает успокаивающую энергию. Способствует внутреннему миру и облегчает медитацию." }
+    }
+  },
+  {
+    "image_name": "chrysoprase",
+    "translations": {
+      "en": { "name": "Chrysoprase", "desc": "Chrysoprase promotes love of truth and hope. It draws out talent and stimulates creativity. It encourages fidelity in business and personal relationships. It is excellent for relaxation and sleep." },
+      "es": { "name": "Crisoprasa", "desc": "La crisoprasa promueve el amor por la verdad y la esperanza. Saca a la luz talentos y estimula la creatividad. Fomenta la fidelidad en los negocios y las relaciones. Es excelente para la relajación y el sueño." },
+      "fr": { "name": "Chrysoprase", "desc": "La chrysoprase favorise l'amour de la vérité et l'espoir. Elle révèle les talents et stimule la créativité. Elle encourage la fidélité dans les affaires et les relations. Elle est excellente pour la relaxation." },
+      "it": { "name": "Crisoprasio", "desc": "Il crisoprasio promuove l'amore per la verità e la speranza. Fa emergere il talento e stimola la creatività. Incoraggia la fedeltà negli affari e nelle relazioni. È eccellente per il rilassamento." },
+      "de": { "name": "Chrysopras", "desc": "Chrysopras fördert die Liebe zur Wahrheit und Hoffnung. Er bringt Talente hervor und regt die Kreativität an. Er fördert Treue in Geschäft und Beziehungen und ist hervorragend für Entspannung und Schlaf." },
+      "pl": { "name": "Chryzopraz", "desc": "Chryzopraz promuje miłość do prawdy i nadzieję. Wydobywa talenty i stymuluje kreatywność. Zachęca do wierności w interesach i relacjach. Jest doskonały na relaks i sen." },
+      "ru": { "name": "Хризопраз", "desc": "Хризопраз способствует любви к истине и надежде. Раскрывает таланты и стимулирует творчество. Поощряет верность в бизнесе и отношениях. Отлично подходит для релаксации и сна." }
+    }
+  },
+  {
+    "image_name": "citrine",
+    "translations": {
+      "en": { "name": "Citrine", "desc": "Attracts happiness, prosperity, and joy. It brings vitality, stimulates creativity and improves self-esteem. It helps you fall asleep, improve productivity, and attract wealth and success." },
+      "es": { "name": "Citrino", "desc": "Atrae felicidad, prosperidad y alegría. Aporta vitalidad, estimula la creatividad y mejora la autoestima. Ayuda a conciliar el sueño, mejora la productividad y atrae riqueza y éxito." },
+      "fr": { "name": "Citrine", "desc": "Attire le bonheur, la prospérité et la joie. Elle apporte de la vitalité, stimule la créativité et améliore l'estime de soi. Elle aide à s'endormir, améliore la productivité et attire la richesse." },
+      "it": { "name": "Citrino", "desc": "Attrae felicità, prosperità e gioia. Porta vitalità, stimola la creatività e migliora l'autostima. Aiuta a prendere sonno, migliora la produttività e attrae ricchezza e successo." },
+      "de": { "name": "Citrin", "desc": "Zieht Glück, Wohlstand und Freude an. Er bringt Vitalität, regt die Kreativität an und verbessert das Selbstwertgefühl. Hilft beim Einschlafen, steigert die Produktivität und zieht Reichtum an." },
+      "pl": { "name": "Cytryn", "desc": "Przyciąga szczęście, dobrobyt i radość. Wnosi witalność, stymuluje kreatywność i poprawia samoocenę. Pomaga zasnąć, poprawia produktywność oraz przyciąga bogactwo i sukces." },
+      "ru": { "name": "Цитрин", "desc": "Притягивает счастье, процветание и радость. Приносит жизненную силу, стимулирует творчество и повышает самооценку. Помогает заснуть, улучшает продуктивность и привлекает богатство." }
+    }
+  },
+  {
+    "image_name": "clear_quartz",
+    "translations": {
+      "en": { "name": "Clear Quartz", "desc": "Known as the 'master healer', it amplifies energy and thought. It absorbs, stores, releases and regulates energy. It balances and revitalizes the physical, mental, emotional and spiritual planes." },
+      "es": { "name": "Cuarzo Cristal", "desc": "Conocido como el 'maestro sanador', amplifica la energía y el pensamiento. Absorbe, almacena, libera y regula la energía. Equilibra y revitaliza los planos físico, mental, emocional y espiritual." },
+      "fr": { "name": "Cristal de Roche", "desc": "Connu comme le 'maître guérisseur', il amplifie l'énergie et la pensée. Il absorbe, stocke, libère et régule l'énergie. Il équilibre et revitalise les plans physique, mental, émotionnel et spirituel." },
+      "it": { "name": "Quarzo Ialino", "desc": "Conosciuto come il 'maestro guaritore', amplifica l'energia e il pensiero. Assorbe, immagazzina, rilascia e regola l'energia. Equilibra e rivitalizza i piani fisico, mentale, emotivo e spirituale." },
+      "de": { "name": "Bergkristall", "desc": "Bekannt als 'Meisterheiler', verstärkt er Energie und Gedanken. Er absorbiert, speichert, gibt ab und reguliert Energie. Er gleicht die physischen, mentalen, emotionalen und spirituellen Ebenen aus." },
+      "pl": { "name": "Kryształ Górski", "desc": "Znany jako 'mistrz uzdrawiania', wzmacnia energię i myśli. Pochłania, przechowuje, uwalnia i reguluje energię. Równoważy i rewitalizuje sferę fizyczną, mentalną, emocjonalną i duchową." },
+      "ru": { "name": "Горный Хрусталь", "desc": "Известный как «мастер-целитель», он усиливает энергию и мысли. Поглощает, хранит, высвобождает и регулирует энергию. Балансирует и оживляет физический, ментальный и духовный планы." }
+    }
+  },
+  {
+    "image_name": "coral",
+    "translations": {
+      "en": { "name": "Coral", "desc": "Promotes self-confidence and allows nervous people to channel their energy positively. It helps combat fears and anxieties by providing the courage needed to overcome these challenges." },
+      "es": { "name": "Coral", "desc": "Promueve la autoconfianza y permite a las personas nerviosas canalizar su energía positivamente. Ayuda a combatir miedos y ansiedades proporcionando el coraje necesario para superar estos desafíos." },
+      "fr": { "name": "Corail", "desc": "Favorise la confiance en soi et permet aux nerveux de canaliser leur énergie positivement. Il aide à combattre les peurs et l'anxiété en apportant le courage nécessaire pour surmonter ces défis." },
+      "it": { "name": "Corallo", "desc": "Promuove la fiducia in se stessi e permette alle persone nervose di canalizzare la loro energia. Aiuta a combattere paure e ansie fornendo il coraggio necessario per superare queste sfide." },
+      "de": { "name": "Koralle", "desc": "Fördert das Selbstvertrauen und hilft nervösen Menschen, ihre Energie positiv zu kanalisieren. Sie hilft, Ängste zu bekämpfen, indem sie den nötigen Mut liefert, diese Herausforderungen zu meistern." },
+      "pl": { "name": "Koral", "desc": "Wzmacnia pewność siebie i pozwala nerwowym osobom pozytywnie ukierunkować energię. Pomaga zwalczać lęki, dając odwagę potrzebną do pokonania tych wyzwań." },
+      "ru": { "name": "Коралл", "desc": "Способствует уверенности в себе и позволяет нервным людям позитивно направлять свою энергию. Помогает бороться со страхами, давая мужество для преодоления проблем." }
+    }
+  },
+  {
+    "image_name": "dalmatian_jasper",
+    "translations": {
+      "en": { "name": "Dalmatian Jasper", "desc": "Dalmatian Jasper reconnects us with our playful nature. It helps break down protective barriers and alleviates the need for revenge. It helps to overcome depression and nightmares." },
+      "es": { "name": "Jaspe Dálmata", "desc": "El Jaspe Dálmata nos reconecta con nuestra naturaleza juguetona. Ayuda a derribar barreras defensivas y alivia la necesidad de venganza. Ayuda a superar la depresión y las pesadillas." },
+      "fr": { "name": "Jaspe Dalmatien", "desc": "Le Jaspe Dalmatien nous reconnecte à notre nature enjouée. Il aide à briser les barrières protectrices et apaise le besoin de vengeance. Il aide à surmonter la dépression et les cauchemars." },
+      "it": { "name": "Diaspro Dalmata", "desc": "Il Diaspro Dalmata ci riconnette con la nostra natura giocosa. Aiuta ad abbattere le barriere protettive e allevia il bisogno di vendetta. Aiuta a superare depressione e incubi." },
+      "de": { "name": "Dalmatinerjaspis", "desc": "Dalmatinerjaspis verbindet uns wieder mit unserer verspielten Natur. Er hilft, Schutzbarrieren abzubauen und lindert Rachegefühle. Er hilft, Depressionen und Alpträume zu überwinden." },
+      "pl": { "name": "Jaspis Dalmatyński", "desc": "Jaspis Dalmatyński łączy nas z naszą radosną naturą. Pomaga burzyć bariery ochronne i łagodzi potrzebę zemsty. Pomaga przezwyciężyć depresję i koszmary." },
+      "ru": { "name": "Далматиновая Яшма", "desc": "Далматиновая яшма возвращает нам игривость. Помогает разрушить защитные барьеры и смягчает жажду мести. Помогает преодолеть депрессию и ночные кошмары." }
+    }
+  },
+  {
+    "image_name": "diamond",
+    "translations": {
+      "en": { "name": "Diamond", "desc": "A symbol of purity and invincibility. It bonds relationships, bringing love and clarity into a partnership. It amplifies energies and connects with Divine light. It attracts abundance and strength." },
+      "es": { "name": "Diamante", "desc": "Símbolo de pureza e invencibilidad. Une las relaciones, aportando amor y claridad a la pareja. Amplifica las energías y conecta con la luz divina. Atrae abundancia y fortaleza." },
+      "fr": { "name": "Diamant", "desc": "Symbole de pureté et d'invincibilité. Il scelle les relations, apportant amour et clarté au couple. Il amplifie les énergies et connecte à la lumière divine. Il attire abondance et force." },
+      "it": { "name": "Diamante", "desc": "Simbolo di purezza e invincibilità. Lega le relazioni, portando amore e chiarezza nella coppia. Amplifica le energie e connette con la luce divina. Attrae abbondanza e forza." },
+      "de": { "name": "Diamant", "desc": "Ein Symbol für Reinheit und Unbesiegbarkeit. Er festigt Beziehungen und bringt Liebe und Klarheit. Er verstärkt Energien, verbindet mit göttlichem Licht und zieht Fülle und Stärke an." },
+      "pl": { "name": "Diament", "desc": "Symbol czystości i niezwyciężoności. Spaja związki, wnosząc miłość i jasność do partnerstwa. Wzmacnia energię i łączy z boskim światłem. Przyciąga obfitość i siłę." },
+      "ru": { "name": "Алмаз", "desc": "Символ чистоты и непобедимости. Скрепляет отношения, привнося любовь и ясность. Усиливает энергию и соединяет с Божественным светом. Привлекает изобилие и силу." }
+    }
+  },
+  {
+    "image_name": "emerald",
+    "translations": {
+      "en": { "name": "Emerald", "desc": "The 'Stone of Successful Love'. It brings domestic bliss and loyalty. It enhances unity, unconditional love, and partnership. It promotes mental clarity, memory, and inspiring eloquence." },
+      "es": { "name": "Esmeralda", "desc": "La 'Piedra del Amor Exitoso'. Aporta dicha doméstica y lealtad. Potencia la unidad, el amor incondicional y la colaboración. Promueve la claridad mental, la memoria y la elocuencia." },
+      "fr": { "name": "Émeraude", "desc": "La 'Pierre de l'Amour Réussi'. Elle apporte bonheur domestique et loyauté. Elle renforce l'unité et l'amour inconditionnel. Elle favorise la clarté mentale, la mémoire et l'éloquence." },
+      "it": { "name": "Smeraldo", "desc": "La 'Pietra dell'Amore Riuscito'. Porta felicità domestica e lealtà. Migliora l'unità e l'amore incondizionato. Promuove la chiarezza mentale, la memoria e l'eloquenza." },
+      "de": { "name": "Smaragd", "desc": "Der 'Stein der erfolgreichen Liebe'. Bringt häusliches Glück und Treue. Er stärkt Einheit und bedingungslose Liebe. Fördert geistige Klarheit, Gedächtnis und Eloquenz." },
+      "pl": { "name": "Szmaragd", "desc": "Kamień 'Udanej Miłości'. Przynosi szczęście domowe i lojalność. Wzmacnia jedność i bezwarunkową miłość. Promuje jasność umysłu, pamięć i inspirującą elokwencję." },
+      "ru": { "name": "Изумруд", "desc": "Камень удачной любви. Приносит семейное счастье и верность. Укрепляет единство и безусловную любовь. Способствует ясности ума, памяти и красноречию." }
+    }
+  },
+  {
+    "image_name": "fluorite",
+    "translations": {
+      "en": { "name": "Fluorite", "desc": "Fluorite is highly protective and stabilizing, especially on a psychic level. It helps discern outside influences and shuts off psychic manipulation. It cleanses and stabilizes the aura." },
+      "es": { "name": "Fluorita", "desc": "La fluorita es altamente protectora y estabilizadora, especialmente a nivel psíquico. Ayuda a discernir influencias externas y bloquea la manipulación psíquica. Limpia y estabiliza el aura." },
+      "fr": { "name": "Fluorite", "desc": "La fluorite est très protectrice et stabilisante, surtout au niveau psychique. Elle aide à discerner les influences extérieures et bloque la manipulation psychique. Elle purifie l'aura." },
+      "it": { "name": "Fluorite", "desc": "La fluorite è altamente protettiva e stabilizzante, specialmente a livello psichico. Aiuta a discernere le influenze esterne e blocca la manipolazione psichica. Pulisce e stabilizza l'aura." },
+      "de": { "name": "Fluorit", "desc": "Fluorit ist stark schützend und stabilisierend, besonders auf psychischer Ebene. Er hilft, äußere Einflüsse zu erkennen und blockt psychische Manipulation ab. Er reinigt und stabilisiert die Aura." },
+      "pl": { "name": "Fluoryt", "desc": "Fluoryt działa silnie ochronnie i stabilizująco, zwłaszcza na poziomie psychicznym. Pomaga dostrzec wpływy zewnętrzne i blokuje manipulacje psychiczne. Oczyszcza i stabilizuje aurę." },
+      "ru": { "name": "Флюорит", "desc": "Флюорит обладает защитными и стабилизирующими свойствами, особенно на психическом уровне. Помогает распознать внешние влияния и блокирует манипуляции. Очищает ауру." }
+    }
+  },
+  {
+    "image_name": "golden_chalcedony",
+    "translations": {
+      "en": { "name": "Golden Chalcedony", "desc": "Encourages thoughtfulness and enthusiasm. It absorbs negative energy and dissipates it. It brings the mind, body, emotions and spirit into harmony, instilling feelings of benevolence and generosity." },
+      "es": { "name": "Calcedonia Dorada", "desc": "Fomenta la reflexión y el entusiasmo. Absorbe la energía negativa y la disipa. Harmoniza mente, cuerpo, emociones y espíritu, infundiendo sentimientos de benevolencia y generosidad." },
+      "fr": { "name": "Calcédoine Dorée", "desc": "Encourage la réflexion et l'enthousiasme. Elle absorbe l'énergie négative et la dissipe. Elle harmonise le corps et l'esprit, insufflant des sentiments de bienveillance et de générosité." },
+      "it": { "name": "Calcedonio Dorato", "desc": "Incoraggia la riflessione e l'entusiasmo. Assorbe l'energia negativa e la dissipa. Armonizza mente, corpo, emozioni e spirito, infondendo sentimenti di benevolenza e generosità." },
+      "de": { "name": "Goldchalcedon", "desc": "Fördert Nachdenklichkeit und Enthusiasmus. Er absorbiert negative Energie und löst sie auf. Er bringt Geist, Körper und Seele in Einklang und weckt Wohlwollen und Großzügigkeit." },
+      "pl": { "name": "Złoty Chalcedon", "desc": "Zachęca do refleksji i entuzjazmu. Pochłania i rozprasza negatywną energię. Harmonizuje umysł, ciało i ducha, wzbudzając uczucia życzliwości i hojności." },
+      "ru": { "name": "Золотой Халцедон", "desc": "Поощряет вдумчивость и энтузиазм. Поглощает негативную энергию и рассеивает ее. Приводит ум, тело и дух в гармонию, вселяя чувства доброжелательности и щедрости." }
+    }
+  },
+  {
+    "image_name": "green_aventurine",
+    "translations": {
+      "en": { "name": "Green Aventurine", "desc": "Stone of well-being and prosperity. Harmonizer, healer and renewer. It provides balance between mind and body, bringing stability and emotional calm. It is primarily used on the heart chakra, protecting it and promoting its regeneration." },
+      "es": { "name": "Aventurina Verde", "desc": "Piedra de bienestar y prosperidad. Armonizadora, sanadora y renovadora. Proporciona equilibrio entre mente y cuerpo, aportando estabilidad y calma emocional. Se utiliza principalmente en el chakra del corazón, protegiéndolo y regenerándolo." },
+      "fr": { "name": "Aventurine Verte", "desc": "Pierre de bien-être et de prospérité. Elle harmonise, guérit et renouvelle. Elle procure un équilibre entre le corps et l'esprit, apportant stabilité et calme. Utilisée principalement sur le chakra du cœur, elle le protège et le régénère." },
+      "it": { "name": "Avventurina Verde", "desc": "Pietra di benessere e prosperità. Armonizzante, curativa e rinnovatrice. Fornisce equilibrio tra mente e corpo, portando stabilità e calma emotiva. È usata principalmente sul chakra del cuore, proteggendolo e promuovendone la rigenerazione." },
+      "de": { "name": "Grüner Aventurin", "desc": "Stein des Wohlbefindens und des Wohlstands. Harmonisiert, heilt und erneuert. Er sorgt für Gleichgewicht zwischen Geist und Körper und bringt Stabilität. Wird vor allem auf dem Herzchakra verwendet, schützt es und fördert seine Regeneration." },
+      "pl": { "name": "Zielony Awenturyn", "desc": "Kamień dobrego samopoczucia i dobrobytu. Harmonizuje, uzdrawia i odnawia. Zapewnia równowagę między umysłem a ciałem, wnosząc stabilność i spokój. Stosowany głównie na czakrze serca, chroni ją i wspomaga regenerację." },
+      "ru": { "name": "Зеленый Авантюрин", "desc": "Камень благополучия и процветания. Гармонизирует, исцеляет и обновляет. Обеспечивает баланс между умом и телом, принося стабильность и покой. Используется в основном на сердечной чакре, защищая и восстанавливая ее." }
+    }
+  },
+  {
+    "image_name": "green_jasper",
+    "translations": {
+      "en": { "name": "Green Jasper", "desc": "Green Jasper is a stone of balance that heals and releases disease and obsession. It stimulates the immune system and detoxifies all the body’s systems. It protects against negativity and treats skin disorders." },
+      "es": { "name": "Jaspe Verde", "desc": "El Jaspe Verde es una piedra de equilibrio que cura y libera de enfermedades y obsesiones. Estimula el sistema inmunológico y desintoxica el cuerpo. Protege contra la negatividad y trata los trastornos de la piel." },
+      "fr": { "name": "Jaspe Vert", "desc": "Le Jaspe Vert est une pierre d'équilibre qui guérit et libère de la maladie et de l'obsession. Il stimule le système immunitaire et détoxifie le corps. Il protège contre la négativité et traite les troubles cutanés." },
+      "it": { "name": "Diaspro Verde", "desc": "Il Diaspro Verde è una pietra di equilibrio che cura e libera da malattie e ossessioni. Stimola il sistema immunitario e disintossica il corpo. Protegge dalla negatività e tratta i disturbi della pelle." },
+      "de": { "name": "Grüner Jaspis", "desc": "Grüner Jaspis ist ein Stein des Gleichgewichts, der Krankheiten und Besessenheit heilt. Er stimuliert das Immunsystem und entgiftet den Körper. Er schützt vor Negativität und behandelt Hauterkrankungen." },
+      "pl": { "name": "Zielony Jaspis", "desc": "Zielony Jaspis to kamień równowagi, który leczy i uwalnia od chorób oraz obsesji. Stymuluje układ odpornościowy i detoksykuje organizm. Chroni przed negatywnością i leczy schorzenia skóry." },
+      "ru": { "name": "Зеленая Яшма", "desc": "Зеленая яшма — камень равновесия, исцеляющий от болезней и одержимости. Стимулирует иммунную систему и выводит токсины. Защищает от негатива и лечит кожные заболевания." }
+    }
+  },
+  {
+    "image_name": "green_quartz",
+    "translations": {
+      "en": { "name": "Green Quartz", "desc": "Green Quartz opens and stabilizes the heart chakra. It promotes intuition and divine love. It transmutes negative energy into positive energy, inspires creativity, and balances the endocrine system." },
+      "es": { "name": "Cuarzo Verde", "desc": "El Cuarzo Verde abre y estabiliza el chakra del corazón. Promueve la intuición y el amor divino. Transmuta la energía negativa en positiva, inspira la creatividad y equilibra el sistema endocrino." },
+      "fr": { "name": "Quartz Vert", "desc": "Le Quartz Vert ouvre et stabilise le chakra du cœur. Il favorise l'intuition et l'amour divin. Il transforme l'énergie négative en positive, inspire la créativité et équilibre le système endocrinien." },
+      "it": { "name": "Quarzo Verde", "desc": "Il Quarzo Verde apre e stabilizza il chakra del cuore. Promuove l'intuizione e l'amore divino. Trasforma l'energia negativa in positiva, ispira la creatività ed equilibra il sistema endocrino." },
+      "de": { "name": "Grüner Quarz", "desc": "Grüner Quarz öffnet und stabilisiert das Herzchakra. Er fördert Intuition und göttliche Liebe. Er wandelt negative Energie in positive um, inspiriert Kreativität und gleicht das endokrine System aus." },
+      "pl": { "name": "Zielony Kwarc", "desc": "Zielony Kwarc otwiera i stabilizuje czakrę serca. Promuje intuicję i boską miłość. Przekształca negatywną energię w pozytywną, inspiruje kreatywność i równoważy układ hormonalny." },
+      "ru": { "name": "Зеленый Кварц", "desc": "Зеленый кварц открывает и стабилизирует сердечную чакру. Способствует интуиции и божественной любви. Преобразует негативную энергию в позитивную, вдохновляет на творчество и балансирует эндокринную систему." }
+    }
+  },
+  {
+    "image_name": "hawk_eye_stone",
+    "translations": {
+      "en": { "name": "Hawk Eye", "desc": "Hawk Eye is a stone of perspective and vision. It helps you see the 'big picture' and gain insight into complex situations. It is very grounding, protecting the base chakra and dissolving restrictive negative thought patterns." },
+      "es": { "name": "Ojo de Halcón", "desc": "El Ojo de Halcón es una piedra de perspectiva y visión. Ayuda a ver el 'panorama general' y comprender situaciones complejas. Es muy enraizante, protege el chakra base y disuelve patrones de pensamiento negativos." },
+      "fr": { "name": "Œil de Faucon", "desc": "L'Œil de Faucon est une pierre de perspective et de vision. Il aide à voir la 'vue d'ensemble' et à comprendre les situations complexes. Il ancre, protège le chakra racine et dissout les pensées négatives." },
+      "it": { "name": "Occhio di Falco", "desc": "L'Occhio di Falco è una pietra di prospettiva e visione. Aiuta a vedere il 'quadro generale' e a comprendere situazioni complesse. È molto radicante, protegge il chakra della base e dissolve i pensieri negativi." },
+      "de": { "name": "Falkenauge", "desc": "Falkenauge ist ein Stein der Perspektive und Vision. Er hilft, das 'große Ganze' zu sehen und komplexe Situationen zu verstehen. Er wirkt erdend, schützt das Wurzelchakra und löst negative Denkmuster auf." },
+      "pl": { "name": "Sokole Oko", "desc": "Sokole Oko to kamień perspektywy i wizji. Pomaga zobaczyć 'szerszy obraz' i zrozumieć złożone sytuacje. Jest uziemiający, chroni czakrę podstawy i rozpuszcza negatywne wzorce myślowe." },
+      "ru": { "name": "Соколиный Глаз", "desc": "Соколиный глаз — камень перспективы и видения. Помогает увидеть «общую картину» и разобраться в сложных ситуациях. Заземляет, защищает корневую чакру и растворяет негативные мысли." }
+    }
+  },
+  {
+    "image_name": "hematite",
+    "translations": {
+      "en": { "name": "Hematite", "desc": "Protective and foundation stone. It promotes expansion and willpower. Placed on the 1st chakra or on the feet, it helps to ground. Indicated for circulation problems, anemia and to soothe pain, especially menstrual pain." },
+      "es": { "name": "Hematita", "desc": "Piedra protectora y de asentamiento. Promueve la expansión y la fuerza de voluntad. Colocada en el 1er chakra o pies, ayuda a enraizar. Indicada para problemas de circulación, anemia y para calmar dolores, especialmente menstruales." },
+      "fr": { "name": "Hématite", "desc": "Pierre de protection et d'ancrage. Elle favorise l'expansion et la volonté. Placée sur le 1er chakra ou les pieds, elle aide à s'ancrer. Indiquée pour la circulation, l'anémie et pour apaiser les douleurs, notamment menstruelles." },
+      "it": { "name": "Ematite", "desc": "Pietra protettiva e di fondazione. Promuove l'espansione e la forza di volontà. Posta sul 1° chakra o sui piedi, aiuta a radicarsi. Indicata per problemi di circolazione, anemia e per lenire dolori, specialmente mestruali." },
+      "de": { "name": "Hämatit", "desc": "Schutz- und Grundstein. Er fördert Expansion und Willenskraft. Auf das 1. Chakra oder die Füße gelegt, hilft er bei der Erdung. Indiziert bei Kreislaufproblemen, Anämie und zur Schmerzlinderung, besonders bei Regelschmerzen." },
+      "pl": { "name": "Hematyt", "desc": "Kamień ochronny i fundamentowy. Promuje ekspansję i siłę woli. Umieszczony na 1. czakrze lub stopach pomaga w uziemieniu. Wskazany przy problemach z krążeniem, anemii i łagodzeniu bólu, zwłaszcza menstruacyjnego." },
+      "ru": { "name": "Гематит", "desc": "Защитный и основной камень. Способствует расширению и силе воли. Размещенный на 1-й чакре или стопах, помогает заземлиться. Показан при проблемах с кровообращением, анемии и для снятия боли." }
+    }
+  },
+  {
+    "image_name": "howlite",
+    "translations": {
+      "en": { "name": "Howlite", "desc": "It helps calm the mind, induce sleep, and promotes meditation. It fosters patience and good communication. Howlite prepares the mind to receive wisdom and insights from past lives. Especially beneficial for bones, teeth and soft tissues." },
+      "es": { "name": "Howlita", "desc": "Ayuda a calmar la mente, conciliar el sueño y promueve la meditación. Fomenta la paciencia y la buena comunicación. Prepara la mente para recibir sabiduría de vidas pasadas. Beneficiosa para huesos, dientes y tejidos blandos." },
+      "fr": { "name": "Howlite", "desc": "Elle calme l'esprit, favorise le sommeil et la méditation. Elle encourage la patience et la communication. Elle prépare l'esprit à recevoir la sagesse des vies antérieures. Bénéfique pour les os, les dents et les tissus mous." },
+      "it": { "name": "Howlite", "desc": "Aiuta a calmare la mente, induce il sonno e promuove la meditazione. Favorisce la pazienza e la comunicazione. Prepara la mente a ricevere saggezza dalle vite passate. Benefica per ossa, denti e tessuti molli." },
+      "de": { "name": "Howlith", "desc": "Beruhigt den Geist, fördert Schlaf und Meditation. Stärkt Geduld und Kommunikation. Bereitet den Geist auf Weisheiten aus früheren Leben vor. Besonders vorteilhaft für Knochen, Zähne und Weichgewebe." },
+      "pl": { "name": "Howlit", "desc": "Uspokaja umysł, ułatwia sen i sprzyja medytacji. Wspiera cierpliwość i dobrą komunikację. Przygotowuje umysł na przyjęcie mądrości z poprzednich wcieleń. Korzystny dla kości, zębów i tkanek miękkich." },
+      "ru": { "name": "Говлит", "desc": "Успокаивает ум, вызывает сон и способствует медитации. Развивает терпение и общение. Подготавливает разум к получению мудрости из прошлых жизней. Полезен для костей, зубов и мягких тканей." }
+    }
+  },
+  {
+    "image_name": "jade",
+    "translations": {
+      "en": { "name": "Jade", "desc": "It is the stone of good fortune. It helps to find the truth or the path, strengthens love and its continuity, and absorbs the positive energies of the universe. It provides mental and emotional balance and is a symbol of purity, serenity, and wisdom." },
+      "es": { "name": "Jade", "desc": "Es la piedra de la buena fortuna. Ayuda a encontrar la verdad o el camino, fortalece el amor y absorbe las energías positivas del universo. Proporciona equilibrio mental y emocional y es símbolo de pureza, serenidad y sabiduría." },
+      "fr": { "name": "Jade", "desc": "C'est la pierre de la bonne fortune. Elle aide à trouver la vérité, renforce l'amour et absorbe les énergies positives. Elle procure un équilibre mental et émotionnel et symbolise la pureté, la sérénité et la sagesse." },
+      "it": { "name": "Giada", "desc": "È la pietra della buona fortuna. Aiuta a trovare la verità, rafforza l'amore e assorbe le energie positive. Fornisce equilibrio mentale ed emotivo ed è simbolo di purezza, serenità e saggezza." },
+      "de": { "name": "Jade", "desc": "Der Stein des Glücks. Er hilft, die Wahrheit zu finden, stärkt die Liebe und absorbiert positive Energien. Er sorgt für geistiges und emotionales Gleichgewicht und ist ein Symbol für Reinheit, Gelassenheit und Weisheit." },
+      "pl": { "name": "Jadeit", "desc": "To kamień szczęścia. Pomaga znaleźć prawdę, wzmacnia miłość i pochłania pozytywne energie wszechświata. Zapewnia równowagę psychiczną i emocjonalną, jest symbolem czystości, spokoju i mądrości." },
+      "ru": { "name": "Нефрит", "desc": "Камень удачи. Помогает найти истину, укрепляет любовь и поглощает положительные энергии. Обеспечивает ментальное и эмоциональное равновесие, является символом чистоты, безмятежности и мудрости." }
+    }
+  },
+  {
+    "image_name": "jasper",
+    "translations": {
+      "en": { "name": "Jasper", "desc": "Jasper protects against negative energies and reflects ill intentions from others. In women, it enhances elegance and attractiveness. It resonates with sincerity and pure, healthy love. It protects from contagion and brings balance." },
+      "es": { "name": "Jaspe", "desc": "El jaspe protege contra energías negativas y refleja las malas intenciones. En las mujeres, realza la elegancia y el atractivo. Resuena con la sinceridad y el amor puro. Protege del contagio y aporta equilibrio." },
+      "fr": { "name": "Jaspe", "desc": "Le jaspe protège des énergies négatives et renvoie les mauvaises intentions. Chez les femmes, il rehausse l'élégance. Il résonne avec la sincérité et l'amour pur. Il protège de la contagion et apporte l'équilibre." },
+      "it": { "name": "Diaspro", "desc": "Il diaspro protegge dalle energie negative e riflette le cattive intenzioni. Nelle donne, esalta l'eleganza. Risuona con la sincerità e l'amore puro. Protegge dal contagio e porta equilibrio." },
+      "de": { "name": "Jaspis", "desc": "Jaspis schützt vor negativen Energien und reflektiert böse Absichten. Bei Frauen steigert er Eleganz und Attraktivität. Er steht für Aufrichtigkeit und reine Liebe, schützt vor Ansteckung und bringt Gleichgewicht." },
+      "pl": { "name": "Jaspis", "desc": "Jaspis chroni przed negatywną energią i odbija złe intencje. U kobiet podkreśla elegancję. Rezonuje ze szczerością i czystą miłością. Chroni przed zarazą i przynosi równowagę." },
+      "ru": { "name": "Яшма", "desc": "Яшма защищает от негативных энергий и отражает дурные намерения. У женщин усиливает элегантность. Резонирует с искренностью и чистой любовью. Защищает от болезней и приносит равновесие." }
+    }
+  },
+  {
+    "image_name": "labradorite",
+    "translations": {
+      "en": { "name": "Labradorite", "desc": "Stone of transformation and protection. Mystical and contemplative qualities are attributed to it. It promotes the opening of consciousness and intuition. Labradorite enhances self-confidence, calms the mind, and strengthens the body and aura." },
+      "es": { "name": "Labradorita", "desc": "Piedra de transformación y protección. Se le atribuyen cualidades místicas. Promueve la apertura de la conciencia y la intuición. Aumenta la autoconfianza, calma la mente y fortalece el cuerpo y el aura." },
+      "fr": { "name": "Labradorite", "desc": "Pierre de transformation et de protection aux qualités mystiques. Elle favorise l'ouverture de la conscience et l'intuition. Elle renforce la confiance en soi, calme l'esprit et fortifie le corps et l'aura." },
+      "it": { "name": "Labradorite", "desc": "Pietra di trasformazione e protezione. Le sono attribuite qualità mistiche. Promuove l'apertura della coscienza e l'intuizione. Aumenta la fiducia in se stessi, calma la mente e rafforza corpo e aura." },
+      "de": { "name": "Labradorit", "desc": "Stein der Transformation und des Schutzes. Ihm werden mystische Qualitäten zugeschrieben. Fördert Bewusstsein und Intuition. Stärkt das Selbstvertrauen, beruhigt den Geist und kräftigt Körper und Aura." },
+      "pl": { "name": "Labradoryt", "desc": "Kamień transformacji i ochrony o mistycznych właściwościach. Sprzyja otwarciu świadomości i intuicji. Wzmacnia pewność siebie, uspokaja umysł oraz wzmacnia ciało i aurę." },
+      "ru": { "name": "Лабрадорит", "desc": "Камень трансформации и защиты. Ему приписывают мистические свойства. Способствует раскрытию сознания и интуиции. Повышает уверенность в себе, успокаивает ум и укрепляет тело и ауру." }
+    }
+  },
+  {
+    "image_name": "lapis_lazuli",
+    "translations": {
+      "en": { "name": "Lapis Lazuli", "desc": "It has the ability to enhance dreams and physical capabilities. It brings peace, calm and serenity, releasing stress from the body. It harmonizes mental, spiritual, emotional, and physical levels, eliminating toxicity and negative thoughts." },
+      "es": { "name": "Lapislázuli", "desc": "Mejora los sueños y las capacidades físicas. Aporta paz, calma y serenidad, liberando el estrés. Harmoniza los niveles mental, espiritual, emocional y físico, eliminando la toxicidad y los pensamientos negativos." },
+      "fr": { "name": "Lapis Lazuli", "desc": "Il améliore les rêves et les capacités physiques. Il apporte paix, calme et sérénité, libérant le stress. Il harmonise les plans mental, spirituel, émotionnel et physique, éliminant la toxicité et les pensées négatives." },
+      "it": { "name": "Lapislazzuli", "desc": "Migliora i sogni e le capacità fisiche. Porta pace, calma e serenità, rilasciando lo stress. Armonizza i livelli mentale, spirituale, emotivo e fisico, eliminando tossicità e pensieri negativi." },
+      "de": { "name": "Lapislazuli", "desc": "Verbessert Träume und körperliche Fähigkeiten. Bringt Frieden, Ruhe und Gelassenheit, baut Stress ab. Harmonisiert geistige, spirituelle, emotionale und körperliche Ebenen und beseitigt Toxizität." },
+      "pl": { "name": "Lapis Lazuli", "desc": "Wzmacnia sny i zdolności fizyczne. Przynosi pokój, spokój i ukojenie, uwalniając stres. Harmonizuje poziomy mentalne, duchowe, emocjonalne i fizyczne, eliminując toksyczność i negatywne myśli." },
+      "ru": { "name": "Лазурит", "desc": "Улучшает сны и физические способности. Приносит мир, покой и безмятежность, снимая стресс. Гармонизирует ментальный, духовный, эмоциональный и физический уровни, устраняя токсичность." }
+    }
+  },
+  {
+    "image_name": "lepidolite",
+    "translations": {
+      "en": { "name": "Lepidolite", "desc": "Lepidolite is a stone of transition that assists in the release and reorganization of old behavioral patterns. Containing lithium, it is excellent for reducing stress, anxiety, and depression, inducing deep emotional healing." },
+      "es": { "name": "Lepidolita", "desc": "La lepidolita es una piedra de transición que ayuda a liberar y reorganizar viejos patrones de comportamiento. Al contener litio, es excelente para reducir el estrés, la ansiedad y la depresión, induciendo una sanación emocional profunda." },
+      "fr": { "name": "Lépidolite", "desc": "La lépidolite est une pierre de transition qui aide à libérer les vieux schémas comportementaux. Contenant du lithium, elle est excellente pour réduire le stress, l'anxiété et la dépression, induisant une guérison émotionnelle." },
+      "it": { "name": "Lepidolite", "desc": "La lepidolite è una pietra di transizione che aiuta a liberare vecchi schemi comportamentali. Contenendo litio, è eccellente per ridurre stress, ansia e depressione, inducendo una profonda guarigione emotiva." },
+      "de": { "name": "Lepidolith", "desc": "Lepidolith ist ein Stein des Übergangs, der hilft, alte Verhaltensmuster zu lösen. Durch seinen Lithiumgehalt reduziert er hervorragend Stress, Angst und Depressionen und bewirkt tiefe emotionale Heilung." },
+      "pl": { "name": "Lepidolit", "desc": "Lepidolit to kamień przejścia, który pomaga uwolnić stare wzorce zachowań. Zawierając lit, doskonale redukuje stres, lęk i depresję, wywołując głębokie uzdrowienie emocjonalne." },
+      "ru": { "name": "Лепидолит", "desc": "Лепидолит — камень перехода, помогающий освободиться от старых моделей поведения. Содержащий литий, он отлично снижает стресс, тревогу и депрессию, способствуя глубокому эмоциональному исцелению." }
+    }
+  },
+  {
+    "image_name": "lion_skin",
+    "translations": {
+      "en": { "name": "Lion Skin Jasper", "desc": "Lion Skin Jasper promotes courage and vitality. It helps to improve mental clarity and focus, filtering out distractions. It is a stone of survival that boosts instinct and helps one to be adaptable in changing situations." },
+      "es": { "name": "Jaspe Piel de León", "desc": "El Jaspe Piel de León promueve el coraje y la vitalidad. Ayuda a mejorar la claridad mental y el enfoque, filtrando distracciones. Es una piedra de supervivencia que aumenta el instinto y ayuda a adaptarse a los cambios." },
+      "fr": { "name": "Jaspe Peau de Lion", "desc": "Le Jaspe Peau de Lion favorise le courage et la vitalité. Il améliore la clarté mentale et la concentration. C'est une pierre de survie qui stimule l'instinct et aide à s'adapter aux situations changeantes." },
+      "it": { "name": "Diaspro Pelle di Leone", "desc": "Il Diaspro Pelle di Leone promuove coraggio e vitalità. Migliora la chiarezza mentale e la concentrazione. È una pietra di sopravvivenza che aumenta l'istinto e aiuta ad adattarsi alle situazioni mutevoli." },
+      "de": { "name": "Löwenhaut-Jaspis", "desc": "Löwenhaut-Jaspis fördert Mut und Vitalität. Er verbessert geistige Klarheit und Fokus. Er ist ein Überlebensstein, der den Instinkt stärkt und hilft, sich an veränderte Situationen anzupassen." },
+      "pl": { "name": "Jaspis Skóra Lwa", "desc": "Jaspis Skóra Lwa promuje odwagę i witalność. Poprawia jasność umysłu i koncentrację. To kamień przetrwania, który wzmacnia instynkt i pomaga dostosować się do zmieniających się sytuacji." },
+      "ru": { "name": "Яшма Львиная Шкура", "desc": "Яшма Львиная Шкура способствует мужеству и жизненной силе. Улучшает ясность ума и фокус. Это камень выживания, усиливающий инстинкты и помогающий адаптироваться к изменениям." }
+    }
+  },
+  {
+    "image_name": "malachite",
+    "translations": {
+      "en": { "name": "Malachite", "desc": "Stone of transformation, cleansing and healing. With intense energy, it combines well with rose quartz or green quartz on the 4th chakra. They promote healing on a holistic level, opening the heart and bringing harmony and balance." },
+      "es": { "name": "Malaquita", "desc": "Piedra de transformación, limpieza y sanación. De intensa energía, combina bien con el cuarzo rosa o verde en el 4º chakra. Promueve la sanación holística, abriendo el corazón y aportando armonía y equilibrio." },
+      "fr": { "name": "Malachite", "desc": "Pierre de transformation, de purification et de guérison. À l'énergie intense, elle s'associe bien au quartz rose ou vert sur le 4ème chakra. Elle favorise la guérison holistique, ouvre le cœur et apporte harmonie et équilibre." },
+      "it": { "name": "Malachite", "desc": "Pietra di trasformazione, pulizia e guarigione. Con energia intensa, si combina bene con quarzo rosa o verde sul 4° chakra. Promuove la guarigione olistica, aprendo il cuore e portando armonia ed equilibrio." },
+      "de": { "name": "Malachit", "desc": "Stein der Transformation, Reinigung und Heilung. Mit intensiver Energie passt er gut zu Rosenquarz oder grünem Quarz auf dem 4. Chakra. Fördert ganzheitliche Heilung, öffnet das Herz und bringt Harmonie." },
+      "pl": { "name": "Malachit", "desc": "Kamień transformacji, oczyszczania i uzdrawiania. O intensywnej energii, dobrze łączy się z różowym lub zielonym kwarcem na 4. czakrze. Promuje uzdrawianie holistyczne, otwierając serce i wnosząc harmonię." },
+      "ru": { "name": "Малахит", "desc": "Камень трансформации, очищения и исцеления. Обладает интенсивной энергией, хорошо сочетается с розовым или зеленым кварцем на 4-й чакре. Способствует целостному исцелению, открывая сердце и принося гармонию." }
+    }
+  },
+  {
+    "image_name": "milky_quartz",
+    "translations": {
+      "en": { "name": "Milky Quartz", "desc": "Milky Quartz acts as a gentle regulator of energy. It is associated with innocence and tranquility. It helps to see the world without preconceived ideas, facilitating clarity of mind and supporting the immune system." },
+      "es": { "name": "Cuarzo Lechoso", "desc": "El Cuarzo Lechoso actúa como un suave regulador de energía. Se asocia con la inocencia y la tranquilidad. Ayuda a ver el mundo sin ideas preconcebidas, facilitando la claridad mental y apoyando el sistema inmunológico." },
+      "fr": { "name": "Quartz Laiteux", "desc": "Le Quartz Laiteux agit comme un régulateur d'énergie doux. Il est associé à l'innocence et à la tranquillité. Il aide à voir le monde sans idées préconçues, facilitant la clarté d'esprit et soutenant le système immunitaire." },
+      "it": { "name": "Quarzo Latteo", "desc": "Il Quarzo Latteo agisce come un gentile regolatore di energia. È associato all'innocenza e alla tranquillità. Aiuta a vedere il mondo senza preconcetti, facilitando la chiarezza mentale e supportando il sistema immunitario." },
+      "de": { "name": "Milchquarz", "desc": "Milchquarz wirkt als sanfter Energieregulator. Er wird mit Unschuld und Ruhe assoziiert. Er hilft, die Welt unvoreingenommen zu sehen, fördert geistige Klarheit und unterstützt das Immunsystem." },
+      "pl": { "name": "Kwarc Mleczny", "desc": "Kwarc Mleczny działa jako delikatny regulator energii. Kojarzony jest z niewinnością i spokojem. Pomaga widzieć świat bez uprzedzeń, ułatwiając jasność umysłu i wspierając układ odpornościowy." },
+      "ru": { "name": "Молочный Кварц", "desc": "Молочный кварц действует как мягкий регулятор энергии. Ассоциируется с невинностью и спокойствием. Помогает видеть мир без предубеждений, способствуя ясности ума и поддерживая иммунную систему." }
+    }
+  },
+  {
+    "image_name": "mookaite",
+    "translations": {
+      "en": { "name": "Mookaite", "desc": "Mookaite is a nurturing stone that supports and sustains during times of stress. It brings peace and a feeling of wholeness. It helps with decision-making and encourages versatility and acceptance of change." },
+      "es": { "name": "Mookaite", "desc": "La Mookaite es una piedra nutritiva que sostiene durante momentos de estrés. Aporta paz y sensación de plenitud. Ayuda en la toma de decisiones y fomenta la versatilidad y la aceptación del cambio." },
+      "fr": { "name": "Mookaïte", "desc": "La Mookaïte est une pierre nourricière qui soutient en période de stress. Elle apporte paix et sentiment de plénitude. Elle aide à la prise de décision et encourage la polyvalence et l'acceptation du changement." },
+      "it": { "name": "Mookaite", "desc": "La Mookaite è una pietra nutriente che sostiene nei momenti di stress. Porta pace e senso di completezza. Aiuta nel processo decisionale e incoraggia la versatilità e l'accettazione del cambiamento." },
+      "de": { "name": "Mookait", "desc": "Mookait ist ein nährender Stein, der in Stresszeiten Halt gibt. Er bringt Frieden und ein Gefühl der Ganzheit. Er hilft bei der Entscheidungsfindung und fördert Vielseitigkeit und die Akzeptanz von Veränderungen." },
+      "pl": { "name": "Mookait", "desc": "Mookait to kamień wspierający, który daje oparcie w chwilach stresu. Przynosi spokój i poczucie całości. Pomaga w podejmowaniu decyzji oraz zachęca do wszechstronności i akceptacji zmian." },
+      "ru": { "name": "Мукаит", "desc": "Мукаит — питающий камень, поддерживающий в стрессовые времена. Приносит мир и чувство целостности. Помогает в принятии решений и поощряет гибкость и принятие перемен." }
+    }
+  },
+  {
+    "image_name": "moon_stone",
+    "translations": {
+      "en": { "name": "Moonstone", "desc": "Synonymous with hope and happiness. It brings concentration, wisdom, and peace. It promotes fertility and physical healing energy, helping to relax the mind and body." },
+      "es": { "name": "Piedra Luna", "desc": "Sinónimo de esperanza y felicidad. Aporta concentración, sabiduría y paz. Promueve la fertilidad y la energía curativa física, ayudando a relajar la mente y el cuerpo." },
+      "fr": { "name": "Pierre de Lune", "desc": "Synonyme d'espoir et de bonheur. Elle apporte concentration, sagesse et paix. Elle favorise la fertilité et l'énergie de guérison physique, aidant à détendre l'esprit et le corps." },
+      "it": { "name": "Pietra di Luna", "desc": "Sinonimo di speranza e felicità. Porta concentrazione, saggezza e pace. Promuove la fertilità e l'energia di guarigione fisica, aiutando a rilassare mente e corpo." },
+      "de": { "name": "Mondstein", "desc": "Synonym für Hoffnung und Glück. Bringt Konzentration, Weisheit und Frieden. Fördert Fruchtbarkeit und körperliche Heilenergie, hilft Geist und Körper zu entspannen." },
+      "pl": { "name": "Kamień Księżycowy", "desc": "Synonim nadziei i szczęścia. Przynosi koncentrację, mądrość i pokój. Promuje płodność i energię uzdrawiania fizycznego, pomagając zrelaksować umysł i ciało." },
+      "ru": { "name": "Лунный Камень", "desc": "Синоним надежды и счастья. Приносит концентрацию, мудрость и покой. Способствует плодородию и физическому исцелению, помогая расслабить ум и тело." }
+    }
+  },
+  {
+    "image_name": "obsidian",
+    "translations": {
+      "en": { "name": "Obsidian", "desc": "Obsidian is considered a powerful stone of personal growth and transformation. As a black stone, it is used for protection, cleansing, and purification. It is related to the 1st chakra and Mother Earth." },
+      "es": { "name": "Obsidiana", "desc": "La obsidiana se considera una poderosa piedra de crecimiento personal y transformación. Como piedra negra, se usa para protección, limpieza y purificación. Está relacionada con el 1er chakra y la Madre Tierra." },
+      "fr": { "name": "Obsidienne", "desc": "L'obsidienne est une pierre puissante de croissance personnelle et de transformation. Pierre noire, elle est utilisée pour la protection, le nettoyage et la purification. Elle est liée au 1er chakra et à la Terre Mère." },
+      "it": { "name": "Ossidiana", "desc": "L'ossidiana è considerata una potente pietra di crescita personale e trasformazione. Come pietra nera, è usata per protezione, pulizia e purificazione. È legata al 1° chakra e alla Madre Terra." },
+      "de": { "name": "Obsidian", "desc": "Obsidian gilt als mächtiger Stein für persönliches Wachstum und Transformation. Als schwarzer Stein dient er dem Schutz, der Reinigung und Klärung. Er ist mit dem 1. Chakra und Mutter Erde verbunden." },
+      "pl": { "name": "Obsydian", "desc": "Obsydian uważany jest za potężny kamień rozwoju osobistego i transformacji. Jako czarny kamień służy do ochrony i oczyszczania. Jest związany z 1. czakrą i Matką Ziemią." },
+      "ru": { "name": "Обсидиан", "desc": "Обсидиан считается мощным камнем личностного роста и трансформации. Как черный камень, используется для защиты и очищения. Связан с 1-й чакрой и Матерью-Землей." }
+    }
+  },
+  {
+    "image_name": "onyx",
+    "translations": {
+      "en": { "name": "Onyx", "desc": "Onyx is considered a stone of strength and vigor. It fosters self-confidence and a positive outlook on life. Onyx in combination with crystal quartz is often used for protection and for the energetic cleansing of spaces." },
+      "es": { "name": "Ónix", "desc": "El ónix se considera una piedra de fuerza y vigor. Fomenta la autoconfianza y una visión positiva de la vida. Combinado con cuarzo cristal se usa a menudo para protección y limpieza energética de espacios." },
+      "fr": { "name": "Onyx", "desc": "L'onyx est considéré comme une pierre de force et de vigueur. Il favorise la confiance en soi et une vision positive de la vie. Combiné au cristal de roche, il est utilisé pour la protection et le nettoyage énergétique." },
+      "it": { "name": "Onice", "desc": "L'onice è considerato una pietra di forza e vigore. Promuove la fiducia in se stessi e una visione positiva della vita. In combinazione con il quarzo ialino è spesso usato per protezione e pulizia energetica." },
+      "de": { "name": "Onyx", "desc": "Onyx gilt als Stein der Stärke und Kraft. Er fördert Selbstvertrauen und eine positive Lebenseinstellung. In Kombination mit Bergkristall wird er oft zum Schutz und zur energetischen Raumreinigung genutzt." },
+      "pl": { "name": "Onyks", "desc": "Onyks uważany jest za kamień siły i wigoru. Wzmacnia pewność siebie i pozytywne spojrzenie na życie. W połączeniu z kryształem górskim często służy do ochrony i oczyszczania energetycznego pomieszczeń." },
+      "ru": { "name": "Оникс", "desc": "Оникс считается камнем силы и бодрость. Способствует уверенности в себе и позитивному взгляду на жизнь. В сочетании с горным хрусталем часто используется для защиты и энергетической очистки помещений." }
+    }
+  },
+  {
+    "image_name": "opal",
+    "translations": {
+      "en": { "name": "Opal", "desc": "It is associated with love and passion. It fosters creativity and spontaneity, intensifies emotional states, and helps to release inhibitions. Boosts self-esteem and the desire to live. On a healing level, opal helps to heal psychosomatic ailments." },
+      "es": { "name": "Ópalo", "desc": "Se asocia con el amor y la pasión. Fomenta la creatividad y la espontaneidad, intensifica los estados emocionales y ayuda a liberar inhibiciones. Aumenta la autoestima y el deseo de vivir. Ayuda a sanar dolencias psicosomáticas." },
+      "fr": { "name": "Opale", "desc": "Associée à l'amour et à la passion. Elle favorise la créativité et la spontanéité, intensifie les émotions et aide à lever les inhibitions. Elle booste l'estime de soi. Elle aide à guérir les troubles psychosomatiques." },
+      "it": { "name": "Opale", "desc": "È associato all'amore e alla passione. Favorisce creatività e spontaneità, intensifica gli stati emotivi e aiuta a rilasciare le inibizioni. Aumenta l'autostima. A livello curativo, aiuta a guarire disturbi psicosomatici." },
+      "de": { "name": "Opal", "desc": "Verbunden mit Liebe und Leidenschaft. Fördert Kreativität und Spontanität, intensiviert Emotionen und löst Hemmungen. Steigert das Selbstwertgefühl. Hilft bei der Heilung psychosomatischer Beschwerden." },
+      "pl": { "name": "Opal", "desc": "Kojarzony z miłością i pasją. Wspiera kreatywność i spontaniczność, intensyfikuje stany emocjonalne i pomaga uwolnić zahamowania. Podnosi samoocenę. Pomaga leczyć dolegliwości psychosomatyczne." },
+      "ru": { "name": "Опал", "desc": "Связан с любовью и страстью. Способствует творчеству и спонтанности, усиливает эмоции и помогает снять запреты. Повышает самооценку. На целебном уровне помогает лечить психосоматические недуги." }
+    }
+  },
+  {
+    "image_name": "orange_aventurine",
+    "translations": {
+      "en": { "name": "Orange Aventurine", "desc": "Orange Aventurine stabilizes one's mental state, stimulates perception, and enhances creativity. It unifies the intellectual and emotional bodies, calming anger and irritation. It stimulates emotional recovery and protects against energy vampirism." },
+      "es": { "name": "Aventurina Naranja", "desc": "La Aventurina Naranja estabiliza el estado mental, estimula la percepción y mejora la creatividad. Unifica los cuerpos intelectual y emocional, calmando la ira. Estimula la recuperación emocional y protege contra el vampirismo energético." },
+      "fr": { "name": "Aventurine Orange", "desc": "L'Aventurine Orange stabilise l'esprit, stimule la perception et améliore la créativité. Elle unifie l'intellect et les émotions, calmant la colère. Elle stimule la récupération émotionnelle et protège du vampirisme énergétique." },
+      "it": { "name": "Avventurina Arancione", "desc": "L'Avventurina Arancione stabilizza lo stato mentale, stimola la percezione e migliora la creatività. Unifica i corpi intellettuale ed emotivo, calmando la rabbia. Stimola il recupero emotivo e protegge dal vampirismo energetico." },
+      "de": { "name": "Orangener Aventurin", "desc": "Orangener Aventurin stabilisiert den Geisteszustand, regt die Wahrnehmung an und steigert die Kreativität. Er vereint Verstand und Gefühl, beruhigt Wut. Fördert emotionale Erholung und schützt vor Energievampiren." },
+      "pl": { "name": "Pomarańczowy Awenturyn", "desc": "Pomarańczowy Awenturyn stabilizuje stan psychiczny, stymuluje percepcję i zwiększa kreatywność. Jednoczy intelekt i emocje, łagodząc gniew. Stymuluje regenerację emocjonalną i chroni przed wampiryzmem energetycznym." },
+      "ru": { "name": "Оранжевый Авантюрин", "desc": "Оранжевый авантюрин стабилизирует психику, стимулирует восприятие и усиливает творчество. Объединяет интеллект и эмоции, успокаивая гнев. Стимулирует эмоциональное восстановление и защищает от энерговампиризма." }
+    }
+  },
+  {
+    "image_name": "orange_calcite",
+    "translations": {
+      "en": { "name": "Orange Calcite", "desc": "Orange Calcite is a highly energizing and cleansing stone, especially for the lower chakras. It balances emotions, removes fear, and overcomes depression. It boosts creativity and sexual energy." },
+      "es": { "name": "Calcita Naranja", "desc": "La Calcita Naranja es una piedra altamente energizante y limpiadora, especialmente para los chakras inferiores. Equilibra las emociones, elimina el miedo y supera la depresión. Potencia la creatividad y la energía sexual." },
+      "fr": { "name": "Calcite Orange", "desc": "La Calcite Orange est très énergisante et purifiante, surtout pour les chakras inférieurs. Elle équilibre les émotions, chasse la peur et surmonte la dépression. Elle booste la créativité et l'énergie sexuelle." },
+      "it": { "name": "Calcite Arancione", "desc": "La Calcite Arancione è una pietra altamente energizzante e purificante, specialmente per i chakra inferiori. Equilibra le emozioni, rimuove la paura e supera la depressione. Aumenta la creatività e l'energia sessuale." },
+      "de": { "name": "Orangener Calcit", "desc": "Orangener Calcit ist stark energetisierend und reinigend, besonders für die unteren Chakren. Er gleicht Emotionen aus, beseitigt Angst und überwindet Depressionen. Er steigert Kreativität und sexuelle Energie." },
+      "pl": { "name": "Pomarańczowy Kalcyt", "desc": "Pomarańczowy Kalcyt to silnie energetyzujący i oczyszczający kamień, zwłaszcza dla niższych czakr. Równoważy emocje, usuwa strach i pokonuje depresję. Zwiększa kreatywność i energię seksualną." },
+      "ru": { "name": "Оранжевый Кальцит", "desc": "Оранжевый кальцит — сильнодействующий энергетический и очищающий камень, особенно для нижних чакр. Балансирует эмоции, убирает страх и помогает при депрессии. Повышает креативность и сексуальную энергию." }
+    }
+  },
+  {
+    "image_name": "pearl",
+    "translations": {
+      "en": { "name": "Pearl", "desc": "Pearl symbolizes purity, innocence, and integrity. It is known as a 'stone of sincerity'. It connects with feminine energy, bringing emotional balance and helping to calm the mind." },
+      "es": { "name": "Perla", "desc": "La perla simboliza pureza, inocencia e integridad. Se conoce como la 'piedra de la sinceridad'. Conecta con la energía femenina, aportando equilibrio emocional y ayudando a calmar la mente." },
+      "fr": { "name": "Perle", "desc": "La perle symbolise la pureté, l'innocence et l'intégrité. Connue comme la 'pierre de sincérité', elle se connecte à l'énergie féminine, apportant un équilibre émotionnel et aidant à calmer l'esprit." },
+      "it": { "name": "Perla", "desc": "La perla simboleggia purezza, innocenza e integrità. È conosciuta come la 'pietra della sincerità'. Si connette con l'energia femminile, portando equilibrio emotivo e aiutando a calmare la mente." },
+      "de": { "name": "Perle", "desc": "Die Perle symbolisiert Reinheit, Unschuld und Integrität. Bekannt als 'Stein der Aufrichtigkeit', verbindet sie sich mit weiblicher Energie, bringt emotionales Gleichgewicht und beruhigt den Geist." },
+      "pl": { "name": "Perła", "desc": "Perła symbolizuje czystość, niewinność i integralność. Znana jako 'kamień szczerości'. Łączy się z energią kobiecą, przynosząc równowagę emocjonalną i pomagając uspokoić umysł." },
+      "ru": { "name": "Жемчуг", "desc": "Жемчуг символизирует чистоту, невинность и целостность. Известен как «камень искренности». Соединяется с женской энергией, принося эмоциональное равновесие и успокаивая ум." }
+    }
+  },
+  {
+    "image_name": "peridot",
+    "translations": {
+      "en": { "name": "Peridot", "desc": "Peridot is a powerful cleanser. It releases and neutralizes toxins on all levels. It opens the heart chakra and releases 'old baggage' such as burdens, guilt and obsessions. It teaches that holding on to the past is counterproductive." },
+      "es": { "name": "Peridoto", "desc": "El peridoto es un poderoso limpiador. Libera y neutraliza toxinas a todos los niveles. Abre el chakra del corazón y libera 'viejas cargas' como culpas y obsesiones. Enseña que aferrarse al pasado es contraproducente." },
+      "fr": { "name": "Péridot", "desc": "Le péridot est un puissant nettoyant. Il neutralise les toxines à tous les niveaux. Il ouvre le chakra du cœur et libère les 'vieux bagages' comme la culpabilité. Il enseigne que s'accrocher au passé est contre-productif." },
+      "it": { "name": "Peridoto", "desc": "Il peridoto è un potente purificatore. Neutralizza le tossine a tutti i livelli. Apre il chakra del cuore e rilascia 'vecchi fardelli' come colpe e ossessioni. Insegna che aggrapparsi al passato è controproducente." },
+      "de": { "name": "Peridot", "desc": "Peridot ist ein mächtiger Reiniger. Er neutralisiert Giftstoffe auf allen Ebenen. Er öffnet das Herzchakra und löst 'altes Gepäck' wie Schuld und Obsessionen. Er lehrt, dass das Festhalten an der Vergangenheit kontraproduktiv ist." },
+      "pl": { "name": "Perydot", "desc": "Perydot to potężny środek oczyszczający. Neutralizuje toksyny na wszystkich poziomach. Otwiera czakrę serca i uwalnia od 'starego bagażu', takiego jak wina czy obsesje. Uczy, że trzymanie się przeszłości jest bezcelowe." },
+      "ru": { "name": "Перидот", "desc": "Перидот — мощный очиститель. Нейтрализует токсины на всех уровнях. Открывает сердечную чакру и освобождает от «старого багажа» — вины и одержимости. Учит отпускать прошлое." }
+    }
+  },
+  {
+    "image_name": "petrified_wood",
+    "translations": {
+      "en": { "name": "Petrified Wood", "desc": "Petrified Wood is a stone of grounding and transformation. It helps to calm fears and provides a feeling of safety and security. It connects to ancient wisdom and helps one read the Akashic Records." },
+      "es": { "name": "Madera Petrificada", "desc": "La Madera Petrificada es una piedra de enraizamiento y transformación. Ayuda a calmar los miedos y proporciona una sensación de seguridad. Conecta con la sabiduría antigua y ayuda a leer los Registros Akáshicos." },
+      "fr": { "name": "Bois Pétrifié", "desc": "Le Bois Pétrifié est une pierre d'ancrage et de transformation. Il calme les peurs et procure un sentiment de sécurité. Il connecte à la sagesse ancienne et aide à lire les Annales Akashiques." },
+      "it": { "name": "Legno Pietrificato", "desc": "Il Legno Pietrificato è una pietra di radicamento e trasformazione. Calma le paure e dà un senso di sicurezza. Si connette all'antica saggezza e aiuta a leggere i Registri Akashici." },
+      "de": { "name": "Versteinertes Holz", "desc": "Versteinertes Holz dient der Erdung und Transformation. Es beruhigt Ängste und vermittelt Sicherheit. Es verbindet mit alter Weisheit und hilft, die Akasha-Chronik zu lesen." },
+      "pl": { "name": "Skamieniałe Drewno", "desc": "Skamieniałe Drewno to kamień uziemienia i transformacji. Uspokaja lęki i daje poczucie bezpieczeństwa. Łączy ze starożytną mądrością i pomaga czytać Kroniki Akaszy." },
+      "ru": { "name": "Окаменелое Дерево", "desc": "Окаменелое дерево — камень заземления и трансформации. Успокаивает страхи и дает чувство безопасности. Соединяет с древней мудростью и помогает читать Хроники Акаши." }
+    }
+  },
+  {
+    "image_name": "pink_quartz",
+    "translations": {
+      "en": { "name": "Pink Quartz", "desc": "Pink Quartz is a stone of universal love. It restores trust and harmony in relationships, encouraging unconditional love. It purifies and opens the heart at all levels to promote love, self-love, and inner healing." },
+      "es": { "name": "Cuarzo Rosa", "desc": "El Cuarzo Rosa es la piedra del amor universal. Restaura la confianza y la armonía en las relaciones, fomentando el amor incondicional. Purifica y abre el corazón a todos los niveles para promover el amor propio y la sanación interior." },
+      "fr": { "name": "Quartz Rose", "desc": "Le Quartz Rose est la pierre de l'amour universel. Il restaure la confiance et l'harmonie, encourageant l'amour inconditionnel. Il purifie et ouvre le cœur à tous les niveaux pour favoriser l'amour de soi et la guérison intérieure." },
+      "it": { "name": "Quarzo Rosa", "desc": "Il Quarzo Rosa è la pietra dell'amore universale. Ripristina fiducia e armonia nelle relazioni, incoraggiando l'amore incondizionato. Purifica e apre il cuore a tutti i livelli per promuovere l'amore di sé e la guarigione interiore." },
+      "de": { "name": "Rosenquarz", "desc": "Rosenquarz ist der Stein der universellen Liebe. Er stellt Vertrauen und Harmonie in Beziehungen wieder her und fördert bedingungslose Liebe. Er öffnet das Herz für Selbstliebe und innere Heilung." },
+      "pl": { "name": "Różowy Kwarc", "desc": "Różowy Kwarc to kamień uniwersalnej miłości. Przywraca zaufanie i harmonię w związkach, zachęcając do bezwarunkowej miłości. Oczyszcza i otwiera serce, promując miłość własną i uzdrawianie wewnętrzne." },
+      "ru": { "name": "Розовый Кварц", "desc": "Розовый кварц — камень вселенской любви. Восстанавливает доверие и гармонию, поощряя безусловную любовь. Очищает и открывает сердце, способствуя любви к себе и внутреннему исцелению." }
+    }
+  },
+  {
+    "image_name": "pink_tourmaline",
+    "translations": {
+      "en": { "name": "Pink Tourmaline", "desc": "Pink Tourmaline is an aphrodisiac stone that attracts love in the material and spiritual world. It provides assurance that it is safe to love. It inspires trust in love, and confirms that it is necessary to love yourself before you can be loved by others." },
+      "es": { "name": "Turmalina Rosa", "desc": "La Turmalina Rosa es una piedra afrodisíaca que atrae el amor. Ofrece la seguridad de que es seguro amar. Inspira confianza en el amor y confirma que es necesario amarse a uno mismo antes de ser amado por los demás." },
+      "fr": { "name": "Tourmaline Rose", "desc": "La Tourmaline Rose est une pierre aphrodisiaque qui attire l'amour. Elle assure qu'il est sûr d'aimer. Elle inspire confiance en l'amour et confirme qu'il faut s'aimer soi-même avant d'être aimé par les autres." },
+      "it": { "name": "Tormalina Rosa", "desc": "La Tormalina Rosa è una pietra afrodisiaca che attrae l'amore. Assicura che è sicuro amare. Ispira fiducia nell'amore e conferma che è necessario amare se stessi prima di essere amati dagli altri." },
+      "de": { "name": "Rosa Turmalin", "desc": "Rosa Turmalin ist ein Aphrodisiakum, das Liebe anzieht. Er gibt die Gewissheit, dass es sicher ist zu lieben. Er lehrt, dass man sich selbst lieben muss, bevor man von anderen geliebt werden kann." },
+      "pl": { "name": "Różowy Turmalin", "desc": "Różowy Turmalin to kamień afrodyzjak przyciągający miłość. Zapewnia, że kochanie jest bezpieczne. Inspiruje zaufanie do miłości i potwierdza, że trzeba pokochać siebie, zanim pokochają nas inni." },
+      "ru": { "name": "Розовый Турмалин", "desc": "Розовый турмалин — афродизиак, привлекающий любовь. Дает уверенность, что любить безопасно. Вдохновляет на доверие и учит, что нужно полюбить себя, прежде чем быть любимым другими." }
+    }
+  },
+  {
+    "image_name": "prehnite",
+    "translations": {
+      "en": { "name": "Prehnite", "desc": "Prehnite is considered the healing stone of therapists. It is a stone of unconditional love that instills calm and peace. It lightens the soul of accumulated energetic burdens, promotes spiritual growth, and provides energetic protection." },
+      "es": { "name": "Prehnita", "desc": "La prehnita es la piedra curativa de los terapeutas. Es una piedra de amor incondicional que infunde calma y paz. Aligera el alma de cargas energéticas acumuladas, promueve el crecimiento espiritual y brinda protección energética." },
+      "fr": { "name": "Prehnite", "desc": "La prehnite est la pierre des thérapeutes. C'est une pierre d'amour inconditionnel qui instille calme et paix. Elle allège l'âme des fardeaux énergétiques, favorise la croissance spirituelle et offre une protection énergétique." },
+      "it": { "name": "Prehnite", "desc": "La prehnite è la pietra dei terapeuti. È una pietra di amore incondizionato che infonde calma e pace. Alleggerisce l'anima dai fardelli energetici accumulati, promuove la crescita spirituale e fornisce protezione energetica." },
+      "de": { "name": "Prehnit", "desc": "Prehnit ist der Heilstein der Therapeuten. Ein Stein bedingungsloser Liebe, der Ruhe und Frieden bringt. Er erleichtert die Seele von energetischen Lasten, fördert spirituelles Wachstum und bietet energetischen Schutz." },
+      "pl": { "name": "Prehnit", "desc": "Prehnit to kamień uzdrawiający terapeutów. To kamień bezwarunkowej miłości, który wprowadza spokój. Uwalnia duszę od nagromadzonych ciężarów energetycznych, promuje rozwój duchowy i zapewnia ochronę." },
+      "ru": { "name": "Пренит", "desc": "Пренит — целительный камень терапевтов. Камень безусловной любви, вселяющий спокойствие. Облегчает душу от энергетических нагрузок, способствует духовному росту и обеспечивает защиту." }
+    }
+  },
+  {
+    "image_name": "purple_aventurine",
+    "translations": {
+      "en": { "name": "Purple Aventurine", "desc": "Purple Aventurine improves perspective and promotes a good sense of humor. It connects to the crown chakra, reducing stress and anxiety while promoting a positive outlook on life and spiritual growth." },
+      "es": { "name": "Aventurina Morada", "desc": "La Aventurina Morada mejora la perspectiva y promueve el sentido del humor. Conecta con el chakra corona, reduciendo el estrés y la ansiedad mientras promueve una visión positiva de la vida y el crecimiento espiritual." },
+      "fr": { "name": "Aventurine Violette", "desc": "L'Aventurine Violette améliore la perspective et favorise le sens de l'humour. Elle se connecte au chakra couronne, réduisant le stress et l'anxiété tout en favorisant une vision positive et la croissance spirituelle." },
+      "it": { "name": "Avventurina Viola", "desc": "L'Avventurina Viola migliora la prospettiva e promuove il senso dell'umorismo. Si collega al chakra della corona, riducendo stress e ansia e promuovendo una visione positiva della vita e la crescita spirituale." },
+      "de": { "name": "Violetter Aventurin", "desc": "Violetter Aventurin verbessert die Perspektive und fördert den Sinn für Humor. Er verbindet sich mit dem Kronenchakra, reduziert Stress und Angst und fördert eine positive Lebenseinstellung und spirituelles Wachstum." },
+      "pl": { "name": "Fioletowy Awenturyn", "desc": "Fioletowy Awenturyn poprawia perspektywę i promuje poczucie humoru. Łączy się z czakrą korony, redukując stres i lęk, promując pozytywne nastawienie do życia i rozwój duchowy." },
+      "ru": { "name": "Фиолетовый Авантюрин", "desc": "Фиолетовый авантюрин улучшает перспективу и чувство юмора. Соединяется с коронной чакрой, снижая стресс и тревогу, способствуя позитивному взгляду на жизнь и духовному росту." }
+    }
+  },
+  {
+    "image_name": "purple_fluorite",
+    "translations": {
+      "en": { "name": "Purple Fluorite", "desc": "Purple Fluorite stimulates the Third Eye and imparts common sense to psychic communication. It is excellent for meditation. It is helpful in treating bone and bone marrow disorders." },
+      "es": { "name": "Fluorita Morada", "desc": "La Fluorita Morada estimula el Tercer Ojo y aporta sentido común a la comunicación psíquica. Es excelente para la meditación. Es útil en el tratamiento de trastornos de los huesos y la médula ósea." },
+      "fr": { "name": "Fluorite Violette", "desc": "La Fluorite Violette stimule le Troisième Œil et apporte du bon sens à la communication psychique. Elle est excellente pour la méditation. Elle est utile pour traiter les troubles des os et de la moelle osseuse." },
+      "it": { "name": "Fluorite Viola", "desc": "La Fluorite Viola stimola il Terzo Occhio e conferisce buon senso alla comunicazione psichica. È eccellente per la meditazione. È utile nel trattamento dei disturbi ossei e del midollo osseo." },
+      "de": { "name": "Violetter Fluorit", "desc": "Violetter Fluorit stimuliert das Dritte Auge und bringt gesunden Menschenverstand in die psychische Kommunikation. Exzellent für Meditation. Hilfreich bei der Behandlung von Knochen- und Knochenmarkserkrankungen." },
+      "pl": { "name": "Fioletowy Fluoryt", "desc": "Fioletowy Fluoryt stymuluje Trzecie Oko i nadaje rozsądek komunikacji psychicznej. Jest doskonały do medytacji. Pomocny w leczeniu schorzeń kości i szpiku kostnego." },
+      "ru": { "name": "Фиолетовый Флюорит", "desc": "Фиолетовый флюорит стимулирует Третий глаз и привносит здравый смысл в экстрасенсорику. Отличен для медитации. Полезен при лечении заболеваний костей и костного мозга." }
+    }
+  },
+  {
+    "image_name": "purple_sapphire",
+    "translations": {
+      "en": { "name": "Purple Sapphire", "desc": "Purple Sapphire awakens the crown chakra and helps the rise of kundalini energy. It promotes spiritual development and meditation. It is a stone of calmness that helps to regulate the glands." },
+      "es": { "name": "Zafiro Morado", "desc": "El Zafiro Morado despierta el chakra corona y ayuda al ascenso de la energía kundalini. Promueve el desarrollo espiritual y la meditación. Es una piedra de calma que ayuda a regular las glándulas." },
+      "fr": { "name": "Saphir Violet", "desc": "Le Saphir Violet éveille le chakra couronne et aide à la montée de la kundalini. Il favorise le développement spirituel et la méditation. C'est une pierre de calme qui aide à réguler les glandes." },
+      "it": { "name": "Zaffiro Viola", "desc": "Lo Zaffiro Viola risveglia il chakra della corona e aiuta l'ascesa dell'energia kundalini. Promuove lo sviluppo spirituale e la meditazione. È una pietra di calma che aiuta a regolare le ghiandole." },
+      "de": { "name": "Violetter Saphir", "desc": "Violetter Saphir erweckt das Kronenchakra und hilft beim Aufstieg der Kundalini-Energie. Er fördert spirituelle Entwicklung und Meditation. Ein Stein der Ruhe, der hilft, die Drüsen zu regulieren." },
+      "pl": { "name": "Fioletowy Szafir", "desc": "Fioletowy Szafir budzi czakrę korony i wspomaga wznoszenie energii kundalini. Promuje rozwój duchowy i medytację. To kamień spokoju, który pomaga regulować pracę gruczołów." },
+      "ru": { "name": "Фиолетовый Сапфир", "desc": "Фиолетовый сапфир пробуждает коронную чакру и помогает подъему энергии кундалини. Способствует духовному развитию и медитации. Камень спокойствия, помогающий регулировать железы." }
+    }
+  },
+  {
+    "image_name": "pyrite",
+    "translations": {
+      "en": { "name": "Pyrite", "desc": "It is a stone of protection and prosperity. It fosters creativity and activates ideas. It is the cornerstone of good business. It relieves anxiety and frustration, and acts as a protective shield against negative energies." },
+      "es": { "name": "Pirita", "desc": "Es una piedra de protección y prosperidad. Fomenta la creatividad y activa las ideas. Es la piedra angular de los buenos negocios. Alivia la ansiedad y la frustración, y actúa como escudo protector contra energías negativas." },
+      "fr": { "name": "Pyrite", "desc": "Pierre de protection et de prospérité. Elle favorise la créativité et active les idées. C'est la pierre angulaire des bonnes affaires. Elle soulage l'anxiété et la frustration, et agit comme un bouclier contre les énergies négatives." },
+      "it": { "name": "Pirite", "desc": "È una pietra di protezione e prosperità. Promuove la creatività e attiva le idee. È la pietra angolare dei buoni affari. Allevia ansia e frustrazione, e agisce come scudo protettivo contro le energie negative." },
+      "de": { "name": "Pyrit", "desc": "Ein Stein des Schutzes und Wohlstands. Fördert Kreativität und aktiviert Ideen. Eckpfeiler für gute Geschäfte. Lindert Angst und Frustration und wirkt als Schutzschild gegen negative Energien." },
+      "pl": { "name": "Piryt", "desc": "To kamień ochrony i dobrobytu. Wspiera kreatywność i aktywuje pomysły. Jest kamieniem węgielnym dobrych interesów. Łagodzi lęk i frustrację oraz działa jak tarcza ochronna przed negatywną energią." },
+      "ru": { "name": "Пирит", "desc": "Камень защиты и процветания. Способствует творчеству и активирует идеи. Основа хорошего бизнеса. Снимает тревогу и разочарование, действует как защитный щит от негативных энергий." }
+    }
+  },
+  {
+    "image_name": "quartz_crystal",
+    "translations": {
+      "en": { "name": "Quartz Crystal", "desc": "Often called the 'Master Healer', this stone amplifies energy and thought, as well as the effect of other crystals. It absorbs, stores, releases and regulates energy. It aids concentration and unlocks memory." },
+      "es": { "name": "Cristal de Cuarzo", "desc": "Llamado a menudo el 'Maestro Sanador', esta piedra amplifica la energía y el pensamiento, así como el efecto de otros cristales. Absorbe, almacena, libera y regula la energía. Ayuda a la concentración y desbloquea la memoria." },
+      "fr": { "name": "Cristal de Quartz", "desc": "Souvent appelé 'Maître Guérisseur', cette pierre amplifie l'énergie et la pensée, ainsi que l'effet des autres cristaux. Il absorbe, stocke, libère et régule l'énergie. Il aide à la concentration et débloque la mémoire." },
+      "it": { "name": "Cristallo di Quarzo", "desc": "Spesso chiamato 'Maestro Guaritore', questa pietra amplifica l'energia e il pensiero, così come l'effetto di altri cristalli. Assorbe, immagazzina, rilascia e regola l'energia. Aiuta la concentrazione e sblocca la memoria." },
+      "de": { "name": "Bergkristall", "desc": "Oft als 'Meisterheiler' bezeichnet, verstärkt dieser Stein Energie und Gedanken sowie die Wirkung anderer Kristalle. Er absorbiert, speichert, gibt ab und reguliert Energie. Er fördert die Konzentration und das Gedächtnis." },
+      "pl": { "name": "Kryształ Kwarcu", "desc": "Często nazywany 'Mistrzem Uzdrawiania', kamień ten wzmacnia energię i myśli, a także działanie innych kryształów. Pochłania, przechowuje, uwalnia i reguluje energię. Wspomaga koncentrację i odblokowuje pamięć." },
+      "ru": { "name": "Кристалл Кварца", "desc": "Часто называемый «Мастер-целитель», этот камень усиливает энергию и мысли, а также действие других кристаллов. Он поглощает, хранит, высвобождает и регулирует энергию. Помогает концентрации и разблокирует память." }
+    }
+  },
+  {
+    "image_name": "quartz_tourmaline",
+    "translations": {
+      "en": { "name": "Tourmalinated Quartz", "desc": "A great protector because it combines the vibrations of white quartz, which is a powerful amplifier, and black tourmaline, which absorbs and transmutes dense energies. Helps to root and strengthen." },
+      "es": { "name": "Cuarzo Turmalinado", "desc": "Un gran protector porque combina las vibraciones del cuarzo blanco, un potente amplificador, y la turmalina negra, que absorbe y transmuta energías densas. Ayuda a enraizar y fortalecer." },
+      "fr": { "name": "Quartz Tourmaline", "desc": "Grand protecteur, il combine les vibrations du quartz blanc (amplificateur) et de la tourmaline noire (qui absorbe les énergies denses). Il aide à s'ancrer et à se renforcer." },
+      "it": { "name": "Quarzo Tormalinato", "desc": "Un grande protettore perché combina le vibrazioni del quarzo bianco, potente amplificatore, e della tormalina nera, che assorbe le energie dense. Aiuta a radicarsi e rafforzarsi." },
+      "de": { "name": "Turmalinquarz", "desc": "Ein großer Beschützer, da er die Schwingungen von weißem Quarz (Verstärker) und schwarzem Turmalin (absorbiert dichte Energien) kombiniert. Hilft zu verwurzeln und zu stärken." },
+      "pl": { "name": "Kwarc z Turmalinem", "desc": "Wielki obrońca, ponieważ łączy wibracje białego kwarcu (wzmacniacza) i czarnego turmalinu (absorbuje gęste energie). Pomaga zakorzenić się i wzmocnić." },
+      "ru": { "name": "Турмалиновый Кварц", "desc": "Великий защитник, сочетающий вибрации белого кварца (усилитель) и черного турмалина (поглощает плотные энергии). Помогает укорениться и укрепиться." }
+    }
+  },
+  {
+    "image_name": "red_agate",
+    "translations": {
+      "en": { "name": "Red Agate", "desc": "Red Agate is a protection stone in the primary chakra. It promotes safety, grounding, and vitality. It helps light the inner fire of life force, creativity, and sexuality, overcoming negativity and bitterness." },
+      "es": { "name": "Ágata Roja", "desc": "El Ágata Roja es una piedra de protección del chakra primario. Promueve seguridad, enraizamiento y vitalidad. Ayuda a encender el fuego interior de la fuerza vital, la creatividad y la sexualidad, superando la negatividad." },
+      "fr": { "name": "Agate Rouge", "desc": "L'Agate Rouge est une pierre de protection du chakra racine. Elle favorise la sécurité, l'ancrage et la vitalité. Elle allume le feu intérieur de la force vitale, de la créativité et de la sexualité." },
+      "it": { "name": "Agata Rossa", "desc": "L'Agata Rossa è una pietra di protezione del primo chakra. Promuove sicurezza, radicamento e vitalità. Accende il fuoco interiore della forza vitale, della creatività e della sessualità, superando la negatività." },
+      "de": { "name": "Roter Achat", "desc": "Roter Achat ist ein Schutzstein für das Wurzelchakra. Er fördert Sicherheit, Erdung und Vitalität. Er entzündet das innere Feuer der Lebenskraft, Kreativität und Sexualität und überwindet Bitterkeit." },
+      "pl": { "name": "Czerwony Agat", "desc": "Czerwony Agat to kamień ochronny czakry podstawy. Promuje bezpieczeństwo, uziemienie i witalność. Rozpala wewnętrzny ogień siły życiowej, kreatywności i seksualności." },
+      "ru": { "name": "Красный Агат", "desc": "Красный агат — камень защиты корневой чакры. Способствует безопасности, заземлению и витальности. Зажигает внутренний огонь жизненной силы, творчества и сексуальности." }
+    }
+  },
+  {
+    "image_name": "red_aventurine",
+    "translations": {
+      "en": { "name": "Red Aventurine", "desc": "Red Aventurine is a stone of vitality and renewal that creates mental alertness and amplifies the desire to take on life's challenges. It boosts creativity and helps to diffuse anger and irritation." },
+      "es": { "name": "Aventurina Roja", "desc": "La Aventurina Roja es una piedra de vitalidad y renovación que crea alerta mental y amplifica el deseo de afrontar los retos de la vida. Aumenta la creatividad y ayuda a disipar la ira y la irritación." },
+      "fr": { "name": "Aventurine Rouge", "desc": "L'Aventurine Rouge est une pierre de vitalité qui éveille l'esprit et donne envie de relever les défis. Elle booste la créativité et aide à dissiper la colère et l'irritation." },
+      "it": { "name": "Avventurina Rossa", "desc": "L'Avventurina Rossa è una pietra di vitalità e rinnovamento che crea prontezza mentale e voglia di affrontare le sfide. Aumenta la creatività e aiuta a diffondere rabbia e irritazione." },
+      "de": { "name": "Roter Aventurin", "desc": "Roter Aventurin ist ein Stein der Vitalität und Erneuerung. Er sorgt für geistige Wachheit und Lust auf Herausforderungen. Er steigert die Kreativität und hilft, Wut und Irritationen abzubauen." },
+      "pl": { "name": "Czerwony Awenturyn", "desc": "Czerwony Awenturyn to kamień witalności, który wzmaga czujność umysłu i chęć podejmowania wyzwań. Zwiększa kreatywność oraz pomaga rozładować gniew i irytację." },
+      "ru": { "name": "Красный Авантюрин", "desc": "Красный авантюрин — камень жизненной силы и обновления. Повышает умственную активность и желание принимать вызовы. Усиливает творчество и помогает рассеять гнев." }
+    }
+  },
+  {
+    "image_name": "red_garnet",
+    "translations": {
+      "en": { "name": "Red Garnet", "desc": "Garnet is considered a stone of the 1st chakra, with a vigorous energy. It helps to put down strong roots, promotes security and strength of character. It enhances libido and is indicated for purifying the blood." },
+      "es": { "name": "Granate Rojo", "desc": "El granate es una piedra del 1er chakra, de energía vigorosa. Ayuda a echar raíces fuertes, promueve la seguridad y la fuerza de carácter. Mejora la libido y está indicado para purificar la sangre." },
+      "fr": { "name": "Grenat Rouge", "desc": "Le grenat est une pierre du 1er chakra, à l'énergie vigoureuse. Il aide à s'enraciner, favorise la sécurité et la force de caractère. Il améliore la libido et purifie le sang." },
+      "it": { "name": "Granato Rosso", "desc": "Il granato è una pietra del 1° chakra, dall'energia vigorosa. Aiuta a mettere radici forti, promuove sicurezza e forza di carattere. Migliora la libido ed è indicato per purificare il sangue." },
+      "de": { "name": "Roter Granat", "desc": "Granat ist ein Stein des 1. Chakras mit kräftiger Energie. Er hilft, starke Wurzeln zu schlagen, fördert Sicherheit und Charakterstärke. Er steigert die Libido und reinigt das Blut." },
+      "pl": { "name": "Czerwony Granat", "desc": "Granat to kamień 1. czakry o energicznej wibracji. Pomaga zapuścić silne korzenie, promuje bezpieczeństwo i siłę charakteru. Zwiększa libido i oczyszcza krew." },
+      "ru": { "name": "Красный Гранат", "desc": "Гранат — камень 1-й чакры с мощной энергией. Помогает пустить сильные корни, способствует безопасности и силе характера. Повышает либидо и очищает кровь." }
+    }
+  },
+  {
+    "image_name": "red_jasper",
+    "translations": {
+      "en": { "name": "Red Jasper", "desc": "It promotes rootedness, strength, and security. It is usually recommended to energize the body and give it vitality. It is considered a stone of cleansing and balance. It helps to detoxify the circulatory system." },
+      "es": { "name": "Jaspe Rojo", "desc": "Promueve el arraigo, la fuerza y la seguridad. Se recomienda para energizar el cuerpo y darle vitalidad. Es una piedra de limpieza y equilibrio. Ayuda a desintoxicar el sistema circulatorio." },
+      "fr": { "name": "Jaspe Rouge", "desc": "Il favorise l'enracinement, la force et la sécurité. Recommandé pour dynamiser le corps et lui donner de la vitalité. C'est une pierre de nettoyage et d'équilibre qui détoxifie le système circulatoire." },
+      "it": { "name": "Diaspro Rosso", "desc": "Promuove radicamento, forza e sicurezza. Consigliato per energizzare il corpo e dargli vitalità. È una pietra di pulizia ed equilibrio. Aiuta a disintossicare il sistema circolatorio." },
+      "de": { "name": "Roter Jaspis", "desc": "Fördert Verwurzelung, Stärke und Sicherheit. Energierisiert den Körper und verleiht Vitalität. Ein Stein der Reinigung und des Gleichgewichts, der das Kreislaufsystem entgiftet." },
+      "pl": { "name": "Czerwony Jaspis", "desc": "Promuje zakorzenienie, siłę i bezpieczeństwo. Zalecany do energetyzowania ciała i dodawania witalności. Kamień oczyszczania i równowagi. Pomaga detoksykować układ krążenia." },
+      "ru": { "name": "Красная Яшма", "desc": "Способствует укоренению, силе и безопасности. Рекомендуется для придания телу энергии и жизненных сил. Камень очищения и баланса. Помогает детоксикации кровеносной системы." }
+    }
+  },
+  {
+    "image_name": "rhodonite",
+    "translations": {
+      "en": { "name": "Rhodonite", "desc": "Rhodonite symbolizes friendship. It is used to balance the heart chakra and to ground energy. It is a stone that promotes forgiveness and reconciliation, helping to cleanse wounds from the past." },
+      "es": { "name": "Rodonita", "desc": "La rodonita simboliza la amistad. Equilibra el chakra corazón y enraíza la energía. Es una piedra que promueve el perdón y la reconciliación, ayudando a limpiar las heridas del pasado." },
+      "fr": { "name": "Rhodonite", "desc": "La rhodonite symbolise l'amitié. Elle équilibre le chakra du cœur et ancre l'énergie. Elle favorise le pardon et la réconciliation, aidant à nettoyer les blessures du passé." },
+      "it": { "name": "Rodonite", "desc": "La rodonite simboleggia l'amicizia. Equilibra il chakra del cuore e radica l'energia. Promuove il perdono e la riconciliazione, aiutando a ripulire le ferite del passato." },
+      "de": { "name": "Rhodonit", "desc": "Rhodonit symbolisiert Freundschaft. Er gleicht das Herzchakra aus und erdet Energie. Er fördert Vergebung und Versöhnung und hilft, Wunden der Vergangenheit zu heilen." },
+      "pl": { "name": "Rodonit", "desc": "Rodonit symbolizuje przyjaźń. Równoważy czakrę serca i uziemia energię. To kamień, który promuje przebaczenie i pojednanie, pomagając oczyścić rany z przeszłości." },
+      "ru": { "name": "Родонит", "desc": "Родонит символизирует дружбу. Балансирует сердечную чакру и заземляет энергию. Способствует прощению и примирению, помогая очистить раны прошлого." }
+    }
+  },
+  {
+    "image_name": "rodocrosite",
+    "translations": {
+      "en": { "name": "Rhodochrosite", "desc": "Rhodochrosite represents selfless love and compassion. It is excellent for the heart and relationships, especially for people who feel unloved. It helps heal the inner child and traumatic emotional experiences." },
+      "es": { "name": "Rodocrosita", "desc": "La rodocrosita representa el amor desinteresado y la compasión. Es excelente para el corazón y las relaciones, especialmente para quienes no se sienten amados. Ayuda a sanar al niño interior y traumas emocionales." },
+      "fr": { "name": "Rhodochrosite", "desc": "La rhodochrosite représente l'amour désintéressé et la compassion. Excellente pour le cœur et les relations. Elle aide à guérir l'enfant intérieur et les traumatismes émotionnels." },
+      "it": { "name": "Rodocrosite", "desc": "La rodocrosite rappresenta l'amore altruistico e la compassione. Eccellente per il cuore e le relazioni. Aiuta a guarire il bambino interiore e le esperienze emotive traumatiche." },
+      "de": { "name": "Rhodochrosit", "desc": "Rhodochrosit steht für selbstlose Liebe und Mitgefühl. Exzellent für das Herz und Beziehungen. Er hilft, das innere Kind und traumatische emotionale Erfahrungen zu heilen." },
+      "pl": { "name": "Rodochrozyt", "desc": "Rodochrozyt reprezentuje bezinteresowną miłość i współczucie. Doskonały dla serca i relacji. Pomaga uzdrowić wewnętrzne dziecko i traumatyczne przeżycia emocjonalne." },
+      "ru": { "name": "Родохрозит", "desc": "Родохрозит олицетворяет бескорыстную любовь и сострадание. Отличен для сердца и отношений. Помогает исцелить внутреннего ребенка и эмоциональные травмы." }
+    }
+  },
+  {
+    "image_name": "rose_opal",
+    "translations": {
+      "en": { "name": "Rose Opal", "desc": "Rose Opal acts as a stone of renewal, guiding one to select a healthy path in life. It is a stone of gentle energy that heals emotions and helps to release trauma, bringing hope and peace." },
+      "es": { "name": "Ópalo Rosa", "desc": "El Ópalo Rosa actúa como piedra de renovación, guiando hacia un camino saludable. Es una piedra de energía suave que sana las emociones y ayuda a liberar traumas, aportando esperanza y paz." },
+      "fr": { "name": "Opale Rose", "desc": "L'Opale Rose est une pierre de renouveau qui guide vers un chemin de vie sain. Son énergie douce guérit les émotions, aide à libérer les traumatismes et apporte espoir et paix." },
+      "it": { "name": "Opale Rosa", "desc": "L'Opale Rosa agisce come pietra di rinnovamento, guidando verso un percorso di vita sano. È una pietra di energia gentile che cura le emozioni e aiuta a rilasciare traumi, portando speranza." },
+      "de": { "name": "Rosenopal", "desc": "Rosenopal wirkt als Stein der Erneuerung und leitet auf einen gesunden Lebensweg. Seine sanfte Energie heilt Emotionen, hilft Traumata zu lösen und bringt Hoffnung und Frieden." },
+      "pl": { "name": "Różowy Opal", "desc": "Różowy Opal to kamień odnowy, kierujący na zdrową ścieżkę życia. To kamień o delikatnej energii, który uzdrawia emocje, pomaga uwolnić traumę, przynosząc nadzieję i spokój." },
+      "ru": { "name": "Розовый Опал", "desc": "Розовый опал — камень обновления, направляющий на здоровый жизненный путь. Его мягкая энергия исцеляет эмоции, помогает отпустить травмы, принося надежду и мир." }
+    }
+  },
+  {
+    "image_name": "rose_quartz",
+    "translations": {
+      "en": { "name": "Rose Quartz", "desc": "It is the quintessential stone of love, revealing its true essence. It is a mineral that brings tranquility and inner peace. Wards off negative energies, helps improve self-esteem, and opens the heart chakra." },
+      "es": { "name": "Cuarzo Rosa", "desc": "Es la piedra del amor por excelencia, revelando su verdadera esencia. Aporta tranquilidad y paz interior. Aleja las energías negativas, mejora la autoestima y abre el chakra del corazón." },
+      "fr": { "name": "Quartz Rose", "desc": "Pierre de l'amour par excellence, révélant sa vraie essence. Elle apporte tranquillité et paix intérieure. Elle éloigne les énergies négatives, améliore l'estime de soi et ouvre le chakra du cœur." },
+      "it": { "name": "Quarzo Rosa", "desc": "È la pietra dell'amore per eccellenza. Porta tranquillità e pace interiore. Allontana le energie negative, aiuta a migliorare l'autostima e apre il chakra del cuore." },
+      "de": { "name": "Rosenquarz", "desc": "Der Inbegriff des Liebessteins. Er bringt Ruhe und inneren Frieden. Wehrt negative Energien ab, stärkt das Selbstwertgefühl und öffnet das Herzchakra." },
+      "pl": { "name": "Różowy Kwarc", "desc": "To kwintesencja kamienia miłości. Przynosi spokój i wewnętrzną harmonię. Odstrasza negatywną energię, poprawia samoocenę i otwiera czakrę serca." },
+      "ru": { "name": "Розовый Кварц", "desc": "Квинтэссенция камня любви. Приносит спокойствие и внутренний мир. Отгоняет негативные энергии, помогает повысить самооценку и открывает сердечную чакру." }
+    }
+  },
+  {
+    "image_name": "ruby",
+    "translations": {
+      "en": { "name": "Ruby", "desc": "The ruby represents the strength of Mother Earth. It brings self-esteem, harmony, tranquility, self-confidence, and mental clarity. It also brings increased popularity and awakens passions and erotic desires." },
+      "es": { "name": "Rubí", "desc": "El rubí representa la fuerza de la Madre Tierra. Aporta autoestima, armonía, tranquilidad, autoconfianza y claridad mental. También trae popularidad y despierta pasiones y deseos eróticos." },
+      "fr": { "name": "Rubis", "desc": "Le rubis représente la force de la Terre Mère. Il apporte estime de soi, harmonie, tranquillité, confiance et clarté mentale. Il éveille aussi les passions et les désirs érotiques." },
+      "it": { "name": "Rubino", "desc": "Il rubino rappresenta la forza della Madre Terra. Porta autostima, armonia, tranquillità, fiducia e chiarezza mentale. Aumenta la popolarità e risveglia passioni e desideri erotici." },
+      "de": { "name": "Rubin", "desc": "Der Rubin steht für die Kraft von Mutter Erde. Er bringt Selbstachtung, Harmonie, Ruhe, Selbstvertrauen und geistige Klarheit. Er weckt Leidenschaften und erotische Wünsche." },
+      "pl": { "name": "Rubin", "desc": "Rubin reprezentuje siłę Matki Ziemi. Przynosi samoocenę, harmonię, spokój, pewność siebie i jasność umysłu. Budzi namiętności i pragnienia erotyczne." },
+      "ru": { "name": "Рубин", "desc": "Рубин олицетворяет силу Матери-Земли. Приносит самооценку, гармонию, спокойствие, уверенность и ясность ума. Пробуждает страсти и эротические желания." }
+    }
+  },
+  {
+    "image_name": "selenite",
+    "translations": {
+      "en": { "name": "Selenite", "desc": "Selenite symbolizes spiritual purity. It instills deep peace and is recommended for meditation. It expands consciousness and activates higher energy centers. Selenite helps to calm the mind and promotes clarity." },
+      "es": { "name": "Selenita", "desc": "La selenita simboliza la pureza espiritual. Infunde una paz profunda y se recomienda para la meditación. Expande la conciencia y activa centros de energía superiores. Calma la mente y promueve la claridad." },
+      "fr": { "name": "Sélénite", "desc": "La sélénite symbolise la pureté spirituelle. Elle instille une paix profonde, idéale pour la méditation. Elle étend la conscience, active les centres d'énergie supérieurs, calme l'esprit et favorise la clarté." },
+      "it": { "name": "Selenite", "desc": "La selenite simboleggia la purezza spirituale. Infonde pace profonda ed è raccomandata per la meditazione. Espande la coscienza, attiva i centri energetici superiori, calma la mente e promuove la chiarezza." },
+      "de": { "name": "Selenit", "desc": "Selenit symbolisiert spirituelle Reinheit. Er flößt tiefen Frieden ein und wird für Meditation empfohlen. Er erweitert das Bewusstsein, aktiviert höhere Energiezentren, beruhigt den Geist und fördert Klarheit." },
+      "pl": { "name": "Selenit", "desc": "Selenit symbolizuje duchową czystość. Wprowadza głęboki spokój i jest zalecany do medytacji. Rozszerza świadomość, aktywuje wyższe centra energii, uspokaja umysł i promuje jasność." },
+      "ru": { "name": "Селенит", "desc": "Селенит символизирует духовную чистоту. Вселяет глубокий мир и рекомендуется для медитации. Расширяет сознание, активирует высшие энергетические центры, успокаивает ум и способствует ясности." }
+    }
+  },
+  {
+    "image_name": "serpentine_stone",
+    "translations": {
+      "en": { "name": "Serpentine", "desc": "Serpentine promotes grounding and spiritual exploration. It activates psychic abilities and helps recover wisdom. It works with the 4th chakra. Considered a cleansing stone, it helps to calm migraines and muscle pain." },
+      "es": { "name": "Serpentina", "desc": "La serpentina promueve el enraizamiento y la exploración espiritual. Activa habilidades psíquicas y recupera sabiduría. Trabaja con el 4º chakra. Piedra de limpieza, calma migrañas y dolor muscular." },
+      "fr": { "name": "Serpentine", "desc": "La serpentine favorise l'ancrage et l'exploration spirituelle. Elle active les capacités psychiques et la sagesse. Elle agit sur le 4ème chakra. Pierre purifiante, elle calme les migraines et douleurs musculaires." },
+      "it": { "name": "Serpentino", "desc": "Il serpentino promuove radicamento ed esplorazione spirituale. Attiva capacità psichiche e recupera saggezza. Lavora con il 4° chakra. Pietra purificante, calma emicranie e dolori muscolari." },
+      "de": { "name": "Serpentin", "desc": "Serpentin fördert Erdung und spirituelle Erforschung. Er aktiviert psychische Fähigkeiten und Weisheit. Wirkt auf das 4. Chakra. Ein reinigender Stein, der Migräne und Muskelschmerzen lindert." },
+      "pl": { "name": "Serpentynit", "desc": "Serpentynit promuje uziemienie i eksplorację duchową. Aktywuje zdolności psychiczne i przywraca mądrość. Działa na 4. czakrę. Kamień oczyszczający, łagodzi migreny i bóle mięśni." },
+      "ru": { "name": "Змеевик", "desc": "Змеевик способствует заземлению и духовным исследованиям. Активирует экстрасенсорные способности. Работает с 4-й чакрой. Очищающий камень, успокаивает мигрени и мышечную боль." }
+    }
+  },
+  {
+    "image_name": "shiva_lingam",
+    "translations": {
+      "en": { "name": "Shiva Lingam", "desc": "A sacred stone that resonates with energies of all elements. It represents the balance of masculine and feminine energies. It boosts vitality and prana, and supports transformation and fertility." },
+      "es": { "name": "Shiva Lingam", "desc": "Piedra sagrada que resuena con las energías de todos los elementos. Representa el equilibrio de las energías masculina y femenina. Aumenta la vitalidad y el prana, y apoya la transformación y la fertilidad." },
+      "fr": { "name": "Shiva Lingam", "desc": "Pierre sacrée résonnant avec les énergies de tous les éléments. Elle représente l'équilibre des énergies masculines et féminines. Elle booste la vitalité, le prana, la transformation et la fertilité." },
+      "it": { "name": "Shiva Lingam", "desc": "Pietra sacra che risuona con le energie di tutti gli elementi. Rappresenta l'equilibrio delle energie maschili e femminili. Aumenta la vitalità e il prana, e supporta trasformazione e fertilità." },
+      "de": { "name": "Shiva Lingam", "desc": "Ein heiliger Stein, der mit den Energien aller Elemente resoniert. Er repräsentiert das Gleichgewicht von männlichen und weiblichen Energien. Er steigert Vitalität, Prana, Transformation und Fruchtbarkeit." },
+      "pl": { "name": "Shiva Lingam", "desc": "Święty kamień rezonujący z energiami wszystkich żywiołów. Reprezentuje równowagę energii męskiej i żeńskiej. Zwiększa witalność i pranę, wspiera transformację i płodność." },
+      "ru": { "name": "Шива Лингам", "desc": "Священный камень, резонирующий с энергиями всех стихий. Олицетворяет баланс мужской и женской энергий. Повышает жизненную силу и прану, поддерживает трансформацию и плодородие." }
+    }
+  },
+  {
+    "image_name": "shungite",
+    "translations": {
+      "en": { "name": "Shungite", "desc": "Shungite neutralizes electromagnetic fields produced by devices, acting as a shield. It helps to strengthen and stabilize body energy. Used for cleansing, protection, and to discharge static electricity." },
+      "es": { "name": "Shungit", "desc": "La shungit neutraliza los campos electromagnéticos de los dispositivos, actuando como escudo. Ayuda a fortalecer y estabilizar la energía corporal. Se usa para limpieza, protección y descargar electricidad estática." },
+      "fr": { "name": "Shungite", "desc": "La shungite neutralise les champs électromagnétiques, agissant comme un bouclier. Elle renforce et stabilise l'énergie corporelle. Utilisée pour le nettoyage, la protection et décharger l'électricité statique." },
+      "it": { "name": "Shungite", "desc": "La shungite neutralizza i campi elettromagnetici, agendo da scudo. Aiuta a rafforzare e stabilizzare l'energia corporea. Usata per pulizia, protezione e scaricare l'elettricità statica." },
+      "de": { "name": "Schungit", "desc": "Schungit neutralisiert elektromagnetische Felder und wirkt als Schild. Er stärkt und stabilisiert die Körperenergie. Genutzt zur Reinigung, zum Schutz und zur Entladung statischer Elektrizität." },
+      "pl": { "name": "Szungit", "desc": "Szungit neutralizuje pola elektromagnetyczne, działając jak tarcza. Wzmacnia i stabilizuje energię ciała. Stosowany do oczyszczania, ochrony i rozładowywania elektryczności statycznej." },
+      "ru": { "name": "Шунгит", "desc": "Шунгит нейтрализует электромагнитные поля, действуя как щит. Укрепляет и стабилизирует энергию тела. Используется для очистки, защиты и снятия статического электричества." }
+    }
+  },
+  {
+    "image_name": "smoky_quartz",
+    "translations": {
+      "en": { "name": "Smoky Quartz", "desc": "It is associated with the 1st chakra and helps to assimilate what is vital and let go of what is superfluous. It helps dissolve dense energies, promotes positive thinking, and brings emotional calm." },
+      "es": { "name": "Cuarzo Ahumado", "desc": "Asociado con el 1er chakra, ayuda a asimilar lo vital y soltar lo superfluo. Ayuda a disolver energías densas, promueve el pensamiento positivo y aporta calma emocional." },
+      "fr": { "name": "Quartz Fumé", "desc": "Associé au 1er chakra, il aide à assimiler le vital et à laisser aller le superflu. Il dissout les énergies denses, favorise la pensée positive et apporte un calme émotionnel." },
+      "it": { "name": "Quarzo Fumè", "desc": "Associato al 1° chakra, aiuta ad assimilare ciò che è vitale e lasciare andare il superfluo. Dissolve le energie dense, promuove il pensiero positivo e porta calma emotiva." },
+      "de": { "name": "Rauchquarz", "desc": "Verbunden mit dem 1. Chakra, hilft er, Wichtiges aufzunehmen und Überflüssiges loszulassen. Er löst dichte Energien auf, fördert positives Denken und bringt emotionale Ruhe." },
+      "pl": { "name": "Kwarc Dymny", "desc": "Związany z 1. czakrą, pomaga przyswoić to, co ważne i odpuścić to, co zbędne. Rozpuszcza gęste energie, promuje pozytywne myślenie i przynosi spokój emocjonalny." },
+      "ru": { "name": "Дымчатый Кварц", "desc": "Связан с 1-й чакрой, помогает усвоить жизненно важное и отпустить лишнее. Растворяет плотные энергии, способствует позитивному мышлению и приносит эмоциональный покой." }
+    }
+  },
+  {
+    "image_name": "sodalite",
+    "translations": {
+      "en": { "name": "Sodalite", "desc": "Sodalite brings mental clarity and helps in releasing old thought patterns. Boosts self-esteem and self-confidence. It treats the throat area, boosts the immune system, and cleans electromagnetic pollution." },
+      "es": { "name": "Sodalita", "desc": "La sodalita aporta claridad mental y libera viejos patrones de pensamiento. Aumenta la autoestima y la autoconfianza. Trata la garganta, refuerza el sistema inmunológico y limpia la contaminación electromagnética." },
+      "fr": { "name": "Sodalite", "desc": "La sodalite apporte clarté mentale et libère les vieux schémas de pensée. Elle booste l'estime de soi. Elle traite la gorge, renforce le système immunitaire et nettoie la pollution électromagnétique." },
+      "it": { "name": "Sodalite", "desc": "La sodalite porta chiarezza mentale e libera vecchi schemi di pensiero. Aumenta autostima e fiducia. Tratta la gola, rafforza il sistema immunitario e pulisce l'inquinamento elettromagnetico." },
+      "de": { "name": "Sodalith", "desc": "Sodalith bringt geistige Klarheit und löst alte Denkmuster. Stärkt Selbstwert und Selbstvertrauen. Behandelt den Halsbereich, stärkt das Immunsystem und reinigt von Elektrosmog." },
+      "pl": { "name": "Sodalit", "desc": "Sodalit zapewnia jasność umysłu i uwalnia od starych wzorców myślowych. Podnosi samoocenę. Leczy gardło, wzmacnia układ odpornościowy i oczyszcza ze smogu elektromagnetycznego." },
+      "ru": { "name": "Содалит", "desc": "Содалит приносит ясность ума и освобождает от старых мыслей. Повышает самооценку. Лечит область горла, укрепляет иммунитет и очищает от электромагнитного загрязнения." }
+    }
+  },
+  {
+    "image_name": "sugilite",
+    "translations": {
+      "en": { "name": "Sugilite", "desc": "Sugilite is a premier 'love stone' that brings the violet ray energy to earth. It represents spiritual love and wisdom. It protects the soul from shocks and relieves pain, headaches, and tension." },
+      "es": { "name": "Sugilita", "desc": "La Sugilita es una piedra de amor que trae la energía del rayo violeta. Representa el amor espiritual y la sabiduría. Protege el alma de conmociones y alivia el dolor, los dolores de cabeza y la tensión." },
+      "fr": { "name": "Sugilite", "desc": "La Sugilite est une pierre d'amour apportant l'énergie du rayon violet. Elle représente l'amour spirituel et la sagesse. Elle protège l'âme des chocs et soulage la douleur et les maux de tête." },
+      "it": { "name": "Sugilite", "desc": "La Sugilite è una pietra d'amore che porta l'energia del raggio viola. Rappresenta l'amore spirituale e la saggezza. Protegge l'anima dagli shock e allevia dolore, mal di testa e tensione." },
+      "de": { "name": "Sugilith", "desc": "Sugilith ist ein 'Liebesstein', der die violette Strahlungsenergie bringt. Er steht für spirituelle Liebe und Weisheit. Er schützt die Seele vor Schocks und lindert Schmerzen und Kopfschmerzen." },
+      "pl": { "name": "Sugilit", "desc": "Sugilit to 'kamień miłości' przynoszący energię fioletowego promienia. Reprezentuje duchową miłość i mądrość. Chroni duszę przed wstrząsami i łagodzi ból, bóle głowy oraz napięcie." },
+      "ru": { "name": "Сугилит", "desc": "Сугилит — «камень любви», несущий энергию фиолетового луча. Олицетворяет духовную любовь и мудрость. Защищает душу от потрясений, снимает боль и головные боли." }
+    }
+  },
+  {
+    "image_name": "sunstone",
+    "translations": {
+      "en": { "name": "Sunstone", "desc": "Regenerative vibration of sunlight. It corresponds to the 3rd chakra and heals the solar plexus. It is indicated for cutting mental and emotional ties or unhealthy bonds, enhancing self-esteem." },
+      "es": { "name": "Piedra Sol", "desc": "Vibración regeneradora de la luz solar. Corresponde al 3er chakra y sana el plexo solar. Indicada para cortar lazos mentales, emocionales o vínculos insalubres, mejorando la autoestima." },
+      "fr": { "name": "Pierre de Soleil", "desc": "Vibration régénératrice de la lumière solaire. Correspond au 3ème chakra et guérit le plexus solaire. Indiquée pour couper les liens malsains et améliorer l'estime de soi." },
+      "it": { "name": "Pietra di Sole", "desc": "Vibrazione rigenerativa della luce solare. Corrisponde al 3° chakra e cura il plesso solare. Indicata per tagliare legami mentali ed emotivi insalubri, migliorando l'autostima." },
+      "de": { "name": "Sonnenstein", "desc": "Regenerative Schwingung des Sonnenlichts. Korrespondiert mit dem 3. Chakra und heilt den Solarplexus. Dient dazu, ungesunde Bindungen zu trennen und das Selbstwertgefühl zu steigern." },
+      "pl": { "name": "Kamień Słoneczny", "desc": "Regeneracyjna wibracja światła słonecznego. Odpowiada 3. czakrze i leczy splot słoneczny. Wskazany do odcinania niezdrowych więzi i wzmacniania samooceny." },
+      "ru": { "name": "Солнечный Камень", "desc": "Регенеративная вибрация солнечного света. Соответствует 3-й чакре и лечит солнечное сплетение. Показан для разрыва нездоровых связей и повышения самооценки." }
+    }
+  },
+  {
+    "image_name": "tanzanite",
+    "translations": {
+      "en": { "name": "Tanzanite", "desc": "Tanzanite is a stone of transformation that facilitates communication and spiritual exploration. It links the throat and third eye chakras. It helps in overcoming depression and anxiety, replacing them with trust and poise." },
+      "es": { "name": "Tanzanita", "desc": "La tanzanita es una piedra de transformación que facilita la comunicación y la exploración espiritual. Une los chakras garganta y tercer ojo. Ayuda a superar la depresión y la ansiedad, reemplazándolas por confianza." },
+      "fr": { "name": "Tanzanite", "desc": "La tanzanite est une pierre de transformation qui facilite la communication et l'exploration spirituelle. Elle relie la gorge et le troisième œil. Elle aide à surmonter la dépression et l'anxiété." },
+      "it": { "name": "Tanzanite", "desc": "La tanzanite è una pietra di trasformazione che facilita la comunicazione e l'esplorazione spirituale. Collega i chakra della gola e del terzo occhio. Aiuta a superare depressione e ansia." },
+      "de": { "name": "Tansanit", "desc": "Tansanit ist ein Stein der Transformation, der Kommunikation und spirituelle Forschung erleichtert. Er verbindet Hals- und Stirnchakra und hilft, Depressionen und Ängste durch Vertrauen zu ersetzen." },
+      "pl": { "name": "Tanzanit", "desc": "Tanzanit to kamień transformacji, który ułatwia komunikację i eksplorację duchową. Łączy czakry gardła i trzeciego oka. Pomaga przezwyciężyć depresję i lęk, zastępując je zaufaniem." },
+      "ru": { "name": "Танзанит", "desc": "Танзанит — камень трансформации, облегчающий общение и духовные исследования. Связывает горловую чакру и чакру третьего глаза. Помогает преодолеть депрессию и тревогу." }
+    }
+  },
+  {
+    "image_name": "tiger_eye",
+    "translations": {
+      "en": { "name": "Tiger Eye", "desc": "It helps to clarify ideas, improves self-esteem and creativity, and strengthens commitment. It is a good protector against the evil eye. Associated with the Navel chakra." },
+      "es": { "name": "Ojo de Tigre", "desc": "Ayuda a aclarar ideas, mejora la autoestima y la creatividad, y fortalece el compromiso. Es un buen protector contra el mal de ojo. Asociado con el chakra del ombligo." },
+      "fr": { "name": "Œil de Tigre", "desc": "Il aide à clarifier les idées, améliore l'estime de soi et la créativité, et renforce l'engagement. C'est un bon protecteur contre le mauvais œil. Associé au chakra du nombril." },
+      "it": { "name": "Occhio di Tigre", "desc": "Aiuta a chiarire le idee, migliora l'autostima e la creatività, e rafforza l'impegno. È un buon protettore contro il malocchio. Associato al chakra dell'ombelico." },
+      "de": { "name": "Tigerauge", "desc": "Hilft, Ideen zu klären, verbessert Selbstwertgefühl und Kreativität und stärkt das Engagement. Ein guter Schutz gegen den bösen Blick. Verbunden mit dem Nabelchakra." },
+      "pl": { "name": "Tygrysie Oko", "desc": "Pomaga wyjaśnić pomysły, poprawia samoocenę i kreatywność oraz wzmacnia zaangażowanie. Jest dobrym obrońcą przed złym okiem. Związany z czakrą pępka." },
+      "ru": { "name": "Тигровый Глаз", "desc": "Помогает прояснить идеи, улучшает самооценку и креативность, укрепляет обязательства. Хороший защитник от сглаза. Ассоциируется с пупочной чакрой." }
+    }
+  },
+  {
+    "image_name": "topaz",
+    "translations": {
+      "en": { "name": "Topaz", "desc": "Topaz is a mellow, empathetic stone that directs energy to where it is needed most. It soothes, heals, stimulates, recharges, and aligns the meridians of the body. It promotes truth and forgiveness." },
+      "es": { "name": "Topacio", "desc": "El topacio es una piedra suave y empática que dirige la energía donde más se necesita. Calma, cura, estimula, recarga y alinea los meridianos del cuerpo. Promueve la verdad y el perdón." },
+      "fr": { "name": "Topaze", "desc": "La topaze est une pierre douce et empathique qui dirige l'énergie là où elle est nécessaire. Elle apaise, guérit, stimule et aligne les méridiens. Elle favorise la vérité et le pardon." },
+      "it": { "name": "Topazio", "desc": "Il topazio è una pietra dolce ed empatica che dirige l'energia dove serve. Calma, cura, stimola, ricarica e allinea i meridiani del corpo. Promuove la verità e il perdono." },
+      "de": { "name": "Topas", "desc": "Topas ist ein sanfter, einfühlsamer Stein, der Energie dorthin lenkt, wo sie benötigt wird. Er beruhigt, heilt, stimuliert und richtet die Meridiane aus. Er fördert Wahrheit und Vergebung." },
+      "pl": { "name": "Topaz", "desc": "Topaz to łagodny, empatyczny kamień, który kieruje energię tam, gdzie jest najbardziej potrzebna. Uspokaja, leczy, stymuluje i wyrównuje meridiany ciała. Promuje prawdę i przebaczenie." },
+      "ru": { "name": "Топаз", "desc": "Топаз — мягкий, чуткий камень, направляющий энергию туда, где она нужна. Успокаивает, лечит, стимулирует и выравнивает меридианы тела. Способствует истине и прощению." }
+    }
+  },
+  {
+    "image_name": "turquoise",
+    "translations": {
+      "en": { "name": "Turquoise", "desc": "It promotes balanced communication and expression. It is also associated with the third eye, enhancing meditation and intuition. Its energy is gentle and cool. Turquoise is considered a healing and protective stone." },
+      "es": { "name": "Turquesa", "desc": "Promueve la comunicación y expresión equilibradas. Se asocia con el tercer ojo, mejorando la meditación y la intuición. Su energía es suave y fresca. Considerada piedra curativa y protectora." },
+      "fr": { "name": "Turquoise", "desc": "Elle favorise une communication équilibrée. Associée au troisième œil, elle améliore la méditation et l'intuition. Son énergie est douce et fraîche. Considérée comme une pierre de guérison et de protection." },
+      "it": { "name": "Turchese", "desc": "Promuove comunicazione ed espressione equilibrate. Associata al terzo occhio, migliora meditazione e intuizione. La sua energia è dolce e fresca. Considerata pietra curativa e protettiva." },
+      "de": { "name": "Türkis", "desc": "Fördert ausgewogene Kommunikation. Verbunden mit dem dritten Auge, verbessert er Meditation und Intuition. Seine Energie ist sanft und kühl. Gilt als Heil- und Schutzstein." },
+      "pl": { "name": "Turkus", "desc": "Promuje zrównoważoną komunikację. Związany z trzecim okiem, wzmacnia medytację i intuicję. Jego energia jest delikatna i chłodna. Uważany za kamień uzdrawiający i ochronny." },
+      "ru": { "name": "Бирюза", "desc": "Способствует сбалансированному общению. Ассоциируется с третьим глазом, улучшая медитацию и интуицию. Энергия мягкая и прохладная. Считается целительным и защитным камнем." }
+    }
+  },
+  {
+    "image_name": "unakite",
+    "translations": {
+      "en": { "name": "Unakite", "desc": "Stone of vision and transformation. It is associated with the heart chakra because of its green and pink color. It brings balance and promotes physical and energetic healing. Unakite helps to clear blockages from the past." },
+      "es": { "name": "Unakita", "desc": "Piedra de visión y transformación. Se asocia con el chakra corazón por su color verde y rosa. Aporta equilibrio y promueve la sanación física y energética. Ayuda a eliminar bloqueos del pasado." },
+      "fr": { "name": "Unakite", "desc": "Pierre de vision et de transformation. Associée au chakra du cœur par sa couleur verte et rose. Elle apporte équilibre et favorise la guérison. L'unakite aide à éliminer les blocages du passé." },
+      "it": { "name": "Unakite", "desc": "Pietra di visione e trasformazione. Associata al chakra del cuore per il suo colore verde e rosa. Porta equilibrio e promuove la guarigione. Aiuta a eliminare i blocchi del passato." },
+      "de": { "name": "Unakit", "desc": "Stein der Vision und Transformation. Wegen seiner grün-rosa Farbe dem Herzchakra zugeordnet. Bringt Gleichgewicht und fördert Heilung. Hilft, Blockaden aus der Vergangenheit zu lösen." },
+      "pl": { "name": "Unakit", "desc": "Kamień wizji i transformacji. Kojarzony z czakrą serca z powodu zielono-różowego koloru. Przynosi równowagę i promuje uzdrawianie. Pomaga usunąć blokady z przeszłości." },
+      "ru": { "name": "Унакит", "desc": "Камень видения и трансформации. Ассоциируется с сердечной чакрой из-за зелено-розового цвета. Приносит баланс и способствует исцелению. Помогает очистить блоки прошлого." }
+    }
+  },
+  {
+    "image_name": "volcanic_stone",
+    "translations": {
+      "en": { "name": "Volcanic Stone", "desc": "Emotional balance, as it has the ability to absorb negative emotions, stress, and feelings of anxiety. This stone helps to cope with moments of tension, difficult decisions, and thoughts of anger or resentment." },
+      "es": { "name": "Piedra Volcánica", "desc": "Equilibrio emocional, con capacidad de absorber emociones negativas, estrés y ansiedad. Ayuda a afrontar momentos de tensión, decisiones difíciles y pensamientos de ira o resentimiento." },
+      "fr": { "name": "Pierre de Lave", "desc": "Équilibre émotionnel, capable d'absorber les émotions négatives, le stress et l'anxiété. Elle aide à faire face aux moments de tension, aux décisions difficiles et à la colère." },
+      "it": { "name": "Pietra Lavica", "desc": "Equilibrio emotivo, capace di assorbire emozioni negative, stress e ansia. Aiuta ad affrontare momenti di tensione, decisioni difficili e pensieri di rabbia o risentimento." },
+      "de": { "name": "Lavastein", "desc": "Emotionales Gleichgewicht; absorbiert negative Emotionen, Stress und Angst. Hilft bei Spannungsmomenten, schwierigen Entscheidungen und Gedanken an Wut oder Groll." },
+      "pl": { "name": "Kamień Wulkaniczny", "desc": "Równowaga emocjonalna; zdolność pochłaniania negatywnych emocji i stresu. Pomaga radzić sobie z chwilami napięcia, trudnymi decyzjami i gniewem." },
+      "ru": { "name": "Вулканический Камень", "desc": "Эмоциональное равновесие; поглощает негативные эмоции, стресс и тревогу. Помогает справляться с моментами напряжения, сложными решениями и гневом." }
+    }
+  },
+  {
+    "image_name": "watermelon_tourmaline",
+    "translations": {
+      "en": { "name": "Watermelon Tourmaline", "desc": "Watermelon Tourmaline is the 'super activator' of the heart chakra, linking it to the higher self. It fosters love, tenderness and friendship. It instills patience and teaches tact and diplomacy." },
+      "es": { "name": "Turmalina Sandía", "desc": "La Turmalina Sandía es el 'super activador' del chakra corazón, uniéndolo al yo superior. Fomenta el amor, la ternura y la amistad. Infunde paciencia y enseña tacto y diplomacia." },
+      "fr": { "name": "Tourmaline Melon d'Eau", "desc": "La Tourmaline Melon d'Eau est le 'super activateur' du chakra du cœur. Elle favorise l'amour, la tendresse et l'amitié. Elle instille la patience et enseigne le tact et la diplomatie." },
+      "it": { "name": "Tormalina Cocomero", "desc": "La Tormalina Cocomero è il 'super attivatore' del chakra del cuore. Promuove amore, tenerezza e amicizia. Infonde pazienza e insegna tatto e diplomazia." },
+      "de": { "name": "Wassermelonen-Turmalin", "desc": "Wassermelonen-Turmalin ist der 'Super-Aktivator' des Herzchakras. Er fördert Liebe, Zärtlichkeit und Freundschaft. Er flößt Geduld ein und lehrt Takt und Diplomatie." },
+      "pl": { "name": "Turmalin Arbuzowy", "desc": "Turmalin Arbuzowy to 'super aktywator' czakry serca. Pielęgnuje miłość, czułość i przyjaźń. Wpaja cierpliwość oraz uczy taktu i dyplomacji." },
+      "ru": { "name": "Арбузный Турмалин", "desc": "Арбузный турмалин — «суперактиватор» сердечной чакры. Способствует любви, нежности и дружбе. Вселяет терпение и учит такту и дипломатии." }
+    }
+  },
+  {
+    "image_name": "white_topaz",
+    "translations": {
+      "en": { "name": "White Topaz", "desc": "White Topaz helps to clarify thoughts and intentions. It aids in manifesting desires and helps one to see the truth in others. It is a strong stone for spiritual development and finding one's path." },
+      "es": { "name": "Topacio Blanco", "desc": "El Topacio Blanco ayuda a aclarar pensamientos e intenciones. Ayuda a manifestar deseos y a ver la verdad en los demás. Es una piedra fuerte para el desarrollo espiritual y encontrar el propio camino." },
+      "fr": { "name": "Topaze Blanche", "desc": "La Topaze Blanche aide à clarifier les pensées et intentions. Elle aide à manifester les désirs et à voir la vérité chez les autres. C'est une pierre forte pour le développement spirituel." },
+      "it": { "name": "Topazio Bianco", "desc": "Il Topazio Bianco aiuta a chiarire pensieri e intenzioni. Aiuta a manifestare i desideri e a vedere la verità negli altri. È una pietra forte per lo sviluppo spirituale e per trovare la propria strada." },
+      "de": { "name": "Weißer Topas", "desc": "Weißer Topas hilft, Gedanken und Absichten zu klären. Er unterstützt die Manifestation von Wünschen und hilft, die Wahrheit zu erkennen. Ein starker Stein für spirituelle Entwicklung." },
+      "pl": { "name": "Biały Topaz", "desc": "Biały Topaz pomaga wyjaśnić myśli i intencje. Wspomaga manifestowanie pragnień i dostrzeganie prawdy w innych. Jest silnym kamieniem rozwoju duchowego." },
+      "ru": { "name": "Белый Топаз", "desc": "Белый топаз помогает прояснить мысли и намерения. Помогает в манифестации желаний и видении истины в других. Сильный камень для духовного развития." }
+    }
+  },
+  {
+    "image_name": "yellow_fluorite",
+    "translations": {
+      "en": { "name": "Yellow Fluorite", "desc": "Yellow Fluorite enhances creativity and stabilizes group energy. It is excellent for cooperation and intellectual activities. It helps clear the mind of confusion and negative thoughts." },
+      "es": { "name": "Fluorita Amarilla", "desc": "La Fluorita Amarilla mejora la creatividad y estabiliza la energía grupal. Es excelente para la cooperación y actividades intelectuales. Ayuda a despejar la mente de confusión y negatividad." },
+      "fr": { "name": "Fluorite Jaune", "desc": "La Fluorite Jaune améliore la créativité et stabilise l'énergie de groupe. Excellente pour la coopération et les activités intellectuelles. Elle dissipe la confusion et les pensées négatives." },
+      "it": { "name": "Fluorite Gialla", "desc": "La Fluorite Gialla migliora la creatività e stabilizza l'energia di gruppo. Eccellente per la cooperazione e le attività intellettuali. Aiuta a liberare la mente da confusione e negatività." },
+      "de": { "name": "Gelber Fluorit", "desc": "Gelber Fluorit steigert die Kreativität und stabilisiert die Gruppenenergie. Exzellent für Kooperation und intellektuelle Aktivitäten. Er befreit den Geist von Verwirrung und negativen Gedanken." },
+      "pl": { "name": "Żółty Fluoryt", "desc": "Żółty Fluoryt zwiększa kreatywność i stabilizuje energię grupy. Doskonały do współpracy i działań intelektualnych. Pomaga oczyścić umysł z zamieszania i negatywnych myśli." },
+      "ru": { "name": "Желтый Флюорит", "desc": "Желтый флюорит повышает креативность и стабилизирует групповую энергию. Отличен для сотрудничества и интеллекта. Очищает ум от путаницы и негатива." }
+    }
+  },
+  {
+    "image_name": "yellow_jade",
+    "translations": {
+      "en": { "name": "Yellow Jade", "desc": "Yellow Jade is energetic and stimulating, yet mellow. It brings joy and happiness. It teaches the interconnectedness of all beings. It aids the digestive and elimination systems." },
+      "es": { "name": "Jade Amarillo", "desc": "El Jade Amarillo es energético y estimulante, pero suave. Aporta alegría y felicidad. Enseña la interconexión de todos los seres. Ayuda a los sistemas digestivo y de eliminación." },
+      "fr": { "name": "Jade Jaune", "desc": "Le Jade Jaune est énergique et stimulant, mais doux. Il apporte joie et bonheur. Il enseigne l'interconnexion de tous les êtres. Il aide les systèmes digestif et d'élimination." },
+      "it": { "name": "Giada Gialla", "desc": "La Giada Gialla è energica e stimolante, ma dolce. Porta gioia e felicità. Insegna l'interconnessione di tutti gli esseri. Aiuta i sistemi digestivo e di eliminazione." },
+      "de": { "name": "Gelbe Jade", "desc": "Gelbe Jade ist energetisch und anregend, aber sanft. Sie bringt Freude und Glück. Sie lehrt die Verbundenheit aller Wesen und unterstützt Verdauung und Ausscheidung." },
+      "pl": { "name": "Żółty Jadeit", "desc": "Żółty Jadeit jest energetyczny i stymulujący, ale łagodny. Przynosi radość i szczęście. Uczy wzajemnych powiązań wszystkich istot. Wspomaga układ trawienny." },
+      "ru": { "name": "Желтый Нефрит", "desc": "Желтый нефрит энергичен и стимулирует, но мягок. Приносит радость и счастье. Учит взаимосвязи всех существ. Помогает пищеварительной и выделительной системам." }
+    }
+  },
+  {
+    "image_name": "yellow_jasper",
+    "translations": {
+      "en": { "name": "Yellow Jasper", "desc": "Yellow Jasper protects during physical and spiritual travel. It channels positive energy, stimulates the solar plexus chakra, and helps with endocrine system balance. It builds self-confidence." },
+      "es": { "name": "Jaspe Amarillo", "desc": "El Jaspe Amarillo protege durante viajes físicos y espirituales. Canaliza energía positiva, estimula el chakra del plexo solar y equilibra el sistema endocrino. Construye autoconfianza." },
+      "fr": { "name": "Jaspe Jaune", "desc": "Le Jaspe Jaune protège pendant les voyages. Il canalise l'énergie positive, stimule le plexus solaire et l'équilibre endocrinien. Il renforce la confiance en soi." },
+      "it": { "name": "Diaspro Giallo", "desc": "Il Diaspro Giallo protegge durante i viaggi. Canala energia positiva, stimola il plesso solare e l'equilibrio endocrino. Costruisce la fiducia in se stessi." },
+      "de": { "name": "Gelber Jaspis", "desc": "Gelber Jaspis schützt auf Reisen. Er kanalisiert positive Energie, stimuliert das Solarplexuschakra und gleicht das endokrine System aus. Er stärkt das Selbstvertrauen." },
+      "pl": { "name": "Żółty Jaspis", "desc": "Żółty Jaspis chroni w podróży. Kanalizuje pozytywną energię, stymuluje czakrę splotu słonecznego i równowagę hormonalną. Buduje pewność siebie." },
+      "ru": { "name": "Желтая Яшма", "desc": "Желтая яшма защищает во время путешествий. Направляет позитивную энергию, стимулирует солнечное сплетение и баланс эндокринной системы. Укрепляет уверенность." }
+    }
+  },
+  {
+    "image_name": "yellow_quartz",
+    "translations": {
+      "en": { "name": "Yellow Quartz", "desc": "Yellow Quartz attracts wealth and abundance. It promotes optimism, well-being, and mental clarity. It is associated with the solar plexus chakra, helping to boost self-worth and personal power." },
+      "es": { "name": "Cuarzo Amarillo", "desc": "El Cuarzo Amarillo atrae riqueza y abundancia. Promueve optimismo, bienestar y claridad mental. Asociado con el plexo solar, ayuda a aumentar la autoestima y el poder personal." },
+      "fr": { "name": "Quartz Jaune", "desc": "Le Quartz Jaune attire richesse et abondance. Il favorise l'optimisme et la clarté mentale. Associé au plexus solaire, il booste l'estime de soi et le pouvoir personnel." },
+      "it": { "name": "Quarzo Giallo", "desc": "Il Quarzo Giallo attrae ricchezza e abbondanza. Promuove ottimismo e chiarezza mentale. Associato al plesso solare, aiuta ad aumentare l'autostima e il potere personale." },
+      "de": { "name": "Gelber Quarz", "desc": "Gelber Quarz zieht Reichtum und Fülle an. Er fördert Optimismus und geistige Klarheit. Verbunden mit dem Solarplexus stärkt er das Selbstwertgefühl und die persönliche Kraft." },
+      "pl": { "name": "Żółty Kwarc", "desc": "Żółty Kwarc przyciąga bogactwo i obfitość. Promuje optymizm i jasność umysłu. Związany ze splotem słonecznym, pomaga zwiększyć poczucie własnej wartości." },
+      "ru": { "name": "Желтый Кварц", "desc": "Желтый кварц привлекает богатство и изобилие. Способствует оптимизму и ясности ума. Связан с солнечным сплетением, повышает самооценку и личную силу." }
+    }
+  },
+  {
+    "image_name": "yellow_tourmaline",
+    "translations": {
+      "en": { "name": "Yellow Tourmaline", "desc": "Yellow Tourmaline stimulates the solar plexus. It enhances personal power and intellectual pursuits. It helps to break up stagnation in the energy field and brings a sense of brightness and cheer." },
+      "es": { "name": "Turmalina Amarilla", "desc": "La Turmalina Amarilla estimula el plexo solar. Mejora el poder personal y las actividades intelectuales. Rompe el estancamiento energético y aporta una sensación de brillo y alegría." },
+      "fr": { "name": "Tourmaline Jaune", "desc": "La Tourmaline Jaune stimule le plexus solaire. Elle améliore le pouvoir personnel et l'intellect. Elle brise la stagnation énergétique et apporte une sensation de clarté et de joie." },
+      "it": { "name": "Tormalina Gialla", "desc": "La Tormalina Gialla stimola il plesso solare. Migliora il potere personale e le attività intellettuali. Rompe la stagnazione energetica e porta un senso di luminosità e allegria." },
+      "de": { "name": "Gelber Turmalin", "desc": "Gelber Turmalin stimuliert den Solarplexus. Er steigert persönliche Kraft und Intellekt. Er löst Stagnation im Energiefeld auf und bringt ein Gefühl von Helligkeit und Fröhlichkeit." },
+      "pl": { "name": "Żółty Turmalin", "desc": "Żółty Turmalin stymuluje splot słoneczny. Wzmacnia siłę osobistą i działania intelektualne. Przełamuje stagnację w polu energetycznym i wnosi jasność oraz radość." },
+      "ru": { "name": "Желтый Турмалин", "desc": "Желтый турмалин стимулирует солнечное сплетение. Усиливает личную силу и интеллект. Разрушает застой в энергетическом поле и приносит чувство радости." }
+    }
+  }
+]
