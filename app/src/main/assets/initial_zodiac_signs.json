@@ -1,0 +1,182 @@
+[
+  {
+    "key": "aries",
+    "start_date": "Mar 21",
+    "end_date": "Apr 19",
+    "image_name": "aries",
+    "translations": {
+      "en": { "name": "Aries", "element": "Fire", "planet": "Mars", "desc": "Aries is the first astrological sign, known for its fiery energy and leadership." },
+      "es": { "name": "Aries", "element": "Fuego", "planet": "Marte", "desc": "Aries es el primer signo astrológico, conocido por su energía ardiente y liderazgo." },
+      "fr": { "name": "Bélier", "element": "Feu", "planet": "Mars", "desc": "Le Bélier est le premier signe astrologique, connu pour son énergie ardente et son leadership." },
+      "it": { "name": "Ariete", "element": "Fuoco", "planet": "Marte", "desc": "L'Ariete è il primo segno zodiacale, noto per la sua energia ardente e la sua leadership." },
+      "de": { "name": "Widder", "element": "Feuer", "planet": "Mars", "desc": "Der Widder ist das erste Sternzeichen, bekannt für seine feurige Energie und Führungsstärke." },
+      "pl": { "name": "Baran", "element": "Ogień", "planet": "Mars", "desc": "Baran to pierwszy znak zodiaku, znany ze swojej ognistej energii i zdolności przywódczych." },
+      "ru": { "name": "Овен", "element": "Огонь", "planet": "Марс", "desc": "Овен — первый знак зодиака, известный своей огненной энергией и лидерством." }
+    }
+  },
+  {
+    "key": "taurus",
+    "start_date": "Apr 20",
+    "end_date": "May 20",
+    "image_name": "taurus",
+    "translations": {
+      "en": { "name": "Taurus", "element": "Earth", "planet": "Venus", "desc": "Taurus is the second astrological sign, known for its grounded, practical, and reliable nature." },
+      "es": { "name": "Tauro", "element": "Tierra", "planet": "Venus", "desc": "Tauro es el segundo signo astrológico, conocido por su naturaleza práctica, firme y confiable." },
+      "fr": { "name": "Taureau", "element": "Terre", "planet": "Vénus", "desc": "Le Taureau est le deuxième signe astrologique, connu pour sa nature ancrée, pratique et fiable." },
+      "it": { "name": "Toro", "element": "Terra", "planet": "Venere", "desc": "Il Toro è il secondo segno zodiacale, noto per la sua natura radicata, pratica e affidabile." },
+      "de": { "name": "Stier", "element": "Erde", "planet": "Venus", "desc": "Der Stier ist das zweite Sternzeichen, bekannt für seine bodenständige, praktische und zuverlässige Art." },
+      "pl": { "name": "Byk", "element": "Ziemia", "planet": "Wenus", "desc": "Byk to drugi znak zodiaku, znany ze swojej uziemionej, praktycznej i niezawodnej natury." },
+      "ru": { "name": "Телец", "element": "Земля", "planet": "Венера", "desc": "Телец — второй знак зодиака, известный своей приземленностью, практичностью и надежностью." }
+    }
+  },
+  {
+    "key": "gemini",
+    "start_date": "May 21",
+    "end_date": "Jun 20",
+    "image_name": "gemini",
+    "translations": {
+      "en": { "name": "Gemini", "element": "Air", "planet": "Mercury", "desc": "Gemini is the third astrological sign, known for its curious, adaptable, and communicative spirit." },
+      "es": { "name": "Géminis", "element": "Aire", "planet": "Mercurio", "desc": "Géminis es el tercer signo astrológico, conocido por su espíritu curioso, adaptable y comunicativo." },
+      "fr": { "name": "Gémeaux", "element": "Air", "planet": "Mercure", "desc": "Les Gémeaux sont le troisième signe astrologique, connu pour son esprit curieux, adaptable et communicatif." },
+      "it": { "name": "Gemelli", "element": "Aria", "planet": "Mercurio", "desc": "I Gemelli sono il terzo segno zodiacale, noti per il loro spirito curioso, adattabile e comunicativo." },
+      "de": { "name": "Zwillinge", "element": "Luft", "planet": "Merkur", "desc": "Zwillinge ist das dritte Sternzeichen, bekannt für seinen neugierigen, anpassungsfähigen und kommunikativen Geist." },
+      "pl": { "name": "Bliźnięta", "element": "Powietrze", "planet": "Merkury", "desc": "Bliźnięta to trzeci znak zodiaku, znany ze swojej ciekawości, zdolności adaptacyjnych i komunikatywności." },
+      "ru": { "name": "Близнецы", "element": "Воздух", "planet": "Меркурий", "desc": "Близнецы — третий знак зодиака, известный своей любознательностью, приспособляемостью и общительностью." }
+    }
+  },
+  {
+    "key": "cancer",
+    "start_date": "Jun 21",
+    "end_date": "Jul 22",
+    "image_name": "cancer",
+    "translations": {
+      "en": { "name": "Cancer", "element": "Water", "planet": "Moon", "desc": "Cancer is the fourth astrological sign, known for its intuitive, nurturing, and protective qualities." },
+      "es": { "name": "Cáncer", "element": "Agua", "planet": "Luna", "desc": "Cáncer es el cuarto signo astrológico, conocido por sus cualidades intuitivas, protectoras y cariñosas." },
+      "fr": { "name": "Cancer", "element": "Eau", "planet": "Lune", "desc": "Le Cancer est le quatrième signe astrologique, connu pour ses qualités intuitives, nourricières et protectrices." },
+      "it": { "name": "Cancro", "element": "Acqua", "planet": "Luna", "desc": "Il Cancro è il quarto segno zodiacale, noto per le sue qualità intuitive, protettive e nutrienti." },
+      "de": { "name": "Krebs", "element": "Wasser", "planet": "Mond", "desc": "Krebs ist das vierte Sternzeichen, bekannt für seine intuitiven, fürsorglichen und beschützenden Eigenschaften." },
+      "pl": { "name": "Rak", "element": "Woda", "planet": "Księżyc", "desc": "Rak to czwarty znak zodiaku, znany ze swojej intuicji, opiekuńczości i cech ochronnych." },
+      "ru": { "name": "Рак", "element": "Вода", "planet": "Луна", "desc": "Рак — четвертый знак зодиака, известный своей интуицией, заботливостью и защитными качествами." }
+    }
+  },
+  {
+    "key": "leo",
+    "start_date": "Jul 23",
+    "end_date": "Aug 22",
+    "image_name": "leo",
+    "translations": {
+      "en": { "name": "Leo", "element": "Fire", "planet": "Sun", "desc": "Leo is the fifth astrological sign, known for its confident, generous, and charismatic presence." },
+      "es": { "name": "Leo", "element": "Fuego", "planet": "Sol", "desc": "Leo es el quinto signo astrológico, conocido por su presencia segura, generosa y carismática." },
+      "fr": { "name": "Lion", "element": "Feu", "planet": "Soleil", "desc": "Le Lion est le cinquième signe astrologique, connu pour sa présence confiante, généreuse et charismatique." },
+      "it": { "name": "Leone", "element": "Fuoco", "planet": "Sole", "desc": "Il Leone è il quinto segno zodiacale, noto per la sua presenza sicura, generosa e carismatica." },
+      "de": { "name": "Löwe", "element": "Feuer", "planet": "Sonne", "desc": "Löwe ist das fünfte Sternzeichen, bekannt für sein selbstbewusstes, großzügiges und charismatisches Auftreten." },
+      "pl": { "name": "Lew", "element": "Ogień", "planet": "Słońce", "desc": "Lew to piąty znak zodiaku, znany ze swojej pewności siebie, hojności i charyzmy." },
+      "ru": { "name": "Лев", "element": "Огонь", "planet": "Солнце", "desc": "Лев — пятый знак зодиака, известный своей уверенностью, щедростью и харизмой." }
+    }
+  },
+  {
+    "key": "virgo",
+    "start_date": "Aug 23",
+    "end_date": "Sep 22",
+    "image_name": "virgo",
+    "translations": {
+      "en": { "name": "Virgo", "element": "Earth", "planet": "Mercury", "desc": "Virgo is the sixth astrological sign, known for its meticulous, analytical, and helpful nature." },
+      "es": { "name": "Virgo", "element": "Tierra", "planet": "Mercurio", "desc": "Virgo es el sexto signo astrológico, conocido por su naturaleza meticulosa, analítica y servicial." },
+      "fr": { "name": "Vierge", "element": "Terre", "planet": "Mercure", "desc": "La Vierge est le sixième signe astrologique, connu pour sa nature méticuleuse, analytique et serviable." },
+      "it": { "name": "Vergine", "element": "Terra", "planet": "Mercurio", "desc": "La Vergine è il sesto segno zodiacale, noto per la sua natura meticolosa, analitica e disponibile." },
+      "de": { "name": "Jungfrau", "element": "Erde", "planet": "Merkur", "desc": "Jungfrau ist das sechste Sternzeichen, bekannt für seine akribische, analytische und hilfsbereite Art." },
+      "pl": { "name": "Panna", "element": "Ziemia", "planet": "Merkury", "desc": "Panna to szósty znak zodiaku, znany ze swojej skrupulatności, analityczności i chęci niesienia pomocy." },
+      "ru": { "name": "Дева", "element": "Земля", "planet": "Меркурий", "desc": "Дева — шестой знак зодиака, известный своей дотошностью, аналитичностью и отзывчивостью." }
+    }
+  },
+  {
+    "key": "libra",
+    "start_date": "Sep 23",
+    "end_date": "Oct 22",
+    "image_name": "libra",
+    "translations": {
+      "en": { "name": "Libra", "element": "Air", "planet": "Venus", "desc": "Libra is the seventh astrological sign, known for its diplomatic, fair-minded, and social grace." },
+      "es": { "name": "Libra", "element": "Aire", "planet": "Venus", "desc": "Libra es el séptimo signo astrológico, conocido por su diplomacia, imparcialidad y gracia social." },
+      "fr": { "name": "Balance", "element": "Air", "planet": "Vénus", "desc": "La Balance est le septième signe astrologique, connu pour sa diplomatie, son équité et sa grâce sociale." },
+      "it": { "name": "Bilancia", "element": "Aria", "planet": "Venere", "desc": "La Bilancia è il settimo segno zodiacale, noto per la sua diplomazia, imparzialità e grazia sociale." },
+      "de": { "name": "Waage", "element": "Luft", "planet": "Venus", "desc": "Die Waage ist das siebte Sternzeichen, bekannt für ihre Diplomatie, Gerechtigkeit und soziale Anmut." },
+      "pl": { "name": "Waga", "element": "Powietrze", "planet": "Wenus", "desc": "Waga to siódmy znak zodiaku, znany ze swojej dyplomacji, sprawiedliwości i wdzięku towarzyskiego." },
+      "ru": { "name": "Весы", "element": "Воздух", "planet": "Венера", "desc": "Весы — седьмой знак зодиака, известный своей дипломатичностью, справедливостью и обаянием." }
+    }
+  },
+  {
+    "key": "scorpio",
+    "start_date": "Oct 23",
+    "end_date": "Nov 21",
+    "image_name": "scorpio",
+    "translations": {
+      "en": { "name": "Scorpio", "element": "Water", "planet": "Pluto", "desc": "Scorpio is the eighth astrological sign, known for its passionate, resourceful, and mysterious aura." },
+      "es": { "name": "Escorpio", "element": "Agua", "planet": "Plutón", "desc": "Escorpio es el octavo signo astrológico, conocido por su aura apasionada, ingeniosa y misteriosa." },
+      "fr": { "name": "Scorpion", "element": "Eau", "planet": "Pluton", "desc": "Le Scorpion est le huitième signe astrologique, connu pour son aura passionnée, ingénieuse et mystérieuse." },
+      "it": { "name": "Scorpione", "element": "Acqua", "planet": "Plutone", "desc": "Lo Scorpione è l'ottavo segno zodiacale, noto per la sua aura appassionata, piena di risorse e misteriosa." },
+      "de": { "name": "Skorpion", "element": "Wasser", "planet": "Pluto", "desc": "Der Skorpion ist das achte Sternzeichen, bekannt für seine leidenschaftliche, einfallsreiche und mysteriöse Aura." },
+      "pl": { "name": "Skorpion", "element": "Woda", "planet": "Pluton", "desc": "Skorpion to ósmy znak zodiaku, znany ze swojej namiętnej, zaradnej i tajemniczej aury." },
+      "ru": { "name": "Скорпион", "element": "Вода", "planet": "Плутон", "desc": "Скорпион — восьмой знак зодиака, известный своей страстной, находчивой и таинственной аурой." }
+    }
+  },
+  {
+    "key": "sagittarius",
+    "start_date": "Nov 22",
+    "end_date": "Dec 21",
+    "image_name": "sagittarius",
+    "translations": {
+      "en": { "name": "Sagittarius", "element": "Fire", "planet": "Jupiter", "desc": "Sagittarius is the ninth astrological sign, known for its optimistic, adventurous, and philosophical outlook." },
+      "es": { "name": "Sagitario", "element": "Fuego", "planet": "Júpiter", "desc": "Sagitario es el noveno signo astrológico, conocido por su perspectiva optimista, aventurera y filosófica." },
+      "fr": { "name": "Sagittaire", "element": "Feu", "planet": "Jupiter", "desc": "Le Sagittaire est le neuvième signe astrologique, connu pour son optimisme, son esprit aventureux et philosophique." },
+      "it": { "name": "Sagittario", "element": "Fuoco", "planet": "Giove", "desc": "Il Sagittario è il nono segno zodiacale, noto per la sua prospettiva ottimista, avventurosa e filosofica." },
+      "de": { "name": "Schütze", "element": "Feuer", "planet": "Jupiter", "desc": "Der Schütze ist das neunte Sternzeichen, bekannt für seinen optimistischen, abenteuerlustigen und philosophischen Ausblick." },
+      "pl": { "name": "Strzelec", "element": "Ogień", "planet": "Jowisz", "desc": "Strzelec to dziewiąty znak zodiaku, znany ze swojego optymistycznego, żądnego przygód i filozoficznego podejścia." },
+      "ru": { "name": "Стрелец", "element": "Огонь", "planet": "Юпитер", "desc": "Стрелец — девятый знак зодиака, известный своим оптимистичным, предприимчивым и философским взглядом." }
+    }
+  },
+  {
+    "key": "capricorn",
+    "start_date": "Dec 22",
+    "end_date": "Jan 19",
+    "image_name": "capricorn",
+    "translations": {
+      "en": { "name": "Capricorn", "element": "Earth", "planet": "Saturn", "desc": "Capricorn is the tenth astrological sign, known for its disciplined, responsible, and ambitious drive." },
+      "es": { "name": "Capricornio", "element": "Tierra", "planet": "Saturno", "desc": "Capricornio es el décimo signo astrológico, conocido por su disciplina, responsabilidad y ambición." },
+      "fr": { "name": "Capricorne", "element": "Terre", "planet": "Saturne", "desc": "Le Capricorne est le dixième signe astrologique, connu pour son esprit discipliné, responsable et ambitieux." },
+      "it": { "name": "Capricorno", "element": "Terra", "planet": "Saturno", "desc": "Il Capricorno è il decimo segno zodiacale, noto per la sua spinta disciplinata, responsabile e ambiziosa." },
+      "de": { "name": "Steinbock", "element": "Erde", "planet": "Saturn", "desc": "Der Steinbock ist das zehnte Sternzeichen, bekannt für seine Disziplin, sein Verantwortungsbewusstsein und seinen Ehrgeiz." },
+      "pl": { "name": "Koziorożec", "element": "Ziemia", "planet": "Saturn", "desc": "Koziorożec to dziesiąty znak zodiaku, znany ze swojej dyscypliny, odpowiedzialności i ambicji." },
+      "ru": { "name": "Козерог", "element": "Земля", "planet": "Сатурн", "desc": "Козерог — десятый знак зодиака, известный своей дисциплинированностью, ответственностью и амбициозностью." }
+    }
+  },
+  {
+    "key": "aquarius",
+    "start_date": "Jan 20",
+    "end_date": "Feb 18",
+    "image_name": "aquarius",
+    "translations": {
+      "en": { "name": "Aquarius", "element": "Air", "planet": "Uranus", "desc": "Aquarius is the eleventh astrological sign, known for its independent, humanitarian, and original ideas." },
+      "es": { "name": "Acuario", "element": "Aire", "planet": "Urano", "desc": "Acuario es el undécimo signo astrológico, conocido por sus ideas independientes, humanitarias y originales." },
+      "fr": { "name": "Verseau", "element": "Air", "planet": "Uranus", "desc": "Le Verseau est le onzième signe astrologique, connu pour ses idées indépendantes, humanitaires et originales." },
+      "it": { "name": "Acquario", "element": "Aria", "planet": "Urano", "desc": "L'Acquario è l'undicesimo segno zodiacale, noto per le sue idee indipendenti, umanitarie e originali." },
+      "de": { "name": "Wassermann", "element": "Luft", "planet": "Uranus", "desc": "Der Wassermann ist das elfte Sternzeichen, bekannt für seine unabhängigen, humanitären und originellen Ideen." },
+      "pl": { "name": "Wodnik", "element": "Powietrze", "planet": "Uran", "desc": "Wodnik to jedenasty znak zodiaku, znany ze swoich niezależnych, humanitarnych i oryginalnych pomysłów." },
+      "ru": { "name": "Водолей", "element": "Воздух", "planet": "Уран", "desc": "Водолей — одиннадцатый знак зодиака, известный своими независимыми, гуманитарными и оригинальными идеями." }
+    }
+  },
+  {
+    "key": "pisces",
+    "start_date": "Feb 19",
+    "end_date": "Mar 20",
+    "image_name": "pisces",
+    "translations": {
+      "en": { "name": "Pisces", "element": "Water", "planet": "Neptune", "desc": "Pisces is the twelfth astrological sign, known for its compassionate, artistic, and intuitive nature." },
+      "es": { "name": "Piscis", "element": "Agua", "planet": "Neptuno", "desc": "Piscis es el duodécimo signo astrológico, conocido por su naturaleza compasiva, artística e intuitiva." },
+      "fr": { "name": "Poissons", "element": "Eau", "planet": "Neptune", "desc": "Les Poissons sont le douzième signe astrologique, connu pour sa nature compatissante, artistique et intuitive." },
+      "it": { "name": "Pesci", "element": "Acqua", "planet": "Nettuno", "desc": "I Pesci sono il dodicesimo segno zodiacale, noti per la loro natura compassionevole, artistica e intuitiva." },
+      "de": { "name": "Fische", "element": "Wasser", "planet": "Neptun", "desc": "Die Fische sind das zwölfte Sternzeichen, bekannt für ihre mitfühlende, künstlerische und intuitive Natur." },
+      "pl": { "name": "Ryby", "element": "Woda", "planet": "Neptun", "desc": "Ryby to dwunasty znak zodiaku, znany ze swojej współczującej, artystycznej i intuicyjnej natury." },
+      "ru": { "name": "Рыбы", "element": "Вода", "planet": "Нептун", "desc": "Рыбы — двенадцатый знак зодиака, известный своей сострадательной, артистичной и интуитивной натурой." }
+    }
+  }
+]

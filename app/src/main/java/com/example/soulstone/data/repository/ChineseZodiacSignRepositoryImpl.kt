@@ -51,7 +51,7 @@ class ChineseZodiacSignRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getChineseSignByName(keyName: String): ChineseZodiacSign? {
-        return dao.getChineseSignByName(keyName)
+        return dao.getChineseSignByKey(keyName)
     }
 
 }

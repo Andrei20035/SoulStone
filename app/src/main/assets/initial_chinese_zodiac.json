@@ -1,0 +1,842 @@
+[
+  {
+    "key": "Rat",
+    "image_base": "rat",
+    "years": "1912, 1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020, 2032",
+    "translations": {
+      "en": {
+        "name": "Rat",
+        "desc": "Known for their resourcefulness, intelligence, and adaptability, Rats navigate life’s complexities with ease, often finding creative solutions to challenges. Their quick thinking and problem-solving abilities make them adept at seizing opportunities and overcoming obstacles with finesse. Someone born in the Year of the Rat might excel in dynamic environments that require strategic thinking and innovation.",
+        "traits": "Frugal, ambitious, honest, charming, critical",
+        "best_match": "Ox",
+        "worst_match": "Horse",
+        "compatibility_desc": "In terms of compatibility, Rats form meaningful relationships with specific Zodiac signs, such as the Ox and Dragon. The harmony between the Rat and Ox signifies a balanced partnership where the Ox’s patience complements the Rat’s agility and dynamism. Similarly, the Rat’s synergy with the ambitious Dragon reflects a shared drive for success and achievement.",
+        "gemstone_desc": "The Rat is associated with intelligence and charm.\n\nGarnet: Believed to bring good fortune and prosperity.\nEmerald: Symbolizes growth and new beginnings.\nAmethyst: A protective stone that can bring balance and calm.\nDiamond: Associated with clarity and strength.\nRose Quartz: Encourages inner peace and compassion.\nCitrine: Thought to attract wealth and success.\nMoonstone: Aids with intuition and emotional balance.\nTourmaline: Promotes balance and healing."
+      },
+      "es": {
+        "name": "Rata",
+        "desc": "Conocidas por su ingenio, inteligencia y adaptabilidad, las Ratas navegan las complejidades de la vida con facilidad, encontrando a menudo soluciones creativas a los desafíos. Su rapidez mental y capacidad para resolver problemas las hacen expertas en aprovechar oportunidades y superar obstáculos con delicadeza. Alguien nacido en el Año de la Rata podría sobresalir en entornos dinámicos que requieran pensamiento estratégico e innovación.",
+        "traits": "Frugal, ambicioso, honesto, encantador, crítico",
+        "best_match": "Buey",
+        "worst_match": "Caballo",
+        "compatibility_desc": "En términos de compatibilidad, las Ratas forman relaciones significativas con signos específicos del Zodíaco, como el Buey y el Dragón. La armonía entre la Rata y el Buey significa una asociación equilibrada donde la paciencia del Buey complementa la agilidad y el dinamismo de la Rata. Del mismo modo, la sinergia de la Rata con el ambicioso Dragón refleja un impulso compartido por el éxito y el logro.",
+        "gemstone_desc": "La Rata se asocia con la inteligencia y el encanto.\n\nGranate: Se cree que trae buena fortuna y prosperidad.\nEsmeralda: Simboliza el crecimiento y los nuevos comienzos.\nAmatista: Una piedra protectora que puede traer equilibrio y calma.\nDiamante: Asociado con la claridad y la fuerza.\nCuarzo Rosa: Fomenta la paz interior y la compasión.\nCitrino: Se cree que atrae riqueza y éxito.\nPiedra de Luna: Ayuda con la intuición y el equilibrio emocional.\nTurmalina: Promueve el equilibrio y la curación."
+      },
+      "fr": {
+        "name": "Rat",
+        "desc": "Connus pour leur ingéniosité, leur intelligence et leur adaptabilité, les Rats naviguent dans les complexités de la vie avec aisance, trouvant souvent des solutions créatives aux défis. Leur vivacité d'esprit et leurs capacités de résolution de problèmes les rendent aptes à saisir les opportunités et à surmonter les obstacles avec finesse. Une personne née l'année du Rat pourrait exceller dans des environnements dynamiques nécessitant une réflexion stratégique et de l'innovation.",
+        "traits": "Frugal, ambitieux, honnête, charmant, critique",
+        "best_match": "Bœuf",
+        "worst_match": "Cheval",
+        "compatibility_desc": "En termes de compatibilité, les Rats nouent des relations significatives avec des signes spécifiques du Zodiaque, comme le Bœuf et le Dragon. L'harmonie entre le Rat et le Bœuf signifie un partenariat équilibré où la patience du Bœuf complète l'agilité et le dynamisme du Rat. De même, la synergie du Rat avec l'ambitieux Dragon reflète une volonté commune de succès et de réussite.",
+        "gemstone_desc": "Le Rat est associé à l'intelligence et au charme.\n\nGrenat : Censé apporter bonne fortune et prospérité.\nÉmeraude : Symbolise la croissance et les nouveaux départs.\nAméthyste : Une pierre protectrice qui peut apporter équilibre et calme.\nDiamant : Associé à la clarté et à la force.\nQuartz rose : Encourage la paix intérieure et la compassion.\nCitrine : Pensée pour attirer la richesse et le succès.\nPierre de lune : Aide à l'intuition et à l'équilibre émotionnel.\nTourmaline : Favorise l'équilibre et la guérison."
+      },
+      "it": {
+        "name": "Topo",
+        "desc": "Conosciuti per la loro intraprendenza, intelligenza e adattabilità, i Topi affrontano le complessità della vita con facilità, trovando spesso soluzioni creative alle sfide. La loro rapidità di pensiero e le capacità di problem-solving li rendono abili nel cogliere le opportunità e superare gli ostacoli con finezza. Chi è nato nell'Anno del Topo potrebbe eccellere in ambienti dinamici che richiedono pensiero strategico e innovazione.",
+        "traits": "Frugale, ambizioso, onesto, affascinante, critico",
+        "best_match": "Bue",
+        "worst_match": "Cavallo",
+        "compatibility_desc": "In termini di compatibilità, i Topi formano relazioni significative con specifici segni zodiacali, come il Bue e il Drago. L'armonia tra il Topo e il Bue indica una partnership equilibrata dove la pazienza del Bue completa l'agilità e il dinamismo del Topo. Allo stesso modo, la sinergia del Topo con l'ambizioso Drago riflette una spinta condivisa verso il successo e la realizzazione.",
+        "gemstone_desc": "Il Topo è associato all'intelligenza e al fascino.\n\nGranato: Si crede porti buona fortuna e prosperità.\nSmeraldo: Simboleggia la crescita e i nuovi inizi.\nAmetista: Una pietra protettiva che può portare equilibrio e calma.\nDiamante: Associato alla chiarezza e alla forza.\nQuarzo Rosa: Incoraggia la pace interiore e la compassione.\nCitrino: Si pensa attiri ricchezza e successo.\nPietra di Luna: Aiuta con l'intuizione e l'equilibrio emotivo.\nTormalina: Promuove l'equilibrio e la guarigione."
+      },
+      "de": {
+        "name": "Ratte",
+        "desc": "Bekannt für ihren Einfallsreichtum, ihre Intelligenz und Anpassungsfähigkeit, meistern Ratten die Komplexität des Lebens mit Leichtigkeit und finden oft kreative Lösungen für Herausforderungen. Ihr schnelles Denken und ihre Problemlösungsfähigkeiten machen sie geschickt darin, Chancen zu ergreifen und Hindernisse mit Finesse zu überwinden. Jemand, der im Jahr der Ratte geboren ist, könnte in dynamischen Umgebungen glänzen, die strategisches Denken und Innovation erfordern.",
+        "traits": "Sparsam, ehrgeizig, ehrlich, charmant, kritisch",
+        "best_match": "Büffel",
+        "worst_match": "Pferd",
+        "compatibility_desc": "In Bezug auf die Kompatibilität gehen Ratten bedeutungsvolle Beziehungen mit bestimmten Sternzeichen ein, wie dem Büffel und dem Drachen. Die Harmonie zwischen Ratte und Büffel bedeutet eine ausgewogene Partnerschaft, in der die Geduld des Büffels die Agilität und Dynamik der Ratte ergänzt. Ebenso spiegelt die Synergie der Ratte mit dem ehrgeizigen Drachen einen gemeinsamen Antrieb für Erfolg und Leistung wider.",
+        "gemstone_desc": "Die Ratte wird mit Intelligenz und Charme assoziiert.\n\nGranat: Soll Glück und Wohlstand bringen.\nSmaragd: Symbolisiert Wachstum und Neuanfänge.\nAmethyst: Ein Schutzstein, der Gleichgewicht und Ruhe bringen kann.\nDiamant: Verbunden mit Klarheit und Stärke.\nRosenquarz: Fördert inneren Frieden und Mitgefühl.\nCitrin: Soll Reichtum und Erfolg anziehen.\nMondstein: Hilft bei Intuition und emotionalem Gleichgewicht.\nTurmalin: Fördert Gleichgewicht und Heilung."
+      },
+      "pl": {
+        "name": "Szczur",
+        "desc": "Znane ze swojej zaradności, inteligencji i zdolności adaptacyjnych, Szczury z łatwością radzą sobie z zawiłościami życia, często znajdując kreatywne rozwiązania problemów. Ich szybkie myślenie i umiejętność rozwiązywania problemów sprawiają, że są biegłe w wykorzystywaniu okazji i pokonywaniu przeszkód z finezją. Osoba urodzona w Roku Szczura może wyróżniać się w dynamicznych środowiskach, które wymagają strategicznego myślenia i innowacyjności.",
+        "traits": "Oszczędny, ambitny, uczciwy, czarujący, krytyczny",
+        "best_match": "Bawół",
+        "worst_match": "Koń",
+        "compatibility_desc": "Pod względem zgodności, Szczury tworzą znaczące relacje z określonymi znakami zodiaku, takimi jak Bawół i Smok. Harmonia między Szczurem a Bawołem oznacza zrównoważone partnerstwo, w którym cierpliwość Bawoła uzupełnia zwinność i dynamizm Szczura. Podobnie, synergia Szczura z ambitnym Smokiem odzwierciedla wspólne dążenie do sukcesu i osiągnięć.",
+        "gemstone_desc": "Szczur kojarzony jest z inteligencją i urokiem.\n\nGranat: Wierzy się, że przynosi szczęście i dobrobyt.\nSzmaragd: Symbolizuje wzrost i nowe początki.\nAmetyst: Kamień ochronny, który może przynieść równowagę i spokój.\nDiament: Kojarzony z jasnością i siłą.\nKwarc różowy: Zachęca do wewnętrznego spokoju i współczucia.\nCytryn: Uważany za przyciągający bogactwo i sukces.\nKamień księżycowy: Wspomaga intuicję i równowagę emocjonalną.\nTurmalin: Promuje równowagę i uzdrawianie."
+      },
+      "ru": {
+        "name": "Крыса",
+        "desc": "Известные своей находчивостью, умом и способностью к адаптации, Крысы с легкостью справляются со сложностями жизни, часто находя творческие решения проблем. Их быстрое мышление и навыки решения задач позволяют им умело использовать возможности и преодолевать препятствия. Человек, рожденный в год Крысы, может преуспеть в динамичной среде, требующей стратегического мышления и инноваций.",
+        "traits": "Бережливая, амбициозная, честная, обаятельная, критичная",
+        "best_match": "Бык",
+        "worst_match": "Лошадь",
+        "compatibility_desc": "Что касается совместимости, Крысы строят значимые отношения с определенными знаками Зодиака, такими как Бык и Дракон. Гармония между Крысой и Быком означает сбалансированное партнерство, где терпение Быка дополняет ловкость и динамичность Крысы. Аналогично, синергия Крысы с амбициозным Драконом отражает общее стремление к успеху и достижениям.",
+        "gemstone_desc": "Крыса ассоциируется с интеллектом и обаянием.\n\nГранат: Считается, что он приносит удачу и процветание.\nИзумруд: Символизирует рост и новые начинания.\nАметист: Защитный камень, который может принести равновесие и спокойствие.\nАлмаз: Ассоциируется с ясностью и силой.\nРозовый кварц: Способствует внутреннему миру и состраданию.\nЦитрин: Считается, что привлекает богатство и успех.\nЛунный камень: Помогает интуиции и эмоциональному равновесию.\nТурмалин: Способствует равновесию и исцелению."
+      }
+    }
+  },
+  {
+    "key": "Ox",
+    "image_base": "ox",
+    "years": "1913, 1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021, 2033",
+    "translations": {
+      "en": {
+        "name": "Ox",
+        "desc": "The Ox is a pillar of strength in its communities, recognized for their diligence, dependability, and honesty. Their commitment to their goals and responsibilities sets them apart as reliable and trustworthy individuals. Someone born in the Year of the Ox might be the anchor in group settings, providing stability and support to those around them.",
+        "traits": "Perseverant, patient, hardworking, determined, stubborn",
+        "best_match": "Rat",
+        "worst_match": "Sheep",
+        "compatibility_desc": "The Ox’s compatibility with other Zodiac signs, such as the Rat and Rooster, showcases the harmonious relationships that can form based on complementary traits. The Ox’s patient demeanor complements the Rat’s resourcefulness, creating a balanced partnership that leverages both efficiency and creativity. Similarly, the Rooster’s attention to detail aligns well with the Ox’s practical approach, fostering a collaborative dynamic.",
+        "gemstone_desc": "The Ox is known for its strength, patience, and determination.\n\nAquamarine: Offers peace and mental clarity.\nLapis Lazuli: Promotes inner harmony and wisdom.\nJade: A traditional symbol of good luck and prosperity.\nMoss Agate: Connected with stability and grounding.\nEmerald: Represents growth and renewal.\nMoonstone: Provides emotional balance and intuition.\nCitrine: Associated with abundance and good luck.\nTiger's Eye: A protective talisman that can enhance confidence."
+      },
+      "es": {
+        "name": "Buey",
+        "desc": "El Buey es un pilar de fortaleza en sus comunidades, reconocido por su diligencia, fiabilidad y honestidad. Su compromiso con sus objetivos y responsabilidades los distingue como individuos confiables y dignos de crédito. Alguien nacido en el Año del Buey podría ser el ancla en entornos grupales, brindando estabilidad y apoyo a quienes lo rodean.",
+        "traits": "Perseverante, paciente, trabajador, decidido, terco",
+        "best_match": "Rata",
+        "worst_match": "Cabra",
+        "compatibility_desc": "La compatibilidad del Buey con otros signos del Zodíaco, como la Rata y el Gallo, muestra las relaciones armoniosas que pueden formarse basadas en rasgos complementarios. La actitud paciente del Buey complementa el ingenio de la Rata, creando una asociación equilibrada que aprovecha tanto la eficiencia como la creatividad. Del mismo modo, la atención al detalle del Gallo se alinea bien con el enfoque práctico del Buey, fomentando una dinámica colaborativa.",
+        "gemstone_desc": "El Buey es conocido por su fuerza, paciencia y determinación.\n\nAguamarina: Ofrece paz y claridad mental.\nLapislázuli: Promueve la armonía interior y la sabiduría.\nJade: Un símbolo tradicional de buena suerte y prosperidad.\nÁgata Musgo: Conectada con la estabilidad y el arraigo.\nEsmeralda: Representa el crecimiento y la renovación.\nPiedra de Luna: Proporciona equilibrio emocional e intuición.\nCitrino: Asociado con la abundancia y la buena suerte.\nOjo de Tigre: Un talismán protector que puede mejorar la confianza."
+      },
+      "fr": {
+        "name": "Bœuf",
+        "desc": "Le Bœuf est un pilier de force dans sa communauté, reconnu pour sa diligence, sa fiabilité et son honnêteté. Son engagement envers ses objectifs et ses responsabilités le distingue en tant qu'individu fiable et digne de confiance. Une personne née l'année du Bœuf pourrait être l'ancre dans les groupes, apportant stabilité et soutien à ceux qui l'entourent.",
+        "traits": "Persévérant, patient, travailleur, déterminé, têtu",
+        "best_match": "Rat",
+        "worst_match": "Chèvre",
+        "compatibility_desc": "La compatibilité du Bœuf avec d'autres signes du Zodiaque, tels que le Rat et le Coq, met en évidence les relations harmonieuses qui peuvent se former sur la base de traits complémentaires. Le comportement patient du Bœuf complète l'ingéniosité du Rat, créant un partenariat équilibré qui tire parti à la fois de l'efficacité et de la créativité. De même, le souci du détail du Coq s'aligne bien avec l'approche pratique du Bœuf, favorisant une dynamique collaborative.",
+        "gemstone_desc": "Le Bœuf est connu pour sa force, sa patience et sa détermination.\n\nAigue-marine : Offre paix et clarté mentale.\nLapis-lazuli : Favorise l'harmonie intérieure et la sagesse.\nJade : Un symbole traditionnel de chance et de prospérité.\nAgate mousse : Liée à la stabilité et à l'ancrage.\nÉmeraude : Représente la croissance et le renouveau.\nPierre de lune : Procure équilibre émotionnel et intuition.\nCitrine : Associée à l'abondance et à la chance.\nŒil-de-tigre : Un talisman protecteur qui peut renforcer la confiance."
+      },
+      "it": {
+        "name": "Bue",
+        "desc": "Il Bue è un pilastro di forza nelle sue comunità, riconosciuto per la sua diligenza, affidabilità e onestà. Il suo impegno verso obiettivi e responsabilità lo distingue come individuo fidato e serio. Chi è nato nell'Anno del Bue potrebbe essere l'ancora nei contesti di gruppo, fornendo stabilità e supporto a chi lo circonda.",
+        "traits": "Perseverante, paziente, gran lavoratore, determinato, testardo",
+        "best_match": "Topo",
+        "worst_match": "Capra",
+        "compatibility_desc": "La compatibilità del Bue con altri segni zodiacali, come il Topo e il Gallo, mostra le relazioni armoniose che possono formarsi basandosi su tratti complementari. L'atteggiamento paziente del Bue completa l'intraprendenza del Topo, creando una partnership equilibrata che sfrutta sia l'efficienza che la creatività. Allo stesso modo, l'attenzione ai dettagli del Gallo si allinea bene con l'approccio pratico del Bue, favorendo una dinamica collaborativa.",
+        "gemstone_desc": "Il Bue è noto per la sua forza, pazienza e determinazione.\n\nAcquamarina: Offre pace e chiarezza mentale.\nLapislazzuli: Promuove l'armonia interiore e la saggezza.\nGiada: Un simbolo tradizionale di buona fortuna e prosperità.\nAgata Muschiata: Collegata alla stabilità e al radicamento.\nSmeraldo: Rappresenta la crescita e il rinnovamento.\nPietra di Luna: Fornisce equilibrio emotivo e intuizione.\nCitrino: Associato all'abbondanza e alla buona fortuna.\nOcchio di Tigre: Un talismano protettivo che può aumentare la fiducia."
+      },
+      "de": {
+        "name": "Büffel",
+        "desc": "Der Büffel ist ein Pfeiler der Stärke in seiner Gemeinschaft, anerkannt für seinen Fleiß, seine Zuverlässigkeit und Ehrlichkeit. Sein Engagement für seine Ziele und Verantwortlichkeiten zeichnet ihn als vertrauenswürdige und beständige Person aus. Jemand, der im Jahr des Büffels geboren ist, könnte der Anker in Gruppen sein und den Menschen um sich herum Stabilität und Unterstützung bieten.",
+        "traits": "Beharrlich, geduldig, fleißig, entschlossen, stur",
+        "best_match": "Ratte",
+        "worst_match": "Ziege",
+        "compatibility_desc": "Die Kompatibilität des Büffels mit anderen Sternzeichen, wie der Ratte und dem Hahn, zeigt die harmonischen Beziehungen, die auf komplementären Eigenschaften basieren können. Das geduldige Wesen des Büffels ergänzt den Einfallsreichtum der Ratte und schafft eine ausgewogene Partnerschaft, die sowohl Effizienz als auch Kreativität nutzt. Ebenso passt die Detailgenauigkeit des Hahns gut zum praktischen Ansatz des Büffels und fördert eine kollaborative Dynamik.",
+        "gemstone_desc": "Der Büffel ist bekannt für seine Stärke, Geduld und Entschlossenheit.\n\nAquamarin: Bietet Frieden und geistige Klarheit.\nLapislazuli: Fördert innere Harmonie und Weisheit.\nJade: Ein traditionelles Symbol für Glück und Wohlstand.\nMoosachat: Verbunden mit Stabilität und Erdung.\nSmaragd: Repräsentiert Wachstum und Erneuerung.\nMondstein: Sorgt für emotionales Gleichgewicht und Intuition.\nCitrin: Verbunden mit Fülle und Glück.\nTigerauge: Ein Schutztalisman, der das Selbstvertrauen stärken kann."
+      },
+      "pl": {
+        "name": "Bawół",
+        "desc": "Bawół jest filarem siły w swojej społeczności, cenionym za pracowitość, niezawodność i uczciwość. Zaangażowanie w realizację celów i odpowiedzialność wyróżnia go jako osobę godną zaufania. Osoba urodzona w Roku Bawoła może być oparciem w grupie, zapewniając stabilność i wsparcie otoczeniu.",
+        "traits": "Wytrwały, cierpliwy, pracowity, zdeterminowany, uparty",
+        "best_match": "Szczur",
+        "worst_match": "Koza",
+        "compatibility_desc": "Zgodność Bawoła z innymi znakami zodiaku, takimi jak Szczur i Kogut, ukazuje harmonijne relacje, które mogą powstać w oparciu o uzupełniające się cechy. Cierpliwa postawa Bawoła dopełnia zaradność Szczura, tworząc zrównoważone partnerstwo, które wykorzystuje zarówno efektywność, jak i kreatywność. Podobnie dbałość Koguta o szczegóły dobrze współgra z praktycznym podejściem Bawoła, sprzyjając współpracy.",
+        "gemstone_desc": "Bawół znany jest ze swojej siły, cierpliwości i determinacji.\n\nAkwamaryn: Oferuje spokój i jasność umysłu.\nLapis Lazuli: Promuje wewnętrzną harmonię i mądrość.\nJadeit: Tradycyjny symbol szczęścia i dobrobytu.\nAgat mszysty: Związany ze stabilnością i uziemieniem.\nSzmaragd: Reprezentuje wzrost i odnowę.\nKamień księżycowy: Zapewnia równowagę emocjonalną i intuicję.\nCytryn: Kojarzony z obfitością i szczęściem.\nTygrysie Oko: Talizman ochronny, który może zwiększyć pewność siebie."
+      },
+      "ru": {
+        "name": "Бык",
+        "desc": "Бык — это столп силы в своем окружении, признанный за свое усердие, надежность и честность. Их приверженность своим целям и обязанностям выделяет их как надежных и заслуживающих доверия людей. Человек, рожденный в год Быка, может быть якорем в коллективе, обеспечивая стабильность и поддержку окружающим.",
+        "traits": "Настойчивый, терпеливый, трудолюбивый, решительный, упрямый",
+        "best_match": "Крыса",
+        "worst_match": "Коза",
+        "compatibility_desc": "Совместимость Быка с другими знаками Зодиака, такими как Крыса и Петух, демонстрирует гармоничные отношения, которые могут формироваться на основе взаимодополняющих черт. Терпеливый характер Быка дополняет находчивость Крысы, создавая сбалансированное партнерство, сочетающее эффективность и творчество. Точно так же внимание Петуха к деталям хорошо сочетается с практичным подходом Быка, способствуя совместной динамике.",
+        "gemstone_desc": "Бык известен своей силой, терпением и решимостью.\n\nАквамарин: Дарит покой и ясность ума.\nЛазурит: Способствует внутренней гармонии и мудрости.\nНефрит: Традиционный символ удачи и процветания.\nМоховой агат: Связан со стабильностью и заземлением.\nИзумруд: Олицетворяет рост и обновление.\nЛунный камень: Обеспечивает эмоциональное равновесие и интуицию.\nЦитрин: Ассоциируется с изобилием и удачей.\nТигровый глаз: Защитный талисман, который может повысить уверенность."
+      }
+    }
+  },
+  {
+    "key": "Tiger",
+    "image_base": "tiger",
+    "years": "1914, 1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022, 2034",
+    "translations": {
+      "en": {
+        "name": "Tiger",
+        "desc": "Tigers embody the qualities of courage, charisma, and unpredictability. Tigers are known for their boldness and adventurous spirit, often taking on challenges with unwavering determination. Their magnetic personality draws others to them, making them natural leaders in various settings. Someone born under the Tiger sign might inspire others through their fearless pursuit of goals and aspirations.",
+        "traits": "Courageous, candid, confident, adventurous, selfish",
+        "best_match": "Pig",
+        "worst_match": "Monkey",
+        "compatibility_desc": "When it comes to compatibility, Tigers form strong connections with the Pig. Tigers admire the Pig’s kindness and good-hearted nature, finding in them a reliable and trustworthy partner who values honesty and loyalty. Pigs, in turn, are drawn to the Tiger’s courage and dynamic energy, which injects excitement and new experiences into their lives.",
+        "gemstone_desc": "The Tiger symbolizes courage, power, and enthusiasm.\n\nRuby: Represents courage and power.\nDiamond: Can amplify strength and clarity.\nCat's Eye: Thought to bring protection and luck.\nAmethyst: Offers protection and can bring calm.\nTopaz: Symbolizes success and fortune.\nSapphire: Encourages wisdom and protection.\nJade: A traditional talisman for luck and prosperity.\nGarnet: Can enhance passion and energy."
+      },
+      "es": {
+        "name": "Tigre",
+        "desc": "Los Tigres encarnan las cualidades del coraje, el carisma y la imprevisibilidad. Son conocidos por su audacia y espíritu aventurero, asumiendo a menudo desafíos con una determinación inquebrantable. Su personalidad magnética atrae a los demás, convirtiéndolos en líderes naturales en diversos entornos. Alguien nacido bajo el signo del Tigre podría inspirar a otros a través de su intrépida búsqueda de metas y aspiraciones.",
+        "traits": "Valiente, franco, seguro, aventurero, egoísta",
+        "best_match": "Cerdo",
+        "worst_match": "Mono",
+        "compatibility_desc": "En lo que respecta a la compatibilidad, los Tigres forman conexiones fuertes con el Cerdo. Los Tigres admiran la amabilidad y el buen corazón del Cerdo, encontrando en ellos un socio fiable y digno de confianza que valora la honestidad y la lealtad. Los Cerdos, a su vez, se sienten atraídos por el coraje y la energía dinámica del Tigre, que inyecta emoción y nuevas experiencias en sus vidas.",
+        "gemstone_desc": "El Tigre simboliza coraje, poder y entusiasmo.\n\nRubí: Representa coraje y poder.\nDiamante: Puede amplificar la fuerza y la claridad.\nOjo de Gato: Se cree que trae protección y suerte.\nAmatista: Ofrece protección y puede traer calma.\nTopacio: Simboliza éxito y fortuna.\nZafiro: Fomenta la sabiduría y la protección.\nJade: Un talismán tradicional para la suerte y la prosperidad.\nGranate: Puede mejorar la pasión y la energía."
+      },
+      "fr": {
+        "name": "Tigre",
+        "desc": "Les Tigres incarnent les qualités de courage, de charisme et d'imprévisibilité. Ils sont connus pour leur audace et leur esprit aventureux, relevant souvent des défis avec une détermination inébranlable. Leur personnalité magnétique attire les autres, faisant d'eux des leaders naturels dans divers contextes. Une personne née sous le signe du Tigre pourrait inspirer les autres par sa poursuite intrépide de ses buts et aspirations.",
+        "traits": "Courageux, franc, confiant, aventureux, égoïste",
+        "best_match": "Cochon",
+        "worst_match": "Singe",
+        "compatibility_desc": "En ce qui concerne la compatibilité, les Tigres nouent des liens solides avec le Cochon. Les Tigres admirent la gentillesse et la bonté du Cochon, trouvant en lui un partenaire fiable et digne de confiance qui valorise l'honnêteté et la loyauté. Les Cochons, quant à eux, sont attirés par le courage et l'énergie dynamique du Tigre, qui injectent de l'excitation et de nouvelles expériences dans leur vie.",
+        "gemstone_desc": "Le Tigre symbolise le courage, le pouvoir et l'enthousiasme.\n\nRubis : Représente le courage et le pouvoir.\nDiamant : Peut amplifier la force et la clarté.\nŒil-de-chat : Censé apporter protection et chance.\nAméthyste : Offre une protection et peut apporter le calme.\nTopaze : Symbolise le succès et la fortune.\nSaphir : Encourage la sagesse et la protection.\nJade : Un talisman traditionnel pour la chance et la prospérité.\nGrenat : Peut renforcer la passion et l'énergie."
+      },
+      "it": {
+        "name": "Tigre",
+        "desc": "Le Tigri incarnano le qualità di coraggio, carisma e imprevedibilità. Sono note per la loro audacia e spirito avventuroso, affrontando spesso le sfide con determinazione incrollabile. La loro personalità magnetica attira gli altri, rendendole leader naturali in vari contesti. Chi è nato sotto il segno della Tigre potrebbe ispirare gli altri attraverso il suo impavido perseguimento di obiettivi e aspirazioni.",
+        "traits": "Coraggioso, schietto, sicuro di sé, avventuroso, egoista",
+        "best_match": "Maiale",
+        "worst_match": "Scimmia",
+        "compatibility_desc": "Quando si tratta di compatibilità, le Tigri formano forti legami con il Maiale. Le Tigri ammirano la gentilezza e la bontà d'animo del Maiale, trovando in esso un partner affidabile e fidato che apprezza l'onestà e la lealtà. I Maiali, a loro volta, sono attratti dal coraggio e dall'energia dinamica della Tigre, che inietta eccitazione e nuove esperienze nelle loro vite.",
+        "gemstone_desc": "La Tigre simboleggia coraggio, potere ed entusiasmo.\n\nRubino: Rappresenta coraggio e potere.\nDiamante: Può amplificare la forza e la chiarezza.\nOcchio di Gatto: Si pensa porti protezione e fortuna.\nAmetista: Offre protezione e può portare calma.\nTopazio: Simboleggia successo e fortuna.\nZaffiro: Incoraggia la saggezza e la protezione.\nGiada: Un talismano tradizionale per fortuna e prosperità.\nGranato: Può aumentare la passione e l'energia."
+      },
+      "de": {
+        "name": "Tiger",
+        "desc": "Tiger verkörpern die Qualitäten von Mut, Charisma und Unberechenbarkeit. Sie sind bekannt für ihre Kühnheit und ihren Abenteuergeist und stellen sich Herausforderungen oft mit unerschütterlicher Entschlossenheit. Ihre magnetische Persönlichkeit zieht andere an und macht sie in verschiedenen Situationen zu natürlichen Anführern. Jemand, der im Zeichen des Tigers geboren ist, könnte andere durch sein furchtloses Streben nach Zielen und Bestrebungen inspirieren.",
+        "traits": "Mutig, offen, selbstbewusst, abenteuerlustig, egoistisch",
+        "best_match": "Schwein",
+        "worst_match": "Affe",
+        "compatibility_desc": "Was die Kompatibilität betrifft, gehen Tiger starke Verbindungen mit dem Schwein ein. Tiger bewundern die Freundlichkeit und Gutherzigkeit des Schweins und finden in ihm einen zuverlässigen und vertrauenswürdigen Partner, der Ehrlichkeit und Loyalität schätzt. Schweine wiederum fühlen sich vom Mut und der dynamischen Energie des Tigers angezogen, die Aufregung und neue Erfahrungen in ihr Leben bringen.",
+        "gemstone_desc": "Der Tiger symbolisiert Mut, Macht und Begeisterung.\n\nRubin: Repräsentiert Mut und Macht.\nDiamant: Kann Stärke und Klarheit verstärken.\nKatzenauge: Soll Schutz und Glück bringen.\nAmethyst: Bietet Schutz und kann Ruhe bringen.\nTopas: Symbolisiert Erfolg und Glück.\nSaphir: Fördert Weisheit und Schutz.\nJade: Ein traditioneller Talisman für Glück und Wohlstand.\nGranat: Kann Leidenschaft und Energie steigern."
+      },
+      "pl": {
+        "name": "Tygrys",
+        "desc": "Tygrysy uosabiają cechy odwagi, charyzmy i nieprzewidywalności. Są znane ze swojej śmiałości i ducha przygody, często podejmując wyzwania z niezachwianą determinacją. Ich magnetyczna osobowość przyciąga innych, czyniąc je naturalnymi liderami w różnych środowiskach. Osoba urodzona pod znakiem Tygrysa może inspirować innych poprzez swoje nieustraszone dążenie do celów i aspiracji.",
+        "traits": "Odważny, szczery, pewny siebie, żądny przygód, samolubny",
+        "best_match": "Świnia",
+        "worst_match": "Małpa",
+        "compatibility_desc": "Jeśli chodzi o zgodność, Tygrysy tworzą silne więzi ze Świnią. Tygrysy podziwiają życzliwość i dobroć Świni, znajdując w niej niezawodnego i godnego zaufania partnera, który ceni uczciwość i lojalność. Świnie z kolei są przyciągane przez odwagi i dynamiczną energię Tygrysa, która wnosi ekscytację i nowe doświadczenia do ich życia.",
+        "gemstone_desc": "Tygrys symbolizuje odwagę, władzę i entuzjazm.\n\nRubin: Reprezentuje odwagę i władzę.\nDiament: Może wzmocnić siłę i jasność.\nKocie Oko: Uważa się, że przynosi ochronę i szczęście.\nAmetyst: Oferuje ochronę i może przynieść spokój.\nTopaz: Symbolizuje sukces i fortunę.\nSzafir: Zachęca do mądrości i ochrony.\nJadeit: Tradycyjny talizman szczęścia i dobrobytu.\nGranat: Może wzmocnić pasję i energię."
+      },
+      "ru": {
+        "name": "Тигр",
+        "desc": "Тигры воплощают в себе качества смелости, харизмы и непредсказуемости. Они известны своей дерзостью и духом авантюризма, часто принимая вызовы с непоколебимой решимостью. Их магнетическая личность притягивает других, делая их прирожденными лидерами в различных ситуациях. Человек, рожденный под знаком Тигра, может вдохновлять других своим бесстрашным стремлением к целям и мечтам.",
+        "traits": "Смелый, откровенный, уверенный, авантюрный, эгоистичный",
+        "best_match": "Свинья",
+        "worst_match": "Обезьяна",
+        "compatibility_desc": "Что касается совместимости, Тигры устанавливают прочные связи со Свиньей. Тигры восхищаются добротой и добросердечием Свиньи, находя в ней надежного и заслуживающего доверия партнера, который ценит честность и верность. Свиней, в свою очередь, привлекает смелость и динамичная энергия Тигра, которая привносит в их жизнь волнение и новые впечатления.",
+        "gemstone_desc": "Тигр символизирует смелость, силу и энтузиазм.\n\nРубин: Олицетворяет смелость и силу.\nАлмаз: Может усилить силу и ясность.\nКошачий глаз: Считается, что приносит защиту и удачу.\nАметист: Обеспечивает защиту и может принести спокойствие.\nТопаз: Символизирует успех и удачу.\nСапфир: Способствует мудрости и защите.\nНефрит: Традиционный талисман удачи и процветания.\nГранат: Может усилить страсть и энергию."
+      }
+    }
+  },
+  {
+    "key": "Rabbit",
+    "image_base": "rabbit",
+    "years": "1915, 1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023, 2035",
+    "translations": {
+      "en": {
+        "name": "Rabbit",
+        "desc": "Rabbits possess kindness, sensitivity, and creativity, making them compassionate and empathetic individuals. They are known for their gentle and nurturing nature, often providing emotional support and understanding to those around them. Their artistic flair and creative sensibilities set them apart as imaginative and intuitive individuals. Someone born in the Year of the Rabbit might excel in artistic pursuits or fields that require an eye for detail and aesthetics.",
+        "traits": "Gentle, intelligent, loving, articulate, lucky",
+        "best_match": "Dog",
+        "worst_match": "Rooster",
+        "compatibility_desc": "Rabbits and Dogs share a harmonious and supportive relationship, marked by a shared sense of loyalty. The Rabbit appreciates the Dog’s honesty and reliability, creating a safe space for emotional expression and shared dreams. Dogs, in turn, are drawn to the Rabbit’s kindness and diplomacy, finding a partner who can soften the harshness they sometimes encounter in the world. This pairing is built on a common desire for a peaceful and stable life, making them exceptionally compatible.",
+        "gemstone_desc": "The Rabbit is known for its gentle nature, sensitivity, and elegance.\n\nPearl: Symbolizes purity and can bring serenity.\nSapphire: Can promote inner peace and wisdom.\nEmerald: Represents growth and balance.\nTopaz: Associated with protection and success.\nMoonstone: Enhances intuition and emotional harmony.\nJade: Believed to bring luck and prosperity.\nRock Crystal: Offers clarity and healing.\nNephrite: A type of jade known for its calming properties."
+      },
+      "es": {
+        "name": "Conejo",
+        "desc": "Los Conejos poseen bondad, sensibilidad y creatividad, lo que los convierte en individuos compasivos y empáticos. Son conocidos por su naturaleza amable y protectora, brindando a menudo apoyo emocional y comprensión a quienes los rodean. Su talento artístico y sensibilidad creativa los distinguen como individuos imaginativos e intuitivos. Alguien nacido en el Año del Conejo podría sobresalir en actividades artísticas o campos que requieran ojo para el detalle y la estética.",
+        "traits": "Amable, inteligente, cariñoso, elocuente, afortunado",
+        "best_match": "Perro",
+        "worst_match": "Gallo",
+        "compatibility_desc": "Los Conejos y los Perros comparten una relación armoniosa y de apoyo, marcada por un sentido compartido de lealtad. El Conejo aprecia la honestidad y confiabilidad del Perro, creando un espacio seguro para la expresión emocional y los sueños compartidos. Los Perros, a su vez, se sienten atraídos por la amabilidad y la diplomacia del Conejo, encontrando una pareja que puede suavizar la dureza que a veces encuentran en el mundo. Esta pareja se basa en un deseo común de una vida pacífica y estable.",
+        "gemstone_desc": "El Conejo es conocido por su naturaleza amable, sensibilidad y elegancia.\n\nPerla: Simboliza la pureza y puede traer serenidad.\nZafiro: Puede promover la paz interior y la sabiduría.\nEsmeralda: Representa el crecimiento y el equilibrio.\nTopacio: Asociado con la protección y el éxito.\nPiedra de Luna: Mejora la intuición y la armonía emocional.\nJade: Se cree que trae suerte y prosperidad.\nCristal de Roca: Ofrece claridad y curación.\nNefrita: Un tipo de jade conocido por sus propiedades calmantes."
+      },
+      "fr": {
+        "name": "Lapin",
+        "desc": "Les Lapins possèdent gentillesse, sensibilité et créativité, ce qui en fait des individus compatissants et empathiques. Ils sont connus pour leur nature douce et attentionnée, apportant souvent un soutien émotionnel et de la compréhension à ceux qui les entourent. Leur flair artistique et leur sensibilité créative les distinguent en tant qu'individus imaginatifs et intuitifs. Une personne née l'année du Lapin pourrait exceller dans des activités artistiques ou des domaines nécessitant le sens du détail et de l'esthétique.",
+        "traits": "Doux, intelligent, aimant, éloquent, chanceux",
+        "best_match": "Chien",
+        "worst_match": "Coq",
+        "compatibility_desc": "Les Lapins et les Chiens partagent une relation harmonieuse et solidaire, marquée par un sens commun de la loyauté. Le Lapin apprécie l'honnêteté et la fiabilité du Chien, créant un espace sûr pour l'expression émotionnelle et les rêves partagés. Les Chiens, quant à eux, sont attirés par la gentillesse et la diplomatie du Lapin, trouvant un partenaire capable d'adoucir la dureté qu'ils rencontrent parfois dans le monde. Ce duo repose sur un désir commun d'une vie paisible et stable.",
+        "gemstone_desc": "Le Lapin est connu pour sa nature douce, sa sensibilité et son élégance.\n\nPerle : Symbolise la pureté et peut apporter la sérénité.\nSaphir : Peut favoriser la paix intérieure et la sagesse.\nÉmeraude : Représente la croissance et l'équilibre.\nTopaze : Associée à la protection et au succès.\nPierre de lune : Améliore l'intuition et l'harmonie émotionnelle.\nJade : Censé apporter chance et prospérité.\nCristal de roche : Offre clarté et guérison.\nNéphrite : Un type de jade connu pour ses propriétés apaisantes."
+      },
+      "it": {
+        "name": "Coniglio",
+        "desc": "I Conigli possiedono gentilezza, sensibilità e creatività, rendendoli individui compassionevoli ed empatici. Sono noti per la loro natura gentile e premurosa, fornendo spesso supporto emotivo e comprensione a chi li circonda. Il loro estro artistico e la sensibilità creativa li distinguono come individui fantasiosi e intuitivi. Chi è nato nell'Anno del Coniglio potrebbe eccellere in attività artistiche o campi che richiedono occhio per i dettagli e l'estetica.",
+        "traits": "Gentile, intelligente, amorevole, eloquente, fortunato",
+        "best_match": "Cane",
+        "worst_match": "Gallo",
+        "compatibility_desc": "Conigli e Cani condividono una relazione armoniosa e solidale, segnata da un senso condiviso di lealtà. Il Coniglio apprezza l'onestà e l'affidabilità del Cane, creando uno spazio sicuro per l'espressione emotiva e i sogni condivisi. I Cani, a loro volta, sono attratti dalla gentilezza e dalla diplomazia del Coniglio, trovando un partner in grado di ammorbidire la durezza che a volte incontrano nel mondo. Questa coppia è costruita su un desiderio comune di una vita pacifica e stabile.",
+        "gemstone_desc": "Il Coniglio è noto per la sua natura gentile, sensibilità ed eleganza.\n\nPerla: Simboleggia la purezza e può portare serenità.\nZaffiro: Può promuovere la pace interiore e la saggezza.\nSmeraldo: Rappresenta la crescita e l'equilibrio.\nTopazio: Associato alla protezione e al successo.\nPietra di Luna: Migliora l'intuito e l'armonia emotiva.\nGiada: Si crede porti fortuna e prosperità.\nCristallo di Rocca: Offre chiarezza e guarigione.\nNefrite: Un tipo di giada nota per le sue proprietà calmanti."
+      },
+      "de": {
+        "name": "Hase",
+        "desc": "Hasen besitzen Freundlichkeit, Sensibilität und Kreativität, was sie zu mitfühlenden und einfühlsamen Individuen macht. Sie sind bekannt für ihre sanfte und fürsorgliche Art und bieten den Menschen um sie herum oft emotionale Unterstützung und Verständnis. Ihr künstlerisches Flair und ihre kreative Sensibilität zeichnen sie als fantasievolle und intuitive Menschen aus. Jemand, der im Jahr des Hasen geboren ist, könnte in künstlerischen Bereichen oder Feldern glänzen, die ein Auge für Details und Ästhetik erfordern.",
+        "traits": "Sanft, intelligent, liebevoll, wortgewandt, glücklich",
+        "best_match": "Hund",
+        "worst_match": "Hahn",
+        "compatibility_desc": "Hasen und Hunde teilen eine harmonische und unterstützende Beziehung, die von einem gemeinsamen Sinn für Loyalität geprägt ist. Der Hase schätzt die Ehrlichkeit und Zuverlässigkeit des Hundes und schafft einen sicheren Raum für emotionalen Ausdruck und gemeinsame Träume. Hunde wiederum fühlen sich von der Freundlichkeit und Diplomatie des Hasen angezogen und finden einen Partner, der die Härte mildern kann, der sie manchmal in der Welt begegnen. Diese Paarung baut auf dem gemeinsamen Wunsch nach einem friedlichen und stabilen Leben auf.",
+        "gemstone_desc": "Der Hase ist bekannt für seine sanfte Natur, Sensibilität und Eleganz.\n\nPerle: Symbolisiert Reinheit und kann Gelassenheit bringen.\nSaphir: Kann inneren Frieden und Weisheit fördern.\nSmaragd: Repräsentiert Wachstum und Gleichgewicht.\nTopas: Verbunden mit Schutz und Erfolg.\nMondstein: Verbessert Intuition und emotionale Harmonie.\nJade: Soll Glück und Wohlstand bringen.\nBergkristall: Bietet Klarheit und Heilung.\nNephrit: Eine Art von Jade, bekannt für ihre beruhigenden Eigenschaften."
+      },
+      "pl": {
+        "name": "Królik",
+        "desc": "Króliki posiadają życzliwość, wrażliwość i kreatywność, co czyni je współczującymi i empatycznymi jednostkami. Są znane ze swojej łagodnej i opiekuńczej natury, często zapewniając wsparcie emocjonalne i zrozumienie osobom ze swojego otoczenia. Ich artystyczny talent i wrażliwość twórcza wyróżniają je jako osoby obdarzone wyobraźnią i intuicją. Osoba urodzona w Roku Królika może wyróżniać się w zajęciach artystycznych lub dziedzinach wymagających dbałości o szczegóły i estetykę.",
+        "traits": "Łagodny, inteligentny, kochający, elokwentny, szczęśliwy",
+        "best_match": "Pies",
+        "worst_match": "Kogut",
+        "compatibility_desc": "Króliki i Psy dzielą harmonijną i wspierającą relację, naznaczoną wspólnym poczuciem lojalności. Królik docenia szczerość i niezawodność Psa, tworząc bezpieczną przestrzeń dla wyrażania emocji i wspólnych marzeń. Psy z kolei są przyciągane przez życzliwość i dyplomację Królika, znajdując partnera, który może złagodzić surowość, z którą czasami spotykają się w świecie. To połączenie opiera się na wspólnym pragnieniu spokojnego i stabilnego życia.",
+        "gemstone_desc": "Królik znany jest ze swojej łagodnej natury, wrażliwości i elegancji.\n\nPerła: Symbolizuje czystość i może przynieść spokój.\nSzafir: Może promować wewnętrzny spokój i mądrość.\nSzmaragd: Reprezentuje wzrost i równowagę.\nTopaz: Kojarzony z ochroną i sukcesem.\nKamień księżycowy: Wzmacnia intuicję i harmonię emocjonalną.\nJadeit: Wierzy się, że przynosi szczęście i dobrobyt.\nKryształ górski: Oferuje jasność i uzdrawianie.\nNefryt: Rodzaj jadeitu znany ze swoich właściwości uspokajających."
+      },
+      "ru": {
+        "name": "Кролик",
+        "desc": "Кролики обладают добротой, чувствительностью и творческим началом, что делает их сострадательными и эмпатичными людьми. Они известны своей нежной и заботливой натурой, часто оказывая эмоциональную поддержку и понимание окружающим. Их художественное чутье и творческая восприимчивость выделяют их как людей с богатым воображением и интуицией. Человек, рожденный в год Кролика, может преуспеть в творческих занятиях или областях, требующих внимания к деталям и эстетике.",
+        "traits": "Нежный, умный, любящий, красноречивый, удачливый",
+        "best_match": "Собака",
+        "worst_match": "Петух",
+        "compatibility_desc": "Кролики и Собаки разделяют гармоничные и поддерживающие отношения, отмеченные общим чувством преданности. Кролик ценит честность и надежность Собаки, создавая безопасное пространство для выражения эмоций и общих мечтаний. Собак, в свою очередь, привлекает доброта и дипломатичность Кролика; они находят партнера, который может смягчить суровость, с которой они иногда сталкиваются в мире. Этот союз построен на общем стремлении к мирной и стабильной жизни.",
+        "gemstone_desc": "Кролик известен своей нежной натурой, чувствительностью и элегантностью.\n\nЖемчуг: Символизирует чистоту и может принести безмятежность.\nСапфир: Может способствовать внутреннему миру и мудрости.\nИзумруд: Олицетворяет рост и равновесие.\nТопаз: Ассоциируется с защитой и успехом.\nЛунный камень: Усиливает интуицию и эмоциональную гармонию.\nНефрит: Считается, что приносит удачу и процветание.\nГорный хрусталь: Дарит ясность и исцеление.\nНефрит (минерал): Разновидность жада, известная своими успокаивающими свойствами."
+      }
+    }
+  },
+  {
+    "key": "Dragon",
+    "image_base": "dragon",
+    "years": "1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024, 2036",
+    "translations": {
+      "en": {
+        "name": "Dragon",
+        "desc": "The Dragon is associated with traits of strength, ambition, and vitality, embodying the spirit of power and success. They are known for their leadership qualities and charismatic presence, often commanding attention and respect wherever they go. Someone born in the Year of the Dragon might exude confidence and magnetism, drawing others to them through their dynamic personality.",
+        "traits": "Strong, independent, fortunate, ambitious, temperamental",
+        "best_match": "Rooster",
+        "worst_match": "Dog",
+        "compatibility_desc": "Dragons and Roosters form a powerful and dynamic partnership. The bold and charismatic Dragon is captivated by the Rooster’s diligence and practicality. This combination fosters a relationship where each partner’s strengths are amplified. The Rooster appreciates the Dragon’s leadership and vision, providing the detailed planning and support needed to turn dreams into reality. Together, they achieve a balance of ambition and execution, making them a formidable pair.",
+        "gemstone_desc": "The Dragon is a symbol of power, nobility, and success.\n\nAmethyst: A powerful protective and calming stone.\nRuby: Can enhance passion and personal power.\nOpal: Represents transformation and inner beauty.\nSapphire: Promotes wisdom and spiritual growth.\nAmber: Associated with good luck and healing.\nJade: A traditional talisman for luck and prosperity.\nDiamond: Symbolizes strength and clarity.\nCarnelian: Can boost courage and vitality."
+      },
+      "es": {
+        "name": "Dragón",
+        "desc": "El Dragón se asocia con rasgos de fuerza, ambición y vitalidad, encarnando el espíritu de poder y éxito. Son conocidos por sus cualidades de liderazgo y presencia carismática, a menudo imponiendo atención y respeto dondequiera que van. Alguien nacido en el Año del Dragón puede irradiar confianza y magnetismo, atrayendo a otros hacia sí a través de su personalidad dinámica.",
+        "traits": "Fuerte, independiente, afortunado, ambicioso, temperamental",
+        "best_match": "Gallo",
+        "worst_match": "Perro",
+        "compatibility_desc": "Los Dragones y los Gallos forman una asociación poderosa y dinámica. El audaz y carismático Dragón se siente cautivado por la diligencia y el sentido práctico del Gallo. Esta combinación fomenta una relación en la que se amplifican las fortalezas de cada compañero. El Gallo aprecia el liderazgo y la visión del Dragón, proporcionando la planificación detallada y el apoyo necesarios para convertir los sueños en realidad. Juntos, logran un equilibrio entre ambición y ejecución, convirtiéndolos en una pareja formidable.",
+        "gemstone_desc": "El Dragón es un símbolo de poder, nobleza y éxito.\n\nAmatista: Una poderosa piedra protectora y calmante.\nRubí: Puede aumentar la pasión y el poder personal.\nÓpalo: Representa la transformación y la belleza interior.\nZafiro: Promueve la sabiduría y el crecimiento espiritual.\nÁmbar: Asociado con la buena suerte y la curación.\nJade: Un talismán tradicional para la suerte y la prosperidad.\nDiamante: Simboliza la fuerza y la claridad.\nCornalina: Puede aumentar el coraje y la vitalidad."
+      },
+      "fr": {
+        "name": "Dragon",
+        "desc": "Le Dragon est associé à des traits de force, d'ambition et de vitalité, incarnant l'esprit de pouvoir et de succès. Ils sont connus pour leurs qualités de leadership et leur présence charismatique, imposant souvent l'attention et le respect partout où ils vont. Une personne née l'année du Dragon peut dégager de la confiance et du magnétisme, attirant les autres vers elle grâce à sa personnalité dynamique.",
+        "traits": "Fort, indépendant, chanceux, ambitieux, tempéramental",
+        "best_match": "Coq",
+        "worst_match": "Chien",
+        "compatibility_desc": "Les Dragons et les Coqs forment un partenariat puissant et dynamique. Le Dragon audacieux et charismatique est captivé par la diligence et l'esprit pratique du Coq. Cette combinaison favorise une relation où les forces de chaque partenaire sont amplifiées. Le Coq apprécie le leadership et la vision du Dragon, fournissant la planification détaillée et le soutien nécessaires pour transformer les rêves en réalité. Ensemble, ils atteignent un équilibre entre ambition et exécution, ce qui en fait un duo redoutable.",
+        "gemstone_desc": "Le Dragon est un symbole de pouvoir, de noblesse et de succès.\n\nAméthyste : Une pierre puissante de protection et d'apaisement.\nRubis : Peut renforcer la passion et le pouvoir personnel.\nOpale : Représente la transformation et la beauté intérieure.\nSaphir : Favorise la sagesse et la croissance spirituelle.\nAmbre : Associé à la chance et à la guérison.\nJade : Un talisman traditionnel pour la chance et la prospérité.\nDiamant : Symbolise la force et la clarté.\nCornaline : Peut stimuler le courage et la vitalité."
+      },
+      "it": {
+        "name": "Drago",
+        "desc": "Il Drago è associato a tratti di forza, ambizione e vitalità, incarnando lo spirito del potere e del successo. Sono noti per le loro qualità di leadership e la presenza carismatica, attirando spesso attenzione e rispetto ovunque vadano. Chi è nato nell'Anno del Drago potrebbe emanare fiducia e magnetismo, attirando gli altri a sé attraverso la sua personalità dinamica.",
+        "traits": "Forte, indipendente, fortunato, ambizioso, temperamentale",
+        "best_match": "Gallo",
+        "worst_match": "Cane",
+        "compatibility_desc": "Draghi e Galli formano una partnership potente e dinamica. Il Drago audace e carismatico è affascinato dalla diligenza e dalla praticità del Gallo. Questa combinazione favorisce una relazione in cui i punti di forza di ciascun partner vengono amplificati. Il Gallo apprezza la leadership e la visione del Drago, fornendo la pianificazione dettagliata e il supporto necessari per trasformare i sogni in realtà. Insieme, raggiungono un equilibrio tra ambizione ed esecuzione, rendendoli una coppia formidabile.",
+        "gemstone_desc": "Il Drago è un simbolo di potere, nobiltà e successo.\n\nAmetista: Una potente pietra protettiva e calmante.\nRubino: Può aumentare la passione e il potere personale.\nOpale: Rappresenta la trasformazione e la bellezza interiore.\nZaffiro: Promuove la saggezza e la crescita spirituale.\nAmbra: Associata alla buona fortuna e alla guarigione.\nGiada: Un talismano tradizionale per fortuna e prosperità.\nDiamante: Simboleggia forza e chiarezza.\nCorniola: Può aumentare il coraggio e la vitalità."
+      },
+      "de": {
+        "name": "Drache",
+        "desc": "Der Drache wird mit Eigenschaften wie Stärke, Ehrgeiz und Vitalität assoziiert und verkörpert den Geist von Macht und Erfolg. Sie sind bekannt für ihre Führungsqualitäten und ihre charismatische Präsenz und verschaffen sich überall Respekt und Aufmerksamkeit. Jemand, der im Jahr des Drachen geboren ist, strahlt oft Selbstvertrauen und Magnetismus aus und zieht andere durch seine dynamische Persönlichkeit an.",
+        "traits": "Stark, unabhängig, glücklich, ehrgeizig, temperamentvoll",
+        "best_match": "Hahn",
+        "worst_match": "Hund",
+        "compatibility_desc": "Drachen und Hähne bilden eine kraftvolle und dynamische Partnerschaft. Der kühne und charismatische Drache ist fasziniert vom Fleiß und der Sachlichkeit des Hahns. Diese Kombination fördert eine Beziehung, in der die Stärken beider Partner verstärkt werden. Der Hahn schätzt die Führung und Vision des Drachen und bietet die detaillierte Planung und Unterstützung, die nötig sind, um Träume in die Realität umzusetzen. Zusammen erreichen sie ein Gleichgewicht zwischen Ehrgeiz und Ausführung, was sie zu einem beeindruckenden Paar macht.",
+        "gemstone_desc": "Der Drache ist ein Symbol für Macht, Adel und Erfolg.\n\nAmethyst: Ein kraftvoller Schutz- und Beruhigungsstein.\nRubin: Kann Leidenschaft und persönliche Kraft steigern.\nOpal: Repräsentiert Transformation und innere Schönheit.\nSaphir: Fördert Weisheit und spirituelles Wachstum.\nBernstein: Verbunden mit Glück und Heilung.\nJade: Ein traditioneller Talisman für Glück und Wohlstand.\nDiamant: Symbolisiert Stärke und Klarheit.\nKarneol: Kann Mut und Vitalität stärken."
+      },
+      "pl": {
+        "name": "Smok",
+        "desc": "Smok kojarzony jest z cechami siły, ambicji i witalności, uosabiając ducha władzy i sukcesu. Smoki są znane ze swoich zdolności przywódczych i charyzmatycznej obecności, często wzbudzając uwagę i szacunek, gdziekolwiek się pojawią. Osoba urodzona w Roku Smoka może emanować pewnością siebie i magnetyzmem, przyciągając do siebie innych dzięki swojej dynamicznej osobowości.",
+        "traits": "Silny, niezależny, szczęśliwy, ambitny, temperamentny",
+        "best_match": "Kogut",
+        "worst_match": "Pies",
+        "compatibility_desc": "Smoki i Koguty tworzą potężne i dynamiczne partnerstwo. Śmiały i charyzmatyczny Smok jest zafascynowany pracowitością i praktycznością Koguta. To połączenie sprzyja relacji, w której mocne strony każdego z partnerów są wzmacniane. Kogut docenia przywództwo i wizję Smoka, zapewniając szczegółowe planowanie i wsparcie potrzebne do przekucia marzeń w rzeczywistość. Razem osiągają równowagę między ambicją a realizacją, tworząc niesamowitą parę.",
+        "gemstone_desc": "Smok jest symbolem władzy, szlachetności i sukcesu.\n\nAmetyst: Potężny kamień ochronny i uspokajający.\nRubin: Może wzmocnić pasję i osobistą siłę.\nOpal: Reprezentuje transformację i wewnętrzne piękno.\nSzafir: Promuje mądrość i rozwój duchowy.\nBursztyn: Kojarzony ze szczęściem i uzdrawianiem.\nJadeit: Tradycyjny talizman szczęścia i dobrobytu.\nDiament: Symbolizuje siłę i jasność.\nKrwawnik (Kornalin): Może zwiększyć odwagę i witalność."
+      },
+      "ru": {
+        "name": "Дракон",
+        "desc": "Дракон ассоциируется с такими чертами, как сила, амбиции и жизненная энергия, воплощая дух власти и успеха. Они известны своими лидерскими качествами и харизмой, часто вызывая внимание и уважение, где бы они ни находились. Человек, рожденный в год Дракона, может излучать уверенность и магнетизм, притягивая к себе других своей динамичной личностью.",
+        "traits": "Сильный, независимый, удачливый, амбициозный, темпераментный",
+        "best_match": "Петух",
+        "worst_match": "Собака",
+        "compatibility_desc": "Драконы и Петухи образуют мощный и динамичный союз. Смелый и харизматичный Дракон очарован усердием и практичностью Петуха. Эта комбинация способствует отношениям, в которых сильные стороны каждого партнера усиливаются. Петух ценит лидерство и дальновидность Дракона, обеспечивая детальное планирование и поддержку, необходимые для воплощения мечты в реальность. Вместе они достигают баланса между амбициями и исполнением, что делает их грозным союзом.",
+        "gemstone_desc": "Дракон — символ власти, благородства и успеха.\n\nАметист: Мощный защитный и успокаивающий камень.\nРубин: Может усилить страсть и личную силу.\nОпал: Олицетворяет трансформацию и внутреннюю красоту.\nСапфир: Способствует мудрости и духовному росту.\nЯнтарь: Ассоциируется с удачей и исцелением.\nНефрит: Традиционный талисман удачи и процветания.\nАлмаз: Символизирует силу и ясность.\nСердолик: Может повысить смелость и жизненную энергию."
+      }
+    }
+  },
+  {
+    "key": "Snake",
+    "image_base": "snake",
+    "years": "1917, 1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025",
+    "translations": {
+      "en": {
+        "name": "Snake",
+        "desc": "The Snake is characterized by wisdom, intuition, and sophistication, making it insightful and perceptive. Snakes possess a deep knowledge of the world around them, often relying on their intuition to navigate complex situations with grace and finesse. Someone born under the Snake sign might excel in fields that require strategic thinking and a keen sense of observation.",
+        "traits": "Ambitious, wise, intense, determined, possessive",
+        "best_match": "Monkey",
+        "worst_match": "Pig",
+        "compatibility_desc": "Snakes and Monkeys are drawn together by an attraction to each other’s intelligence and adaptability. The Snake is intrigued by the Monkey’s ingenuity and wit, while the Monkey admires the Snake’s wisdom and depth. This partnership thrives on intellectual stimulation and a shared love for exploration and discovery. Both signs possess a keen awareness and a strategic approach to life, allowing them to navigate challenges with grace and creativity. Together, they create a relationship that is both mentally engaging and emotionally satisfying.",
+        "gemstone_desc": "The Snake is wise, intuitive, and sensual.\n\nOpal: Can amplify intuitive energies and creativity.\nTopaz: Promotes inner peace and spiritual growth.\nTurquoise: Offers protection and healing.\nJasper: A grounding stone that can provide stability.\nBloodstone: Known for its cleansing and protective properties.\nMalachite: Symbolizes transformation and protection.\nObsidian: A protective stone that guards against negativity.\nJade: A traditional talisman for luck and harmony."
+      },
+      "es": {
+        "name": "Serpiente",
+        "desc": "La Serpiente se caracteriza por la sabiduría, la intuición y la sofisticación, lo que la hace perspicaz y perceptiva. Las Serpientes poseen un profundo conocimiento del mundo que las rodea, confiando a menudo en su intuición para navegar situaciones complejas con gracia y delicadeza. Alguien nacido bajo el signo de la Serpiente podría sobresalir en campos que requieran pensamiento estratégico y un agudo sentido de observación.",
+        "traits": "Ambiciosa, sabia, intensa, decidida, posesiva",
+        "best_match": "Mono",
+        "worst_match": "Cerdo",
+        "compatibility_desc": "Las Serpientes y los Monos se sienten atraídos mutuamente por la inteligencia y adaptabilidad del otro. La Serpiente está intrigada por el ingenio y la agudeza del Mono, mientras que el Mono admira la sabiduría y la profundidad de la Serpiente. Esta asociación prospera gracias a la estimulación intelectual y al amor compartido por la exploración y el descubrimiento. Ambos signos poseen una gran conciencia y un enfoque estratégico de la vida, lo que les permite superar desafíos con gracia y creatividad. Juntos, crean una relación mentalmente estimulante y emocionalmente satisfactoria.",
+        "gemstone_desc": "La Serpiente es sabia, intuitiva y sensual.\n\nÓpalo: Puede amplificar las energías intuitivas y la creatividad.\nTopacio: Promueve la paz interior y el crecimiento espiritual.\nTurquesa: Ofrece protección y curación.\nJaspe: Una piedra de conexión a tierra que puede proporcionar estabilidad.\nPiedra de sangre (Heliotropo): Conocida por sus propiedades limpiadoras y protectoras.\nMalaquita: Simboliza la transformación y la protección.\nObsidiana: Una piedra protectora que resguarda contra la negatividad.\nJade: Un talismán tradicional para la suerte y la armonía."
+      },
+      "fr": {
+        "name": "Serpent",
+        "desc": "Le Serpent se caractérise par la sagesse, l'intuition et la sophistication, ce qui le rend perspicace et perceptif. Les Serpents possèdent une connaissance approfondie du monde qui les entoure, s'appuyant souvent sur leur intuition pour naviguer dans des situations complexes avec grâce et finesse. Une personne née sous le signe du Serpent pourrait exceller dans des domaines nécessitant une réflexion stratégique et un sens aigu de l'observation.",
+        "traits": "Ambitieux, sage, intense, déterminé, possessif",
+        "best_match": "Singe",
+        "worst_match": "Cochon",
+        "compatibility_desc": "Les Serpents et les Singes sont attirés l'un vers l'autre par l'intelligence et l'adaptabilité de chacun. Le Serpent est intrigué par l'ingéniosité et l'esprit du Singe, tandis que le Singe admire la sagesse et la profondeur du Serpent. Ce partenariat s'épanouit grâce à la stimulation intellectuelle et à un amour partagé pour l'exploration et la découverte. Les deux signes possèdent une conscience aiguë et une approche stratégique de la vie, ce qui leur permet de relever les défis avec grâce et créativité. Ensemble, ils créent une relation à la fois mentalement engageante et émotionnellement satisfaisante.",
+        "gemstone_desc": "Le Serpent est sage, intuitif et sensuel.\n\nOpale : Peut amplifier les énergies intuitives et la créativité.\nTopaze : Favorise la paix intérieure et la croissance spirituelle.\nTurquoise : Offre protection et guérison.\nJaspe : Une pierre d'ancrage qui peut apporter de la stabilité.\nPierre de sang (Héliotrope) : Connue pour ses propriétés purifiantes et protectrices.\nMalachite : Symbolise la transformation et la protection.\nObsidienne : Une pierre protectrice qui garde contre la négativité.\nJade : Un talisman traditionnel pour la chance et l'harmonie."
+      },
+      "it": {
+        "name": "Serpente",
+        "desc": "Il Serpente è caratterizzato da saggezza, intuito e raffinatezza, che lo rendono perspicace e acuto. I Serpenti possiedono una profonda conoscenza del mondo che li circonda, affidandosi spesso al loro intuito per navigare in situazioni complesse con grazia e finezza. Chi è nato sotto il segno del Serpente potrebbe eccellere in campi che richiedono pensiero strategico e un acuto spirito di osservazione.",
+        "traits": "Ambizioso, saggio, intenso, determinato, possessivo",
+        "best_match": "Scimmia",
+        "worst_match": "Maiale",
+        "compatibility_desc": "Serpenti e Scimmie sono attratti l'uno dall'altro grazie alla loro intelligenza e adattabilità. Il Serpente è incuriosito dall'ingegno e dallo spirito della Scimmia, mentre la Scimmia ammira la saggezza e la profondità del Serpente. Questa partnership prospera grazie alla stimolazione intellettuale e all'amore condiviso per l'esplorazione e la scoperta. Entrambi i segni possiedono una spiccata consapevolezza e un approccio strategico alla vita, che consente loro di affrontare le sfide con grazia e creatività. Insieme, creano una relazione mentalmente coinvolgente ed emotivamente appagante.",
+        "gemstone_desc": "Il Serpente è saggio, intuitivo e sensuale.\n\nOpale: Può amplificare le energie intuitive e la creatività.\nTopazio: Promuove la pace interiore e la crescita spirituale.\nTurchese: Offre protezione e guarigione.\nDiaspro: Una pietra di radicamento che può fornire stabilità.\nEliotropio (Pietra del sangue): Noto per le sue proprietà purificanti e protettive.\nMalachite: Simboleggia trasformazione e protezione.\nOssidiana: Una pietra protettiva che difende dalla negatività.\nGiada: Un talismano tradizionale per fortuna e armonia."
+      },
+      "de": {
+        "name": "Schlange",
+        "desc": "Die Schlange zeichnet sich durch Weisheit, Intuition und Raffinesse aus, was sie einsichtsvoll und scharfsinnig macht. Schlangen besitzen ein tiefes Wissen über die Welt um sie herum und verlassen sich oft auf ihre Intuition, um komplexe Situationen mit Anmut und Finesse zu meistern. Jemand, der im Zeichen der Schlange geboren ist, könnte in Bereichen glänzen, die strategisches Denken und eine gute Beobachtungsgabe erfordern.",
+        "traits": "Ehrgeizig, weise, intensiv, entschlossen, besitzergreifend",
+        "best_match": "Affe",
+        "worst_match": "Schwein",
+        "compatibility_desc": "Schlangen und Affen ziehen sich durch die Intelligenz und Anpassungsfähigkeit des anderen an. Die Schlange ist fasziniert vom Einfallsreichtum und Witz des Affen, während der Affe die Weisheit und Tiefe der Schlange bewundert. Diese Partnerschaft lebt von intellektueller Stimulation und einer gemeinsamen Liebe zu Entdeckungen. Beide Zeichen besitzen ein scharfes Bewusstsein und einen strategischen Ansatz für das Leben, der es ihnen ermöglicht, Herausforderungen mit Anmut und Kreativität zu meistern. Zusammen schaffen sie eine Beziehung, die sowohl geistig anregend als auch emotional befriedigend ist.",
+        "gemstone_desc": "Die Schlange ist weise, intuitiv und sinnlich.\n\nOpal: Kann intuitive Energien und Kreativität verstärken.\nTopas: Fördert inneren Frieden und spirituelles Wachstum.\nTürkis: Bietet Schutz und Heilung.\nJaspis: Ein Erdungsstein, der Stabilität bieten kann.\nBlutstein (Heliotrop): Bekannt für seine reinigenden und schützenden Eigenschaften.\nMalachit: Symbolisiert Transformation und Schutz.\nObsidian: Ein Schutzstein, der vor Negativität bewahrt.\nJade: Ein traditioneller Talisman für Glück und Harmonie."
+      },
+      "pl": {
+        "name": "Wąż",
+        "desc": "Wąż charakteryzuje się mądrością, intuicją i wyrafinowaniem, co czyni go wnikliwym i spostrzegawczym. Węże posiadają głęboką wiedzę o otaczającym je świecie, często polegając na swojej intuicji, aby poruszać się w złożonych sytuacjach z gracją i finezją. Osoba urodzona pod znakiem Węża może wyróżniać się w dziedzinach wymagających strategicznego myślenia i zmysłu obserwacji.",
+        "traits": "Ambitny, mądry, intensywny, zdeterminowany, zaborczy",
+        "best_match": "Małpa",
+        "worst_match": "Świnia",
+        "compatibility_desc": "Węże i Małpy przyciągają się nawzajem dzięki swojej inteligencji i zdolnościom adaptacyjnym. Wąż jest zaintrygowany pomysłowością i dowcipem Małpy, podczas gdy Małpa podziwia mądrość i głębię Węża. To partnerstwo kwitnie dzięki stymulacji intelektualnej i wspólnej miłości do eksploracji i odkryć. Oba znaki posiadają dużą świadomość i strategiczne podejście do życia, co pozwala im pokonywać wyzwania z gracją i kreatywnością. Razem tworzą relację, która jest zarówno angażująca umysłowo, jak i satysfakcjonująca emocjonalnie.",
+        "gemstone_desc": "Wąż jest mądry, intuicyjny i zmysłowy.\n\nOpal: Może wzmacniać energie intuicyjne i kreatywność.\nTopaz: Promuje wewnętrzny spokój i rozwój duchowy.\nTurkus: Oferuje ochronę i uzdrawianie.\nJaspis: Kamień uziemiający, który może zapewnić stabilność.\nHeliotrop: Znany ze swoich właściwości oczyszczających i ochronnych.\nMalachit: Symbolizuje transformację i ochronę.\nObsydian: Kamień ochronny, który strzeże przed negatywnością.\nJadeit: Tradycyjny talizman szczęścia i harmonii."
+      },
+      "ru": {
+        "name": "Змея",
+        "desc": "Змея характеризуется мудростью, интуицией и утонченностью, что делает ее проницательной и восприимчивой. Змеи обладают глубоким знанием окружающего мира, часто полагаясь на свою интуицию, чтобы справляться со сложными ситуациями с изяществом и тонкостью. Человек, рожденный под знаком Змеи, может преуспеть в областях, требующих стратегического мышления и острой наблюдательности.",
+        "traits": "Амбициозная, мудрая, страстная, решительная, собственническая",
+        "best_match": "Обезьяна",
+        "worst_match": "Свинья",
+        "compatibility_desc": "Змей и Обезьян притягивает друг к другу интеллект и способность к адаптации. Змея заинтригована изобретательностью и остроумием Обезьяны, в то время как Обезьяна восхищается мудростью и глубиной Змеи. Это партнерство процветает благодаря интеллектуальной стимуляции и общей любви к исследованиям и открытиям. Оба знака обладают острым осознанием и стратегическим подходом к жизни, что позволяет им преодолевать трудности с изяществом и креативностью. Вместе они создают отношения, которые увлекают умственно и удовлетворяют эмоционально.",
+        "gemstone_desc": "Змея мудра, интуитивна и чувственна.\n\nОпал: Может усилить интуитивные энергии и творчество.\nТопаз: Способствует внутреннему миру и духовному росту.\nБирюза: Предлагает защиту и исцеление.\nЯшма: Заземляющий камень, который может обеспечить стабильность.\nГелиотроп (Кровавик): Известен своими очищающими и защитными свойствами.\nМалахит: Символизирует трансформацию и защиту.\nОбсидиан: Защитный камень, оберегающий от негатива.\nНефрит: Традиционный талисман удачи и гармонии."
+      }
+    }
+  },
+  {
+    "key": "Horse",
+    "image_base": "horse",
+    "years": "1918, 1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026",
+    "translations": {
+      "en": {
+        "name": "Horse",
+        "desc": "The Horse is characterized by the attributes of independence, enthusiasm, and energy, embodying a spirited and free-spirited nature. Horses are known for their zest for life and passion for exploration, often seeking new adventures and experiences with boundless enthusiasm. Individuals born in the Year of the Horse might be the driving force behind exciting endeavors and initiatives, infusing energy and vitality into their pursuits.",
+        "traits": "Energetic, free, popular, positive, impatient",
+        "best_match": "Sheep",
+        "worst_match": "Rat",
+        "compatibility_desc": "Horses and Goats enjoy a naturally harmonious relationship, enriched by emotional depth. The free-spirited Horse is drawn to the Goat’s creativity and nurturing nature, finding a partner who values freedom and adventure. The Goat, in turn, appreciates the Horse’s passion for life, feeling supported in their artistic endeavours. This partnership is characterised by a shared appreciation for beauty and a common desire for a life filled with excitement and emotional connection.",
+        "gemstone_desc": "The Horse is energetic, passionate, and independent.\n\nTopaz: Promotes success and strengthens one's intuition.\nRuby: Can increase energy and passion.\nAmethyst: A protective stone that brings balance and calm.\nTurquoise: Associated with good luck and healing.\nGarnet: Can enhance energy and passion.\nEmerald: Represents growth and balance.\nJade: A symbol of good fortune and prosperity.\nObsidian: A grounding and protective stone."
+      },
+      "es": {
+        "name": "Caballo",
+        "desc": "El Caballo se caracteriza por atributos de independencia, entusiasmo y energía, encarnando una naturaleza briosa y de espíritu libre. Los Caballos son conocidos por su entusiasmo por la vida y pasión por la exploración, a menudo buscando nuevas aventuras y experiencias con un entusiasmo ilimitado. Las personas nacidas en el Año del Caballo podrían ser la fuerza impulsora detrás de iniciativas emocionantes, infundiendo energía y vitalidad en sus actividades.",
+        "traits": "Energético, libre, popular, positivo, impaciente",
+        "best_match": "Cabra",
+        "worst_match": "Rata",
+        "compatibility_desc": "Los Caballos y las Cabras disfrutan de una relación naturalmente armoniosa, enriquecida por la profundidad emocional. El Caballo de espíritu libre se siente atraído por la creatividad y la naturaleza protectora de la Cabra, encontrando una pareja que valora la libertad y la aventura. La Cabra, a su vez, aprecia la pasión del Caballo por la vida, sintiéndose apoyada en sus esfuerzos artísticos. Esta asociación se caracteriza por un aprecio compartido por la belleza y un deseo común de una vida llena de emoción y conexión emocional.",
+        "gemstone_desc": "El Caballo es energético, apasionado e independiente.\n\nTopacio: Promueve el éxito y fortalece la intuición.\nRubí: Puede aumentar la energía y la pasión.\nAmatista: Una piedra protectora que trae equilibrio y calma.\nTurquesa: Asociada con la buena suerte y la curación.\nGranate: Puede mejorar la energía y la pasión.\nEsmeralda: Representa el crecimiento y el equilibrio.\nJade: Un símbolo de buena fortuna y prosperidad.\nObsidiana: Una piedra protectora y de conexión a tierra."
+      },
+      "fr": {
+        "name": "Cheval",
+        "desc": "Le Cheval se caractérise par des attributs d'indépendance, d'enthousiasme et d'énergie, incarnant une nature fougueuse et un esprit libre. Les Chevaux sont connus pour leur joie de vivre et leur passion pour l'exploration, recherchant souvent de nouvelles aventures et expériences avec un enthousiasme sans bornes. Les personnes nées l'année du Cheval pourraient être la force motrice derrière des initiatives passionnantes, insufflant énergie et vitalité dans leurs activités.",
+        "traits": "Énergique, libre, populaire, positif, impatient",
+        "best_match": "Chèvre",
+        "worst_match": "Rat",
+        "compatibility_desc": "Les Chevaux et les Chèvres jouissent d'une relation naturellement harmonieuse, enrichie par la profondeur émotionnelle. Le Cheval à l'esprit libre est attiré par la créativité et la nature nourricière de la Chèvre, trouvant un partenaire qui valorise la liberté et l'aventure. La Chèvre, quant à elle, apprécie la passion du Cheval pour la vie, se sentant soutenue dans ses efforts artistiques. Ce partenariat se caractérise par une appréciation partagée de la beauté et un désir commun d'une vie remplie d'excitation et de connexion émotionnelle.",
+        "gemstone_desc": "Le Cheval est énergique, passionné et indépendant.\n\nTopaze : Favorise le succès et renforce l'intuition.\nRubis : Peut augmenter l'énergie et la passion.\nAméthyste : Une pierre protectrice qui apporte équilibre et calme.\nTurquoise : Associée à la bonne chance et à la guérison.\nGrenat : Peut renforcer l'énergie et la passion.\nÉmeraude : Représente la croissance et l'équilibre.\nJade : Un symbole de bonne fortune et de prospérité.\nObsidienne : Une pierre d'ancrage et de protection."
+      },
+      "it": {
+        "name": "Cavallo",
+        "desc": "Il Cavallo è caratterizzato da attributi di indipendenza, entusiasmo ed energia, incarnando una natura briosa e uno spirito libero. I Cavalli sono noti per la loro gioia di vivere e la passione per l'esplorazione, cercando spesso nuove avventure ed esperienze con entusiasmo sconfinato. Le persone nate nell'Anno del Cavallo potrebbero essere la forza trainante dietro iniziative entusiasmanti, infondendo energia e vitalità nelle loro attività.",
+        "traits": "Energico, libero, popolare, positivo, impaziente",
+        "best_match": "Capra",
+        "worst_match": "Topo",
+        "compatibility_desc": "Cavalli e Capre godono di una relazione naturalmente armoniosa, arricchita dalla profondità emotiva. Il Cavallo, spirito libero, è attratto dalla creatività e dalla natura premurosa della Capra, trovando un partner che apprezza la libertà e l'avventura. La Capra, a sua volta, apprezza la passione del Cavallo per la vita, sentendosi supportata nei suoi sforzi artistici. Questa partnership è caratterizzata da un apprezzamento condiviso per la bellezza e da un desiderio comune di una vita piena di eccitazione e connessione emotiva.",
+        "gemstone_desc": "Il Cavallo è energico, appassionato e indipendente.\n\nTopazio: Promuove il successo e rafforza l'intuizione.\nRubino: Può aumentare l'energia e la passione.\nAmetista: Una pietra protettiva che porta equilibrio e calma.\nTurchese: Associata alla buona fortuna e alla guarigione.\nGranato: Può migliorare l'energia e la passione.\nSmeraldo: Rappresenta la crescita e l'equilibrio.\nGiada: Un simbolo di buona fortuna e prosperità.\nOssidiana: Una pietra di radicamento e protezione."
+      },
+      "de": {
+        "name": "Pferd",
+        "desc": "Das Pferd zeichnet sich durch Unabhängigkeit, Enthusiasmus und Energie aus und verkörpert eine temperamentvolle und freigeistige Natur. Pferde sind bekannt für ihre Lebensfreude und ihre Leidenschaft für Entdeckungen und suchen oft mit grenzenlosem Enthusiasmus nach neuen Abenteuern und Erfahrungen. Personen, die im Jahr des Pferdes geboren sind, könnten die treibende Kraft hinter aufregenden Unternehmungen und Initiativen sein und Energie und Vitalität in ihre Bestrebungen einfließen lassen.",
+        "traits": "Energetisch, frei, beliebt, positiv, ungeduldig",
+        "best_match": "Ziege",
+        "worst_match": "Ratte",
+        "compatibility_desc": "Pferde und Ziegen genießen eine natürlich harmonische Beziehung, die durch emotionale Tiefe bereichert wird. Das freigeistige Pferd fühlt sich von der Kreativität und der fürsorglichen Natur der Ziege angezogen und findet einen Partner, der Freiheit und Abenteuer schätzt. Die Ziege wiederum schätzt die Lebensleidenschaft des Pferdes und fühlt sich in ihren künstlerischen Bestrebungen unterstützt. Diese Partnerschaft ist geprägt von einer gemeinsamen Wertschätzung für Schönheit und dem gemeinsamen Wunsch nach einem Leben voller Aufregung und emotionaler Verbundenheit.",
+        "gemstone_desc": "Das Pferd ist energiegeladen, leidenschaftlich und unabhängig.\n\nTopas: Fördert Erfolg und stärkt die Intuition.\nRubin: Kann Energie und Leidenschaft steigern.\nAmethyst: Ein Schutzstein, der Gleichgewicht und Ruhe bringt.\nTürkis: Verbunden mit Glück und Heilung.\nGranat: Kann Energie und Leidenschaft verstärken.\nSmaragd: Repräsentiert Wachstum und Gleichgewicht.\nJade: Ein Symbol für Glück und Wohlstand.\nObsidian: Ein Erdungs- und Schutzstein."
+      },
+      "pl": {
+        "name": "Koń",
+        "desc": "Koń charakteryzuje się niezależnością, entuzjazmem i energią, ucieleśniając żywiołową i wolną naturę. Konie są znane ze swojej radości życia i pasji do odkrywania, często szukając nowych przygód i doświadczeń z bezgranicznym entuzjazmem. Osoby urodzone w Roku Konia mogą być siłą napędową ekscytujących przedsięwzięć i inicjatyw, wnosząc energię i witalność do swoich działań.",
+        "traits": "Energetyczny, wolny, popularny, pozytywny, niecierpliwy",
+        "best_match": "Koza",
+        "worst_match": "Szczur",
+        "compatibility_desc": "Konie i Kozy cieszą się naturalnie harmonijną relacją, wzbogaconą głębią emocjonalną. Wolny duchem Koń jest przyciągany przez kreatywność i opiekuńczą naturę Kozy, znajdując partnera, który ceni wolność i przygodę. Koza z kolei docenia pasję Konia do życia, czując wsparcie w swoich artystycznych dążeniach. To partnerstwo charakteryzuje się wspólnym uznaniem dla piękna i pragnieniem życia pełnego ekscytacji i emocjonalnej więzi.",
+        "gemstone_desc": "Koń jest energiczny, pełen pasji i niezależny.\n\nTopaz: Promuje sukces i wzmacnia intuicję.\nRubin: Może zwiększyć energię i pasję.\nAmetyst: Kamień ochronny, który przynosi równowagę i spokój.\nTurkus: Kojarzony ze szczęściem i uzdrawianiem.\nGranat: Może wzmocnić energię i pasję.\nSzmaragd: Reprezentuje wzrost i równowagę.\nJadeit: Symbol szczęścia i dobrobytu.\nObsydian: Kamień uziemiający i ochronny."
+      },
+      "ru": {
+        "name": "Лошадь",
+        "desc": "Лошадь характеризуется такими качествами, как независимость, энтузиазм и энергия, воплощая в себе энергичную и свободолюбивую натуру. Лошади известны своим жизнелюбием и страстью к исследованиям, часто с безграничным энтузиазмом ища новые приключения и впечатления. Люди, рожденные в год Лошади, могут быть движущей силой захватывающих начинаний и инициатив, привнося энергию и жизненную силу в свои занятия.",
+        "traits": "Энергичная, свободная, популярная, позитивная, нетерпеливая",
+        "best_match": "Коза",
+        "worst_match": "Крыса",
+        "compatibility_desc": "Лошади и Козы наслаждаются естественно гармоничными отношениями, обогащенными эмоциональной глубиной. Свободолюбивая Лошадь тянется к творчеству и заботливой натуре Козы, находя партнера, который ценит свободу и приключения. Коза, в свою очередь, ценит страсть Лошади к жизни, чувствуя поддержку в своих творческих начинаниях. Этот союз характеризуется общим пониманием красоты и стремлением к жизни, полной волнений и эмоциональной связи.",
+        "gemstone_desc": "Лошадь энергична, страстна и независима.\n\nТопаз: Способствует успеху и усиливает интуицию.\nРубин: Может увеличить энергию и страсть.\nАметист: Защитный камень, который приносит равновесие и спокойствие.\nБирюза: Ассоциируется с удачей и исцелением.\nГранат: Может усилить энергию и страсть.\nИзумруд: Олицетворяет рост и равновесие.\nНефрит: Символ удачи и процветания.\nОбсидиан: Заземляющий и защитный камень."
+      }
+    }
+  },
+  {
+    "key": "Goat",
+    "image_base": "goat",
+    "years": "1919, 1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027",
+    "translations": {
+      "en": {
+        "name": "Goat",
+        "desc": "The Goat is known for its gentle and kind nature. People born under this sign are often artistic, creative, and compassionate individuals. The Goat symbolizes peace and harmonious relationships, making those born under this sign excellent mediators and caregivers. Their patient and amiable demeanor allows them to connect well with others and create a positive atmosphere in any situation.",
+        "traits": "Kind, patient, persuasive, gentle, timid",
+        "best_match": "Horse",
+        "worst_match": "Ox",
+        "compatibility_desc": "Goats find their most compatible match in the Horse. This pairing is celebrated for its emotional resonance and shared values. The artistic Goat is captivated by the Horse’s vitality and enthusiasm, which encourages the Goat to pursue their creative passions. The Horse, finding inspiration in the Goat’s imagination and sensitivity, provides the encouragement and support the Goat needs to thrive. Together, they share a life marked by encouragement, creativity, and an understanding of each other’s desires and dreams.",
+        "gemstone_desc": "The Goat (or Sheep) is gentle, creative, and compassionate.\n\nEmerald: Symbolizes growth and peace.\nSapphire: Promotes wisdom and spiritual growth.\nMoonstone: Provides emotional balance and intuition.\nJade: A traditional talisman for luck and harmony.\nAmber: Associated with healing and good luck.\nPeridot: Known for its protective and healing properties.\nCarnelian: Can boost courage and creativity.\nRose Quartz: Encourages compassion and self-love."
+      },
+      "es": {
+        "name": "Cabra",
+        "desc": "La Cabra es conocida por su naturaleza gentil y amable. Las personas nacidas bajo este signo suelen ser individuos artísticos, creativos y compasivos. La Cabra simboliza la paz y las relaciones armoniosas, lo que convierte a los nacidos bajo este signo en excelentes mediadores y cuidadores. Su comportamiento paciente y amable les permite conectar bien con los demás y crear una atmósfera positiva en cualquier situación.",
+        "traits": "Amable, paciente, persuasiva, gentil, tímida",
+        "best_match": "Caballo",
+        "worst_match": "Buey",
+        "compatibility_desc": "Las Cabras encuentran su pareja más compatible en el Caballo. Esta pareja es celebrada por su resonancia emocional y valores compartidos. La Cabra artística queda cautivada por la vitalidad y el entusiasmo del Caballo, lo que la anima a perseguir sus pasiones creativas. El Caballo, encontrando inspiración en la imaginación y sensibilidad de la Cabra, proporciona el aliento y el apoyo que la Cabra necesita para prosperar. Juntos, comparten una vida marcada por el aliento, la creatividad y la comprensión de los deseos y sueños del otro.",
+        "gemstone_desc": "La Cabra (u Oveja) es gentil, creativa y compasiva.\n\nEsmeralda: Simboliza el crecimiento y la paz.\nZafiro: Promueve la sabiduría y el crecimiento espiritual.\nPiedra de Luna: Proporciona equilibrio emocional e intuición.\nJade: Un talismán tradicional para la suerte y la armonía.\nÁmbar: Asociado con la curación y la buena suerte.\nPeridoto: Conocido por sus propiedades protectoras y curativas.\nCornalina: Puede aumentar el coraje y la creatividad.\nCuarzo Rosa: Fomenta la compasión y el amor propio."
+      },
+      "fr": {
+        "name": "Chèvre",
+        "desc": "La Chèvre est connue pour sa nature douce et gentille. Les personnes nées sous ce signe sont souvent des individus artistiques, créatifs et compatissants. La Chèvre symbolise la paix et les relations harmonieuses, ce qui fait des natifs de ce signe d'excellents médiateurs et soignants. Leur attitude patiente et aimable leur permet de bien se connecter avec les autres et de créer une atmosphère positive dans n'importe quelle situation.",
+        "traits": "Gentil, patient, persuasif, doux, timide",
+        "best_match": "Cheval",
+        "worst_match": "Bœuf",
+        "compatibility_desc": "Les Chèvres trouvent leur partenaire le plus compatible avec le Cheval. Ce duo est célébré pour sa résonance émotionnelle et ses valeurs partagées. La Chèvre artistique est captivée par la vitalité et l'enthousiasme du Cheval, ce qui l'encourage à poursuivre ses passions créatives. Le Cheval, trouvant l'inspiration dans l'imagination et la sensibilité de la Chèvre, apporte l'encouragement et le soutien dont la Chèvre a besoin pour s'épanouir. Ensemble, ils partagent une vie marquée par l'encouragement, la créativité et la compréhension des désirs et rêves de l'autre.",
+        "gemstone_desc": "La Chèvre (ou Mouton) est douce, créative et compatissante.\n\nÉmeraude : Symbolise la croissance et la paix.\nSaphir : Favorise la sagesse et la croissance spirituelle.\nPierre de lune : Procure équilibre émotionnel et intuition.\nJade : Un talisman traditionnel pour la chance et l'harmonie.\nAmbre : Associé à la guérison et à la chance.\nPéridot : Connu pour ses propriétés protectrices et curatives.\nCornaline : Peut stimuler le courage et la créativité.\nQuartz rose : Encourage la compassion et l'amour de soi."
+      },
+      "it": {
+        "name": "Capra",
+        "desc": "La Capra è nota per la sua natura dolce e gentile. Le persone nate sotto questo segno sono spesso individui artistici, creativi e compassionevoli. La Capra simboleggia la pace e le relazioni armoniose, rendendo i nati sotto questo segno eccellenti mediatori e assistenti. Il loro comportamento paziente e amabile permette loro di connettersi bene con gli altri e creare un'atmosfera positiva in ogni situazione.",
+        "traits": "Gentile, paziente, persuasivo, dolce, timido",
+        "best_match": "Cavallo",
+        "worst_match": "Bue",
+        "compatibility_desc": "Le Capre trovano la loro corrispondenza più compatibile nel Cavallo. Questa coppia è celebrata per la sua risonanza emotiva e i valori condivisi. La Capra artistica è affascinata dalla vitalità e dall'entusiasmo del Cavallo, che incoraggia la Capra a perseguire le sue passioni creative. Il Cavallo, trovando ispirazione nell'immaginazione e nella sensibilità della Capra, fornisce l'incoraggiamento e il supporto di cui la Capra ha bisogno per prosperare. Insieme, condividono una vita segnata dall'incoraggiamento, dalla creatività e dalla comprensione dei desideri e dei sogni reciproci.",
+        "gemstone_desc": "La Capra (o Pecora) è gentile, creativa e compassionevole.\n\nSmeraldo: Simboleggia la crescita e la pace.\nZaffiro: Promuove la saggezza e la crescita spirituale.\nPietra di Luna: Fornisce equilibrio emotivo e intuizione.\nGiada: Un talismano tradizionale per fortuna e armonia.\nAmbra: Associata alla guarigione e alla buona fortuna.\nPeridoto: Noto per le sue proprietà protettive e curative.\nCorniola: Può aumentare il coraggio e la creatività.\nQuarzo Rosa: Incoraggia la compassione e l'amore per se stessi."
+      },
+      "de": {
+        "name": "Ziege",
+        "desc": "Die Ziege ist bekannt für ihr sanftes und freundliches Wesen. Menschen, die unter diesem Zeichen geboren sind, sind oft künstlerische, kreative und mitfühlende Individuen. Die Ziege symbolisiert Frieden und harmonische Beziehungen, was die unter diesem Zeichen Geborenen zu hervorragenden Vermittlern und Fürsorgern macht. Ihr geduldiges und liebenswürdiges Auftreten ermöglicht es ihnen, gut mit anderen in Kontakt zu treten und in jeder Situation eine positive Atmosphäre zu schaffen.",
+        "traits": "Freundlich, geduldig, überzeugend, sanft, schüchtern",
+        "best_match": "Pferd",
+        "worst_match": "Büffel",
+        "compatibility_desc": "Ziegen finden ihre kompatibelste Übereinstimmung im Pferd. Diese Paarung wird für ihre emotionale Resonanz und gemeinsamen Werte gefeiert. Die künstlerische Ziege ist fasziniert von der Vitalität und dem Enthusiasmus des Pferdes, was die Ziege ermutigt, ihre kreativen Leidenschaften zu verfolgen. Das Pferd, das in der Fantasie und Sensibilität der Ziege Inspiration findet, bietet die Ermutigung und Unterstützung, die die Ziege braucht, um aufzublühen. Zusammen teilen sie ein Leben, das von Ermutigung, Kreativität und einem Verständnis für die Wünsche und Träume des anderen geprägt ist.",
+        "gemstone_desc": "Die Ziege (oder das Schaf) ist sanft, kreativ und mitfühlend.\n\nSmaragd: Symbolisiert Wachstum und Frieden.\nSaphir: Fördert Weisheit und spirituelles Wachstum.\nMondstein: Sorgt für emotionales Gleichgewicht und Intuition.\nJade: Ein traditioneller Talisman für Glück und Harmonie.\nBernstein: Verbunden mit Heilung und Glück.\nPeridot: Bekannt für seine schützenden und heilenden Eigenschaften.\nKarneol: Kann Mut und Kreativität steigern.\nRosenquarz: Fördert Mitgefühl und Selbstliebe."
+      },
+      "pl": {
+        "name": "Koza",
+        "desc": "Koza znana jest ze swojej łagodnej i życzliwej natury. Osoby urodzone pod tym znakiem są często artystyczne, kreatywne i współczujące. Koza symbolizuje spokój i harmonijne relacje, co czyni osoby urodzone pod tym znakiem doskonałymi mediatorami i opiekunami. Ich cierpliwa i sympatyczna postawa pozwala im dobrze nawiązywać kontakt z innymi i tworzyć pozytywną atmosferę w każdej sytuacji.",
+        "traits": "Życzliwa, cierpliwa, przekonująca, łagodna, nieśmiała",
+        "best_match": "Koń",
+        "worst_match": "Bawół",
+        "compatibility_desc": "Kozy znajdują najbardziej kompatybilnego partnera w Koniu. Ta para jest ceniona za emocjonalny rezonans i wspólne wartości. Artystyczna Koza jest zafascynowana witalnością i entuzjazmem Konia, co zachęca ją do realizacji swoich kreatywnych pasji. Koń, znajdując inspirację w wyobraźni i wrażliwości Kozy, zapewnia zachętę i wsparcie, których Koza potrzebuje, aby się rozwijać. Razem dzielą życie naznaczone zachętą, kreatywnością i zrozumieniem wzajemnych pragnień i marzeń.",
+        "gemstone_desc": "Koza (lub Owca) jest łagodna, kreatywna i współczująca.\n\nSzmaragd: Symbolizuje wzrost i spokój.\nSzafir: Promuje mądrość i rozwój duchowy.\nKamień księżycowy: Zapewnia równowagę emocjonalną i intuicję.\nJadeit: Tradycyjny talizman szczęścia i harmonii.\nBursztyn: Kojarzony z uzdrawianiem i szczęściem.\nPerydot: Znany ze swoich właściwości ochronnych i leczniczych.\nKrwawnik (Kornalin): Może zwiększyć odwagę i kreatywność.\nKwarc różowy: Zachęca do współczucia i miłości własnej."
+      },
+      "ru": {
+        "name": "Коза",
+        "desc": "Коза известна своим нежным и добрым характером. Люди, рожденные под этим знаком, часто являются артистичными, творческими и сострадательными личностями. Коза символизирует мир и гармоничные отношения, что делает рожденных под этим знаком отличными посредниками и опекунами. Их терпеливое и дружелюбное поведение позволяет им хорошо ладить с другими и создавать позитивную атмосферу в любой ситуации.",
+        "traits": "Добрая, терпеливая, убедительная, нежная, робкая",
+        "best_match": "Лошадь",
+        "worst_match": "Бык",
+        "compatibility_desc": "Козы находят свою самую совместимую пару в Лошади. Этот союз славится своим эмоциональным резонансом и общими ценностями. Артистичная Коза очарована жизненной силой и энтузиазмом Лошади, что побуждает Козу следовать своим творческим увлечениям. Лошадь, черпая вдохновение в воображении и чувствительности Козы, обеспечивает поддержку и поощрение, необходимые Козе для процветания. Вместе они разделяют жизнь, отмеченную поддержкой, творчеством и пониманием желаний и мечтаний друг друга.",
+        "gemstone_desc": "Коза (или Овца) нежная, творческая и сострадательная.\n\nИзумруд: Символизирует рост и мир.\nСапфир: Способствует мудрости и духовному росту.\nЛунный камень: Обеспечивает эмоциональное равновесие и интуицию.\nНефрит: Традиционный талисман удачи и гармонии.\nЯнтарь: Ассоциируется с исцелением и удачей.\nПеридот (Хризолит): Известен своими защитными и целебными свойствами.\nСердолик: Может повысить смелость и креативность.\nРозовый кварц: Способствует состраданию и любви к себе."
+      }
+    }
+  },
+  {
+    "key": "Monkey",
+    "image_base": "monkey",
+    "years": "1920, 1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028",
+    "translations": {
+      "en": {
+        "name": "Monkey",
+        "desc": "The Monkey is often described as witty, intelligent, and playful. They are known for their quick thinking and adaptability, able to navigate various situations with ease. Monkeys are highly sociable and enjoy being the center of attention, often bringing laughter and joy to those around them. In Chinese culture, the Monkey symbolizes cleverness and resourcefulness.",
+        "traits": "Intelligent, influential, curious, passionate, easily discouraged",
+        "best_match": "Snake",
+        "worst_match": "Tiger",
+        "compatibility_desc": "Monkeys and Snakes are an intellectually matched pair that thrives on mental agility and strategic thinking. The Monkey’s curiosity and cleverness complement the Snake’s wisdom and insight. This relationship benefits from stimulating conversations and a shared love for problem-solving. The Snake’s depth provides a grounding influence for the Monkey’s playful nature, while the Monkey adds lightness and excitement to the Snake’s life. Together, they form a partnership based on intellectual compatibility.",
+        "gemstone_desc": "The Monkey is clever, curious, and witty.\n\nPeridot: A stone of healing and protection.\nTiger's Eye: Enhances confidence and offers protection.\nAquamarine: Promotes mental clarity and communication.\nRuby: Can increase energy and courage.\nGarnet: Associated with passion and vitality.\nTopaz: Symbolizes success and fortune.\nJade: A symbol of good luck and prosperity.\nAgate: A grounding stone that offers stability."
+      },
+      "es": {
+        "name": "Mono",
+        "desc": "El Mono se describe a menudo como ingenioso, inteligente y juguetón. Son conocidos por su rapidez mental y adaptabilidad, capaces de navegar diversas situaciones con facilidad. Los Monos son muy sociables y disfrutan siendo el centro de atención, trayendo a menudo risas y alegría a quienes los rodean. En la cultura china, el Mono simboliza la astucia y el ingenio.",
+        "traits": "Inteligente, influyente, curioso, apasionado, se desanima fácilmente",
+        "best_match": "Serpiente",
+        "worst_match": "Tigre",
+        "compatibility_desc": "Los Monos y las Serpientes son una pareja intelectualmente compatible que prospera gracias a la agilidad mental y el pensamiento estratégico. La curiosidad y el ingenio del Mono complementan la sabiduría y la perspicacia de la Serpiente. Esta relación se beneficia de conversaciones estimulantes y un amor compartido por la resolución de problemas. La profundidad de la Serpiente proporciona una influencia estabilizadora para la naturaleza juguetona del Mono, mientras que el Mono añade ligereza y emoción a la vida de la Serpiente.",
+        "gemstone_desc": "El Mono es astuto, curioso e ingenioso.\n\nPeridoto: Una piedra de curación y protección.\nOjo de Tigre: Mejora la confianza y ofrece protección.\nAguamarina: Promueve la claridad mental y la comunicación.\nRubí: Puede aumentar la energía y el coraje.\nGranate: Asociado con la pasión y la vitalidad.\nTopacio: Simboliza el éxito y la fortuna.\nJade: Un símbolo de buena suerte y prosperidad.\nÁgata: Una piedra de conexión a tierra que ofrece estabilidad."
+      },
+      "fr": {
+        "name": "Singe",
+        "desc": "Le Singe est souvent décrit comme spirituel, intelligent et enjoué. Il est connu pour sa vivacité d'esprit et son adaptabilité, capable de naviguer dans diverses situations avec aisance. Les Singes sont très sociables et aiment être le centre de l'attention, apportant souvent rires et joie à ceux qui les entourent. Dans la culture chinoise, le Singe symbolise l'intelligence et l'ingéniosité.",
+        "traits": "Intelligent, influent, curieux, passionné, facilement découragé",
+        "best_match": "Serpent",
+        "worst_match": "Tigre",
+        "compatibility_desc": "Les Singes et les Serpents forment une paire intellectuellement assortie qui s'épanouit grâce à l'agilité mentale et à la pensée stratégique. La curiosité et l'intelligence du Singe complètent la sagesse et la perspicacité du Serpent. Cette relation bénéficie de conversations stimulantes et d'un amour partagé pour la résolution de problèmes. La profondeur du Serpent offre une influence ancrée à la nature enjouée du Singe, tandis que le Singe ajoute de la légèreté et de l'excitation à la vie du Serpent.",
+        "gemstone_desc": "Le Singe est malin, curieux et spirituel.\n\nPéridot : Une pierre de guérison et de protection.\nŒil-de-tigre : Renforce la confiance et offre une protection.\nAigue-marine : Favorise la clarté mentale et la communication.\nRubis : Peut augmenter l'énergie et le courage.\nGrenat : Associé à la passion et à la vitalité.\nTopaze : Symbolise le succès et la fortune.\nJade : Un symbole de bonne chance et de prospérité.\nAgate : Une pierre d'ancrage qui offre de la stabilité."
+      },
+      "it": {
+        "name": "Scimmia",
+        "desc": "La Scimmia è spesso descritta come spiritosa, intelligente e giocosa. È nota per la sua rapidità di pensiero e adattabilità, capace di navigare in varie situazioni con facilità. Le Scimmie sono molto socievoli e amano essere al centro dell'attenzione, portando spesso risate e gioia a chi le circonda. Nella cultura cinese, la Scimmia simboleggia l'astuzia e l'intraprendenza.",
+        "traits": "Intelligente, influente, curioso, appassionato, si scoraggia facilmente",
+        "best_match": "Serpente",
+        "worst_match": "Tigre",
+        "compatibility_desc": "Scimmie e Serpenti sono una coppia intellettualmente affine che prospera sull'agilità mentale e il pensiero strategico. La curiosità e l'intelligenza della Scimmia completano la saggezza e l'intuizione del Serpente. Questa relazione beneficia di conversazioni stimolanti e di un amore condiviso per la risoluzione dei problemi. La profondità del Serpente fornisce un'influenza di radicamento per la natura giocosa della Scimmia, mentre la Scimmia aggiunge leggerezza ed eccitazione alla vita del Serpente.",
+        "gemstone_desc": "La Scimmia è intelligente, curiosa e spiritosa.\n\nPeridoto: Una pietra di guarigione e protezione.\nOcchio di Tigre: Migliora la fiducia e offre protezione.\nAcquamarina: Promuove la chiarezza mentale e la comunicazione.\nRubino: Può aumentare l'energia e il coraggio.\nGranato: Associato a passione e vitalità.\nTopazio: Simboleggia successo e fortuna.\nGiada: Un simbolo di buona fortuna e prosperità.\nAgata: Una pietra di radicamento che offre stabilità."
+      },
+      "de": {
+        "name": "Affe",
+        "desc": "Der Affe wird oft als witzig, intelligent und verspielt beschrieben. Er ist bekannt für sein schnelles Denken und seine Anpassungsfähigkeit und meistert verschiedene Situationen mit Leichtigkeit. Affen sind sehr gesellig und genießen es, im Mittelpunkt der Aufmerksamkeit zu stehen, wobei sie den Menschen um sie herum oft Lachen und Freude bringen. In der chinesischen Kultur symbolisiert der Affe Klugheit und Einfallsreichtum.",
+        "traits": "Intelligent, einflussreich, neugierig, leidenschaftlich, leicht entmutigt",
+        "best_match": "Schlange",
+        "worst_match": "Tiger",
+        "compatibility_desc": "Affen und Schlangen sind ein intellektuell passendes Paar, das von geistiger Beweglichkeit und strategischem Denken lebt. Die Neugier und Klugheit des Affen ergänzen die Weisheit und Einsicht der Schlange. Diese Beziehung profitiert von anregenden Gesprächen und einer gemeinsamen Liebe zur Problemlösung. Die Tiefe der Schlange bietet einen erdenden Einfluss für die verspielte Natur des Affen, während der Affe Leichtigkeit und Aufregung in das Leben der Schlange bringt.",
+        "gemstone_desc": "Der Affe ist klug, neugierig und witzig.\n\nPeridot: Ein Stein der Heilung und des Schutzes.\nTigerauge: Stärkt das Selbstvertrauen und bietet Schutz.\nAquamarin: Fördert geistige Klarheit und Kommunikation.\nRubin: Kann Energie und Mut steigern.\nGranat: Verbunden mit Leidenschaft und Vitalität.\nTopas: Symbolisiert Erfolg und Glück.\nJade: Ein Symbol für Glück und Wohlstand.\nAchat: Ein Erdungsstein, der Stabilität bietet."
+      },
+      "pl": {
+        "name": "Małpa",
+        "desc": "Małpa jest często opisywana jako dowcipna, inteligentna i zabawna. Znana jest z szybkiego myślenia i zdolności adaptacyjnych, z łatwością radząc sobie w różnych sytuacjach. Małpy są bardzo towarzyskie i lubią być w centrum uwagi, często wnosząc śmiech i radość do otoczenia. W kulturze chińskiej Małpa symbolizuje spryt i zaradność.",
+        "traits": "Inteligentny, wpływowy, ciekawska, namiętna, łatwo się zniechęca",
+        "best_match": "Wąż",
+        "worst_match": "Tygrys",
+        "compatibility_desc": "Małpy i Węże to intelektualnie dobrana para, która kwitnie dzięki sprawności umysłowej i strategicznemu myśleniu. Ciekawość i spryt Małpy uzupełniają mądrość i wnikliwość Węża. Ta relacja czerpie korzyści ze stymulujących rozmów i wspólnego zamiłowania do rozwiązywania problemów. Głębia Węża zapewnia uziemiający wpływ na zabawową naturę Małpy, podczas gdy Małpa wnosi lekkość i ekscytację do życia Węża.",
+        "gemstone_desc": "Małpa jest sprytna, ciekawska i dowcipna.\n\nPerydot: Kamień uzdrawiania i ochrony.\nTygrysie Oko: Wzmacnia pewność siebie i oferuje ochronę.\nAkwamaryn: Promuje jasność umysłu i komunikację.\nRubin: Może zwiększyć energię i odwagę.\nGranat: Kojarzony z pasją i witalnością.\nTopaz: Symbolizuje sukces i fortunę.\nJadeit: Symbol szczęścia i dobrobytu.\nAgat: Kamień uziemiający, który zapewnia stabilność."
+      },
+      "ru": {
+        "name": "Обезьяна",
+        "desc": "Обезьяну часто описывают как остроумную, умную и игривую. Они известны своим быстрым мышлением и способностью к адаптации, легко ориентируясь в различных ситуациях. Обезьяны очень общительны и любят быть в центре внимания, часто принося смех и радость окружающим. В китайской культуре Обезьяна символизирует ум и находчивость.",
+        "traits": "Умная, влиятельная, любопытная, страстная, легко впадает в уныние",
+        "best_match": "Змея",
+        "worst_match": "Тигр",
+        "compatibility_desc": "Обезьяны и Змеи — интеллектуально совместимая пара, которая процветает благодаря умственной гибкости и стратегическому мышлению. Любопытство и ум Обезьяны дополняют мудрость и проницательность Змеи. Эти отношения выигрывают от стимулирующих бесед и общей любви к решению проблем. Глубина Змеи обеспечивает заземляющее влияние на игривую натуру Обезьяны, в то время как Обезьяна добавляет легкость и волнение в жизнь Змеи.",
+        "gemstone_desc": "Обезьяна умна, любопытна и остроумна.\n\nПеридот (Хризолит): Камень исцеления и защиты.\nТигровый глаз: Повышает уверенность и обеспечивает защиту.\nАквамарин: Способствует ясности ума и общению.\nРубин: Может увеличить энергию и смелость.\nГранат: Ассоциируется со страстью и жизненной силой.\nТопаз: Символизирует успех и удачу.\nНефрит: Символ удачи и процветания.\nАгат: Заземляющий камень, который дает стабильность."
+      }
+    }
+  },
+  {
+    "key": "Rooster",
+    "image_base": "rooster",
+    "years": "1921, 1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029",
+    "translations": {
+      "en": {
+        "name": "Rooster",
+        "desc": "The Rooster is confident, hardworking, and detail-oriented. They have a strong sense of responsibility and dedication to their goals, striving for excellence in everything they do. Roosters are also believed to be honest and straightforward in their communication, valuing transparency and integrity above all else. The Rooster is a symbol of fidelity and punctuality.",
+        "traits": "Empathetic, creative, reliable, consistent, boastful",
+        "best_match": "Dragon",
+        "worst_match": "Rabbit",
+        "compatibility_desc": "Roosters find a most compatible partner in the Dragon. The meticulous Rooster is drawn to the Dragon’s boldness and strength, admiring the Dragon’s ability to dream big and lead with confidence. The Dragon, in turn, values the Rooster’s attention to detail and dedication. This partnership thrives on the Rooster’s ability to turn the Dragon’s visions into reality, providing a solid foundation for the Dragon’s aspirations. Together, they strike a balance between the Dragon’s innovative ideas and the Rooster’s practical implementation strategies.",
+        "gemstone_desc": "The Rooster is known for its confidence, independence, and hard-working nature.\n\nCitrine: Believed to attract good fortune and abundance.\nTopaz: Can bring success and good luck.\nDiamond: Represents strength and clarity.\nRuby: Enhances courage and vitality.\nAmethyst: Offers protection and can bring calm.\nAgate: A grounding stone that can provide stability.\nTourmaline: Promotes balance and healing.\nTiger's Eye: Can enhance confidence and offer protection."
+      },
+      "es": {
+        "name": "Gallo",
+        "desc": "El Gallo es seguro de sí mismo, trabajador y detallista. Tienen un fuerte sentido de la responsabilidad y dedicación a sus objetivos, esforzándose por la excelencia en todo lo que hacen. También se cree que los Gallos son honestos y directos en su comunicación, valorando la transparencia y la integridad por encima de todo. El Gallo es un símbolo de fidelidad y puntualidad.",
+        "traits": "Empático, creativo, fiable, constante, presuntuoso",
+        "best_match": "Dragón",
+        "worst_match": "Conejo",
+        "compatibility_desc": "Los Gallos encuentran su pareja más compatible en el Dragón. El meticuloso Gallo se siente atraído por la audacia y la fuerza del Dragón, admirando su capacidad para soñar en grande y liderar con confianza. El Dragón, a su vez, valora la atención al detalle y la dedicación del Gallo. Esta asociación prospera gracias a la capacidad del Gallo para convertir las visiones del Dragón en realidad, proporcionando una base sólida para las aspiraciones del Dragón. Juntos, logran un equilibrio entre las ideas innovadoras del Dragón y las estrategias prácticas de implementación del Gallo.",
+        "gemstone_desc": "El Gallo es conocido por su confianza, independencia y naturaleza trabajadora.\n\nCitrino: Se cree que atrae la buena fortuna y la abundancia.\nTopacio: Puede traer éxito y buena suerte.\nDiamante: Representa fuerza y claridad.\nRubí: Aumenta el coraje y la vitalidad.\nAmatista: Ofrece protección y puede traer calma.\nÁgata: Una piedra de conexión a tierra que puede proporcionar estabilidad.\nTurmalina: Promueve el equilibrio y la curación.\nOjo de Tigre: Puede mejorar la confianza y ofrecer protección."
+      },
+      "fr": {
+        "name": "Coq",
+        "desc": "Le Coq est confiant, travailleur et soucieux du détail. Il a un fort sens des responsabilités et du dévouement envers ses objectifs, s'efforçant d'atteindre l'excellence dans tout ce qu'il entreprend. On pense également que les Coqs sont honnêtes et francs dans leur communication, valorisant la transparence et l'intégrité par-dessus tout. Le Coq est un symbole de fidélité et de ponctualité.",
+        "traits": "Empathique, créatif, fiable, constant, vantard",
+        "best_match": "Dragon",
+        "worst_match": "Lapin",
+        "compatibility_desc": "Les Coqs trouvent leur partenaire le plus compatible avec le Dragon. Le Coq méticuleux est attiré par l'audace et la force du Dragon, admirant la capacité du Dragon à rêver grand et à diriger avec confiance. Le Dragon, quant à lui, apprécie le souci du détail et le dévouement du Coq. Ce partenariat prospère grâce à la capacité du Coq à transformer les visions du Dragon en réalité, fournissant une base solide pour les aspirations du Dragon. Ensemble, ils trouvent un équilibre entre les idées novatrices du Dragon et les stratégies de mise en œuvre pratiques du Coq.",
+        "gemstone_desc": "Le Coq est connu pour sa confiance, son indépendance et sa nature travailleuse.\n\nCitrine : Censée attirer la bonne fortune et l'abondance.\nTopaze : Peut apporter succès et chance.\nDiamant : Représente la force et la clarté.\nRubis : Renforce le courage et la vitalité.\nAméthyste : Offre une protection et peut apporter le calme.\nAgate : Une pierre d'ancrage qui peut apporter de la stabilité.\nTourmaline : Favorise l'équilibre et la guérison.\nŒil-de-tigre : Peut renforcer la confiance et offrir une protection."
+      },
+      "it": {
+        "name": "Gallo",
+        "desc": "Il Gallo è sicuro di sé, gran lavoratore e attento ai dettagli. Ha un forte senso di responsabilità e dedizione ai propri obiettivi, puntando all'eccellenza in tutto ciò che fa. Si crede anche che i Galli siano onesti e diretti nella comunicazione, valutando la trasparenza e l'integrità sopra ogni altra cosa. Il Gallo è un simbolo di fedeltà e puntualità.",
+        "traits": "Empatico, creativo, affidabile, costante, vanitoso",
+        "best_match": "Drago",
+        "worst_match": "Coniglio",
+        "compatibility_desc": "I Galli trovano il partner più compatibile nel Drago. Il Gallo meticoloso è attratto dall'audacia e dalla forza del Drago, ammirando la capacità del Drago di sognare in grande e guidare con fiducia. Il Drago, a sua volta, apprezza l'attenzione ai dettagli e la dedizione del Gallo. Questa partnership prospera sulla capacità del Gallo di trasformare le visioni del Drago in realtà, fornendo una solida base per le aspirazioni del Drago. Insieme, trovano un equilibrio tra le idee innovative del Drago e le strategie pratiche di attuazione del Gallo.",
+        "gemstone_desc": "Il Gallo è noto per la sua fiducia, indipendenza e natura laboriosa.\n\nCitrino: Si crede attiri buona fortuna e abbondanza.\nTopazio: Può portare successo e buona fortuna.\nDiamante: Rappresenta forza e chiarezza.\nRubino: Migliora il coraggio e la vitalità.\nAmetista: Offre protezione e può portare calma.\nAgata: Una pietra di radicamento che può fornire stabilità.\nTormalina: Promuove l'equilibrio e la guarigione.\nOcchio di Tigre: Può aumentare la fiducia e offrire protezione."
+      },
+      "de": {
+        "name": "Hahn",
+        "desc": "Der Hahn ist selbstbewusst, fleißig und detailorientiert. Er hat ein starkes Verantwortungsbewusstsein und Hingabe an seine Ziele und strebt in allem, was er tut, nach Exzellenz. Es wird auch angenommen, dass Hähne ehrlich und direkt in ihrer Kommunikation sind und Transparenz und Integrität über alles schätzen. Der Hahn ist ein Symbol für Treue und Pünktlichkeit.",
+        "traits": "Empathisch, kreativ, zuverlässig, beständig, prahlerisch",
+        "best_match": "Drache",
+        "worst_match": "Hase",
+        "compatibility_desc": "Hähne finden ihren kompatibelsten Partner im Drachen. Der akribische Hahn fühlt sich von der Kühnheit und Stärke des Drachen angezogen und bewundert dessen Fähigkeit, groß zu träumen und mit Selbstvertrauen zu führen. Der Drache wiederum schätzt die Detailgenauigkeit und Hingabe des Hahns. Diese Partnerschaft lebt von der Fähigkeit des Hahns, die Visionen des Drachen in die Realität umzusetzen und eine solide Grundlage für die Bestrebungen des Drachen zu bieten. Zusammen finden sie ein Gleichgewicht zwischen den innovativen Ideen des Drachen und den praktischen Umsetzungsstrategien des Hahns.",
+        "gemstone_desc": "Der Hahn ist bekannt für sein Selbstvertrauen, seine Unabhängigkeit und seine fleißige Natur.\n\nCitrin: Soll Glück und Fülle anziehen.\nTopas: Kann Erfolg und Glück bringen.\nDiamant: Repräsentiert Stärke und Klarheit.\nRubin: Steigert Mut und Vitalität.\nAmethyst: Bietet Schutz und kann Ruhe bringen.\nAchat: Ein Erdungsstein, der Stabilität bieten kann.\nTurmalin: Fördert Gleichgewicht und Heilung.\nTigerauge: Kann das Selbstvertrauen stärken und Schutz bieten."
+      },
+      "pl": {
+        "name": "Kogut",
+        "desc": "Kogut jest pewny siebie, pracowity i dba o szczegóły. Ma silne poczucie odpowiedzialności i oddania swoim celom, dążąc do doskonałości we wszystkim, co robi. Uważa się również, że Koguty są uczciwe i bezpośrednie w komunikacji, ceniąc przejrzystość i uczciwość ponad wszystko. Kogut jest symbolem wierności i punktualności.",
+        "traits": "Empatyczny, kreatywny, niezawodny, konsekwentny, chełpliwy",
+        "best_match": "Smok",
+        "worst_match": "Królik",
+        "compatibility_desc": "Koguty znajdują najbardziej kompatybilnego partnera w Smoku. Skrupulatny Kogut jest przyciągany przez śmiałość i siłę Smoka, podziwiając jego zdolność do wielkich marzeń i pewnego przewodzenia. Smok z kolei ceni dbałość Koguta o szczegóły i jego poświęcenie. To partnerstwo kwitnie dzięki zdolności Koguta do przekuwania wizji Smoka w rzeczywistość, zapewniając solidne fundamenty dla jego aspiracji. Razem osiągają równowagę między innowacyjnymi pomysłami Smoka a praktycznymi strategiami wdrażania Koguta.",
+        "gemstone_desc": "Kogut znany jest ze swojej pewności siebie, niezależności i pracowitości.\n\nCytryn: Wierzy się, że przyciąga szczęście i obfitość.\nTopaz: Może przynieść sukces i szczęście.\nDiament: Reprezentuje siłę i jasność.\nRubin: Zwiększa odwagę i witalność.\nAmetyst: Oferuje ochronę i może przynieść spokój.\nAgat: Kamień uziemiający, który może zapewnić stabilność.\nTurmalin: Promuje równowagę i uzdrawianie.\nTygrysie Oko: Może zwiększyć pewność siebie i zapewnić ochronę."
+      },
+      "ru": {
+        "name": "Петух",
+        "desc": "Петух уверен в себе, трудолюбив и внимателен к деталям. У них сильное чувство ответственности и преданности своим целям, они стремятся к совершенству во всем, что делают. Также считается, что Петухи честны и прямолинейны в общении, ценя прозрачность и честность превыше всего. Петух — символ верности и пунктуальности.",
+        "traits": "Эмпатичный, творческий, надежный, последовательный, хвастливый",
+        "best_match": "Дракон",
+        "worst_match": "Кролик",
+        "compatibility_desc": "Петухи находят наиболее совместимого партнера в лице Дракона. Дотошного Петуха привлекают смелость и сила Дракона, он восхищается способностью Дракона мечтать по-крупному и уверенно вести за собой. Дракон, в свою очередь, ценит внимание Петуха к деталям и его самоотверженность. Это партнерство процветает благодаря способности Петуха воплощать видения Дракона в реальность, обеспечивая прочную основу для его стремлений. Вместе они находят баланс между инновационными идеями Дракона и практическими стратегиями реализации Петуха.",
+        "gemstone_desc": "Петух известен своей уверенностью, независимостью и трудолюбием.\n\nЦитрин: Считается, что привлекает удачу и изобилие.\nТопаз: Может принести успех и удачу.\nАлмаз: Символизирует силу и ясность.\nРубин: Усиливает смелость и жизненную энергию.\nАметист: Обеспечивает защиту и может принести спокойствие.\nАгат: Заземляющий камень, который может обеспечить стабильность.\nТурмалин: Способствует равновесию и исцелению.\nТигровый глаз: Может повысить уверенность и обеспечить защиту."
+      }
+    }
+  },
+  {
+    "key": "Dog",
+    "image_base": "dog",
+    "years": "1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030",
+    "translations": {
+      "en": {
+        "name": "Dog",
+        "desc": "Dogs are often seen as loyal, honest, and compassionate. They are known for their protective nature and loyalty to their loved ones, making them reliable friends and partners. Dogs are also believed to be empathetic and caring, always willing to lend a listening ear or a helping hand to those in need. In Chinese folklore, dogs are often associated with good fortune.",
+        "traits": "Loyal, honest, generous, playful, stubborn",
+        "best_match": "Rabbit",
+        "worst_match": "Dragon",
+        "compatibility_desc": "Dogs and Rabbits share a strong connection, underscored by shared values and an understanding of each other’s needs. The loyal Dog is drawn to the Rabbit’s gentle and considerate nature, finding in the Rabbit a kindred spirit who values harmony and emotional support. The Rabbit, in turn, appreciates the Dog’s honesty and protective instincts, feeling safe and understood in the Dog’s company. This relationship is built on a foundation of trust, respect, and a deep emotional bond that supports both partners in times of need.",
+        "gemstone_desc": "The Dog is known for its loyalty, honesty, and protectiveness.\n\nDiamond: Can amplify strength and clarity.\nCarnelian: Boosts courage and vitality.\nJasper: Provides grounding and stability.\nMoonstone: Enhances intuition and emotional balance.\nAmber: Associated with healing and good luck.\nSapphire: Promotes wisdom and protection.\nTourmaline: Promotes balance and healing.\nJade: A traditional talisman for luck and harmony."
+      },
+      "es": {
+        "name": "Perro",
+        "desc": "Los Perros son a menudo vistos como leales, honestos y compasivos. Son conocidos por su naturaleza protectora y lealtad hacia sus seres queridos, lo que los convierte en amigos y socios confiables. También se cree que los Perros son empáticos y cariñosos, siempre dispuestos a prestar atención o echar una mano a los necesitados. En el folclore chino, los perros se asocian a menudo con la buena fortuna.",
+        "traits": "Leal, honesto, generoso, juguetón, terco",
+        "best_match": "Conejo",
+        "worst_match": "Dragón",
+        "compatibility_desc": "Los Perros y los Conejos comparten una fuerte conexión, subrayada por valores compartidos y una comprensión de las necesidades del otro. El leal Perro se siente atraído por la naturaleza amable y considerada del Conejo, encontrando en él un espíritu afín que valora la armonía y el apoyo emocional. El Conejo, a su vez, aprecia la honestidad y los instintos protectores del Perro, sintiéndose seguro y comprendido en su compañía. Esta relación se basa en la confianza, el respeto y un profundo vínculo emocional que apoya a ambos socios en momentos de necesidad.",
+        "gemstone_desc": "El Perro es conocido por su lealtad, honestidad y carácter protector.\n\nDiamante: Puede amplificar la fuerza y la claridad.\nCornalina: Aumenta el coraje y la vitalidad.\nJaspe: Proporciona conexión a tierra y estabilidad.\nPiedra de Luna: Mejora la intuición y el equilibrio emocional.\nÁmbar: Asociado con la curación y la buena suerte.\nZafiro: Promueve la sabiduría y la protección.\nTurmalina: Promueve el equilibrio y la curación.\nJade: Un talismán tradicional para la suerte y la armonía."
+      },
+      "fr": {
+        "name": "Chien",
+        "desc": "Les Chiens sont souvent perçus comme loyaux, honnêtes et compatissants. Ils sont connus pour leur nature protectrice et leur loyauté envers leurs proches, ce qui en fait des amis et partenaires fiables. On pense également que les Chiens sont empathiques et attentionnés, toujours prêts à prêter une oreille attentive ou à aider ceux qui en ont besoin. Dans le folklore chinois, les chiens sont souvent associés à la bonne fortune.",
+        "traits": "Loyal, honnête, généreux, joueur, têtu",
+        "best_match": "Lapin",
+        "worst_match": "Dragon",
+        "compatibility_desc": "Les Chiens et les Lapins partagent une connexion forte, soulignée par des valeurs communes et une compréhension des besoins de l'autre. Le Chien loyal est attiré par la nature douce et attentionnée du Lapin, trouvant en lui une âme sœur qui valorise l'harmonie et le soutien émotionnel. Le Lapin, quant à lui, apprécie l'honnêteté et les instincts protecteurs du Chien, se sentant en sécurité et compris en sa compagnie. Cette relation repose sur une base de confiance, de respect et un lien émotionnel profond qui soutient les deux partenaires en cas de besoin.",
+        "gemstone_desc": "Le Chien est connu pour sa loyauté, son honnêteté et son caractère protecteur.\n\nDiamant : Peut amplifier la force et la clarté.\nCornaline : Stimule le courage et la vitalité.\nJaspe : Apporte ancrage et stabilité.\nPierre de lune : Améliore l'intuition et l'équilibre émotionnel.\nAmbre : Associé à la guérison et à la chance.\nSaphir : Favorise la sagesse et la protection.\nTourmaline : Favorise l'équilibre et la guérison.\nJade : Un talisman traditionnel pour la chance et l'harmonie."
+      },
+      "it": {
+        "name": "Cane",
+        "desc": "I Cani sono spesso visti come leali, onesti e compassionevoli. Sono noti per la loro natura protettiva e lealtà verso i propri cari, il che li rende amici e partner affidabili. Si crede anche che i Cani siano empatici e premurosi, sempre disposti a prestare ascolto o dare una mano a chi ne ha bisogno. Nel folklore cinese, i cani sono spesso associati alla buona fortuna.",
+        "traits": "Leale, onesto, generoso, giocoso, testardo",
+        "best_match": "Coniglio",
+        "worst_match": "Drago",
+        "compatibility_desc": "Cani e Conigli condividono una forte connessione, sottolineata da valori condivisi e dalla comprensione dei bisogni reciproci. Il Cane leale è attratto dalla natura gentile e premurosa del Coniglio, trovando nel Coniglio un'anima affine che apprezza l'armonia e il supporto emotivo. Il Coniglio, a sua volta, apprezza l'onestà e gli istinti protettivi del Cane, sentendosi sicuro e compreso in sua compagnia. Questa relazione è costruita su una base di fiducia, rispetto e un profondo legame emotivo che supporta entrambi i partner nei momenti di bisogno.",
+        "gemstone_desc": "Il Cane è noto per la sua lealtà, onestà e protettività.\n\nDiamante: Può amplificare la forza e la chiarezza.\nCorniola: Aumenta il coraggio e la vitalità.\nDiaspro: Fornisce radicamento e stabilità.\nPietra di Luna: Migliora l'intuito e l'equilibrio emotivo.\nAmbra: Associata alla guarigione e alla buona fortuna.\nZaffiro: Promuove la saggezza e la protezione.\nTormalina: Promuove l'equilibrio e la guarigione.\nGiada: Un talismano tradizionale per fortuna e armonia."
+      },
+      "de": {
+        "name": "Hund",
+        "desc": "Hunde werden oft als loyal, ehrlich und mitfühlend angesehen. Sie sind bekannt für ihre beschützende Natur und Loyalität gegenüber ihren Lieben, was sie zu zuverlässigen Freunden und Partnern macht. Es wird auch angenommen, dass Hunde empathisch und fürsorglich sind, immer bereit, ein offenes Ohr zu haben oder denen zu helfen, die in Not sind. In der chinesischen Folklore werden Hunde oft mit Glück assoziiert.",
+        "traits": "Loyal, ehrlich, großzügig, verspielt, stur",
+        "best_match": "Hase",
+        "worst_match": "Drache",
+        "compatibility_desc": "Hunde und Hasen teilen eine starke Verbindung, die durch gemeinsame Werte und das Verständnis für die Bedürfnisse des anderen unterstrichen wird. Der loyale Hund fühlt sich von der sanften und rücksichtsvollen Natur des Hasen angezogen und findet im Hasen einen Seelenverwandten, der Harmonie und emotionale Unterstützung schätzt. Der Hase wiederum schätzt die Ehrlichkeit und die Schutzinstinkte des Hundes und fühlt sich in dessen Gesellschaft sicher und verstanden. Diese Beziehung baut auf einem Fundament aus Vertrauen, Respekt und einer tiefen emotionalen Bindung auf, die beide Partner in Zeiten der Not unterstützt.",
+        "gemstone_desc": "Der Hund ist bekannt für seine Loyalität, Ehrlichkeit und Beschützerinstinkt.\n\nDiamant: Kann Stärke und Klarheit verstärken.\nKarneol: Steigert Mut und Vitalität.\nJaspis: Bietet Erdung und Stabilität.\nMondstein: Verbessert Intuition und emotionales Gleichgewicht.\nBernstein: Verbunden mit Heilung und Glück.\nSaphir: Fördert Weisheit und Schutz.\nTurmalin: Fördert Gleichgewicht und Heilung.\nJade: Ein traditioneller Talisman für Glück und Harmonie."
+      },
+      "pl": {
+        "name": "Pies",
+        "desc": "Psy są często postrzegane jako lojalne, uczciwe i współczujące. Znane są ze swojej opiekuńczej natury i lojalności wobec bliskich, co czyni je niezawodnymi przyjaciółmi i partnerami. Uważa się również, że Psy są empatyczne i troskliwe, zawsze gotowe wysłuchać lub pomóc potrzebującym. W chińskim folklorze psy często kojarzone są z dobrym losem.",
+        "traits": "Lojalny, uczciwy, hojny, zabawny, uparty",
+        "best_match": "Królik",
+        "worst_match": "Smok",
+        "compatibility_desc": "Psy i Króliki łączy silna więź, podkreślona wspólnymi wartościami i zrozumieniem wzajemnych potrzeb. Lojalny Pies jest przyciągany przez łagodną i troskliwą naturę Królika, znajdując w nim bratnią duszę, która ceni harmonię i wsparcie emocjonalne. Królik z kolei docenia uczciwość i instynkty opiekuńcze Psa, czując się bezpiecznie i zrozumianym w jego towarzystwie. Ta relacja budowana jest na fundamencie zaufania, szacunku i głębokiej więzi emocjonalnej, która wspiera obu partnerów w potrzebie.",
+        "gemstone_desc": "Pies znany jest ze swojej lojalności, uczciwości i opiekuńczości.\n\nDiament: Może wzmocnić siłę i jasność.\nKrwawnik (Kornalin): Zwiększa odwagę i witalność.\nJaspis: Zapewnia uziemienie i stabilność.\nKamień księżycowy: Wzmacnia intuicję i równowagę emocjonalną.\nBursztyn: Kojarzony z uzdrawianiem i szczęściem.\nSzafir: Promuje mądrość i ochronę.\nTurmalin: Promuje równowagę i uzdrawianie.\nJadeit: Tradycyjny talizman szczęścia i harmonii."
+      },
+      "ru": {
+        "name": "Собака",
+        "desc": "Собак часто считают преданными, честными и сострадательными. Они известны своей защитной натурой и верностью близким, что делает их надежными друзьями и партнерами. Также считается, что Собаки чутки и заботливы, всегда готовы выслушать или протянуть руку помощи нуждающимся. В китайском фольклоре собаки часто ассоциируются с удачей.",
+        "traits": "Верная, честная, щедрая, игривая, упрямая",
+        "best_match": "Кролик",
+        "worst_match": "Дракон",
+        "compatibility_desc": "Собак и Кроликов объединяет сильная связь, подкрепленная общими ценностями и пониманием потребностей друг друга. Верную Собаку привлекает нежная и внимательная натура Кролика, она находит в Кролике родственную душу, ценящую гармонию и эмоциональную поддержку. Кролик, в свою очередь, ценит честность и защитные инстинкты Собаки, чувствуя себя в безопасности и понятым в ее компании. Эти отношения строятся на фундаменте доверия, уважения и глубокой эмоциональной связи, которая поддерживает обоих партнеров в трудные времена.",
+        "gemstone_desc": "Собака известна своей верностью, честностью и стремлением защищать.\n\nАлмаз: Может усилить силу и ясность.\nСердолик: Повышает смелость и жизненную энергию.\nЯшма: Обеспечивает заземление и стабильность.\nЛунный камень: Усиливает интуицию и эмоциональное равновесие.\nЯнтарь: Ассоциируется с исцелением и удачей.\nСапфир: Способствует мудрости и защите.\nТурмалин: Способствует равновесию и исцелению.\nНефрит: Традиционный талисман удачи и гармонии."
+      }
+    }
+  },
+  {
+    "key": "Pig",
+    "image_base": "pig",
+    "years": "1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031",
+    "translations": {
+      "en": {
+        "name": "Pig",
+        "desc": "The Pig is kind, generous, and easygoing. They are known for their gentle nature and willingness to help others, often putting the needs of their loved ones above their own. Pigs are also believed to have a strong sense of empathy and compassion, making them supportive friends. The Pig symbolizes prosperity, abundance, and good luck.",
+        "traits": "Happy, generous, logical, loving, short-tempered",
+        "best_match": "Tiger",
+        "worst_match": "Snake",
+        "compatibility_desc": "Pigs and Tigers form a relationship that is both nurturing and invigorating. The kind-hearted Pig is attracted to the Tiger’s courageous and adventurous spirit, finding inspiration in the Tiger’s zest for life. The Tiger, in turn, values the Pig’s compassion and generosity, seeing in the Pig a supportive partner. This pairing benefits from the Pig’s ability to provide a comforting and stable environment for the Tiger, while the Tiger brings excitement and challenge into the Pig’s life. Together, they create a balanced and fulfilling relationship that nurtures each other’s growth and happiness.",
+        "gemstone_desc": "The Pig (or Boar) is compassionate, generous, and diligent.\n\nRuby: Represents good fortune and prosperity.\nMoonstone: Provides emotional balance and intuition.\nAmethyst: Offers protection and promotes calm.\nGarnet: Can enhance passion and energy.\nLapis Lazuli: Promotes inner harmony and wisdom.\nBeryl: A stone of healing and protection.\nCoral: Believed to bring good fortune and balance.\nJade: A traditional talisman for luck and prosperity."
+      },
+      "es": {
+        "name": "Cerdo",
+        "desc": "El Cerdo es amable, generoso y tranquilo. Son conocidos por su naturaleza gentil y su disposición a ayudar a los demás, a menudo anteponiendo las necesidades de sus seres queridos a las propias. También se cree que los Cerdos tienen un fuerte sentido de empatía y compasión, lo que los convierte en amigos solidarios. El Cerdo simboliza la prosperidad, la abundancia y la buena suerte.",
+        "traits": "Feliz, generoso, lógico, cariñoso, de mal genio",
+        "best_match": "Tigre",
+        "worst_match": "Serpiente",
+        "compatibility_desc": "Los Cerdos y los Tigres forman una relación que es a la vez enriquecedora y vigorizante. El Cerdo de buen corazón se siente atraído por el espíritu valiente y aventurero del Tigre, encontrando inspiración en el entusiasmo del Tigre por la vida. El Tigre, a su vez, valora la compasión y la generosidad del Cerdo, viendo en él un compañero de apoyo. Esta pareja se beneficia de la capacidad del Cerdo para proporcionar un entorno reconfortante y estable para el Tigre, mientras que el Tigre aporta emoción y desafío a la vida del Cerdo.",
+        "gemstone_desc": "El Cerdo (o Jabalí) es compasivo, generoso y diligente.\n\nRubí: Representa la buena fortuna y la prosperidad.\nPiedra de Luna: Proporciona equilibrio emocional e intuición.\nAmatista: Ofrece protección y promueve la calma.\nGranate: Puede mejorar la pasión y la energía.\nLapislázuli: Promueve la armonía interior y la sabiduría.\nBerilo: Una piedra de curación y protección.\nCoral: Se cree que trae buena fortuna y equilibrio.\nJade: Un talismán tradicional para la suerte y la prosperidad."
+      },
+      "fr": {
+        "name": "Cochon",
+        "desc": "Le Cochon est gentil, généreux et facile à vivre. Il est connu pour sa nature douce et sa volonté d'aider les autres, faisant souvent passer les besoins de ses proches avant les siens. On pense également que les Cochons ont un fort sens de l'empathie et de la compassion, ce qui en fait des amis solidaires. Le Cochon symbolise la prospérité, l'abondance et la bonne chance.",
+        "traits": "Heureux, généreux, logique, aimant, colérique",
+        "best_match": "Tigre",
+        "worst_match": "Serpent",
+        "compatibility_desc": "Les Cochons et les Tigres forment une relation à la fois nourrissante et vivifiante. Le Cochon au bon cœur est attiré par l'esprit courageux et aventureux du Tigre, trouvant l'inspiration dans la joie de vivre du Tigre. Le Tigre, quant à lui, apprécie la compassion et la générosité du Cochon, voyant en lui un partenaire de soutien. Ce duo bénéficie de la capacité du Cochon à fournir un environnement réconfortant et stable au Tigre, tandis que le Tigre apporte excitation et défi dans la vie du Cochon.",
+        "gemstone_desc": "Le Cochon (ou Sanglier) est compatissant, généreux et diligent.\n\nRubis : Représente la bonne fortune et la prospérité.\nPierre de lune : Procure équilibre émotionnel et intuition.\nAméthyste : Offre protection et favorise le calme.\nGrenat : Peut renforcer la passion et l'énergie.\nLapis-lazuli : Favorise l'harmonie intérieure et la sagesse.\nBéryl : Une pierre de guérison et de protection.\nCorail : Censé apporter bonne fortune et équilibre.\nJade : Un talisman traditionnel pour la chance et la prospérité."
+      },
+      "it": {
+        "name": "Maiale",
+        "desc": "Il Maiale è gentile, generoso e alla mano. È noto per la sua natura dolce e la volontà di aiutare gli altri, mettendo spesso i bisogni dei propri cari al di sopra dei propri. Si crede anche che i Maiali abbiano un forte senso di empatia e compassione, il che li rende amici solidali. Il Maiale simboleggia prosperità, abbondanza e buona fortuna.",
+        "traits": "Felice, generoso, logico, amorevole, irascibile",
+        "best_match": "Tigre",
+        "worst_match": "Serpiente",
+        "compatibility_desc": "Maiali e Tigri formano una relazione che è sia nutriente che corroborante. Il Maiale dal cuore gentile è attratto dallo spirito coraggioso e avventuroso della Tigre, trovando ispirazione nella gioia di vivere della Tigre. La Tigre, a sua volta, apprezza la compassione e la generosità del Maiale, vedendo in esso un partner di supporto. Questa coppia beneficia della capacità del Maiale di fornire un ambiente confortevole e stabile per la Tigre, mentre la Tigre porta eccitazione e sfida nella vita del Maiale.",
+        "gemstone_desc": "Il Maiale (o Cinghiale) è compassionevole, generoso e diligente.\n\nRubino: Rappresenta buona fortuna e prosperità.\nPietra di Luna: Fornisce equilibrio emotivo e intuizione.\nAmetista: Offre protezione e promuove la calma.\nGranato: Può aumentare la passione e l'energia.\nLapislazzuli: Promuove l'armonia interiore e la saggezza.\nBerillo: Una pietra di guarigione e protezione.\nCorallo: Si crede porti buona fortuna ed equilibrio.\nGiada: Un talismano tradizionale per fortuna e prosperità."
+      },
+      "de": {
+        "name": "Schwein",
+        "desc": "Das Schwein ist freundlich, großzügig und umgänglich. Sie sind bekannt für ihre sanfte Art und ihre Bereitschaft, anderen zu helfen, wobei sie oft die Bedürfnisse ihrer Lieben über ihre eigenen stellen. Schweinen wird auch ein starkes Gefühl von Empathie und Mitgefühl nachgesagt, was sie zu unterstützenden Freunden macht. Das Schwein symbolisiert Wohlstand, Fülle und Glück.",
+        "traits": "Glücklich, großzügig, logisch, liebevoll, jähzornig",
+        "best_match": "Tiger",
+        "worst_match": "Schlange",
+        "compatibility_desc": "Schweine und Tiger bilden eine Beziehung, die sowohl pflegend als auch belebend ist. Das gutherzige Schwein fühlt sich vom mutigen und abenteuerlustigen Geist des Tigers angezogen und findet Inspiration in der Lebensfreude des Tigers. Der Tiger wiederum schätzt das Mitgefühl und die Großzügigkeit des Schweins und sieht im Schwein einen unterstützenden Partner. Diese Paarung profitiert von der Fähigkeit des Schweins, dem Tiger ein tröstendes und stabiles Umfeld zu bieten, während der Tiger Aufregung und Herausforderung in das Leben des Schweins bringt.",
+        "gemstone_desc": "Das Schwein (oder der Eber) ist mitfühlend, großzügig und fleißig.\n\nRubin: Repräsentiert Glück und Wohlstand.\nMondstein: Sorgt für emotionales Gleichgewicht und Intuition.\nAmethyst: Bietet Schutz und fördert Ruhe.\nGranat: Kann Leidenschaft und Energie steigern.\nLapislazuli: Fördert innere Harmonie und Weisheit.\nBeryll: Ein Stein der Heilung und des Schutzes.\nKoralle: Soll Glück und Gleichgewicht bringen.\nJade: Ein traditioneller Talisman für Glück und Wohlstand."
+      },
+      "pl": {
+        "name": "Świnia",
+        "desc": "Świnia jest miła, hojna i wyluzowana. Znana jest ze swojej łagodnej natury i chęci pomocy innym, często przedkładając potrzeby swoich bliskich nad własne. Uważa się również, że Świnie mają silne poczucie empatii i współczucia, co czyni je wspierającymi przyjaciółmi. Świnia symbolizuje dobrobyt, obfitość i szczęście.",
+        "traits": "Szczęśliwa, hojna, logiczna, kochająca, porywcza",
+        "best_match": "Tygrys",
+        "worst_match": "Wąż",
+        "compatibility_desc": "Świnie i Tygrysy tworzą relację, która jest zarówno pielęgnująca, jak i ożywcza. Dobroduszna Świnia jest pociągana przez odważnego i żądnego przygód ducha Tygrysa, znajdując inspirację w jego radości życia. Tygrys z kolei ceni współczucie i hojność Świni, widząc w niej wspierającego partnera. To połączenie korzysta ze zdolności Świni do zapewnienia Tygrysowi pocieszającego i stabilnego środowiska, podczas gdy Tygrys wnosi ekscytację i wyzwania do życia Świni.",
+        "gemstone_desc": "Świnia (lub Dzik) jest współczująca, hojna i pracowita.\n\nRubin: Reprezentuje szczęście i dobrobyt.\nKamień księżycowy: Zapewnia równowagę emocjonalną i intuicję.\nAmetyst: Oferuje ochronę i promuje spokój.\nGranat: Może wzmocnić pasję i energię.\nLapis Lazuli: Promuje wewnętrzną harmonię i mądrość.\nBeryl: Kamień uzdrawiania i ochrony.\nKoral: Wierzy się, że przynosi szczęście i równowagę.\nJadeit: Tradycyjny talizman szczęścia i dobrobytu."
+      },
+      "ru": {
+        "name": "Свинья",
+        "desc": "Свинья добрая, щедрая и покладистая. Они известны своим мягким характером и готовностью помочь другим, часто ставя потребности своих близких выше собственных. Также считается, что у Свиней сильно развито чувство сопереживания и сострадания, что делает их отзывчивыми друзьями. Свинья символизирует процветание, изобилие и удачу.",
+        "traits": "Счастливая, щедрая, логичная, любящая, вспыльчивая",
+        "best_match": "Тигр",
+        "worst_match": "Змея",
+        "compatibility_desc": "Свиньи и Тигры образуют отношения, которые одновременно являются заботливыми и бодрящими. Добросердечную Свинью привлекает смелый и авантюрный дух Тигра, она находит вдохновение в жизнелюбии Тигра. Тигр, в свою очередь, ценит сострадание и щедрость Свиньи, видя в ней надежного партнера. Этот союз выигрывает от способности Свиньи обеспечить Тигру комфортную и стабильную обстановку, в то время как Тигр привносит в жизнь Свиньи волнение и вызов.",
+        "gemstone_desc": "Свинья (или Кабан) сострадательна, щедра и старательна.\n\nРубин: Олицетворяет удачу и процветание.\nЛунный камень: Обеспечивает эмоциональное равновесие и интуицию.\nАметист: Обеспечивает защиту и способствует спокойствию.\nГранат: Может усилить страсть и энергию.\nЛазурит: Способствует внутренней гармонии и мудрости.\nБерилл: Камень исцеления и защиты.\nКоралл: Считается, что приносит удачу и равновесие.\nНефрит: Традиционный талисман удачи и процветания."
+      }
+    }
+  }
+]

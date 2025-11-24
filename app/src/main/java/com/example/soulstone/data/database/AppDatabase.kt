@@ -28,6 +28,9 @@ import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
 import com.example.soulstone.util.LanguageCode
+import com.google.gson.Gson
+import com.google.gson.annotations.SerializedName
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -75,7 +78,8 @@ abstract class AppDatabase : RoomDatabase() {
                     zodiacSignDao = database.zodiacSignDao(),
                     benefitDao = database.benefitDao(),
                     chineseDao = database.chineseZodiacSignDao(),
-                    stoneDao = database.stoneDao()
+                    stoneDao = database.stoneDao(),
+                    chakraDao = database.chakraDao()
                 )
             }
         }
@@ -84,229 +88,583 @@ abstract class AppDatabase : RoomDatabase() {
             zodiacSignDao: ZodiacSignDao,
             benefitDao: BenefitDao,
             chineseDao: ChineseZodiacSignDao,
-            stoneDao: StoneDao
+            stoneDao: StoneDao,
+            chakraDao: ChakraDao
 
         ) {
             Log.d("AppDatabase", "Populating database with lists...")
 
-            // --- 1. Populate Zodiac Signs ---
-            val zodiacData = listOf(
-                ZodiacInput("Aries", "Mar 21", "Apr 19", R.drawable.aries, "Fire", "Mars", "Aries is the first astrological sign, known for its fiery energy and leadership."),
-                ZodiacInput("Taurus", "Apr 20", "May 20", R.drawable.taurus, "Earth", "Venus", "Taurus is the second astrological sign, known for its grounded, practical, and reliable nature."),
-                ZodiacInput("Gemini", "May 21", "Jun 20", R.drawable.gemini, "Air", "Mercury", "Gemini is the third astrological sign, known for its curious, adaptable, and communicative spirit."),
-                ZodiacInput("Cancer", "Jun 21", "Jul 22", R.drawable.cancer, "Water", "Moon", "Cancer is the fourth astrological sign, known for its intuitive, nurturing, and protective qualities."),
-                ZodiacInput("Leo", "Jul 23", "Aug 22", R.drawable.leo, "Fire", "Sun", "Leo is the fifth astrological sign, known for its confident, generous, and charismatic presence."),
-                ZodiacInput("Virgo", "Aug 23", "Sep 22", R.drawable.virgo, "Earth", "Mercury", "Virgo is the sixth astrological sign, known for its meticulous, analytical, and helpful nature."),
-                ZodiacInput("Libra", "Sep 23", "Oct 22", R.drawable.libra, "Air", "Venus", "Libra is the seventh astrological sign, known for its diplomatic, fair-minded, and social grace."),
-                ZodiacInput("Scorpio", "Oct 23", "Nov 21", R.drawable.scorpio, "Water", "Pluto", "Scorpio is the eighth astrological sign, known for its passionate, resourceful, and mysterious aura."),
-                ZodiacInput("Sagittarius", "Nov 22", "Dec 21", R.drawable.sagittarius, "Fire", "Jupiter", "Sagittarius is the ninth astrological sign, known for its optimistic, adventurous, and philosophical outlook."),
-                ZodiacInput("Capricorn", "Dec 22", "Jan 19", R.drawable.capricorn, "Earth", "Saturn", "Capricorn is the tenth astrological sign, known for its disciplined, responsible, and ambitious drive."),
-                ZodiacInput("Aquarius", "Jan 20", "Feb 18", R.drawable.aquarius, "Air", "Uranus", "Aquarius is the eleventh astrological sign, known for its independent, humanitarian, and original ideas."),
-                ZodiacInput("Pisces", "Feb 19", "Mar 20", R.drawable.pisces, "Water", "Neptune", "Pisces is the twelfth astrological sign, known for its compassionate, artistic, and intuitive nature.")
-            )
+            // --- 1. Populate Zodiac Signs from JSON ---
+            try {
+                val jsonString = context.assets.open("initial_zodiac_signs.json")
+                    .bufferedReader()
+                    .use { it.readText() }
 
-            zodiacData.forEach { item ->
-                val sign = ZodiacSign(name = item.name, startDate = item.start, endDate = item.end, iconResId = item.icon)
-                val translation = ZodiacSignTranslation(
-                    zodiacSignId = 0,
-                    languageCode = LanguageCode.ENGLISH,
-                    name = item.name,
-                    description = item.desc,
-                    element = item.element,
-                    rulingPlanet = item.planet
+                val listType = object : TypeToken<List<ZodiacJsonItem>>() {}.type
+                val zodiacList: List<ZodiacJsonItem> = Gson().fromJson(jsonString, listType)
+
+                val zodiacDrawableMap = mapOf(
+                    "aries" to R.drawable.aries,
+                    "taurus" to R.drawable.taurus,
+                    "gemini" to R.drawable.gemini,
+                    "cancer" to R.drawable.cancer,
+                    "leo" to R.drawable.leo,
+                    "virgo" to R.drawable.virgo,
+                    "libra" to R.drawable.libra,
+                    "scorpio" to R.drawable.scorpio,
+                    "sagittarius" to R.drawable.sagittarius,
+                    "capricorn" to R.drawable.capricorn,
+                    "aquarius" to R.drawable.aquarius,
+                    "pisces" to R.drawable.pisces
                 )
-                zodiacSignDao.insertZodiacSignWithTranslations(sign, listOf(translation))
+
+                zodiacList.forEach { item ->
+                    val finalIcon = zodiacDrawableMap[item.imageName] ?: R.drawable.aries
+
+                    val sign = ZodiacSign(
+                        name = item.key,
+                        startDate = item.startDate,
+                        endDate = item.endDate,
+                        iconResId = finalIcon
+                    )
+
+                    val translations = item.translations.map { (langKey, data) ->
+                        val code = mapLanguageCode(langKey)
+
+                        ZodiacSignTranslation(
+                            zodiacSignId = 0,
+                            languageCode = code,
+                            name = data.name,
+                            description = data.description,
+                            element = data.element,
+                            rulingPlanet = data.planet
+                        )
+                    }
+
+                    zodiacSignDao.insertZodiacSignWithTranslations(sign, translations)
+                }
+                Log.d("AppDatabase", "Zodiac signs populated successfully.")
+
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Zodiac JSON", e)
             }
 
-            // --- 2. Populate Benefits ---
-            val benefitData = listOf(
-                BenefitInput("vitality", "Vitality", R.drawable.stone_1),
-                BenefitInput("mindfulness", "Mindfulness", R.drawable.stone_2),
-                BenefitInput("personal_growth", "Personal Growth", R.drawable.stone_3),
-                BenefitInput("anxiety_and_depression", "Anxiety & Depression", R.drawable.stone_4),
-                BenefitInput("love_relationships", "Love Relationships", R.drawable.stone_5),
-                BenefitInput("anger_and_stress_relief", "Anger & Stress Relief", R.drawable.stone_6),
-                BenefitInput("transformation", "Transformation", R.drawable.stone_7),
-                BenefitInput("clarity_and_focus", "Clarity & Focus", R.drawable.stone_8),
-                BenefitInput("career_and_money", "Career & Money", R.drawable.stone_4_r),
-                BenefitInput("protection", "Protection", R.drawable.stone_3_r),
-                BenefitInput("self_control", "Self-Control", R.drawable.stone_2_r),
-                BenefitInput("communication", "Communication", R.drawable.stone_1_r),
-                BenefitInput("physical_health", "Physical Health", R.drawable.stone_8_r),
-                BenefitInput("intuition", "Intuition", R.drawable.stone_7_r),
-                BenefitInput("enhanced_focus", "Enhanced Focus", R.drawable.stone_6_r),
-                BenefitInput("spirituality", "Spirituality", R.drawable.stone_5_r),
-                BenefitInput("mental_health", "Mental Health", R.drawable.stone_5),
-                BenefitInput("creativity", "Creativity", R.drawable.stone_6),
-                BenefitInput("good_fortune_and_luck", "Good Fortune & Luck", R.drawable.stone_7),
-                BenefitInput("manifestation", "Manifestation", R.drawable.stone_8),
-                BenefitInput("emotional_balance", "Emotional Balance", R.drawable.stone_4_r)
-            )
+            // --- 2. Populate Benefits from JSON ---
+            try {
+                val jsonString = context.assets.open("initial_benefits.json")
+                    .bufferedReader()
+                    .use { it.readText() }
 
-            benefitData.forEach { item ->
-                val benefit = Benefit(name = item.key, imageResId = item.icon)
-                val translation = BenefitTranslation(
-                    benefitId = 0,
-                    languageCode = LanguageCode.ENGLISH,
-                    name = item.name
+                val listType = object : TypeToken<List<BenefitJsonItem>>() {}.type
+                val benefitList: List<BenefitJsonItem> = Gson().fromJson(jsonString, listType)
+
+                // Manual map for safety and R8 optimization
+                val benefitDrawableMap = mapOf(
+                    "stone_1" to R.drawable.stone_1,
+                    "stone_2" to R.drawable.stone_2,
+                    "stone_3" to R.drawable.stone_3,
+                    "stone_4" to R.drawable.stone_4,
+                    "stone_5" to R.drawable.stone_5,
+                    "stone_6" to R.drawable.stone_6,
+                    "stone_7" to R.drawable.stone_7,
+                    "stone_8" to R.drawable.stone_8,
+                    // Rotated versions
+                    "stone_1_r" to R.drawable.stone_1_r,
+                    "stone_2_r" to R.drawable.stone_2_r,
+                    "stone_3_r" to R.drawable.stone_3_r,
+                    "stone_4_r" to R.drawable.stone_4_r,
+                    "stone_5_r" to R.drawable.stone_5_r,
+                    "stone_6_r" to R.drawable.stone_6_r,
+                    "stone_7_r" to R.drawable.stone_7_r,
+                    "stone_8_r" to R.drawable.stone_8_r
                 )
-                benefitDao.insertBenefitWithTranslations(benefit, listOf(translation))
+
+                benefitList.forEach { item ->
+                    // Lookup image, fallback to stone_1 if missing
+                    val iconResId = benefitDrawableMap[item.imageName] ?: R.drawable.stone_1
+
+                    val benefit = Benefit(
+                        name = item.key,
+                        imageResId = iconResId
+                    )
+
+                    val translations = item.translations.map { (langKey, data) ->
+                        val code = mapLanguageCode(langKey)
+
+                        BenefitTranslation(
+                            benefitId = 0,
+                            languageCode = code,
+                            name = data.name
+                        )
+                    }
+
+                    benefitDao.insertBenefitWithTranslations(benefit, translations)
+                }
+                Log.d("AppDatabase", "Benefits populated successfully.")
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Benefits JSON", e)
             }
 
             // --- 3. Populate Chinese Zodiac Signs ---
-            val chineseZodiacData = listOf(
-                ChineseInput("Rat", R.drawable.rat, R.drawable.rat_border, R.drawable.rat_color, "1960, 1972, 1984, 1996, 2008, 2020", "The Rat is the first sign, known for being quick-witted, resourceful, and charming."),
-                ChineseInput("Ox", R.drawable.ox, R.drawable.ox_border, R.drawable.ox_color, "1961, 1973, 1985, 1997, 2009, 2021", "The Ox is the second sign, valued for its diligence, dependability, and determination."),
-                ChineseInput("Tiger", R.drawable.tiger, R.drawable.tiger_border, R.drawable.tiger_color, "1962, 1974, 1986, 1998, 2010, 2022", "The Tiger is the third sign, known for its bravery, confidence, and competitiveness."),
-                ChineseInput("Rabbit", R.drawable.rabbit, R.drawable.rabbit_border, R.drawable.rabbit_color, "1963, 1975, 1987, 1999, 2011, 2023", "The Rabbit is the fourth sign, representing elegance, kindness, and vigilance."),
-                ChineseInput("Dragon", R.drawable.dragon, R.drawable.dragon_border, R.drawable.dragon_color, "1964, 1976, 1988, 2000, 2012, 2024", "The Dragon is the fifth sign, a symbol of power, charisma, and ambition."),
-                ChineseInput("Snake", R.drawable.snake, R.drawable.snake_border, R.drawable.snake_color, "1965, 1977, 1989, 2001, 2013, 2025", "The Snake is the sixth sign, known for its intelligence, intuition, and mysterious nature."),
-                ChineseInput("Horse", R.drawable.horse, R.drawable.horse_border, R.drawable.horse_color, "1966, 1978, 1990, 2002, 2014, 2026", "The Horse is the seventh sign, representing energy, independence, and a free spirit."),
-                ChineseInput("Goat", R.drawable.goat, R.drawable.goat_border, R.drawable.goat_color, "1967, 1979, 1991, 2003, 2015, 2027", "The Goat is the eighth sign, known for its gentle, compassionate, and artistic nature."),
-                ChineseInput("Monkey", R.drawable.monkey, R.drawable.monkey_border, R.drawable.monkey_color, "1968, 1980, 1992, 2004, 2016, 2028", "The Monkey is the ninth sign, characterized by its wit, curiosity, and playful personality."),
-                ChineseInput("Rooster", R.drawable.rooster, R.drawable.rooster_border, R.drawable.rooster_color, "1969, 1981, 1993, 2005, 2017, 2029", "The Rooster is the tenth sign, known for being observant, hardworking, and courageous."),
-                ChineseInput("Dog", R.drawable.dog, R.drawable.dog_border, R.drawable.dog_color, "1970, 1982, 1994, 2006, 2018, 2030", "The Dog is the eleventh sign, valued for its loyalty, honesty, and strong sense of justice."),
-                ChineseInput("Pig", R.drawable.pig, R.drawable.pig_border, R.drawable.pig_color, "1971, 1983, 1995, 2007, 2019, 2031", "The Pig is the twelfth sign, known for its compassion, generosity, and diligence.")
-            )
+            try {
+                val jsonString = context.assets.open("initial_chinese_zodiac.json")
+                    .bufferedReader()
+                    .use { it.readText() }
 
-            chineseZodiacData.forEach { item ->
-                val sign = ChineseZodiacSign(
-                    name = item.name,
-                    iconResId = item.icon,
-                    iconResIdBorder = item.iconBorder,
-                    iconResIdColor = item.iconColor,
-                    recentYears = item.years
+                val listType = object : TypeToken<List<ChineseZodiacJsonItem>>() {}.type
+                val chineseList: List<ChineseZodiacJsonItem> = Gson().fromJson(jsonString, listType)
+
+                // Manual Map to hold the triplet of images for each sign
+                val chineseDrawableMap = mapOf(
+                    "rat" to ChineseIcons(R.drawable.rat, R.drawable.rat_border, R.drawable.rat_color),
+                    "ox" to ChineseIcons(R.drawable.ox, R.drawable.ox_border, R.drawable.ox_color),
+                    "tiger" to ChineseIcons(R.drawable.tiger, R.drawable.tiger_border, R.drawable.tiger_color),
+                    "rabbit" to ChineseIcons(R.drawable.rabbit, R.drawable.rabbit_border, R.drawable.rabbit_color),
+                    "dragon" to ChineseIcons(R.drawable.dragon, R.drawable.dragon_border, R.drawable.dragon_color),
+                    "snake" to ChineseIcons(R.drawable.snake, R.drawable.snake_border, R.drawable.snake_color),
+                    "horse" to ChineseIcons(R.drawable.horse, R.drawable.horse_border, R.drawable.horse_color),
+                    "goat" to ChineseIcons(R.drawable.goat, R.drawable.goat_border, R.drawable.goat_color),
+                    "monkey" to ChineseIcons(R.drawable.monkey, R.drawable.monkey_border, R.drawable.monkey_color),
+                    "rooster" to ChineseIcons(R.drawable.rooster, R.drawable.rooster_border, R.drawable.rooster_color),
+                    "dog" to ChineseIcons(R.drawable.dog, R.drawable.dog_border, R.drawable.dog_color),
+                    "pig" to ChineseIcons(R.drawable.pig, R.drawable.pig_border, R.drawable.pig_color)
                 )
-                val translation = ChineseZodiacSignTranslation(
-                    chineseSignId = 0,
-                    languageCode = LanguageCode.ENGLISH,
-                    name = item.name,
-                    description = item.desc
-                )
-                chineseDao.insertChineseSignWithTranslations(sign, listOf(translation))
+
+                chineseList.forEach { item ->
+                    val icons = chineseDrawableMap[item.imageBase]
+                        ?: ChineseIcons(R.drawable.rat, R.drawable.rat_border, R.drawable.rat_color)
+
+                    val sign = ChineseZodiacSign(
+                        name = item.key,
+                        iconResId = icons.icon,
+                        iconResIdBorder = icons.border,
+                        iconResIdColor = icons.color,
+                        recentYears = item.years
+                    )
+
+                    var parentId = chineseDao.insertChineseSign(sign)
+
+                    if (parentId == -1L) {
+                        // We use the name (e.g., "Rat") to look it up
+                        val existingId = chineseDao.getChineseSignIdByKey(item.key)
+
+                        // Handle the edge case where something went wrong and it's still null
+                        if (existingId != null) {
+                            parentId = existingId.toLong()
+                        } else {
+                            Log.e("DB", "Error: Sign ${item.key} exists but ID not found.")
+                            return@forEach // Skip this iteration
+                        }
+                    }
+
+                    val translations = item.translations.map { (langKey, data) ->
+                        val code = mapLanguageCode(langKey)
+                        ChineseZodiacSignTranslation(
+                            chineseSignId = parentId.toInt(), // Auto-generated by Room
+                            languageCode = code,
+                            name = data.name,
+                            description = data.description,
+                            traits = data.traits,
+                            bestMatch = data.bestMatch,
+                            worstMatch = data.worstMatch,
+                            compatibilityDescription = data.compatibilityDesc,
+                            gemstoneDescription = data.gemstoneDesc
+                        )
+                    }
+
+                    chineseDao.insertChineseTranslations(translations)
+                }
+                Log.d("AppDatabase", "Chinese Zodiac signs populated successfully.")
+
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Chinese Zodiac JSON", e)
             }
 
-            val stoneData = listOf(
-                StoneInput("Agate", R.drawable.agate),
-                StoneInput("Amazonite", R.drawable.amazonite),
-                StoneInput("Amber", R.drawable.amber),
-                StoneInput("Amethyst", R.drawable.amethyst),
-                StoneInput("Angelite", R.drawable.angelite),
-                StoneInput("Apatite", R.drawable.apatite),
-                StoneInput("Aquamarine", R.drawable.aquamarine),
-                StoneInput("Aventurine", R.drawable.aventurine),
-                StoneInput("Black Obsidian", R.drawable.black_obsidian),
-                StoneInput("Black Tourmaline", R.drawable.black_tourmaline),
-                StoneInput("Bloodstone", R.drawable.bloodstone),
-                StoneInput("Blue Agate", R.drawable.blue_agate),
-                StoneInput("Blue Calcite", R.drawable.blue_calcite),
-                StoneInput("Blue Chalcedony", R.drawable.blue_chalcedony),
-                StoneInput("Blue Kyanite", R.drawable.blue_kyanite),
-                StoneInput("Bronzite", R.drawable.bronzite),
-                StoneInput("Carnelian", R.drawable.carnelian),
-                StoneInput("Chrysocolla", R.drawable.chrysocolla),
-                StoneInput("Chrysoprase", R.drawable.chrysoprase),
-                StoneInput("Citrine", R.drawable.citrine),
-                StoneInput("Clear Quartz", R.drawable.clear_quartz),
-                StoneInput("Coral", R.drawable.coral),
-                StoneInput("Dalmatian Jasper", R.drawable.dalmatian_jasper),
-                StoneInput("Diamond", R.drawable.diamond),
-                StoneInput("Emerald", R.drawable.emerald),
-                StoneInput("Fluorite", R.drawable.fluorite),
-                StoneInput("Golden Chalcedony", R.drawable.golden_chalcedony),
-                StoneInput("Green Aventurine", R.drawable.green_aventurine),
-                StoneInput("Green Jasper", R.drawable.green_jasper),
-                StoneInput("Green Quartz", R.drawable.green_quartz),
-                StoneInput("Hawk Eye", R.drawable.hawk_eye_stone),
-                StoneInput("Hematite", R.drawable.hematite),
-                StoneInput("Howlite", R.drawable.howlite),
-                StoneInput("Jade", R.drawable.jade),
-                StoneInput("Jasper", R.drawable.jasper),
-                StoneInput("Labradorite", R.drawable.labradorite),
-                StoneInput("Lapis Lazuli", R.drawable.lapis_lazuli),
-                StoneInput("Lepidolite", R.drawable.lepidolite),
-                StoneInput("Lion Skin", R.drawable.lion_skin),
-                StoneInput("Malachite", R.drawable.malachite),
-                StoneInput("Milky Quartz", R.drawable.milky_quartz),
-                StoneInput("Mookaite", R.drawable.mookaite),
-                StoneInput("Moonstone", R.drawable.moon_stone),
-                StoneInput("Obsidian", R.drawable.obsidian),
-                StoneInput("Onyx", R.drawable.onyx),
-                StoneInput("Opal", R.drawable.opal),
-                StoneInput("Orange Aventurine", R.drawable.orange_aventurine),
-                StoneInput("Orange Calcite", R.drawable.orange_calcite),
-                StoneInput("Pearl", R.drawable.pearl),
-                StoneInput("Peridot", R.drawable.peridot),
-                StoneInput("Petrified Wood", R.drawable.petrified_wood),
-                StoneInput("Pink Quartz", R.drawable.pink_quartz),
-                StoneInput("Pink Tourmaline", R.drawable.pink_tourmaline),
-                StoneInput("Prehnite", R.drawable.prehnite),
-                StoneInput("Purple Aventurine", R.drawable.purple_aventurine),
-                StoneInput("Purple Fluorite", R.drawable.purple_fluorite),
-                StoneInput("Purple Sapphire", R.drawable.purple_sapphire),
-                StoneInput("Pyrite", R.drawable.pyrite),
-                StoneInput("Quartz Crystal", R.drawable.quartz_crystal),
-                StoneInput("Quartz Tourmaline", R.drawable.quartz_tourmaline),
-                StoneInput("Red Agate", R.drawable.red_agate),
-                StoneInput("Red Aventurine", R.drawable.red_aventurine),
-                StoneInput("Red Garnet", R.drawable.red_garnet),
-                StoneInput("Red Jasper", R.drawable.red_jasper),
-                StoneInput("Rhodonite", R.drawable.rhodonite),
-                StoneInput("Rhodochrosite", R.drawable.rodocrosite),
-                StoneInput("Rose Opal", R.drawable.rose_opal),
-                StoneInput("Rose Quartz", R.drawable.rose_quartz),
-                StoneInput("Ruby", R.drawable.ruby),
-                StoneInput("Selenite", R.drawable.selenite),
-                StoneInput("Serpentine", R.drawable.serpentine_stone),
-                StoneInput("Shiva Lingam", R.drawable.shiva_lingam),
-                StoneInput("Shungite", R.drawable.shungite),
-                StoneInput("Smoky Quartz", R.drawable.smoky_quartz),
-                StoneInput("Sodalite", R.drawable.sodalite),
-                StoneInput("Sugilite", R.drawable.sugilite),
-                StoneInput("Sunstone", R.drawable.sunstone),
-                StoneInput("Tanzanite", R.drawable.tanzanite),
-                StoneInput("Tiger Eye", R.drawable.tiger_eye),
-                StoneInput("Topaz", R.drawable.topaz),
-                StoneInput("Turquoise", R.drawable.turquoise),
-                StoneInput("Unakite", R.drawable.unakite),
-                StoneInput("Volcanic Stone", R.drawable.volcanic_stone),
-                StoneInput("Watermelon Tourmaline", R.drawable.watermelon_tourmaline),
-                StoneInput("White Topaz", R.drawable.white_topaz),
-                StoneInput("Yellow Fluorite", R.drawable.yellow_fluorite),
-                StoneInput("Yellow Jade", R.drawable.yellow_jade),
-                StoneInput("Yellow Jasper", R.drawable.yellow_jasper),
-                StoneInput("Yellow Quartz", R.drawable.yellow_quartz),
-                StoneInput("Yellow Tourmaline", R.drawable.yellow_tourmaline)
-            )
+            try {
+                val jsonString = context.assets.open("initial_stones.json")
+                    .bufferedReader()
+                    .use { it.readText() }
 
-            stoneData.forEach { item ->
-                // Create the Base Stone
-                // Note: Use item.name.lowercase().replace(" ", "_") if you want the key to be snake_case
-                // Or just use item.name if you don't mind keys having spaces.
-                val stoneKey = item.name.lowercase().replace(" ", "_")
-                val resourceUri = "android.resource://${context.packageName}/${item.image}"
+                val listType = object : TypeToken<List<StoneJsonItem>>() {}.type
+                val stoneList: List<StoneJsonItem> = Gson().fromJson(jsonString, listType)
 
-                val stone = Stone(name = stoneKey, imageUri = resourceUri)
-
-                // Create the Translation
-                val translation = StoneTranslation(
-                    stoneId = 0, // Room Auto-generate
-                    languageCode = LanguageCode.ENGLISH,
-                    name = item.name,
-                    description = "Description for ${item.name}..." // You can update descriptions later
+                // Huge map to link JSON string keys to Drawable IDs safely
+                val stoneDrawableMap = mapOf(
+                    "agate" to R.drawable.agate,
+                    "amazonite" to R.drawable.amazonite,
+                    "amber" to R.drawable.amber,
+                    "amethyst" to R.drawable.amethyst,
+                    "angelite" to R.drawable.angelite,
+                    "apatite" to R.drawable.apatite,
+                    "aquamarine" to R.drawable.aquamarine,
+                    "aventurine" to R.drawable.aventurine,
+                    "black_obsidian" to R.drawable.black_obsidian,
+                    "black_tourmaline" to R.drawable.black_tourmaline,
+                    "bloodstone" to R.drawable.bloodstone,
+                    "blue_agate" to R.drawable.blue_agate,
+                    "blue_calcite" to R.drawable.blue_calcite,
+                    "blue_chalcedony" to R.drawable.blue_chalcedony,
+                    "blue_kyanite" to R.drawable.blue_kyanite,
+                    "bronzite" to R.drawable.bronzite,
+                    "carnelian" to R.drawable.carnelian,
+                    "chrysocolla" to R.drawable.chrysocolla,
+                    "chrysoprase" to R.drawable.chrysoprase,
+                    "citrine" to R.drawable.citrine,
+                    "clear_quartz" to R.drawable.clear_quartz,
+                    "coral" to R.drawable.coral,
+                    "dalmatian_jasper" to R.drawable.dalmatian_jasper,
+                    "diamond" to R.drawable.diamond,
+                    "emerald" to R.drawable.emerald,
+                    "fluorite" to R.drawable.fluorite,
+                    "golden_chalcedony" to R.drawable.golden_chalcedony,
+                    "green_aventurine" to R.drawable.green_aventurine,
+                    "green_jasper" to R.drawable.green_jasper,
+                    "green_quartz" to R.drawable.green_quartz,
+                    "hawk_eye" to R.drawable.hawk_eye_stone,
+                    "hematite" to R.drawable.hematite,
+                    "howlite" to R.drawable.howlite,
+                    "jade" to R.drawable.jade,
+                    "jasper" to R.drawable.jasper,
+                    "labradorite" to R.drawable.labradorite,
+                    "lapis_lazuli" to R.drawable.lapis_lazuli,
+                    "lepidolite" to R.drawable.lepidolite,
+                    "lion_skin" to R.drawable.lion_skin,
+                    "malachite" to R.drawable.malachite,
+                    "milky_quartz" to R.drawable.milky_quartz,
+                    "mookaite" to R.drawable.mookaite,
+                    "moonstone" to R.drawable.moon_stone,
+                    "obsidian" to R.drawable.obsidian,
+                    "onyx" to R.drawable.onyx,
+                    "opal" to R.drawable.opal,
+                    "orange_aventurine" to R.drawable.orange_aventurine,
+                    "orange_calcite" to R.drawable.orange_calcite,
+                    "pearl" to R.drawable.pearl,
+                    "peridot" to R.drawable.peridot,
+                    "petrified_wood" to R.drawable.petrified_wood,
+                    "pink_quartz" to R.drawable.pink_quartz,
+                    "pink_tourmaline" to R.drawable.pink_tourmaline,
+                    "prehnite" to R.drawable.prehnite,
+                    "purple_aventurine" to R.drawable.purple_aventurine,
+                    "purple_fluorite" to R.drawable.purple_fluorite,
+                    "purple_sapphire" to R.drawable.purple_sapphire,
+                    "pyrite" to R.drawable.pyrite,
+                    "quartz_crystal" to R.drawable.quartz_crystal,
+                    "quartz_tourmaline" to R.drawable.quartz_tourmaline,
+                    "red_agate" to R.drawable.red_agate,
+                    "red_aventurine" to R.drawable.red_aventurine,
+                    "red_garnet" to R.drawable.red_garnet,
+                    "red_jasper" to R.drawable.red_jasper,
+                    "rhodonite" to R.drawable.rhodonite,
+                    "rhodochrosite" to R.drawable.rodocrosite,
+                    "rose_opal" to R.drawable.rose_opal,
+                    "rose_quartz" to R.drawable.rose_quartz,
+                    "ruby" to R.drawable.ruby,
+                    "selenite" to R.drawable.selenite,
+                    "serpentine" to R.drawable.serpentine_stone,
+                    "shiva_lingam" to R.drawable.shiva_lingam,
+                    "shungite" to R.drawable.shungite,
+                    "smoky_quartz" to R.drawable.smoky_quartz,
+                    "sodalite" to R.drawable.sodalite,
+                    "sugilite" to R.drawable.sugilite,
+                    "sunstone" to R.drawable.sunstone,
+                    "tanzanite" to R.drawable.tanzanite,
+                    "tiger_eye" to R.drawable.tiger_eye,
+                    "topaz" to R.drawable.topaz,
+                    "turquoise" to R.drawable.turquoise,
+                    "unakite" to R.drawable.unakite,
+                    "volcanic_stone" to R.drawable.volcanic_stone,
+                    "watermelon_tourmaline" to R.drawable.watermelon_tourmaline,
+                    "white_topaz" to R.drawable.white_topaz,
+                    "yellow_fluorite" to R.drawable.yellow_fluorite,
+                    "yellow_jade" to R.drawable.yellow_jade,
+                    "yellow_jasper" to R.drawable.yellow_jasper,
+                    "yellow_quartz" to R.drawable.yellow_quartz,
+                    "yellow_tourmaline" to R.drawable.yellow_tourmaline
                 )
 
-                // Insert
-                stoneDao.insertTranslation()
+                stoneList.forEach { item ->
+                    // 1. Find the Drawable ID (Default to Agate if not found)
+                    val iconResId = stoneDrawableMap[item.imageName] ?: R.drawable.agate
+
+                    // 2. Construct the URI String required by your Stone Entity
+                    val resourceUri = "android.resource://${context.packageName}/$iconResId"
+
+                    // 3. Create Base Stone Entity
+                    val stone = Stone(
+                        name = item.imageName, // This serves as the snake_case key
+                        imageUri = resourceUri
+                    )
+
+                    // 4. Create Translations
+                    val translations = item.translations.map { (langKey, data) ->
+                        val code = mapLanguageCode(langKey)
+
+                        StoneTranslation(
+                            stoneId = 0, // Auto-generated
+                            languageCode = code,
+                            name = data.name,
+                            description = data.description
+                        )
+                    }
+
+                    // 5. Insert (Assuming you have this method in your DAO)
+                    // Note: If you don't have a batch insert for translations, iterate and insert one by one
+                    stoneDao.insertStoneWithTranslations(stone, translations)
+                }
+                Log.d("AppDatabase", "Stones populated successfully.")
+
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Stone JSON", e)
+            }
+
+            try {
+                Log.d("AppDatabase", "Linking Chinese Zodiacs to Stones...")
+
+                // 1. Read the JSON file
+                val jsonString = context.assets.open("initial_chinese_associations.json")
+                    .bufferedReader()
+                    .use { it.readText() }
+
+                // 2. Parse into List
+                val listType = object : TypeToken<List<ChineseAssociationJsonItem>>() {}.type
+                val associationList: List<ChineseAssociationJsonItem> = Gson().fromJson(jsonString, listType)
+
+                // 3. Iterate through every Zodiac entry in the JSON
+                associationList.forEach { item ->
+
+                    // A. Find the Zodiac ID (e.g., Look up "rat" -> Get ID 1)
+                    val zodiacId = chineseDao.getChineseSignIdByKey(item.zodiacKey)
+
+                    if (zodiacId != null) {
+                        // B. Iterate through the stones listed for this Zodiac
+                        item.stoneKeys.forEach { stoneNameKey ->
+
+                            // C. Find the Stone ID (e.g., Look up "garnet" -> Get ID 12)
+                            val stoneId = stoneDao.getStoneIdByKey(stoneNameKey)
+
+                            if (stoneId != null) {
+                                // D. Create the Link
+                                val crossRef = StoneChineseZodiacCrossRef(
+                                    stoneId = stoneId,
+                                    chineseZodiacSignId = zodiacId
+                                )
+
+                                // E. Insert into DB
+                                stoneDao.insertChineseZodiacCrossRef(crossRef)
+                            } else {
+                                // Log warning if stone name in JSON doesn't match any stone in DB
+                                Log.w("AppDatabase", "Skip Link: Stone '$stoneNameKey' not found in DB.")
+                            }
+                        }
+                    } else {
+                        Log.w("AppDatabase", "Skip Link: Zodiac '${item.zodiacKey}' not found in DB.")
+                    }
+                }
+                Log.d("AppDatabase", "Chinese Zodiac associations finished.")
+
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Association JSON", e)
+            }
+
+            // --- 4. Populate Chakras ---
+            try {
+                // 1. Load the JSON file
+                val jsonString = context.assets.open("initial_chakras.json") // Make sure this file exists in assets
+                    .bufferedReader()
+                    .use { it.readText() }
+
+                // 2. Parse JSON using Gson
+                val listType = object : TypeToken<List<ChakraJsonItem>>() {}.type
+                val chakraList: List<ChakraJsonItem> = Gson().fromJson(jsonString, listType)
+
+                // 3. Map JSON string keys to Android Drawable Resources
+                // Ensure these drawables exist in your res/drawable folder
+                val chakraDrawableMap = mapOf(
+                    "root_chakra" to R.drawable.root_chakra,
+                    "sacral_chakra" to R.drawable.sacral_chakra,
+                    "solar_plexus_chakra" to R.drawable.solar_plexus_chakra,
+                    "heart_chakra" to R.drawable.heart_chakra,
+                    "throat_chakra" to R.drawable.throat_chakra,
+                    "third_eye_chakra" to R.drawable.third_eye_chakra,
+                    "crown_chakra" to R.drawable.crown_chakra
+                )
+
+                // 4. Loop and Insert
+                chakraList.forEach { item ->
+                    // A. Get the Icon
+                    val iconRes = chakraDrawableMap[item.imageBase]
+                        ?: R.drawable.root_chakra // Fallback icon to prevent crashes
+
+                    // B. Create the Parent Entity
+                    val chakra = Chakra(
+                        sanskritName = item.key,
+                        iconResId = iconRes
+                    )
+
+                    // C. Insert Parent (Handling IGNORE strategy)
+                    var parentId = chakraDao.insertChakra(chakra)
+
+                    if (parentId == -1L) {
+                        // The Chakra already exists, fetch its real ID using the unique Sanskrit name
+                        val existingId = chakraDao.getChakraIdByName(item.key)
+
+                        if (existingId != null) {
+                            parentId = existingId.toLong()
+                        } else {
+                            Log.e("DB", "Error: Chakra ${item.key} exists but ID not found.")
+                            return@forEach // Skip this iteration
+                        }
+                    }
+
+                    // D. Map JSON Translations to Entity Translations
+                    val translations = item.translations.map { (langKey, data) ->
+                        val code = mapLanguageCode(langKey) // Use your existing helper function
+
+                        ChakraTranslation(
+                            chakraId = parentId.toInt(), // Link to the Parent ID retrieved above
+                            languageCode = code,
+                            name = data.name,
+                            description = data.description,
+                            location = data.location,
+
+                            // Safe mapping for new fields (defaults to empty string if missing in JSON)
+                            rulingPlanet = data.rulingPlanet,
+                            element = data.element,
+
+                            stoneColors = data.stoneColors,
+                            healingQualities = data.healingQualities,
+                            stones = data.stones,
+                            bodyPlacement = data.bodyPlacement,
+                            housePlacement = data.housePlacement,
+                            herbs = data.herbs,
+                            essentialOils = data.essentialOils
+                        )
+                    }
+
+                    // E. Insert Translations
+                    chakraDao.insertChakraTranslations(translations)
+                }
+                Log.d("AppDatabase", "Chakras populated successfully.")
+
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error parsing Chakra JSON", e)
             }
 
             Log.d("AppDatabase", "Finished populating database.")
         }
-    }
 
-    // --- Data Holder Classes (Used only for population) ---
-    private data class ZodiacInput(val name: String, val start: String, val end: String, val icon: Int, val element: String, val planet: String, val desc: String)
-    private data class BenefitInput(val key: String, val name: String, val icon: Int)
-    private data class ChineseInput(val name: String, val icon: Int, val iconBorder: Int, val iconColor: Int, val years: String, val desc: String)
-    private data class StoneInput(val name: String, val image: Int)
+        private fun mapLanguageCode(key: String): LanguageCode {
+            return when (key.lowercase()) {
+                "en" -> LanguageCode.ENGLISH
+                "es" -> LanguageCode.SPANISH
+                "fr" -> LanguageCode.FRENCH
+                "it" -> LanguageCode.ITALIAN
+                "de" -> LanguageCode.GERMAN
+                "pl" -> LanguageCode.POLISH
+                "ru" -> LanguageCode.RUSSIAN
+                else -> LanguageCode.ENGLISH
+            }
+        }
+    }
+    data class ZodiacJsonItem(
+        @SerializedName("key") val key: String,
+        @SerializedName("start_date") val startDate: String,
+        @SerializedName("end_date") val endDate: String,
+        @SerializedName("image_name") val imageName: String,
+        @SerializedName("translations") val translations: Map<String, ZodiacJsonTranslation>
+    )
+
+    data class ZodiacJsonTranslation(
+        @SerializedName("name") val name: String,
+        @SerializedName("element") val element: String,
+        @SerializedName("planet") val planet: String,
+        @SerializedName("desc") val description: String
+    )
+
+
+
+    data class BenefitJsonItem(
+        @SerializedName("key") val key: String,
+        @SerializedName("image_name") val imageName: String,
+        @SerializedName("translations") val translations: Map<String, BenefitJsonTranslation>
+    )
+
+    data class BenefitJsonTranslation(
+        @SerializedName("name") val name: String
+    )
+
+
+
+    data class ChineseZodiacJsonItem(
+        @SerializedName("key") val key: String,
+        @SerializedName("image_base") val imageBase: String,
+        @SerializedName("years") val years: String,
+        @SerializedName("translations") val translations: Map<String, ChineseZodiacTranslationData>
+    )
+
+    data class ChineseZodiacTranslationData(
+        @SerializedName("name") val name: String,
+        @SerializedName("desc") val description: String,
+        @SerializedName("traits") val traits: String,
+        @SerializedName("best_match") val bestMatch: String,
+        @SerializedName("worst_match") val worstMatch: String,
+        @SerializedName("compatibility_desc") val compatibilityDesc: String,
+        @SerializedName("gemstone_desc") val gemstoneDesc: String
+    )
+
+    // Helper class to hold the triplet of images safely
+    data class ChineseIcons(
+        val icon: Int,
+        val border: Int,
+        val color: Int
+    )
+
+
+
+    data class StoneJsonItem(
+        // Matches "image_name": "yellow_jasper" in your JSON
+        @SerializedName("image_name") val imageName: String,
+        @SerializedName("translations") val translations: Map<String, StoneJsonTranslationData>
+    )
+
+    data class StoneJsonTranslationData(
+        @SerializedName("name") val name: String,
+        @SerializedName("desc") val description: String
+    )
+
+
+
+    data class ChineseAssociationJsonItem(
+        @SerializedName("zodiac_key") val zodiacKey: String,
+        @SerializedName("stones") val stoneKeys: List<String>
+    )
+
+
+
+
+
+
+    data class ChakraJsonItem(
+        val key: String,
+        @SerializedName("image_base") val imageBase: String,
+        val translations: Map<String, ChakraTranslationJsonData>
+    )
+
+    data class ChakraTranslationJsonData(
+        val name: String,
+        @SerializedName("desc") val description: String,
+        val location: String,
+
+        // --- NEW FIELDS ---
+        @SerializedName("ruling_planet") val rulingPlanet: String,
+        val element: String,
+
+        @SerializedName("stone_colors") val stoneColors: String,
+        @SerializedName("healing_qualities") val healingQualities: String,
+        val stones: String,
+        @SerializedName("body_placement") val bodyPlacement: String,
+        @SerializedName("house_placement") val housePlacement: String,
+        val herbs: String,
+        @SerializedName("essential_oils") val essentialOils: String
+    )
 }

@@ -1,5 +1,6 @@
 package com.example.soulstone.data.entities
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
@@ -22,8 +23,27 @@ data class ChakraTranslation(
     val chakraId: Int,
     val languageCode: LanguageCode,
     val name: String,
-    val rulingPlanet: String,
-    val color: String,
+    val description: String,
     val location: String,
-    val description: String
+
+    @ColumnInfo(name = "ruling_planet")
+    val rulingPlanet: String,
+    val element: String,
+
+    @ColumnInfo(name = "stone_colors")
+    val stoneColors: String,
+
+    @ColumnInfo(name = "healing_qualities")
+    val healingQualities: String,
+    val stones: String,
+
+    @ColumnInfo(name = "body_placement")
+    val bodyPlacement: String,
+
+    @ColumnInfo(name = "house_placement")
+    val housePlacement: String,
+    val herbs: String,
+
+    @ColumnInfo(name = "essential_oils")
+    val essentialOils: String
 )

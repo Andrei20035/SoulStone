@@ -65,7 +65,7 @@ interface ChineseZodiacSignDao {
     // --- Admin/Helper Queries for ChineseZodiacSign table ---
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertChineseSign(sign: ChineseZodiacSign): Long?
+    suspend fun insertChineseSign(sign: ChineseZodiacSign): Long
 
     @Update
     suspend fun updateChineseSign(sign: ChineseZodiacSign): Int
@@ -74,13 +74,18 @@ interface ChineseZodiacSignDao {
     suspend fun deleteChineseSign(sign: ChineseZodiacSign): Int
 
     @Query("SELECT * FROM chinese_zodiac_signs WHERE name = :keyName LIMIT 1")
-    suspend fun getChineseSignByName(keyName: String): ChineseZodiacSign?
+    suspend fun getChineseSignByKey(keyName: String): ChineseZodiacSign?
+
+    @Query("SELECT id FROM chinese_zodiac_signs WHERE name = :keyName LIMIT 1")
+    suspend fun getChineseSignIdByKey(keyName: String): Int?
+
+
 
 
     // --- Admin/Helper Queries for ChineseZodiacSignTranslation table ---
 
     @Insert
-    suspend fun insertTranslations(translation: List<ChineseZodiacSignTranslation>)
+    suspend fun insertChineseTranslations(translation: List<ChineseZodiacSignTranslation>)
 
     @Update
     suspend fun updateTranslation(translation: ChineseZodiacSignTranslation): Int
@@ -99,6 +104,6 @@ interface ChineseZodiacSignDao {
         val translationsWithId = translations.map {
             it.copy(chineseSignId = newChineseSignId.toInt())
         }
-        insertTranslations(translationsWithId)
+        insertChineseTranslations(translationsWithId)
     }
 }

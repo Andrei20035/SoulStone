@@ -1,0 +1,275 @@
+[
+  {
+    "key": "vitality",
+    "image_name": "stone_1",
+    "translations": {
+      "en": { "name": "Vitality" },
+      "es": { "name": "Vitalidad" },
+      "fr": { "name": "Vitalité" },
+      "it": { "name": "Vitalità" },
+      "de": { "name": "Vitalität" },
+      "pl": { "name": "Witalność" },
+      "ru": { "name": "Жизненная сила" }
+    }
+  },
+  {
+    "key": "mindfulness",
+    "image_name": "stone_2",
+    "translations": {
+      "en": { "name": "Mindfulness" },
+      "es": { "name": "Atención Plena" },
+      "fr": { "name": "Pleine Conscience" },
+      "it": { "name": "Mindfulness" },
+      "de": { "name": "Achtsamkeit" },
+      "pl": { "name": "Uważność" },
+      "ru": { "name": "Осознанность" }
+    }
+  },
+  {
+    "key": "personal_growth",
+    "image_name": "stone_3",
+    "translations": {
+      "en": { "name": "Personal Growth" },
+      "es": { "name": "Crecimiento Personal" },
+      "fr": { "name": "Croissance Personnelle" },
+      "it": { "name": "Crescita Personale" },
+      "de": { "name": "Persönliches Wachstum" },
+      "pl": { "name": "Rozwój Osobisty" },
+      "ru": { "name": "Личностный рост" }
+    }
+  },
+  {
+    "key": "anxiety_and_depression",
+    "image_name": "stone_4",
+    "translations": {
+      "en": { "name": "Anxiety & Depression" },
+      "es": { "name": "Ansiedad y Depresión" },
+      "fr": { "name": "Anxiété et Dépression" },
+      "it": { "name": "Ansia e Depressione" },
+      "de": { "name": "Angst & Depression" },
+      "pl": { "name": "Lęk i Depresja" },
+      "ru": { "name": "Тревога и Депрессия" }
+    }
+  },
+  {
+    "key": "love_relationships",
+    "image_name": "stone_5",
+    "translations": {
+      "en": { "name": "Love Relationships" },
+      "es": { "name": "Amor y Relaciones" },
+      "fr": { "name": "Amour et Relations" },
+      "it": { "name": "Amore e Relazioni" },
+      "de": { "name": "Liebe & Beziehungen" },
+      "pl": { "name": "Miłość i Relacje" },
+      "ru": { "name": "Любовь и Отношения" }
+    }
+  },
+  {
+    "key": "anger_and_stress_relief",
+    "image_name": "stone_6",
+    "translations": {
+      "en": { "name": "Anger & Stress Relief" },
+      "es": { "name": "Alivio de Ira y Estrés" },
+      "fr": { "name": "Soulagement Colère & Stress" },
+      "it": { "name": "Sollievo Rabbia e Stress" },
+      "de": { "name": "Wut & Stressabbau" },
+      "pl": { "name": "Ulga w Gniewie i Stresie" },
+      "ru": { "name": "Снятие Гнева и Стресса" }
+    }
+  },
+  {
+    "key": "transformation",
+    "image_name": "stone_7",
+    "translations": {
+      "en": { "name": "Transformation" },
+      "es": { "name": "Transformación" },
+      "fr": { "name": "Transformation" },
+      "it": { "name": "Trasformazione" },
+      "de": { "name": "Transformation" },
+      "pl": { "name": "Transformacja" },
+      "ru": { "name": "Трансформация" }
+    }
+  },
+  {
+    "key": "clarity_and_focus",
+    "image_name": "stone_8",
+    "translations": {
+      "en": { "name": "Clarity & Focus" },
+      "es": { "name": "Claridad y Enfoque" },
+      "fr": { "name": "Clarté et Concentration" },
+      "it": { "name": "Chiarezza e Focus" },
+      "de": { "name": "Klarheit & Fokus" },
+      "pl": { "name": "Jasność i Skupienie" },
+      "ru": { "name": "Ясность и Фокус" }
+    }
+  },
+  {
+    "key": "career_and_money",
+    "image_name": "stone_4_r",
+    "translations": {
+      "en": { "name": "Career & Money" },
+      "es": { "name": "Carrera y Dinero" },
+      "fr": { "name": "Carrière et Argent" },
+      "it": { "name": "Carriera e Denaro" },
+      "de": { "name": "Karriere & Geld" },
+      "pl": { "name": "Kariera i Pieniądze" },
+      "ru": { "name": "Карьера и Деньги" }
+    }
+  },
+  {
+    "key": "protection",
+    "image_name": "stone_3_r",
+    "translations": {
+      "en": { "name": "Protection" },
+      "es": { "name": "Protección" },
+      "fr": { "name": "Protection" },
+      "it": { "name": "Protezione" },
+      "de": { "name": "Schutz" },
+      "pl": { "name": "Ochrona" },
+      "ru": { "name": "Защита" }
+    }
+  },
+  {
+    "key": "self_control",
+    "image_name": "stone_2_r",
+    "translations": {
+      "en": { "name": "Self-Control" },
+      "es": { "name": "Autocontrol" },
+      "fr": { "name": "Maîtrise de Soi" },
+      "it": { "name": "Autocontrollo" },
+      "de": { "name": "Selbstbeherrschung" },
+      "pl": { "name": "Samokontrola" },
+      "ru": { "name": "Самоконтроль" }
+    }
+  },
+  {
+    "key": "communication",
+    "image_name": "stone_1_r",
+    "translations": {
+      "en": { "name": "Communication" },
+      "es": { "name": "Comunicación" },
+      "fr": { "name": "Communication" },
+      "it": { "name": "Comunicazione" },
+      "de": { "name": "Kommunikation" },
+      "pl": { "name": "Komunikacja" },
+      "ru": { "name": "Общение" }
+    }
+  },
+  {
+    "key": "physical_health",
+    "image_name": "stone_8_r",
+    "translations": {
+      "en": { "name": "Physical Health" },
+      "es": { "name": "Salud Física" },
+      "fr": { "name": "Santé Physique" },
+      "it": { "name": "Salute Fisica" },
+      "de": { "name": "Körperliche Gesundheit" },
+      "pl": { "name": "Zdrowie Fizyczne" },
+      "ru": { "name": "Физическое Здоровье" }
+    }
+  },
+  {
+    "key": "intuition",
+    "image_name": "stone_7_r",
+    "translations": {
+      "en": { "name": "Intuition" },
+      "es": { "name": "Intuición" },
+      "fr": { "name": "Intuition" },
+      "it": { "name": "Intuizione" },
+      "de": { "name": "Intuition" },
+      "pl": { "name": "Intuicja" },
+      "ru": { "name": "Интуиция" }
+    }
+  },
+  {
+    "key": "enhanced_focus",
+    "image_name": "stone_6_r",
+    "translations": {
+      "en": { "name": "Enhanced Focus" },
+      "es": { "name": "Enfoque Mejorado" },
+      "fr": { "name": "Concentration Améliorée" },
+      "it": { "name": "Focus Migliorato" },
+      "de": { "name": "Verbesserter Fokus" },
+      "pl": { "name": "Lepsze Skupienie" },
+      "ru": { "name": "Улучшенный Фокус" }
+    }
+  },
+  {
+    "key": "spirituality",
+    "image_name": "stone_5_r",
+    "translations": {
+      "en": { "name": "Spirituality" },
+      "es": { "name": "Espiritualidad" },
+      "fr": { "name": "Spiritualité" },
+      "it": { "name": "Spiritualità" },
+      "de": { "name": "Spiritualität" },
+      "pl": { "name": "Duchowość" },
+      "ru": { "name": "Духовность" }
+    }
+  },
+  {
+    "key": "mental_health",
+    "image_name": "stone_5",
+    "translations": {
+      "en": { "name": "Mental Health" },
+      "es": { "name": "Salud Mental" },
+      "fr": { "name": "Santé Mentale" },
+      "it": { "name": "Salute Mentale" },
+      "de": { "name": "Psychische Gesundheit" },
+      "pl": { "name": "Zdrowie Psychiczne" },
+      "ru": { "name": "Психическое Здоровье" }
+    }
+  },
+  {
+    "key": "creativity",
+    "image_name": "stone_6",
+    "translations": {
+      "en": { "name": "Creativity" },
+      "es": { "name": "Creatividad" },
+      "fr": { "name": "Créativité" },
+      "it": { "name": "Creatività" },
+      "de": { "name": "Kreativität" },
+      "pl": { "name": "Kreatywność" },
+      "ru": { "name": "Творчество" }
+    }
+  },
+  {
+    "key": "good_fortune_and_luck",
+    "image_name": "stone_7",
+    "translations": {
+      "en": { "name": "Good Fortune & Luck" },
+      "es": { "name": "Buena Fortuna y Suerte" },
+      "fr": { "name": "Bonne Fortune et Chance" },
+      "it": { "name": "Buona Fortuna" },
+      "de": { "name": "Glück & Wohlstand" },
+      "pl": { "name": "Szczęście i Pomyślność" },
+      "ru": { "name": "Удача и Благополучие" }
+    }
+  },
+  {
+    "key": "manifestation",
+    "image_name": "stone_8",
+    "translations": {
+      "en": { "name": "Manifestation" },
+      "es": { "name": "Manifestación" },
+      "fr": { "name": "Manifestation" },
+      "it": { "name": "Manifestazione" },
+      "de": { "name": "Manifestation" },
+      "pl": { "name": "Manifestacja" },
+      "ru": { "name": "Манифестация" }
+    }
+  },
+  {
+    "key": "emotional_balance",
+    "image_name": "stone_4_r",
+    "translations": {
+      "en": { "name": "Emotional Balance" },
+      "es": { "name": "Equilibrio Emocional" },
+      "fr": { "name": "Équilibre Émotionnel" },
+      "it": { "name": "Equilibrio Emotivo" },
+      "de": { "name": "Emotionales Gleichgewicht" },
+      "pl": { "name": "Równowaga Emocjonalna" },
+      "ru": { "name": "Эмоциональный Баланс" }
+    }
+  }
+]

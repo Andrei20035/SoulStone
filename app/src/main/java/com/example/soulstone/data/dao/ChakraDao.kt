@@ -3,6 +3,7 @@ package com.example.soulstone.data.dao
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
@@ -18,14 +19,21 @@ interface ChakraDao {
     // --- Main App Queries (using JOINs) ---
     @Query("""
         SELECT 
-            c.id AS id, 
-            c.sanskritName AS sanskritName, 
-            t.name AS name,
-            t.rulingPlanet AS rulingPlanet,
-            t.color AS color,
-            t.location AS location,
-            t.description AS description,
-            t.languageCode AS languageCode
+            c.id, 
+            c.sanskritName, 
+            c.iconResId,
+            t.name,
+            t.description,
+            t.location,
+            t.ruling_planet AS rulingPlanet,
+            t.element,
+            t.stone_colors AS stoneColors,
+            t.healing_qualities AS healingQualities,
+            t.stones,
+            t.body_placement AS bodyPlacement,
+            t.house_placement AS housePlacement,
+            t.herbs,
+            t.essential_oils AS essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE t.languageCode = :language
@@ -35,14 +43,21 @@ interface ChakraDao {
 
     @Query("""
         SELECT 
-            c.id AS id, 
-            c.sanskritName AS sanskritName, 
-            t.name AS name,
-            t.rulingPlanet AS rulingPlanet,
-            t.color AS color,
-            t.location AS location,
-            t.description AS description,
-            t.languageCode AS languageCode
+            c.id, 
+            c.sanskritName, 
+            c.iconResId,
+            t.name,
+            t.description,
+            t.location,
+            t.ruling_planet AS rulingPlanet,
+            t.element,
+            t.stone_colors AS stoneColors,
+            t.healing_qualities AS healingQualities,
+            t.stones,
+            t.body_placement AS bodyPlacement,
+            t.house_placement AS housePlacement,
+            t.herbs,
+            t.essential_oils AS essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
@@ -51,14 +66,21 @@ interface ChakraDao {
 
     @Query("""
         SELECT 
-            c.id AS id, 
-            c.sanskritName AS sanskritName, 
-            t.name AS name,
-            t.rulingPlanet AS rulingPlanet,
-            t.color AS color,
-            t.location AS location,
-            t.description AS description,
-            t.languageCode AS languageCode
+            c.id, 
+            c.sanskritName, 
+            c.iconResId,
+            t.name,
+            t.description,
+            t.location,
+            t.ruling_planet AS rulingPlanet,
+            t.element,
+            t.stone_colors AS stoneColors,
+            t.healing_qualities AS healingQualities,
+            t.stones,
+            t.body_placement AS bodyPlacement,
+            t.house_placement AS housePlacement,
+            t.herbs,
+            t.essential_oils AS essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
@@ -67,8 +89,11 @@ interface ChakraDao {
 
 
     // --- Admin/Helper Queries for Chakra table ---
-    @Insert
-    suspend fun insertChakra(chakra: Chakra): Long?
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertChakra(chakra: Chakra): Long
+
+    @Query("SELECT id FROM chakras WHERE sanskritName = :name LIMIT 1")
+    suspend fun getChakraIdByName(name: String): Int?
 
     @Delete
     suspend fun deleteChakra(chakra: Chakra): Int
@@ -79,8 +104,8 @@ interface ChakraDao {
 
     // --- Admin/Helper Queries for ChakraTranslation table ---
 
-    @Insert
-    suspend fun insertTranslations(translations: List<ChakraTranslation>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertChakraTranslations(translations: List<ChakraTranslation>)
 
     @Update
     suspend fun updateTranslation(translation: ChakraTranslation): Int
@@ -99,6 +124,6 @@ interface ChakraDao {
         val translationsWithId = translations.map {
             it.copy(chakraId = newChakraId.toInt())
         }
-        insertTranslations(translationsWithId)
+        insertChakraTranslations(translationsWithId)
     }
 }

@@ -50,7 +50,7 @@ class ChakraRepositoryImpl @Inject constructor(
     }
 
     override suspend fun insertTranslations(translations: List<ChakraTranslation>) {
-        return dao.insertTranslations(translations)
+        return dao.insertChakraTranslations(translations)
     }
 
     override suspend fun updateTranslation(translation: ChakraTranslation): Int {

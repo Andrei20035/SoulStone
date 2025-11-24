@@ -107,6 +107,7 @@ interface StoneDao {
 
     // --- Detail Screen Query (@Transaction) ---
 
+    @Transaction
     @Query("SELECT * FROM stones WHERE name = :keyName LIMIT 1")
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?
 
@@ -114,10 +115,23 @@ interface StoneDao {
     // --- Admin/Helper Queries ---
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertStone(stone: Stone)
+    suspend fun insertStone(stone: Stone): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTranslation(translation: StoneTranslation)
+
+    @Transaction
+    suspend fun insertStoneWithTranslations(stone: Stone, translations: List<StoneTranslation>) {
+        val stoneId = insertStone(stone)
+
+        translations.forEach { translation ->
+            val linkedTranslation = translation.copy(stoneId = stoneId.toInt())
+            insertTranslation(linkedTranslation)
+        }
+    }
+
+    @Query("SELECT id FROM stones WHERE name = :keyName LIMIT 1")
+    suspend fun getStoneIdByKey(keyName: String): Int?
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBenefitCrossRef(crossRef: StoneBenefitCrossRef)

@@ -1,0 +1,158 @@
+[
+  {
+    "zodiac_key": "rat",
+    "stones": [
+      "red_garnet",
+      "emerald",
+      "amethyst",
+      "diamond",
+      "rose_quartz",
+      "citrine",
+      "moon_stone",
+      "tourmaline"
+    ]
+  },
+  {
+    "zodiac_key": "ox",
+    "stones": [
+      "aquamarine",
+      "lapis_lazuli",
+      "jade",
+      "moss_agate",
+      "emerald",
+      "moon_stone",
+      "citrine",
+      "tiger_eye"
+    ]
+  },
+  {
+    "zodiac_key": "tiger",
+    "stones": [
+      "ruby",
+      "diamond",
+      "cats_eye",
+      "amethyst",
+      "topaz",
+      "sapphire",
+      "jade",
+      "red_garnet"
+    ]
+  },
+  {
+    "zodiac_key": "rabbit",
+    "stones": [
+      "pearl",
+      "sapphire",
+      "emerald",
+      "topaz",
+      "moon_stone",
+      "jade",
+      "clear_quartz",
+      "nephrite"
+    ]
+  },
+  {
+    "zodiac_key": "dragon",
+    "stones": [
+      "amethyst",
+      "ruby",
+      "opal",
+      "sapphire",
+      "amber",
+      "jade",
+      "diamond",
+      "carnelian"
+    ]
+  },
+  {
+    "zodiac_key": "snake",
+    "stones": [
+      "opal",
+      "topaz",
+      "turquoise",
+      "jasper",
+      "bloodstone",
+      "malachite",
+      "obsidian",
+      "jade"
+    ]
+  },
+  {
+    "zodiac_key": "horse",
+    "stones": [
+      "topaz",
+      "ruby",
+      "amethyst",
+      "turquoise",
+      "red_garnet",
+      "emerald",
+      "jade",
+      "obsidian"
+    ]
+  },
+  {
+    "zodiac_key": "goat",
+    "stones": [
+      "emerald",
+      "sapphire",
+      "moon_stone",
+      "jade",
+      "amber",
+      "peridot",
+      "carnelian",
+      "rose_quartz"
+    ]
+  },
+  {
+    "zodiac_key": "monkey",
+    "stones": [
+      "peridot",
+      "tiger_eye",
+      "aquamarine",
+      "ruby",
+      "red_garnet",
+      "topaz",
+      "jade",
+      "agate"
+    ]
+  },
+  {
+    "zodiac_key": "rooster",
+    "stones": [
+      "citrine",
+      "topaz",
+      "diamond",
+      "ruby",
+      "amethyst",
+      "agate",
+      "tourmaline",
+      "tiger_eye"
+    ]
+  },
+  {
+    "zodiac_key": "dog",
+    "stones": [
+      "diamond",
+      "carnelian",
+      "jasper",
+      "moon_stone",
+      "amber",
+      "sapphire",
+      "tourmaline",
+      "jade"
+    ]
+  },
+  {
+    "zodiac_key": "pig",
+    "stones": [
+      "ruby",
+      "moon_stone",
+      "amethyst",
+      "red_garnet",
+      "lapis_lazuli",
+      "beryl",
+      "coral",
+      "jade"
+    ]
+  }
+]
