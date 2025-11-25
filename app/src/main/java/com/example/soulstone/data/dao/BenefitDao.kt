@@ -11,6 +11,7 @@ import com.example.soulstone.data.entities.Benefit
 import com.example.soulstone.data.entities.BenefitTranslation
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedBenefit
+import com.example.soulstone.data.relations.StoneBenefitCrossRef
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -95,6 +96,12 @@ interface BenefitDao {
 
     @Query("SELECT * FROM benefits WHERE name = :keyName LIMIT 1")
     suspend fun findBenefitByName(keyName: String): Benefit?
+
+    @Query("SELECT id FROM benefits WHERE name = :name COLLATE NOCASE LIMIT 1")
+    suspend fun getBenefitIdByName(name: String): Int?
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertStoneBenefitCrossRef(crossRef: StoneBenefitCrossRef)
 
 
     // --- Admin/Helper Queries for BenefitTranslation table ---

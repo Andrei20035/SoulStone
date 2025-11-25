@@ -23,13 +23,21 @@ import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
 import com.example.soulstone.data.entities.ZodiacSign
 import com.example.soulstone.data.entities.ZodiacSignTranslation
+import com.example.soulstone.data.models.BenefitAssociationJsonItem
+import com.example.soulstone.data.models.BenefitJsonItem
+import com.example.soulstone.data.models.ChakraAssociationJsonItem
+import com.example.soulstone.data.models.ChakraJsonItem
+import com.example.soulstone.data.models.ZodiacStoneAssociationJsonItem
+import com.example.soulstone.data.models.ChineseIcons
+import com.example.soulstone.data.models.ChineseZodiacJsonItem
+import com.example.soulstone.data.models.StoneJsonItem
+import com.example.soulstone.data.models.ZodiacJsonItem
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
 import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
 import com.example.soulstone.util.LanguageCode
 import com.google.gson.Gson
-import com.google.gson.annotations.SerializedName
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -72,38 +80,38 @@ abstract class AppDatabase : RoomDatabase() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             Log.d("AppDatabase", "onCreate called — populating database")
+
+            // Launch ONE coroutine to ensure sequential execution
             CoroutineScope(Dispatchers.IO).launch {
                 val database = dbProvider.get()
-                populateDatabase(
-                    zodiacSignDao = database.zodiacSignDao(),
-                    benefitDao = database.benefitDao(),
-                    chineseDao = database.chineseZodiacSignDao(),
-                    stoneDao = database.stoneDao(),
-                    chakraDao = database.chakraDao()
-                )
+
+                // 1. Populate Independent Tables
+                populateWesternZodiacs(database.zodiacSignDao())
+                populateBenefits(database.benefitDao())
+                populateChakras(database.chakraDao())
+
+                // 2. Populate Tables needed for Linking
+                populateChineseZodiacs(database.chineseZodiacSignDao())
+                populateStones(database.stoneDao())
+
+                // 3. Link Tables (Dependent on Step 2)
+                linkStonesToChineseZodiacs(database.stoneDao(), database.chineseZodiacSignDao())
+                linkStonesToWesternZodiacs(database.stoneDao(), database.zodiacSignDao())
+                linkStonesToChakras(database.stoneDao(), database.chakraDao())
+                linkStonesToBenefits(database.stoneDao(), database.benefitDao())
+
+                Log.d("AppDatabase", "Database population finished.")
             }
         }
 
-        private suspend fun populateDatabase(
-            zodiacSignDao: ZodiacSignDao,
-            benefitDao: BenefitDao,
-            chineseDao: ChineseZodiacSignDao,
-            stoneDao: StoneDao,
-            chakraDao: ChakraDao
-
-        ) {
-            Log.d("AppDatabase", "Populating database with lists...")
-
-            // --- 1. Populate Zodiac Signs from JSON ---
+        private suspend fun populateWesternZodiacs(dao: ZodiacSignDao) {
             try {
-                val jsonString = context.assets.open("initial_zodiac_signs.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
+                Log.d("AppDatabase", "Populating Western Zodiacs...")
+                val jsonString = context.assets.open("initial_zodiac_signs.json").bufferedReader().use { it.readText() }
                 val listType = object : TypeToken<List<ZodiacJsonItem>>() {}.type
                 val zodiacList: List<ZodiacJsonItem> = Gson().fromJson(jsonString, listType)
 
-                val zodiacDrawableMap = mapOf(
+                val drawableMap = mapOf(
                     "aries" to R.drawable.aries,
                     "taurus" to R.drawable.taurus,
                     "gemini" to R.drawable.gemini,
@@ -119,103 +127,72 @@ abstract class AppDatabase : RoomDatabase() {
                 )
 
                 zodiacList.forEach { item ->
-                    val finalIcon = zodiacDrawableMap[item.imageName] ?: R.drawable.aries
-
+                    val icon = drawableMap[item.imageName] ?: R.drawable.aries
                     val sign = ZodiacSign(
                         name = item.key,
                         startDate = item.startDate,
                         endDate = item.endDate,
-                        iconResId = finalIcon
+                        iconResId = icon
                     )
 
-                    val translations = item.translations.map { (langKey, data) ->
-                        val code = mapLanguageCode(langKey)
-
+                    val translations = item.translations.map { (lang, data) ->
                         ZodiacSignTranslation(
                             zodiacSignId = 0,
-                            languageCode = code,
+                            languageCode = mapLanguageCode(lang),
                             name = data.name,
                             description = data.description,
                             element = data.element,
                             rulingPlanet = data.planet
                         )
                     }
-
-                    zodiacSignDao.insertZodiacSignWithTranslations(sign, translations)
+                    dao.insertZodiacSignWithTranslations(sign, translations)
                 }
-                Log.d("AppDatabase", "Zodiac signs populated successfully.")
-
+                Log.d("AppDatabase", "Western Zodiacs populated.")
             } catch (e: Exception) {
                 Log.e("AppDatabase", "Error parsing Zodiac JSON", e)
             }
+        }
 
-            // --- 2. Populate Benefits from JSON ---
+        private suspend fun populateBenefits(dao: BenefitDao) {
             try {
-                val jsonString = context.assets.open("initial_benefits.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
+                Log.d("AppDatabase", "Populating Benefits...")
+                val jsonString = context.assets.open("initial_benefits.json").bufferedReader().use { it.readText() }
                 val listType = object : TypeToken<List<BenefitJsonItem>>() {}.type
                 val benefitList: List<BenefitJsonItem> = Gson().fromJson(jsonString, listType)
 
-                // Manual map for safety and R8 optimization
-                val benefitDrawableMap = mapOf(
-                    "stone_1" to R.drawable.stone_1,
-                    "stone_2" to R.drawable.stone_2,
-                    "stone_3" to R.drawable.stone_3,
-                    "stone_4" to R.drawable.stone_4,
-                    "stone_5" to R.drawable.stone_5,
-                    "stone_6" to R.drawable.stone_6,
-                    "stone_7" to R.drawable.stone_7,
-                    "stone_8" to R.drawable.stone_8,
-                    // Rotated versions
-                    "stone_1_r" to R.drawable.stone_1_r,
-                    "stone_2_r" to R.drawable.stone_2_r,
-                    "stone_3_r" to R.drawable.stone_3_r,
-                    "stone_4_r" to R.drawable.stone_4_r,
-                    "stone_5_r" to R.drawable.stone_5_r,
-                    "stone_6_r" to R.drawable.stone_6_r,
-                    "stone_7_r" to R.drawable.stone_7_r,
-                    "stone_8_r" to R.drawable.stone_8_r
+                val drawableMap = mapOf(
+                    "stone_1" to R.drawable.stone_1, "stone_2" to R.drawable.stone_2,
+                    "stone_3" to R.drawable.stone_3, "stone_4" to R.drawable.stone_4,
+                    "stone_5" to R.drawable.stone_5, "stone_6" to R.drawable.stone_6,
+                    "stone_7" to R.drawable.stone_7, "stone_8" to R.drawable.stone_8
                 )
 
                 benefitList.forEach { item ->
-                    // Lookup image, fallback to stone_1 if missing
-                    val iconResId = benefitDrawableMap[item.imageName] ?: R.drawable.stone_1
-
-                    val benefit = Benefit(
-                        name = item.key,
-                        imageResId = iconResId
-                    )
-
-                    val translations = item.translations.map { (langKey, data) ->
-                        val code = mapLanguageCode(langKey)
-
+                    val icon = drawableMap[item.imageName] ?: R.drawable.stone_1
+                    val benefit = Benefit(name = item.key, imageResId = icon)
+                    val translations = item.translations.map { (lang, data) ->
                         BenefitTranslation(
                             benefitId = 0,
-                            languageCode = code,
+                            languageCode = mapLanguageCode(lang),
                             name = data.name
                         )
                     }
-
-                    benefitDao.insertBenefitWithTranslations(benefit, translations)
+                    dao.insertBenefitWithTranslations(benefit, translations)
                 }
-                Log.d("AppDatabase", "Benefits populated successfully.")
+                Log.d("AppDatabase", "Benefits populated.")
             } catch (e: Exception) {
                 Log.e("AppDatabase", "Error parsing Benefits JSON", e)
             }
+        }
 
-            // --- 3. Populate Chinese Zodiac Signs ---
+        private suspend fun populateChineseZodiacs(dao: ChineseZodiacSignDao) {
             try {
-                val jsonString = context.assets.open("initial_chinese_zodiac.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
+                Log.d("AppDatabase", "Populating Chinese Zodiacs...")
+                val jsonString = context.assets.open("initial_chinese_zodiac.json").bufferedReader().use { it.readText() }
                 val listType = object : TypeToken<List<ChineseZodiacJsonItem>>() {}.type
-                val chineseList: List<ChineseZodiacJsonItem> = Gson().fromJson(jsonString, listType)
+                val list: List<ChineseZodiacJsonItem> = Gson().fromJson(jsonString, listType)
 
-                // Manual Map to hold the triplet of images for each sign
-                val chineseDrawableMap = mapOf(
+                val drawableMap = mapOf(
                     "rat" to ChineseIcons(R.drawable.rat, R.drawable.rat_border, R.drawable.rat_color),
                     "ox" to ChineseIcons(R.drawable.ox, R.drawable.ox_border, R.drawable.ox_color),
                     "tiger" to ChineseIcons(R.drawable.tiger, R.drawable.tiger_border, R.drawable.tiger_color),
@@ -230,9 +207,12 @@ abstract class AppDatabase : RoomDatabase() {
                     "pig" to ChineseIcons(R.drawable.pig, R.drawable.pig_border, R.drawable.pig_color)
                 )
 
-                chineseList.forEach { item ->
-                    val icons = chineseDrawableMap[item.imageBase]
-                        ?: ChineseIcons(R.drawable.rat, R.drawable.rat_border, R.drawable.rat_color)
+                list.forEach { item ->
+                    val icons = drawableMap[item.imageBase] ?: ChineseIcons(
+                        R.drawable.rat,
+                        R.drawable.rat_border,
+                        R.drawable.rat_color
+                    )
 
                     val sign = ChineseZodiacSign(
                         name = item.key,
@@ -242,26 +222,21 @@ abstract class AppDatabase : RoomDatabase() {
                         recentYears = item.years
                     )
 
-                    var parentId = chineseDao.insertChineseSign(sign)
+                    // 1. Insert Parent
+                    var parentId = dao.insertChineseSign(sign)
 
+                    // 2. Handle Duplicates
                     if (parentId == -1L) {
-                        // We use the name (e.g., "Rat") to look it up
-                        val existingId = chineseDao.getChineseSignIdByKey(item.key)
-
-                        // Handle the edge case where something went wrong and it's still null
-                        if (existingId != null) {
-                            parentId = existingId.toLong()
-                        } else {
-                            Log.e("DB", "Error: Sign ${item.key} exists but ID not found.")
-                            return@forEach // Skip this iteration
-                        }
+                        val existingId = dao.getChineseSignIdByKey(item.key)
+                        if (existingId != null) parentId = existingId.toLong()
+                        else return@forEach
                     }
 
-                    val translations = item.translations.map { (langKey, data) ->
-                        val code = mapLanguageCode(langKey)
+                    // 3. Insert Translations using Parent ID
+                    val translations = item.translations.map { (lang, data) ->
                         ChineseZodiacSignTranslation(
-                            chineseSignId = parentId.toInt(), // Auto-generated by Room
-                            languageCode = code,
+                            chineseSignId = parentId.toInt(),
+                            languageCode = mapLanguageCode(lang),
                             name = data.name,
                             description = data.description,
                             traits = data.traits,
@@ -271,25 +246,22 @@ abstract class AppDatabase : RoomDatabase() {
                             gemstoneDescription = data.gemstoneDesc
                         )
                     }
-
-                    chineseDao.insertChineseTranslations(translations)
+                    dao.insertChineseTranslations(translations)
                 }
-                Log.d("AppDatabase", "Chinese Zodiac signs populated successfully.")
-
+                Log.d("AppDatabase", "Chinese Zodiacs populated.")
             } catch (e: Exception) {
                 Log.e("AppDatabase", "Error parsing Chinese Zodiac JSON", e)
             }
+        }
 
+        private suspend fun populateStones(dao: StoneDao) {
             try {
-                val jsonString = context.assets.open("initial_stones.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
+                Log.d("AppDatabase", "Populating Stones...")
+                val jsonString = context.assets.open("initial_stones.json").bufferedReader().use { it.readText() }
                 val listType = object : TypeToken<List<StoneJsonItem>>() {}.type
                 val stoneList: List<StoneJsonItem> = Gson().fromJson(jsonString, listType)
 
-                // Huge map to link JSON string keys to Drawable IDs safely
-                val stoneDrawableMap = mapOf(
+                val drawableMap = mapOf(
                     "agate" to R.drawable.agate,
                     "amazonite" to R.drawable.amazonite,
                     "amber" to R.drawable.amber,
@@ -320,10 +292,10 @@ abstract class AppDatabase : RoomDatabase() {
                     "green_aventurine" to R.drawable.green_aventurine,
                     "green_jasper" to R.drawable.green_jasper,
                     "green_quartz" to R.drawable.green_quartz,
-                    "hawk_eye" to R.drawable.hawk_eye_stone,
+                    "hawk_eye" to R.drawable.hawk_eye,
                     "hematite" to R.drawable.hematite,
                     "howlite" to R.drawable.howlite,
-                    "jade" to R.drawable.jade,
+                    "jade" to R.drawable.green_jade,
                     "jasper" to R.drawable.jasper,
                     "labradorite" to R.drawable.labradorite,
                     "lapis_lazuli" to R.drawable.lapis_lazuli,
@@ -355,12 +327,12 @@ abstract class AppDatabase : RoomDatabase() {
                     "red_garnet" to R.drawable.red_garnet,
                     "red_jasper" to R.drawable.red_jasper,
                     "rhodonite" to R.drawable.rhodonite,
-                    "rhodochrosite" to R.drawable.rodocrosite,
+                    "rhodochrosite" to R.drawable.rhodochrosite,
                     "rose_opal" to R.drawable.rose_opal,
                     "rose_quartz" to R.drawable.rose_quartz,
                     "ruby" to R.drawable.ruby,
                     "selenite" to R.drawable.selenite,
-                    "serpentine" to R.drawable.serpentine_stone,
+                    "serpentine" to R.drawable.serpentine,
                     "shiva_lingam" to R.drawable.shiva_lingam,
                     "shungite" to R.drawable.shungite,
                     "smoky_quartz" to R.drawable.smoky_quartz,
@@ -383,103 +355,34 @@ abstract class AppDatabase : RoomDatabase() {
                 )
 
                 stoneList.forEach { item ->
-                    // 1. Find the Drawable ID (Default to Agate if not found)
-                    val iconResId = stoneDrawableMap[item.imageName] ?: R.drawable.agate
-
-                    // 2. Construct the URI String required by your Stone Entity
+                    val iconResId = drawableMap[item.imageName] ?: R.drawable.agate
                     val resourceUri = "android.resource://${context.packageName}/$iconResId"
 
-                    // 3. Create Base Stone Entity
-                    val stone = Stone(
-                        name = item.imageName, // This serves as the snake_case key
-                        imageUri = resourceUri
-                    )
-
-                    // 4. Create Translations
-                    val translations = item.translations.map { (langKey, data) ->
-                        val code = mapLanguageCode(langKey)
-
+                    val stone = Stone(name = item.imageName, imageUri = resourceUri)
+                    val translations = item.translations.map { (lang, data) ->
                         StoneTranslation(
-                            stoneId = 0, // Auto-generated
-                            languageCode = code,
+                            stoneId = 0,
+                            languageCode = mapLanguageCode(lang),
                             name = data.name,
                             description = data.description
                         )
                     }
-
-                    // 5. Insert (Assuming you have this method in your DAO)
-                    // Note: If you don't have a batch insert for translations, iterate and insert one by one
-                    stoneDao.insertStoneWithTranslations(stone, translations)
+                    dao.insertStoneWithTranslations(stone, translations)
                 }
-                Log.d("AppDatabase", "Stones populated successfully.")
-
+                Log.d("AppDatabase", "Stones populated.")
             } catch (e: Exception) {
                 Log.e("AppDatabase", "Error parsing Stone JSON", e)
             }
+        }
 
+        private suspend fun populateChakras(dao: ChakraDao) {
             try {
-                Log.d("AppDatabase", "Linking Chinese Zodiacs to Stones...")
-
-                // 1. Read the JSON file
-                val jsonString = context.assets.open("initial_chinese_associations.json")
-                    .bufferedReader()
-                    .use { it.readText() }
-
-                // 2. Parse into List
-                val listType = object : TypeToken<List<ChineseAssociationJsonItem>>() {}.type
-                val associationList: List<ChineseAssociationJsonItem> = Gson().fromJson(jsonString, listType)
-
-                // 3. Iterate through every Zodiac entry in the JSON
-                associationList.forEach { item ->
-
-                    // A. Find the Zodiac ID (e.g., Look up "rat" -> Get ID 1)
-                    val zodiacId = chineseDao.getChineseSignIdByKey(item.zodiacKey)
-
-                    if (zodiacId != null) {
-                        // B. Iterate through the stones listed for this Zodiac
-                        item.stoneKeys.forEach { stoneNameKey ->
-
-                            // C. Find the Stone ID (e.g., Look up "garnet" -> Get ID 12)
-                            val stoneId = stoneDao.getStoneIdByKey(stoneNameKey)
-
-                            if (stoneId != null) {
-                                // D. Create the Link
-                                val crossRef = StoneChineseZodiacCrossRef(
-                                    stoneId = stoneId,
-                                    chineseZodiacSignId = zodiacId
-                                )
-
-                                // E. Insert into DB
-                                stoneDao.insertChineseZodiacCrossRef(crossRef)
-                            } else {
-                                // Log warning if stone name in JSON doesn't match any stone in DB
-                                Log.w("AppDatabase", "Skip Link: Stone '$stoneNameKey' not found in DB.")
-                            }
-                        }
-                    } else {
-                        Log.w("AppDatabase", "Skip Link: Zodiac '${item.zodiacKey}' not found in DB.")
-                    }
-                }
-                Log.d("AppDatabase", "Chinese Zodiac associations finished.")
-
-            } catch (e: Exception) {
-                Log.e("AppDatabase", "Error parsing Association JSON", e)
-            }
-
-            // --- 4. Populate Chakras ---
-            try {
-                // 1. Load the JSON file
-                val jsonString = context.assets.open("initial_chakras.json") // Make sure this file exists in assets
-                    .bufferedReader()
-                    .use { it.readText() }
-
-                // 2. Parse JSON using Gson
+                Log.d("AppDatabase", "Populating Chakras...")
+                val jsonString = context.assets.open("initial_chakras.json").bufferedReader().use { it.readText() }
                 val listType = object : TypeToken<List<ChakraJsonItem>>() {}.type
-                val chakraList: List<ChakraJsonItem> = Gson().fromJson(jsonString, listType)
+                val list: List<ChakraJsonItem> = Gson().fromJson(jsonString, listType)
 
-                // 3. Map JSON string keys to Android Drawable Resources
-                // Ensure these drawables exist in your res/drawable folder
-                val chakraDrawableMap = mapOf(
+                val drawableMap = mapOf(
                     "root_chakra" to R.drawable.root_chakra,
                     "sacral_chakra" to R.drawable.sacral_chakra,
                     "solar_plexus_chakra" to R.drawable.solar_plexus_chakra,
@@ -489,48 +392,26 @@ abstract class AppDatabase : RoomDatabase() {
                     "crown_chakra" to R.drawable.crown_chakra
                 )
 
-                // 4. Loop and Insert
-                chakraList.forEach { item ->
-                    // A. Get the Icon
-                    val iconRes = chakraDrawableMap[item.imageBase]
-                        ?: R.drawable.root_chakra // Fallback icon to prevent crashes
+                list.forEach { item ->
+                    val icon = drawableMap[item.imageBase] ?: R.drawable.root_chakra
+                    val chakra = Chakra(sanskritName = item.key, iconResId = icon)
 
-                    // B. Create the Parent Entity
-                    val chakra = Chakra(
-                        sanskritName = item.key,
-                        iconResId = iconRes
-                    )
-
-                    // C. Insert Parent (Handling IGNORE strategy)
-                    var parentId = chakraDao.insertChakra(chakra)
-
+                    var parentId = dao.insertChakra(chakra)
                     if (parentId == -1L) {
-                        // The Chakra already exists, fetch its real ID using the unique Sanskrit name
-                        val existingId = chakraDao.getChakraIdByName(item.key)
-
-                        if (existingId != null) {
-                            parentId = existingId.toLong()
-                        } else {
-                            Log.e("DB", "Error: Chakra ${item.key} exists but ID not found.")
-                            return@forEach // Skip this iteration
-                        }
+                        val existingId = dao.getChakraIdByName(item.key)
+                        if (existingId != null) parentId = existingId.toLong()
+                        else return@forEach
                     }
 
-                    // D. Map JSON Translations to Entity Translations
-                    val translations = item.translations.map { (langKey, data) ->
-                        val code = mapLanguageCode(langKey) // Use your existing helper function
-
+                    val translations = item.translations.map { (lang, data) ->
                         ChakraTranslation(
-                            chakraId = parentId.toInt(), // Link to the Parent ID retrieved above
-                            languageCode = code,
+                            chakraId = parentId.toInt(),
+                            languageCode = mapLanguageCode(lang),
                             name = data.name,
                             description = data.description,
                             location = data.location,
-
-                            // Safe mapping for new fields (defaults to empty string if missing in JSON)
                             rulingPlanet = data.rulingPlanet,
                             element = data.element,
-
                             stoneColors = data.stoneColors,
                             healingQualities = data.healingQualities,
                             stones = data.stones,
@@ -540,17 +421,152 @@ abstract class AppDatabase : RoomDatabase() {
                             essentialOils = data.essentialOils
                         )
                     }
-
-                    // E. Insert Translations
-                    chakraDao.insertChakraTranslations(translations)
+                    dao.insertChakraTranslations(translations)
                 }
-                Log.d("AppDatabase", "Chakras populated successfully.")
-
+                Log.d("AppDatabase", "Chakras populated.")
             } catch (e: Exception) {
                 Log.e("AppDatabase", "Error parsing Chakra JSON", e)
             }
+        }
 
-            Log.d("AppDatabase", "Finished populating database.")
+        private suspend fun linkStonesToChineseZodiacs(stoneDao: StoneDao, chineseDao: ChineseZodiacSignDao) {
+            try {
+                Log.d("AppDatabase", "Linking Stones to Chinese Zodiacs...")
+                val jsonString = context.assets.open("initial_chinese_associations.json").bufferedReader().use { it.readText() }
+                val listType = object : TypeToken<List<ZodiacStoneAssociationJsonItem>>() {}.type
+                val list: List<ZodiacStoneAssociationJsonItem> = Gson().fromJson(jsonString, listType)
+
+                list.forEach { item ->
+                    val zodiacId = chineseDao.getChineseSignIdByKey(item.zodiacKey)
+
+                    if (zodiacId != null) {
+                        item.stoneKeys.forEach { stoneKey ->
+                            val stoneId = stoneDao.getStoneIdByKey(stoneKey)
+                            if (stoneId != null) {
+                                stoneDao.insertChineseZodiacCrossRef(
+                                    StoneChineseZodiacCrossRef(stoneId = stoneId, chineseZodiacSignId = zodiacId)
+                                )
+                            } else {
+                                Log.w("AppDatabase", "Skip Link: Stone '$stoneKey' not found.")
+                            }
+                        }
+                    } else {
+                        Log.w("AppDatabase", "Skip Link: Zodiac '${item.zodiacKey}' not found.")
+                    }
+                }
+                Log.d("AppDatabase", "Linking finished.")
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error linking Chinese Zodiacs", e)
+            }
+        }
+
+
+
+        private suspend fun linkStonesToWesternZodiacs(stoneDao: StoneDao, zodiacDao: ZodiacSignDao) {
+            try {
+                Log.d("AppDatabase", "Linking Stones to Western Zodiacs...")
+                val jsonString = context.assets.open("initial_zodiac_associations.json")
+                    .bufferedReader()
+                    .use { it.readText() }
+
+                val listType = object : TypeToken<List<ZodiacStoneAssociationJsonItem>>() {}.type
+                val list: List<ZodiacStoneAssociationJsonItem> = Gson().fromJson(jsonString, listType)
+
+                list.forEach { item ->
+                    val zodiacId = zodiacDao.getZodiacSignIdByKey(item.zodiacKey)
+
+                    if (zodiacId != null) {
+                        item.stoneKeys.forEach { stoneKey ->
+                            val stoneId = stoneDao.getStoneIdByKey(stoneKey)
+
+                            if (stoneId != null) {
+                                stoneDao.insertZodiacCrossRef(
+                                    StoneZodiacCrossRef(stoneId = stoneId, zodiacSignId = zodiacId)
+                                )
+                            } else {
+                                Log.w("AppDatabase", "Skip Link: Stone '$stoneKey' not found.")
+                            }
+                        }
+                    } else {
+                        Log.w("AppDatabase", "Skip Link: Zodiac '${item.zodiacKey}' not found.")
+                    }
+                }
+                Log.d("AppDatabase", "Western Linking finished.")
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error linking Western Zodiacs", e)
+            }
+        }
+
+        private suspend fun linkStonesToChakras(stoneDao: StoneDao, chakraDao: ChakraDao) {
+            try {
+                Log.d("AppDatabase", "Linking Stones to Chakras...")
+                val jsonString = context.assets.open("initial_chakra_associations.json")
+                    .bufferedReader()
+                    .use { it.readText() }
+
+                val listType = object : TypeToken<List<ChakraAssociationJsonItem>>() {}.type
+                val list: List<ChakraAssociationJsonItem> = Gson().fromJson(jsonString, listType)
+
+                list.forEach { item ->
+                    val chakraId = chakraDao.getChakraIdByName(item.chakraKey)
+
+                    if (chakraId != null) {
+                        item.stoneKeys.forEach { stoneKey ->
+                            val stoneId = stoneDao.getStoneIdByKey(stoneKey)
+
+                            if (stoneId != null) {
+                                chakraDao.insertStoneChakraCrossRef(
+                                    StoneChakraCrossRef(stoneId = stoneId, chakraId = chakraId)
+                                )
+                            } else {
+                                Log.w("AppDatabase", "Skip Link: Stone '$stoneKey' not found.")
+                            }
+                        }
+                    } else {
+                        Log.w("AppDatabase", "Skip Link: Chakra '${item.chakraKey}' not found.")
+                    }
+                }
+                Log.d("AppDatabase", "Chakra linking finished.")
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error linking Chakras", e)
+            }
+        }
+
+        private suspend fun linkStonesToBenefits(stoneDao: StoneDao, benefitDao: BenefitDao) {
+            try {
+                Log.d("AppDatabase", "Linking Stones to Benefits...")
+                val jsonString = context.assets.open("initial_benefit_associations.json")
+                    .bufferedReader()
+                    .use { it.readText() }
+
+                val listType = object : TypeToken<List<BenefitAssociationJsonItem>>() {}.type
+                val list: List<BenefitAssociationJsonItem> = Gson().fromJson(jsonString, listType)
+
+                list.forEach { item ->
+                    val benefitId = benefitDao.getBenefitIdByName(item.benefitKey)
+
+                    if (benefitId != null) {
+                        item.stoneKeys.forEach { stoneKey ->
+                            // 2. Get Stone ID
+                            val stoneId = stoneDao.getStoneIdByKey(stoneKey)
+
+                            if (stoneId != null) {
+                                // 3. Insert Link
+                                benefitDao.insertStoneBenefitCrossRef(
+                                    StoneBenefitCrossRef(stoneId = stoneId, benefitId = benefitId)
+                                )
+                            } else {
+                                Log.w("AppDatabase", "Skip Link: Stone '$stoneKey' not found.")
+                            }
+                        }
+                    } else {
+                        Log.w("AppDatabase", "Skip Link: Benefit '${item.benefitKey}' not found.")
+                    }
+                }
+                Log.d("AppDatabase", "Benefit linking finished.")
+            } catch (e: Exception) {
+                Log.e("AppDatabase", "Error linking Benefits", e)
+            }
         }
 
         private fun mapLanguageCode(key: String): LanguageCode {
@@ -566,105 +582,5 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
     }
-    data class ZodiacJsonItem(
-        @SerializedName("key") val key: String,
-        @SerializedName("start_date") val startDate: String,
-        @SerializedName("end_date") val endDate: String,
-        @SerializedName("image_name") val imageName: String,
-        @SerializedName("translations") val translations: Map<String, ZodiacJsonTranslation>
-    )
-
-    data class ZodiacJsonTranslation(
-        @SerializedName("name") val name: String,
-        @SerializedName("element") val element: String,
-        @SerializedName("planet") val planet: String,
-        @SerializedName("desc") val description: String
-    )
-
-
-
-    data class BenefitJsonItem(
-        @SerializedName("key") val key: String,
-        @SerializedName("image_name") val imageName: String,
-        @SerializedName("translations") val translations: Map<String, BenefitJsonTranslation>
-    )
-
-    data class BenefitJsonTranslation(
-        @SerializedName("name") val name: String
-    )
-
-
-
-    data class ChineseZodiacJsonItem(
-        @SerializedName("key") val key: String,
-        @SerializedName("image_base") val imageBase: String,
-        @SerializedName("years") val years: String,
-        @SerializedName("translations") val translations: Map<String, ChineseZodiacTranslationData>
-    )
-
-    data class ChineseZodiacTranslationData(
-        @SerializedName("name") val name: String,
-        @SerializedName("desc") val description: String,
-        @SerializedName("traits") val traits: String,
-        @SerializedName("best_match") val bestMatch: String,
-        @SerializedName("worst_match") val worstMatch: String,
-        @SerializedName("compatibility_desc") val compatibilityDesc: String,
-        @SerializedName("gemstone_desc") val gemstoneDesc: String
-    )
-
-    // Helper class to hold the triplet of images safely
-    data class ChineseIcons(
-        val icon: Int,
-        val border: Int,
-        val color: Int
-    )
-
-
-
-    data class StoneJsonItem(
-        // Matches "image_name": "yellow_jasper" in your JSON
-        @SerializedName("image_name") val imageName: String,
-        @SerializedName("translations") val translations: Map<String, StoneJsonTranslationData>
-    )
-
-    data class StoneJsonTranslationData(
-        @SerializedName("name") val name: String,
-        @SerializedName("desc") val description: String
-    )
-
-
-
-    data class ChineseAssociationJsonItem(
-        @SerializedName("zodiac_key") val zodiacKey: String,
-        @SerializedName("stones") val stoneKeys: List<String>
-    )
-
-
-
-
-
-
-    data class ChakraJsonItem(
-        val key: String,
-        @SerializedName("image_base") val imageBase: String,
-        val translations: Map<String, ChakraTranslationJsonData>
-    )
-
-    data class ChakraTranslationJsonData(
-        val name: String,
-        @SerializedName("desc") val description: String,
-        val location: String,
-
-        // --- NEW FIELDS ---
-        @SerializedName("ruling_planet") val rulingPlanet: String,
-        val element: String,
-
-        @SerializedName("stone_colors") val stoneColors: String,
-        @SerializedName("healing_qualities") val healingQualities: String,
-        val stones: String,
-        @SerializedName("body_placement") val bodyPlacement: String,
-        @SerializedName("house_placement") val housePlacement: String,
-        val herbs: String,
-        @SerializedName("essential_oils") val essentialOils: String
-    )
 }
+

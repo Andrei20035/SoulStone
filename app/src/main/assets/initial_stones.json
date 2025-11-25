@@ -360,7 +360,7 @@
     }
   },
   {
-    "image_name": "hawk_eye_stone",
+    "image_name": "hawk_eye",
     "translations": {
       "en": { "name": "Hawk Eye", "desc": "Hawk Eye is a stone of perspective and vision. It helps you see the 'big picture' and gain insight into complex situations. It is very grounding, protecting the base chakra and dissolving restrictive negative thought patterns." },
       "es": { "name": "Ojo de Halcón", "desc": "El Ojo de Halcón es una piedra de perspectiva y visión. Ayuda a ver el 'panorama general' y comprender situaciones complejas. Es muy enraizante, protege el chakra base y disuelve patrones de pensamiento negativos." },
@@ -396,15 +396,36 @@
     }
   },
   {
-    "image_name": "jade",
+    "image_name": "green_jade",
     "translations": {
-      "en": { "name": "Jade", "desc": "It is the stone of good fortune. It helps to find the truth or the path, strengthens love and its continuity, and absorbs the positive energies of the universe. It provides mental and emotional balance and is a symbol of purity, serenity, and wisdom." },
-      "es": { "name": "Jade", "desc": "Es la piedra de la buena fortuna. Ayuda a encontrar la verdad o el camino, fortalece el amor y absorbe las energías positivas del universo. Proporciona equilibrio mental y emocional y es símbolo de pureza, serenidad y sabiduría." },
-      "fr": { "name": "Jade", "desc": "C'est la pierre de la bonne fortune. Elle aide à trouver la vérité, renforce l'amour et absorbe les énergies positives. Elle procure un équilibre mental et émotionnel et symbolise la pureté, la sérénité et la sagesse." },
-      "it": { "name": "Giada", "desc": "È la pietra della buona fortuna. Aiuta a trovare la verità, rafforza l'amore e assorbe le energie positive. Fornisce equilibrio mentale ed emotivo ed è simbolo di purezza, serenità e saggezza." },
-      "de": { "name": "Jade", "desc": "Der Stein des Glücks. Er hilft, die Wahrheit zu finden, stärkt die Liebe und absorbiert positive Energien. Er sorgt für geistiges und emotionales Gleichgewicht und ist ein Symbol für Reinheit, Gelassenheit und Weisheit." },
-      "pl": { "name": "Jadeit", "desc": "To kamień szczęścia. Pomaga znaleźć prawdę, wzmacnia miłość i pochłania pozytywne energie wszechświata. Zapewnia równowagę psychiczną i emocjonalną, jest symbolem czystości, spokoju i mądrości." },
-      "ru": { "name": "Нефрит", "desc": "Камень удачи. Помогает найти истину, укрепляет любовь и поглощает положительные энергии. Обеспечивает ментальное и эмоциональное равновесие, является символом чистоты, безмятежности и мудрости." }
+      "en": {
+        "name": "Green Jade",
+        "desc": "It is the stone of good fortune. It helps to find the truth or the path, strengthens love and its continuity, and absorbs the positive energies of the universe. It provides mental and emotional balance and is a symbol of purity, serenity, and wisdom."
+      },
+      "es": {
+        "name": "Jade Verde",
+        "desc": "Es la piedra de la buena fortuna. Ayuda a encontrar la verdad o el camino, fortalece el amor y absorbe las energías positivas del universo. Proporciona equilibrio mental y emocional y es símbolo de pureza, serenidad y sabiduría."
+      },
+      "fr": {
+        "name": "Jade Vert",
+        "desc": "C'est la pierre de la bonne fortune. Elle aide à trouver la vérité, renforce l'amour et absorbe les énergies positives. Elle procure un équilibre mental et émotionnel et symbolise la pureté, la sérénité et la sagesse."
+      },
+      "it": {
+        "name": "Giada Verde",
+        "desc": "È la pietra della buona fortuna. Aiuta a trovare la verità, rafforza l'amore e assorbe le energie positive. Fornisce equilibrio mentale ed emotivo ed è simbolo di purezza, serenità e saggezza."
+      },
+      "de": {
+        "name": "Grüner Jade",
+        "desc": "Der Stein des Glücks. Er hilft, die Wahrheit zu finden, stärkt die Liebe und absorbiert positive Energien. Er sorgt für geistiges und emotionales Gleichgewicht und ist ein Symbol für Reinheit, Gelassenheit und Weisheit."
+      },
+      "pl": {
+        "name": "Zielony Jadeit",
+        "desc": "To kamień szczęścia. Pomaga znaleźć prawdę, wzmacnia miłość i pochłania pozytywne energie wszechświata. Zapewnia równowagę psychiczną i emocjonalną, jest symbolem czystości, spokoju i mądrości."
+      },
+      "ru": {
+        "name": "Зелёный нефрит",
+        "desc": "Камень удачи. Помогает найти истину, укрепляет любовь и поглощает положительные энергии. Обеспечивает ментальное и эмоциональное равновесие, является символом чистоты, безмятежности и мудрости."
+      }
     }
   },
   {
@@ -780,7 +801,7 @@
     }
   },
   {
-    "image_name": "rodocrosite",
+    "image_name": "rhodochrosite",
     "translations": {
       "en": { "name": "Rhodochrosite", "desc": "Rhodochrosite represents selfless love and compassion. It is excellent for the heart and relationships, especially for people who feel unloved. It helps heal the inner child and traumatic emotional experiences." },
       "es": { "name": "Rodocrosita", "desc": "La rodocrosita representa el amor desinteresado y la compasión. Es excelente para el corazón y las relaciones, especialmente para quienes no se sienten amados. Ayuda a sanar al niño interior y traumas emocionales." },
@@ -840,7 +861,7 @@
     }
   },
   {
-    "image_name": "serpentine_stone",
+    "image_name": "serpentine",
     "translations": {
       "en": { "name": "Serpentine", "desc": "Serpentine promotes grounding and spiritual exploration. It activates psychic abilities and helps recover wisdom. It works with the 4th chakra. Considered a cleansing stone, it helps to calm migraines and muscle pain." },
       "es": { "name": "Serpentina", "desc": "La serpentina promueve el enraizamiento y la exploración espiritual. Activa habilidades psíquicas y recupera sabiduría. Trabaja con el 4º chakra. Piedra de limpieza, calma migrañas y dolor muscular." },

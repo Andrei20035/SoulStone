@@ -103,6 +103,9 @@ interface ZodiacSignDao {
     @Query("SELECT * FROM zodiac_signs WHERE name = :signName LIMIT 1")
     suspend fun getZodiacSignByName(signName: String): ZodiacSign?
 
+    @Query("SELECT id FROM zodiac_signs WHERE name = :key COLLATE NOCASE LIMIT 1")
+    suspend fun getZodiacSignIdByKey(key: String): Int?
+
     @Insert
     suspend fun insertTranslations(translations: List<ZodiacSignTranslation>)
 

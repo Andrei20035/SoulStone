@@ -1,0 +1,263 @@
+[
+  {
+    "benefit_key": "anger_and_stress_relief",
+    "stones": [
+      "amethyst",
+      "lepidolite",
+      "howlite",
+      "blue_agate",
+      "blue_calcite",
+      "smoky_quartz",
+      "rose_quartz",
+      "blue_chalcedony"
+    ]
+  },
+  {
+    "benefit_key": "anxiety_and_depression",
+    "stones": [
+      "lepidolite",
+      "smoky_quartz",
+      "rose_quartz",
+      "amber",
+      "citrine",
+      "blue_chalcedony",
+      "shungite"
+    ]
+  },
+  {
+    "benefit_key": "career_and_money",
+    "stones": [
+      "citrine",
+      "pyrite",
+      "green_aventurine",
+      "green_jade",
+      "tiger_eye",
+      "malachite",
+      "red_garnet",
+      "amazonite"
+    ]
+  },
+  {
+    "benefit_key": "clarity_and_focus",
+    "stones": [
+      "fluorite",
+      "clear_quartz",
+      "hematite",
+      "sodalite",
+      "tiger_eye",
+      "quartz_crystal",
+      "yellow_fluorite"
+    ]
+  },
+  {
+    "benefit_key": "communication",
+    "stones": [
+      "aquamarine",
+      "lapis_lazuli",
+      "sodalite",
+      "blue_agate",
+      "turquoise",
+      "blue_kyanite",
+      "angelite",
+      "chrysocolla"
+    ]
+  },
+  {
+    "benefit_key": "creativity",
+    "stones": [
+      "carnelian",
+      "orange_calcite",
+      "citrine",
+      "apatite",
+      "opal",
+      "red_aventurine",
+      "orange_aventurine",
+      "sunstone"
+    ]
+  },
+  {
+    "benefit_key": "emotional_balance",
+    "stones": [
+      "moon_stone",
+      "rhodonite",
+      "rose_quartz",
+      "unakite",
+      "malachite",
+      "chrysoprase",
+      "pink_tourmaline",
+      "lepidolite"
+    ]
+  },
+  {
+    "benefit_key": "enhanced_focus",
+    "stones": [
+      "fluorite",
+      "hematite",
+      "clear_quartz",
+      "yellow_fluorite",
+      "pyrite",
+      "sodalite",
+      "tiger_eye"
+    ]
+  },
+  {
+    "benefit_key": "good_fortune_and_luck",
+    "stones": [
+      "green_aventurine",
+      "green_jade",
+      "sunstone",
+      "tiger_eye",
+      "pyrite",
+      "amazonite",
+      "citrine",
+      "peridot"
+    ]
+  },
+  {
+    "benefit_key": "intuition",
+    "stones": [
+      "amethyst",
+      "lapis_lazuli",
+      "moon_stone",
+      "labradorite",
+      "sodalite",
+      "purple_fluorite",
+      "angelite",
+      "selenite"
+    ]
+  },
+  {
+    "benefit_key": "love_relationships",
+    "stones": [
+      "rose_quartz",
+      "rhodonite",
+      "rhodochrosite",
+      "emerald",
+      "malachite",
+      "pink_tourmaline",
+      "pink_quartz",
+      "red_garnet"
+    ]
+  },
+  {
+    "benefit_key": "manifestation",
+    "stones": [
+      "citrine",
+      "clear_quartz",
+      "pyrite",
+      "quartz_crystal",
+      "topaz",
+      "obsidian",
+      "labradorite",
+      "green_aventurine"
+    ]
+  },
+  {
+    "benefit_key": "mental_health",
+    "stones": [
+      "amethyst",
+      "lepidolite",
+      "clear_quartz",
+      "blue_agate",
+      "smoky_quartz",
+      "rose_quartz",
+      "black_tourmaline"
+    ]
+  },
+  {
+    "benefit_key": "mindfulness",
+    "stones": [
+      "amethyst",
+      "clear_quartz",
+      "selenite",
+      "howlite",
+      "fluorite",
+      "blue_calcite",
+      "aquamarine"
+    ]
+  },
+  {
+    "benefit_key": "personal_growth",
+    "stones": [
+      "labradorite",
+      "moon_stone",
+      "malachite",
+      "prehnite",
+      "mookaite",
+      "amethyst"
+    ]
+  },
+  {
+    "benefit_key": "physical_health",
+    "stones": [
+      "bloodstone",
+      "red_jasper",
+      "green_aventurine",
+      "shungite",
+      "red_garnet",
+      "unakite",
+      "emerald",
+      "amber"
+    ]
+  },
+  {
+    "benefit_key": "protection",
+    "stones": [
+      "black_tourmaline",
+      "black_obsidian",
+      "shungite",
+      "hematite",
+      "tiger_eye",
+      "obsidian",
+      "onyx",
+      "bronzite"
+    ]
+  },
+  {
+    "benefit_key": "self_control",
+    "stones": [
+      "onyx",
+      "hematite",
+      "amethyst",
+      "sodalite",
+      "red_jasper",
+      "black_obsidian"
+    ]
+  },
+  {
+    "benefit_key": "spirituality",
+    "stones": [
+      "amethyst",
+      "selenite",
+      "clear_quartz",
+      "lapis_lazuli",
+      "angelite",
+      "sugilite",
+      "quartz_crystal",
+      "purple_sapphire"
+    ]
+  },
+  {
+    "benefit_key": "transformation",
+    "stones": [
+      "malachite",
+      "labradorite",
+      "obsidian",
+      "sugilite",
+      "shiva_lingam"
+    ]
+  },
+  {
+    "benefit_key": "vitality",
+    "stones": [
+      "carnelian",
+      "red_jasper",
+      "sunstone",
+      "red_garnet",
+      "ruby",
+      "bloodstone",
+      "tiger_eye",
+      "red_agate"
+    ]
+  }
+]

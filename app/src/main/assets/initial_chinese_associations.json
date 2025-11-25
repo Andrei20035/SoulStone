@@ -9,7 +9,7 @@
       "rose_quartz",
       "citrine",
       "moon_stone",
-      "tourmaline"
+      "black_tourmaline"
     ]
   },
   {
@@ -17,8 +17,8 @@
     "stones": [
       "aquamarine",
       "lapis_lazuli",
-      "jade",
-      "moss_agate",
+      "green_jade",
+      "red_agate",
       "emerald",
       "moon_stone",
       "citrine",
@@ -30,11 +30,11 @@
     "stones": [
       "ruby",
       "diamond",
-      "cats_eye",
+      "tiger_eye",
       "amethyst",
       "topaz",
-      "sapphire",
-      "jade",
+      "purple_sapphire",
+      "green_jade",
       "red_garnet"
     ]
   },
@@ -42,13 +42,13 @@
     "zodiac_key": "rabbit",
     "stones": [
       "pearl",
-      "sapphire",
+      "purple_sapphire",
       "emerald",
       "topaz",
       "moon_stone",
-      "jade",
+      "green_jade",
       "clear_quartz",
-      "nephrite"
+      "ruby"
     ]
   },
   {
@@ -57,9 +57,9 @@
       "amethyst",
       "ruby",
       "opal",
-      "sapphire",
+      "purple_sapphire",
       "amber",
-      "jade",
+      "green_jade",
       "diamond",
       "carnelian"
     ]
@@ -74,7 +74,7 @@
       "bloodstone",
       "malachite",
       "obsidian",
-      "jade"
+      "green_jade"
     ]
   },
   {
@@ -86,7 +86,7 @@
       "turquoise",
       "red_garnet",
       "emerald",
-      "jade",
+      "green_jade",
       "obsidian"
     ]
   },
@@ -94,9 +94,9 @@
     "zodiac_key": "goat",
     "stones": [
       "emerald",
-      "sapphire",
+      "purple_sapphire",
       "moon_stone",
-      "jade",
+      "green_jade",
       "amber",
       "peridot",
       "carnelian",
@@ -112,7 +112,7 @@
       "ruby",
       "red_garnet",
       "topaz",
-      "jade",
+      "green_jade",
       "agate"
     ]
   },
@@ -125,7 +125,7 @@
       "ruby",
       "amethyst",
       "agate",
-      "tourmaline",
+      "black_tourmaline",
       "tiger_eye"
     ]
   },
@@ -137,9 +137,9 @@
       "jasper",
       "moon_stone",
       "amber",
-      "sapphire",
-      "tourmaline",
-      "jade"
+      "purple_sapphire",
+      "black_tourmaline",
+      "green_jade"
     ]
   },
   {
@@ -150,9 +150,9 @@
       "amethyst",
       "red_garnet",
       "lapis_lazuli",
-      "beryl",
+      "amber",
       "coral",
-      "jade"
+      "green_jade"
     ]
   }
 ]

@@ -5,13 +5,48 @@
     "end_date": "Apr 19",
     "image_name": "aries",
     "translations": {
-      "en": { "name": "Aries", "element": "Fire", "planet": "Mars", "desc": "Aries is the first astrological sign, known for its fiery energy and leadership." },
-      "es": { "name": "Aries", "element": "Fuego", "planet": "Marte", "desc": "Aries es el primer signo astrológico, conocido por su energía ardiente y liderazgo." },
-      "fr": { "name": "Bélier", "element": "Feu", "planet": "Mars", "desc": "Le Bélier est le premier signe astrologique, connu pour son énergie ardente et son leadership." },
-      "it": { "name": "Ariete", "element": "Fuoco", "planet": "Marte", "desc": "L'Ariete è il primo segno zodiacale, noto per la sua energia ardente e la sua leadership." },
-      "de": { "name": "Widder", "element": "Feuer", "planet": "Mars", "desc": "Der Widder ist das erste Sternzeichen, bekannt für seine feurige Energie und Führungsstärke." },
-      "pl": { "name": "Baran", "element": "Ogień", "planet": "Mars", "desc": "Baran to pierwszy znak zodiaku, znany ze swojej ognistej energii i zdolności przywódczych." },
-      "ru": { "name": "Овен", "element": "Огонь", "planet": "Марс", "desc": "Овен — первый знак зодиака, известный своей огненной энергией и лидерством." }
+      "en": {
+        "name": "Aries",
+        "element": "Fire",
+        "planet": "Mars",
+        "desc": "The gems for Aries are associated with confidence, initiative, protection, nurturing our energy and vitality. Aries asks us to reflect on how we use our energy and move our body. It relates to taking action that is aligned with our sense of identity.\n\nCarnelian: confidence, initiatives, physical protection\nRed Jasper: physically grounding, protection, connecting and nurturing our energy and vitality\nYellow Jade: Luck, optimism, identity affirmation, independence & co-creation\nHematite: Mentally grounding, mental clearing, organization, concentration, focus\nChrysoprase: self-expression, abundance, love, joy, divine Truth\nBronzite: release of blockages, advancement through action, protection\nPrehnite: union of heart and will, unconditional love\nSerpentine: kundalini energy, fulfilling wishes, evolution\n\nThe traditional birthstone for Aries is diamond."
+      },
+      "es": {
+        "name": "Aries",
+        "element": "Fuego",
+        "planet": "Marte",
+        "desc": "Las gemas para Aries están asociadas con la confianza, la iniciativa, la protección, la nutrición de nuestra energía y la vitalidad. Aries nos pide reflexionar sobre cómo usamos nuestra energía y movemos nuestro cuerpo. Se relaciona con tomar acciones alineadas con nuestro sentido de identidad.\n\nCornalina: confianza, iniciativas, protección física\nJaspe Rojo: arraigo físico, protección, conexión y nutrición de nuestra energía y vitalidad\nJade Amarillo: Suerte, optimismo, afirmación de identidad, independencia y co-creación\nHematita: Arraigo mental, limpieza mental, organización, concentración, enfoque\nCrisoprasa: autoexpresión, abundancia, amor, alegría, Verdad divina\nBroncita: liberación de bloqueos, avance a través de la acción, protección\nPrehnita: unión de corazón y voluntad, amor incondicional\nSerpentina: energía kundalini, cumplimiento de deseos, evolución\n\nLa piedra de nacimiento tradicional para Aries es el diamante."
+      },
+      "fr": {
+        "name": "Bélier",
+        "element": "Feu",
+        "planet": "Mars",
+        "desc": "Les pierres pour le Bélier sont associées à la confiance, l'initiative, la protection, la nutrition de notre énergie et la vitalité. Le Bélier nous demande de réfléchir à la façon dont nous utilisons notre énergie et bougeons notre corps. Il s'agit de prendre des mesures alignées avec notre sens de l'identité.\n\nCornaline : confiance, initiatives, protection physique\nJaspe rouge : ancrage physique, protection, connexion et nutrition de notre énergie et vitalité\nJade jaune : Chance, optimisme, affirmation de l'identité, indépendance et co-création\nHématite : Ancrage mental, clarté mentale, organisation, concentration, focus\nChrysoprase : expression de soi, abondance, amour, joie, Vérité divine\nBronzite : libération des blocages, avancement par l'action, protection\nPrehnite : union du cœur et de la volonté, amour inconditionnel\nSerpentine : énergie kundalini, réalisation des souhaits, évolution\n\nLa pierre de naissance traditionnelle pour le Bélier est le diamant."
+      },
+      "it": {
+        "name": "Ariete",
+        "element": "Fuoco",
+        "planet": "Marte",
+        "desc": "Le gemme per l'Ariete sono associate alla fiducia, all'iniziativa, alla protezione, al nutrimento della nostra energia e vitalità. L'Ariete ci chiede di riflettere su come usiamo la nostra energia e muoviamo il nostro corpo. Si riferisce all'intraprendere azioni allineate con il nostro senso di identità.\n\nCorniola: fiducia, iniziative, protezione fisica\nDiaspro Rosso: radicamento fisico, protezione, connessione e nutrimento della nostra energia e vitalità\nGiada Gialla: Fortuna, ottimismo, affermazione dell'identità, indipendenza e co-creazione\nEmatite: Radicamento mentale, chiarezza mentale, organizzazione, concentrazione, focus\nCrisoprasio: autoespressione, abbondanza, amore, gioia, Verità divina\nBronzite: rilascio dei blocchi, avanzamento attraverso l'azione, protezione\nPrehnite: unione di cuore e volontà, amore incondizionato\nSerpentino: energia kundalini, realizzazione dei desideri, evoluzione\n\nLa pietra natale tradizionale per l'Ariete è il diamante."
+      },
+      "de": {
+        "name": "Widder",
+        "element": "Feuer",
+        "planet": "Mars",
+        "desc": "Die Edelsteine für den Widder sind mit Vertrauen, Initiative, Schutz, der Pflege unserer Energie und Vitalität verbunden. Der Widder fordert uns auf, darüber nachzudenken, wie wir unsere Energie nutzen und unseren Körper bewegen. Es geht darum, Maßnahmen zu ergreifen, die mit unserem Identitätsgefühl übereinstimmen.\n\nKarneol: Vertrauen, Initiativen, physischer Schutz\nRoter Jaspis: physische Erdung, Schutz, Verbindung und Pflege unserer Energie und Vitalität\nGelbe Jade: Glück, Optimismus, Identitätsbestätigung, Unabhängigkeit & Ko-Kreation\nHämatit: Mentale Erdung, mentale Klärung, Organisation, Konzentration, Fokus\nChrysopras: Selbstausdruck, Fülle, Liebe, Freude, göttliche Wahrheit\nBronzit: Lösen von Blockaden, Fortschritt durch Handeln, Schutz\nPrehnit: Vereinigung von Herz und Wille, bedingungslose Liebe\nSerpentin: Kundalini-Energie, Wunscherfüllung, Evolution\n\nDer traditionelle Geburtsstein für den Widder ist der Diamant."
+      },
+      "pl": {
+        "name": "Baran",
+        "element": "Ogień",
+        "planet": "Mars",
+        "desc": "Kamienie dla Barana kojarzone są z pewnością siebie, inicjatywą, ochroną, pielęgnowaniem naszej energii i witalności. Baran prosi nas o refleksję nad tym, jak wykorzystujemy naszą energię i poruszamy ciałem. Wiąże się to z podejmowaniem działań zgodnych z naszym poczuciem tożsamości.\n\nKarnelian: pewność siebie, inicjatywa, ochrona fizyczna\nCzerwony Jaspis: uziemienie fizyczne, ochrona, łączenie i pielęgnowanie naszej energii i witalności\nŻółty Jadeit: Szczęście, optymizm, afirmacja tożsamości, niezależność i współtworzenie\nHematyt: Uziemienie mentalne, oczyszczenie umysłu, organizacja, koncentracja, skupienie\nChryzopraz: wyrażanie siebie, obfitość, miłość, radość, boska Prawda\nBronzyt: uwalnianie blokad, postęp poprzez działanie, ochrona\nPrehnit: połączenie serca i woli, bezwarunkowa miłość\nSerpentyn: energia kundalini, spełnianie życzeń, ewolucja\n\nTradycyjnym kamieniem urodzinowym dla Barana jest diament."
+      },
+      "ru": {
+        "name": "Овен",
+        "element": "Огонь",
+        "planet": "Марс",
+        "desc": "Камни Овна ассоциируются с уверенностью, инициативой, защитой, питанием нашей энергии и жизненной силы. Овен просит нас задуматься о том, как мы используем свою энергию и двигаем своим телом. Это относится к действиям, которые согласуются с нашим чувством идентичности.\n\nСердолик: уверенность, инициативы, физическая защита\nКрасная яшма: физическое заземление, защита, соединение и питание нашей энергии и жизненной силы\nЖелтый нефрит: удача, оптимизм, утверждение идентичности, независимость и сотворчество\nГематит: ментальное заземление, ментальное очищение, организация, концентрация, фокус\nХризопраз: самовыражение, изобилие, любовь, радость, божественная Истина\nБронзит: освобождение от блокировок, продвижение через действие, защита\nПренит: союз сердца и воли, безусловная любовь\nЗмеевик: энергия кундалини, исполнение желаний, эволюция\n\nТрадиционный камень рождения для Овна — алмаз."
+      }
     }
   },
   {
@@ -20,13 +55,48 @@
     "end_date": "May 20",
     "image_name": "taurus",
     "translations": {
-      "en": { "name": "Taurus", "element": "Earth", "planet": "Venus", "desc": "Taurus is the second astrological sign, known for its grounded, practical, and reliable nature." },
-      "es": { "name": "Tauro", "element": "Tierra", "planet": "Venus", "desc": "Tauro es el segundo signo astrológico, conocido por su naturaleza práctica, firme y confiable." },
-      "fr": { "name": "Taureau", "element": "Terre", "planet": "Vénus", "desc": "Le Taureau est le deuxième signe astrologique, connu pour sa nature ancrée, pratique et fiable." },
-      "it": { "name": "Toro", "element": "Terra", "planet": "Venere", "desc": "Il Toro è il secondo segno zodiacale, noto per la sua natura radicata, pratica e affidabile." },
-      "de": { "name": "Stier", "element": "Erde", "planet": "Venus", "desc": "Der Stier ist das zweite Sternzeichen, bekannt für seine bodenständige, praktische und zuverlässige Art." },
-      "pl": { "name": "Byk", "element": "Ziemia", "planet": "Wenus", "desc": "Byk to drugi znak zodiaku, znany ze swojej uziemionej, praktycznej i niezawodnej natury." },
-      "ru": { "name": "Телец", "element": "Земля", "planet": "Венера", "desc": "Телец — второй знак зодиака, известный своей приземленностью, практичностью и надежностью." }
+      "en": {
+        "name": "Taurus",
+        "element": "Earth",
+        "planet": "Venus",
+        "desc": "The gems for Taurus are associated to loyalty, self-esteem, intuition, security and abundance.\nTaurus asks us to reflect on how we relate to our sense of security and wealth. It relates to physical possessions, material circumstances, livelihood, and also hedonistic enjoyment of the pleasures of life, through beautiful environments, good food and good company.\n\nEmerald: loyalty, friendship, emotional healing, abundance and wealth\nSodalite: truth, intuition, insights, creativity, self-expression\nTiger Eye: confidence, self-esteem, entrepreneurship, motivation\nPetrified Wood: security, stability, evolutionary insights\nMalachite: psychic protection, transformation, abundance, positive relationships\nGolden Chalcedony: evolution, harmony, healing, embodiment, inner knowledge\nHematite: will, mental clarity and processing\nPyrite: prosperity and personal power\n\nThe traditional birthstone for Taurus is emerald."
+      },
+      "es": {
+        "name": "Tauro",
+        "element": "Tierra",
+        "planet": "Venus",
+        "desc": "Las gemas para Tauro se asocian a la lealtad, autoestima, intuición, seguridad y abundancia.\nTauro nos pide reflexionar sobre cómo nos relacionamos con nuestro sentido de seguridad y riqueza. Se relaciona con posesiones físicas, circunstancias materiales, sustento y también el disfrute hedonista de los placeres de la vida, a través de entornos hermosos, buena comida y buena compañía.\n\nEsmeralda: lealtad, amistad, sanación emocional, abundancia y riqueza\nSodalita: verdad, intuición, perspicacia, creatividad, autoexpresión\nOjo de Tigre: confianza, autoestima, espíritu empresarial, motivación\nMadera Petrificada: seguridad, estabilidad, conocimientos evolutivos\nMalaquita: protección psíquica, transformación, abundancia, relaciones positivas\nCalcedonia Dorada: evolución, armonía, sanación, encarnación, conocimiento interior\nHematita: voluntad, claridad mental y procesamiento\nPirita: prosperidad y poder personal\n\nLa piedra de nacimiento tradicional para Tauro es la esmeralda."
+      },
+      "fr": {
+        "name": "Taureau",
+        "element": "Terre",
+        "planet": "Vénus",
+        "desc": "Les pierres pour le Taureau sont associées à la loyauté, l'estime de soi, l'intuition, la sécurité et l'abondance.\nLe Taureau nous demande de réfléchir à notre rapport à la sécurité et à la richesse. Il concerne les possessions physiques, les circonstances matérielles, les moyens de subsistance, ainsi que la jouissance hédoniste des plaisirs de la vie, à travers de beaux environnements, de la bonne nourriture et une bonne compagnie.\n\nÉmeraude : loyauté, amitié, guérison émotionnelle, abondance et richesse\nSodalite : vérité, intuition, perspicacité, créativité, expression de soi\nŒil de Tigre : confiance, estime de soi, esprit d'entreprise, motivation\nBois Pétrifié : sécurité, stabilité, perspectives évolutives\nMalachite : protection psychique, transformation, abondance, relations positives\nCalcédoine Dorée : évolution, harmonie, guérison, incarnation, connaissance intérieure\nHématite : volonté, clarté mentale et traitement\nPyrite : prospérité et pouvoir personnel\n\nLa pierre de naissance traditionnelle pour le Taureau est l'émeraude."
+      },
+      "it": {
+        "name": "Toro",
+        "element": "Terra",
+        "planet": "Venere",
+        "desc": "Le gemme per il Toro sono associate a lealtà, autostima, intuizione, sicurezza e abbondanza.\nIl Toro ci chiede di riflettere su come ci relazioniamo al nostro senso di sicurezza e ricchezza. Riguarda i beni fisici, le circostanze materiali, il sostentamento e anche il godimento edonistico dei piaceri della vita, attraverso ambienti belli, buon cibo e buona compagnia.\n\nSmeraldo: lealtà, amicizia, guarigione emotiva, abbondanza e ricchezza\nSodalite: verità, intuizione, intuizioni, creatività, autoespressione\nOcchio di Tigre: fiducia, autostima, imprenditorialità, motivazione\nLegno Pietrificato: sicurezza, stabilità, intuizioni evolutive\nMalachite: protezione psichica, trasformazione, abbondanza, relazioni positive\nCalcedonio Dorato: evoluzione, armonia, guarigione, incarnazione, conoscenza interiore\nEmatite: volontà, chiarezza mentale ed elaborazione\nPirite: prosperità e potere personale\n\nLa pietra natale tradizionale per il Toro è lo smeraldo."
+      },
+      "de": {
+        "name": "Stier",
+        "element": "Erde",
+        "planet": "Venus",
+        "desc": "Die Edelsteine für den Stier sind mit Loyalität, Selbstwertgefühl, Intuition, Sicherheit und Fülle verbunden.\nDer Stier fordert uns auf, darüber nachzudenken, wie wir uns zu unserem Gefühl von Sicherheit und Reichtum verhalten. Es bezieht sich auf physischen Besitz, materielle Umstände, Lebensunterhalt und auch den hedonistischen Genuss der Freuden des Lebens durch schöne Umgebungen, gutes Essen und gute Gesellschaft.\n\nSmaragd: Loyalität, Freundschaft, emotionale Heilung, Fülle und Reichtum\nSodalith: Wahrheit, Intuition, Erkenntnisse, Kreativität, Selbstausdruck\nTigerauge: Vertrauen, Selbstwertgefühl, Unternehmertum, Motivation\nVersteinertes Holz: Sicherheit, Stabilität, evolutionäre Erkenntnisse\nMalachit: psychischer Schutz, Transformation, Fülle, positive Beziehungen\nGoldener Chalcedon: Evolution, Harmonie, Heilung, Verkörperung, inneres Wissen\nHämatit: Wille, geistige Klarheit und Verarbeitung\nPyrit: Wohlstand und persönliche Kraft\n\nDer traditionelle Geburtsstein für den Stier ist der Smaragd."
+      },
+      "pl": {
+        "name": "Byk",
+        "element": "Ziemia",
+        "planet": "Wenus",
+        "desc": "Kamienie dla Byka kojarzone są z lojalnością, poczuciem własnej wartości, intuicją, bezpieczeństwem i obfitością.\nByk prosi nas o refleksję nad tym, jak odnosimy się do naszego poczucia bezpieczeństwa i bogactwa. Odnosi się to do posiadania dóbr fizycznych, warunków materialnych, środków do życia, a także hedonistycznego czerpania przyjemności z życia poprzez piękne otoczenie, dobre jedzenie i dobre towarzystwo.\n\nSzmaragd: lojalność, przyjaźń, uzdrawianie emocjonalne, obfitość i bogactwo\nSodalit: prawda, intuicja, wgląd, kreatywność, wyrażanie siebie\nTygrysie Oko: pewność siebie, poczucie własnej wartości, przedsiębiorczość, motywacja\nSkamieniałe Drewno: bezpieczeństwo, stabilność, ewolucyjne wglądy\nMalachit: ochrona psychiczna, transformacja, obfitość, pozytywne relacje\nZłoty Chalcedon: ewolucja, harmonia, uzdrawianie, ucieleśnienie, wiedza wewnętrzna\nHematyt: wola, jasność umysłu i przetwarzanie\nPiryt: dobrobyt i osobista moc\n\nTradycyjnym kamieniem urodzinowym dla Byka jest szmaragd."
+      },
+      "ru": {
+        "name": "Телец",
+        "element": "Земля",
+        "planet": "Венера",
+        "desc": "Камни Тельца ассоциируются с верностью, самооценкой, интуицией, безопасностью и изобилием.\nТелец просит нас задуматься о том, как мы относимся к своему чувству безопасности и богатства. Это касается физических владений, материальных обстоятельств, средств к существованию, а также гедонистического наслаждения удовольствиями жизни через красивую обстановку, хорошую еду и приятную компанию.\n\nИзумруд: верность, дружба, эмоциональное исцеление, изобилие и богатство\nСодалит: правда, интуиция, озарения, творчество, самовыражение\nТигровый глаз: уверенность, самооценка, предпринимательство, мотивация\nОкаменелое дерево: безопасность, стабильность, эволюционные озарения\nМалахит: психическая защита, трансформации, изобилие, позитивные отношения\nЗолотой халцедон: эволюция, гармония, исцеление, воплощение, внутреннее знание\nГематит: воля, ясность ума и обработка информации\nПирит: процветание и личная сила\n\nТрадиционный камень рождения для Тельца — изумруд."
+      }
     }
   },
   {
@@ -35,13 +105,48 @@
     "end_date": "Jun 20",
     "image_name": "gemini",
     "translations": {
-      "en": { "name": "Gemini", "element": "Air", "planet": "Mercury", "desc": "Gemini is the third astrological sign, known for its curious, adaptable, and communicative spirit." },
-      "es": { "name": "Géminis", "element": "Aire", "planet": "Mercurio", "desc": "Géminis es el tercer signo astrológico, conocido por su espíritu curioso, adaptable y comunicativo." },
-      "fr": { "name": "Gémeaux", "element": "Air", "planet": "Mercure", "desc": "Les Gémeaux sont le troisième signe astrologique, connu pour son esprit curieux, adaptable et communicatif." },
-      "it": { "name": "Gemelli", "element": "Aria", "planet": "Mercurio", "desc": "I Gemelli sono il terzo segno zodiacale, noti per il loro spirito curioso, adattabile e comunicativo." },
-      "de": { "name": "Zwillinge", "element": "Luft", "planet": "Merkur", "desc": "Zwillinge ist das dritte Sternzeichen, bekannt für seinen neugierigen, anpassungsfähigen und kommunikativen Geist." },
-      "pl": { "name": "Bliźnięta", "element": "Powietrze", "planet": "Merkury", "desc": "Bliźnięta to trzeci znak zodiaku, znany ze swojej ciekawości, zdolności adaptacyjnych i komunikatywności." },
-      "ru": { "name": "Близнецы", "element": "Воздух", "planet": "Меркурий", "desc": "Близнецы — третий знак зодиака, известный своей любознательностью, приспособляемостью и общительностью." }
+      "en": {
+        "name": "Gemini",
+        "element": "Air",
+        "planet": "Mercury",
+        "desc": "The gems for Gemini are associated to creative intellectual capabilities, ingenuity, expansive ideas, social connections and communication.\nGemini asks us to reflect on how we relate to learning through our relationships, and how we communicate with others. It also invites us to reflect on our intimate circle of friends and acquaintances.\n\nOrange Calcite: creativity, positive energy, willpower, removes energy blockages\nSerpentine: energetic pathways, improvement, assistance, wishes and desires\nKyanite: Truth and alignment, balanced self-expression, public speaking\nHowlite: mental clarity, patience, focus, memory\nBlue Lace Agate: spiritual evolution, clarity and confidence\nBlue Chalcedony: benevolence, kindness, inner knowledge, integrity\nDalmatian Jasper: mindset upgrade and play\nMoonstone: mystery, self-discovery, intuition, insight, dreams, the goddess\n\nThe traditional birthstone for Gemini is agate."
+      },
+      "es": {
+        "name": "Géminis",
+        "element": "Aire",
+        "planet": "Mercurio",
+        "desc": "Las gemas para Géminis se asocian a capacidades intelectuales creativas, ingenio, ideas expansivas, conexiones sociales y comunicación.\nGéminis nos pide reflexionar sobre cómo nos relacionamos con el aprendizaje a través de nuestras relaciones y cómo nos comunicamos con los demás. También nos invita a reflexionar sobre nuestro círculo íntimo de amigos y conocidos.\n\nCalcita Naranja: creatividad, energía positiva, fuerza de voluntad, elimina bloqueos energéticos\nSerpentina: vías energéticas, mejora, asistencia, deseos y anhelos\nCianita: Verdad y alineación, autoexpresión equilibrada, oratoria\nHowlita: claridad mental, paciencia, enfoque, memoria\nÁgata de Encaje Azul: evolución espiritual, claridad y confianza\nCalcedonia Azul: benevolencia, amabilidad, conocimiento interior, integridad\nJaspe Dálmata: mejora de mentalidad y juego\nPiedra de Luna: misterio, autodescubrimiento, intuición, perspicacia, sueños, la diosa\n\nLa piedra de nacimiento tradicional para Géminis es el ágata."
+      },
+      "fr": {
+        "name": "Gémeaux",
+        "element": "Air",
+        "planet": "Mercure",
+        "desc": "Les pierres pour les Gémeaux sont associées aux capacités intellectuelles créatives, à l'ingéniosité, aux idées expansives, aux liens sociaux et à la communication.\nLes Gémeaux nous demandent de réfléchir à la façon dont nous apprenons à travers nos relations et comment nous communiquons avec les autres. Ils nous invitent également à réfléchir sur notre cercle intime d'amis et de connaissances.\n\nCalcite orange : créativité, énergie positive, volonté, élimine les blocages énergétiques\nSerpentine : voies énergétiques, amélioration, assistance, souhaits et désirs\nCyanite : Vérité et alignement, expression de soi équilibrée, prise de parole en public\nHowlite : clarté mentale, patience, concentration, mémoire\nAgate dentelle bleue : évolution spirituelle, clarté et confiance\nCalcédoine bleue : bienveillance, gentillesse, connaissance intérieure, intégrité\nJaspe dalmatien : amélioration de l'état d'esprit et jeu\nPierre de lune : mystère, découverte de soi, intuition, perspicacité, rêves, la déesse\n\nLa pierre de naissance traditionnelle pour les Gémeaux est l'agate."
+      },
+      "it": {
+        "name": "Gemelli",
+        "element": "Aria",
+        "planet": "Mercurio",
+        "desc": "Le gemme per i Gemelli sono associate a capacità intellettuali creative, ingegno, idee espansive, connessioni sociali e comunicazione.\nI Gemelli ci chiedono di riflettere su come ci relazioniamo all'apprendimento attraverso le nostre relazioni e su come comunichiamo con gli altri. Ci invita anche a riflettere sulla nostra cerchia intima di amici e conoscenti.\n\nCalcite Arancione: creatività, energia positiva, forza di volontà, rimuove i blocchi energetici\nSerpentino: percorsi energetici, miglioramento, assistenza, desideri e aspirazioni\nCianite: Verità e allineamento, autoespressione equilibrata, parlare in pubblico\nHowlite: chiarezza mentale, pazienza, concentrazione, memoria\nAgata dal Pizzo Blu: evoluzione spirituale, chiarezza e fiducia\nCalcedonio Blu: benevolenza, gentilezza, conoscenza interiore, integrità\nDiaspro Dalmata: aggiornamento della mentalità e gioco\nPietra di Luna: mistero, scoperta di sé, intuizione, intuito, sogni, la dea\n\nLa pietra natale tradizionale per i Gemelli è l'agata."
+      },
+      "de": {
+        "name": "Zwillinge",
+        "element": "Luft",
+        "planet": "Merkur",
+        "desc": "Die Edelsteine für Zwillinge sind mit kreativen intellektuellen Fähigkeiten, Einfallsreichtum, expansiven Ideen, sozialen Verbindungen und Kommunikation verbunden.\nZwillinge fordern uns auf, darüber nachzudenken, wie wir durch unsere Beziehungen lernen und wie wir mit anderen kommunizieren. Es lädt uns auch ein, über unseren engen Kreis von Freunden und Bekannten nachzudenken.\n\nOrangencalcit: Kreativität, positive Energie, Willenskraft, löst Energieblockaden\nSerpentin: energetische Pfade, Verbesserung, Unterstützung, Wünsche und Begehren\nKyanit: Wahrheit und Ausrichtung, ausgewogener Selbstausdruck, öffentliches Reden\nHowlith: geistige Klarheit, Geduld, Fokus, Gedächtnis\nBlauachat: spirituelle Evolution, Klarheit und Vertrauen\nBlauer Chalcedon: Wohlwollen, Freundlichkeit, inneres Wissen, Integrität\nDalmatinerjaspis: Mindset-Upgrade und Spiel\nMondstein: Geheimnis, Selbstfindung, Intuition, Einsicht, Träume, die Göttin\n\nDer traditionelle Geburtsstein für Zwillinge ist der Achat."
+      },
+      "pl": {
+        "name": "Bliźnięta",
+        "element": "Powietrze",
+        "planet": "Merkury",
+        "desc": "Kamienie dla Bliźniąt kojarzone są z kreatywnymi zdolnościami intelektualnymi, pomysłowością, ekspansywnymi ideami, kontaktami społecznymi i komunikacją.\nBliźnięta proszą nas o refleksję nad tym, jak odnosimy się do uczenia się poprzez nasze relacje i jak komunikujemy się z innymi. Zachęcają nas również do refleksji nad naszym bliskim kręgiem przyjaciół i znajomych.\n\nPomarańczowy Kalcyt: kreatywność, pozytywna energia, siła woli, usuwa blokady energetyczne\nSerpentyn: ścieżki energetyczne, poprawa, pomoc, życzenia i pragnienia\nCyjanit: Prawda i zestrojenie, zrównoważone wyrażanie siebie, wystąpienia publiczne\nHowlit: jasność umysłu, cierpliwość, skupienie, pamięć\nAgat koronkowy: duchowa ewolucja, jasność i pewność siebie\nNiebieski Chalcedon: życzliwość, dobroć, wiedza wewnętrzna, integralność\nJaspis Dalmatyński: ulepszenie sposobu myślenia i zabawa\nKamień Księżycowy: tajemnica, samopoznanie, intuicja, wgląd, sny, bogini\n\nTradycyjnym kamieniem urodzinowym dla Bliźniąt jest agat."
+      },
+      "ru": {
+        "name": "Близнецы",
+        "element": "Воздух",
+        "planet": "Меркурий",
+        "desc": "Камни Близнецов ассоциируются с творческими интеллектуальными способностями, изобретательностью, обширными идеями, социальными связями и общением.\nБлизнецы просят нас задуматься о том, как мы относимся к обучению через наши отношения и как мы общаемся с другими. Это также приглашает нас поразмышлять о нашем близком круге друзей и знакомых.\n\nОранжевый кальцит: творчество, позитивная энергия, сила воли, устраняет энергетические блоки\nЗмеевик: энергетические пути, улучшение, помощь, желания и стремления\nКианит: Истина и выравнивание, сбалансированное самовыражение, ораторское искусство\nГовлит: ясность ума, терпение, фокус, память\nГолубой агат: духовная эволюция, ясность и уверенность\nГолубой халцедон: доброжелательность, доброта, внутреннее знание, целостность\nДалматиновая яшма: обновление мышления и игра\nЛунный камень: тайна, самопознание, интуиция, озарение, сны, богиня\n\nТрадиционный камень рождения для Близнецов — агат."
+      }
     }
   },
   {
@@ -50,13 +155,48 @@
     "end_date": "Jul 22",
     "image_name": "cancer",
     "translations": {
-      "en": { "name": "Cancer", "element": "Water", "planet": "Moon", "desc": "Cancer is the fourth astrological sign, known for its intuitive, nurturing, and protective qualities." },
-      "es": { "name": "Cáncer", "element": "Agua", "planet": "Luna", "desc": "Cáncer es el cuarto signo astrológico, conocido por sus cualidades intuitivas, protectoras y cariñosas." },
-      "fr": { "name": "Cancer", "element": "Eau", "planet": "Lune", "desc": "Le Cancer est le quatrième signe astrologique, connu pour ses qualités intuitives, nourricières et protectrices." },
-      "it": { "name": "Cancro", "element": "Acqua", "planet": "Luna", "desc": "Il Cancro è il quarto segno zodiacale, noto per le sue qualità intuitive, protettive e nutrienti." },
-      "de": { "name": "Krebs", "element": "Wasser", "planet": "Mond", "desc": "Krebs ist das vierte Sternzeichen, bekannt für seine intuitiven, fürsorglichen und beschützenden Eigenschaften." },
-      "pl": { "name": "Rak", "element": "Woda", "planet": "Księżyc", "desc": "Rak to czwarty znak zodiaku, znany ze swojej intuicji, opiekuńczości i cech ochronnych." },
-      "ru": { "name": "Рак", "element": "Вода", "planet": "Луна", "desc": "Рак — четвертый знак зодиака, известный своей интуицией, заботливостью и защитными качествами." }
+      "en": {
+        "name": "Cancer",
+        "element": "Water",
+        "planet": "Moon",
+        "desc": "The gems for Cancer are associated to emotional growth, heart-centred energy and our soul connection.\nCancer asks us to reflect on how we engage ourselves and align our actions in life on a soulful, emotional and psychic level. It is very related to the concept of home, inside ourselves and outside, as well as the idea of family and intimate emotional hub.\n\nMoonstone: Inner growth, strength, intuition, inspiration, success and good fortune\nAngelite: awareness, communication, protection from angels and guides\nRed Aventurine: creativity, endurance, self-esteem and self-confidence\nRhodonite: love in all circumstances, self-love, compassion, love of others\nMilky Quartz: harmony and divine feminine\nAmethyst: inner peace, self-awareness and spiritual growth\nSmoky Quartz: harmonization and amplification of positivity, protection, support\nPearl: wisdom, bravery, spiritual energy, and enlightenment into our lives\n\nThe traditional birthstone for Cancer is the pearl."
+      },
+      "es": {
+        "name": "Cáncer",
+        "element": "Agua",
+        "planet": "Luna",
+        "desc": "Las gemas para Cáncer se asocian al crecimiento emocional, la energía centrada en el corazón y nuestra conexión con el alma.\nCáncer nos pide reflexionar sobre cómo nos comprometemos y alineamos nuestras acciones en la vida a un nivel anímico, emocional y psíquico. Está muy relacionado con el concepto de hogar, dentro de nosotros y fuera, así como con la idea de familia y el centro emocional íntimo.\n\nPiedra de Luna: crecimiento interior, fuerza, intuición, inspiración, éxito y buena fortuna\nAngelita: conciencia, comunicación, protección de ángeles y guías\nAventurina Roja: creatividad, resistencia, autoestima y confianza en uno mismo\nRodonita: amor en toda circunstancia, amor propio, compasión, amor a los demás\nCuarzo Lechoso: armonía y divino femenino\nAmatista: paz interior, autoconciencia y crecimiento espiritual\nCuarzo Ahumado: armonización y amplificación de la positividad, protección, apoyo\nPerla: sabiduría, valentía, energía espiritual e iluminación en nuestras vidas\n\nLa piedra de nacimiento tradicional para Cáncer es la perla."
+      },
+      "fr": {
+        "name": "Cancer",
+        "element": "Eau",
+        "planet": "Lune",
+        "desc": "Les pierres pour le Cancer sont associées à la croissance émotionnelle, à l'énergie centrée sur le cœur et à notre connexion avec l'âme.\nLe Cancer nous demande de réfléchir à la façon dont nous nous engageons et alignons nos actions dans la vie sur un plan spirituel, émotionnel et psychique. Il est très lié au concept de foyer, à l'intérieur de nous-mêmes et à l'extérieur, ainsi qu'à l'idée de famille et de centre émotionnel intime.\n\nPierre de lune : croissance intérieure, force, intuition, inspiration, succès et bonne fortune\nAngélite : conscience, communication, protection des anges et des guides\nAventurine rouge : créativité, endurance, estime de soi et confiance en soi\nRhodonite : amour en toutes circonstances, amour de soi, compassion, amour des autres\nQuartz laiteux : harmonie et féminin divin\nAméthyste : paix intérieure, conscience de soi et croissance spirituelle\nQuartz fumé : harmonisation et amplification de la positivité, protection, soutien\nPerle : sagesse, bravoure, énergie spirituelle et illumination dans nos vies\n\nLa pierre de naissance traditionnelle pour le Cancer est la perle."
+      },
+      "it": {
+        "name": "Cancro",
+        "element": "Acqua",
+        "planet": "Luna",
+        "desc": "Le gemme per il Cancro sono associate alla crescita emotiva, all'energia incentrata sul cuore e alla nostra connessione con l'anima.\nIl Cancro ci chiede di riflettere su come ci impegniamo e allineiamo le nostre azioni nella vita a livello animico, emotivo e psichico. È molto legato al concetto di casa, dentro di noi e fuori, così come all'idea di famiglia e di centro emotivo intimo.\n\nPietra di Luna: crescita interiore, forza, intuito, ispirazione, successo e buona fortuna\nAngelite: consapevolezza, comunicazione, protezione da angeli e guide\nAvventurina Rossa: creatività, resistenza, autostima e fiducia in se stessi\nRodonite: amore in ogni circostanza, amore per se stessi, compassione, amore per gli altri\nQuarzo Latteo: armonia e divino femminile\nAmetista: pace interiore, autoconsapevolezza e crescita spirituale\nQuarzo Fumé: armonizzazione e amplificazione della positività, protezione, supporto\nPerla: saggezza, coraggio, energia spirituale e illuminazione nelle nostre vite\n\nLa pietra natale tradizionale per il Cancro è la perla."
+      },
+      "de": {
+        "name": "Krebs",
+        "element": "Wasser",
+        "planet": "Mond",
+        "desc": "Die Edelsteine für Krebs sind mit emotionalem Wachstum, herzbasierter Energie und unserer Seelenverbindung assoziiert.\nKrebs fordert uns auf, darüber nachzudenken, wie wir uns engagieren und unsere Handlungen im Leben auf einer seelischen, emotionalen und psychischen Ebene ausrichten. Es ist sehr eng mit dem Konzept von Zuhause verbunden, in uns selbst und im Außen, sowie mit der Idee von Familie und dem intimen emotionalen Zentrum.\n\nMondstein: Inneres Wachstum, Stärke, Intuition, Inspiration, Erfolg und Glück\nAngelit: Bewusstsein, Kommunikation, Schutz durch Engel und Führer\nRoter Aventurin: Kreativität, Ausdauer, Selbstwertgefühl und Selbstvertrauen\nRhodonit: Liebe unter allen Umständen, Selbstliebe, Mitgefühl, Nächstenliebe\nMilchquarz: Harmonie und göttliche Weiblichkeit\nAmethyst: innerer Frieden, Selbstbewusstsein und spirituelles Wachstum\nRauchquarz: Harmonisierung und Verstärkung von Positivität, Schutz, Unterstützung\nPerle: Weisheit, Tapferkeit, spirituelle Energie und Erleuchtung in unserem Leben\n\nDer traditionelle Geburtsstein für Krebs ist die Perle."
+      },
+      "pl": {
+        "name": "Rak",
+        "element": "Woda",
+        "planet": "Księżyc",
+        "desc": "Kamienie dla Raka kojarzone są z rozwojem emocjonalnym, energią skoncentrowaną na sercu i połączeniem z naszą duszą.\nRak prosi nas o refleksję nad tym, jak angażujemy się i dostosowujemy nasze działania w życiu na poziomie duchowym, emocjonalnym i psychicznym. Jest to bardzo związane z koncepcją domu, wewnątrz nas i na zewnątrz, a także z ideą rodziny i intymnego centrum emocjonalnego.\n\nKamień Księżycowy: wewnętrzny wzrost, siła, intuicja, inspiracja, sukces i szczęście\nAngelit: świadomość, komunikacja, ochrona od aniołów i przewodników\nCzerwony Awenturyn: kreatywność, wytrzymałość, poczucie własnej wartości i pewność siebie\nRodonit: miłość w każdych okolicznościach, miłość własna, współczucie, miłość do innych\nKwarc Mleczny: harmonia i boska kobiecość\nAmetyst: wewnętrzny spokój, samoświadomość i rozwój duchowy\nKwarc Dymny: harmonizacja i wzmacnianie pozytywności, ochrona, wsparcie\nPerła: mądrość, odwaga, energia duchowa i oświecenie w naszym życiu\n\nTradycyjnym kamieniem urodzinowym dla Raka jest perła."
+      },
+      "ru": {
+        "name": "Рак",
+        "element": "Вода",
+        "planet": "Луна",
+        "desc": "Камни Рака ассоциируются с эмоциональным ростом, энергией сердца и связью с нашей душой.\nРак просит нас задуматься о том, как мы вовлекаемся и согласовываем свои действия в жизни на душевном, эмоциональном и психическом уровне. Это тесно связано с понятием дома, внутри нас и снаружи, а также с идеей семьи и интимного эмоционального центра.\n\nЛунный камень: внутренний рост, сила, интуиция, вдохновение, успех и удача\nАнгелит: осознанность, общение, защита ангелов и наставников\nКрасный авантюрин: творчество, выносливость, самооценка и уверенность в себе\nРодонит: любовь при любых обстоятельствах, любовь к себе, сострадание, любовь к другим\nМолочный кварц: гармония и божественная женственность\nАметист: внутренний мир, самосознание и духовный рост\nДымчатый кварц: гармонизация и усиление позитива, защита, поддержка\nЖемчуг: мудрость, храбрость, духовная энергия и просветление в нашей жизни\n\nТрадиционный камень рождения для Рака — жемчуг."
+      }
     }
   },
   {
@@ -65,13 +205,48 @@
     "end_date": "Aug 22",
     "image_name": "leo",
     "translations": {
-      "en": { "name": "Leo", "element": "Fire", "planet": "Sun", "desc": "Leo is the fifth astrological sign, known for its confident, generous, and charismatic presence." },
-      "es": { "name": "Leo", "element": "Fuego", "planet": "Sol", "desc": "Leo es el quinto signo astrológico, conocido por su presencia segura, generosa y carismática." },
-      "fr": { "name": "Lion", "element": "Feu", "planet": "Soleil", "desc": "Le Lion est le cinquième signe astrologique, connu pour sa présence confiante, généreuse et charismatique." },
-      "it": { "name": "Leone", "element": "Fuoco", "planet": "Sole", "desc": "Il Leone è il quinto segno zodiacale, noto per la sua presenza sicura, generosa e carismatica." },
-      "de": { "name": "Löwe", "element": "Feuer", "planet": "Sonne", "desc": "Löwe ist das fünfte Sternzeichen, bekannt für sein selbstbewusstes, großzügiges und charismatisches Auftreten." },
-      "pl": { "name": "Lew", "element": "Ogień", "planet": "Słońce", "desc": "Lew to piąty znak zodiaku, znany ze swojej pewności siebie, hojności i charyzmy." },
-      "ru": { "name": "Лев", "element": "Огонь", "planet": "Солнце", "desc": "Лев — пятый знак зодиака, известный своей уверенностью, щедростью и харизмой." }
+      "en": {
+        "name": "Leo",
+        "element": "Fire",
+        "planet": "Sun",
+        "desc": "The gems for Leo are associated to expansiveness, prosperous engagement, playfulness and expressing our unique energy.\nLeo asks us to reflect on how we feel safe expressing our identity to the world. It is associated to creativity, romance, entertainment and social engagement.\n\nCitrine: Self-expression, authenticity, personal power\nSunstone: Leadership, benevolence, strength, abundance of blessings, enlightened male energy\nTiger Eye: Good luck, success, initiative, protection, dispels fear\nRuby: balances fiery energy, promotes emotional healing, removes negativity\nPyrite: Protection, prosperity, positivity, energy, creativity, leadership\nBlack Obsidian: protection and grounding\nTurquoise: leadership, power, self-realization, emotional healing\nYellow Quartz: self-worth, happiness, joy, abundance, blessings\n\nThe traditional birthstone for Leo is ruby."
+      },
+      "es": {
+        "name": "Leo",
+        "element": "Fuego",
+        "planet": "Sol",
+        "desc": "Las gemas para Leo se asocian con la expansión, el compromiso próspero, el juego y la expresión de nuestra energía única.\nLeo nos pide reflexionar sobre cómo nos sentimos seguros expresando nuestra identidad al mundo. Se asocia con la creatividad, el romance, el entretenimiento y el compromiso social.\n\nCitrino: autoexpresión, autenticidad, poder personal\nPiedra Sol: liderazgo, benevolencia, fuerza, abundancia de bendiciones, energía masculina iluminada\nOjo de Tigre: buena suerte, éxito, iniciativa, protección, disipa el miedo\nRubí: equilibra la energía ardiente, promueve la curación emocional, elimina la negatividad\nPirita: protección, prosperidad, positividad, energía, creatividad, liderazgo\nObsidiana Negra: protección y arraigo\nTurquesa: liderazgo, poder, autorrealización, curación emocional\nCuarzo Amarillo: autoestima, felicidad, alegría, abundancia, bendiciones\n\nLa piedra de nacimiento tradicional para Leo es el rubí."
+      },
+      "fr": {
+        "name": "Lion",
+        "element": "Feu",
+        "planet": "Soleil",
+        "desc": "Les pierres pour le Lion sont associées à l'expansion, à l'engagement prospère, au jeu et à l'expression de notre énergie unique.\nLe Lion nous demande de réfléchir à la façon dont nous nous sentons en sécurité pour exprimer notre identité au monde. Il est associé à la créativité, à la romance, au divertissement et à l'engagement social.\n\nCitrine : expression de soi, authenticité, pouvoir personnel\nPierre de soleil : leadership, bienveillance, force, abondance de bénédictions, énergie masculine éclairée\nŒil de tigre : bonne chance, succès, initiative, protection, dissipe la peur\nRubis : équilibre l'énergie ardente, favorise la guérison émotionnelle, élimine la négativité\nPyrite : protection, prospérité, positivité, énergie, créativité, leadership\nObsidienne noire : protection et ancrage\nTurquoise : leadership, pouvoir, réalisation de soi, guérison émotionnelle\nQuartz jaune : estime de soi, bonheur, joie, abondance, bénédictions\n\nLa pierre de naissance traditionnelle pour le Lion est le rubis."
+      },
+      "it": {
+        "name": "Leone",
+        "element": "Fuoco",
+        "planet": "Sole",
+        "desc": "Le gemme per il Leone sono associate all'espansività, all'impegno prospero, alla giocosità e all'espressione della nostra energia unica.\nIl Leone ci chiede di riflettere su come ci sentiamo sicuri nell'esprimere la nostra identità al mondo. È associato alla creatività, al romanticismo, all'intrattenimento e all'impegno sociale.\n\nCitrino: autoespressione, autenticità, potere personale\nPietra del Sole: leadership, benevolenza, forza, abbondanza di benedizioni, energia maschile illuminata\nOcchio di Tigre: buona fortuna, successo, iniziativa, protezione, dissipa la paura\nRubino: equilibra l'energia ardente, promuove la guarigione emotiva, rimuove la negatività\nPirite: protezione, prosperità, positività, energia, creatività, leadership\nOssidiana Nera: protezione e radicamento\nTurchese: leadership, potere, autorealizzazione, guarigione emotiva\nQuarzo Giallo: autostima, felicità, gioia, abbondanza, benedizioni\n\nLa pietra natale tradizionale per il Leone è il rubino."
+      },
+      "de": {
+        "name": "Löwe",
+        "element": "Feuer",
+        "planet": "Sonne",
+        "desc": "Die Edelsteine für den Löwen sind mit Weite, wohlhabendem Engagement, Verspieltheit und dem Ausdruck unserer einzigartigen Energie verbunden.\nDer Löwe fordert uns auf, darüber nachzudenken, wie wir uns sicher fühlen, unsere Identität der Welt gegenüber auszudrücken. Er ist mit Kreativität, Romantik, Unterhaltung und sozialem Engagement verbunden.\n\nCitrin: Selbstausdruck, Authentizität, persönliche Kraft\nSonnenstein: Führung, Wohlwollen, Stärke, Fülle an Segnungen, erleuchtete männliche Energie\nTigerauge: Glück, Erfolg, Initiative, Schutz, vertreibt Angst\nRubin: gleicht feurige Energie aus, fördert emotionale Heilung, entfernt Negativität\nPyrit: Schutz, Wohlstand, Positivität, Energie, Kreativität, Führung\nSchwarzer Obsidian: Schutz und Erdung\nTürkis: Führung, Macht, Selbstverwirklichung, emotionale Heilung\nGelber Quarz: Selbstwertgefühl, Glück, Freude, Fülle, Segnungen\n\nDer traditionelle Geburtsstein für den Löwen ist der Rubin."
+      },
+      "pl": {
+        "name": "Lew",
+        "element": "Ogień",
+        "planet": "Słońce",
+        "desc": "Kamienie dla Lwa kojarzone są z ekspansywnością, pomyślnym zaangażowaniem, zabawą i wyrażaniem naszej unikalnej energii.\nLew prosi nas o refleksję nad tym, jak czujemy się bezpiecznie wyrażając naszą tożsamość światu. Kojarzy się z kreatywnością, romansem, rozrywką i zaangażowaniem społecznym.\n\nCytryn: wyrażanie siebie, autentyczność, osobista moc\nKamień Słoneczny: przywództwo, życzliwość, siła, obfitość błogosławieństw, oświecona męska energia\nTygrysie Oko: szczęście, sukces, inicjatywa, ochrona, rozprasza strach\nRubin: równoważy ognistą energię, promuje uzdrawianie emocjonalne, usuwa negatywność\nPiryt: ochrona, dobrobyt, pozytywność, energia, kreatywność, przywództwo\nCzarny Obsydian: ochrona i uziemienie\nTurkus: przywództwo, władza, samorealizacja, uzdrawianie emocjonalne\nŻółty Kwarc: poczucie własnej wartości, szczęście, radość, obfitość, błogosławieństwa\n\nTradycyjnym kamieniem urodzinowym dla Lwa jest rubin."
+      },
+      "ru": {
+        "name": "Лев",
+        "element": "Огонь",
+        "planet": "Солнце",
+        "desc": "Камни Льва ассоциируются с экспансивностью, процветанием, игривостью и выражением нашей уникальной энергии.\nЛев просит нас задуматься о том, насколько безопасно мы чувствуем себя, выражая свою индивидуальность миру. Это связано с творчеством, романтикой, развлечениями и социальным взаимодействием.\n\nЦитрин: самовыражение, подлинность, личная сила\nСолнечный камень: лидерство, доброжелательность, сила, изобилие благословений, просветленная мужская энергия\nТигровый глаз: удача, успех, инициатива, защита, рассеивает страх\nРубин: уравновешивает огненную энергию, способствует эмоциональному исцелению, устраняет негатив\nПирит: защита, процветание, позитивность, энергия, творчество, лидерство\nЧерный обсидиан: защита и заземление\nБирюза: лидерство, власть, самореализация, эмоциональное исцеление\nЖелтый кварц: самооценка, счастье, радость, изобилие, благословения\n\nТрадиционный камень рождения для Льва — рубин."
+      }
     }
   },
   {
@@ -80,13 +255,48 @@
     "end_date": "Sep 22",
     "image_name": "virgo",
     "translations": {
-      "en": { "name": "Virgo", "element": "Earth", "planet": "Mercury", "desc": "Virgo is the sixth astrological sign, known for its meticulous, analytical, and helpful nature." },
-      "es": { "name": "Virgo", "element": "Tierra", "planet": "Mercurio", "desc": "Virgo es el sexto signo astrológico, conocido por su naturaleza meticulosa, analítica y servicial." },
-      "fr": { "name": "Vierge", "element": "Terre", "planet": "Mercure", "desc": "La Vierge est le sixième signe astrologique, connu pour sa nature méticuleuse, analytique et serviable." },
-      "it": { "name": "Vergine", "element": "Terra", "planet": "Mercurio", "desc": "La Vergine è il sesto segno zodiacale, noto per la sua natura meticolosa, analitica e disponibile." },
-      "de": { "name": "Jungfrau", "element": "Erde", "planet": "Merkur", "desc": "Jungfrau ist das sechste Sternzeichen, bekannt für seine akribische, analytische und hilfsbereite Art." },
-      "pl": { "name": "Panna", "element": "Ziemia", "planet": "Merkury", "desc": "Panna to szósty znak zodiaku, znany ze swojej skrupulatności, analityczności i chęci niesienia pomocy." },
-      "ru": { "name": "Дева", "element": "Земля", "planet": "Меркурий", "desc": "Дева — шестой знак зодиака, известный своей дотошностью, аналитичностью и отзывчивостью." }
+      "en": {
+        "name": "Virgo",
+        "element": "Earth",
+        "planet": "Mercury",
+        "desc": "The gems for Virgo are associated to healing on all levels to engage with the world in a more fluid way, and supports the integration of knowledge and life lessons.\nVirgo asks us to reflect on how we relate to wealth and learning, how we relate to our health, to being of service, to working and to having a routine related to one’s livelihood and well-being.\n\nPeridot: Increase prosperity, warmth, well-being\nGreen Jasper: purpose, life mission, rejuvenation, faith, joy, positivity\nAmethyst: defining priorities of energetic engagement, alignment and release\nAmazonite: gentle alignment and creative self-expression\nOpal: passion, creativity, amplification of emotions, heal the emotional body\nMoonstone: Optimism, vitality, inner peace, Rainbow Body of Light\nClear Quartz: Inner Clarity and Spirituality\nCitrine: Manifestation, personal will, mental clarity, creativity\n\nThe traditional birthstone for Virgo is peridot."
+      },
+      "es": {
+        "name": "Virgo",
+        "element": "Tierra",
+        "planet": "Mercurio",
+        "desc": "Las gemas para Virgo se asocian a la sanación en todos los niveles para interactuar con el mundo de una manera más fluida, y apoyan la integración del conocimiento y las lecciones de vida.\nVirgo nos pide reflexionar sobre cómo nos relacionamos con la riqueza y el aprendizaje, con nuestra salud, con el servicio, con el trabajo y con tener una rutina relacionada con el sustento y el bienestar.\n\nPeridoto: Aumenta la prosperidad, la calidez, el bienestar\nJaspe Verde: propósito, misión de vida, rejuvenecimiento, fe, alegría, positividad\nAmatista: definición de prioridades de compromiso energético, alineación y liberación\nAmazonita: alineación suave y autoexpresión creativa\nÓpalo: pasión, creatividad, amplificación de emociones, sanar el cuerpo emocional\nPiedra de Luna: Optimismo, vitalidad, paz interior, Cuerpo de Luz Arcoíris\nCuarzo Transparente: Claridad Interior y Espiritualidad\nCitrino: Manifestación, voluntad personal, claridad mental, creatividad\n\nLa piedra de nacimiento tradicional para Virgo es el peridoto."
+      },
+      "fr": {
+        "name": "Vierge",
+        "element": "Terre",
+        "planet": "Mercure",
+        "desc": "Les pierres pour la Vierge sont associées à la guérison à tous les niveaux pour s'engager avec le monde de manière plus fluide, et soutiennent l'intégration des connaissances et des leçons de vie.\nLa Vierge nous demande de réfléchir à notre rapport à la richesse et à l'apprentissage, à notre santé, au service, au travail et à la routine liée aux moyens de subsistance et au bien-être.\n\nPéridot : Augmente la prospérité, la chaleur, le bien-être\nJaspe vert : but, mission de vie, rajeunissement, foi, joie, positivité\nAméthyste : définition des priorités d'engagement énergétique, alignement et libération\nAmazonite : alignement doux et expression créative de soi\nOpale : passion, créativité, amplification des émotions, guérir le corps émotionnel\nPierre de lune : Optimisme, vitalité, paix intérieure, Corps de Lumière Arc-en-ciel\nCristal de roche : Clarté intérieure et Spiritualité\nCitrine : Manifestation, volonté personnelle, clarté mentale, créativité\n\nLa pierre de naissance traditionnelle pour la Vierge est le péridot."
+      },
+      "it": {
+        "name": "Vergine",
+        "element": "Terra",
+        "planet": "Mercurio",
+        "desc": "Le gemme per la Vergine sono associate alla guarigione a tutti i livelli per interagire con il mondo in modo più fluido, e supportano l'integrazione della conoscenza e delle lezioni di vita.\nLa Vergine ci chiede di riflettere su come ci relazioniamo alla ricchezza e all'apprendimento, alla nostra salute, all'essere di servizio, al lavoro e all'avere una routine legata al sostentamento e al benessere.\n\nPeridoto: Aumenta prosperità, calore, benessere\nDiaspro Verde: scopo, missione di vita, ringiovanimento, fede, gioia, positività\nAmetista: definizione delle priorità di impegno energetico, allineamento e rilascio\nAmazzonite: allineamento gentile ed espressione creativa di sé\nOpale: passione, creatività, amplificazione delle emozioni, guarigione del corpo emotivo\nPietra di Luna: Ottimismo, vitalità, pace interiore, Corpo di Luce Arcobaleno\nQuarzo Ialino: Chiarezza Interiore e Spiritualità\nCitrino: Manifestazione, volontà personale, chiarezza mentale, creatività\n\nLa pietra natale tradizionale per la Vergine è il peridoto."
+      },
+      "de": {
+        "name": "Jungfrau",
+        "element": "Erde",
+        "planet": "Merkur",
+        "desc": "Die Edelsteine für die Jungfrau sind mit Heilung auf allen Ebenen verbunden, um fließender mit der Welt in Kontakt zu treten, und unterstützen die Integration von Wissen und Lebenslektionen.\nDie Jungfrau fordert uns auf, darüber nachzudenken, wie wir uns zu Reichtum und Lernen, zu unserer Gesundheit, zum Dienen, zur Arbeit und zu einer Routine im Zusammenhang mit Lebensunterhalt und Wohlbefinden verhalten.\n\nPeridot: Steigert Wohlstand, Wärme, Wohlbefinden\nGrüner Jaspis: Zweck, Lebensmission, Verjüngung, Glaube, Freude, Positivität\nAmethyst: Definition von Prioritäten des energetischen Engagements, Ausrichtung und Loslassen\nAmazonit: sanfte Ausrichtung und kreativer Selbstausdruck\nOpal: Leidenschaft, Kreativität, Verstärkung von Emotionen, Heilung des emotionalen Körpers\nMondstein: Optimismus, Vitalität, innerer Frieden, Regenbogen-Lichtkörper\nBergkristall: Innere Klarheit und Spiritualität\nCitrin: Manifestation, persönlicher Wille, geistige Klarheit, Kreativität\n\nDer traditionelle Geburtsstein für die Jungfrau ist der Peridot."
+      },
+      "pl": {
+        "name": "Panna",
+        "element": "Ziemia",
+        "planet": "Merkury",
+        "desc": "Kamienie dla Panny kojarzone są z uzdrawianiem na wszystkich poziomach, aby płynniej angażować się w świat, i wspierają integrację wiedzy oraz lekcji życiowych.\nPanna prosi nas o refleksję nad tym, jak odnosimy się do bogactwa i nauki, do naszego zdrowia, do bycia pomocnym, do pracy i do posiadania rutyny związanej z utrzymaniem i dobrym samopoczuciem.\n\nPerydot: Zwiększa dobrobyt, ciepło, dobre samopoczucie\nZielony Jaspis: cel, misja życiowa, odmłodzenie, wiara, radość, pozytywność\nAmetyst: definiowanie priorytetów zaangażowania energetycznego, zestrojenie i uwolnienie\nAmazonit: delikatne zestrojenie i kreatywne wyrażanie siebie\nOpal: pasja, kreatywność, wzmocnienie emocji, uzdrawianie ciała emocjonalnego\nKamień Księżycowy: Optymizm, witalność, wewnętrzny spokój, Tęczowe Ciało Świetlne\nKryształ Górski: Wewnętrzna Jasność i Duchowość\nCytryn: Manifestacja, wola osobista, jasność umysłu, kreatywność\n\nTradycyjnym kamieniem urodzinowym dla Panny jest perydot."
+      },
+      "ru": {
+        "name": "Дева",
+        "element": "Земля",
+        "planet": "Меркурий",
+        "desc": "Камни Девы ассоциируются с исцелением на всех уровнях для более плавного взаимодействия с миром и поддерживают интеграцию знаний и жизненных уроков.\nДева просит нас задуматься о том, как мы относимся к богатству и обучению, к нашему здоровью, к служению, к работе и к наличию рутины, связанной со средствами к существованию и благополучием.\n\nПеридот (Хризолит): Увеличивает процветание, тепло, благополучие\nЗеленая яшма: цель, жизненная миссия, омоложение, вера, радость, позитив\nАметист: определение приоритетов энергетического взаимодействия, выравнивание и освобождение\nАмазонит: мягкое выравнивание и творческое самовыражение\nОпал: страсть, творчество, усиление эмоций, исцеление эмоционального тела\nЛунный камень: Оптимизм, жизненная сила, внутренний мир, Радужное Тело Света\nГорный хрусталь: Внутренняя ясность и духовность\nЦитрин: Манифестация, личная воля, ясность ума, творчество\n\nТрадиционный камень рождения для Девы — перидот."
+      }
     }
   },
   {
@@ -95,13 +305,48 @@
     "end_date": "Oct 22",
     "image_name": "libra",
     "translations": {
-      "en": { "name": "Libra", "element": "Air", "planet": "Venus", "desc": "Libra is the seventh astrological sign, known for its diplomatic, fair-minded, and social grace." },
-      "es": { "name": "Libra", "element": "Aire", "planet": "Venus", "desc": "Libra es el séptimo signo astrológico, conocido por su diplomacia, imparcialidad y gracia social." },
-      "fr": { "name": "Balance", "element": "Air", "planet": "Vénus", "desc": "La Balance est le septième signe astrologique, connu pour sa diplomatie, son équité et sa grâce sociale." },
-      "it": { "name": "Bilancia", "element": "Aria", "planet": "Venere", "desc": "La Bilancia è il settimo segno zodiacale, noto per la sua diplomazia, imparzialità e grazia sociale." },
-      "de": { "name": "Waage", "element": "Luft", "planet": "Venus", "desc": "Die Waage ist das siebte Sternzeichen, bekannt für ihre Diplomatie, Gerechtigkeit und soziale Anmut." },
-      "pl": { "name": "Waga", "element": "Powietrze", "planet": "Wenus", "desc": "Waga to siódmy znak zodiaku, znany ze swojej dyplomacji, sprawiedliwości i wdzięku towarzyskiego." },
-      "ru": { "name": "Весы", "element": "Воздух", "planet": "Венера", "desc": "Весы — седьмой знак зодиака, известный своей дипломатичностью, справедливостью и обаянием." }
+      "en": {
+        "name": "Libra",
+        "element": "Air",
+        "planet": "Venus",
+        "desc": "The gems for Libra are associated to the wisdom of the heart, love and dignity, and connection to others.\nLibra asks us to reflect on how we take action in our relationships, through our partners, marriage and other associations. It invites us to consider how we relate to others in a one on one setting.\n\nRose Quartz: self-love, compassion, emotional stability and emotional healing\nGreen Jade: love, trust, dignity, serenity, nurturing, protection, abundance\nOpal: spiritual openness, awakening, passion, creativity, healing the emotional body\nPeach Aventurine: prosperity, success, self-confidence, creativity and manifestation\nLepidolite: emotional healing and balance, purification, relaxation, stress relief\nApatite: Golden Creation, clarity, confidence, manifestation\nBlack Tourmaline: psychic protection, repels negative energy, grounding energy\n\nThe traditional birthstone for Libra is opal."
+      },
+      "es": {
+        "name": "Libra",
+        "element": "Aire",
+        "planet": "Venus",
+        "desc": "Las gemas para Libra se asocian a la sabiduría del corazón, el amor y la dignidad, y la conexión con los demás.\nLibra nos pide reflexionar sobre cómo actuamos en nuestras relaciones, a través de nuestras parejas, el matrimonio y otras asociaciones. Nos invita a considerar cómo nos relacionamos con los demás en un entorno uno a uno.\n\nCuarzo Rosa: amor propio, compasión, estabilidad emocional y sanación emocional\nJade Verde: amor, confianza, dignidad, serenidad, nutrición, protección, abundancia\nÓpalo: apertura espiritual, despertar, pasión, creatividad, sanación del cuerpo emocional\nAventurina Melocotón: prosperidad, éxito, autoconfianza, creatividad y manifestación\nLepidolita: sanación y equilibrio emocional, purificación, relajación, alivio del estrés\nApatita: Creación Dorada, claridad, confianza, manifestación\nTurmalina Negra: protección psíquica, repele la energía negativa, energía de arraigo\n\nLa piedra de nacimiento tradicional para Libra es el ópalo."
+      },
+      "fr": {
+        "name": "Balance",
+        "element": "Air",
+        "planet": "Vénus",
+        "desc": "Les pierres pour la Balance sont associées à la sagesse du cœur, à l'amour et à la dignité, et à la connexion aux autres.\nLa Balance nous demande de réfléchir à la façon dont nous agissons dans nos relations, à travers nos partenaires, le mariage et autres associations. Elle nous invite à considérer comment nous nous lions aux autres dans un cadre individuel.\n\nQuartz rose : amour de soi, compassion, stabilité émotionnelle et guérison émotionnelle\nJade vert : amour, confiance, dignité, sérénité, nutrition, protection, abondance\nOpale : ouverture spirituelle, éveil, passion, créativité, guérison du corps émotionnel\nAventurine pêche : prospérité, succès, confiance en soi, créativité et manifestation\nLépidolite : guérison et équilibre émotionnels, purification, relaxation, soulagement du stress\nApatite : Création Dorée, clarté, confiance, manifestation\nTourmaline noire : protection psychique, repousse l'énergie négative, énergie d'ancrage\n\nLa pierre de naissance traditionnelle pour la Balance est l'opale."
+      },
+      "it": {
+        "name": "Bilancia",
+        "element": "Aria",
+        "planet": "Venere",
+        "desc": "Le gemme per la Bilancia sono associate alla saggezza del cuore, all'amore e alla dignità, e alla connessione con gli altri.\nLa Bilancia ci chiede di riflettere su come agiamo nelle nostre relazioni, attraverso i nostri partner, il matrimonio e altre associazioni. Ci invita a considerare come ci relazioniamo con gli altri in un contesto individuale.\n\nQuarzo Rosa: amore per se stessi, compassione, stabilità emotiva e guarigione emotiva\nGiada Verde: amore, fiducia, dignità, serenità, nutrimento, protezione, abbondanza\nOpale: apertura spirituale, risveglio, passione, creatività, guarigione del corpo emotivo\nAvventurina Pesca: prosperità, successo, fiducia in se stessi, creatività e manifestazione\nLepidolite: guarigione ed equilibrio emotivo, purificazione, rilassamento, sollievo dallo stress\nApatite: Creazione Aurea, chiarezza, fiducia, manifestazione\nTormalina Nera: protezione psichica, respinge l'energia negativa, energia di radicamento\n\nLa pietra natale tradizionale per la Bilancia è l'opale."
+      },
+      "de": {
+        "name": "Waage",
+        "element": "Luft",
+        "planet": "Venus",
+        "desc": "Die Edelsteine für die Waage sind mit der Weisheit des Herzens, Liebe und Würde sowie der Verbindung zu anderen verbunden.\nDie Waage fordert uns auf, darüber nachzudenken, wie wir in unseren Beziehungen handeln, durch unsere Partner, Ehe und andere Verbindungen. Sie lädt uns ein, darüber nachzudenken, wie wir uns in einem Eins-zu-Eins-Umfeld zu anderen verhalten.\n\nRosenquarz: Selbstliebe, Mitgefühl, emotionale Stabilität und emotionale Heilung\nGrüne Jade: Liebe, Vertrauen, Würde, Gelassenheit, Pflege, Schutz, Fülle\nOpal: spirituelle Offenheit, Erwachen, Leidenschaft, Kreativität, Heilung des emotionalen Körpers\nPfirsich-Aventurin: Wohlstand, Erfolg, Selbstvertrauen, Kreativität und Manifestation\nLepidolith: emotionale Heilung und Balance, Reinigung, Entspannung, Stressabbau\nApatit: Goldene Schöpfung, Klarheit, Vertrauen, Manifestation\nSchwarzer Turmalin: psychischer Schutz, wehrt negative Energie ab, Erdungsenergie\n\nDer traditionelle Geburtsstein für die Waage ist der Opal."
+      },
+      "pl": {
+        "name": "Waga",
+        "element": "Powietrze",
+        "planet": "Wenus",
+        "desc": "Kamienie dla Wagi kojarzone są z mądrością serca, miłością i godnością oraz więzią z innymi.\nWaga prosi nas o refleksję nad tym, jak działamy w naszych relacjach, poprzez naszych partnerów, małżeństwo i inne związki. Zaprasza nas do rozważenia, jak odnosimy się do innych w relacjach jeden na jeden.\n\nKwarc Różowy: miłość własna, współczucie, stabilność emocjonalna i uzdrawianie emocjonalne\nZielony Jadeit: miłość, zaufanie, godność, spokój, pielęgnacja, ochrona, obfitość\nOpal: otwartość duchowa, przebudzenie, pasja, kreatywność, uzdrawianie ciała emocjonalnego\nAwenturyn Brzoskwiniowy: dobrobyt, sukces, pewność siebie, kreatywność i manifestacja\nLepidolit: uzdrawianie i równowaga emocjonalna, oczyszczenie, relaks, łagodzenie stresu\nApatyt: Złota Kreacja, jasność, pewność siebie, manifestacja\nCzarny Turmalin: ochrona psychiczna, odstrasza negatywną energię, energia uziemiająca\n\nTradycyjnym kamieniem urodzinowym dla Wagi jest opal."
+      },
+      "ru": {
+        "name": "Весы",
+        "element": "Воздух",
+        "planet": "Венера",
+        "desc": "Камни Весов ассоциируются с мудростью сердца, любовью и достоинством, а также связью с другими.\nВесы просят нас задуматься о том, как мы действуем в наших отношениях, через наших партнеров, брак и другие ассоциации. Это приглашает нас рассмотреть, как мы относимся к другим в обстановке один на один.\n\nРозовый кварц: любовь к себе, сострадание, эмоциональная стабильность и эмоциональное исцеление\nЗеленый нефрит: любовь, доверие, достоинство, спокойствие, забота, защита, изобилие\nОпал: духовная открытость, пробуждение, страсть, творчество, исцеление эмоционального тела\nПерсиковый авантюрин: процветание, успех, уверенность в себе, творчество и проявление\nЛепидолит: эмоциональное исцеление и равновесие, очищение, расслабление, снятие стресса\nАпатит: Золотое Творение, ясность, уверенность, проявление\nЧерный турмалин: психическая защита, отталкивает негативную энергию, заземляющая энергия\n\nТрадиционный камень рождения для Весов — опал."
+      }
     }
   },
   {
@@ -110,13 +355,48 @@
     "end_date": "Nov 21",
     "image_name": "scorpio",
     "translations": {
-      "en": { "name": "Scorpio", "element": "Water", "planet": "Pluto", "desc": "Scorpio is the eighth astrological sign, known for its passionate, resourceful, and mysterious aura." },
-      "es": { "name": "Escorpio", "element": "Agua", "planet": "Plutón", "desc": "Escorpio es el octavo signo astrológico, conocido por su aura apasionada, ingeniosa y misteriosa." },
-      "fr": { "name": "Scorpion", "element": "Eau", "planet": "Pluton", "desc": "Le Scorpion est le huitième signe astrologique, connu pour son aura passionnée, ingénieuse et mystérieuse." },
-      "it": { "name": "Scorpione", "element": "Acqua", "planet": "Plutone", "desc": "Lo Scorpione è l'ottavo segno zodiacale, noto per la sua aura appassionata, piena di risorse e misteriosa." },
-      "de": { "name": "Skorpion", "element": "Wasser", "planet": "Pluto", "desc": "Der Skorpion ist das achte Sternzeichen, bekannt für seine leidenschaftliche, einfallsreiche und mysteriöse Aura." },
-      "pl": { "name": "Skorpion", "element": "Woda", "planet": "Pluton", "desc": "Skorpion to ósmy znak zodiaku, znany ze swojej namiętnej, zaradnej i tajemniczej aury." },
-      "ru": { "name": "Скорпион", "element": "Вода", "planet": "Плутон", "desc": "Скорпион — восьмой знак зодиака, известный своей страстной, находчивой и таинственной аурой." }
+      "en": {
+        "name": "Scorpio",
+        "element": "Water",
+        "planet": "Pluto",
+        "desc": "The gems for Scorpio are associated to grounding energies, growth and healing, self-knowledge and protection.\nScorpio asks us to reflect on how we feel secure on a soul, emotional and psychic level in our life, and invites us to consider how our energy exchanges play out in our life. This energy is related to transformation, transmutation and elevation.\n\nLabradorite: protection, psychic capabilities, intuition, manifestation\nSmoky Quartz: protection, grounding and harmonization\nCitrine: manifestation, personal will, mental clarity, creativity\nBlack Obsidian: protection and grounding\nMalachite: psychic protection, transformation, abundance, positive relationships\nLapis Lazuli: inner vision, truthful communication, royal virtues\nRed Jasper: physically grounding, protection, connecting and nurturing our energy\nAquamarine: cooling, soothing, enhancement of clear communication\n\nThe traditional birthstone for Scorpio is citrine."
+      },
+      "es": {
+        "name": "Escorpio",
+        "element": "Agua",
+        "planet": "Plutón",
+        "desc": "Las gemas para Escorpio se asocian a energías de arraigo, crecimiento y sanación, autoconocimiento y protección.\nEscorpio nos pide reflexionar sobre cómo nos sentimos seguros a nivel anímico, emocional y psíquico en nuestra vida, y nos invita a considerar cómo se desarrollan nuestros intercambios de energía. Esta energía se relaciona con la transformación, transmutación y elevación.\n\nLabradorita: protección, capacidades psíquicas, intuición, manifestación\nCuarzo Ahumado: protección, arraigo y armonización\nCitrino: manifestación, voluntad personal, claridad mental, creatividad\nObsidiana Negra: protección y arraigo\nMalaquita: protección psíquica, transformación, abundancia, relaciones positivas\nLapislázuli: visión interior, comunicación veraz, virtudes reales\nJaspe Rojo: arraigo físico, protección, conexión y nutrición de nuestra energía\nAguamarina: refrescante, calmante, mejora de la comunicación clara\n\nLa piedra de nacimiento tradicional para Escorpio es el citrino."
+      },
+      "fr": {
+        "name": "Scorpion",
+        "element": "Eau",
+        "planet": "Pluton",
+        "desc": "Les pierres pour le Scorpion sont associées aux énergies d'ancrage, à la croissance et à la guérison, à la connaissance de soi et à la protection.\nLe Scorpion nous demande de réfléchir à la façon dont nous nous sentons en sécurité au niveau de l'âme, émotionnel et psychique, et nous invite à considérer comment nos échanges d'énergie se jouent dans notre vie. Cette énergie est liée à la transformation, la transmutation et l'élévation.\n\nLabradorite : protection, capacités psychiques, intuition, manifestation\nQuartz fumé : protection, ancrage et harmonisation\nCitrine : manifestation, volonté personnelle, clarté mentale, créativité\nObsidienne noire : protection et ancrage\nMalachite : protection psychique, transformation, abondance, relations positives\nLapis-lazuli : vision intérieure, communication véridique, vertus royales\nJaspe rouge : ancrage physique, protection, connexion et nutrition de notre énergie\nAigue-marine : apaisante, calmante, amélioration de la communication claire\n\nLa pierre de naissance traditionnelle pour le Scorpion est la citrine."
+      },
+      "it": {
+        "name": "Scorpione",
+        "element": "Acqua",
+        "planet": "Plutone",
+        "desc": "Le gemme per lo Scorpione sono associate a energie di radicamento, crescita e guarigione, conoscenza di sé e protezione.\nLo Scorpione ci chiede di riflettere su come ci sentiamo sicuri a livello animico, emotivo e psichico nella nostra vita, e ci invita a considerare come si svolgono i nostri scambi energetici. Questa energia è legata alla trasformazione, trasmutazione ed elevazione.\n\nLabradorite: protezione, capacità psichiche, intuito, manifestazione\nQuarzo Fumé: protezione, radicamento e armonizzazione\nCitrino: manifestazione, volontà personale, chiarezza mentale, creatività\nOssidiana Nera: protezione e radicamento\nMalachite: protezione psichica, trasformazione, abbondanza, relazioni positive\nLapislazzuli: visione interiore, comunicazione veritiera, virtù reali\nDiaspro Rosso: radicamento fisico, protezione, connessione e nutrimento della nostra energia\nAcquamarina: rinfrescante, lenitiva, miglioramento della comunicazione chiara\n\nLa pietra natale tradizionale per lo Scorpione è il citrino."
+      },
+      "de": {
+        "name": "Skorpion",
+        "element": "Wasser",
+        "planet": "Pluto",
+        "desc": "Die Edelsteine für den Skorpion sind mit Erdungsenergien, Wachstum und Heilung, Selbsterkenntnis und Schutz verbunden.\nDer Skorpion fordert uns auf, darüber nachzudenken, wie wir uns auf seelischer, emotionaler und psychischer Ebene in unserem Leben sicher fühlen, und lädt uns ein, zu überlegen, wie sich unser Energieaustausch in unserem Leben abspielt. Diese Energie ist mit Transformation, Transmutation und Erhebung verbunden.\n\nLabradorit: Schutz, psychische Fähigkeiten, Intuition, Manifestation\nRauchquarz: Schutz, Erdung und Harmonisierung\nCitrin: Manifestation, persönlicher Wille, geistige Klarheit, Kreativität\nSchwarzer Obsidian: Schutz und Erdung\nMalachit: psychischer Schutz, Transformation, Fülle, positive Beziehungen\nLapislazuli: innere Vision, wahrhaftige Kommunikation, königliche Tugenden\nRoter Jaspis: physische Erdung, Schutz, Verbindung und Pflege unserer Energie\nAquamarin: kühlend, beruhigend, Verbesserung der klaren Kommunikation\n\nDer traditionelle Geburtsstein für den Skorpion ist der Citrin."
+      },
+      "pl": {
+        "name": "Skorpion",
+        "element": "Woda",
+        "planet": "Pluton",
+        "desc": "Kamienie dla Skorpiona kojarzone są z energiami uziemiającymi, wzrostem i uzdrawianiem, samowiedzą i ochroną.\nSkorpion prosi nas o refleksję nad tym, jak czujemy się bezpiecznie na poziomie duchowym, emocjonalnym i psychicznym w naszym życiu, i zaprasza nas do rozważenia, jak przebiega nasza wymiana energii. Energia ta związana jest z transformacją, transmutacją i wzniesieniem.\n\nLabradoryt: ochrona, zdolności parapsychiczne, intuicja, manifestacja\nKwarc Dymny: ochrona, uziemienie i harmonizacja\nCytryn: manifestacja, wola osobista, jasność umysłu, kreatywność\nCzarny Obsydian: ochrona i uziemienie\nMalachit: ochrona psychiczna, transformacja, obfitość, pozytywne relacje\nLapis Lazuli: wizja wewnętrzna, prawdziwa komunikacja, cnoty królewskie\nCzerwony Jaspis: uziemienie fizyczne, ochrona, łączenie i pielęgnowanie naszej energii\nAkwamaryn: chłodzący, kojący, poprawa jasnej komunikacji\n\nTradycyjnym kamieniem urodzinowym dla Skorpiona jest cytryn."
+      },
+      "ru": {
+        "name": "Скорпион",
+        "element": "Вода",
+        "planet": "Плутон",
+        "desc": "Камни Скорпиона ассоциируются с заземляющими энергиями, ростом и исцелением, самопознанием и защитой.\nСкорпион просит нас задуматься о том, насколько безопасно мы чувствуем себя на душевном, эмоциональном и психическом уровне в нашей жизни, и приглашает нас рассмотреть, как происходит наш энергетический обмен. Эта энергия связана с трансформацией, трансмутацией и возвышением.\n\nЛабрадорит: защита, экстрасенсорные способности, интуиция, проявление\nДымчатый кварц: защита, заземление и гармонизация\nЦитрин: проявление, личная воля, ясность ума, творчество\nЧерный обсидиан: защита и заземление\nМалахит: психическая защита, трансформация, изобилие, позитивные отношения\nЛазурит: внутреннее видение, правдивое общение, королевские добродетели\nКрасная яшма: физическое заземление, защита, соединение и питание нашей энергии\nАквамарин: охлаждающий, успокаивающий, улучшение ясного общения\n\nТрадиционный камень рождения для Скорпиона — цитрин."
+      }
     }
   },
   {
@@ -125,13 +405,48 @@
     "end_date": "Dec 21",
     "image_name": "sagittarius",
     "translations": {
-      "en": { "name": "Sagittarius", "element": "Fire", "planet": "Jupiter", "desc": "Sagittarius is the ninth astrological sign, known for its optimistic, adventurous, and philosophical outlook." },
-      "es": { "name": "Sagitario", "element": "Fuego", "planet": "Júpiter", "desc": "Sagitario es el noveno signo astrológico, conocido por su perspectiva optimista, aventurera y filosófica." },
-      "fr": { "name": "Sagittaire", "element": "Feu", "planet": "Jupiter", "desc": "Le Sagittaire est le neuvième signe astrologique, connu pour son optimisme, son esprit aventureux et philosophique." },
-      "it": { "name": "Sagittario", "element": "Fuoco", "planet": "Giove", "desc": "Il Sagittario è il nono segno zodiacale, noto per la sua prospettiva ottimista, avventurosa e filosofica." },
-      "de": { "name": "Schütze", "element": "Feuer", "planet": "Jupiter", "desc": "Der Schütze ist das neunte Sternzeichen, bekannt für seinen optimistischen, abenteuerlustigen und philosophischen Ausblick." },
-      "pl": { "name": "Strzelec", "element": "Ogień", "planet": "Jowisz", "desc": "Strzelec to dziewiąty znak zodiaku, znany ze swojego optymistycznego, żądnego przygód i filozoficznego podejścia." },
-      "ru": { "name": "Стрелец", "element": "Огонь", "planet": "Юпитер", "desc": "Стрелец — девятый знак зодиака, известный своим оптимистичным, предприимчивым и философским взглядом." }
+      "en": {
+        "name": "Sagittarius",
+        "element": "Fire",
+        "planet": "Jupiter",
+        "desc": "The gems for Sagittarius are associated to knowledge acquisition, integration, embodiment and radiance.\nSagittarius asks us to reflect on how we learn about ourselves and our identity through our lived experiences. It is related to concepts of travel, higher education and spirituality.\n\nSunstone: Joy, encouragement, leadership, independence, originality\nTurquoise: Good fortune, self-realization, protection, creative problem solving\nTopaz: Compassion, communication, building bridges, self-realization, happiness\nChrysocolla: alignment of heart and voice, elimination of negativity\nYellow Jasper: positive energy, proactive inspiration, self-assertion\nSodalite: truth, intuition, insights, creativity, self-expression\nRuby: balances fiery energy, promotes emotional healing, removes negativity\nBlack Obsidian: protection and grounding\n\nThe traditional birthstone for Sagittarius is turquoise."
+      },
+      "es": {
+        "name": "Sagitario",
+        "element": "Fuego",
+        "planet": "Júpiter",
+        "desc": "Las gemas para Sagitario se asocian a la adquisición de conocimientos, integración, encarnación y resplandor.\nSagitario nos pide reflexionar sobre cómo aprendemos sobre nosotros mismos y nuestra identidad a través de nuestras experiencias vividas. Se relaciona con conceptos de viajes, educación superior y espiritualidad.\n\nPiedra Sol: Alegría, aliento, liderazgo, independencia, originalidad\nTurquesa: Buena fortuna, autorrealización, protección, resolución creativa de problemas\nTopacio: Compasión, comunicación, construcción de puentes, autorrealización, felicidad\nCrisocola: alineación de corazón y voz, eliminación de la negatividad\nJaspe Amarillo: energía positiva, inspiración proactiva, autoafirmación\nSodalita: verdad, intuición, perspicacia, creatividad, autoexpresión\nRubí: equilibra la energía ardiente, promueve la curación emocional, elimina la negatividad\nObsidiana Negra: protección y arraigo\n\nLa piedra de nacimiento tradicional para Sagitario es la turquesa."
+      },
+      "fr": {
+        "name": "Sagittaire",
+        "element": "Feu",
+        "planet": "Jupiter",
+        "desc": "Les pierres pour le Sagittaire sont associées à l'acquisition de connaissances, à l'intégration, à l'incarnation et au rayonnement.\nLe Sagittaire nous demande de réfléchir à la façon dont nous apprenons sur nous-mêmes et notre identité à travers nos expériences vécues. Il est lié aux concepts de voyage, d'enseignement supérieur et de spiritualité.\n\nPierre de soleil : Joie, encouragement, leadership, indépendance, originalité\nTurquoise : Bonne fortune, réalisation de soi, protection, résolution créative de problèmes\nTopaze : Compassion, communication, établissement de liens, réalisation de soi, bonheur\nChrysocolle : alignement du cœur et de la voix, élimination de la négativité\nJaspe jaune : énergie positive, inspiration proactive, affirmation de soi\nSodalite : vérité, intuition, perspicacité, créativité, expression de soi\nRubis : équilibre l'énergie ardente, favorise la guérison émotionnelle, élimine la négativité\nObsidienne noire : protection et ancrage\n\nLa pierre de naissance traditionnelle pour le Sagittaire est la turquoise."
+      },
+      "it": {
+        "name": "Sagittario",
+        "element": "Fuoco",
+        "planet": "Giove",
+        "desc": "Le gemme per il Sagittario sono associate all'acquisizione di conoscenze, all'integrazione, all'incarnazione e allo splendore.\nIl Sagittario ci chiede di riflettere su come impariamo su noi stessi e sulla nostra identità attraverso le nostre esperienze vissute. È legato ai concetti di viaggio, istruzione superiore e spiritualità.\n\nPiedra del Sole: Gioia, incoraggiamento, leadership, indipendenza, originalità\nTurchese: Buona fortuna, autorealizzazione, protezione, risoluzione creativa dei problemi\nTopazio: Compassione, comunicazione, costruzione di ponti, autorealizzazione, felicità\nCrisocolla: allineamento di cuore e voce, eliminazione della negatività\nDiaspro Giallo: energia positiva, ispirazione proattiva, autoaffermazione\nSodalite: verità, intuizione, intuizioni, creatività, autoespressione\nRubino: equilibra l'energia ardente, promuove la guarigione emotiva, rimuove la negatività\nOssidiana Nera: protezione e radicamento\n\nLa pietra natale tradizionale per il Sagittario è il turchese."
+      },
+      "de": {
+        "name": "Schütze",
+        "element": "Feuer",
+        "planet": "Jupiter",
+        "desc": "Die Edelsteine für den Schützen sind mit Wissenserwerb, Integration, Verkörperung und Ausstrahlung verbunden.\nDer Schütze fordert uns auf, darüber nachzudenken, wie wir durch unsere gelebten Erfahrungen etwas über uns selbst und unsere Identität lernen. Er steht in Verbindung mit Konzepten von Reisen, höherer Bildung und Spiritualität.\n\nSonnenstein: Freude, Ermutigung, Führung, Unabhängigkeit, Originalität\nTürkis: Glück, Selbstverwirklichung, Schutz, kreative Problemlösung\nTopas: Mitgefühl, Kommunikation, Brücken bauen, Selbstverwirklichung, Glück\nChrysokoll: Ausrichtung von Herz und Stimme, Beseitigung von Negativität\nGelber Jaspis: positive Energie, proaktive Inspiration, Selbstbehauptung\nSodalith: Wahrheit, Intuition, Erkenntnisse, Kreativität, Selbstausdruck\nRubin: gleicht feurige Energie aus, fördert emotionale Heilung, entfernt Negativität\nSchwarzer Obsidian: Schutz und Erdung\n\nDer traditionelle Geburtsstein für den Schützen ist der Türkis."
+      },
+      "pl": {
+        "name": "Strzelec",
+        "element": "Ogień",
+        "planet": "Jowisz",
+        "desc": "Kamienie dla Strzelca kojarzone są z zdobywaniem wiedzy, integracją, ucieleśnieniem i blaskiem.\nStrzelec prosi nas o refleksję nad tym, jak uczymy się o sobie i naszej tożsamości poprzez nasze życiowe doświadczenia. Wiąże się to z pojęciami podróży, wyższego wykształcenia i duchowości.\n\nKamień Słoneczny: Radość, zachęta, przywództwo, niezależność, oryginalność\nTurkus: Szczęście, samorealizacja, ochrona, kreatywne rozwiązywanie problemów\nTopaz: Współczucie, komunikacja, budowanie mostów, samorealizacja, szczęście\nChryzokola: zestrojenie serca i głosu, eliminacja negatywności\nŻółty Jaspis: pozytywna energia, proaktywna inspiracja, asertywność\nSodalit: prawda, intuicja, wgląd, kreatywność, wyrażanie siebie\nRubin: równoważy ognistą energię, promuje uzdrawianie emocjonalne, usuwa negatywność\nCzarny Obsydian: ochrona i uziemienie\n\nTradycyjnym kamieniem urodzinowym dla Strzelca jest turkus."
+      },
+      "ru": {
+        "name": "Стрелец",
+        "element": "Огонь",
+        "planet": "Юпитер",
+        "desc": "Камни Стрельца ассоциируются с приобретением знаний, интеграцией, воплощением и сиянием.\nСтрелец просит нас задуматься о том, как мы узнаем о себе и своей идентичности через наш жизненный опыт. Это связано с понятиями путешествий, высшего образования и духовности.\n\nСолнечный камень: Радость, поощрение, лидерство, независимость, оригинальность\nБирюза: Удача, самореализация, защита, творческое решение проблем\nТопаз: Сострадание, общение, наведение мостов, самореализация, счастье\nХризоколла: выравнивание сердца и голоса, устранение негатива\nЖелтая яшма: позитивная энергия, проактивное вдохновение, самоутверждение\nСодалит: правда, интуиция, озарения, творчество, самовыражение\nРубин: уравновешивает огненную энергию, способствует эмоциональному исцелению, устраняет негатив\nЧерный обсидиан: защита и заземление\n\nТрадиционный камень рождения для Стрельца — бирюза."
+      }
     }
   },
   {
@@ -140,13 +455,48 @@
     "end_date": "Jan 19",
     "image_name": "capricorn",
     "translations": {
-      "en": { "name": "Capricorn", "element": "Earth", "planet": "Saturn", "desc": "Capricorn is the tenth astrological sign, known for its disciplined, responsible, and ambitious drive." },
-      "es": { "name": "Capricornio", "element": "Tierra", "planet": "Saturno", "desc": "Capricornio es el décimo signo astrológico, conocido por su disciplina, responsabilidad y ambición." },
-      "fr": { "name": "Capricorne", "element": "Terre", "planet": "Saturne", "desc": "Le Capricorne est le dixième signe astrologique, connu pour son esprit discipliné, responsable et ambitieux." },
-      "it": { "name": "Capricorno", "element": "Terra", "planet": "Saturno", "desc": "Il Capricorno è il decimo segno zodiacale, noto per la sua spinta disciplinata, responsabile e ambiziosa." },
-      "de": { "name": "Steinbock", "element": "Erde", "planet": "Saturn", "desc": "Der Steinbock ist das zehnte Sternzeichen, bekannt für seine Disziplin, sein Verantwortungsbewusstsein und seinen Ehrgeiz." },
-      "pl": { "name": "Koziorożec", "element": "Ziemia", "planet": "Saturn", "desc": "Koziorożec to dziesiąty znak zodiaku, znany ze swojej dyscypliny, odpowiedzialności i ambicji." },
-      "ru": { "name": "Козерог", "element": "Земля", "planet": "Сатурн", "desc": "Козерог — десятый знак зодиака, известный своей дисциплинированностью, ответственностью и амбициозностью." }
+      "en": {
+        "name": "Capricorn",
+        "element": "Earth",
+        "planet": "Saturn",
+        "desc": "The gems for Capricorn are associated to the engagement of our energy and passion with the world.\nCapricorn asks us to reflect on how we take action about our wealth, how we relate to our career, social position, our ego and our destiny.\n\nRed Garnet: passion, devotion to what we love\nAmethyst: balance of priorities, inner growth, self-development, intuition, energy cleansing\nAgate: emotional healing, self-confidence, inner stability, heart opportunities\nBlack Tourmaline: psychic protection, repels negative energy, grounding energy\nLapis Lazuli: inner vision, truthful communication, royal virtues\nFluorite: mental enhancement and clarity, improved decision making, clearing the energy fields\nSmoky Quartz: protection, grounding and harmonization\nObsidian: protection and grounding\n\nThe traditional birthstone for Capricorn is Garnet."
+      },
+      "es": {
+        "name": "Capricornio",
+        "element": "Tierra",
+        "planet": "Saturno",
+        "desc": "Las gemas para Capricornio se asocian con el compromiso de nuestra energía y pasión con el mundo.\nCapricornio nos pide reflexionar sobre cómo actuamos con respecto a nuestra riqueza, cómo nos relacionamos con nuestra carrera, posición social, nuestro ego y nuestro destino.\n\nGranate Rojo: pasión, devoción a lo que amamos\nAmatista: equilibrio de prioridades, crecimiento interior, autodesarrollo, intuición, limpieza energética\nÁgata: sanación emocional, autoconfianza, estabilidad interior, oportunidades del corazón\nTurmalina Negra: protección psíquica, repele la energía negativa, energía de arraigo\nLapislázuli: visión interior, comunicación veraz, virtudes reales\nFluorita: mejora mental y claridad, mejor toma de decisiones, limpieza de los campos energéticos\nCuarzo Ahumado: protección, arraigo y armonización\nObsidiana: protección y arraigo\n\nLa piedra de nacimiento tradicional para Capricornio es el granate."
+      },
+      "fr": {
+        "name": "Capricorne",
+        "element": "Terre",
+        "planet": "Saturne",
+        "desc": "Les pierres pour le Capricorne sont associées à l'engagement de notre énergie et de notre passion avec le monde.\nLe Capricorne nous demande de réfléchir à la façon dont nous agissons concernant notre richesse, notre rapport à notre carrière, notre position sociale, notre ego et notre destin.\n\nGrenat rouge : passion, dévouement à ce que nous aimons\nAméthyste : équilibre des priorités, croissance intérieure, développement personnel, intuition, nettoyage énergétique\nAgate : guérison émotionnelle, confiance en soi, stabilité intérieure, opportunités du cœur\nTourmaline noire : protection psychique, repousse l'énergie négative, énergie d'ancrage\nLapis-lazuli : vision intérieure, communication véridique, vertus royales\nFluorite : amélioration mentale et clarté, meilleure prise de décision, nettoyage des champs énergétiques\nQuartz fumé : protection, ancrage et harmonisation\nObsidienne : protection et ancrage\n\nLa pierre de naissance traditionnelle pour le Capricorne est le grenat."
+      },
+      "it": {
+        "name": "Capricorno",
+        "element": "Terra",
+        "planet": "Saturno",
+        "desc": "Le gemme per il Capricorno sono associate all'impegno della nostra energia e passione con il mondo.\nIl Capricorno ci chiede di riflettere su come agiamo riguardo alla nostra ricchezza, come ci relazioniamo alla nostra carriera, posizione sociale, al nostro ego e al nostro destino.\n\nGranato Rosso: passione, devozione a ciò che amiamo\nAmetista: equilibrio delle priorità, crescita interiore, auto-sviluppo, intuito, pulizia energetica\nAgata: guarigione emotiva, fiducia in se stessi, stabilità interiore, opportunità del cuore\nTormalina Nera: protezione psichica, respinge l'energia negativa, energia di radicamento\nLapislazzuli: visione interiore, comunicazione veritiera, virtù reali\nFluorite: potenziamento mentale e chiarezza, migliore processo decisionale, pulizia dei campi energetici\nQuarzo Fumé: protezione, radicamento e armonizzazione\nOssidiana: protezione e radicamento\n\nLa pietra natale tradizionale per il Capricorno è il granato."
+      },
+      "de": {
+        "name": "Steinbock",
+        "element": "Erde",
+        "planet": "Saturn",
+        "desc": "Die Edelsteine für den Steinbock sind mit dem Einsatz unserer Energie und Leidenschaft in der Welt verbunden.\nDer Steinbock fordert uns auf, darüber nachzudenken, wie wir in Bezug auf unseren Reichtum handeln, wie wir zu unserer Karriere, unserer sozialen Stellung, unserem Ego und unserem Schicksal stehen.\n\nRoter Granat: Leidenschaft, Hingabe an das, was wir lieben\nAmethyst: Gleichgewicht der Prioritäten, inneres Wachstum, Selbstentwicklung, Intuition, Energiereinigung\nAchat: emotionale Heilung, Selbstvertrauen, innere Stabilität, Herzensmöglichkeiten\nSchwarzer Turmalin: psychischer Schutz, wehrt negative Energie ab, Erdungsenergie\nLapislazuli: innere Vision, wahrhaftige Kommunikation, königliche Tugenden\nFluorit: Mentale Verbesserung und Klarheit, verbesserte Entscheidungsfindung, Reinigung der Energiefelder\nRauchquarz: Schutz, Erdung und Harmonisierung\nObsidian: Schutz und Erdung\n\nDer traditionelle Geburtsstein für den Steinbock ist der Granat."
+      },
+      "pl": {
+        "name": "Koziorożec",
+        "element": "Ziemia",
+        "planet": "Saturn",
+        "desc": "Kamienie dla Koziorożca kojarzone są z zaangażowaniem naszej energii i pasji w świecie.\nKoziorożec prosi nas o refleksję nad tym, jak podejmujemy działania dotyczące naszego bogactwa, jak odnosimy się do naszej kariery, pozycji społecznej, naszego ego i naszego przeznaczenia.\n\nCzerwony Granat: pasja, oddanie temu, co kochamy\nAmetyst: równowaga priorytetów, wewnętrzny wzrost, samorozwój, intuicja, oczyszczanie energii\nAgat: uzdrawianie emocjonalne, pewność siebie, wewnętrzna stabilność, okazje serca\nCzarny Turmalin: ochrona psychiczna, odstrasza negatywną energię, energia uziemiająca\nLapis Lazuli: wizja wewnętrzna, prawdziwa komunikacja, cnoty królewskie\nFluoryt: poprawa umysłowa i jasność, lepsze podejmowanie decyzji, oczyszczanie pól energetycznych\nKwarc Dymny: ochrona, uziemienie i harmonizacja\nObsydian: ochrona i uziemienie\n\nTradycyjnym kamieniem urodzinowym dla Koziorożca jest granat."
+      },
+      "ru": {
+        "name": "Козерог",
+        "element": "Земля",
+        "planet": "Сатурн",
+        "desc": "Камни Козерога ассоциируются с вовлечением нашей энергии и страсти в мир.\nКозерог просит нас задуматься о том, как мы действуем в отношении нашего богатства, как мы относимся к нашей карьере, социальному положению, нашему эго и нашей судьбе.\n\nКрасный гранат: страсть, преданность тому, что мы любим\nАметист: баланс приоритетов, внутренний рост, саморазвитие, интуиция, энергетическое очищение\nАгат: эмоциональное исцеление, уверенность в себе, внутренняя стабильность, возможности сердца\nЧерный турмалин: психическая защита, отталкивает негативную энергию, заземляющая энергия\nЛазурит: внутреннее видение, правдивое общение, королевские добродетели\nФлюорит: ментальное улучшение и ясность, улучшение принятия решений, очищение энергетических полей\nДымчатый кварц: защита, заземление и гармонизация\nОбсидиан: защита и заземление\n\nТрадиционный камень рождения для Козерога — гранат."
+      }
     }
   },
   {
@@ -155,13 +505,48 @@
     "end_date": "Feb 18",
     "image_name": "aquarius",
     "translations": {
-      "en": { "name": "Aquarius", "element": "Air", "planet": "Uranus", "desc": "Aquarius is the eleventh astrological sign, known for its independent, humanitarian, and original ideas." },
-      "es": { "name": "Acuario", "element": "Aire", "planet": "Urano", "desc": "Acuario es el undécimo signo astrológico, conocido por sus ideas independientes, humanitarias y originales." },
-      "fr": { "name": "Verseau", "element": "Air", "planet": "Uranus", "desc": "Le Verseau est le onzième signe astrologique, connu pour ses idées indépendantes, humanitaires et originales." },
-      "it": { "name": "Acquario", "element": "Aria", "planet": "Urano", "desc": "L'Acquario è l'undicesimo segno zodiacale, noto per le sue idee indipendenti, umanitarie e originali." },
-      "de": { "name": "Wassermann", "element": "Luft", "planet": "Uranus", "desc": "Der Wassermann ist das elfte Sternzeichen, bekannt für seine unabhängigen, humanitären und originellen Ideen." },
-      "pl": { "name": "Wodnik", "element": "Powietrze", "planet": "Uran", "desc": "Wodnik to jedenasty znak zodiaku, znany ze swoich niezależnych, humanitarnych i oryginalnych pomysłów." },
-      "ru": { "name": "Водолей", "element": "Воздух", "planet": "Уран", "desc": "Водолей — одиннадцатый знак зодиака, известный своими независимыми, гуманитарными и оригинальными идеями." }
+      "en": {
+        "name": "Aquarius",
+        "element": "Air",
+        "planet": "Uranus",
+        "desc": "The gems for Aquarius are associated to spiritual elevation, mental capacities and evolution.\nAquarius asks us to reflect on how we relate to security in our relationships. Its energy invites us to consider our friendships and associations in larger settings, as well as our aspirations for the world of tomorrow and how we embody these aspirations.\n\nAmethyst: Higher Self, spirituality, detoxification, alignment\nLion Skin Jasper: clarity of mind, courage, stamina, fortunate happenings\nGreen Aventurine: positivity and openness, emotional well-being\nFluorite: clear thinking, concentration, letting go of unproductive habits\nOpal: spiritual openness and awakening\nGreen Jasper: purpose, life mission, rejuvenation, faith, joy, positivity\nEmerald: loyalty, friendship, emotional healing, abundance and wealth\nTurquoise: Good fortune, self-realization, protection, creative problem solving\n\nThe traditional birthstone for Aquarius is amethyst."
+      },
+      "es": {
+        "name": "Acuario",
+        "element": "Aire",
+        "planet": "Urano",
+        "desc": "Las gemas para Acuario se asocian a la elevación espiritual, capacidades mentales y evolución.\nAcuario nos pide reflexionar sobre cómo nos relacionamos con la seguridad en nuestras relaciones. Su energía nos invita a considerar nuestras amistades y asociaciones en entornos más amplios, así como nuestras aspiraciones para el mundo del mañana y cómo encarnamos estas aspiraciones.\n\nAmatista: Yo Superior, espiritualidad, desintoxicación, alineación\nJaspe Piel de León: claridad mental, coraje, resistencia, sucesos afortunados\nAventurina Verde: positividad y apertura, bienestar emocional\nFluorita: pensamiento claro, concentración, dejar ir hábitos improductivos\nÓpalo: apertura espiritual y despertar\nJaspe Verde: propósito, misión de vida, rejuvenecimiento, fe, alegría, positividad\nEsmeralda: lealtad, amistad, sanación emocional, abundancia y riqueza\nTurquesa: buena fortuna, autorrealización, protección, resolución creativa de problemas\n\nLa piedra de nacimiento tradicional para Acuario es la amatista."
+      },
+      "fr": {
+        "name": "Verseau",
+        "element": "Air",
+        "planet": "Uranus",
+        "desc": "Les pierres pour le Verseau sont associées à l'élévation spirituelle, aux capacités mentales et à l'évolution.\nLe Verseau nous demande de réfléchir à notre rapport à la sécurité dans nos relations. Son énergie nous invite à considérer nos amitiés et associations dans des cadres plus larges, ainsi que nos aspirations pour le monde de demain et comment nous incarnons ces aspirations.\n\nAméthyste : Soi Supérieur, spiritualité, détoxification, alignement\nJaspe peau de lion : clarté d'esprit, courage, endurance, événements heureux\nAventurine verte : positivité et ouverture, bien-être émotionnel\nFluorite : pensée claire, concentration, abandon des habitudes improductives\nOpale : ouverture spirituelle et éveil\nJaspe vert : but, mission de vie, rajeunissement, foi, joie, positivité\nÉmeraude : loyauté, amitié, guérison émotionnelle, abondance et richesse\nTurquoise : bonne fortune, réalisation de soi, protection, résolution créative de problèmes\n\nLa pierre de naissance traditionnelle pour le Verseau est l'améthyste."
+      },
+      "it": {
+        "name": "Acquario",
+        "element": "Aria",
+        "planet": "Urano",
+        "desc": "Le gemme per l'Acquario sono associate all'elevazione spirituale, alle capacità mentali e all'evoluzione.\nL'Acquario ci chiede di riflettere su come ci relazioniamo alla sicurezza nelle nostre relazioni. La sua energia ci invita a considerare le nostre amicizie e associazioni in contesti più ampi, così come le nostre aspirazioni per il mondo di domani e come incarniamo queste aspirazioni.\n\nAmetista: Sé Superiore, spiritualità, disintossicazione, allineamento\nDiaspro Pelle di Leone: chiarezza mentale, coraggio, resistenza, eventi fortunati\nAvventurina Verde: positività e apertura, benessere emotivo\nFluorite: pensiero chiaro, concentrazione, abbandono di abitudini improduttive\nOpale: apertura spirituale e risveglio\nDiaspro Verde: scopo, missione di vita, ringiovanimento, fede, gioia, positività\nSmeraldo: lealtà, amicizia, guarigione emotiva, abbondanza e ricchezza\nTurchese: buona fortuna, autorealizzazione, protezione, risoluzione creativa dei problemi\n\nLa pietra natale tradizionale per l'Acquario è l'ametista."
+      },
+      "de": {
+        "name": "Wassermann",
+        "element": "Luft",
+        "planet": "Uranus",
+        "desc": "Die Edelsteine für den Wassermann sind mit spiritueller Erhebung, mentalen Fähigkeiten und Evolution verbunden.\nDer Wassermann fordert uns auf, darüber nachzudenken, wie wir uns zur Sicherheit in unseren Beziehungen verhalten. Seine Energie lädt uns ein, unsere Freundschaften und Verbindungen in größeren Zusammenhängen zu betrachten, sowie unsere Bestrebungen für die Welt von morgen und wie wir diese Bestrebungen verkörpern.\n\nAmethyst: Höheres Selbst, Spiritualität, Entgiftung, Ausrichtung\nLöwenhaut-Jaspis: geistige Klarheit, Mut, Ausdauer, glückliche Ereignisse\nGrüne Aventurin: Positivität und Offenheit, emotionales Wohlbefinden\nFluorit: klares Denken, Konzentration, Loslassen unproduktiver Gewohnheiten\nOpal: spirituelle Offenheit und Erwachen\nGrüner Jaspis: Zweck, Lebensmission, Verjüngung, Glaube, Freude, Positivität\nSmaragd: Loyalität, Freundschaft, emotionale Heilung, Fülle und Reichtum\nTürkis: Glück, Selbstverwirklichung, Schutz, kreative Problemlösung\n\nDer traditionelle Geburtsstein für den Wassermann ist der Amethyst."
+      },
+      "pl": {
+        "name": "Wodnik",
+        "element": "Powietrze",
+        "planet": "Uran",
+        "desc": "Kamienie dla Wodnika kojarzone są z duchowym wzniesieniem, zdolnościami umysłowymi i ewolucją.\nWodnik prosi nas o refleksję nad tym, jak odnosimy się do bezpieczeństwa w naszych relacjach. Jego energia zaprasza nas do rozważenia naszych przyjaźni i stowarzyszeń w szerszym kontekście, a także naszych aspiracji dotyczących świata jutra i tego, jak ucieleśniamy te aspiracje.\n\nAmetyst: Wyższe Ja, duchowość, detoksykacja, zestrojenie\nJaspis Skóra Lwa: jasność umysłu, odwaga, wytrzymałość, szczęśliwe zdarzenia\nZielony Awenturyn: pozytywność i otwartość, dobre samopoczucie emocjonalne\nFluoryt: jasne myślenie, koncentracja, porzucenie nieproduktywnych nawyków\nOpal: otwartość duchowa i przebudzenie\nZielony Jaspis: cel, misja życiowa, odmłodzenie, wiara, radość, pozytywność\nSzmaragd: lojalność, przyjaźń, uzdrawianie emocjonalne, obfitość i bogactwo\nTurkus: szczęście, samorealizacja, ochrona, kreatywne rozwiązywanie problemów\n\nTradycyjnym kamieniem urodzinowym dla Wodnika jest ametyst."
+      },
+      "ru": {
+        "name": "Водолей",
+        "element": "Воздух",
+        "planet": "Уран",
+        "desc": "Камни Водолея ассоциируются с духовным возвышением, умственными способностями и эволюцией.\nВодолей просит нас задуматься о том, как мы относимся к безопасности в наших отношениях. Его энергия приглашает нас рассмотреть нашу дружбу и связи в более широком контексте, а также наши стремления к миру завтрашнего дня и то, как мы воплощаем эти стремления.\n\nАметист: Высшее Я, духовность, детоксикация, выравнивание\nЯшма Львиная шкура: ясность ума, смелость, выносливость, счастливые события\nЗеленый авантюрин: позитив и открытость, эмоциональное благополучие\nФлюорит: ясное мышление, концентрация, отказ от непродуктивных привычек\nОпал: духовная открытость и пробуждение\nЗеленая яшма: цель, жизненная миссия, омоложение, вера, радость, позитив\nИзумруд: верность, дружба, эмоциональное исцеление, изобилие и богатство\nБирюза: удача, самореализация, защита, творческое решение проблем\n\nТрадиционный камень рождения для Водолея — аметист."
+      }
     }
   },
   {
@@ -170,13 +555,48 @@
     "end_date": "Mar 20",
     "image_name": "pisces",
     "translations": {
-      "en": { "name": "Pisces", "element": "Water", "planet": "Neptune", "desc": "Pisces is the twelfth astrological sign, known for its compassionate, artistic, and intuitive nature." },
-      "es": { "name": "Piscis", "element": "Agua", "planet": "Neptuno", "desc": "Piscis es el duodécimo signo astrológico, conocido por su naturaleza compasiva, artística e intuitiva." },
-      "fr": { "name": "Poissons", "element": "Eau", "planet": "Neptune", "desc": "Les Poissons sont le douzième signe astrologique, connu pour sa nature compatissante, artistique et intuitive." },
-      "it": { "name": "Pesci", "element": "Acqua", "planet": "Nettuno", "desc": "I Pesci sono il dodicesimo segno zodiacale, noti per la loro natura compassionevole, artistica e intuitiva." },
-      "de": { "name": "Fische", "element": "Wasser", "planet": "Neptun", "desc": "Die Fische sind das zwölfte Sternzeichen, bekannt für ihre mitfühlende, künstlerische und intuitive Natur." },
-      "pl": { "name": "Ryby", "element": "Woda", "planet": "Neptun", "desc": "Ryby to dwunasty znak zodiaku, znany ze swojej współczującej, artystycznej i intuicyjnej natury." },
-      "ru": { "name": "Рыбы", "element": "Вода", "planet": "Нептун", "desc": "Рыбы — двенадцатый знак зодиака, известный своей сострадательной, артистичной и интуитивной натурой." }
+      "en": {
+        "name": "Pisces",
+        "element": "Water",
+        "planet": "Neptune",
+        "desc": "The gems for Pisces are associated to energetic wholeness, wisdom and applied transformation.\nPisces asks us to reflect on how we learn on a soulful, emotional and psychic level. It relates to the subconscious mind, and the underlying currents of our value systems that are embedded in everything we do.\n\nAquamarine: happiness, wisdom, protection\nLabradorite: protection, intuition, serendipity\nYellow Quartz: self-worth, joy, confidence, creativity, blessings\nApatite: creativity, reflection, dreams and hopes, manifestation\nRed Jasper: well-being, strength, confidence, vitality and spiritual grounding\nJade: love, trust, dignity, serenity, nurturing, protection, abundance\nRuby: balances fiery energy, promotes emotional healing, removes negativity\nLapis Lazuli: inner vision, truthful communication, royal virtues\n\nThe traditional birthstone for Pisces is aquamarine."
+      },
+      "es": {
+        "name": "Piscis",
+        "element": "Agua",
+        "planet": "Neptuno",
+        "desc": "Las gemas para Piscis se asocian a la plenitud energética, la sabiduría y la transformación aplicada.\nPiscis nos pide reflexionar sobre cómo aprendemos a nivel anímico, emocional y psíquico. Se relaciona con la mente subconsciente y las corrientes subyacentes de nuestros sistemas de valores que están incrustados en todo lo que hacemos.\n\nAguamarina: felicidad, sabiduría, protección\nLabradorita: protección, intuición, serendipia\nCuarzo Amarillo: autoestima, alegría, confianza, creatividad, bendiciones\nApatita: creatividad, reflexión, sueños y esperanzas, manifestación\nJaspe Rojo: bienestar, fuerza, confianza, vitalidad y arraigo espiritual\nJade: amor, confianza, dignidad, serenidad, nutrición, protección, abundancia\nRubí: equilibra la energía ardiente, promueve la curación emocional, elimina la negatividad\nLapislázuli: visión interior, comunicación veraz, virtudes reales\n\nLa piedra de nacimiento tradicional para Piscis es la aguamarina."
+      },
+      "fr": {
+        "name": "Poissons",
+        "element": "Eau",
+        "planet": "Neptune",
+        "desc": "Les pierres pour les Poissons sont associées à la plénitude énergétique, à la sagesse et à la transformation appliquée.\nLes Poissons nous demandent de réfléchir à la façon dont nous apprenons sur un plan spirituel, émotionnel et psychique. Cela concerne l'esprit subconscient et les courants sous-jacents de nos systèmes de valeurs qui sont intégrés dans tout ce que nous faisons.\n\nAigue-marine : bonheur, sagesse, protection\nLabradorite : protection, intuition, sérendipité\nQuartz jaune : estime de soi, joie, confiance, créativité, bénédictions\nApatite : créativité, réflexion, rêves et espoirs, manifestation\nJaspe rouge : bien-être, force, confiance, vitalité et ancrage spirituel\nJade : amour, confiance, dignité, sérénité, nutrition, protection, abondance\nRubis : équilibre l'énergie ardente, favorise la guérison émotionnelle, élimine la négativité\nLapis-lazuli : vision intérieure, communication véridique, vertus royales\n\nLa pierre de naissance traditionnelle pour les Poissons est l'aigue-marine."
+      },
+      "it": {
+        "name": "Pesci",
+        "element": "Acqua",
+        "planet": "Nettuno",
+        "desc": "Le gemme per i Pesci sono associate alla pienezza energetica, alla saggezza e alla trasformazione applicata.\nI Pesci ci chiedono di riflettere su come impariamo a livello animico, emotivo e psichico. Si riferisce alla mente subconscia e alle correnti sottostanti dei nostri sistemi di valori che sono incorporati in tutto ciò che facciamo.\n\nAcquamarina: felicità, saggezza, protezione\nLabradorite: protezione, intuito, serendipità\nQuarzo Giallo: autostima, gioia, fiducia, creatività, benedizioni\nApatite: creatività, riflessione, sogni e speranze, manifestazione\nDiaspro Rosso: benessere, forza, fiducia, vitalità e radicamento spirituale\nGiada: amore, fiducia, dignità, serenità, nutrimento, protezione, abbondanza\nRubino: equilibra l'energia ardente, promuove la guarigione emotiva, rimuove la negatività\nLapislazzuli: visione interiore, comunicazione veritiera, virtù reali\n\nLa pietra natale tradizionale per i Pesci è l'acquamarina."
+      },
+      "de": {
+        "name": "Fische",
+        "element": "Wasser",
+        "planet": "Neptun",
+        "desc": "Die Edelsteine für die Fische sind mit energetischer Ganzheit, Weisheit und angewandter Transformation verbunden.\nDie Fische fordern uns auf, darüber nachzudenken, wie wir auf seelischer, emotionaler und psychischer Ebene lernen. Es bezieht sich auf das Unterbewusstsein und die zugrunde liegenden Strömungen unserer Wertesysteme, die in allem, was wir tun, eingebettet sind.\n\nAquamarin: Glück, Weisheit, Schutz\nLabradorit: Schutz, Intuition, Serendipität\nGelber Quarz: Selbstwertgefühl, Freude, Vertrauen, Kreativität, Segnungen\nApatit: Kreativität, Reflexion, Träume und Hoffnungen, Manifestation\nRoter Jaspis: Wohlbefinden, Stärke, Vertrauen, Vitalität und spirituelle Erdung\nJade: Liebe, Vertrauen, Würde, Gelassenheit, Pflege, Schutz, Fülle\nRubin: gleicht feurige Energie aus, fördert emotionale Heilung, entfernt Negativität\nLapislazuli: innere Vision, wahrhaftige Kommunikation, königliche Tugenden\n\nDer traditionelle Geburtsstein für die Fische ist der Aquamarin."
+      },
+      "pl": {
+        "name": "Ryby",
+        "element": "Woda",
+        "planet": "Neptun",
+        "desc": "Kamienie dla Ryb kojarzone są z energetyczną pełnią, mądrością i stosowaną transformacją.\nRyby proszą nas o refleksję nad tym, jak uczymy się na poziomie duchowym, emocjonalnym i psychicznym. Odnosi się to do podświadomości i ukrytych nurtów naszych systemów wartości, które są osadzone we wszystkim, co robimy.\n\nAkwamaryn: szczęście, mądrość, ochrona\nLabradoryt: ochrona, intuicja, szczęśliwy traf\nŻółty Kwarc: poczucie własnej wartości, radość, pewność siebie, kreatywność, błogosławieństwa\nApatyt: kreatywność, refleksja, sny i nadzieje, manifestacja\nCzerwony Jaspis: dobre samopoczucie, siła, pewność siebie, witalność i duchowe uziemienie\nJadeit: miłość, zaufanie, godność, spokój, pielęgnacja, ochrona, obfitość\nRubin: równoważy ognistą energię, promuje uzdrawianie emocjonalne, usuwa negatywność\nLapis Lazuli: wizja wewnętrzna, prawdziwa komunikacja, cnoty królewskie\n\nTradycyjnym kamieniem urodzinowym dla Ryb jest akwamaryn."
+      },
+      "ru": {
+        "name": "Рыбы",
+        "element": "Вода",
+        "planet": "Нептун",
+        "desc": "Камни Рыб ассоциируются с энергетической целостностью, мудростью и прикладной трансформацией.\nРыбы просят нас задуматься о том, как мы учимся на душевном, эмоциональном и психическом уровне. Это относится к подсознанию и скрытым течениям наших систем ценностей, которые внедрены во все, что мы делаем.\n\nАквамарин: счастье, мудрость, защита\nЛабрадорит: защита, интуиция, интуитивная прозорливость\nЖелтый кварц: самооценка, радость, уверенность, творчество, благословения\nАпатит: творчество, размышления, мечты и надежды, проявление\nКрасная яшма: благополучие, сила, уверенность, жизненная сила и духовное заземление\nНефрит: любовь, доверие, достоинство, спокойствие, забота, защита, изобилие\nРубин: уравновешивает огненную энергию, способствует эмоциональному исцелению, устраняет негатив\nЛазурит: внутреннее видение, правдивое общение, королевские добродетели\n\nТрадиционный камень рождения для Рыб — аквамарин."
+      }
     }
   }
 ]

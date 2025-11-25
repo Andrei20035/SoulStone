@@ -11,6 +11,7 @@ import com.example.soulstone.data.entities.Chakra
 import com.example.soulstone.data.entities.ChakraTranslation
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedChakra
+import com.example.soulstone.data.relations.StoneChakraCrossRef
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -100,6 +101,9 @@ interface ChakraDao {
 
     @Query("SELECT * FROM chakras WHERE sanskritName = :sanskritName LIMIT 1")
     suspend fun findChakraBySanskritName(sanskritName: String): Chakra?
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertStoneChakraCrossRef(crossRef: StoneChakraCrossRef)
 
 
     // --- Admin/Helper Queries for ChakraTranslation table ---

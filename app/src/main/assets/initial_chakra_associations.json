@@ -1,0 +1,93 @@
+[
+  {
+    "chakra_key": "Muladhara",
+    "stones": [
+      "black_tourmaline",
+      "red_garnet",
+      "black_obsidian",
+      "red_agate",
+      "onyx",
+      "hematite",
+      "smoky_quartz",
+      "red_jasper"
+    ]
+  },
+  {
+    "chakra_key": "Svadhisthana",
+    "stones": [
+      "coral",
+      "topaz",
+      "moon_stone",
+      "orange_aventurine",
+      "shiva_lingam",
+      "carnelian",
+      "orange_calcite",
+      "amber"
+    ]
+  },
+  {
+    "chakra_key": "Manipura",
+    "stones": [
+      "citrine",
+      "yellow_quartz",
+      "sunstone",
+      "yellow_jade",
+      "yellow_tourmaline",
+      "yellow_fluorite",
+      "tiger_eye",
+      "yellow_jasper"
+    ]
+  },
+  {
+    "chakra_key": "Anahata",
+    "stones": [
+      "green_jade",
+      "pink_quartz",
+      "aventurine",
+      "amazonite",
+      "pink_tourmaline",
+      "malachite",
+      "watermelon_tourmaline",
+      "fluorite"
+    ]
+  },
+  {
+    "chakra_key": "Vishuddha",
+    "stones": [
+      "sodalite",
+      "blue_calcite",
+      "apatite",
+      "blue_kyanite",
+      "turquoise",
+      "chrysocolla",
+      "angelite",
+      "aquamarine"
+    ]
+  },
+  {
+    "chakra_key": "Ajna",
+    "stones": [
+      "amethyst",
+      "labradorite",
+      "purple_aventurine",
+      "lapis_lazuli",
+      "purple_sapphire",
+      "hawk_eye",
+      "tanzanite",
+      "purple_fluorite"
+    ]
+  },
+  {
+    "chakra_key": "Sahasrara",
+    "stones": [
+      "diamond",
+      "quartz_crystal",
+      "white_topaz",
+      "lepidolite",
+      "amethyst",
+      "selenite",
+      "sugilite",
+      "opal"
+    ]
+  }
+]

@@ -22,12 +22,9 @@ data class ChineseZodiacSignTranslation(
     val chineseSignId: Int,
     val languageCode: LanguageCode,
 
-    // Basic Info
-    val name: String, // "Rat"
-    val description: String, // The main paragraph (Lines 6-7)
-
-    // New Fields for your data
-    val traits: String, // "Frugal, ambitious, honest, charming, critical"
+    val name: String,
+    val description: String,
+    val traits: String,
 
     @ColumnInfo(name = "best_match")
     val bestMatch: String, // "Ox" (Localized string)
