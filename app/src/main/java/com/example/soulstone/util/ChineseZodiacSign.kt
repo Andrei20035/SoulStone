@@ -1,16 +1,16 @@
 package com.example.soulstone.util
 
 enum class ChineseZodiacSign(val signName: String) {
-    RAT("Rat"),
-    OX("Ox"),
-    TIGER("Tiger"),
-    RABBIT("Rabbit"),
-    DRAGON("Dragon"),
-    SNAKE("Snake"),
-    HORSE("Horse"),
-    GOAT("Goat"),
-    MONKEY("Monkey"),
-    ROOSTER("Rooster"),
-    DOG("Dog"),
-    PIG("Pig")
+    RAT("rat"),
+    OX("ox"),
+    TIGER("tiger"),
+    RABBIT("rabbit"),
+    DRAGON("dragon"),
+    SNAKE("snake"),
+    HORSE("horse"),
+    GOAT("goat"),
+    MONKEY("monkey"),
+    ROOSTER("rooster"),
+    DOG("dog"),
+    PIG("pig")
 }

@@ -8,6 +8,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.pojos.StoneListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedStone
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
@@ -21,9 +22,48 @@ import kotlinx.coroutines.flow.Flow
 interface StoneDao {
 
     @Query("""
+    SELECT 
+        s.id as id, 
+        st.name as name, 
+        s.imageUri 
+    FROM stones s
+    INNER JOIN stone_translations st ON s.id = st.stoneId
+    INNER JOIN stone_zodiac_cross_ref ref ON s.id = ref.stoneId
+    INNER JOIN zodiac_signs z ON ref.zodiacSignId = z.id
+    WHERE z.name = :signName 
+      AND st.languageCode = :languageCode
+    LIMIT :limit
+""")
+    fun getStonesForSignFlow(
+        signName: String,
+        languageCode: LanguageCode,
+        limit: Int
+    ): Flow<List<StoneListItem>>
+
+    @Query(
+        """
+    SELECT 
+        s.id as id, 
+        st.name as name, 
+        s.imageUri 
+    FROM stones s
+    INNER JOIN stone_translations st ON s.id = st.stoneId
+    INNER JOIN stone_chinese_zodiac_cross_ref ref ON s.id = ref.stoneId
+    INNER JOIN chinese_zodiac_signs z ON ref.chineseZodiacSignId = z.id
+    WHERE z.keyName = :keyName 
+      AND st.languageCode = :languageCode
+    LIMIT :limit
+"""
+    )
+    fun getStonesForChineseSignFlow(
+        keyName: String,
+        languageCode: LanguageCode,
+        limit: Int
+    ): Flow<List<StoneListItem>>
+
+    @Query("""
         SELECT
             s.id AS id, 
-            s.name AS keyName, 
             s.imageUri AS imageUri,
             t.name AS translatedName,
             t.description AS description,
@@ -39,7 +79,6 @@ interface StoneDao {
     @Query("""
         SELECT
             s.id AS id, 
-            s.name AS keyName, 
             s.imageUri AS imageUri,
             t.name AS translatedName,
             t.description AS description,
@@ -52,19 +91,18 @@ interface StoneDao {
     suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?
 
     @Query("""
-        SELECT
-            s.id AS id, 
-            s.name AS keyName, 
-            s.imageUri AS imageUri,
-            t.name AS translatedName,
-            t.description AS description,
-            t.languageCode AS languageCode
-        FROM stones AS s
-        JOIN stone_translations AS t ON s.id = t.stoneId
-        WHERE s.name = :keyName AND t.languageCode = :language
-        LIMIT 1
-    """)
-    fun getTranslatedStoneFlow(keyName: String, language: LanguageCode): Flow<TranslatedStone?>
+    SELECT
+        s.id AS id,
+        s.imageUri AS imageUri,
+        t.name AS translatedName,
+        t.description AS description,
+        t.languageCode AS languageCode
+    FROM stones AS s
+    JOIN stone_translations AS t ON s.id = t.stoneId
+    WHERE s.id = :stoneId AND t.languageCode = :language
+    LIMIT 1
+""")
+    fun getTranslatedStoneFlow(stoneId: Int, language: LanguageCode): Flow<TranslatedStone?>
 
 
     // --- Filtered List Queries (3-Table JOINs) ---
@@ -72,7 +110,6 @@ interface StoneDao {
     @Query("""
     SELECT
         s.id AS id, 
-        s.name AS keyName, 
         s.imageUri AS imageUri,
         st.name AS translatedName,
         st.description AS description,
@@ -89,7 +126,6 @@ interface StoneDao {
     @Query("""
         SELECT
             s.id AS id, 
-            s.name AS keyName, 
             s.imageUri AS imageUri,
             st.name AS translatedName,
             st.description AS description,

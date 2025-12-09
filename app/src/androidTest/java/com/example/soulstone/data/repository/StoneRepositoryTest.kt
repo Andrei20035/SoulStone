@@ -24,7 +24,7 @@ class StoneRepositoryTest : DbTest() {
         db.benefitDao().insertBenefit(Benefit(name = "Calming"))
         db.chakraDao().insertChakra(Chakra(name = "Root"))
         db.zodiacSignDao().insertZodiacSign(ZodiacSign(name = "Aries"))
-        db.chineseZodiacSignDao().insertChineseZodiacSign(ChineseZodiacSign(name = "Dragon"))
+        db.chineseZodiacSignDao().insertChineseZodiacSign(ChineseZodiacSign(keyName = "Dragon"))
 
         val repo = StoneRepositoryImpl(db.stoneDao())
         repo.insertFullStone(

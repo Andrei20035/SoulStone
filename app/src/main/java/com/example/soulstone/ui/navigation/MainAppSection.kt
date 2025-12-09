@@ -16,8 +16,10 @@ import com.example.soulstone.screens.components.SoulStoneTopBar
 import com.example.soulstone.screens.horoscope_monthly_birthstones.HomeScreen
 import com.example.soulstone.ui.components.AppBarViewModel
 import com.example.soulstone.ui.screens.chinese_birthstones.ChineseBirthstonesScreen
+import com.example.soulstone.ui.screens.chinese_sign_details.ChineseSignDetailsScreen
 import com.example.soulstone.ui.screens.horoscope_sign_details.HoroscopeSignDetailsScreen
 import com.example.soulstone.ui.screens.seven_chakra_stones.SevenChakraScreen
+import com.example.soulstone.ui.screens.stone_details.StoneDetailsScreen
 import com.example.soulstone.ui.screens.stone_uses.StoneUsesScreen
 import com.example.soulstone.ui.screens.stones_for_benefit.StonesForXScreen
 
@@ -36,16 +38,28 @@ fun MainAppSection(
                 viewModel = appBarViewModel,
                 onNavigateToAdmin = onNavigateToAdmin,
                 onNavigateHome = {
-                    mainNavController.navigate(AppScreen.Home.route) { /*...*/ }
+                    mainNavController.navigate(AppScreen.Home.route) {
+                        popUpTo(0) { inclusive = true }
+                        launchSingleTop = true
+                    }
                 },
                 onNavigateChinese = {
-                    mainNavController.navigate(AppScreen.ChineseBirthstones.route) { /*...*/ }
+                    mainNavController.navigate(AppScreen.ChineseBirthstones.route) {
+                        popUpTo(0) { inclusive = true }
+                        launchSingleTop = true
+                    }
                 },
                 onNavigateStoneUses = {
-                    mainNavController.navigate(AppScreen.StoneUses.route) { /*...*/ }
+                    mainNavController.navigate(AppScreen.StoneUses.route) {
+                        popUpTo(0) { inclusive = true }
+                        launchSingleTop = true
+                    }
                 },
                 onNavigateChakras = {
-                    mainNavController.navigate(AppScreen.SevenChakraStones.route) { /*...*/ }
+                    mainNavController.navigate(AppScreen.SevenChakraStones.route) {
+                        popUpTo(0) { inclusive = true }
+                        launchSingleTop = true
+                    }
                 }
             )
         }
@@ -78,22 +92,20 @@ fun MainAppSection(
             }
 //            composable(AppScreen.GemstoneIndex.route) { GemstoneIndexScreen() }
 
-//            // Stone Details screen (with argument)
-//            composable(
-//                route = AppScreen.StoneDetails.route,
-//                arguments = listOf(navArgument("stoneId") { type = NavType.StringType })
-//            ) { backStackEntry ->
-//                val stoneId = backStackEntry.arguments?.getString("stoneId")
-//                StoneDetailsScreen(stoneId = stoneId)
-//            }
+            // Stone Details screen (with argument)
+            composable(
+                route = "${AppScreen.StoneDetails.route}/{stoneId}",
+                arguments = listOf(navArgument("stoneId") { type = NavType.IntType })
+            ) {
+                StoneDetailsScreen(navController = mainNavController)
+            }
 //
 //            // Horoscope Sign Details screen (with argument)
             composable(
                 route = AppScreen.HoroscopeSignDetails.route,
-                arguments = listOf(navArgument("signId") { type = NavType.IntType })
-            ) { backStackEntry ->
-                val signId = backStackEntry.arguments!!.getInt("signId")
-                HoroscopeSignDetailsScreen(signId = signId)
+                arguments = listOf(navArgument("signName") { type = NavType.StringType })
+            ) {
+                HoroscopeSignDetailsScreen(navController = mainNavController)
             }
 //
 //            // Chakra Details screen (with argument)
@@ -105,14 +117,12 @@ fun MainAppSection(
 //                ChakraDetailsScreen(chakraId = chakraId)
 //            }
 //
-//            // Chinese Sign Details screen (with argument)
-//            composable(
-//                route = AppScreen.ChineseSignDetails.route,
-//                arguments = listOf(navArgument("signId") { type = NavType.StringType })
-//            ) { backStackEntry ->
-//                val signId = backStackEntry.arguments?.getString("signId")
-//                ChineseSignDetailsScreen(signId = signId)
-//            }
+            composable(
+                route = AppScreen.ChineseSignDetails.route,
+                arguments = listOf(navArgument("keyName") { type = NavType.StringType })
+            ) {
+                ChineseSignDetailsScreen(navController = mainNavController)
+            }
         }
     }
 }

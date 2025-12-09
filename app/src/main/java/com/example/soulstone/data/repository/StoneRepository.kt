@@ -3,6 +3,7 @@ package com.example.soulstone.data.repository
 import android.net.Uri
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.pojos.StoneListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedStone
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
@@ -16,8 +17,12 @@ interface StoneRepository {
     fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>>
     fun getStonesForBenefit(benefitId: Int, language: LanguageCode): Flow<List<TranslatedStone>>
     fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+    fun getStonesForSignFlow(keyName: String, language: LanguageCode, limit: Int): Flow<List<StoneListItem>>
+
+    fun getStonesForChineseSignFlow(keyName: String, languageCode: LanguageCode, limit: Int): Flow<List<StoneListItem>>
+
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?
-    suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone?
+    suspend fun getTranslatedStoneFlow(stoneId: Int, language: LanguageCode): Flow<TranslatedStone?>
     suspend fun insertStone(stone: Stone)
     suspend fun insertTranslation(translation: StoneTranslation)
     suspend fun insertBenefitCrossRef(crossRef: StoneBenefitCrossRef)

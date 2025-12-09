@@ -6,8 +6,6 @@ import com.example.soulstone.util.LanguageCode
 data class TranslatedBenefit(
     val id: Int,
     val keyName: String,
-    @DrawableRes val imageResId: Int,
-
+    val imageName: String,
     val translatedName: String,
-    val languageCode: LanguageCode
 )

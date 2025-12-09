@@ -25,7 +25,7 @@ class StoneDaoTest : DbTest() {
         db.benefitDao().insertBenefit(Benefit(name = "Focus")) // id=2
         db.chakraDao().insertChakra(Chakra(name = "Root")) // id=1
         db.zodiacSignDao().insertZodiacSign(ZodiacSign(name = "Aries")) // id=1
-        db.chineseZodiacSignDao().insertChineseZodiacSign(ChineseZodiacSign(name = "Dragon")) // id=1
+        db.chineseZodiacSignDao().insertChineseZodiacSign(ChineseZodiacSign(keyName = "Dragon")) // id=1
 
         val stone = Stone(imageUri = "content://image/stone1")
         val translations = listOf(

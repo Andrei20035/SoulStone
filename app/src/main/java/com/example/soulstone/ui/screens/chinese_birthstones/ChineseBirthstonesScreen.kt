@@ -2,7 +2,6 @@ package com.example.soulstone.ui.screens.chinese_birthstones
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -15,11 +14,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,26 +34,41 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
+import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
-import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ZodiacViewModel
 import com.example.soulstone.util.ChineseZodiacSign
+import kotlinx.coroutines.launch
 import kotlin.math.atan2
 import kotlin.math.sqrt
 
 @Composable
 fun ChineseBirthstonesScreen(
+    viewModel: ChineseBirthstonesViewModel = hiltViewModel(),
     navController: NavHostController = rememberNavController()
 ) {
-    val viewModel: ChineseViewModel = hiltViewModel()
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
 
-    val signIdToNavigate by viewModel.navigationEvent.collectAsState()
+    LaunchedEffect(Unit) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.ShowSnackbar -> {
+                    scope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = event.message,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
+                }
 
-    LaunchedEffect(signIdToNavigate) {
-        if (signIdToNavigate != null) {
-            navController.navigate(
-                AppScreen.ChineseSignDetails.createRoute(signIdToNavigate!!)
-            )
-            viewModel.onNavigationHandled()
+                is UiEvent.NavigateToChineseSign -> {
+                    navController.navigate(
+                        AppScreen.ChineseSignDetails.createRoute(event.keyName)
+                    )
+                }
+
+                else -> {}
+            }
         }
     }
 

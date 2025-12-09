@@ -12,6 +12,5 @@ import androidx.room.PrimaryKey
 data class Benefit(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    @DrawableRes val imageResId: Int
-
+    val imageName: String
 )

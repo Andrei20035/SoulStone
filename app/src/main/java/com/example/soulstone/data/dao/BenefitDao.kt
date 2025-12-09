@@ -23,9 +23,8 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
-            b.imageResId as imageResId,
-            t.name AS translatedName,
-            t.languageCode AS languageCode
+            b.imageName as imageName,
+            t.name AS translatedName
         FROM benefits AS b
         JOIN benefit_translations AS t ON b.id = t.benefitId
         WHERE t.languageCode = :language
@@ -37,9 +36,8 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
-            b.imageResId AS imageResId,
-            t.name AS translatedName,
-            t.languageCode AS languageCode
+            b.imageName AS imageName,
+            t.name AS translatedName
         FROM benefits AS b
         JOIN benefit_translations AS t ON b.id = t.benefitId
         WHERE b.name = :keyName AND t.languageCode = :language
@@ -50,9 +48,8 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
-            b.imageResId AS imageResId,
-            t.name AS translatedName,
-            t.languageCode AS languageCode
+            b.imageName AS imageName,
+            t.name AS translatedName
         FROM benefits AS b
         JOIN benefit_translations AS t ON b.id = t.benefitId
         WHERE b.name = :keyName AND t.languageCode = :language
@@ -63,9 +60,8 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
-            b.imageResId AS imageResId,
-            t.name AS translatedName,
-            t.languageCode AS languageCode
+            b.imageName AS imageName,
+            t.name AS translatedName
         FROM benefits AS b
         JOIN benefit_translations AS t ON b.id = t.benefitId
         WHERE b.id = :benefitId AND t.languageCode = :language
@@ -76,9 +72,8 @@ interface BenefitDao {
         SELECT 
             b.id AS id, 
             b.name AS keyName, 
-            b.imageResId AS imageResId,
-            t.name AS translatedName,
-            t.languageCode AS languageCode
+            b.imageName AS imageName,
+            t.name AS translatedName
         FROM benefits AS b
         JOIN benefit_translations AS t ON b.id = t.benefitId
         WHERE b.id = :benefitId AND t.languageCode = :language

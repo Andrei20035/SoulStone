@@ -18,74 +18,80 @@ import kotlinx.coroutines.flow.Flow
 interface ChakraDao {
 
     // --- Main App Queries (using JOINs) ---
-    @Query("""
+    @Query(
+        """
         SELECT 
             c.id, 
             c.sanskritName, 
-            c.iconResId,
+            c.imageName,
             t.name,
             t.description,
             t.location,
-            t.ruling_planet AS rulingPlanet,
+            t.rulingPlanet,
             t.element,
-            t.stone_colors AS stoneColors,
-            t.healing_qualities AS healingQualities,
+            t.stoneColors,
+            t.healingQualities,
             t.stones,
-            t.body_placement AS bodyPlacement,
-            t.house_placement AS housePlacement,
+            t.bodyPlacement,
+            t.housePlacement,
             t.herbs,
-            t.essential_oils AS essentialOils
+            t.essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE t.languageCode = :language
         ORDER BY c.id ASC
-    """)
+    """
+    )
     fun getAllTranslatedChakras(language: LanguageCode): Flow<List<TranslatedChakra>>
 
-    @Query("""
+    @Query(
+        """
         SELECT 
             c.id, 
             c.sanskritName, 
-            c.iconResId,
+            c.imageName,
             t.name,
             t.description,
             t.location,
-            t.ruling_planet AS rulingPlanet,
+            t.rulingPlanet,
             t.element,
-            t.stone_colors AS stoneColors,
-            t.healing_qualities AS healingQualities,
+            t.stoneColors,
+            t.healingQualities,
             t.stones,
-            t.body_placement AS bodyPlacement,
-            t.house_placement AS housePlacement,
+            t.bodyPlacement,
+            t.housePlacement,
             t.herbs,
-            t.essential_oils AS essentialOils
+            t.essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
-    """)
+    """
+    )
     suspend fun getTranslatedChakra(sanskritName: String, language: LanguageCode): TranslatedChakra?
 
-    @Query("""
+    @Query(
+        """
         SELECT 
             c.id, 
             c.sanskritName, 
-            c.iconResId,
+            c.imageName,
             t.name,
             t.description,
             t.location,
-            t.ruling_planet AS rulingPlanet,
+            t.rulingPlanet,
             t.element,
-            t.stone_colors AS stoneColors,
-            t.healing_qualities AS healingQualities,
+            t.stoneColors,
+            t.healingQualities,
             t.stones,
-            t.body_placement AS bodyPlacement,
-            t.house_placement AS housePlacement,
+            t.bodyPlacement,
+            t.housePlacement,
             t.herbs,
-            t.essential_oils AS essentialOils
+            t.essentialOils
         FROM chakras AS c
         JOIN chakra_translations AS t ON c.id = t.chakraId
         WHERE c.sanskritName = :sanskritName AND t.languageCode = :language
-    """)
+    """
+    )
     fun getTranslatedChakraFlow(sanskritName: String, language: LanguageCode): Flow<TranslatedChakra?>
 
 

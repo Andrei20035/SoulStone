@@ -4,8 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.soulstone.data.repository.ZodiacSignRepository
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.LanguageCode
-import com.example.soulstone.util.ZodiacSign
+import com.example.soulstone.util.ZodiacSignEnum
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -13,7 +12,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,8 +28,8 @@ class ZodiacViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(ZodiacUiState())
     val uiState: StateFlow<ZodiacUiState> = _uiState.asStateFlow()
 
-    private val _navigationEvent = MutableStateFlow<Int?>(null)
-    val navigationEvent: StateFlow<Int?> = _navigationEvent.asStateFlow()
+    private val _navigationEvent = MutableStateFlow<String?>(null)
+    val navigationEvent: StateFlow<String?> = _navigationEvent.asStateFlow()
 
     private val _uiEvent = MutableSharedFlow<UiEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
@@ -42,24 +40,8 @@ class ZodiacViewModel @Inject constructor(
         }
     }
 
-    fun onSignClicked(sign: ZodiacSign) {
-        viewModelScope.launch {
-            try {
-                _uiState.update { it.copy(isLoading = true) }
-
-                val signEntity = repository.getSignByName(sign.signName)
-
-                if (signEntity != null) {
-                    _navigationEvent.value = signEntity.id
-                } else {
-                    _uiEvent.emit(UiEvent.ShowSnackbar("Sign not found. Please try again."))
-                }
-            } catch (e: Exception) {
-                _uiEvent.emit(UiEvent.ShowSnackbar("Error: ${e.message ?: "Unknown error"}"))
-            } finally {
-                _uiState.update { it.copy(isLoading = false) }
-            }
-        }
+    fun onSignClicked(sign: ZodiacSignEnum) {
+        _navigationEvent.value = sign.signName
     }
 
     // 6. ADDED: The critical handler function

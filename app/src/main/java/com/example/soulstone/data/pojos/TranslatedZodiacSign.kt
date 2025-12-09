@@ -1,16 +1,13 @@
 package com.example.soulstone.data.pojos
 
-import com.example.soulstone.util.LanguageCode
-
 data class TranslatedZodiacSign(
     val id: Int,
-    val keyName: String,
     val startDate: String,
     val endDate: String,
+    val imageName: String,
 
-    val translatedName: String,
+    val name: String,
     val description: String,
     val element: String,
     val rulingPlanet: String,
-    val languageCode: LanguageCode
 )

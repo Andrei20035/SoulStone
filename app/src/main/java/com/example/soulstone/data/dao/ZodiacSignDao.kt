@@ -11,23 +11,36 @@ import com.example.soulstone.data.entities.ZodiacSign
 import com.example.soulstone.data.entities.ZodiacSignTranslation
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedZodiacSign
+import com.example.soulstone.data.pojos.ZodiacSignListItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ZodiacSignDao {
 
+    @Query("""
+    SELECT 
+        z.id as id, 
+        z.name AS keyName,
+        t.name as signName, 
+        z.imageName as imageName 
+    FROM zodiac_signs z
+    INNER JOIN zodiac_translations t ON z.id = t.zodiacSignId
+    WHERE t.languageCode = :language
+""")
+    fun getAllZodiacSignListItems(language: LanguageCode): Flow<List<ZodiacSignListItem>>
+
     @Query(
         """
     SELECT 
         z.id AS id, 
-        z.name AS keyName, 
         z.startDate AS startDate, 
         z.endDate AS endDate,
-        t.name AS translatedName,
+        z.imageName AS imageName,
+        
+        t.name AS name,
         t.description AS description,
         t.element AS element,
-        t.rulingPlanet AS rulingPlanet,
-        t.languageCode AS languageCode
+        t.rulingPlanet AS rulingPlanet
     FROM zodiac_signs AS z
     JOIN zodiac_translations AS t ON z.id = t.zodiacSignId
     WHERE t.languageCode = :language
@@ -36,47 +49,41 @@ interface ZodiacSignDao {
     )
     fun getAllTranslatedZodiacSigns(language: LanguageCode): Flow<List<TranslatedZodiacSign>>
 
-    @Query(
-        """
-    SELECT 
-        z.id AS id, 
-        z.name AS keyName, 
-        z.startDate AS startDate, 
-        z.endDate AS endDate,
-        t.name AS translatedName,
-        t.description AS description,
-        t.element AS element,
-        t.rulingPlanet AS rulingPlanet,
-        t.languageCode AS languageCode
-    FROM zodiac_signs AS z
-    JOIN zodiac_translations AS t ON z.id = t.zodiacSignId
-    WHERE z.name = :keyName AND t.languageCode = :language
-    LIMIT 1
-"""
-    )
-    fun getTranslatedZodiacSignFlow(
-        keyName: String,
-        language: LanguageCode
-    ): Flow<TranslatedZodiacSign?>
+    @Query("""
+        SELECT 
+            z.id,
+            z.startDate,
+            z.endDate,
+            z.imageName,         
+            t.name AS name,       
+            t.description,
+            t.element,
+            t.rulingPlanet
+        FROM zodiac_signs AS z
+        INNER JOIN zodiac_translations AS t 
+            ON z.id = t.zodiacSignId
+        WHERE z.name = :keyName 
+            AND t.languageCode = :language
+    """)
+    fun getTranslatedZodiacSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedZodiacSign?>
 
-    @Query(
-        """
-    SELECT 
-        z.id AS id, 
-        z.name AS keyName, 
-        z.startDate AS startDate, 
-        z.endDate AS endDate,
-        t.name AS translatedName,
-        t.description AS description,
-        t.element AS element,
-        t.rulingPlanet AS rulingPlanet,
-        t.languageCode AS languageCode
-    FROM zodiac_signs AS z
-    JOIN zodiac_translations AS t ON z.id = t.zodiacSignId
-    WHERE z.name = :keyName AND t.languageCode = :language
-    LIMIT 1
-"""
-    )
+    @Query("""
+        SELECT 
+            z.id,
+            z.startDate,
+            z.endDate,
+            z.imageName,          -- Matches 'val imageName'
+            t.name AS name,       -- Matches 'val name'
+            t.description,
+            t.element,
+            t.rulingPlanet
+        FROM zodiac_signs AS z
+        INNER JOIN zodiac_translations AS t 
+            ON z.id = t.zodiacSignId
+        WHERE z.name = :keyName 
+            AND t.languageCode = :language
+        LIMIT 1
+    """)
     suspend fun getTranslatedZodiacSign(
         keyName: String,
         language: LanguageCode

@@ -25,16 +25,8 @@ data class ChineseZodiacSignTranslation(
     val name: String,
     val description: String,
     val traits: String,
-
-    @ColumnInfo(name = "best_match")
-    val bestMatch: String, // "Ox" (Localized string)
-
-    @ColumnInfo(name = "worst_match")
-    val worstMatch: String, // "Horse" (Localized string)
-
-    @ColumnInfo(name = "compatibility_desc")
-    val compatibilityDescription: String, // The paragraph starting "In terms of compatibility..."
-
-    @ColumnInfo(name = "gemstone_desc")
-    val gemstoneDescription: String // The list of stones and their meanings text
+    val bestMatch: String,
+    val worstMatch: String,
+    val compatibilityDescription: String,
+    val gemstoneDescription: String
 )

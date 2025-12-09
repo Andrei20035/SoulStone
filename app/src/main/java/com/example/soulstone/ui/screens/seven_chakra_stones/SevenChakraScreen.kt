@@ -21,8 +21,6 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -38,14 +36,10 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
-import com.example.soulstone.domain.model.Chakra
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
-import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ZodiacViewModel
 import com.example.soulstone.util.ChakraEnum
-import com.example.soulstone.util.ZodiacSign
 import kotlinx.coroutines.launch
-import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sin

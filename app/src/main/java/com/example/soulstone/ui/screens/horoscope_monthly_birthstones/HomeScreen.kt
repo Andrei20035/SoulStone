@@ -2,7 +2,6 @@ package com.example.soulstone.screens.horoscope_monthly_birthstones
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -36,12 +35,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.ZodiacSign
+import com.example.soulstone.util.ZodiacSignEnum
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ZodiacViewModel
 import kotlinx.coroutines.launch
@@ -57,12 +55,12 @@ fun HomeScreen(
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    val signIdToNavigate by viewModel.navigationEvent.collectAsState()
+    val signNameToNavigate by viewModel.navigationEvent.collectAsState()
 
-    LaunchedEffect(signIdToNavigate) {
-        if (signIdToNavigate != null) {
+    LaunchedEffect(signNameToNavigate) {
+        if (signNameToNavigate != null) {
             navController.navigate(
-                AppScreen.HoroscopeSignDetails.createRoute(signIdToNavigate!!)
+                AppScreen.HoroscopeSignDetails.createRoute(signNameToNavigate!!)
             )
             viewModel.onNavigationHandled()
         }
@@ -168,7 +166,7 @@ fun HomeScreen(
 @Composable
 fun ClickableZodiacWheel(
     modifier: Modifier = Modifier,
-    onSignClick: (ZodiacSign) -> Unit
+    onSignClick: (ZodiacSignEnum) -> Unit
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -208,19 +206,19 @@ fun ClickableZodiacWheel(
 
 
                             Log.d("UNGHI", angleDeg.toString())
-                            val clickedSign: ZodiacSign = when (angleDeg) {
-                                in 0f..30f -> ZodiacSign.TAURUS
-                                in 30f..60f -> ZodiacSign.GEMINI
-                                in 60f..90f -> ZodiacSign.CANCER
-                                in 90f..120f -> ZodiacSign.LEO
-                                in 120f..150f -> ZodiacSign.VIRGO
-                                in 150f..180f -> ZodiacSign.LIBRA
-                                in 180f..210f -> ZodiacSign.SCORPIO
-                                in 210f..240f -> ZodiacSign.SAGITTARIUS
-                                in 240f..270f -> ZodiacSign.CAPRICORN
-                                in 270f..300f -> ZodiacSign.AQUARIUS
-                                in 300f..330f -> ZodiacSign.PISCES
-                                else -> ZodiacSign.ARIES
+                            val clickedSign: ZodiacSignEnum = when (angleDeg) {
+                                in 0f..30f -> ZodiacSignEnum.TAURUS
+                                in 30f..60f -> ZodiacSignEnum.GEMINI
+                                in 60f..90f -> ZodiacSignEnum.CANCER
+                                in 90f..120f -> ZodiacSignEnum.LEO
+                                in 120f..150f -> ZodiacSignEnum.VIRGO
+                                in 150f..180f -> ZodiacSignEnum.LIBRA
+                                in 180f..210f -> ZodiacSignEnum.SCORPIO
+                                in 210f..240f -> ZodiacSignEnum.SAGITTARIUS
+                                in 240f..270f -> ZodiacSignEnum.CAPRICORN
+                                in 270f..300f -> ZodiacSignEnum.AQUARIUS
+                                in 300f..330f -> ZodiacSignEnum.PISCES
+                                else -> ZodiacSignEnum.ARIES
                             }
                             println("A APASAT PE: $clickedSign")
                             onSignClick(clickedSign)

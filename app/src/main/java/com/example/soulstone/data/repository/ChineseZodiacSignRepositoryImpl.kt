@@ -3,8 +3,10 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.ChineseZodiacSignDao
 import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.ChineseZodiacSignTranslation
+import com.example.soulstone.data.pojos.ChineseSignListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedChineseZodiacSign
+import com.example.soulstone.data.pojos.ZodiacSignListItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -22,6 +24,10 @@ class ChineseZodiacSignRepositoryImpl @Inject constructor(
         language: LanguageCode
     ): Flow<TranslatedChineseZodiacSign?> {
         return dao.getTranslatedChineseSignFlow(keyName, language)
+    }
+
+    override fun getAllChineseZodiacSignListItems(language: LanguageCode): Flow<List<ZodiacSignListItem>> {
+        return dao.getAllChineseZodiacSignListItems(language)
     }
 
     override suspend fun getTranslatedChineseSign(

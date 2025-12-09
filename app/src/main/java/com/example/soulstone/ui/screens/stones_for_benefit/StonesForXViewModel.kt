@@ -76,7 +76,7 @@ class StonesForXViewModel @Inject constructor(
                         val name = benefitFlow?.translatedName ?: "Benefit"
 
                         StonesForXUiState(
-                            isStonesLoading = false, // Data is loaded
+                            isStonesLoading = false,
                             isBenefitsLoading = false,
                             benefitName = "Gemstones for $name",
                             stones = stones,

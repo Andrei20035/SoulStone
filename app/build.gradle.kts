@@ -24,6 +24,8 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("debug")
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -69,6 +71,8 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.compose)
     implementation(libs.gson)
+    implementation(libs.icons.core)
+    implementation(libs.splashscreen)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -6,7 +6,6 @@ import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.data.repository.BenefitRepository
 import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.ZodiacSign
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow

@@ -26,24 +26,13 @@ data class ChakraTranslation(
     val description: String,
     val location: String,
 
-    @ColumnInfo(name = "ruling_planet")
     val rulingPlanet: String,
     val element: String,
-
-    @ColumnInfo(name = "stone_colors")
     val stoneColors: String,
-
-    @ColumnInfo(name = "healing_qualities")
     val healingQualities: String,
     val stones: String,
-
-    @ColumnInfo(name = "body_placement")
     val bodyPlacement: String,
-
-    @ColumnInfo(name = "house_placement")
     val housePlacement: String,
     val herbs: String,
-
-    @ColumnInfo(name = "essential_oils")
     val essentialOils: String
 )

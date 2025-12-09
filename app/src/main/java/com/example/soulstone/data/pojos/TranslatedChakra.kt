@@ -1,12 +1,10 @@
 package com.example.soulstone.data.pojos
 
-import com.example.soulstone.util.LanguageCode
-
 data class TranslatedChakra(
     // From Parent (chakras table)
     val id: Int,
     val sanskritName: String,
-    val iconResId: Int,
+    val imageName: String,
 
     // From Child (chakra_translations table)
     val name: String,

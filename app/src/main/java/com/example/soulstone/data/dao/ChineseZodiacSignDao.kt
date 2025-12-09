@@ -9,56 +9,89 @@ import androidx.room.Transaction
 import androidx.room.Update
 import com.example.soulstone.data.entities.ChineseZodiacSign
 import com.example.soulstone.data.entities.ChineseZodiacSignTranslation
+import com.example.soulstone.data.pojos.ChineseSignListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedChineseZodiacSign
+import com.example.soulstone.data.pojos.ZodiacSignListItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ChineseZodiacSignDao {
 
-    // --- Main App Queries (using JOINs) ---
-
     @Query("""
-        SELECT 
-            c.id AS id, 
-            c.name AS keyName, 
-            c.recentYears AS recentYears,
-            t.name AS translatedName,
-            t.description AS description,
-            t.languageCode AS languageCode
-        FROM chinese_zodiac_signs AS c
-        JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
-        WHERE t.languageCode = :language
-        ORDER BY c.id ASC
-    """)
+    SELECT 
+        z.id as id, 
+        z.keyName AS keyName,
+        t.name as signName, 
+        z.iconName as imageName
+    FROM chinese_zodiac_signs z
+    INNER JOIN chinese_sign_translations t ON z.id = t.chineseSignId
+    WHERE t.languageCode = :language
+""")
+    fun getAllChineseZodiacSignListItems(language: LanguageCode): Flow<List<ZodiacSignListItem>>
+
+    @Query(
+        """
+    SELECT 
+        c.recentYears,
+        c.iconName,
+        c.iconBorderName,
+        c.iconColorName,
+        t.name,
+        t.description,
+        t.traits,
+        t.bestMatch,
+        t.worstMatch,
+        t.compatibilityDescription,
+        t.gemstoneDescription
+    FROM chinese_zodiac_signs AS c
+    JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
+    WHERE t.languageCode = :language
+    ORDER BY c.id ASC
+"""
+    )
     fun getAllTranslatedChineseSigns(language: LanguageCode): Flow<List<TranslatedChineseZodiacSign>>
 
-    @Query("""
-        SELECT 
-            c.id AS id, 
-            c.name AS keyName, 
-            c.recentYears AS recentYears,
-            t.name AS translatedName,
-            t.description AS description,
-            t.languageCode AS languageCode
-        FROM chinese_zodiac_signs AS c
-        JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
-        WHERE c.name = :keyName AND t.languageCode = :language
-    """)
+    @Query(
+        """
+    SELECT 
+        c.recentYears,
+        c.iconName,
+        c.iconBorderName,
+        c.iconColorName,
+        t.name,
+        t.description,
+        t.traits,
+        t.bestMatch,
+        t.worstMatch,
+        t.compatibilityDescription,
+        t.gemstoneDescription
+    FROM chinese_zodiac_signs AS c
+    JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
+    WHERE c.keyName = :keyName AND t.languageCode = :language
+"""
+    )
     suspend fun getTranslatedChineseSign(keyName: String, language: LanguageCode): TranslatedChineseZodiacSign?
 
-    @Query("""
-        SELECT 
-            c.id AS id, 
-            c.name AS keyName, 
-            c.recentYears AS recentYears,
-            t.name AS translatedName,
-            t.description AS description,
-            t.languageCode AS languageCode
-        FROM chinese_zodiac_signs AS c
-        JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
-        WHERE c.name = :keyName AND t.languageCode = :language
-    """)
+    @Query(
+        """
+    SELECT 
+        c.recentYears,
+        c.iconName,
+        c.iconBorderName,
+        c.iconColorName,
+        t.name,
+        t.description,
+        t.traits,
+        t.bestMatch,
+        t.worstMatch,
+        t.compatibilityDescription,
+        t.gemstoneDescription
+    FROM chinese_zodiac_signs AS c
+    JOIN chinese_sign_translations AS t ON c.id = t.chineseSignId
+    WHERE c.keyName = :keyName AND t.languageCode = :language
+"""
+    )
     fun getTranslatedChineseSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedChineseZodiacSign?>
 
 
@@ -73,10 +106,10 @@ interface ChineseZodiacSignDao {
     @Delete
     suspend fun deleteChineseSign(sign: ChineseZodiacSign): Int
 
-    @Query("SELECT * FROM chinese_zodiac_signs WHERE name = :keyName LIMIT 1")
+    @Query("SELECT * FROM chinese_zodiac_signs WHERE keyName = :keyName LIMIT 1")
     suspend fun getChineseSignByKey(keyName: String): ChineseZodiacSign?
 
-    @Query("SELECT id FROM chinese_zodiac_signs WHERE name = :keyName LIMIT 1")
+    @Query("SELECT id FROM chinese_zodiac_signs WHERE keyName = :keyName LIMIT 1")
     suspend fun getChineseSignIdByKey(keyName: String): Int?
 
 
@@ -98,7 +131,7 @@ interface ChineseZodiacSignDao {
         val newChineseSignId = insertChineseSign(chineseSign)
         if(newChineseSignId == null) {
             throw IllegalStateException(
-                "Failed to insert chinese sign '${chineseSign.name}', it might already exist."
+                "Failed to insert chinese sign '${chineseSign.keyName}', it might already exist."
             )
         }
         val translationsWithId = translations.map {

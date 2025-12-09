@@ -1,6 +1,5 @@
 package com.example.soulstone.data.entities
 
-import androidx.annotation.DrawableRes
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -14,5 +13,5 @@ data class ZodiacSign(
     val name: String,
     val startDate: String,
     val endDate: String,
-    @DrawableRes val iconResId: Int
+    val imageName: String
 )

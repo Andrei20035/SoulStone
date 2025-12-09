@@ -1,6 +1,8 @@
 package com.example.soulstone.ui.screens.stones_for_benefit
 
+import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
@@ -37,6 +40,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -46,9 +50,12 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import com.example.soulstone.R
 import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.data.pojos.TranslatedStone
+import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
 import kotlinx.coroutines.launch
@@ -144,8 +151,6 @@ fun StoneForBenefitScreenContent(
                 color = Color(0xFF2B4F84)
             )
 
-            // --- THIS IS THE FIX (Part 3) ---
-            // Wrap the Row in a Box that has the weight
             Box(
                 modifier = Modifier
                     .weight(1f)
@@ -195,7 +200,7 @@ fun StoneForBenefitScreenContent(
                             CircularProgressIndicator()
                         } else {
                             LazyColumn(
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize().padding(start = 50.dp),
                                 verticalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
                                 items(uiState.allBenefits) { benefit -> // Iterate over all benefits
@@ -209,55 +214,7 @@ fun StoneForBenefitScreenContent(
                     }
                 }
             }
-            Spacer(Modifier.height(100.dp))
-            Text(
-                text = "Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras",
-                fontSize = 50.sp,
-                lineHeight = 60.sp,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth(0.95f)
-                    .height(350.dp)
-//                                    .background(Color.Yellow)
-                    .wrapContentHeight(Alignment.CenterVertically),
-                color = Color.Black
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(horizontal = 120.dp)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.facebook),
-                    contentDescription = "Facebook",
-                    modifier = Modifier.height(80.dp)
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.instagram),
-                    contentDescription = "Instagram",
-                    modifier = Modifier.height(85.dp)
-
-                )
-                Spacer(Modifier.width(15.dp))
-                Text(
-                    "Mandala.Art.Spain",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.weight(1f))
-                Text(
-                    "696121347",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.logo),
-                    contentDescription = "Logo",
-                    modifier = Modifier.height(85.dp)
-
-                )
-            }
+            SocialMediaFooter()
         }
     }
 }
@@ -266,8 +223,8 @@ fun StoneForBenefitScreenContent(
 
 @Composable
 fun StoneItem(
-    stone: TranslatedStone, // Use your TranslatedStone POJO
-    onStoneClicked: () -> Unit // NEW: Add this
+    stone: TranslatedStone,
+    onStoneClicked: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -284,16 +241,30 @@ fun StoneItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        AsyncImage(
-            model = stone.imageUri,
-            contentDescription = stone.translatedName,
-            contentScale = ContentScale.FillHeight,
-            modifier = Modifier
-                .height(110.dp),
-            // Add optional placeholders
-            placeholder = painterResource(id = R.drawable.dog), // TODO: Change this
-            error = painterResource(id = R.drawable.rat) // TODO: Change this
-        )
+        val context = LocalContext.current
+        val imageName = stone.imageUri
+
+        val imageResId = remember(imageName) {
+            context.resources.getIdentifier(
+                imageName,
+                "drawable",
+                context.packageName
+            )
+        }
+
+        if (imageResId != 0) {
+            AsyncImage(
+                model = ImageRequest.Builder(context)
+                    .data(imageResId)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = stone.translatedName,
+                    contentScale = ContentScale.Fit,
+                modifier = Modifier.size(110.dp)
+            )
+        } else {
+            Box(modifier = Modifier.background(Color.LightGray))
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 

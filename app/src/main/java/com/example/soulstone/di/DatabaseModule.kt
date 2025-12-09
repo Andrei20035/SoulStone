@@ -1,7 +1,9 @@
 package com.example.soulstone.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
+import com.example.soulstone.data.AppInitializationState
 import com.example.soulstone.data.dao.BenefitDao
 import com.example.soulstone.data.dao.ChakraDao
 import com.example.soulstone.data.dao.ChineseZodiacSignDao
@@ -20,6 +22,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("soulstone_prefs", Context.MODE_PRIVATE)
+    }
+
     /**
      * Provides a singleton instance of the [AppDatabase].
      */
@@ -27,7 +36,6 @@ object DatabaseModule {
     @Singleton
     fun provideAppDatabase(
         @ApplicationContext context: Context,
-        // 1. Hilt will inject the callback we're about to provide
         dbCallback: AppDatabase.ZodiacDatabaseCallback
     ): AppDatabase {
         return Room.databaseBuilder(
@@ -45,11 +53,10 @@ object DatabaseModule {
     @Singleton
     fun provideDatabaseCallback(
         @ApplicationContext context: Context,
-        // Give the callback a *Provider* of the database
-        // This lazily provides the DB and breaks the dependency cycle.
-        dbProvider: Provider<AppDatabase>
+        dbProvider: Provider<AppDatabase>,
+        appInitState: AppInitializationState
     ): AppDatabase.ZodiacDatabaseCallback {
-        return AppDatabase.ZodiacDatabaseCallback(context, dbProvider)
+        return AppDatabase.ZodiacDatabaseCallback(context, dbProvider, appInitState)
     }
 
     /**

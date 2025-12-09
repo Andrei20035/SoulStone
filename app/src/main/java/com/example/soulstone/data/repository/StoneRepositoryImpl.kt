@@ -4,6 +4,7 @@ import android.net.Uri
 import com.example.soulstone.data.dao.StoneDao
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.pojos.StoneListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedStone
 import com.example.soulstone.data.relations.StoneBenefitCrossRef
@@ -16,13 +17,11 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton // Ensures only one instance of the repository exists
+@Singleton
 class StoneRepositoryImpl @Inject constructor(
     private val stoneDao: StoneDao,
-    private val fileManager: FileManager// The DAO is provided by Hilt
+    private val fileManager: FileManager
 ) : StoneRepository {
-
-    // --- Main App List Queries ---
 
     override fun getAllTranslatedStones(language: LanguageCode): Flow<List<TranslatedStone>> {
         return stoneDao.getAllTranslatedStones(language)
@@ -36,6 +35,22 @@ class StoneRepositoryImpl @Inject constructor(
         return stoneDao.getStonesForChakra(chakraSanskritName, language)
     }
 
+    override fun getStonesForSignFlow(
+        keyName: String,
+        language: LanguageCode,
+        limit: Int
+    ): Flow<List<StoneListItem>> {
+        return stoneDao.getStonesForSignFlow(keyName, language, limit)
+    }
+
+    override fun getStonesForChineseSignFlow(
+        keyName: String,
+        languageCode: LanguageCode,
+        limit: Int
+    ): Flow<List<StoneListItem>> {
+        return stoneDao.getStonesForChineseSignFlow(keyName, languageCode, limit)
+    }
+
 
     // --- Detail Screen Query ---
 
@@ -43,8 +58,8 @@ class StoneRepositoryImpl @Inject constructor(
         return stoneDao.getStoneDetails(keyName)
     }
 
-    override suspend fun getTranslatedStone(keyName: String, language: LanguageCode): TranslatedStone? {
-        return stoneDao.getTranslatedStone(keyName, language)
+    override suspend fun getTranslatedStoneFlow(stoneId: Int, language: LanguageCode): Flow<TranslatedStone?> {
+        return stoneDao.getTranslatedStoneFlow(stoneId, language)
     }
 
 

@@ -17,8 +17,8 @@ class ChineseZodiacSignDaoTest : DbTest() {
     fun insert_update_delete_and_query() = runBlocking {
         val dao = db.chineseZodiacSignDao()
 
-        dao.insertChineseZodiacSign(ChineseZodiacSign(name = "Dragon"))
-        dao.insertChineseZodiacSign(ChineseZodiacSign(name = "Dog"))
+        dao.insertChineseZodiacSign(ChineseZodiacSign(keyName = "Dragon"))
+        dao.insertChineseZodiacSign(ChineseZodiacSign(keyName = "Dog"))
 
         var all = dao.getAllChineseZodiacSigns().first()
         assertEquals(2, all.size)

@@ -1,15 +1,19 @@
 package com.example.soulstone.data.pojos
 
+import androidx.room.ColumnInfo
 import com.example.soulstone.util.LanguageCode
 
 data class TranslatedChineseZodiacSign(
-    // Fields from the main ChineseZodiacSign table
-    val id: Int,
-    val keyName: String,
     val recentYears: String,
+    val iconName: String,
+    val iconBorderName: String,
+    val iconColorName: String,
 
-    // Fields from the ChineseZodiacSignTranslation table
-    val translatedName: String,
+    val name: String,
     val description: String,
-    val languageCode: LanguageCode
+    val traits: String,
+    val bestMatch: String,
+    val worstMatch: String,
+    val compatibilityDescription: String,
+    val gemstoneDescription: String
 )

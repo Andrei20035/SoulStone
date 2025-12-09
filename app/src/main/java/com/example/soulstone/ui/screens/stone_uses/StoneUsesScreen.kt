@@ -1,5 +1,6 @@
 package com.example.soulstone.ui.screens.stone_uses
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -13,19 +14,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +36,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -48,7 +45,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import coil3.compose.AsyncImage
 import com.example.soulstone.R
 import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.ui.events.UiEvent
@@ -213,14 +209,19 @@ fun BenefitItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        AsyncImage(
-            model = benefit.imageResId, // Pass the Int ID directly
-            contentDescription = benefit.translatedName,
-            contentScale = ContentScale.FillHeight, // Use FillHeight
-            modifier = Modifier
-                .height(110.dp) // Use 110.dp height
-            // .clip(CircleShape) // Do not clip to circle, per your screenshot
-        )
+        val context = LocalContext.current
+        val imageResId = getDrawableIdByName(context, benefit.imageName)
+
+        if (imageResId != 0) {
+            Image(
+                painter = painterResource(id = imageResId),
+                contentDescription = benefit.translatedName,
+                contentScale = ContentScale.FillHeight,
+                modifier = Modifier.height(110.dp)
+            )
+        } else {
+            Box(modifier = Modifier.height(110.dp).width(110.dp).background(Color.Gray))
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -231,6 +232,17 @@ fun BenefitItem(
             overflow = TextOverflow.Ellipsis,
             fontSize = 30.sp,
             color = Color.Black
+        )
+    }
+}
+
+@Composable
+fun getDrawableIdByName(context: Context, name: String): Int {
+    return remember(name) {
+        context.resources.getIdentifier(
+            name,
+            "drawable",
+            context.packageName
         )
     }
 }
