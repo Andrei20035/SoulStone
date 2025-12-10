@@ -3,6 +3,8 @@ package com.example.soulstone.ui.screens.seven_chakra_stones
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -92,31 +94,36 @@ fun SevenChakraScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(horizontal = 54.dp, vertical = 54.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Seven Chakra Stones Energetic stones for good fortune according to the seven chakras",
+                text = "Seven Chakra Stones\nEnergetic stones for good fortune according to the seven chakras",
                 fontSize = 80.sp,
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .width(1000.dp)
-                    .height(500.dp)
-//                    .background(Color.Yellow)
-                    .wrapContentHeight(Alignment.CenterVertically),
-                color = Color(0xFF2B4F84)
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(vertical = 32.dp),
+                color = Color(0xFFED1C24)
             )
-            ClickableChakraWheel(
-                onChakraClick = {
-                        clickedChakra -> viewModel.onChakraClicked(clickedChakra)
-                }
-            )
-            Spacer(modifier = Modifier.weight(1f))
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                ClickableChakraWheel(
+                    onChakraClick = {
+                            clickedChakra -> viewModel.onChakraClicked(clickedChakra)
+                    }
+                )
+            }
             SocialMediaFooter()
         }
     }
-
 }
 
 @Composable

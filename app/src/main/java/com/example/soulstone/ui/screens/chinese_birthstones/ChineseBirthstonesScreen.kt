@@ -3,6 +3,8 @@ package com.example.soulstone.ui.screens.chinese_birthstones
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,7 +16,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,6 +41,7 @@ import com.example.soulstone.R
 import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ClickableZodiacWheel
 import com.example.soulstone.util.ChineseZodiacSign
 import kotlinx.coroutines.launch
 import kotlin.math.atan2
@@ -72,32 +77,42 @@ fun ChineseBirthstonesScreen(
             }
         }
     }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "Chinese Horoscope Energy Stones for Good Luck According to Your Birth Year",
-            fontSize = 80.sp,
-            lineHeight = 90.sp,
-            textAlign = TextAlign.Center,
+    Scaffold(
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+    ) { paddingValues ->
+        Column(
             modifier = Modifier
-                .width(1000.dp)
-                .height(500.dp)
-//                .background(Color.Yellow)
-                .wrapContentHeight(Alignment.CenterVertically),
-            color = Color(0xFFED1C24)
-        )
-        ClickableChineseZodiacWheel(
-            onSignClick = {
-                    clickedSign -> viewModel.onSignClicked(clickedSign)
+                .fillMaxSize()
+                .padding(horizontal = 54.dp, vertical = 54.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "Chinese horoscope energy stones for good luck according to your birth year",
+                fontSize = 80.sp,
+                lineHeight = 90.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(vertical = 32.dp),
+                color = Color(0xFFED1C24)
+            )
+
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                ClickableChineseZodiacWheel(
+                    onSignClick = { clickedSign ->
+                        viewModel.onSignClicked(clickedSign)
+                    }
+                )
             }
-        )
-        Spacer(modifier = Modifier.weight(1f))
-        SocialMediaFooter()
+            SocialMediaFooter()
+        }
     }
 }
 

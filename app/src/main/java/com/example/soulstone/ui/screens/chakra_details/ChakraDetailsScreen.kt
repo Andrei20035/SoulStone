@@ -3,6 +3,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -195,14 +196,14 @@ fun ChakraDetails(
 
                         Spacer(modifier = Modifier.height(12.dp))
 
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically
+                        Box(
+                            modifier = Modifier.fillMaxWidth()
                         ) {
+                            // 1. The Wheel Layer (Bottom Layer)
                             Box(
                                 modifier = Modifier
-                                    .weight(0.8f)
+                                    .fillMaxWidth(0.88f) // Takes up ~88% of the screen width
+                                    .align(Alignment.CenterStart) // Aligned to the Left
                             ) {
                                 ZodiacStoneWheelViewer(
                                     centerData = ZodiacCenterData(sign.imageName),
@@ -211,16 +212,19 @@ fun ChakraDetails(
                                     onStoneClick = onStoneClick,
                                 )
                             }
+
+                            // 2. The List Layer (Top Layer - Overlapping)
                             Box(
                                 modifier = Modifier
-                                    .weight(0.2f)
+                                    .fillMaxWidth(0.25f) // Takes ~25% width (creating the overlap)
+                                    .align(Alignment.TopEnd) // "Not centered but up" -> Aligned Top Right
+                                    .padding(top = 40.dp) // Push it down slightly from the very top edge
                             ) {
                                 ChakraSignList(
                                     signs = uiState.allChakras,
                                     onSignClick = onChakraClicked
                                 )
                             }
-
                         }
                         val descriptionScrollState = rememberScrollState()
 
@@ -258,13 +262,13 @@ fun ChakraSignList(
     signs: List<ChakraListItem>,
     onSignClick: (String) -> Unit
 ) {
-    LazyColumn(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(signs) { sign ->
+        signs.forEach { sign ->
             ChakraPill(
                 sign = sign,
                 onClick = { onSignClick(sign.sanskritName) }
@@ -300,6 +304,8 @@ fun ChakraPill(
             Text(
                 text = sign.chakraName,
                 fontSize = 28.sp,
+                maxLines = 1,
+                softWrap = false,
                 color = Color(0xFF2B4F84)
             )
         }

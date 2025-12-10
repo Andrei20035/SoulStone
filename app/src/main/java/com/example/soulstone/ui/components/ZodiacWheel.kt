@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -89,12 +90,12 @@ private fun CircularStoneLayout(
         val centerConstraints = constraints.copy(minWidth = 0, minHeight = 0)
         val centerPlaceable = centerMeasurables.first().measure(centerConstraints)
 
-        val stoneMaxDimension = layoutSize / 3
+        val stoneMaxDimension = (layoutSize / 7.5f).toInt()
         val stoneConstraints = Constraints(
             minWidth = 0,
             maxWidth = stoneMaxDimension,
             minHeight = 0,
-            maxHeight = stoneMaxDimension
+            maxHeight = (stoneMaxDimension * 1.5f).toInt()
         )
 
         val stonePlaceables = stoneMeasurables.map { it.measure(stoneConstraints) }
@@ -145,17 +146,34 @@ fun ZodiacCenterView(data: ZodiacCenterData) {
 fun StoneItemView(data: StoneListItem, onClick: () -> Unit) {
     Column(
         modifier = Modifier
-            .width(150.dp)
-            .clickable { onClick() },
+            .clickable { onClick() }
+            // ❌ REMOVE: .width(150.dp) - This was forcing the overflow!
+            // ✅ ADD: Let constraints determine width, but center content
+            .wrapContentWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ZodiacImage(data.imageUri, data.imageUri, modifier = Modifier.width(130.dp))
+        // Your Box Idea: Excellent for handling irregular image shapes
+        Box(
+            modifier = Modifier
+                .fillMaxWidth() // Fill the calculated constraint from the Layout
+                .aspectRatio(1f), // Force a square container for the image
+            contentAlignment = Alignment.Center
+        ) {
+            ZodiacImage(
+                imageName = data.imageUri,
+                contentDescription = data.name,
+                modifier = Modifier.fillMaxSize(), // Fill the square box
+                contentScale = ContentScale.Fit // ✅ Prevents cropping/distortion
+            )
+        }
         Text(
             text = data.name,
             color = Color(0xFF2B4F84),
-            fontSize = 28.sp,
+            fontSize = 26.sp,
             textAlign = TextAlign.Center,
-            maxLines = 2
+            lineHeight = 18.sp,
+            maxLines = 2,
+            modifier = Modifier.padding(top = 4.dp)
         )
     }
 }

@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -58,9 +59,9 @@ fun HomeScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
-                .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(horizontal = 54.dp, vertical = 54.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
                 text = "Energy stones of good fortune according to your birth date",
@@ -68,18 +69,24 @@ fun HomeScreen(
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .width(1000.dp)
-                    .height(500.dp)
-                    .wrapContentHeight(Alignment.CenterVertically),
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(vertical = 32.dp),
                 color = Color(0xFF2B4F84)
             )
 
-            ClickableZodiacWheel(
-                onSignClick = { clickedSign ->
-                    viewModel.onSignClicked(clickedSign)
-                }
-            )
-            Spacer(modifier = Modifier.weight(1f))
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                ClickableZodiacWheel(
+                    onSignClick = { clickedSign ->
+                        viewModel.onSignClicked(clickedSign)
+                    }
+                )
+            }
             SocialMediaFooter()
         }
     }
