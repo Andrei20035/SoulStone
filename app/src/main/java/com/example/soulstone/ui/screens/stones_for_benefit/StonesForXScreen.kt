@@ -24,8 +24,13 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -62,9 +67,9 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun StonesForXScreen(
+    viewModel: StonesForXViewModel = hiltViewModel(),
     navController: NavHostController = rememberNavController()
 ) {
-    val viewModel: StonesForXViewModel = hiltViewModel()
     val uiState by viewModel.uiState.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
@@ -78,21 +83,22 @@ fun StonesForXScreen(
                         snackbarHostState.showSnackbar(event.message)
                     }
                 }
-                // Handle Benefit navigation
                 is UiEvent.NavigateToBenefit -> {
                     navController.navigate(
                         AppScreen.StoneForX.createRoute(event.benefitId)
                     ) {
-                        popUpTo(navController.currentDestination!!.id) {
+                        popUpTo(navController.currentBackStackEntry?.destination?.route ?: return@navigate) {
                             inclusive = true
                         }
                     }
                 }
-                // Handle Stone Detail navigation
                 is UiEvent.NavigateToStoneDetail -> {
                     navController.navigate(
                         AppScreen.StoneDetails.createRoute(event.stoneId)
                     )
+                }
+                is UiEvent.NavigateBack -> {
+                    navController.popBackStack()
                 }
                 else -> {}
             }
@@ -102,7 +108,8 @@ fun StonesForXScreen(
         uiState = uiState,
         snackbarHostState = snackbarHostState,
         onBenefitClicked = viewModel::onBenefitClicked,
-        onStoneClicked = viewModel::onStoneClicked
+        onStoneClicked = viewModel::onStoneClicked,
+        onBackClicked = viewModel::onBackClicked
     )
 
 
@@ -112,11 +119,12 @@ fun StonesForXScreen(
 fun StoneForBenefitScreenContent(
     uiState: StonesForXUiState,
     snackbarHostState: SnackbarHostState,
-    onBenefitClicked: (Int) -> Unit, // Expects an Int
-    onStoneClicked: (Int) -> Unit // Expects an Int
+    onBenefitClicked: (Int) -> Unit,
+    onStoneClicked: (Int) -> Unit,
+    onBackClicked: () -> Unit
 ) {
     Scaffold(
-//        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -125,20 +133,39 @@ fun StoneForBenefitScreenContent(
                 .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // --- STATIC HEADER ---
-            Text(
-                text = "Stone Uses and Properties",
-                fontSize = 80.sp,
-                lineHeight = 90.sp,
-                textAlign = TextAlign.Center,
+            Box(
                 modifier = Modifier
-                    .width(1000.dp)
-                    .height(200.dp) // Reduced height
-                    .wrapContentHeight(Alignment.CenterVertically),
-                color = Color(0xFF2B4F84)
-            )
+                    .fillMaxWidth()
+                    .height(200.dp)
+            ) {
+                IconButton(
+                    onClick = onBackClicked,
+                    modifier = Modifier
+                        .align(Alignment.CenterStart)
+                        .size(70.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Back",
+                        tint = Color(0xFF2B4F84),
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
 
-            // --- DYNAMIC SUBTITLE ---
+                Text(
+                    text = "Stone Uses and Properties",
+                    fontSize = 80.sp,
+                    lineHeight = 90.sp,
+                    textAlign = TextAlign.Center,
+                    color = Color(0xFF2B4F84),
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .width(1000.dp)
+                        .height(200.dp)
+                        .wrapContentHeight(Alignment.CenterVertically)
+                )
+            }
+
             Text(
                 text = if (uiState.isBenefitsLoading) "Loading..." else uiState.benefitName,
                 fontSize = 60.sp,
@@ -158,9 +185,8 @@ fun StoneForBenefitScreenContent(
             ) {
                 Row(
                     modifier = Modifier
-                        .fillMaxSize() // Fill the parent Box
+                        .fillMaxSize()
                 ) {
-                    // --- LEFT COLUMN (Stones Grid) ---
                     Box(
                         modifier = Modifier
                             .weight(1f)
@@ -186,10 +212,8 @@ fun StoneForBenefitScreenContent(
                         }
                     }
 
-                    // Spacer between columns
                     Spacer(modifier = Modifier.width(48.dp))
 
-                    // --- RIGHT COLUMN (Benefits List) ---
                     Box(
                         modifier = Modifier
                             .weight(1f)
@@ -203,7 +227,7 @@ fun StoneForBenefitScreenContent(
                                 modifier = Modifier.fillMaxSize().padding(start = 50.dp),
                                 verticalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
-                                items(uiState.allBenefits) { benefit -> // Iterate over all benefits
+                                items(uiState.allBenefits) { benefit ->
                                     BenefitChip(
                                         benefit = benefit,
                                         onClick = { onBenefitClicked(benefit.id) }
@@ -219,7 +243,6 @@ fun StoneForBenefitScreenContent(
     }
 }
 
-// --- NEW COMPOSABLES FOR THIS SCREEN ---
 
 @Composable
 fun StoneItem(

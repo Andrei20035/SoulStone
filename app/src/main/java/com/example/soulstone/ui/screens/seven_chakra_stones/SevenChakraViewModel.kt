@@ -13,31 +13,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SevenChakraViewModel @Inject constructor(
-    private val repository: ChakraRepository
 ) : ViewModel() {
 
-    // This is for one-time events like navigation or snackbars
     private val _uiEvent = MutableSharedFlow<UiEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
 
-    /**
-     * Called when the user clicks on a chakra in the wheel.
-     */
-    fun onChakraClicked(chakra: ChakraEnum) {
+    fun onChakraClicked(keyName: String) {
         viewModelScope.launch {
-            try {
-                val sanskritName = chakra.sanskritName
-
-                val chakraFromDb = repository.findChakraBySanskritName(sanskritName)
-
-                if (chakraFromDb != null) {
-                    _uiEvent.emit(UiEvent.NavigateToChakraDetails(chakraFromDb.id))
-                } else {
-                    _uiEvent.emit(UiEvent.ShowSnackbar("Could not find chakra for ${chakra.name}"))
-                }
-            } catch (e: Exception) {
-                _uiEvent.emit(UiEvent.ShowSnackbar("Error: ${e.message ?: "Unknown error"}"))
-            }
+            _uiEvent.emit(UiEvent.NavigateToChakraDetails(keyName))
         }
     }
 }

@@ -34,7 +34,6 @@ fun SocialMediaFooter() {
             modifier = Modifier
                 .fillMaxWidth(0.95f)
                 .height(300.dp)
-                //                .background(Color.Yellow)
                 .wrapContentHeight(Alignment.CenterVertically),
             color = Color.Black
         )

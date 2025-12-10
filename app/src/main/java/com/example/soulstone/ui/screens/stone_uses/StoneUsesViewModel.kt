@@ -33,9 +33,6 @@ class StoneUsesViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(StoneUsesUiState())
     val uiState: StateFlow<StoneUsesUiState> = _uiState.asStateFlow()
 
-    private val _navigationEvent = MutableStateFlow<Int?>(null)
-    val navigationEvent: StateFlow<Int?> = _navigationEvent.asStateFlow()
-
     private val _uiEvent = MutableSharedFlow<UiEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
 
@@ -48,9 +45,7 @@ class StoneUsesViewModel @Inject constructor(
         viewModelScope.launch {
             settings.language
                 .flatMapLatest { language ->
-
                     _uiState.update { it.copy(isLoading = true) }
-
                     repository.getAllTranslatedBenefits(language)
                         .catch { e ->
                             _uiState.update { it.copy(isLoading = false) }
@@ -69,10 +64,8 @@ class StoneUsesViewModel @Inject constructor(
     }
 
     fun onBenefitClicked(benefitId: Int) {
-        _navigationEvent.value = benefitId
-    }
-
-    fun onNavigationHandled() {
-        _navigationEvent.value = null
+        viewModelScope.launch {
+            _uiEvent.emit(UiEvent.NavigateToBenefit(benefitId))
+        }
     }
 }

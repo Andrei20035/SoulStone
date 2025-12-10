@@ -30,8 +30,8 @@ data class StoneDetailsUiState(
     val isLoading: Boolean = false,
     val stone: TranslatedStone? = null,
     val benefits: List<TranslatedBenefit> = emptyList(),
-    val userMessage: String? = null
 )
+
 @HiltViewModel
 class StoneDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
@@ -58,7 +58,6 @@ class StoneDetailsViewModel @Inject constructor(
             settingsRepository.language
                 .flatMapLatest { languageCode ->
                     val stoneFlow = stoneRepository.getTranslatedStoneFlow(stoneId, languageCode)
-
                     val benefitsFlow = benefitRepository.getAllTranslatedBenefits(languageCode)
 
                     combine(stoneFlow, benefitsFlow) { stone, benefits ->
@@ -67,12 +66,8 @@ class StoneDetailsViewModel @Inject constructor(
                 }
                 .flowOn(Dispatchers.IO)
                 .catch { e ->
-                    _uiState.update {
-                        it.copy(
-                            isLoading = false,
-                            userMessage = "Error: ${e.message ?: "Unknown error"}"
-                        )
-                    }
+                    _uiState.update { it.copy(isLoading = false) }
+                    _uiEvent.emit(UiEvent.ShowSnackbar("Error: ${e.message ?: "Unknown error"}"))
                 }
                 .collect { (stoneData, benefitsData) ->
                     if (stoneData != null) {
@@ -84,12 +79,8 @@ class StoneDetailsViewModel @Inject constructor(
                             )
                         }
                     } else {
-                        _uiState.update {
-                            it.copy(
-                                isLoading = false,
-                                userMessage = "Stone details not found."
-                            )
-                        }
+                        _uiState.update { it.copy(isLoading = false) }
+                        _uiEvent.emit(UiEvent.ShowSnackbar("Stone details not found."))
                     }
                 }
         }
@@ -106,5 +97,4 @@ class StoneDetailsViewModel @Inject constructor(
             _uiEvent.emit(UiEvent.NavigateBack)
         }
     }
-
 }

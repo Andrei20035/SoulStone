@@ -1,25 +1,30 @@
-package com.example.soulstone.ui.screens.chinese_sign_details
-
-import android.util.Log
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -36,8 +41,9 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
+import com.example.soulstone.data.pojos.ChakraListItem
+import com.example.soulstone.data.pojos.ZodiacSignListItem
 import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.components.ZodiacCenterData
 import com.example.soulstone.ui.components.ZodiacImage
@@ -45,15 +51,16 @@ import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.ui.screens.chakra_details.ChakraDetailsUiState
+import com.example.soulstone.ui.screens.chakra_details.ChakraDetailsViewModel
 import com.example.soulstone.util.simpleVerticalScrollbar
 import kotlinx.coroutines.launch
 
 @Composable
-fun ChineseSignDetailsScreen(
-    viewModel: ChineseSignDetailsViewModel = hiltViewModel(),
-    navController: NavHostController = rememberNavController()
+fun ChakraDetailsScreen(
+    viewModel: ChakraDetailsViewModel = hiltViewModel(),
+    navController: NavHostController
 ) {
-
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -75,44 +82,44 @@ fun ChineseSignDetailsScreen(
                         AppScreen.StoneDetails.createRoute(event.stoneId)
                     )
                 }
-                is UiEvent.NavigateToChineseSign -> {
+                is UiEvent.NavigateToChakraDetails -> {
                     navController.navigate(
-                        AppScreen.ChineseSignDetails.createRoute(event.keyName)
+                        AppScreen.ChakraDetails.createRoute(event.keyName)
                     ) {
                         popUpTo(navController.currentBackStackEntry?.destination?.route ?: return@navigate) {
                             inclusive = true
                         }
                     }
                 }
+
                 else -> {}
             }
         }
     }
 
-    ChineseDetails(
+    ChakraDetails(
         uiState = uiState,
         snackbarHostState = snackbarHostState,
         onStoneClick = { stoneId ->
             viewModel.onStoneClicked(stoneId)
         },
-        onSignClick = { keyName ->
-            Log.d("CHINESE KEYNAME", keyName)
-            viewModel.onSignClicked(keyName)
+        onChakraClicked = { keyName ->
+            viewModel.onChakraClicked(keyName)
         }
     )
+
 }
 
 @Composable
-fun ChineseDetails(
-    uiState: ChineseSignDetailsUiState,
+fun ChakraDetails(
+    uiState: ChakraDetailsUiState,
     snackbarHostState: SnackbarHostState,
     onStoneClick: (Int) -> Unit,
-    onSignClick: (String) -> Unit
+    onChakraClicked: (String) -> Unit
 ) {
     Scaffold(
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { paddingValues ->
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -142,31 +149,45 @@ fun ChineseDetails(
 //                            .background(Color.Yellow),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Spacer(Modifier.height(100.dp))
+                        Text(
+                            text = "Seven Chakra Stones",
+                            fontSize = 45.sp,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(100.dp)
+//                                .background(Color.Red)
+                                .wrapContentHeight(Alignment.CenterVertically),
+                            color = Color(0xFF2B4F84)
+                        )
                         Row {
                             Box(
                                 modifier = Modifier
                                     .size(120.dp)
+                                    .clip(CircleShape)
                             ) {
-                                ZodiacImage(sign.iconBorderName, sign.iconName, modifier = Modifier.fillMaxSize())
+                                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxSize())
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = sign.name + " Chinese Birthstones",
+                                    text = sign.name,
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
-                                    color = Color(0xFFE31E24),
+                                    color = Color(0xFF2B4F84),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                                 Text(
-                                    sign.recentYears,
+                                    sign.sanskritName.replaceFirstChar { it.uppercase() },
                                     color = Color(0xFF2B4F84),
-                                    fontSize = 40.sp,
-                                    textAlign = TextAlign.End,
-                                    modifier = Modifier.fillMaxWidth()
+                                    fontSize = 40.sp
+                                )
+                                Text(
+                                    "Planet " + sign.rulingPlanet,
+                                    color = Color(0xFF2B4F84),
+                                    fontSize = 40.sp
                                 )
                             }
                         }
@@ -184,7 +205,7 @@ fun ChineseDetails(
                                     .weight(0.8f)
                             ) {
                                 ZodiacStoneWheelViewer(
-                                    centerData = ZodiacCenterData(sign.iconColorName),
+                                    centerData = ZodiacCenterData(sign.imageName),
                                     stonesList = uiState.associatedStones,
                                     backgroundImageRes = R.drawable.flower,
                                     onStoneClick = onStoneClick,
@@ -194,9 +215,9 @@ fun ChineseDetails(
                                 modifier = Modifier
                                     .weight(0.2f)
                             ) {
-                                ZodiacSignsList(
-                                    signs = uiState.allSigns,
-                                    onSignClick = onSignClick
+                                ChakraSignList(
+                                    signs = uiState.allChakras,
+                                    onSignClick = onChakraClicked
                                 )
                             }
 
@@ -231,3 +252,67 @@ fun ChineseDetails(
         }
     }
 }
+
+@Composable
+fun ChakraSignList(
+    signs: List<ChakraListItem>,
+    onSignClick: (String) -> Unit
+) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        items(signs) { sign ->
+            ChakraPill(
+                sign = sign,
+                onClick = { onSignClick(sign.sanskritName) }
+            )
+        }
+    }
+}
+
+@Composable
+fun ChakraPill(
+    sign: ChakraListItem,
+    onClick: () -> Unit
+) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(50.dp)
+            .clickable { onClick() },
+        shape = RoundedCornerShape(50),
+        border = BorderStroke(3.dp, Color.LightGray),
+        color = Color.White
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(horizontal = 14.dp)
+        ) {
+            Box(modifier = Modifier.size(32.dp)) {
+                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxHeight())
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Text(
+                text = sign.chakraName,
+                fontSize = 28.sp,
+                color = Color(0xFF2B4F84)
+            )
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

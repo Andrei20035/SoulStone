@@ -61,7 +61,7 @@ fun ZodiacSignItem(
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(horizontal = 12.dp)
+            modifier = Modifier.padding(horizontal = 14.dp)
         ) {
             Box(modifier = Modifier.size(32.dp)) {
                 ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxHeight())

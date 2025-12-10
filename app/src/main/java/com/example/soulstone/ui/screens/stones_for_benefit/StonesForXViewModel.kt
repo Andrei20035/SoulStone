@@ -102,4 +102,10 @@ class StonesForXViewModel @Inject constructor(
         }
     }
 
+    fun onBackClicked() {
+        viewModelScope.launch {
+            _uiEvent.emit(UiEvent.NavigateBack)
+        }
+    }
+
 }

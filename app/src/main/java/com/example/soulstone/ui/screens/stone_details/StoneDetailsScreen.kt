@@ -23,6 +23,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -101,7 +102,7 @@ private fun StoneDetailsContent(
     onBackClicked: () -> Unit
 ) {
     Scaffold(
-        // snackbarHost = { SnackbarHost(hostState = snackbarHostState) } // Uncomment when ready
+         snackbarHost = { SnackbarHost(hostState = snackbarHostState) } // Uncomment when ready
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -113,7 +114,7 @@ private fun StoneDetailsContent(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(200.dp) // Match the height you previously gave the Text
+                    .height(200.dp)
             ) {
                 IconButton(
                     onClick = onBackClicked,
@@ -122,14 +123,13 @@ private fun StoneDetailsContent(
                         .size(70.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack, // Or your custom resource
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Back",
                         tint = Color(0xFF2B4F84),
-                        modifier = Modifier.fillMaxSize() // Adjust icon visual size
+                        modifier = Modifier.fillMaxSize()
                     )
                 }
 
-                // 2. Title Text (Aligned Center)
                 Text(
                     text = "Stone Uses and Properties",
                     fontSize = 80.sp,
@@ -137,13 +137,12 @@ private fun StoneDetailsContent(
                     textAlign = TextAlign.Center,
                     color = Color(0xFF2B4F84),
                     modifier = Modifier
-                        .align(Alignment.Center) // This keeps it perfectly centered in the Box
+                        .align(Alignment.Center)
                         .width(1000.dp)
                         .wrapContentHeight(Alignment.CenterVertically)
                 )
             }
 
-            // --- DYNAMIC SUBTITLE ---
             Text(
                 text = uiState.stone?.translatedName ?: "Loading...",
                 fontSize = 60.sp,

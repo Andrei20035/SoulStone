@@ -3,6 +3,7 @@ package com.example.soulstone.data.repository
 import com.example.soulstone.data.dao.ChakraDao
 import com.example.soulstone.data.entities.Chakra
 import com.example.soulstone.data.entities.ChakraTranslation
+import com.example.soulstone.data.pojos.ChakraListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedChakra
 import kotlinx.coroutines.flow.Flow
@@ -29,6 +30,10 @@ class ChakraRepositoryImpl @Inject constructor(
         language: LanguageCode
     ): Flow<TranslatedChakra?> {
         return dao.getTranslatedChakraFlow(sanskritName, language)
+    }
+
+    override fun getAllChakraListItems(language: LanguageCode): Flow<List<ChakraListItem>> {
+        return dao.getAllChakraListItems(language)
     }
 
     override suspend fun insertChakra(chakra: Chakra): Long? {

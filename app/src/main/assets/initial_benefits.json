@@ -1,7 +1,7 @@
 [
   {
     "key": "anger_and_stress_relief",
-    "image_name": "stone_6",
+    "image_name": "agate",
     "translations": {
       "en": { "name": "Anger & Stress Relief" },
       "es": { "name": "Alivio de Ira y Estrés" },
@@ -14,7 +14,7 @@
   },
   {
     "key": "anxiety_and_depression",
-    "image_name": "stone_4",
+    "image_name": "blue_calcite",
     "translations": {
       "en": { "name": "Anxiety & Depression" },
       "es": { "name": "Ansiedad y Depresión" },
@@ -27,7 +27,7 @@
   },
   {
     "key": "career_and_money",
-    "image_name": "stone_4_r",
+    "image_name": "citrine",
     "translations": {
       "en": { "name": "Career & Money" },
       "es": { "name": "Carrera y Dinero" },
@@ -40,7 +40,7 @@
   },
   {
     "key": "clarity_and_focus",
-    "image_name": "stone_8",
+    "image_name": "coral",
     "translations": {
       "en": { "name": "Clarity & Focus" },
       "es": { "name": "Claridad y Enfoque" },
@@ -53,7 +53,7 @@
   },
   {
     "key": "communication",
-    "image_name": "stone_1_r",
+    "image_name": "dalmatian_jasper",
     "translations": {
       "en": { "name": "Communication" },
       "es": { "name": "Comunicación" },
@@ -66,7 +66,7 @@
   },
   {
     "key": "creativity",
-    "image_name": "stone_6",
+    "image_name": "diamond",
     "translations": {
       "en": { "name": "Creativity" },
       "es": { "name": "Creatividad" },
@@ -79,7 +79,7 @@
   },
   {
     "key": "emotional_balance",
-    "image_name": "stone_4_r",
+    "image_name": "emerald",
     "translations": {
       "en": { "name": "Emotional Balance" },
       "es": { "name": "Equilibrio Emocional" },
@@ -92,7 +92,7 @@
   },
   {
     "key": "enhanced_focus",
-    "image_name": "stone_6_r",
+    "image_name": "hematite",
     "translations": {
       "en": { "name": "Enhanced Focus" },
       "es": { "name": "Enfoque Mejorado" },
@@ -105,7 +105,7 @@
   },
   {
     "key": "good_fortune_and_luck",
-    "image_name": "stone_7",
+    "image_name": "lapis_lazuli",
     "translations": {
       "en": { "name": "Good Fortune & Luck" },
       "es": { "name": "Buena Fortuna y Suerte" },
@@ -118,7 +118,7 @@
   },
   {
     "key": "intuition",
-    "image_name": "stone_7_r",
+    "image_name": "malachite",
     "translations": {
       "en": { "name": "Intuition" },
       "es": { "name": "Intuición" },
@@ -131,7 +131,7 @@
   },
   {
     "key": "love_relationships",
-    "image_name": "stone_5",
+    "image_name": "mookaite",
     "translations": {
       "en": { "name": "Love Relationships" },
       "es": { "name": "Amor y Relaciones" },
@@ -144,7 +144,7 @@
   },
   {
     "key": "manifestation",
-    "image_name": "stone_8",
+    "image_name": "onyx",
     "translations": {
       "en": { "name": "Manifestation" },
       "es": { "name": "Manifestación" },
@@ -157,7 +157,7 @@
   },
   {
     "key": "mental_health",
-    "image_name": "stone_5",
+    "image_name": "peridot",
     "translations": {
       "en": { "name": "Mental Health" },
       "es": { "name": "Salud Mental" },
@@ -170,7 +170,7 @@
   },
   {
     "key": "mindfulness",
-    "image_name": "stone_2",
+    "image_name": "pink_quartz",
     "translations": {
       "en": { "name": "Mindfulness" },
       "es": { "name": "Atención Plena" },
@@ -183,7 +183,7 @@
   },
   {
     "key": "personal_growth",
-    "image_name": "stone_3",
+    "image_name": "pink_tourmaline",
     "translations": {
       "en": { "name": "Personal Growth" },
       "es": { "name": "Crecimiento Personal" },
@@ -196,7 +196,7 @@
   },
   {
     "key": "physical_health",
-    "image_name": "stone_8_r",
+    "image_name": "purple_sapphire",
     "translations": {
       "en": { "name": "Physical Health" },
       "es": { "name": "Salud Física" },
@@ -209,7 +209,7 @@
   },
   {
     "key": "protection",
-    "image_name": "stone_3_r",
+    "image_name": "rhodonite",
     "translations": {
       "en": { "name": "Protection" },
       "es": { "name": "Protección" },
@@ -222,7 +222,7 @@
   },
   {
     "key": "self_control",
-    "image_name": "stone_2_r",
+    "image_name": "ruby",
     "translations": {
       "en": { "name": "Self-Control" },
       "es": { "name": "Autocontrol" },
@@ -235,7 +235,7 @@
   },
   {
     "key": "spirituality",
-    "image_name": "stone_5_r",
+    "image_name": "serpentine",
     "translations": {
       "en": { "name": "Spirituality" },
       "es": { "name": "Espiritualidad" },
@@ -248,7 +248,7 @@
   },
   {
     "key": "transformation",
-    "image_name": "stone_7",
+    "image_name": "smoky_quartz",
     "translations": {
       "en": { "name": "Transformation" },
       "es": { "name": "Transformación" },
@@ -261,7 +261,7 @@
   },
   {
     "key": "vitality",
-    "image_name": "stone_1",
+    "image_name": "sodalite",
     "translations": {
       "en": { "name": "Vitality" },
       "es": { "name": "Vitalidad" },

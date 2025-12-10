@@ -1,6 +1,6 @@
 [
   {
-    "key": "Muladhara",
+    "key": "muladhara",
     "image_base": "root_chakra",
     "translations": {
       "en": {
@@ -104,7 +104,7 @@
     }
   },
   {
-    "key": "Svadhisthana",
+    "key": "svadhisthana",
     "image_base": "sacral_chakra",
     "translations": {
       "en": {
@@ -208,7 +208,7 @@
     }
   },
   {
-    "key": "Manipura",
+    "key": "manipura",
     "image_base": "solar_plexus_chakra",
     "translations": {
       "en": {
@@ -312,7 +312,7 @@
     }
   },
   {
-    "key": "Anahata",
+    "key": "anahata",
     "image_base": "heart_chakra",
     "translations": {
       "en": {
@@ -416,7 +416,7 @@
     }
   },
   {
-    "key": "Vishuddha",
+    "key": "vishuddha",
     "image_base": "throat_chakra",
     "translations": {
       "en": {
@@ -520,7 +520,7 @@
     }
   },
   {
-    "key": "Ajna",
+    "key": "ajna",
     "image_base": "third_eye_chakra",
     "translations": {
       "en": {
@@ -624,7 +624,7 @@
     }
   },
   {
-    "key": "Sahasrara",
+    "key": "sahasrara",
     "image_base": "crown_chakra",
     "translations": {
       "en": {

@@ -36,6 +36,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
+import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.util.ChakraEnum
@@ -53,7 +54,6 @@ private data class ChakraCircle(
     val radius: Float
 )
 
-// Helper function to convert degrees to radians for trigonometry
 private fun Float.toRadians() = this * (Math.PI / 180f).toFloat()
 
 @Composable
@@ -78,7 +78,7 @@ fun SevenChakraScreen(
                 }
                 is UiEvent.NavigateToChakraDetails -> {
                     navController.navigate(
-                        AppScreen.ChakraDetails.createRoute(event.chakraId)
+                        AppScreen.ChakraDetails.createRoute(event.keyName)
                     )
                 }
                 else -> {}
@@ -112,56 +112,8 @@ fun SevenChakraScreen(
                         clickedChakra -> viewModel.onChakraClicked(clickedChakra)
                 }
             )
-            Text(
-                text = "Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras",
-                fontSize = 50.sp,
-                lineHeight = 60.sp,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth(0.95f)
-                    .height(300.dp)
-                    //                .background(Color.Yellow)
-                    .wrapContentHeight(Alignment.CenterVertically),
-                color = Color.Black
-            )
-            Spacer(Modifier.weight(1f))
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(horizontal = 120.dp)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.facebook),
-                    contentDescription = "Facebook",
-                    modifier = Modifier.height(80.dp)
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.instagram),
-                    contentDescription = "Instagram",
-                    modifier = Modifier.height(85.dp)
-
-                )
-                Spacer(Modifier.width(15.dp))
-                Text(
-                    "Mandala.Art.Spain",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.weight(1f))
-                Text(
-                    "696121347",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.logo),
-                    contentDescription = "Logo",
-                    modifier = Modifier.height(85.dp)
-
-                )
-            }
-
+            Spacer(modifier = Modifier.weight(1f))
+            SocialMediaFooter()
         }
     }
 
@@ -170,7 +122,7 @@ fun SevenChakraScreen(
 @Composable
 fun ClickableChakraWheel(
     modifier: Modifier = Modifier,
-    onChakraClick: (ChakraEnum) -> Unit // Changed to return your Chakra enum
+    onChakraClick: (String) -> Unit
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -272,7 +224,7 @@ fun ClickableChakraWheel(
 
                         if (clickedChakra != null) {
                             Log.d("CHAKRA_WHEEL", "Clicked on: ${clickedChakra.chakra.name}")
-                            onChakraClick(clickedChakra.chakra)
+                            onChakraClick(clickedChakra.chakra.sanskritName)
                         } else {
                             Log.d("CHAKRA_WHEEL", "Clicked on empty space.")
                         }

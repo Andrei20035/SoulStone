@@ -31,8 +31,9 @@ class StoneRepositoryImpl @Inject constructor(
         return stoneDao.getStonesForBenefit(benefitId, language)
     }
 
-    override fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>> {
-        return stoneDao.getStonesForChakra(chakraSanskritName, language)
+    override fun getStonesForChakraFlow(chakraSanskritName: String, language: LanguageCode, limit: Int): Flow<List<StoneListItem>> {
+        android.util.Log.d("ChakraRepo", "Fetching stones for: $chakraSanskritName, Lang: $language, Limit: $limit")
+        return stoneDao.getStonesForChakraFlow(chakraSanskritName, language, limit)
     }
 
     override fun getStonesForSignFlow(

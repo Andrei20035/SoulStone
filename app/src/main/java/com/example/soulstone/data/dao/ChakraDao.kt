@@ -9,6 +9,7 @@ import androidx.room.Transaction
 import androidx.room.Update
 import com.example.soulstone.data.entities.Chakra
 import com.example.soulstone.data.entities.ChakraTranslation
+import com.example.soulstone.data.pojos.ChakraListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedChakra
 import com.example.soulstone.data.relations.StoneChakraCrossRef
@@ -21,7 +22,6 @@ interface ChakraDao {
     @Query(
         """
         SELECT 
-            c.id, 
             c.sanskritName, 
             c.imageName,
             t.name,
@@ -47,7 +47,6 @@ interface ChakraDao {
     @Query(
         """
         SELECT 
-            c.id, 
             c.sanskritName, 
             c.imageName,
             t.name,
@@ -72,7 +71,6 @@ interface ChakraDao {
     @Query(
         """
         SELECT 
-            c.id, 
             c.sanskritName, 
             c.imageName,
             t.name,
@@ -93,6 +91,20 @@ interface ChakraDao {
     """
     )
     fun getTranslatedChakraFlow(sanskritName: String, language: LanguageCode): Flow<TranslatedChakra?>
+
+    @Query(
+        """
+        SELECT 
+            c.id,
+            c.imageName,
+            c.sanskritName,  
+            t.name as chakraName
+        FROM chakras AS c
+        JOIN chakra_translations AS t ON c.id = t.chakraId
+        WHERE t.languageCode = :language
+    """
+    )
+    fun getAllChakraListItems(language: LanguageCode): Flow<List<ChakraListItem>>
 
 
     // --- Admin/Helper Queries for Chakra table ---

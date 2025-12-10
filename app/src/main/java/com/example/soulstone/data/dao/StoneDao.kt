@@ -124,20 +124,19 @@ interface StoneDao {
     fun getStonesForBenefit(benefitId: Int, language: LanguageCode): Flow<List<TranslatedStone>>
 
     @Query("""
-        SELECT
-            s.id AS id, 
-            s.imageUri AS imageUri,
-            st.name AS translatedName,
-            st.description AS description,
-            st.languageCode AS languageCode
-        FROM stones AS s
-        JOIN stone_translations AS st ON s.id = st.stoneId
-        JOIN stone_chakra_cross_ref AS sc ON s.id = sc.stoneId
-        JOIN chakras AS c ON sc.chakraId = c.id
-        WHERE c.sanskritName = :chakraSanskritName AND st.languageCode = :language
-        ORDER BY st.name ASC
-    """)
-    fun getStonesForChakra(chakraSanskritName: String, language: LanguageCode): Flow<List<TranslatedStone>>
+    SELECT
+        s.id AS id, 
+        st.name AS name,
+        s.imageUri AS imageUri
+    FROM stones AS s
+    JOIN stone_translations AS st ON s.id = st.stoneId
+    JOIN stone_chakra_cross_ref AS sc ON s.id = sc.stoneId
+    JOIN chakras AS c ON sc.chakraId = c.id
+    WHERE c.sanskritName = :chakraSanskritName AND st.languageCode = :language
+    ORDER BY st.name ASC
+    LIMIT :limit
+""")
+    fun getStonesForChakraFlow(chakraSanskritName: String, language: LanguageCode, limit: Int): Flow<List<StoneListItem>>
 
 
 

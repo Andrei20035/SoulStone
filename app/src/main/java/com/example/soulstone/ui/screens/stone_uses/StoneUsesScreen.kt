@@ -22,6 +22,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -47,6 +48,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.data.pojos.TranslatedBenefit
+import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
 import kotlinx.coroutines.launch
@@ -57,44 +59,34 @@ fun StoneUsesScreen(
 ) {
     val viewModel: StoneUsesViewModel = hiltViewModel()
     val uiState by viewModel.uiState.collectAsState()
-
     val snackbarHostState = remember { SnackbarHostState() }
-    val scope = rememberCoroutineScope()
 
-    val benefitToNavigate by viewModel.navigationEvent.collectAsState()
-
-    LaunchedEffect(benefitToNavigate) {
-        if (benefitToNavigate != null) {
-            navController.navigate(
-                AppScreen.StoneForX.createRoute(benefitToNavigate!!)
-            )
-            viewModel.onNavigationHandled()
-        }
-    }
-
-    LaunchedEffect(Unit) {
+    LaunchedEffect(true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.ShowSnackbar -> {
-                    scope.launch {
-                        snackbarHostState.showSnackbar(
-                            message = event.message,
-                            duration = SnackbarDuration.Short
-                        )
-                    }
+                is UiEvent.NavigateToBenefit -> {
+                    navController.navigate(
+                        AppScreen.StoneForX.createRoute(event.benefitId)
+                    )
                 }
-
-                else -> {}
+                is UiEvent.ShowSnackbar -> {
+                    snackbarHostState.showSnackbar(
+                        message = event.message,
+                        duration = SnackbarDuration.Short
+                    )
+                }
+                else -> Unit
             }
         }
     }
 
     Scaffold(
-//        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues) // Ensure padding is applied
                 .padding(start = 54.dp, end = 54.dp, bottom = 54.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -106,7 +98,6 @@ fun StoneUsesScreen(
                 modifier = Modifier
                     .width(1000.dp)
                     .height(400.dp)
-//                    .background(Color.Yellow)
                     .wrapContentHeight(Alignment.CenterVertically),
                 color = Color(0xFF2B4F84)
             )
@@ -124,7 +115,6 @@ fun StoneUsesScreen(
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(4),
                         modifier = Modifier.fillMaxSize(),
-                        // Set spacing to 0 so borders can touch
                         verticalArrangement = Arrangement.spacedBy(0.dp),
                         horizontalArrangement = Arrangement.spacedBy(0.dp)
                     ) {
@@ -137,54 +127,7 @@ fun StoneUsesScreen(
                     }
                 }
             }
-            Text(
-                text = "Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras",
-                fontSize = 50.sp,
-                lineHeight = 60.sp,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth(0.95f)
-                    .height(350.dp)
-//                                    .background(Color.Yellow)
-                    .wrapContentHeight(Alignment.CenterVertically),
-                color = Color.Black
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(horizontal = 120.dp)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.facebook),
-                    contentDescription = "Facebook",
-                    modifier = Modifier.height(80.dp)
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.instagram),
-                    contentDescription = "Instagram",
-                    modifier = Modifier.height(85.dp)
-
-                )
-                Spacer(Modifier.width(15.dp))
-                Text(
-                    "Mandala.Art.Spain",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.weight(1f))
-                Text(
-                    "696121347",
-                    color = Color.Black,
-                    fontSize = 60.sp
-                )
-                Spacer(Modifier.width(15.dp))
-                Image(
-                    painter = painterResource(R.drawable.logo),
-                    contentDescription = "Logo",
-                    modifier = Modifier.height(85.dp)
-
-                )
-            }
+            SocialMediaFooter()
         }
     }
 }
