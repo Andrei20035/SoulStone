@@ -8,6 +8,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.example.soulstone.data.entities.Stone
 import com.example.soulstone.data.entities.StoneTranslation
+import com.example.soulstone.data.pojos.StoneInventoryView
 import com.example.soulstone.data.pojos.StoneListItem
 import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.data.pojos.TranslatedStone
@@ -16,11 +17,78 @@ import com.example.soulstone.data.relations.StoneChakraCrossRef
 import com.example.soulstone.data.relations.StoneChineseZodiacCrossRef
 import com.example.soulstone.data.relations.StoneZodiacCrossRef
 import com.example.soulstone.data.pojos.StoneWithDetails
+import com.example.soulstone.ui.models.StoneGridItem
+import com.example.soulstone.ui.models.StoneListUiItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface StoneDao {
 
+    @Query("""
+    SELECT 
+        s.id,
+        s.imageUri,
+        st.name AS stoneName,
+        st.description AS description,
+        
+        -- Combine multiple benefits into one string (e.g. "Peace, Love")
+        GROUP_CONCAT(DISTINCT bt.name) AS category,
+        
+        -- Combine multiple zodiacs
+        GROUP_CONCAT(DISTINCT zt.name) AS zodiacSign,
+        
+        -- Combine multiple chinese signs
+        GROUP_CONCAT(DISTINCT czt.name) AS chineseZodiacSign,
+        
+        -- Combine multiple chakras
+        GROUP_CONCAT(DISTINCT ct.name) AS chakra
+        
+    FROM stones s
+    
+    -- 1. Get Stone English Details
+    INNER JOIN stone_translations st 
+        ON s.id = st.stoneId 
+        AND st.languageCode = :language
+        
+    -- 2. Join Benefits (Category)
+    LEFT JOIN stone_benefit_cross_ref sbcr ON s.id = sbcr.stoneId
+    LEFT JOIN benefit_translations bt 
+        ON sbcr.benefitId = bt.benefitId 
+        AND bt.languageCode = :language
+        
+    -- 3. Join Zodiac Signs
+    LEFT JOIN stone_zodiac_cross_ref szcr ON s.id = szcr.stoneId
+    LEFT JOIN zodiac_translations zt 
+        ON szcr.zodiacSignId = zt.zodiacSignId 
+        AND zt.languageCode = :language
+        
+    -- 4. Join Chinese Zodiac Signs
+    LEFT JOIN stone_chinese_zodiac_cross_ref sczcr ON s.id = sczcr.stoneId
+    LEFT JOIN chinese_sign_translations czt 
+        ON sczcr.chineseZodiacSignId = czt.chineseSignId 
+        AND czt.languageCode = :language
+        
+    -- 5. Join Chakras
+    LEFT JOIN stone_chakra_cross_ref sccr ON s.id = sccr.stoneId
+    LEFT JOIN chakra_translations ct 
+        ON sccr.chakraId = ct.chakraId 
+        AND ct.languageCode = :language
+        
+    GROUP BY s.id
+""")
+    fun getInventoryStones(language: LanguageCode): Flow<List<StoneInventoryView>>
+
+    @Query("""
+    SELECT 
+        s.id AS id, 
+        t.name AS name, 
+        s.imageUri AS imageUri 
+    FROM stones AS s
+    INNER JOIN stone_translations AS t ON s.id = t.stoneId
+    WHERE t.languageCode = :language
+    ORDER BY t.name ASC
+""")
+    fun getAllStonesForIndex(language: LanguageCode): Flow<List<StoneListItem>>
     @Query("""
     SELECT 
         s.id as id, 
@@ -182,5 +250,11 @@ interface StoneDao {
 
     @Delete
     suspend fun deleteBenefitCrossRef(crossRef: StoneBenefitCrossRef)
-    // ... (add other delete/update methods as needed) ...
+
+    @Query("""
+        UPDATE stone_translations 
+        SET description = :newDescription 
+        WHERE stoneId = :stoneId AND languageCode = :languageCode
+    """)
+    suspend fun updateStoneDescription(stoneId: Int, newDescription: String, languageCode: LanguageCode)
 }

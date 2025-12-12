@@ -14,24 +14,14 @@ import coil3.request.crossfade
 
 @Composable
 fun ZodiacImage(
-    imageName: String,
+    imageResId: Int,
     contentDescription: String?,
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Fit
 ) {
-    val context = LocalContext.current
-
-    val imageResId = remember(imageName) {
-        context.resources.getIdentifier(
-            imageName,
-            "drawable",
-            context.packageName
-        )
-    }
-
     if (imageResId != 0) {
         AsyncImage(
-            model = ImageRequest.Builder(context)
+            model = ImageRequest.Builder(LocalContext.current)
                 .data(imageResId)
                 .crossfade(true)
                 .build(),

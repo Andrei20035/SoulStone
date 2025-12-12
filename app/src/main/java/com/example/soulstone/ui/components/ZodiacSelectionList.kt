@@ -24,10 +24,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.soulstone.data.pojos.ZodiacSignListItem
+import com.example.soulstone.ui.models.ZodiacSignListUiItem
 
 @Composable
 fun ZodiacSignsList(
-    signs: List<ZodiacSignListItem>,
+    signs: List<ZodiacSignListUiItem>,
     onSignClick: (String) -> Unit
 ) {
     LazyColumn(
@@ -47,7 +48,7 @@ fun ZodiacSignsList(
 
 @Composable
 fun ZodiacSignItem(
-    sign: ZodiacSignListItem,
+    sign: ZodiacSignListUiItem,
     onClick: () -> Unit
 ) {
     Surface(
@@ -64,7 +65,7 @@ fun ZodiacSignItem(
             modifier = Modifier.padding(horizontal = 14.dp)
         ) {
             Box(modifier = Modifier.size(32.dp)) {
-                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxHeight())
+                ZodiacImage(sign.imageResId, sign.signName, modifier = Modifier.fillMaxHeight())
             }
 
             Spacer(modifier = Modifier.width(12.dp))

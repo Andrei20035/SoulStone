@@ -11,41 +11,31 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.screens.navigation.AdminScreen
+import com.example.soulstone.ui.screens.admin_dashboard.AdminDashboardScreen
+import com.example.soulstone.ui.screens.admin_login.AdminLoginScreen
 
-// This composable lives in your Graph.ADMIN route
 @Composable
 fun AdminSection(
-    onExitAdmin: () -> Unit // Callback to go back to Graph.MAIN
+    onExitAdmin: () -> Unit
 ) {
     val adminNavController = rememberNavController()
 
     NavHost(
         navController = adminNavController,
-        startDestination = "admin_login" // Start of the admin flow
+        startDestination = "admin_login"
     ) {
 
-//        composable("admin_login") {
-//            // Your LoginScreen
-//            LoginScreen(
-//                onLoginSuccess = {
-//                    // When login is good, go to the dashboard
-//                    adminNavController.navigate("admin_dashboard") {
-//                        // Clear the login screen from the back stack
-//                        popUpTo("admin_login") { inclusive = true }
-//                    }
-//                },
-//                // You might also want a back button here
-//                onNavigateBack = onExitAdmin
-//            )
-//        }
-//
-//        composable("admin_dashboard") {
-//            // This is your original AdminSection
-//            AdminSection(
-//                onNavigateBack = onExitAdmin // Use this to exit the admin graph
-//            )
-//        }
-
-        // ... you can add other admin screens here
+        composable(AppScreen.Login.route) {
+            AdminLoginScreen(
+                navController = adminNavController,
+                onNavigateBack = onExitAdmin
+            )
+        }
+        composable(AppScreen.Dashboard.route) {
+            AdminDashboardScreen(
+                navController = adminNavController,
+                onExitAdmin = onExitAdmin
+            )
+        }
     }
 }

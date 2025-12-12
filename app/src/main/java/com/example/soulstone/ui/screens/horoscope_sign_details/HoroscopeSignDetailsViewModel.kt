@@ -1,19 +1,18 @@
 package com.example.soulstone.ui.screens.horoscope_sign_details
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.soulstone.data.entities.ZodiacSignTranslation
-import com.example.soulstone.data.pojos.StoneListItem
-import com.example.soulstone.data.pojos.TranslatedStone
-import com.example.soulstone.data.pojos.TranslatedZodiacSign
-import com.example.soulstone.data.pojos.ZodiacSignListItem
 import com.example.soulstone.data.repository.SettingsRepository
-import com.example.soulstone.data.repository.StoneRepository
 import com.example.soulstone.data.repository.ZodiacSignRepository
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.ui.models.StoneListUiItem
+import com.example.soulstone.ui.models.ZodiacSignUiDetails
+import com.example.soulstone.ui.models.ZodiacSignListUiItem
+import com.example.soulstone.util.getDrawableIdByName
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -31,16 +30,17 @@ import javax.inject.Inject
 
 data class SignDetailsUiState(
     val isLoading: Boolean = false,
-    val sign: TranslatedZodiacSign? = null,
-    val associatedStones: List<StoneListItem> = emptyList(),
-    val allSigns: List<ZodiacSignListItem> = emptyList(),
+    val sign: ZodiacSignUiDetails? = null,
+    val associatedStones: List<StoneListUiItem> = emptyList(),
+    val allSigns: List<ZodiacSignListUiItem> = emptyList(),
 )
 
 @HiltViewModel
 class HoroscopeSignDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val zodiacRepository: ZodiacSignRepository,
-    private val settingsRepository: SettingsRepository
+    private val settingsRepository: SettingsRepository,
+    @ApplicationContext private val context: Context
 ): ViewModel() {
 
     private val signName: String = checkNotNull(savedStateHandle["signName"])
@@ -65,7 +65,32 @@ class HoroscopeSignDetailsViewModel @Inject constructor(
                     val allSignsFlow = zodiacRepository.getZodiacSignListItems(languageCode)
 
                     combine(signFlow, stonesFlow, allSignsFlow) { sign, stones, allSigns ->
-                        Triple(sign, stones, allSigns)
+
+                        val mappedSign = sign?.let { safeSign ->
+                            ZodiacSignUiDetails(
+                                data = safeSign,
+                                imageResId = context.getDrawableIdByName(safeSign.imageName)
+                            )
+                        }
+
+                        val mappedStones = stones.map { dbItem ->
+                            StoneListUiItem(
+                                id = dbItem.id,
+                                name = dbItem.name,
+                                imageResId = context.getDrawableIdByName(dbItem.imageUri)
+                            )
+                        }
+
+                        val mappedAllSigns = allSigns.map { dbItem ->
+                            ZodiacSignListUiItem(
+                                id = dbItem.id,
+                                signName = dbItem.signName,
+                                keyName = dbItem.keyName,
+                                imageResId = context.getDrawableIdByName(dbItem.imageName)
+                            )
+                        }
+
+                        Triple(mappedSign, mappedStones, mappedAllSigns)
                     }
                 }
                 .flowOn(Dispatchers.IO)

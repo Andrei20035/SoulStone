@@ -15,5 +15,5 @@ data class TranslatedChakra(
     val bodyPlacement: String,
     val housePlacement: String,
     val herbs: String,
-    val essentialOils: String
+    val essentialOils: String,
 )

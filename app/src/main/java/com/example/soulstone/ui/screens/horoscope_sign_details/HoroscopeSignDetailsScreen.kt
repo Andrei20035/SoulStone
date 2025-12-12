@@ -72,6 +72,7 @@ import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.util.DescriptionTextStyle
 import com.example.soulstone.util.simpleVerticalScrollbar
 import kotlinx.coroutines.launch
 import kotlin.math.cos
@@ -163,7 +164,8 @@ fun HoroscopeSignDetails(
                         )
                     }
                 } else if (uiState.sign != null) {
-                    val sign = uiState.sign
+                    val signWrapper = uiState.sign
+                    val signData = signWrapper.data
 
                     Column(
                         modifier = Modifier
@@ -189,26 +191,26 @@ fun HoroscopeSignDetails(
                                     .size(120.dp)
                                     .clip(CircleShape)
                             ) {
-                                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxSize())
+                                ZodiacImage(signWrapper.imageResId, signData.name, modifier = Modifier.fillMaxSize())
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = sign.name + " Zodiac Birthstones",
+                                    text = signData.name + " Zodiac Birthstones",
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
                                     color = Color(0xFF2B4F84),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                                 Text(
-                                    sign.startDate + " - " + sign.endDate,
+                                    signData.startDate + " - " + signData.endDate,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )
                                 Text(
-                                    "Planet " + sign.rulingPlanet,
+                                    "Planet " + signData.rulingPlanet,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )
@@ -228,7 +230,7 @@ fun HoroscopeSignDetails(
                                     .weight(0.8f)
                             ) {
                                 ZodiacStoneWheelViewer(
-                                    centerData = ZodiacCenterData(sign.imageName),
+                                    centerData = ZodiacCenterData(signData.imageName, signWrapper.imageResId),
                                     stonesList = uiState.associatedStones,
                                     backgroundImageRes = R.drawable.flower,
                                     onStoneClick = onStoneClick,
@@ -258,10 +260,8 @@ fun HoroscopeSignDetails(
                                 )
                         ) {
                             Text(
-                                text = sign.description,
-                                fontSize = 30.sp,
-                                lineHeight = 36.sp,
-                                color = Color.Black,
+                                text = signData.description,
+                                style = DescriptionTextStyle(),
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(end = 12.dp)
@@ -275,6 +275,8 @@ fun HoroscopeSignDetails(
         }
     }
 }
+
+
 
 
 

@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -16,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -51,9 +53,11 @@ import com.example.soulstone.ui.components.ZodiacImage
 import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
+import com.example.soulstone.ui.models.ChakraListUiItem
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.ui.screens.chakra_details.ChakraDetailsUiState
 import com.example.soulstone.ui.screens.chakra_details.ChakraDetailsViewModel
+import com.example.soulstone.util.DescriptionTextStyle
 import com.example.soulstone.util.simpleVerticalScrollbar
 import kotlinx.coroutines.launch
 
@@ -141,7 +145,8 @@ fun ChakraDetails(
                         )
                     }
                 } else if (uiState.sign != null) {
-                    val sign = uiState.sign
+                    val signWrapper = uiState.sign
+                    val signData = signWrapper.data
 
                     Column(
                         modifier = Modifier
@@ -167,26 +172,26 @@ fun ChakraDetails(
                                     .size(120.dp)
                                     .clip(CircleShape)
                             ) {
-                                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxSize())
+                                ZodiacImage(signWrapper.imageResId, signData.imageName, modifier = Modifier.fillMaxSize())
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = sign.name,
+                                    text = signData.name,
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
                                     color = Color(0xFF2B4F84),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                                 Text(
-                                    sign.sanskritName.replaceFirstChar { it.uppercase() },
+                                    signData.sanskritName.replaceFirstChar { it.uppercase() },
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )
                                 Text(
-                                    "Planet " + sign.rulingPlanet,
+                                    "Planet " + signData.rulingPlanet,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )
@@ -199,21 +204,19 @@ fun ChakraDetails(
                         Box(
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            // 1. The Wheel Layer (Bottom Layer)
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth(0.88f) // Takes up ~88% of the screen width
                                     .align(Alignment.CenterStart) // Aligned to the Left
                             ) {
                                 ZodiacStoneWheelViewer(
-                                    centerData = ZodiacCenterData(sign.imageName),
+                                    centerData = ZodiacCenterData(signData.imageName, signWrapper.imageResId),
                                     stonesList = uiState.associatedStones,
                                     backgroundImageRes = R.drawable.flower,
                                     onStoneClick = onStoneClick,
                                 )
                             }
 
-                            // 2. The List Layer (Top Layer - Overlapping)
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth(0.25f) // Takes ~25% width (creating the overlap)
@@ -232,22 +235,44 @@ fun ChakraDetails(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .weight(1f)
+                                // Apply scrollbar to the OUTER Box
                                 .simpleVerticalScrollbar(
                                     state = descriptionScrollState,
                                     width = 6.dp,
                                     color = Color(0xFF2B4F84).copy(alpha = 0.5f)
                                 )
                         ) {
-                            Text(
-                                text = sign.description,
-                                fontSize = 30.sp,
-                                lineHeight = 36.sp,
-                                color = Color.Black,
+                            Column(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(end = 12.dp)
-                                    .verticalScroll(descriptionScrollState)
-                            )
+                                    .padding(end = 12.dp) // Padding for the text content
+                                    .verticalScroll(descriptionScrollState), // 3. Scroll applied ONCE here
+                            ) {
+
+                                Text(
+                                    text = "${signData.name} (${signData.sanskritName.replaceFirstChar { it.uppercase() }})",
+                                    style = DescriptionTextStyle()
+                                )
+
+                                Text(
+                                    text = signData.description,
+                                    style = DescriptionTextStyle()
+                                )
+
+                                Spacer(Modifier.height(8.dp))
+
+                                // 4. Use a Helper Function to remove 50 lines of duplicate code
+                                SignInfoSection("Location", signData.location)
+                                SignInfoSection("Stone colors", signData.stoneColors)
+                                SignInfoSection("Healing qualities", signData.healingQualities)
+                                SignInfoSection("Stones", signData.stones)
+                                SignInfoSection("Body placement", signData.bodyPlacement)
+                                SignInfoSection("House placement", signData.housePlacement)
+                                SignInfoSection("${signData.name} herbs", signData.herbs)
+                                SignInfoSection("Essential oils", signData.essentialOils)
+
+                                Spacer(Modifier.height(24.dp))
+                            }
                         }
                         SocialMediaFooter()
                     }
@@ -258,8 +283,21 @@ fun ChakraDetails(
 }
 
 @Composable
+private fun SignInfoSection(title: String, content: String) {
+    if (content.isNotEmpty()) {
+        Column {
+            Text(
+                text = "$title: $content",
+                style = DescriptionTextStyle()
+            )
+        }
+    }
+}
+
+
+@Composable
 fun ChakraSignList(
-    signs: List<ChakraListItem>,
+    signs: List<ChakraListUiItem>,
     onSignClick: (String) -> Unit
 ) {
     Column(
@@ -279,7 +317,7 @@ fun ChakraSignList(
 
 @Composable
 fun ChakraPill(
-    sign: ChakraListItem,
+    sign: ChakraListUiItem,
     onClick: () -> Unit
 ) {
     Surface(
@@ -296,7 +334,7 @@ fun ChakraPill(
             modifier = Modifier.padding(horizontal = 14.dp)
         ) {
             Box(modifier = Modifier.size(32.dp)) {
-                ZodiacImage(sign.imageName, sign.imageName, modifier = Modifier.fillMaxHeight())
+                ZodiacImage(sign.imageResId, sign.chakraName, modifier = Modifier.fillMaxHeight())
             }
 
             Spacer(modifier = Modifier.width(12.dp))

@@ -29,11 +29,15 @@ import com.example.soulstone.util.LanguageCode
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import androidx.lifecycle.lifecycleScope
+import com.example.soulstone.util.InactivityManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var inactivityManager: InactivityManager
+
     @Inject
     lateinit var settingsRepository: SettingsRepository
 
@@ -43,10 +47,13 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var appInitState: AppInitializationState
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         splashScreen.setKeepOnScreenCondition {
             false
@@ -74,12 +81,17 @@ class MainActivity : ComponentActivity() {
             CompositionLocalProvider(LocalLanguage provides language) {
                 SoulStoneTheme {
                     if (isDatabaseReady) {
-                        SoulStoneAppUI()
+                        SoulStoneAppUI(inactivityManager)
                     } else {
                         LoadingScreen()
                     }
                 }
             }
         }
+    }
+
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        inactivityManager.onUserInteraction()
     }
 }

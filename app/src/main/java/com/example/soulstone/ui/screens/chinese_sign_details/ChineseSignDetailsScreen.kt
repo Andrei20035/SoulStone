@@ -45,8 +45,10 @@ import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.util.DescriptionTextStyle
 import com.example.soulstone.util.simpleVerticalScrollbar
 import kotlinx.coroutines.launch
+import kotlin.math.sign
 
 @Composable
 fun ChineseSignDetailsScreen(
@@ -133,7 +135,8 @@ fun ChineseDetails(
                         )
                     }
                 } else if (uiState.sign != null) {
-                    val sign = uiState.sign
+                    val signWrapper = uiState.sign
+                    val signData = signWrapper.data
 
                     Column(
                         modifier = Modifier
@@ -148,21 +151,21 @@ fun ChineseDetails(
                                 modifier = Modifier
                                     .size(120.dp)
                             ) {
-                                ZodiacImage(sign.iconBorderName, sign.iconName, modifier = Modifier.fillMaxSize())
+                                ZodiacImage(signWrapper.imageBorderResId, signData.name, modifier = Modifier.fillMaxSize())
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = sign.name + " Chinese Birthstones",
+                                    text = signData.name + " Chinese Birthstones",
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
                                     color = Color(0xFFE31E24),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                                 Text(
-                                    sign.recentYears,
+                                    signData.recentYears,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp,
                                     textAlign = TextAlign.End,
@@ -184,7 +187,7 @@ fun ChineseDetails(
                                     .weight(0.8f)
                             ) {
                                 ZodiacStoneWheelViewer(
-                                    centerData = ZodiacCenterData(sign.iconColorName),
+                                    centerData = ZodiacCenterData(signData.iconColorName, signWrapper.imageColorResId),
                                     stonesList = uiState.associatedStones,
                                     backgroundImageRes = R.drawable.flower,
                                     onStoneClick = onStoneClick,
@@ -214,10 +217,8 @@ fun ChineseDetails(
                                 )
                         ) {
                             Text(
-                                text = sign.description,
-                                fontSize = 30.sp,
-                                lineHeight = 36.sp,
-                                color = Color.Black,
+                                text = signData.description,
+                                style = DescriptionTextStyle(),
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(end = 12.dp)

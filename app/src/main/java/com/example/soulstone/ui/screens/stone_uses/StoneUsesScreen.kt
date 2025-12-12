@@ -50,6 +50,7 @@ import com.example.soulstone.R
 import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
+import com.example.soulstone.ui.models.BenefitUiItem
 import com.example.soulstone.ui.navigation.AppScreen
 import kotlinx.coroutines.launch
 
@@ -134,7 +135,7 @@ fun StoneUsesScreen(
 
 @Composable
 fun BenefitItem(
-    benefit: TranslatedBenefit,
+    benefit: BenefitUiItem,
     onBenefitClicked: () -> Unit
 ) {
     Column(
@@ -152,40 +153,31 @@ fun BenefitItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        val context = LocalContext.current
-        val imageResId = getDrawableIdByName(context, benefit.imageName)
-
-        if (imageResId != 0) {
+        if (benefit.imageResId != 0) {
             Image(
-                painter = painterResource(id = imageResId),
-                contentDescription = benefit.translatedName,
+                painter = painterResource(id = benefit.imageResId),
+                contentDescription = benefit.name,
                 contentScale = ContentScale.FillHeight,
                 modifier = Modifier.height(110.dp)
             )
         } else {
-            Box(modifier = Modifier.height(110.dp).width(110.dp).background(Color.Gray))
+            Box(
+                modifier = Modifier
+                    .height(110.dp)
+                    .width(110.dp)
+                    .background(Color.Gray)
+            )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = benefit.translatedName,
+            text = benefit.name,
             textAlign = TextAlign.Center,
-            maxLines = 2, // Allow for wrapping
+            maxLines = 2,
             overflow = TextOverflow.Ellipsis,
             fontSize = 30.sp,
             color = Color.Black
-        )
-    }
-}
-
-@Composable
-fun getDrawableIdByName(context: Context, name: String): Int {
-    return remember(name) {
-        context.resources.getIdentifier(
-            name,
-            "drawable",
-            context.packageName
         )
     }
 }

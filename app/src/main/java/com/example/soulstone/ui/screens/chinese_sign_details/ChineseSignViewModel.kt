@@ -1,5 +1,6 @@
 package com.example.soulstone.ui.screens.chinese_sign_details
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +12,12 @@ import com.example.soulstone.data.repository.ChineseZodiacSignRepository
 import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.data.repository.StoneRepository
 import com.example.soulstone.ui.events.UiEvent
+import com.example.soulstone.ui.models.ChineseSignUiDetails
+import com.example.soulstone.ui.models.StoneListUiItem
+import com.example.soulstone.ui.models.ZodiacSignListUiItem
+import com.example.soulstone.util.getDrawableIdByName
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -29,9 +35,9 @@ import javax.inject.Inject
 
 data class ChineseSignDetailsUiState(
     val isLoading: Boolean = false,
-    val sign: TranslatedChineseZodiacSign? = null,
-    val associatedStones: List<StoneListItem> = emptyList(),
-    val allSigns: List<ZodiacSignListItem> = emptyList()
+    val sign: ChineseSignUiDetails? = null,
+    val associatedStones: List<StoneListUiItem> = emptyList(),
+    val allSigns: List<ZodiacSignListUiItem> = emptyList(),
 )
 
 @HiltViewModel
@@ -39,7 +45,8 @@ class ChineseSignDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val chineseRepository: ChineseZodiacSignRepository,
     private val stoneRepository: StoneRepository,
-    private val settingsRepository: SettingsRepository
+    private val settingsRepository: SettingsRepository,
+    @ApplicationContext private val context: Context
 ) : ViewModel() {
 
     private val keyName: String = checkNotNull(savedStateHandle["keyName"])
@@ -65,7 +72,34 @@ class ChineseSignDetailsViewModel @Inject constructor(
                     val allSignsFlow = chineseRepository.getAllChineseZodiacSignListItems(languageCode)
 
                     combine(signFlow, stonesFlow, allSignsFlow) { sign, stones, allSigns ->
-                        Triple(sign, stones, allSigns)
+
+                        val mappedSign = sign?.let { safeSign ->
+                            ChineseSignUiDetails(
+                                data = safeSign,
+                                imageResId = context.getDrawableIdByName(safeSign.iconName),
+                                imageBorderResId = context.getDrawableIdByName(safeSign.iconBorderName),
+                                imageColorResId = context.getDrawableIdByName(safeSign.iconColorName)
+                            )
+                        }
+
+                        val mappedStones = stones.map { dbItem ->
+                            StoneListUiItem(
+                                id = dbItem.id,
+                                name = dbItem.name,
+                                imageResId = context.getDrawableIdByName(dbItem.imageUri)
+                            )
+                        }
+
+                        val mappedAllSigns = allSigns.map { dbItem ->
+                            ZodiacSignListUiItem(
+                                id = dbItem.id,
+                                keyName = dbItem.keyName,
+                                signName = dbItem.signName,
+                                imageResId = context.getDrawableIdByName(dbItem.imageName)
+                            )
+                        }
+
+                        Triple(mappedSign, mappedStones, mappedAllSigns)
                     }
                 }
                 .flowOn(Dispatchers.IO)

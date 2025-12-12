@@ -50,6 +50,7 @@ import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.ui.screens.stones_for_benefit.BenefitChip
+import com.example.soulstone.util.DescriptionTextStyle
 import kotlinx.coroutines.launch
 
 @Composable
@@ -204,9 +205,7 @@ private fun StoneDetailsContent(
 
                                 Text(
                                     text = uiState.stone?.description ?: "No description available",
-                                    fontSize = 30.sp,
-                                    lineHeight = 36.sp,
-                                    color = Color.Black,
+                                    style = DescriptionTextStyle(),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                             }

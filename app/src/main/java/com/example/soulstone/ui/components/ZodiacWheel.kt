@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.soulstone.data.pojos.StoneListItem
+import com.example.soulstone.ui.models.StoneListUiItem
 import kotlin.collections.component1
 import kotlin.collections.component2
 import kotlin.math.cos
@@ -34,12 +35,12 @@ import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sin
 
-data class ZodiacCenterData(val imageName: String)
+data class ZodiacCenterData(val imageName: String, val imageResId: Int = 0)
 
 @Composable
 fun ZodiacStoneWheelViewer(
     centerData: ZodiacCenterData,
-    stonesList: List<StoneListItem>,
+    stonesList: List<StoneListUiItem>,
     onStoneClick: (Int) -> Unit,
     @DrawableRes backgroundImageRes: Int? = null,
 ) {
@@ -134,36 +135,33 @@ private fun CircularStoneLayout(
 fun ZodiacCenterView(data: ZodiacCenterData) {
     Box(
         modifier = Modifier
-            .size(270.dp)
+            .size(280.dp)
             .clip(CircleShape),
         contentAlignment = Alignment.Center
     ) {
-        ZodiacImage(data.imageName, data.imageName, modifier = Modifier.fillMaxSize())
+        ZodiacImage(data.imageResId, data.imageName, modifier = Modifier.fillMaxSize())
     }
 }
 
 @Composable
-fun StoneItemView(data: StoneListItem, onClick: () -> Unit) {
+fun StoneItemView(data: StoneListUiItem, onClick: () -> Unit) {
     Column(
         modifier = Modifier
             .clickable { onClick() }
-            // ❌ REMOVE: .width(150.dp) - This was forcing the overflow!
-            // ✅ ADD: Let constraints determine width, but center content
             .wrapContentWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Your Box Idea: Excellent for handling irregular image shapes
         Box(
             modifier = Modifier
-                .fillMaxWidth() // Fill the calculated constraint from the Layout
-                .aspectRatio(1f), // Force a square container for the image
+                .fillMaxWidth()
+                .aspectRatio(1f),
             contentAlignment = Alignment.Center
         ) {
             ZodiacImage(
-                imageName = data.imageUri,
+                imageResId = data.imageResId,
                 contentDescription = data.name,
-                modifier = Modifier.fillMaxSize(), // Fill the square box
-                contentScale = ContentScale.Fit // ✅ Prevents cropping/distortion
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Fit
             )
         }
         Text(

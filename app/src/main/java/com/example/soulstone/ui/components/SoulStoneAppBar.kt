@@ -6,8 +6,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,7 +25,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -50,49 +57,43 @@ fun SoulStoneTopBar(
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.NavigateHome -> {
-                    navController.navigate(AppScreen.Home.route) {
-                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = false
-                    }
-                }
-                is UiEvent.NavigateChineseBirthstones -> {
-                    navController.navigate(AppScreen.ChineseBirthstones.route) {
-                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = false
-                    }
-                }
-                is UiEvent.NavigateStoneUses -> {
-                    navController.navigate(AppScreen.StoneUses.route) {
-                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = false
-                    }
-                }
-                is UiEvent.NavigateSevenChakras -> {
-                    navController.navigate(AppScreen.SevenChakraStones.route) {
-                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = false
-                    }
-                }
-                is UiEvent.NavigateAdmin -> {
-                    onNavigateToAdmin()
-                }
-                is UiEvent.NavigateGemstoneIndex -> {
-                    navController.navigate(AppScreen.GemstoneIndex.route)
-                }
+                is UiEvent.NavigateHome -> navController.navigateSingleTop(AppScreen.Home.route)
+                is UiEvent.NavigateChineseBirthstones -> navController.navigateSingleTop(AppScreen.ChineseBirthstones.route)
+                is UiEvent.NavigateStoneUses -> navController.navigateSingleTop(AppScreen.StoneUses.route)
+                is UiEvent.NavigateSevenChakras -> navController.navigateSingleTop(AppScreen.SevenChakraStones.route)
+                is UiEvent.NavigateAdmin -> onNavigateToAdmin()
+                is UiEvent.NavigateGemstoneIndex -> navController.navigate(AppScreen.GemstoneIndex.route)
                 else -> Unit
             }
         }
     }
 
-    val currentDate = remember { LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }
-    var currentTime by remember {
-        mutableStateOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")))
+    BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
+        // Decide breakpoint (e.g., 600dp is a common tablet/phone split)
+        if (maxWidth < 840.dp) {
+            MobileTopBar(
+                viewModel = viewModel,
+                currentRoute = currentRoute,
+                onNavigateToAdmin = { viewModel.onAdminClicked() } // Use VM event for consistency
+            )
+        } else {
+            DesktopTopBar(
+                viewModel = viewModel,
+                currentRoute = currentRoute
+            )
+        }
     }
+}
+
+// --- DESKTOP LAYOUT (Your Original Design) ---
+@RequiresApi(Build.VERSION_CODES.O)
+@Composable
+fun DesktopTopBar(
+    viewModel: AppBarViewModel,
+    currentRoute: String?
+) {
+    val currentDate = remember { LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }
+    var currentTime by remember { mutableStateOf(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))) }
     LaunchedEffect(Unit) {
         while (true) {
             currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
@@ -103,7 +104,7 @@ fun SoulStoneTopBar(
     var languageExpanded by remember { mutableStateOf(false) }
 
     Surface(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
             .statusBarsPadding()
             .padding(top = 30.dp),
@@ -125,7 +126,7 @@ fun SoulStoneTopBar(
                     modifier = Modifier.size(54.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.home),
+                        painter = painterResource(id = R.drawable.home), // Ensure this resource exists
                         contentDescription = "Home",
                         contentScale = ContentScale.Fit
                     )
@@ -133,10 +134,7 @@ fun SoulStoneTopBar(
 
                 Spacer(Modifier.width(15.dp))
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = currentDate,
                         style = MaterialTheme.typography.bodyMedium,
@@ -159,7 +157,7 @@ fun SoulStoneTopBar(
                 Box {
                     CustomDropdownButton(
                         text = "Gemstone Index",
-                        onClick =  { viewModel.onGemstoneIndexClicked() }
+                        onClick = { viewModel.onGemstoneIndexClicked() }
                     )
                 }
 
@@ -176,7 +174,7 @@ fun SoulStoneTopBar(
                     ) {
                         LanguageCode.entries.forEach { lang ->
                             DropdownMenuItem(
-                                text = { Text(lang.name.lowercase().capitalize()) },
+                                text = { Text(lang.name.lowercase().replaceFirstChar { it.uppercase() }) },
                                 onClick = {
                                     viewModel.onLanguageSelected(lang)
                                     languageExpanded = false
@@ -189,7 +187,7 @@ fun SoulStoneTopBar(
                 Spacer(Modifier.width(20.dp))
 
                 Icon(
-                    painter = painterResource(R.drawable.admin_menu),
+                    painter = painterResource(R.drawable.admin_menu), // Ensure resource exists
                     contentDescription = "Admin menu",
                     modifier = Modifier
                         .size(48.dp)
@@ -200,7 +198,6 @@ fun SoulStoneTopBar(
 
             Spacer(Modifier.height(38.dp))
 
-            // Navigation Tabs
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -209,38 +206,219 @@ fun SoulStoneTopBar(
                 GradientButton(
                     text = "Horoscope Monthly Birthstones",
                     onClick = { viewModel.onHomeClicked() },
-                    isSelected = currentRoute == AppScreen.Home.route
+                    isSelected = currentRoute == AppScreen.Home.route,
+                    // Use original large sizes
+                    width = 300.dp,
+                    height = 80.dp,
+                    fontSize = 24.sp
                 )
 
                 GradientButton(
                     text = "Chinese Annual Birthstones",
                     onClick = { viewModel.onChineseClicked() },
-                    isSelected = currentRoute == AppScreen.ChineseBirthstones.route
+                    isSelected = currentRoute == AppScreen.ChineseBirthstones.route,
+                    width = 300.dp,
+                    height = 80.dp,
+                    fontSize = 24.sp
                 )
 
                 GradientButton(
                     text = "Stones Uses and Properties",
                     onClick = { viewModel.onStoneUsesClicked() },
-                    isSelected = currentRoute == AppScreen.StoneUses.route
+                    isSelected = currentRoute == AppScreen.StoneUses.route,
+                    width = 300.dp,
+                    height = 80.dp,
+                    fontSize = 24.sp
                 )
 
                 GradientButton(
                     text = "Seven Chakras Stones",
                     onClick = { viewModel.onChakrasClicked() },
-                    isSelected = currentRoute == AppScreen.SevenChakraStones.route
+                    isSelected = currentRoute == AppScreen.SevenChakraStones.route,
+                    width = 300.dp,
+                    height = 80.dp,
+                    fontSize = 24.sp
                 )
             }
         }
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
+fun MobileTopBar(
+    viewModel: AppBarViewModel,
+    currentRoute: String?,
+    onNavigateToAdmin: () -> Unit
+) {
+    var menuExpanded by remember { mutableStateOf(false) }
+    var languageDialogShow by remember { mutableStateOf(false) }
 
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .statusBarsPadding()
+            .padding(top = 16.dp, bottom = 16.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Home Icon
+            IconButton(
+                onClick = { viewModel.onHomeClicked() },
+                modifier = Modifier.size(40.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.home),
+                    contentDescription = "Home",
+                    contentScale = ContentScale.Fit
+                )
+            }
+
+
+            Box {
+                IconButton(onClick = { menuExpanded = true }) {
+                    Icon(
+                        imageVector = Icons.Default.Menu,
+                        contentDescription = "Menu",
+                        modifier = Modifier.size(32.dp),
+                        tint = Color.Black
+                    )
+                }
+
+                DropdownMenu(
+                    expanded = menuExpanded,
+                    onDismissRequest = { menuExpanded = false }
+                ) {
+                    val currentDate = remember { LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }
+                    DropdownMenuItem(
+                        text = { Text("Date: $currentDate", fontSize = 14.sp, color = Color.Gray) },
+                        onClick = { },
+                        enabled = false
+                    )
+
+                    HorizontalDivider()
+
+                    DropdownMenuItem(
+                        text = { Text("Gemstone Index") },
+                        onClick = {
+                            viewModel.onGemstoneIndexClicked()
+                            menuExpanded = false
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text("Language: ${LocalLanguage.current.name}") },
+                        onClick = {
+                            languageDialogShow = true
+                            menuExpanded = false
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text("Admin Panel") },
+                        onClick = {
+                            onNavigateToAdmin()
+                            menuExpanded = false
+                        }
+                    )
+                }
+            }
+        }
+
+        Spacer(Modifier.height(16.dp))
+
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            item {
+                GradientButton(
+                    text = "Horoscope",
+                    onClick = { viewModel.onHomeClicked() },
+                    isSelected = currentRoute == AppScreen.Home.route,
+                    width = 160.dp,   // Smaller width for mobile
+                    height = 60.dp,   // Smaller height
+                    fontSize = 16.sp  // Smaller font
+                )
+            }
+            item {
+                GradientButton(
+                    text = "Chinese Zodiac",
+                    onClick = { viewModel.onChineseClicked() },
+                    isSelected = currentRoute == AppScreen.ChineseBirthstones.route,
+                    width = 160.dp,
+                    height = 60.dp,
+                    fontSize = 16.sp
+                )
+            }
+            item {
+                GradientButton(
+                    text = "Stone Uses",
+                    onClick = { viewModel.onStoneUsesClicked() },
+                    isSelected = currentRoute == AppScreen.StoneUses.route,
+                    width = 160.dp,
+                    height = 60.dp,
+                    fontSize = 16.sp
+                )
+            }
+            item {
+                GradientButton(
+                    text = "Chakras",
+                    onClick = { viewModel.onChakrasClicked() },
+                    isSelected = currentRoute == AppScreen.SevenChakraStones.route,
+                    width = 160.dp,
+                    height = 60.dp,
+                    fontSize = 16.sp
+                )
+            }
+        }
+    }
+
+    if (languageDialogShow) {
+        AlertDialog(
+            onDismissRequest = { languageDialogShow = false },
+            title = { Text("Select Language") },
+            text = {
+                Column {
+                    LanguageCode.entries.forEach { lang ->
+                        TextButton(
+                            onClick = {
+                                viewModel.onLanguageSelected(lang)
+                                languageDialogShow = false
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = lang.name.lowercase().replaceFirstChar { it.uppercase() },
+                                fontSize = 18.sp,
+                                color = Color.Black
+                            )
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { languageDialogShow = false }) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+}
+
+
+@Composable
 fun GradientButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    isSelected: Boolean = false
+    isSelected: Boolean = false,
+    width: Dp = 300.dp,
+    height: Dp = 80.dp,
+    fontSize: TextUnit = 24.sp
 ) {
     val gradientColors = listOf(Color(0xFF502DF6), Color(0xFFB927FC))
     Button(
@@ -248,8 +426,8 @@ fun GradientButton(
         colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
         contentPadding = PaddingValues(),
         modifier = modifier
-            .height(80.dp)
-            .width(300.dp)
+            .height(height)
+            .width(width)
             .clip(RoundedCornerShape(50.dp))
             .background(
                 brush = Brush.horizontalGradient(gradientColors),
@@ -264,17 +442,16 @@ fun GradientButton(
         Text(
             text = text,
             color = Color.White,
-            fontSize = 24.sp,
+            fontSize = fontSize,
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center,
-            lineHeight = 28.sp,
-            modifier = Modifier.padding(horizontal = 30.dp)
+            lineHeight = (fontSize.value + 4).sp, // Adapt line height
+            modifier = Modifier.padding(horizontal = 8.dp)
         )
     }
 }
 
 @Composable
-
 fun CustomDropdownButton(
     text: String,
     onClick: () -> Unit,
@@ -303,5 +480,13 @@ fun CustomDropdownButton(
             tint = Color.Black,
             modifier = Modifier.size(32.dp)
         )
+    }
+}
+
+fun NavController.navigateSingleTop(route: String) {
+    navigate(route) {
+        popUpTo(graph.findStartDestination().id) { saveState = true }
+        launchSingleTop = true
+        restoreState = false
     }
 }

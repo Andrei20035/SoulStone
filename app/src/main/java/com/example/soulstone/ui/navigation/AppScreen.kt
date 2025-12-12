@@ -23,7 +23,7 @@ sealed class AppScreen(val route: String) {
         fun createRoute(keyName: String) = "chinese_sign_details/$keyName"
     }
     object GemstoneIndex : AppScreen("gemstone_index")
-    object Login : AppScreen("login")
-    object Dashboard : AppScreen("dashboard")
+    object Login : AppScreen("admin_login")
+    object Dashboard : AppScreen("admin_dashboard")
     object AddStone : AppScreen("add_stone")
 }

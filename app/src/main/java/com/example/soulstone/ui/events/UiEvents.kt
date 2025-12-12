@@ -19,4 +19,8 @@ sealed class UiEvent {
     object NavigateSevenChakras : UiEvent()
     object NavigateAdmin : UiEvent()
     object NavigateGemstoneIndex : UiEvent()
+
+    // -- Admin navigation events
+    object NavigateToAdminDashboard : UiEvent()
+    object NavigateToAddStone : UiEvent()
 }
