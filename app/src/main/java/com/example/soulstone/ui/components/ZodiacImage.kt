@@ -11,18 +11,32 @@ import androidx.compose.ui.platform.LocalContext
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import java.io.File
 
 @Composable
-fun ZodiacImage(
-    imageResId: Int,
+fun UniversalImage(
+    imageResId: Int = 0,
+    imageFileName: String? = null,
     contentDescription: String?,
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Fit
 ) {
-    if (imageResId != 0) {
+    val context = LocalContext.current
+
+    val model = remember(imageResId, imageFileName) {
+        if (imageResId != 0) {
+            imageResId
+        } else if (!imageFileName.isNullOrBlank()) {
+            File(context.filesDir, imageFileName)
+        } else {
+            null
+        }
+    }
+
+    if (model != null) {
         AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current)
-                .data(imageResId)
+            model = ImageRequest.Builder(context)
+                .data(model)
                 .crossfade(true)
                 .build(),
             contentDescription = contentDescription,
@@ -30,6 +44,7 @@ fun ZodiacImage(
             modifier = modifier
         )
     } else {
+        // Fallback
         Box(modifier = modifier.background(Color.LightGray))
     }
 }

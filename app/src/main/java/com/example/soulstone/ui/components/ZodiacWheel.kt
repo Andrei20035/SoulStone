@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -35,7 +36,7 @@ import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sin
 
-data class ZodiacCenterData(val imageName: String, val imageResId: Int = 0)
+data class ZodiacCenterData(val imageFileName: String, val imageResId: Int = 0)
 
 @Composable
 fun ZodiacStoneWheelViewer(
@@ -139,7 +140,12 @@ fun ZodiacCenterView(data: ZodiacCenterData) {
             .clip(CircleShape),
         contentAlignment = Alignment.Center
     ) {
-        ZodiacImage(data.imageResId, data.imageName, modifier = Modifier.fillMaxSize())
+        UniversalImage(
+            imageResId = data.imageResId,
+            imageFileName = data.imageFileName,
+            contentDescription = data.imageFileName,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }
 
@@ -157,12 +163,14 @@ fun StoneItemView(data: StoneListUiItem, onClick: () -> Unit) {
                 .aspectRatio(1f),
             contentAlignment = Alignment.Center
         ) {
-            ZodiacImage(
+            UniversalImage(
                 imageResId = data.imageResId,
+                imageFileName = data.imageFileName,
                 contentDescription = data.name,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Fit
             )
+
         }
         Text(
             text = data.name,

@@ -30,7 +30,7 @@ interface StoneRepository {
 
     suspend fun getStoneDetails(keyName: String): StoneWithDetails?
     suspend fun getTranslatedStoneFlow(stoneId: Int, language: LanguageCode): Flow<TranslatedStone?>
-    suspend fun insertStone(stone: Stone)
+    suspend fun insertStone(stone: Stone): Long
     suspend fun insertTranslation(translation: StoneTranslation)
     suspend fun insertBenefitCrossRef(crossRef: StoneBenefitCrossRef)
     suspend fun insertChakraCrossRef(crossRef: StoneChakraCrossRef)

@@ -3,7 +3,6 @@ package com.example.soulstone.ui.screens.stone_uses
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.data.repository.BenefitRepository
 import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.ui.events.UiEvent
@@ -58,11 +57,14 @@ class StoneUsesViewModel @Inject constructor(
                     repository.getAllTranslatedBenefits(language)
                         .map { list ->
                             list.map { benefit ->
+                                val imageName = benefit.imageName
+                                val resId = context.getDrawableIdByName(imageName)
+
                                 BenefitUiItem(
                                     id = benefit.id,
                                     name = benefit.translatedName,
-                                    imageName = benefit.imageName,
-                                    imageResId = context.getDrawableIdByName(benefit.imageName)
+                                    imageResId = resId,
+                                    imageFileName = if (resId == 0) imageName else null
                                 )
                             }
                         }

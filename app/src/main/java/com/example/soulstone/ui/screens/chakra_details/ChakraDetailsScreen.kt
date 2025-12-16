@@ -1,4 +1,5 @@
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -38,6 +39,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,8 +50,8 @@ import com.example.soulstone.R
 import com.example.soulstone.data.pojos.ChakraListItem
 import com.example.soulstone.data.pojos.ZodiacSignListItem
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.components.ZodiacCenterData
-import com.example.soulstone.ui.components.ZodiacImage
 import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
@@ -156,7 +158,7 @@ fun ChakraDetails(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            text = "Seven Chakra Stones",
+                            text = stringResource(R.string.seven_chakra_stones),
                             fontSize = 45.sp,
                             textAlign = TextAlign.Center,
                             modifier = Modifier
@@ -172,7 +174,12 @@ fun ChakraDetails(
                                     .size(120.dp)
                                     .clip(CircleShape)
                             ) {
-                                ZodiacImage(signWrapper.imageResId, signData.imageName, modifier = Modifier.fillMaxSize())
+                                UniversalImage(
+                                    imageResId = signWrapper.imageResId,
+                                    imageFileName = signData.imageName,
+                                    contentDescription = signData.name,
+                                    modifier = Modifier.fillMaxSize()
+                                )
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
@@ -191,7 +198,7 @@ fun ChakraDetails(
                                     fontSize = 40.sp
                                 )
                                 Text(
-                                    "Planet " + signData.rulingPlanet,
+                                    stringResource(R.string.planet) + signData.rulingPlanet,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )
@@ -262,14 +269,14 @@ fun ChakraDetails(
                                 Spacer(Modifier.height(8.dp))
 
                                 // 4. Use a Helper Function to remove 50 lines of duplicate code
-                                SignInfoSection("Location", signData.location)
-                                SignInfoSection("Stone colors", signData.stoneColors)
-                                SignInfoSection("Healing qualities", signData.healingQualities)
-                                SignInfoSection("Stones", signData.stones)
-                                SignInfoSection("Body placement", signData.bodyPlacement)
-                                SignInfoSection("House placement", signData.housePlacement)
-                                SignInfoSection("${signData.name} herbs", signData.herbs)
-                                SignInfoSection("Essential oils", signData.essentialOils)
+                                SignInfoSection(stringResource(R.string.location), signData.location)
+                                SignInfoSection(stringResource(R.string.stone_colors), signData.stoneColors)
+                                SignInfoSection(stringResource(R.string.healing_qualities), signData.healingQualities)
+                                SignInfoSection(stringResource(R.string.stones), signData.stones)
+                                SignInfoSection(stringResource(R.string.body_placement), signData.bodyPlacement)
+                                SignInfoSection(stringResource(R.string.house_placement), signData.housePlacement)
+                                SignInfoSection(stringResource(R.string.herbs, signData.name), signData.herbs)
+                                SignInfoSection(stringResource(R.string.essential_oils), signData.essentialOils)
 
                                 Spacer(Modifier.height(24.dp))
                             }
@@ -334,7 +341,12 @@ fun ChakraPill(
             modifier = Modifier.padding(horizontal = 14.dp)
         ) {
             Box(modifier = Modifier.size(32.dp)) {
-                ZodiacImage(sign.imageResId, sign.chakraName, modifier = Modifier.fillMaxHeight())
+                UniversalImage(
+                    imageResId = sign.imageResId,
+                    imageFileName = sign.imageFileName,
+                    contentDescription = sign.chakraName,
+                    modifier = Modifier.fillMaxHeight()
+                )
             }
 
             Spacer(modifier = Modifier.width(12.dp))
@@ -344,7 +356,17 @@ fun ChakraPill(
                 fontSize = 28.sp,
                 maxLines = 1,
                 softWrap = false,
-                color = Color(0xFF2B4F84)
+                color = Color(0xFF2B4F84),
+                modifier = Modifier.basicMarquee(
+                    // 1. Wait 2 seconds before starting to scroll (User sees the start clearly)
+                    initialDelayMillis = 2000,
+
+                    // 2. Wait 2 seconds at the end before restarting (User sees the end clearly)
+                    repeatDelayMillis = 2000,
+
+                    // Optional: Slow down the scroll speed (default is usually around 30.dp)
+                    velocity = 30.dp
+                )
             )
         }
     }

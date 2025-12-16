@@ -19,3 +19,10 @@ fun DescriptionTextStyle() = androidx.compose.ui.text.TextStyle(
     lineHeight = 36.sp,
     color = Color.Black
 )
+
+fun String?.toSqlList(): List<String> {
+    return this?.split(",")
+        ?.map { it.trim() }
+        ?.filter { it.isNotEmpty() }
+        ?: emptyList()
+}

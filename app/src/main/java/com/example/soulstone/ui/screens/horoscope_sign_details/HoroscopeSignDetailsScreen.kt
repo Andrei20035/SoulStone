@@ -49,6 +49,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
@@ -66,8 +67,8 @@ import com.example.soulstone.R
 import com.example.soulstone.data.pojos.StoneListItem
 import com.example.soulstone.data.pojos.ZodiacSignListItem
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.components.ZodiacCenterData
-import com.example.soulstone.ui.components.ZodiacImage
 import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
@@ -175,7 +176,7 @@ fun HoroscopeSignDetails(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            text = "Energy stones of good fortune according to your birth date",
+                            text = stringResource(R.string.energy_stones_of_good_fortune),
                             fontSize = 45.sp,
                             textAlign = TextAlign.Center,
                             modifier = Modifier
@@ -191,14 +192,19 @@ fun HoroscopeSignDetails(
                                     .size(120.dp)
                                     .clip(CircleShape)
                             ) {
-                                ZodiacImage(signWrapper.imageResId, signData.name, modifier = Modifier.fillMaxSize())
+                                UniversalImage(
+                                    imageResId = signWrapper.imageResId,
+                                    imageFileName = signData.imageName,
+                                    contentDescription = signData.name,
+                                    modifier = Modifier.fillMaxSize()
+                                )
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = signData.name + " Zodiac Birthstones",
+                                    text = signData.name + stringResource(R.string.zodiac_birthstones),
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
                                     color = Color(0xFF2B4F84),
@@ -210,7 +216,7 @@ fun HoroscopeSignDetails(
                                     fontSize = 40.sp
                                 )
                                 Text(
-                                    "Planet " + signData.rulingPlanet,
+                                    stringResource(R.string.planet) + signData.rulingPlanet,
                                     color = Color(0xFF2B4F84),
                                     fontSize = 40.sp
                                 )

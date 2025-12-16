@@ -32,7 +32,7 @@ interface StoneDao {
         st.description AS description,
         
         -- Combine multiple benefits into one string (e.g. "Peace, Love")
-        GROUP_CONCAT(DISTINCT bt.name) AS category,
+        GROUP_CONCAT(DISTINCT bt.name) AS benefit,
         
         -- Combine multiple zodiacs
         GROUP_CONCAT(DISTINCT zt.name) AS zodiacSign,

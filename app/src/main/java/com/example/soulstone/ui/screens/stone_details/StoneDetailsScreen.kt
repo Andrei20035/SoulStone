@@ -36,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,6 +48,7 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.example.soulstone.R
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
 import com.example.soulstone.ui.screens.stones_for_benefit.BenefitChip
@@ -132,7 +134,7 @@ private fun StoneDetailsContent(
                 }
 
                 Text(
-                    text = "Stone Uses and Properties",
+                    text = stringResource(R.string.stone_uses_and_properties),
                     fontSize = 80.sp,
                     lineHeight = 90.sp,
                     textAlign = TextAlign.Center,
@@ -145,7 +147,7 @@ private fun StoneDetailsContent(
             }
 
             Text(
-                text = uiState.stone?.translatedName ?: "Loading...",
+                text = uiState.stone?.translatedName ?: stringResource(R.string.loading),
                 fontSize = 60.sp,
                 lineHeight = 70.sp,
                 textAlign = TextAlign.Start,
@@ -177,7 +179,7 @@ private fun StoneDetailsContent(
                                 horizontalAlignment = Alignment.Start,
                             ) {
                                 val context = LocalContext.current
-                                val imageName = uiState.stone?.imageUri
+                                val imageName = uiState.stone?.imageUri ?: ""
 
                                 val imageResId = remember(imageName) {
                                     context.resources.getIdentifier(
@@ -187,24 +189,18 @@ private fun StoneDetailsContent(
                                     )
                                 }
 
-                                if (imageResId != 0) {
-                                    AsyncImage(
-                                        model = ImageRequest.Builder(context)
-                                            .data(imageResId)
-                                            .crossfade(true)
-                                            .build(),
-                                        contentDescription = imageName,
-                                        contentScale = ContentScale.Fit,
-                                        modifier = Modifier.size(400.dp)
-                                    )
-                                } else {
-                                    Box(modifier = Modifier.background(Color.LightGray))
-                                }
+                                UniversalImage(
+                                    imageResId = imageResId,
+                                    imageFileName = if (imageResId == 0) imageName else null,
+                                    contentDescription = uiState.stone?.translatedName,
+                                    contentScale = ContentScale.Fit,
+                                    modifier = Modifier.size(400.dp)
+                                )
 
                                 Spacer(modifier = Modifier.height(16.dp))
 
                                 Text(
-                                    text = uiState.stone?.description ?: "No description available",
+                                    text = uiState.stone?.description ?: stringResource(R.string.no_description_available),
                                     style = DescriptionTextStyle(),
                                     modifier = Modifier.fillMaxWidth()
                                 )
@@ -224,7 +220,9 @@ private fun StoneDetailsContent(
                             CircularProgressIndicator()
                         } else {
                             LazyColumn(
-                                modifier = Modifier.fillMaxSize().padding(start = 50.dp),
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(start = 50.dp),
                                 verticalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
                                 items(uiState.benefits) { benefit ->

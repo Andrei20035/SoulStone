@@ -4,5 +4,6 @@ data class ZodiacSignListUiItem(
     val id: Int,
     val keyName: String,
     val signName: String,
-    val imageResId: Int
+    val imageFileName: String? = null,
+    val imageResId: Int = 0,
 )

@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">SoulStone</string>
+    <string name="horoscope_monthly_birthstones">Horoscope Monthly Birthstones</string>
+    <string name="seven_chakra_stones">Seven Chakra Stones</string>
+    <string name="planet">"Planet "</string>
+    <string name="location">Location</string>
+    <string name="stone_colors">Stone colors</string>
+    <string name="healing_qualities">Healing qualities</string>
+    <string name="stones">Stones</string>
+    <string name="body_placement">Body placement</string>
+    <string name="house_placement">House placement</string>
+    <string name="herbs">%1$s herbs</string>
+    <string name="essential_oils">Essential oils</string>
+    <string name="chinese_horoscope_energy_stones">Chinese horoscope energy stones for good luck according to your birth year</string>
+    <string name="chinese_birthstones">" Chinese Birthstones"</string>
+    <string name="gemstones_index_a_z">Gemstones index A-Z</string>
+    <string name="energy_stones_of_good_fortune">Energy stones of good fortune according to your birth date</string>
+    <string name="zodiac_birthstones">" Zodiac Birthstones"</string>
+    <string name="seven_chakra_stones_energetic">Seven Chakra Stones\nEnergetic stones for good fortune according to the seven chakras</string>
+    <string name="stone_uses_and_properties">Stone Uses and Properties</string>
+    <string name="loading">Loading...</string>
+    <string name="no_description_available">No description available</string>
+    <string name="gemstone_index">Gemstone Index</string>
+    <string name="chinese_annual_birthstones">Chinese Annual Birthstones</string>
+    <string name="stones_uses_and_properties">Stones Uses and Properties</string>
+    <string name="seven_chakras_stones">Seven Chakras Stones</string>
+    <string name="admin_panel">Admin Panel</string>
+    <string name="horoscope">Horoscope</string>
+    <string name="chinese_zodiac">Chinese Zodiac</string>
+    <string name="stone_uses">Stone Uses</string>
+    <string name="chakras">Chakras</string>
+    <string name="select_language">Select Language</string>
+    <string name="cancel">Cancel</string>
+    <string name="healing_crystals_protection_and_lucky_stones">Healing crystals, protection, and lucky stones according to the Horoscope Signs, Chinese Zodiac, and the Seven Chakras</string>
 </resources>

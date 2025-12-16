@@ -74,10 +74,14 @@ class HoroscopeSignDetailsViewModel @Inject constructor(
                         }
 
                         val mappedStones = stones.map { dbItem ->
+                            val imageName = dbItem.imageUri ?: ""
+                            val resId = context.getDrawableIdByName(imageName)
+
                             StoneListUiItem(
                                 id = dbItem.id,
                                 name = dbItem.name,
-                                imageResId = context.getDrawableIdByName(dbItem.imageUri)
+                                imageResId = resId,
+                                imageFileName = if (resId == 0) imageName else null
                             )
                         }
 

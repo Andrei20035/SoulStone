@@ -44,7 +44,6 @@ data class ChineseZodiacTranslationData(
     @SerializedName("gemstone_desc") val gemstoneDesc: String
 )
 
-data class ChineseIcons(val icon: Int, val border: Int, val color: Int)
 
 data class StoneJsonItem(
     @SerializedName("image_name") val imageName: String,

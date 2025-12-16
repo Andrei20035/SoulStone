@@ -66,10 +66,14 @@ class GemstoneIndexViewModel @Inject constructor(
             }
                 .map { dbList ->
                     dbList.map { item ->
+                        val imageName = item.imageUri ?: ""
+                        val resId = context.getDrawableIdByName(imageName)
+
                         StoneGridItem.StoneData(
                             id = item.id,
                             name = item.name,
-                            imageResId = context.getDrawableIdByName(item.imageUri)
+                            imageResId = resId,
+                            imageFileName = if (resId == 0) imageName else null
                         )
                     }
                 }

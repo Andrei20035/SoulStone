@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.soulstone.screens.navigation.AdminScreen
+import com.example.soulstone.ui.screens.add_stone.AddStoneScreen
 import com.example.soulstone.ui.screens.admin_dashboard.AdminDashboardScreen
 import com.example.soulstone.ui.screens.admin_login.AdminLoginScreen
 
@@ -35,6 +35,11 @@ fun AdminSection(
             AdminDashboardScreen(
                 navController = adminNavController,
                 onExitAdmin = onExitAdmin
+            )
+        }
+        composable(AppScreen.AddStone.route) {
+            AddStoneScreen(
+                navController = adminNavController,
             )
         }
     }

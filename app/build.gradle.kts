@@ -1,9 +1,17 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+}
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
 }
 
 android {
@@ -20,6 +28,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val apiKey = localProperties.getProperty("GOOGLE_TRANSLATE_API_KEY") ?: ""
+        buildConfigField("String", "TRANSLATION_API_KEY", apiKey)
     }
 
     buildTypes {
@@ -42,6 +53,7 @@ android {
         freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
@@ -60,6 +72,10 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.icons.extended)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation("com.google.android.material:material:1.13.0")
+
 
     implementation(libs.room.runtime)
     implementation(libs.androidx.compose.foundation.layout)

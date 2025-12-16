@@ -7,14 +7,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
@@ -31,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,8 +38,7 @@ import com.example.soulstone.R
 import com.example.soulstone.ui.components.SocialMediaFooter
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.navigation.AppScreen
-import com.example.soulstone.ui.screens.horoscope_monthly_birthstones.ClickableZodiacWheel
-import com.example.soulstone.util.ChineseZodiacSign
+import com.example.soulstone.util.ChineseZodiacSignEnum
 import kotlinx.coroutines.launch
 import kotlin.math.atan2
 import kotlin.math.sqrt
@@ -88,7 +84,7 @@ fun ChineseBirthstonesScreen(
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Chinese horoscope energy stones for good luck according to your birth year",
+                text = stringResource(R.string.chinese_horoscope_energy_stones),
                 fontSize = 80.sp,
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
@@ -119,7 +115,7 @@ fun ChineseBirthstonesScreen(
 @Composable
 fun ClickableChineseZodiacWheel(
     modifier: Modifier = Modifier,
-    onSignClick: (ChineseZodiacSign) -> Unit
+    onSignClick: (ChineseZodiacSignEnum) -> Unit
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -159,19 +155,19 @@ fun ClickableChineseZodiacWheel(
 
 
                             Log.d("UNGHI", angleDeg.toString())
-                            val clickedSign: ChineseZodiacSign = when (angleDeg) {
-                                in 0f..30f -> ChineseZodiacSign.MONKEY
-                                in 30f..60f -> ChineseZodiacSign.GOAT
-                                in 60f..90f -> ChineseZodiacSign.HORSE
-                                in 90f..120f -> ChineseZodiacSign.SNAKE
-                                in 120f..150f -> ChineseZodiacSign.DRAGON
-                                in 150f..180f -> ChineseZodiacSign.RABBIT
-                                in 180f..210f -> ChineseZodiacSign.TIGER
-                                in 210f..240f -> ChineseZodiacSign.OX
-                                in 240f..270f -> ChineseZodiacSign.RAT
-                                in 270f..300f -> ChineseZodiacSign.PIG
-                                in 300f..330f -> ChineseZodiacSign.DOG
-                                else -> ChineseZodiacSign.ROOSTER
+                            val clickedSign: ChineseZodiacSignEnum = when (angleDeg) {
+                                in 0f..30f -> ChineseZodiacSignEnum.MONKEY
+                                in 30f..60f -> ChineseZodiacSignEnum.GOAT
+                                in 60f..90f -> ChineseZodiacSignEnum.HORSE
+                                in 90f..120f -> ChineseZodiacSignEnum.SNAKE
+                                in 120f..150f -> ChineseZodiacSignEnum.DRAGON
+                                in 150f..180f -> ChineseZodiacSignEnum.RABBIT
+                                in 180f..210f -> ChineseZodiacSignEnum.TIGER
+                                in 210f..240f -> ChineseZodiacSignEnum.OX
+                                in 240f..270f -> ChineseZodiacSignEnum.RAT
+                                in 270f..300f -> ChineseZodiacSignEnum.PIG
+                                in 300f..330f -> ChineseZodiacSignEnum.DOG
+                                else -> ChineseZodiacSignEnum.ROOSTER
                             }
                             println("A APASAT PE: $clickedSign")
                             onSignClick(clickedSign)

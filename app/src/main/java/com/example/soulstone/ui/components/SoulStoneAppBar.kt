@@ -2,6 +2,7 @@ package com.example.soulstone.ui.components
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,10 +20,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -69,7 +74,6 @@ fun SoulStoneTopBar(
     }
 
     BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
-        // Decide breakpoint (e.g., 600dp is a common tablet/phone split)
         if (maxWidth < 840.dp) {
             MobileTopBar(
                 viewModel = viewModel,
@@ -154,43 +158,28 @@ fun DesktopTopBar(
 
                 Spacer(Modifier.weight(1f))
 
-                Box {
-                    CustomDropdownButton(
-                        text = "Gemstone Index",
-                        onClick = { viewModel.onGemstoneIndexClicked() }
-                    )
-                }
+                StyledTextButton(
+                    text = stringResource(R.string.gemstone_index),
+                    onClick = { viewModel.onGemstoneIndexClicked() }
+                )
 
                 Spacer(Modifier.width(20.dp))
 
-                Box {
-                    CustomDropdownButton(
-                        text = LocalLanguage.current.name,
-                        onClick = { languageExpanded = true }
-                    )
-                    DropdownMenu(
-                        expanded = languageExpanded,
-                        onDismissRequest = { languageExpanded = false }
-                    ) {
-                        LanguageCode.entries.forEach { lang ->
-                            DropdownMenuItem(
-                                text = { Text(lang.name.lowercase().replaceFirstChar { it.uppercase() }) },
-                                onClick = {
-                                    viewModel.onLanguageSelected(lang)
-                                    languageExpanded = false
-                                }
-                            )
-                        }
+                LanguageDropdown(
+                    currentLanguage = LocalLanguage.current,
+                    onLanguageSelected = { newLang ->
+                        viewModel.onLanguageSelected(newLang)
                     }
-                }
+                )
 
                 Spacer(Modifier.width(20.dp))
 
                 Icon(
-                    painter = painterResource(R.drawable.admin_menu), // Ensure resource exists
+                    painter = painterResource(R.drawable.admin_menu),
                     contentDescription = "Admin menu",
                     modifier = Modifier
                         .size(48.dp)
+                        .padding(bottom = 2.dp)
                         .clickable { viewModel.onAdminClicked() },
                     tint = Color.Unspecified
                 )
@@ -204,40 +193,39 @@ fun DesktopTopBar(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 GradientButton(
-                    text = "Horoscope Monthly Birthstones",
+                    text = stringResource(R.string.horoscope_monthly_birthstones),
                     onClick = { viewModel.onHomeClicked() },
                     isSelected = currentRoute == AppScreen.Home.route,
-                    // Use original large sizes
-                    width = 300.dp,
-                    height = 80.dp,
-                    fontSize = 24.sp
+                    width = 320.dp,
+                    height = 100.dp,
+                    fontSize = 20.sp
                 )
 
                 GradientButton(
-                    text = "Chinese Annual Birthstones",
+                    text = stringResource(R.string.chinese_annual_birthstones),
                     onClick = { viewModel.onChineseClicked() },
                     isSelected = currentRoute == AppScreen.ChineseBirthstones.route,
-                    width = 300.dp,
-                    height = 80.dp,
-                    fontSize = 24.sp
+                    width = 320.dp,
+                    height = 100.dp,
+                    fontSize = 20.sp
                 )
 
                 GradientButton(
-                    text = "Stones Uses and Properties",
+                    text = stringResource(R.string.stones_uses_and_properties),
                     onClick = { viewModel.onStoneUsesClicked() },
                     isSelected = currentRoute == AppScreen.StoneUses.route,
-                    width = 300.dp,
-                    height = 80.dp,
-                    fontSize = 24.sp
+                    width = 320.dp,
+                    height = 100.dp,
+                    fontSize = 20.sp
                 )
 
                 GradientButton(
-                    text = "Seven Chakras Stones",
+                    text = stringResource(R.string.seven_chakras_stones),
                     onClick = { viewModel.onChakrasClicked() },
                     isSelected = currentRoute == AppScreen.SevenChakraStones.route,
-                    width = 300.dp,
-                    height = 80.dp,
-                    fontSize = 24.sp
+                    width = 320.dp,
+                    height = 100.dp,
+                    fontSize = 20.sp
                 )
             }
         }
@@ -304,7 +292,7 @@ fun MobileTopBar(
                     HorizontalDivider()
 
                     DropdownMenuItem(
-                        text = { Text("Gemstone Index") },
+                        text = { Text(stringResource(R.string.gemstone_index)) },
                         onClick = {
                             viewModel.onGemstoneIndexClicked()
                             menuExpanded = false
@@ -318,7 +306,7 @@ fun MobileTopBar(
                         }
                     )
                     DropdownMenuItem(
-                        text = { Text("Admin Panel") },
+                        text = { Text(stringResource(R.string.admin_panel)) },
                         onClick = {
                             onNavigateToAdmin()
                             menuExpanded = false
@@ -336,7 +324,7 @@ fun MobileTopBar(
         ) {
             item {
                 GradientButton(
-                    text = "Horoscope",
+                    text = stringResource(R.string.horoscope),
                     onClick = { viewModel.onHomeClicked() },
                     isSelected = currentRoute == AppScreen.Home.route,
                     width = 160.dp,   // Smaller width for mobile
@@ -346,7 +334,7 @@ fun MobileTopBar(
             }
             item {
                 GradientButton(
-                    text = "Chinese Zodiac",
+                    text = stringResource(R.string.chinese_zodiac),
                     onClick = { viewModel.onChineseClicked() },
                     isSelected = currentRoute == AppScreen.ChineseBirthstones.route,
                     width = 160.dp,
@@ -356,7 +344,7 @@ fun MobileTopBar(
             }
             item {
                 GradientButton(
-                    text = "Stone Uses",
+                    text = stringResource(R.string.stone_uses),
                     onClick = { viewModel.onStoneUsesClicked() },
                     isSelected = currentRoute == AppScreen.StoneUses.route,
                     width = 160.dp,
@@ -366,7 +354,7 @@ fun MobileTopBar(
             }
             item {
                 GradientButton(
-                    text = "Chakras",
+                    text = stringResource(R.string.chakras),
                     onClick = { viewModel.onChakrasClicked() },
                     isSelected = currentRoute == AppScreen.SevenChakraStones.route,
                     width = 160.dp,
@@ -380,7 +368,7 @@ fun MobileTopBar(
     if (languageDialogShow) {
         AlertDialog(
             onDismissRequest = { languageDialogShow = false },
-            title = { Text("Select Language") },
+            title = { Text(stringResource(R.string.select_language)) },
             text = {
                 Column {
                     LanguageCode.entries.forEach { lang ->
@@ -402,7 +390,7 @@ fun MobileTopBar(
             },
             confirmButton = {
                 TextButton(onClick = { languageDialogShow = false }) {
-                    Text("Cancel")
+                    Text(stringResource(R.string.cancel))
                 }
             }
         )
@@ -417,7 +405,7 @@ fun GradientButton(
     modifier: Modifier = Modifier,
     isSelected: Boolean = false,
     width: Dp = 300.dp,
-    height: Dp = 80.dp,
+    height: Dp = 100.dp,
     fontSize: TextUnit = 24.sp
 ) {
     val gradientColors = listOf(Color(0xFF502DF6), Color(0xFFB927FC))
@@ -451,21 +439,64 @@ fun GradientButton(
     }
 }
 
+//@Composable
+//fun CustomDropdownButton(
+//    text: String,
+//    onClick: () -> Unit,
+//    modifier: Modifier = Modifier
+//) {
+//    Row(
+//        modifier = modifier
+//            .clip(RoundedCornerShape(50.dp))
+//            .background(Color.White)
+//            .border(4.dp, Color.Black, RoundedCornerShape(50.dp))
+//            .clickable(onClick = onClick)
+//            .padding(horizontal = 18.dp, vertical = 8.dp),
+//        verticalAlignment = Alignment.CenterVertically,
+//        horizontalArrangement = Arrangement.SpaceBetween
+//    ) {
+//        Text(
+//            text = text,
+//            color = Color.Black,
+//            fontSize = 28.sp,
+//            fontWeight = FontWeight.Medium
+//        )
+//        Spacer(Modifier.width(24.dp))
+//        Icon(
+//            painter = painterResource(R.drawable.dropdown),
+//            contentDescription = null,
+//            tint = Color.Black,
+//            modifier = Modifier.size(32.dp)
+//        )
+//    }
+//}
+
+fun NavController.navigateSingleTop(route: String) {
+    navigate(route) {
+        popUpTo(graph.findStartDestination().id) { saveState = true }
+        launchSingleTop = true
+        restoreState = false
+    }
+}
+
+private val BUTTON_HEIGHT = 50.dp
+
 @Composable
-fun CustomDropdownButton(
+fun StyledTextButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
         modifier = modifier
+            .height(BUTTON_HEIGHT)
             .clip(RoundedCornerShape(50.dp))
             .background(Color.White)
             .border(4.dp, Color.Black, RoundedCornerShape(50.dp))
             .clickable(onClick = onClick)
-            .padding(horizontal = 18.dp, vertical = 8.dp),
+            .padding(horizontal = 24.dp), // Matching padding
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.Center
     ) {
         Text(
             text = text,
@@ -473,20 +504,121 @@ fun CustomDropdownButton(
             fontSize = 28.sp,
             fontWeight = FontWeight.Medium
         )
-        Spacer(Modifier.width(24.dp))
-        Icon(
-            painter = painterResource(R.drawable.dropdown),
-            contentDescription = null,
-            tint = Color.Black,
-            modifier = Modifier.size(32.dp)
+    }
+}
+@Composable
+fun LanguageDropdown(
+    currentLanguage: LanguageCode,
+    onLanguageSelected: (LanguageCode) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    var expanded by remember { mutableStateOf(false) }
+    var buttonWidth by remember { mutableStateOf(0) }
+
+    // Animation for the arrow icon
+    val rotationState by animateFloatAsState(
+        targetValue = if (expanded) 180f else 0f,
+        label = "Arrow Rotation"
+    )
+
+    Box(modifier = modifier) {
+        // 1. The Custom Button (Now shows Flag)
+        CustomDropdownButton(
+            flagResId = currentLanguage.flagResId, // Pass the flag ID
+            onClick = { expanded = true },
+            rotation = rotationState,
+            modifier = Modifier.onGloballyPositioned { coordinates ->
+                buttonWidth = coordinates.size.width
+            }
         )
+
+        // 2. The Menu
+        MaterialTheme(
+            shapes = MaterialTheme.shapes.copy(extraSmall = RoundedCornerShape(16.dp))
+        ) {
+            DropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false },
+                modifier = Modifier
+                    .width(with(LocalDensity.current) { buttonWidth.toDp() })
+                    .background(Color.White)
+                    .border(2.dp, Color.Black, RoundedCornerShape(16.dp)),
+                offset = androidx.compose.ui.unit.DpOffset(0.dp, 8.dp)
+            ) {
+                LanguageCode.entries.forEach { lang ->
+                    val isSelected = lang == currentLanguage
+
+                    DropdownMenuItem(
+                        text = {
+                            // In the menu, show Flag + Text for clarity
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Image(
+                                    painter = painterResource(id = lang.flagResId),
+                                    contentDescription = lang.name,
+                                    modifier = Modifier.size(28.dp), // Smaller size for menu
+                                    contentScale = ContentScale.Fit
+                                )
+                                Spacer(Modifier.width(12.dp))
+                                Text(
+                                    text = lang.name.lowercase().replaceFirstChar { it.uppercase() },
+                                    fontSize = 18.sp,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                    color = Color.Black
+                                )
+                            }
+                        },
+                        onClick = {
+                            onLanguageSelected(lang)
+                            expanded = false
+                        },
+                        modifier = Modifier.background(
+                            if (isSelected) Color(0xFFEEEEEE) else Color.Transparent
+                        ),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
+                    )
+                }
+            }
+        }
     }
 }
 
-fun NavController.navigateSingleTop(route: String) {
-    navigate(route) {
-        popUpTo(graph.findStartDestination().id) { saveState = true }
-        launchSingleTop = true
-        restoreState = false
+@Composable
+fun CustomDropdownButton(
+    flagResId: Int,
+    onClick: () -> Unit,
+    rotation: Float,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .height(BUTTON_HEIGHT)
+            .clip(RoundedCornerShape(50.dp))
+            .background(Color.White)
+            .border(4.dp, Color.Black, RoundedCornerShape(50.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 16.dp), // Adjusted padding slightly for flags
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        // Replace Text with Image
+        Image(
+            painter = painterResource(id = flagResId),
+            contentDescription = "Selected Language Flag",
+            // A fixed size ensures the button height stays consistent
+            // regardless of the flag image's aspect ratio.
+            modifier = Modifier.size(42.dp),
+            contentScale = ContentScale.Fit
+        )
+
+        Spacer(Modifier.width(20.dp))
+
+        Icon(
+            painter = painterResource(R.drawable.dropdown), // Ensure you have this asset
+            contentDescription = "Dropdown Arrow",
+            tint = Color.Black,
+            modifier = Modifier
+                .size(32.dp)
+                .rotate(rotation)
+        )
     }
 }

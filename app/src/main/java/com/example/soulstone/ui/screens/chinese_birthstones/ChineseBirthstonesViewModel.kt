@@ -3,7 +3,7 @@ package com.example.soulstone.ui.screens.chinese_birthstones
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.soulstone.ui.events.UiEvent
-import com.example.soulstone.util.ChineseZodiacSign
+import com.example.soulstone.util.ChineseZodiacSignEnum
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -24,7 +24,7 @@ class ChineseBirthstonesViewModel @Inject constructor(
     private val _uiEvent = MutableSharedFlow<UiEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
 
-    fun onSignClicked(sign: ChineseZodiacSign) {
+    fun onSignClicked(sign: ChineseZodiacSignEnum) {
         viewModelScope.launch {
             _uiEvent.emit(UiEvent.NavigateToChineseSign(sign.signName))
         }

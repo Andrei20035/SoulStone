@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -52,6 +53,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.models.StoneGridItem
 import com.example.soulstone.ui.navigation.AppScreen
@@ -95,7 +97,7 @@ fun GemstoneIndexScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Gemstones index A-Z",
+                text = stringResource(R.string.gemstones_index_a_z),
                 fontSize = 80.sp,
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
@@ -166,12 +168,8 @@ fun StoneGridTile(
 ) {
     Column(
         modifier = Modifier
-            .height(220.dp) // ✅ Exact dimension from BenefitItem
-            .border(
-                width = 0.5.dp,
-                color = Color.Black,
-                shape = RectangleShape
-            )
+            .height(220.dp)
+            .border(width = 0.5.dp, color = Color.Black, shape = RectangleShape)
             .clip(RectangleShape)
             .clickable(onClick = onClick)
             .padding(8.dp)
@@ -179,30 +177,22 @@ fun StoneGridTile(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        if (data.imageResId != 0) {
-            Image(
-                painter = painterResource(id = data.imageResId),
-                contentDescription = data.name,
-                contentScale = ContentScale.FillHeight, // ✅ Exact scale
-                modifier = Modifier.height(110.dp)      // ✅ Exact image height
-            )
-        } else {
-            Box(
-                modifier = Modifier
-                    .height(110.dp)
-                    .width(110.dp)
-                    .background(Color.Gray)
-            )
-        }
+        UniversalImage(
+            imageResId = data.imageResId,
+            imageFileName = data.imageFileName,
+            contentDescription = data.name,
+            contentScale = ContentScale.FillHeight,
+            modifier = Modifier.height(110.dp)
+        )
 
-        Spacer(modifier = Modifier.height(16.dp)) // ✅ Exact spacing
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             text = data.name,
             textAlign = TextAlign.Center,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
-            fontSize = 30.sp, // ✅ Exact font size
+            fontSize = 30.sp,
             color = Color.Black
         )
     }

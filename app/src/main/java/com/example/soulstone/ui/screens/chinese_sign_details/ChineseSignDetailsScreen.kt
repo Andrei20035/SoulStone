@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,8 +40,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.components.ZodiacCenterData
-import com.example.soulstone.ui.components.ZodiacImage
 import com.example.soulstone.ui.components.ZodiacSignsList
 import com.example.soulstone.ui.components.ZodiacStoneWheelViewer
 import com.example.soulstone.ui.events.UiEvent
@@ -98,7 +99,6 @@ fun ChineseSignDetailsScreen(
             viewModel.onStoneClicked(stoneId)
         },
         onSignClick = { keyName ->
-            Log.d("CHINESE KEYNAME", keyName)
             viewModel.onSignClicked(keyName)
         }
     )
@@ -125,7 +125,6 @@ fun ChineseDetails(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-//                    .background(Color.Gray)
             ) {
                 if (uiState.isLoading) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -151,14 +150,19 @@ fun ChineseDetails(
                                 modifier = Modifier
                                     .size(120.dp)
                             ) {
-                                ZodiacImage(signWrapper.imageBorderResId, signData.name, modifier = Modifier.fillMaxSize())
+                                UniversalImage(
+                                    imageResId = signWrapper.imageResId,
+                                    imageFileName = signData.iconName,
+                                    contentDescription = signData.iconName,
+                                    modifier = Modifier.fillMaxSize()
+                                )
                             }
                             Column(
                                 modifier = Modifier.padding(start = 24.dp, top = 24.dp),
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = signData.name + " Chinese Birthstones",
+                                    text = signData.name + stringResource(R.string.chinese_birthstones),
                                     fontSize = 70.sp,
                                     lineHeight = 48.sp,
                                     color = Color(0xFFE31E24),

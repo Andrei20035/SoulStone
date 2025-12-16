@@ -39,6 +39,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -49,6 +50,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.soulstone.R
 import com.example.soulstone.data.pojos.TranslatedBenefit
 import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.models.BenefitUiItem
 import com.example.soulstone.ui.navigation.AppScreen
@@ -92,7 +94,7 @@ fun StoneUsesScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Stone Uses and Properties",
+                text = stringResource(R.string.stone_uses_and_properties),
                 fontSize = 80.sp,
                 lineHeight = 90.sp,
                 textAlign = TextAlign.Center,
@@ -153,21 +155,13 @@ fun BenefitItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        if (benefit.imageResId != 0) {
-            Image(
-                painter = painterResource(id = benefit.imageResId),
-                contentDescription = benefit.name,
-                contentScale = ContentScale.FillHeight,
-                modifier = Modifier.height(110.dp)
-            )
-        } else {
-            Box(
-                modifier = Modifier
-                    .height(110.dp)
-                    .width(110.dp)
-                    .background(Color.Gray)
-            )
-        }
+        UniversalImage(
+            imageResId = benefit.imageResId,
+            imageFileName = benefit.imageFileName,
+            contentDescription = benefit.name,
+            contentScale = ContentScale.FillHeight,
+            modifier = Modifier.height(110.dp)
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 

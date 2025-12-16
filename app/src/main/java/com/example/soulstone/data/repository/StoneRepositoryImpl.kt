@@ -88,7 +88,6 @@ class StoneRepositoryImpl @Inject constructor(
         val permanentUriString: String? = try {
             fileManager.saveImageToInternalStorage(tempImageUri)
         } catch (e: Exception) {
-            // Handle error: e.g., couldn't copy the file
             null
         }
 
@@ -99,8 +98,8 @@ class StoneRepositoryImpl @Inject constructor(
         stoneDao.insertStone(newStone)
     }
 
-    override suspend fun insertStone(stone: Stone) {
-        stoneDao.insertStone(stone)
+    override suspend fun insertStone(stone: Stone): Long {
+        return stoneDao.insertStone(stone)
     }
 
     override suspend fun insertTranslation(translation: StoneTranslation) {

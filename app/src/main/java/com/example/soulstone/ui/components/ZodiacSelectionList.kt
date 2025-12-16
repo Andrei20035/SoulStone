@@ -65,7 +65,12 @@ fun ZodiacSignItem(
             modifier = Modifier.padding(horizontal = 14.dp)
         ) {
             Box(modifier = Modifier.size(32.dp)) {
-                ZodiacImage(sign.imageResId, sign.signName, modifier = Modifier.fillMaxHeight())
+                UniversalImage(
+                    imageResId = sign.imageResId,
+                    imageFileName = sign.imageFileName,
+                    contentDescription = sign.signName,
+                    modifier = Modifier.fillMaxHeight()
+                )
             }
 
             Spacer(modifier = Modifier.width(12.dp))

@@ -1,6 +1,6 @@
 package com.example.soulstone.util
 
-enum class ChineseZodiacSign(val signName: String) {
+enum class ChineseZodiacSignEnum(val signName: String) {
     RAT("rat"),
     OX("ox"),
     TIGER("tiger"),

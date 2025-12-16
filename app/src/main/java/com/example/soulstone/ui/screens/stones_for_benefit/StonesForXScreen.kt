@@ -47,6 +47,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -153,7 +154,7 @@ fun StoneForBenefitScreenContent(
                 }
 
                 Text(
-                    text = "Stone Uses and Properties",
+                    text = stringResource(R.string.stone_uses_and_properties),
                     fontSize = 80.sp,
                     lineHeight = 90.sp,
                     textAlign = TextAlign.Center,
@@ -167,7 +168,7 @@ fun StoneForBenefitScreenContent(
             }
 
             Text(
-                text = if (uiState.isBenefitsLoading) "Loading..." else uiState.benefitName,
+                text = if (uiState.isBenefitsLoading) stringResource(R.string.loading) else uiState.benefitName,
                 fontSize = 60.sp,
                 lineHeight = 70.sp,
                 textAlign = TextAlign.Start,

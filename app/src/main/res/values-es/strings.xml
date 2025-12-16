@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SoulStone</string>
+    <string name="seven_chakra_stones">Siete Piedras de los Chakras</string>
+    <string name="planet">"Planeta "</string>
+    <string name="location">Ubicación</string>
+    <string name="stone_colors">Colores de las piedras</string>
+    <string name="healing_qualities">Cualidades curativas</string>
+    <string name="stones">Piedras</string>
+    <string name="body_placement">Colocación en el cuerpo</string>
+    <string name="house_placement">Colocación en la casa</string>
+    <string name="herbs">Hierbas de %1$s</string>
+    <string name="essential_oils">Aceites esenciales</string>
+    <string name="chinese_horoscope_energy_stones">Piedras energéticas del horóscopo chino para la buena suerte según tu año de nacimiento</string>
+    <string name="chinese_birthstones">" Piedras de nacimiento chinas"</string>
+    <string name="gemstones_index_a_z">Índice de piedras preciosas A-Z</string>
+    <string name="energy_stones_of_good_fortune">Piedras energéticas de la buena suerte según tu fecha de nacimiento</string>
+    <string name="zodiac_birthstones">" Piedras del Zodiaco"</string>
+    <string name="seven_chakra_stones_energetic">Siete Piedras de los Chakras\nPiedras energéticas para la buena suerte según los siete chakras</string>
+    <string name="stone_uses_and_properties">Usos y Propiedades de las Piedras</string>
+    <string name="loading">Cargando...</string>
+    <string name="no_description_available">Descripción no disponible</string>
+    <string name="gemstone_index">Índice de Gemas</string>
+    <string name="horoscope_monthly_birthstones">Piedras de Nacimiento Mensuales del Horóscopo</string>
+    <string name="chinese_annual_birthstones">Piedras de Nacimiento Anuales Chinas</string>
+    <string name="stones_uses_and_properties">Usos y Propiedades de las Piedras</string>
+    <string name="seven_chakras_stones">Piedras de los Siete Chakras</string>
+    <string name="admin_panel">Panel de Administración</string>
+    <string name="horoscope">Horóscopo</string>
+    <string name="chinese_zodiac">Zodiaco Chino</string>
+    <string name="stone_uses">Usos de la Piedra</string>
+    <string name="chakras">Chakras</string>
+    <string name="select_language">Seleccionar Idioma</string>
+    <string name="cancel">Cancelar</string>
+    <string name="healing_crystals_protection_and_lucky_stones">Cristales curativos, protección y piedras de la suerte según los signos del horóscopo, el zodiaco chino y los siete chakras</string>
+</resources>

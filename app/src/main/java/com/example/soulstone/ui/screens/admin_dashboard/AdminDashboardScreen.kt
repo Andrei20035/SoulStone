@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -59,15 +61,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import coil3.compose.AsyncImage
-import com.example.soulstone.ui.components.ZodiacImage
+import com.example.soulstone.ui.components.UniversalImage
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.models.StoneUiItem
+import com.example.soulstone.ui.navigation.AppScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -83,8 +86,7 @@ fun AdminDashboardScreen(
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.NavigateToAddStone -> {
-                    // Navigate to your Add Stone screen
-                    // navController.navigate("add_stone_route")
+                    navController.navigate(AppScreen.AddStone.route)
                 }
                 is UiEvent.ShowSnackbar -> {
                     snackbarHostState.showSnackbar(event.message)
@@ -103,8 +105,15 @@ fun AdminDashboardScreen(
 
                 },
                 navigationIcon = {
-                    IconButton(onClick = { onExitAdmin() }) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                    IconButton(
+                        onClick = { onExitAdmin() },
+                        modifier = Modifier.padding(start = 48.dp, top = 40.dp)
+                    ) {
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back",
+                            modifier = Modifier.size(40.dp)
+                        )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -143,81 +152,83 @@ fun AdminDashboardScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // 2. Manage Inventory Header
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(0.4f),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
                     text = "Manage Inventory",
-                    fontSize = 20.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold
                 )
-
                 Button(
                     onClick = { viewModel.onAddStoneClick() },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE)) // Purple-ish
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE)),
+                    contentPadding = PaddingValues(horizontal = 24.dp, vertical = 16.dp)
                 ) {
-                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Add new stone")
+                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(24.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        "Add new stone",
+                        fontSize = 18.sp
+                    )
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 3. Search Bar
             OutlinedTextField(
                 value = uiState.searchQuery,
                 onValueChange = viewModel::onSearchQueryChange,
-                modifier = Modifier.fillMaxWidth(),
-                placeholder = { Text("Search by stone name...") },
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                modifier = Modifier.fillMaxWidth(0.4f),
+                placeholder = { Text(
+                    "Search by stone name...",
+                    fontSize = 20.sp // Larger placeholder
+                ) },
+                leadingIcon = { Icon(Icons.Default.Search,modifier = Modifier.size(28.dp), contentDescription = null) },
                 shape = RoundedCornerShape(8.dp),
                 singleLine = true
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 4. Sort Buttons Row
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                SortButton(
-                    text = "Category",
-                    isSelected = uiState.activeSort == SortOption.CATEGORY,
-                    sortOrder = uiState.sortOrder,
-                    onClick = { viewModel.onSortOptionSelected(SortOption.CATEGORY) },
-                    modifier = Modifier.weight(1f)
-                )
-                SortButton(
-                    text = "Chakra",
-                    isSelected = uiState.activeSort == SortOption.CHAKRA,
-                    sortOrder = uiState.sortOrder,
-                    onClick = { viewModel.onSortOptionSelected(SortOption.CHAKRA) },
-                    modifier = Modifier.weight(1f)
-                )
-                SortButton(
-                    text = "Zodiac",
-                    isSelected = uiState.activeSort == SortOption.ZODIAC,
-                    sortOrder = uiState.sortOrder,
-                    onClick = { viewModel.onSortOptionSelected(SortOption.ZODIAC) },
-                    modifier = Modifier.weight(1f)
-                )
-                SortButton(
-                    text = "Chinese",
-                    isSelected = uiState.activeSort == SortOption.CHINESE_ZODIAC,
-                    sortOrder = uiState.sortOrder,
-                    onClick = { viewModel.onSortOptionSelected(SortOption.CHINESE_ZODIAC) },
-                    modifier = Modifier.weight(1f)
-                )
-            }
+//            Row(
+//                modifier = Modifier.fillMaxWidth(0.4f),
+//                horizontalArrangement = Arrangement.spacedBy(12.dp)
+//            ) {
+//                SortButton(
+//                    text = "Category",
+//                    isSelected = uiState.activeSort == SortOption.CATEGORY,
+//                    sortOrder = uiState.sortOrder,
+//                    onClick = { viewModel.onSortOptionSelected(SortOption.CATEGORY) },
+//                    modifier = Modifier.weight(1f)
+//                )
+//                SortButton(
+//                    text = "Chakra",
+//                    isSelected = uiState.activeSort == SortOption.CHAKRA,
+//                    sortOrder = uiState.sortOrder,
+//                    onClick = { viewModel.onSortOptionSelected(SortOption.CHAKRA) },
+//                    modifier = Modifier.weight(1f)
+//                )
+//                SortButton(
+//                    text = "Zodiac",
+//                    isSelected = uiState.activeSort == SortOption.ZODIAC,
+//                    sortOrder = uiState.sortOrder,
+//                    onClick = { viewModel.onSortOptionSelected(SortOption.ZODIAC) },
+//                    modifier = Modifier.weight(1f)
+//                )
+//                SortButton(
+//                    text = "Chinese",
+//                    isSelected = uiState.activeSort == SortOption.CHINESE_ZODIAC,
+//                    sortOrder = uiState.sortOrder,
+//                    onClick = { viewModel.onSortOptionSelected(SortOption.CHINESE_ZODIAC) },
+//                    modifier = Modifier.weight(1f)
+//                )
+//            }
 
-            Spacer(modifier = Modifier.height(16.dp))
+//            Spacer(modifier = Modifier.height(16.dp))
 
-            // 5. Inventory List (Headers + Items)
             InventoryListTable(
                 stones = uiState.filteredStones,
                 editingId = uiState.editingDescriptionId,
@@ -279,7 +290,7 @@ fun SortButton(
         contentPadding = PaddingValues(horizontal = 4.dp, vertical = 0.dp) // Compact
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = text, fontSize = 10.sp, maxLines = 1)
+            Text(text = text, fontSize = 20.sp, maxLines = 1)
             if (isSelected) {
                 Spacer(modifier = Modifier.width(2.dp))
                 Icon(
@@ -294,7 +305,7 @@ fun SortButton(
 
 @Composable
 fun InventoryListTable(
-    stones: List<StoneUiItem>,
+    stones: List<StoneUiItem>, // This can still be a normal List for now
     editingId: Int?,
     onEditClick: (Int) -> Unit,
     onSaveDescription: (Int, String) -> Unit,
@@ -306,7 +317,6 @@ fun InventoryListTable(
         colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
         Column {
-            // Table Header
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -314,25 +324,32 @@ fun InventoryListTable(
                     .padding(12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                HeaderCell("Img", 0.15f)
+                HeaderCell("Image", 0.15f)
                 HeaderCell("Name", 0.2f)
-                HeaderCell("Cat", 0.15f)
-                HeaderCell("Signs", 0.2f) // Zodiac + Chinese
-                HeaderCell("Chakra", 0.15f)
-                HeaderCell("Desc", 0.15f)
+                HeaderCell("Category", 0.15f)
+                HeaderCell("Signs", 0.2f)
+                HeaderCell("Chakras", 0.15f)
+                HeaderCell("Description", 0.15f)
             }
 
             HorizontalDivider()
 
-            stones.forEach { stone ->
-                InventoryRow(
-                    stone = stone,
-                    isEditing = stone.id == editingId,
-                    onEditClick = { onEditClick(stone.id) },
-                    onSaveDescription = { newDesc -> onSaveDescription(stone.id, newDesc) },
-                    onCancelEdit = onCancelEdit
-                )
-                HorizontalDivider(color = Color.LightGray.copy(alpha = 0.5f))
+            LazyColumn(
+                modifier = Modifier.heightIn(max = 500.dp)
+            ) {
+                items(
+                    items = stones,
+                    key = { it.id }
+                ) { stone ->
+                    InventoryRow(
+                        stone = stone,
+                        isEditing = stone.id == editingId,
+                        onEditClick = { onEditClick(stone.id) },
+                        onSaveDescription = { newDesc -> onSaveDescription(stone.id, newDesc) },
+                        onCancelEdit = onCancelEdit
+                    )
+                    HorizontalDivider(color = Color.LightGray.copy(alpha = 0.5f))
+                }
             }
         }
     }
@@ -342,9 +359,10 @@ fun InventoryListTable(
 fun RowScope.HeaderCell(text: String, weight: Float) {
     Text(
         text = text.uppercase(),
-        fontSize = 10.sp,
+        fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         color = Color.Gray,
+        textAlign = TextAlign.Center,
         modifier = Modifier.weight(weight)
     )
 }
@@ -365,51 +383,93 @@ fun InventoryRow(
             .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // 1. Image
         Box(
             modifier = Modifier
                 .weight(0.15f)
-                .size(40.dp)
-                .background(Color.Gray, CircleShape), // Placeholder for Image
+                .size(80.dp),
             contentAlignment = Alignment.Center
         ) {
-            ZodiacImage(stone.imageResId, stone.name)
+            UniversalImage(
+                imageResId = stone.imageResId,
+                imageFileName = stone.imageFileName,
+                contentDescription = stone.name
+            )
         }
 
-        // 2. Name
         Text(
             text = stone.name,
-            fontSize = 12.sp,
+            color = Color.Black,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
             modifier = Modifier
                 .weight(0.2f)
-                .padding(end = 4.dp)
+                .padding(horizontal = 4.dp)
         )
 
-        // 3. Category
-        Text(
-            text = stone.category,
-            fontSize = 11.sp,
-            modifier = Modifier.weight(0.15f)
-        )
-
-        // 4. Zodiac & Chinese (Stacked)
-        Column(modifier = Modifier.weight(0.2f)) {
-            Text(text = stone.zodiacSign, fontSize = 10.sp, color = Color.DarkGray)
-            Text(text = stone.chineseZodiacSign, fontSize = 10.sp, color = Color.Gray)
+        Column(
+            modifier = Modifier.weight(0.15f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            stone.category.forEach { item ->
+                Text(
+                    text = item,
+                    fontSize = 16.sp,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
 
-        // 5. Chakra
-        Text(
-            text = stone.chakra,
-            fontSize = 11.sp,
-            modifier = Modifier.weight(0.15f)
-        )
+        Column(
+            modifier = Modifier.weight(0.2f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            // 1. Loop through Western Zodiacs
+            stone.zodiacSign.forEach { sign ->
+                Text(
+                    text = sign,
+                    fontSize = 16.sp,
+                    color = Color.DarkGray,
+                    textAlign = TextAlign.Center
+                )
+            }
 
-        // 6. Description (Editable)
-        Box(modifier = Modifier.weight(0.15f)) {
+             Spacer(modifier = Modifier.height(2.dp))
+
+            // 2. Loop through Chinese Zodiacs
+            stone.chineseZodiacSign.forEach { sign ->
+                Text(
+                    text = sign,
+                    fontSize = 16.sp,
+                    color = Color.DarkGray,
+                    textAlign = TextAlign.Center
+                )
+            }
+        }
+        Column(
+            modifier = Modifier.weight(0.15f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            stone.chakra.forEach { item ->
+                Text(
+                    text = item,
+                    fontSize = 16.sp,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
+            }
+        }
+
+        Box(
+            modifier = Modifier.weight(0.15f),
+            contentAlignment = Alignment.Center // Centrează conținutul în celulă
+        ) {
             if (isEditing) {
-                Column {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     BasicTextField(
                         value = tempDescription,
                         onValueChange = { tempDescription = it },
@@ -418,8 +478,9 @@ fun InventoryRow(
                             .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
                             .padding(4.dp)
                             .heightIn(min = 40.dp)
+                            .fillMaxWidth()
                     )
-                    Row {
+                    Row(horizontalArrangement = Arrangement.Center) {
                         IconButton(onClick = { onSaveDescription(tempDescription) }, modifier = Modifier.size(24.dp)) {
                             Icon(Icons.Default.Check, "Save", tint = Color.Green)
                         }
@@ -429,12 +490,17 @@ fun InventoryRow(
                     }
                 }
             } else {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    val text = Text(
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center // Centrează elementele orizontal
+                ) {
+                    Text(
                         text = stone.description,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
-                        fontSize = 11.sp,
+                        fontSize = 16.sp,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center, // Opțional: Dacă vrei textul descrierii centrat
                         modifier = Modifier.weight(1f)
                     )
                     IconButton(

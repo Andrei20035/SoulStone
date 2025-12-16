@@ -8,7 +8,9 @@ import com.example.soulstone.data.repository.SettingsRepository
 import com.example.soulstone.data.repository.StoneRepository
 import com.example.soulstone.ui.events.UiEvent
 import com.example.soulstone.ui.models.StoneUiItem
+import com.example.soulstone.util.LanguageCode
 import com.example.soulstone.util.getDrawableIdByName
+import com.example.soulstone.util.toSqlList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -48,13 +50,11 @@ enum class SortOrder {
 @HiltViewModel
 class AdminDashboardViewModel @Inject constructor(
     private val stoneRepository: StoneRepository,
-    private val settingsRepository: SettingsRepository,
+    // Removed SettingsRepository as it is no longer needed for language
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 
     private val _searchQuery = MutableStateFlow("")
-    private val _activeSort = MutableStateFlow(SortOption.NONE)
-    private val _sortOrder = MutableStateFlow(SortOrder.ASC)
     private val _editingDescriptionId = MutableStateFlow<Int?>(null)
 
     private val _uiState = MutableStateFlow(AdminDashboardUiState(isLoading = true))
@@ -70,59 +70,52 @@ class AdminDashboardViewModel @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     private fun observeDashboardContent() {
         viewModelScope.launch {
-            settingsRepository.language
-                .flatMapLatest { languageCode ->
-                    val stonesFlow = stoneRepository.getAllStonesInventory(languageCode)
+            // 1. Force English Language directly (No more observing settings)
+            val stonesFlow = stoneRepository.getAllStonesInventory(LanguageCode.ENGLISH)
 
-                    combine(
-                        stonesFlow,
-                        _searchQuery,
-                        _activeSort,
-                        _sortOrder,
-                        _editingDescriptionId
-                    ) { stones, query, sortOption, sortOrder, editingId ->
+            combine(
+                stonesFlow,
+                _searchQuery,
+                _editingDescriptionId
+            ) { stones, query, editingId ->
 
-                        val filteredList = if (query.isBlank()) {
-                            stones
-                        } else {
-                            stones.filter { it.stoneName.contains(query, ignoreCase = true) }
-                        }
-
-                        val sortedList = when (sortOption) {
-                            SortOption.CATEGORY -> if (sortOrder == SortOrder.ASC) filteredList.sortedBy { it.benefit } else filteredList.sortedByDescending { it.benefit }
-                            SortOption.CHAKRA -> if (sortOrder == SortOrder.ASC) filteredList.sortedBy { it.chakra } else filteredList.sortedByDescending { it.chakra }
-                            SortOption.ZODIAC -> if (sortOrder == SortOrder.ASC) filteredList.sortedBy { it.zodiacSign } else filteredList.sortedByDescending { it.zodiacSign }
-                            SortOption.CHINESE_ZODIAC -> if (sortOrder == SortOrder.ASC) filteredList.sortedBy { it.chineseZodiacSign } else filteredList.sortedByDescending { it.chineseZodiacSign }
-                            SortOption.NONE -> filteredList
-                        }
-
-                        val uiItems = sortedList.map { dbItem ->
-                            StoneUiItem(
-                                id = dbItem.id,
-                                name = dbItem.stoneName,
-                                category = dbItem.benefit ?: "",
-                                zodiacSign = dbItem.zodiacSign ?: "",
-                                chineseZodiacSign = dbItem.chineseZodiacSign ?: "",
-                                chakra = dbItem.chakra ?: "",
-                                description = dbItem.description,
-                                imageResId = context.getDrawableIdByName(dbItem.imageUri ?: ""),
-                                isEditing = dbItem.id == editingId,
-                            )
-                        }
-
-                        val totalCount = stones.size
-
-                        AdminDashboardUiState(
-                            isLoading = false,
-                            filteredStones = uiItems,
-                            totalStones = totalCount,
-                            searchQuery = query,
-                            activeSort = sortOption,
-                            sortOrder = sortOrder,
-                            editingDescriptionId = editingId
-                        )
-                    }
+                // 2. Only Search Filtering (No Sorting)
+                val filteredList = if (query.isBlank()) {
+                    stones
+                } else {
+                    stones.filter { it.stoneName.contains(query, ignoreCase = true) }
                 }
+
+                // 3. Map to UI Items
+                val uiItems = filteredList.map { dbItem ->
+                    val imageName = dbItem.imageUri ?: ""
+                    val drawableId = context.getDrawableIdByName(imageName)
+
+                    StoneUiItem(
+                        id = dbItem.id,
+                        name = dbItem.stoneName,
+                        category = dbItem.benefit.toSqlList(),
+                        zodiacSign = dbItem.zodiacSign.toSqlList(),
+                        chineseZodiacSign = dbItem.chineseZodiacSign.toSqlList(),
+                        chakra = dbItem.chakra.toSqlList(),
+                        description = dbItem.description,
+                        imageResId = drawableId,
+                        imageFileName = if (drawableId == 0) imageName else null,
+                        isEditing = dbItem.id == editingId,
+                    )
+                }
+
+                AdminDashboardUiState(
+                    isLoading = false,
+                    filteredStones = uiItems,
+                    totalStones = stones.size,
+                    searchQuery = query,
+                    // Pass default/dummy values if your UiState class still requires them
+                    activeSort = SortOption.NONE,
+                    sortOrder = SortOrder.ASC,
+                    editingDescriptionId = editingId
+                )
+            }
                 .flowOn(Dispatchers.IO)
                 .catch { e ->
                     _uiState.update { it.copy(isLoading = false) }
@@ -134,23 +127,8 @@ class AdminDashboardViewModel @Inject constructor(
         }
     }
 
-
     fun onSearchQueryChange(query: String) {
         _searchQuery.value = query
-    }
-
-    fun onSortOptionSelected(option: SortOption) {
-        val currentSort = _activeSort.value
-        val currentOrder = _sortOrder.value
-
-        val newOrder = if (currentSort == option) {
-            if (currentOrder == SortOrder.ASC) SortOrder.DESC else SortOrder.ASC
-        } else {
-            SortOrder.ASC
-        }
-
-        _activeSort.value = option
-        _sortOrder.value = newOrder
     }
 
     fun onAddStoneClick() {
@@ -158,7 +136,6 @@ class AdminDashboardViewModel @Inject constructor(
             _uiEvent.emit(UiEvent.NavigateToAddStone)
         }
     }
-
 
     fun onEditDescriptionClick(stoneId: Int) {
         _editingDescriptionId.value = stoneId
@@ -171,12 +148,14 @@ class AdminDashboardViewModel @Inject constructor(
     fun onSaveDescription(stoneId: Int, newDescription: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val currentLanguage = settingsRepository.language.first()
-
-                stoneRepository.updateStoneDescription(stoneId, newDescription, currentLanguage)
+                // 4. Force English when saving updates
+                stoneRepository.updateStoneDescription(
+                    stoneId,
+                    newDescription,
+                    LanguageCode.ENGLISH
+                )
 
                 _editingDescriptionId.value = null
-
                 _uiEvent.emit(UiEvent.ShowSnackbar("Description updated successfully"))
 
             } catch (e: Exception) {

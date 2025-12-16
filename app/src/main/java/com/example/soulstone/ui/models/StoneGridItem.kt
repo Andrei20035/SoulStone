@@ -4,7 +4,8 @@ sealed interface StoneGridItem {
     data class StoneData(
         val id: Int,
         val name: String,
-        val imageResId: Int
+        val imageResId: Int = 0,
+        val imageFileName: String? = null
     ) : StoneGridItem
 
     data class Navigation(
