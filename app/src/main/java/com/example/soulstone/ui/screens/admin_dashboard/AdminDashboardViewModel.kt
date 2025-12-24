@@ -1,6 +1,7 @@
 package com.example.soulstone.ui.screens.admin_dashboard
 
 import android.content.Context
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.soulstone.data.pojos.StoneInventoryView
@@ -33,7 +34,7 @@ data class AdminDashboardUiState(
     val isLoading: Boolean = false,
     val filteredStones: List<StoneUiItem> = emptyList(),
     val totalStones: Int = 0,
-    val searchQuery: String = "",
+    val searchQuery: TextFieldValue = TextFieldValue(""),
     val activeSort: SortOption = SortOption.NONE,
     val sortOrder: SortOrder = SortOrder.ASC,
     val editingDescriptionId: Int? = null
@@ -50,11 +51,10 @@ enum class SortOrder {
 @HiltViewModel
 class AdminDashboardViewModel @Inject constructor(
     private val stoneRepository: StoneRepository,
-    // Removed SettingsRepository as it is no longer needed for language
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 
-    private val _searchQuery = MutableStateFlow("")
+    private val _searchQuery = MutableStateFlow(TextFieldValue(""))
     private val _editingDescriptionId = MutableStateFlow<Int?>(null)
 
     private val _uiState = MutableStateFlow(AdminDashboardUiState(isLoading = true))
@@ -77,13 +77,14 @@ class AdminDashboardViewModel @Inject constructor(
                 stonesFlow,
                 _searchQuery,
                 _editingDescriptionId
-            ) { stones, query, editingId ->
+            ) { stones, queryTextField, editingId ->
 
+                val queryText = queryTextField.text
                 // 2. Only Search Filtering (No Sorting)
-                val filteredList = if (query.isBlank()) {
+                val filteredList = if (queryText.isBlank()) {
                     stones
                 } else {
-                    stones.filter { it.stoneName.contains(query, ignoreCase = true) }
+                    stones.filter { it.stoneName.contains(queryText, ignoreCase = true) }
                 }
 
                 // 3. Map to UI Items
@@ -109,8 +110,7 @@ class AdminDashboardViewModel @Inject constructor(
                     isLoading = false,
                     filteredStones = uiItems,
                     totalStones = stones.size,
-                    searchQuery = query,
-                    // Pass default/dummy values if your UiState class still requires them
+                    searchQuery = queryTextField,
                     activeSort = SortOption.NONE,
                     sortOrder = SortOrder.ASC,
                     editingDescriptionId = editingId
@@ -127,7 +127,7 @@ class AdminDashboardViewModel @Inject constructor(
         }
     }
 
-    fun onSearchQueryChange(query: String) {
+    fun onSearchQueryChange(query: TextFieldValue) {
         _searchQuery.value = query
     }
 

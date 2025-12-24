@@ -18,8 +18,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 data class AdminLoginUiState(
-    val username: String = "excogitatorius",
-    val password: String = "mandala2025",
+    val username: String = "",
+    val password: String = "",
     val isPasswordVisible: Boolean = false,
     val isLoading: Boolean = false
 )
@@ -50,7 +50,7 @@ class AdminLoginViewModel @Inject constructor() : ViewModel() {
 
             if (currentState.username.isBlank() || currentState.password.isBlank()) {
                 _uiEvent.emit(UiEvent.ShowSnackbar("Credentials invalid"))
-                return@launch // Stop execution here
+                return@launch
             }
 
             _uiState.update { it.copy(isLoading = true) }
@@ -61,7 +61,7 @@ class AdminLoginViewModel @Inject constructor() : ViewModel() {
                 _uiEvent.emit(UiEvent.NavigateToAdminDashboard)
                 _uiState.update { AdminLoginUiState() }
             } else {
-                _uiEvent.emit(UiEvent.ShowSnackbar("An error occurred"))
+                _uiEvent.emit(UiEvent.ShowSnackbar("Invalid username or password."))
                 _uiState.update { it.copy(isLoading = false) }
             }
         }

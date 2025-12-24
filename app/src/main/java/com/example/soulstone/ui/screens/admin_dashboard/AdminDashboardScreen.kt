@@ -44,10 +44,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -65,6 +67,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.soulstone.ui.components.UniversalImage
@@ -107,12 +110,12 @@ fun AdminDashboardScreen(
                 navigationIcon = {
                     IconButton(
                         onClick = { onExitAdmin() },
-                        modifier = Modifier.padding(start = 48.dp, top = 40.dp)
+                        modifier = Modifier.padding(start = 35.dp, top = 35.dp)
                     ) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back",
-                            modifier = Modifier.size(40.dp)
+                            modifier = Modifier.size(50.dp)
                         )
                     }
                 },
@@ -184,50 +187,25 @@ fun AdminDashboardScreen(
                 modifier = Modifier.fillMaxWidth(0.4f),
                 placeholder = { Text(
                     "Search by stone name...",
-                    fontSize = 20.sp // Larger placeholder
+                    fontSize = 20.sp
                 ) },
                 leadingIcon = { Icon(Icons.Default.Search,modifier = Modifier.size(28.dp), contentDescription = null) },
                 shape = RoundedCornerShape(8.dp),
-                singleLine = true
+                singleLine = true,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = Color(0xFF6200EE),       // The outline color
+                    focusedLeadingIconColor = Color(0xFF6200EE),  // The search icon color
+                    focusedPlaceholderColor = Color(0xFF6200EE),  // The placeholder text color
+                    cursorColor = Color(0xFF6200EE),              // The blinking cursor color
+
+                    unfocusedBorderColor = Color.Gray,            // The outline color
+                    unfocusedLeadingIconColor = Color.Gray,       // The search icon color
+                    unfocusedPlaceholderColor = Color.Gray,       // The placeholder text color
+                )
+
             )
 
             Spacer(modifier = Modifier.height(16.dp))
-
-//            Row(
-//                modifier = Modifier.fillMaxWidth(0.4f),
-//                horizontalArrangement = Arrangement.spacedBy(12.dp)
-//            ) {
-//                SortButton(
-//                    text = "Category",
-//                    isSelected = uiState.activeSort == SortOption.CATEGORY,
-//                    sortOrder = uiState.sortOrder,
-//                    onClick = { viewModel.onSortOptionSelected(SortOption.CATEGORY) },
-//                    modifier = Modifier.weight(1f)
-//                )
-//                SortButton(
-//                    text = "Chakra",
-//                    isSelected = uiState.activeSort == SortOption.CHAKRA,
-//                    sortOrder = uiState.sortOrder,
-//                    onClick = { viewModel.onSortOptionSelected(SortOption.CHAKRA) },
-//                    modifier = Modifier.weight(1f)
-//                )
-//                SortButton(
-//                    text = "Zodiac",
-//                    isSelected = uiState.activeSort == SortOption.ZODIAC,
-//                    sortOrder = uiState.sortOrder,
-//                    onClick = { viewModel.onSortOptionSelected(SortOption.ZODIAC) },
-//                    modifier = Modifier.weight(1f)
-//                )
-//                SortButton(
-//                    text = "Chinese",
-//                    isSelected = uiState.activeSort == SortOption.CHINESE_ZODIAC,
-//                    sortOrder = uiState.sortOrder,
-//                    onClick = { viewModel.onSortOptionSelected(SortOption.CHINESE_ZODIAC) },
-//                    modifier = Modifier.weight(1f)
-//                )
-//            }
-
-//            Spacer(modifier = Modifier.height(16.dp))
 
             InventoryListTable(
                 stones = uiState.filteredStones,
@@ -236,6 +214,20 @@ fun AdminDashboardScreen(
                 onSaveDescription = viewModel::onSaveDescription,
                 onCancelEdit = viewModel::onCancelEdit
             )
+
+            if (uiState.editingDescriptionId != null) {
+                val stoneToEdit = uiState.filteredStones.find { it.id == uiState.editingDescriptionId }
+
+                if (stoneToEdit != null) {
+                    EditDescriptionDialog(
+                        initialDescription = stoneToEdit.description,
+                        onDismiss = { viewModel.onCancelEdit() },
+                        onSave = { newDescription ->
+                            viewModel.onSaveDescription(stoneToEdit.id, newDescription)
+                        }
+                    )
+                }
+            }
         }
     }
 }
@@ -267,45 +259,8 @@ fun StatCard(
 }
 
 @Composable
-fun SortButton(
-    text: String,
-    isSelected: Boolean,
-    sortOrder: SortOrder,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    val backgroundColor = if (isSelected) Color(0xFFE8F0FE) else Color.Transparent
-    val contentColor = if (isSelected) Color(0xFF1967D2) else Color.Gray
-    val borderColor = if (isSelected) Color(0xFF1967D2) else Color.LightGray
-
-    OutlinedButton(
-        onClick = onClick,
-        modifier = modifier,
-        shape = RoundedCornerShape(50), // Pill shape
-        border = BorderStroke(1.dp, borderColor),
-        colors = ButtonDefaults.outlinedButtonColors(
-            containerColor = backgroundColor,
-            contentColor = contentColor
-        ),
-        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 0.dp) // Compact
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = text, fontSize = 20.sp, maxLines = 1)
-            if (isSelected) {
-                Spacer(modifier = Modifier.width(2.dp))
-                Icon(
-                    imageVector = if (sortOrder == SortOrder.ASC) Icons.Default.ArrowUpward else Icons.Default.ArrowDownward,
-                    contentDescription = null,
-                    modifier = Modifier.size(12.dp)
-                )
-            }
-        }
-    }
-}
-
-@Composable
 fun InventoryListTable(
-    stones: List<StoneUiItem>, // This can still be a normal List for now
+    stones: List<StoneUiItem>,
     editingId: Int?,
     onEditClick: (Int) -> Unit,
     onSaveDescription: (Int, String) -> Unit,
@@ -335,7 +290,7 @@ fun InventoryListTable(
             HorizontalDivider()
 
             LazyColumn(
-                modifier = Modifier.heightIn(max = 500.dp)
+                modifier = Modifier.heightIn(max = 1000.dp)
             ) {
                 items(
                     items = stones,
@@ -343,10 +298,7 @@ fun InventoryListTable(
                 ) { stone ->
                     InventoryRow(
                         stone = stone,
-                        isEditing = stone.id == editingId,
                         onEditClick = { onEditClick(stone.id) },
-                        onSaveDescription = { newDesc -> onSaveDescription(stone.id, newDesc) },
-                        onCancelEdit = onCancelEdit
                     )
                     HorizontalDivider(color = Color.LightGray.copy(alpha = 0.5f))
                 }
@@ -370,10 +322,7 @@ fun RowScope.HeaderCell(text: String, weight: Float) {
 @Composable
 fun InventoryRow(
     stone: StoneUiItem,
-    isEditing: Boolean,
     onEditClick: () -> Unit,
-    onSaveDescription: (String) -> Unit,
-    onCancelEdit: () -> Unit
 ) {
     var tempDescription by remember(stone.description) { mutableStateOf(stone.description) }
 
@@ -466,53 +415,99 @@ fun InventoryRow(
 
         Box(
             modifier = Modifier.weight(0.15f),
-            contentAlignment = Alignment.Center // Centrează conținutul în celulă
+            contentAlignment = Alignment.Center
         ) {
-            if (isEditing) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    BasicTextField(
-                        value = tempDescription,
-                        onValueChange = { tempDescription = it },
-                        modifier = Modifier
-                            .background(Color(0xFFFFF8E1))
-                            .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
-                            .padding(4.dp)
-                            .heightIn(min = 40.dp)
-                            .fillMaxWidth()
-                    )
-                    Row(horizontalArrangement = Arrangement.Center) {
-                        IconButton(onClick = { onSaveDescription(tempDescription) }, modifier = Modifier.size(24.dp)) {
-                            Icon(Icons.Default.Check, "Save", tint = Color.Green)
-                        }
-                        IconButton(onClick = onCancelEdit, modifier = Modifier.size(24.dp)) {
-                            Icon(Icons.Default.Close, "Cancel", tint = Color.Red)
-                        }
-                    }
-                }
-            } else {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center // Centrează elementele orizontal
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = stone.description,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    fontSize = 16.sp,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.weight(1f)
+                )
+                IconButton(
+                    onClick = onEditClick,
+                    modifier = Modifier.size(24.dp)
                 ) {
-                    Text(
-                        text = stone.description,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        fontSize = 16.sp,
-                        color = Color.Black,
-                        textAlign = TextAlign.Center, // Opțional: Dacă vrei textul descrierii centrat
-                        modifier = Modifier.weight(1f)
+                    Icon(
+                        imageVector = Icons.Default.Edit,
+                        contentDescription = "Edit",
+                        tint = Color.Gray,
+                        modifier = Modifier.size(16.dp)
                     )
-                    IconButton(
-                        onClick = onEditClick,
-                        modifier = Modifier.size(20.dp)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun EditDescriptionDialog(
+    initialDescription: String,
+    onDismiss: () -> Unit,
+    onSave: (String) -> Unit
+) {
+    var description by remember { mutableStateOf(initialDescription) }
+
+    Dialog(onDismissRequest = onDismiss) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White), // Sau culoarea ta de fundal
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Edit Description",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+
+                OutlinedTextField(
+                    value = description,
+                    onValueChange = { description = it },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp),
+                    label = { Text("Description") },
+                    placeholder = { Text("Enter stone description...") },
+                    maxLines = 10,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = Color.Gray,      // Grey when clicked
+                        unfocusedBorderColor = Color.Gray,    // Grey when not clicked
+                        cursorColor = Color(0xFF6200EE),      // Purple cursor
+                        focusedLabelColor = Color(0xFF6200EE) // Label becomes purple when focused
+                    )
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text("Cancel", color = Color.Red)
+                    }
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Button(
+                        onClick = { onSave(description) },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE))
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.Edit,
-                            contentDescription = "Edit",
-                            tint = Color.Gray,
-                            modifier = Modifier.size(12.dp)
-                        )
+                        Text("Save")
                     }
                 }
             }

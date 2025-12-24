@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -35,7 +36,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -105,194 +108,201 @@ fun AdminLoginScreen(
             }
         }
     }
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.logo_source),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
+
+    Scaffold(
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
+        modifier = Modifier.imePadding()
+    ) { innerPadding ->
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .scale(1.2f)
-                .blur(radius = 70.dp)
-        )
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth(0.7f)
-                .fillMaxHeight(0.5f)
-                .align(Alignment.Center),
-            shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = DarkCardBg),
-            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                .padding(innerPadding)
         ) {
-            Box(
+            Image(
+                painter = painterResource(id = R.drawable.logo_source),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(12.dp)
+                    .scale(1.2f)
+                    .blur(radius = 70.dp)
+            )
+
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth(0.7f)
+                    .fillMaxHeight(0.5f)
+                    .align(Alignment.Center),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = DarkCardBg),
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
             ) {
-                IconButton(
-                    onClick = { onNavigateBack() },
+                Box(
                     modifier = Modifier
-                        .align(Alignment.TopStart)
-                        .size(56.dp)
+                        .fillMaxSize()
+                        .padding(12.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = "Back",
-                        modifier = Modifier.size(32.dp),
-                        tint = Color.White
-                    )
-                }
-
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .align(Alignment.Center),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.logo_source),
-                        contentDescription = "App Logo",
-                        contentScale = ContentScale.Fit,
+                    IconButton(
+                        onClick = { onNavigateBack() },
                         modifier = Modifier
-                            .size(80.dp)
-                            .background(
-                                color = Color(0xFF413B32),
-                                shape = CircleShape
-                            )
-                            .padding(8.dp)
-                    )
+                            .align(Alignment.TopStart)
+                            .size(56.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back",
+                            modifier = Modifier.size(32.dp),
+                            tint = Color.White
+                        )
+                    }
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .align(Alignment.Center),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.logo_source),
+                            contentDescription = "App Logo",
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .size(80.dp)
+                                .background(
+                                    color = Color(0xFF413B32),
+                                    shape = CircleShape
+                                )
+                                .padding(8.dp)
+                        )
 
-                    Text(
-                        text = "Admin Login",
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
+                        Spacer(modifier = Modifier.height(16.dp))
 
-                    Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Admin Login",
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White
+                        )
 
-                    Text(
-                        text = "Welcome back, please enter your details.",
-                        fontSize = 14.sp,
-                        color = Color(0xFF9CA3AF),
-                        textAlign = TextAlign.Center
-                    )
+                        Spacer(modifier = Modifier.height(8.dp))
 
-                    Spacer(modifier = Modifier.height(32.dp))
+                        Text(
+                            text = "Welcome back, please enter your details.",
+                            fontSize = 14.sp,
+                            color = Color(0xFF9CA3AF),
+                            textAlign = TextAlign.Center
+                        )
 
-                    OutlinedTextField(
-                        value = uiState.username,
-                        onValueChange = viewModel::onUsernameChange,
-                        modifier = Modifier.fillMaxWidth(0.5f),
-                        label = { Text("Enter your username", color = Color(0xFF525252)) },
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Default.Person,
-                                contentDescription = null
-                            )
-                        },
-                        singleLine = true,
-                        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = GoldButtonColor,
-                            unfocusedBorderColor = Color.Gray,
-                            focusedLabelColor = GoldButtonColor,
-                            unfocusedLabelColor = Color.Gray,
-                            cursorColor = GoldButtonColor,
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
-                            focusedContainerColor = Color.Transparent
-                        ),
-                        shape = RoundedCornerShape(8.dp)
-                    )
+                        Spacer(modifier = Modifier.height(32.dp))
 
-                    Spacer(modifier = Modifier.height(16.dp))
-
-                    OutlinedTextField(
-                        value = uiState.password,
-                        onValueChange = viewModel::onPasswordChange,
-                        modifier = Modifier.fillMaxWidth(0.5f),
-                        label = { Text("Enter your password", color = Color(0xFF525252)) },
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Default.Lock,
-                                contentDescription = null
-                            )
-                        },
-                        trailingIcon = {
-                            IconButton(onClick = viewModel::onTogglePasswordVisibility) {
+                        OutlinedTextField(
+                            value = uiState.username,
+                            onValueChange = viewModel::onUsernameChange,
+                            modifier = Modifier.fillMaxWidth(0.5f),
+                            label = { Text("Enter your username", color = Color(0xFF525252)) },
+                            leadingIcon = {
                                 Icon(
-                                    imageVector = if (uiState.isPasswordVisible)
-                                        Icons.Default.Visibility
-                                    else
-                                        Icons.Default.VisibilityOff,
-                                    contentDescription = if (uiState.isPasswordVisible) "Hide password" else "Show password"
+                                    imageVector = Icons.Default.Person,
+                                    contentDescription = null
+                                )
+                            },
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = GoldButtonColor,
+                                unfocusedBorderColor = Color.Gray,
+                                focusedLabelColor = GoldButtonColor,
+                                unfocusedLabelColor = Color.Gray,
+                                cursorColor = GoldButtonColor,
+                                focusedTextColor = Color.White,
+                                unfocusedTextColor = Color.White,
+                                focusedContainerColor = Color.Transparent
+                            ),
+                            shape = RoundedCornerShape(8.dp)
+                        )
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        OutlinedTextField(
+                            value = uiState.password,
+                            onValueChange = viewModel::onPasswordChange,
+                            modifier = Modifier.fillMaxWidth(0.5f),
+                            label = { Text("Enter your password", color = Color(0xFF525252)) },
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Lock,
+                                    contentDescription = null
+                                )
+                            },
+                            trailingIcon = {
+                                IconButton(onClick = viewModel::onTogglePasswordVisibility) {
+                                    Icon(
+                                        imageVector = if (uiState.isPasswordVisible)
+                                            Icons.Default.Visibility
+                                        else
+                                            Icons.Default.VisibilityOff,
+                                        contentDescription = if (uiState.isPasswordVisible) "Hide password" else "Show password"
+                                    )
+                                }
+                            },
+                            singleLine = true,
+                            visualTransformation = if (uiState.isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Password,
+                                imeAction = ImeAction.Done
+                            ),
+                            keyboardActions = KeyboardActions(
+                                onDone = {
+                                    focusManager.clearFocus()
+                                    viewModel.onLoginClick()
+                                }
+                            ),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = GoldButtonColor,
+                                unfocusedBorderColor = Color.Gray,
+                                focusedLabelColor = GoldButtonColor,
+                                unfocusedLabelColor = Color.Gray,
+                                cursorColor = GoldButtonColor,
+                                focusedTextColor = Color.White,
+                                unfocusedTextColor = Color.White,
+                                focusedContainerColor = Color.Transparent
+                            ),
+                            shape = RoundedCornerShape(8.dp)
+                        )
+
+                        Spacer(modifier = Modifier.height(32.dp))
+
+                        Button(
+                            onClick = viewModel::onLoginClick,
+                            modifier = Modifier
+                                .fillMaxWidth(0.5f)
+                                .height(50.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = GoldButtonColor,
+                                contentColor = Color.White,
+                                disabledContainerColor = GoldButtonColor.copy(alpha = 0.6f)
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            enabled = !uiState.isLoading
+                        ) {
+                            if (uiState.isLoading) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(24.dp),
+                                    color = Color.White,
+                                    strokeWidth = 2.dp
+                                )
+                            } else {
+                                Text(
+                                    text = "Login",
+                                    fontSize = 16.sp,
+                                    fontWeight = FontWeight.Bold
                                 )
                             }
-                        },
-                        singleLine = true,
-                        visualTransformation = if (uiState.isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Password,
-                            imeAction = ImeAction.Done
-                        ),
-                        keyboardActions = KeyboardActions(
-                            onDone = {
-                                focusManager.clearFocus()
-                                viewModel.onLoginClick()
-                            }
-                        ),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = GoldButtonColor,
-                            unfocusedBorderColor = Color.Gray,
-                            focusedLabelColor = GoldButtonColor,
-                            unfocusedLabelColor = Color.Gray,
-                            cursorColor = GoldButtonColor,
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
-                            focusedContainerColor = Color.Transparent
-                        ),
-                        shape = RoundedCornerShape(8.dp)
-                    )
-
-                    Spacer(modifier = Modifier.height(32.dp))
-
-                    Button(
-                        onClick = viewModel::onLoginClick,
-                        modifier = Modifier
-                            .fillMaxWidth(0.5f)
-                            .height(50.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = GoldButtonColor,
-                            contentColor = Color.White,
-                            disabledContainerColor = GoldButtonColor.copy(alpha = 0.6f)
-                        ),
-                        shape = RoundedCornerShape(8.dp),
-                        enabled = !uiState.isLoading
-                    ) {
-                        if (uiState.isLoading) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(24.dp),
-                                color = Color.White,
-                                strokeWidth = 2.dp
-                            )
-                        } else {
-                            Text(
-                                text = "Login",
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
-                            )
                         }
                     }
                 }
-            }
 
+            }
         }
     }
 }
