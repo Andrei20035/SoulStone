@@ -52,20 +52,6 @@ Those entry points converge on the same underlying stone catalog. That is the ma
 
 ---
 
-## Screenshots
-
-> Add production screenshots here once final device captures are available.
-
-| Home / Western Zodiac | Chinese Zodiac | Chakra Detail |
-| --- | --- | --- |
-| `docs/screenshots/home.png` | `docs/screenshots/chinese-zodiac.png` | `docs/screenshots/chakra-detail.png` |
-
-| Gemstone Index | Stone Detail | Admin Inventory |
-| --- | --- | --- |
-| `docs/screenshots/gemstone-index.png` | `docs/screenshots/stone-detail.png` | `docs/screenshots/admin-dashboard.png` |
-
----
-
 ## Feature Map
 
 | Area | Implementation |
