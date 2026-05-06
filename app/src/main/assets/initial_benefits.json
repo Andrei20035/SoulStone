@@ -1,0 +1,275 @@
+[
+  {
+    "key": "anger_and_stress_relief",
+    "image_name": "agate",
+    "translations": {
+      "en": { "name": "Anger & Stress Relief" },
+      "es": { "name": "Alivio de Ira y Estrés" },
+      "fr": { "name": "Soulagement Colère & Stress" },
+      "it": { "name": "Sollievo Rabbia e Stress" },
+      "de": { "name": "Wut & Stressabbau" },
+      "pl": { "name": "Ulga w Gniewie i Stresie" },
+      "ru": { "name": "Снятие Гнева и Стресса" }
+    }
+  },
+  {
+    "key": "anxiety_and_depression",
+    "image_name": "blue_calcite",
+    "translations": {
+      "en": { "name": "Anxiety & Depression" },
+      "es": { "name": "Ansiedad y Depresión" },
+      "fr": { "name": "Anxiété et Dépression" },
+      "it": { "name": "Ansia e Depressione" },
+      "de": { "name": "Angst & Depression" },
+      "pl": { "name": "Lęk i Depresja" },
+      "ru": { "name": "Тревога и Депрессия" }
+    }
+  },
+  {
+    "key": "career_and_money",
+    "image_name": "citrine",
+    "translations": {
+      "en": { "name": "Career & Money" },
+      "es": { "name": "Carrera y Dinero" },
+      "fr": { "name": "Carrière et Argent" },
+      "it": { "name": "Carriera e Denaro" },
+      "de": { "name": "Karriere & Geld" },
+      "pl": { "name": "Kariera i Pieniądze" },
+      "ru": { "name": "Карьера и Деньги" }
+    }
+  },
+  {
+    "key": "clarity_and_focus",
+    "image_name": "coral",
+    "translations": {
+      "en": { "name": "Clarity & Focus" },
+      "es": { "name": "Claridad y Enfoque" },
+      "fr": { "name": "Clarté et Concentration" },
+      "it": { "name": "Chiarezza e Focus" },
+      "de": { "name": "Klarheit & Fokus" },
+      "pl": { "name": "Jasność i Skupienie" },
+      "ru": { "name": "Ясность и Фокус" }
+    }
+  },
+  {
+    "key": "communication",
+    "image_name": "dalmatian_jasper",
+    "translations": {
+      "en": { "name": "Communication" },
+      "es": { "name": "Comunicación" },
+      "fr": { "name": "Communication" },
+      "it": { "name": "Comunicazione" },
+      "de": { "name": "Kommunikation" },
+      "pl": { "name": "Komunikacja" },
+      "ru": { "name": "Общение" }
+    }
+  },
+  {
+    "key": "creativity",
+    "image_name": "diamond",
+    "translations": {
+      "en": { "name": "Creativity" },
+      "es": { "name": "Creatividad" },
+      "fr": { "name": "Créativité" },
+      "it": { "name": "Creatività" },
+      "de": { "name": "Kreativität" },
+      "pl": { "name": "Kreatywność" },
+      "ru": { "name": "Творчество" }
+    }
+  },
+  {
+    "key": "emotional_balance",
+    "image_name": "emerald",
+    "translations": {
+      "en": { "name": "Emotional Balance" },
+      "es": { "name": "Equilibrio Emocional" },
+      "fr": { "name": "Équilibre Émotionnel" },
+      "it": { "name": "Equilibrio Emotivo" },
+      "de": { "name": "Emotionales Gleichgewicht" },
+      "pl": { "name": "Równowaga Emocjonalna" },
+      "ru": { "name": "Эмоциональный Баланс" }
+    }
+  },
+  {
+    "key": "enhanced_focus",
+    "image_name": "hematite",
+    "translations": {
+      "en": { "name": "Enhanced Focus" },
+      "es": { "name": "Enfoque Mejorado" },
+      "fr": { "name": "Concentration Améliorée" },
+      "it": { "name": "Focus Migliorato" },
+      "de": { "name": "Verbesserter Fokus" },
+      "pl": { "name": "Lepsze Skupienie" },
+      "ru": { "name": "Улучшенный Фокус" }
+    }
+  },
+  {
+    "key": "good_fortune_and_luck",
+    "image_name": "lapis_lazuli",
+    "translations": {
+      "en": { "name": "Good Fortune & Luck" },
+      "es": { "name": "Buena Fortuna y Suerte" },
+      "fr": { "name": "Bonne Fortune et Chance" },
+      "it": { "name": "Buona Fortuna" },
+      "de": { "name": "Glück & Wohlstand" },
+      "pl": { "name": "Szczęście i Pomyślność" },
+      "ru": { "name": "Удача и Благополучие" }
+    }
+  },
+  {
+    "key": "intuition",
+    "image_name": "malachite",
+    "translations": {
+      "en": { "name": "Intuition" },
+      "es": { "name": "Intuición" },
+      "fr": { "name": "Intuition" },
+      "it": { "name": "Intuizione" },
+      "de": { "name": "Intuition" },
+      "pl": { "name": "Intuicja" },
+      "ru": { "name": "Интуиция" }
+    }
+  },
+  {
+    "key": "love_relationships",
+    "image_name": "mookaite",
+    "translations": {
+      "en": { "name": "Love Relationships" },
+      "es": { "name": "Amor y Relaciones" },
+      "fr": { "name": "Amour et Relations" },
+      "it": { "name": "Amore e Relazioni" },
+      "de": { "name": "Liebe & Beziehungen" },
+      "pl": { "name": "Miłość i Relacje" },
+      "ru": { "name": "Любовь и Отношения" }
+    }
+  },
+  {
+    "key": "manifestation",
+    "image_name": "onyx",
+    "translations": {
+      "en": { "name": "Manifestation" },
+      "es": { "name": "Manifestación" },
+      "fr": { "name": "Manifestation" },
+      "it": { "name": "Manifestazione" },
+      "de": { "name": "Manifestation" },
+      "pl": { "name": "Manifestacja" },
+      "ru": { "name": "Манифестация" }
+    }
+  },
+  {
+    "key": "mental_health",
+    "image_name": "peridot",
+    "translations": {
+      "en": { "name": "Mental Health" },
+      "es": { "name": "Salud Mental" },
+      "fr": { "name": "Santé Mentale" },
+      "it": { "name": "Salute Mentale" },
+      "de": { "name": "Psychische Gesundheit" },
+      "pl": { "name": "Zdrowie Psychiczne" },
+      "ru": { "name": "Психическое Здоровье" }
+    }
+  },
+  {
+    "key": "mindfulness",
+    "image_name": "pink_quartz",
+    "translations": {
+      "en": { "name": "Mindfulness" },
+      "es": { "name": "Atención Plena" },
+      "fr": { "name": "Pleine Conscience" },
+      "it": { "name": "Mindfulness" },
+      "de": { "name": "Achtsamkeit" },
+      "pl": { "name": "Uważność" },
+      "ru": { "name": "Осознанность" }
+    }
+  },
+  {
+    "key": "personal_growth",
+    "image_name": "pink_tourmaline",
+    "translations": {
+      "en": { "name": "Personal Growth" },
+      "es": { "name": "Crecimiento Personal" },
+      "fr": { "name": "Croissance Personnelle" },
+      "it": { "name": "Crescita Personale" },
+      "de": { "name": "Persönliches Wachstum" },
+      "pl": { "name": "Rozwój Osobisty" },
+      "ru": { "name": "Личностный рост" }
+    }
+  },
+  {
+    "key": "physical_health",
+    "image_name": "purple_sapphire",
+    "translations": {
+      "en": { "name": "Physical Health" },
+      "es": { "name": "Salud Física" },
+      "fr": { "name": "Santé Physique" },
+      "it": { "name": "Salute Fisica" },
+      "de": { "name": "Körperliche Gesundheit" },
+      "pl": { "name": "Zdrowie Fizyczne" },
+      "ru": { "name": "Физическое Здоровье" }
+    }
+  },
+  {
+    "key": "protection",
+    "image_name": "rhodonite",
+    "translations": {
+      "en": { "name": "Protection" },
+      "es": { "name": "Protección" },
+      "fr": { "name": "Protection" },
+      "it": { "name": "Protezione" },
+      "de": { "name": "Schutz" },
+      "pl": { "name": "Ochrona" },
+      "ru": { "name": "Защита" }
+    }
+  },
+  {
+    "key": "self_control",
+    "image_name": "ruby",
+    "translations": {
+      "en": { "name": "Self-Control" },
+      "es": { "name": "Autocontrol" },
+      "fr": { "name": "Maîtrise de Soi" },
+      "it": { "name": "Autocontrollo" },
+      "de": { "name": "Selbstbeherrschung" },
+      "pl": { "name": "Samokontrola" },
+      "ru": { "name": "Самоконтроль" }
+    }
+  },
+  {
+    "key": "spirituality",
+    "image_name": "serpentine",
+    "translations": {
+      "en": { "name": "Spirituality" },
+      "es": { "name": "Espiritualidad" },
+      "fr": { "name": "Spiritualité" },
+      "it": { "name": "Spiritualità" },
+      "de": { "name": "Spiritualität" },
+      "pl": { "name": "Duchowość" },
+      "ru": { "name": "Духовность" }
+    }
+  },
+  {
+    "key": "transformation",
+    "image_name": "smoky_quartz",
+    "translations": {
+      "en": { "name": "Transformation" },
+      "es": { "name": "Transformación" },
+      "fr": { "name": "Transformation" },
+      "it": { "name": "Trasformazione" },
+      "de": { "name": "Transformation" },
+      "pl": { "name": "Transformacja" },
+      "ru": { "name": "Трансформация" }
+    }
+  },
+  {
+    "key": "vitality",
+    "image_name": "sodalite",
+    "translations": {
+      "en": { "name": "Vitality" },
+      "es": { "name": "Vitalidad" },
+      "fr": { "name": "Vitalité" },
+      "it": { "name": "Vitalità" },
+      "de": { "name": "Vitalität" },
+      "pl": { "name": "Witalność" },
+      "ru": { "name": "Жизненная сила" }
+    }
+  }
+]

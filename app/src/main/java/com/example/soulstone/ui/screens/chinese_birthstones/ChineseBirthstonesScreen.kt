@@ -1,0 +1,181 @@
+package com.example.soulstone.ui.screens.chinese_birthstones
+
+import android.util.Log
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.soulstone.R
+import com.example.soulstone.ui.components.SocialMediaFooter
+import com.example.soulstone.ui.events.UiEvent
+import com.example.soulstone.ui.navigation.AppScreen
+import com.example.soulstone.util.ChineseZodiacSignEnum
+import kotlinx.coroutines.launch
+import kotlin.math.atan2
+import kotlin.math.sqrt
+
+@Composable
+fun ChineseBirthstonesScreen(
+    viewModel: ChineseBirthstonesViewModel = hiltViewModel(),
+    navController: NavHostController = rememberNavController()
+) {
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+
+    LaunchedEffect(Unit) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.ShowSnackbar -> {
+                    scope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = event.message,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
+                }
+
+                is UiEvent.NavigateToChineseSign -> {
+                    navController.navigate(
+                        AppScreen.ChineseSignDetails.createRoute(event.keyName)
+                    )
+                }
+
+                else -> {}
+            }
+        }
+    }
+    Scaffold(
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 54.dp, vertical = 54.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = stringResource(R.string.chinese_horoscope_energy_stones),
+                fontSize = 80.sp,
+                lineHeight = 90.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(vertical = 32.dp),
+                color = Color(0xFFED1C24)
+            )
+
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                ClickableChineseZodiacWheel(
+                    onSignClick = { clickedSign ->
+                        viewModel.onSignClicked(clickedSign)
+                    }
+                )
+            }
+            SocialMediaFooter()
+        }
+    }
+}
+
+@Composable
+fun ClickableChineseZodiacWheel(
+    modifier: Modifier = Modifier,
+    onSignClick: (ChineseZodiacSignEnum) -> Unit
+) {
+    BoxWithConstraints(
+        modifier = modifier
+            .fillMaxWidth()
+            .aspectRatio(1f),
+        contentAlignment = Alignment.Center
+    ) {
+        val imageSizePx = constraints.maxWidth.toFloat()
+        val centerX = imageSizePx / 2f
+        val centerY = imageSizePx / 2f
+        Log.d("CENTER X", centerX.toString())
+        Log.d("CENTER Y", centerY.toString())
+
+        val innerRadius = imageSizePx * 0.22f
+        val outerRadius = imageSizePx * 0.5f
+        Log.d("INNER RADIUS", innerRadius.toString())
+        Log.d("OUTER RADIUS", outerRadius.toString())
+
+        Image(
+            painter = painterResource(id = R.drawable.chinese_zodiac),
+            contentDescription = "Zodiac Wheel",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .fillMaxSize()
+                .pointerInput(Unit) {
+                    detectTapGestures { offset ->
+                        val x = offset.x - centerX
+                        val y = offset.y - centerY
+
+                        val radius = sqrt(x * x + y * y)
+
+                        if (radius in innerRadius..outerRadius) {
+                            val angleRad = atan2(y, x)
+
+                            var angleDeg = Math.toDegrees(angleRad.toDouble()).toFloat()
+                            angleDeg = (angleDeg + 360) % 360
+
+
+                            Log.d("UNGHI", angleDeg.toString())
+                            val clickedSign: ChineseZodiacSignEnum = when (angleDeg) {
+                                in 0f..30f -> ChineseZodiacSignEnum.MONKEY
+                                in 30f..60f -> ChineseZodiacSignEnum.GOAT
+                                in 60f..90f -> ChineseZodiacSignEnum.HORSE
+                                in 90f..120f -> ChineseZodiacSignEnum.SNAKE
+                                in 120f..150f -> ChineseZodiacSignEnum.DRAGON
+                                in 150f..180f -> ChineseZodiacSignEnum.RABBIT
+                                in 180f..210f -> ChineseZodiacSignEnum.TIGER
+                                in 210f..240f -> ChineseZodiacSignEnum.OX
+                                in 240f..270f -> ChineseZodiacSignEnum.RAT
+                                in 270f..300f -> ChineseZodiacSignEnum.PIG
+                                in 300f..330f -> ChineseZodiacSignEnum.DOG
+                                else -> ChineseZodiacSignEnum.ROOSTER
+                            }
+                            println("A APASAT PE: $clickedSign")
+                            onSignClick(clickedSign)
+                        } else {
+                            println("Click in afara zonei active.")
+                        }
+                    }
+                }
+        )
+    }
+}

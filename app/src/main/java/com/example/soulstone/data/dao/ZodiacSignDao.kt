@@ -1,0 +1,139 @@
+package com.example.soulstone.data.dao
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
+import androidx.room.Update
+import com.example.soulstone.data.entities.ZodiacSign
+import com.example.soulstone.data.entities.ZodiacSignTranslation
+import com.example.soulstone.util.LanguageCode
+import com.example.soulstone.data.pojos.TranslatedZodiacSign
+import com.example.soulstone.data.pojos.ZodiacSignListItem
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface ZodiacSignDao {
+
+    @Query("""
+    SELECT 
+        z.id as id, 
+        z.name AS keyName,
+        t.name as signName, 
+        z.imageName as imageName 
+    FROM zodiac_signs z
+    INNER JOIN zodiac_translations t ON z.id = t.zodiacSignId
+    WHERE t.languageCode = :language
+""")
+    fun getAllZodiacSignListItems(language: LanguageCode): Flow<List<ZodiacSignListItem>>
+
+    @Query(
+        """
+    SELECT 
+        z.id AS id, 
+        z.startDate AS startDate, 
+        z.endDate AS endDate,
+        z.imageName AS imageName,
+        
+        t.name AS name,
+        t.description AS description,
+        t.element AS element,
+        t.rulingPlanet AS rulingPlanet
+    FROM zodiac_signs AS z
+    JOIN zodiac_translations AS t ON z.id = t.zodiacSignId
+    WHERE t.languageCode = :language
+    ORDER BY z.id ASC
+"""
+    )
+    fun getAllTranslatedZodiacSigns(language: LanguageCode): Flow<List<TranslatedZodiacSign>>
+
+    @Query("""
+        SELECT 
+            z.id,
+            z.startDate,
+            z.endDate,
+            z.imageName,         
+            t.name AS name,       
+            t.description,
+            t.element,
+            t.rulingPlanet
+        FROM zodiac_signs AS z
+        INNER JOIN zodiac_translations AS t 
+            ON z.id = t.zodiacSignId
+        WHERE z.name = :keyName 
+            AND t.languageCode = :language
+    """)
+    fun getTranslatedZodiacSignFlow(keyName: String, language: LanguageCode): Flow<TranslatedZodiacSign?>
+
+    @Query("""
+        SELECT 
+            z.id,
+            z.startDate,
+            z.endDate,
+            z.imageName,          -- Matches 'val imageName'
+            t.name AS name,       -- Matches 'val name'
+            t.description,
+            t.element,
+            t.rulingPlanet
+        FROM zodiac_signs AS z
+        INNER JOIN zodiac_translations AS t 
+            ON z.id = t.zodiacSignId
+        WHERE z.name = :keyName 
+            AND t.languageCode = :language
+        LIMIT 1
+    """)
+    suspend fun getTranslatedZodiacSign(
+        keyName: String,
+        language: LanguageCode
+    ): TranslatedZodiacSign?
+
+    @Update
+    suspend fun updateTranslation(translation: ZodiacSignTranslation): Int
+
+    @Delete
+    suspend fun deleteZodiacSign(sign: ZodiacSign): Int
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertZodiacSign(sign: ZodiacSign): Long?
+
+    @Update
+    suspend fun updateZodiacSign(sign: ZodiacSign): Int
+
+    @Query("SELECT * FROM zodiac_signs WHERE id = :signId")
+    suspend fun getZodiacSignById(signId: Int): ZodiacSign?
+
+    @Query("SELECT * FROM zodiac_signs ORDER BY name ASC")
+    fun getAllZodiacSigns(): Flow<List<ZodiacSign>>
+
+    @Query("SELECT * FROM zodiac_signs WHERE name = :signName LIMIT 1")
+    suspend fun getZodiacSignByName(signName: String): ZodiacSign?
+
+    @Query("SELECT id FROM zodiac_signs WHERE name = :key COLLATE NOCASE LIMIT 1")
+    suspend fun getZodiacSignIdByKey(key: String): Int?
+
+    @Insert
+    suspend fun insertTranslations(translations: List<ZodiacSignTranslation>)
+
+    @Transaction
+    suspend fun insertZodiacSignWithTranslations(
+        zodiacSign: ZodiacSign,
+        translations: List<ZodiacSignTranslation>
+    ) {
+        val newZodiacSignId = insertZodiacSign(zodiacSign)
+        if (newZodiacSignId == null) {
+            throw IllegalStateException(
+                "Failed to insert zodiacSign '${zodiacSign.name}', it might already exist."
+            )
+        }
+        val translationsWithId = translations.map {
+            it.copy(zodiacSignId = newZodiacSignId.toInt())
+        }
+        insertTranslations(translationsWithId)
+    }
+
+    @Query("SELECT COUNT(*) FROM zodiac_signs")
+    suspend fun getSignCount(): Int
+
+}

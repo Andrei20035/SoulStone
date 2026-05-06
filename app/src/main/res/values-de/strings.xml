@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SoulStone</string>
+    <string name="seven_chakra_stones">Sieben Chakra-Steine</string>
+    <string name="planet">"Planet "</string>
+    <string name="location">Ort</string>
+    <string name="stone_colors">Steinfarben</string>
+    <string name="healing_qualities">Heilqualitäten</string>
+    <string name="stones">Steine</string>
+    <string name="body_placement">Körperplatzierung</string>
+    <string name="house_placement">Hausplatzierung</string>
+    <string name="herbs">Kräuter für %1$s</string>
+    <string name="essential_oils">Ätherische Öle</string>
+    <string name="chinese_horoscope_energy_stones">Chinesische Horoskop-Energiesteine für Glück basierend auf Ihrem Geburtsjahr</string>
+    <string name="chinese_birthstones">" Chinesische Geburtssteine"</string>
+    <string name="gemstones_index_a_z">Edelsteinindex A-Z</string>
+    <string name="energy_stones_of_good_fortune">Energiesteine des Glücks basierend auf Ihrem Geburtsdatum</string>
+    <string name="zodiac_birthstones">" Sternzeichen-Geburtssteine"</string>
+    <string name="seven_chakra_stones_energetic">Sieben Chakra-Steine\nEnergetische Steine für Glück gemäß den sieben Chakren</string>
+    <string name="stone_uses_and_properties">Steinverwendung und Eigenschaften</string>
+    <string name="loading">Wird geladen...</string>
+    <string name="no_description_available">Keine Beschreibung verfügbar</string>
+    <string name="gemstone_index">Edelsteinindex</string>
+    <string name="horoscope_monthly_birthstones">Monatliche Geburtssteine des Horoskops</string>
+    <string name="chinese_annual_birthstones">Chinesische jährliche Geburtssteine</string>
+    <string name="stones_uses_and_properties">Verwendung und Eigenschaften von Steinen</string>
+    <string name="seven_chakras_stones">Sieben Chakra-Steine</string>
+    <string name="admin_panel">Admin-Panel</string>
+    <string name="horoscope">Horoskop</string>
+    <string name="chinese_zodiac">Chinesisches Tierkreiszeichen</string>
+    <string name="stone_uses">Steinverwendung</string>
+    <string name="chakras">Chakren</string>
+    <string name="select_language">Sprache auswählen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="healing_crystals_protection_and_lucky_stones">Heilkristalle, Schutz- und Glückssteine gemäß den Sternzeichen, dem chinesischen Tierkreis und den sieben Chakren</string>
+</resources>

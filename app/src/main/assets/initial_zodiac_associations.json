@@ -1,0 +1,158 @@
+[
+  {
+    "zodiac_key": "aries",
+    "stones": [
+      "chrysoprase",
+      "yellow_jade",
+      "hematite",
+      "bronzite",
+      "prehnite",
+      "red_jasper",
+      "carnelian",
+      "serpentine"
+    ]
+  },
+  {
+    "zodiac_key": "taurus",
+    "stones": [
+      "golden_chalcedony",
+      "malachite",
+      "pyrite",
+      "emerald",
+      "petrified_wood",
+      "hematite",
+      "sodalite",
+      "tiger_eye"
+    ]
+  },
+  {
+    "zodiac_key": "gemini",
+    "stones": [
+      "moon_stone",
+      "orange_calcite",
+      "blue_kyanite",
+      "serpentine",
+      "howlite",
+      "blue_agate",
+      "blue_chalcedony",
+      "dalmatian_jasper"
+    ]
+  },
+  {
+    "zodiac_key": "cancer",
+    "stones": [
+      "amethyst",
+      "pearl",
+      "milky_quartz",
+      "rhodonite",
+      "angelite",
+      "red_aventurine",
+      "moon_stone",
+      "smoky_quartz"
+    ]
+  },
+  {
+    "zodiac_key": "leo",
+    "stones": [
+      "citrine",
+      "yellow_quartz",
+      "black_obsidian",
+      "ruby",
+      "turquoise",
+      "pyrite",
+      "tiger_eye",
+      "sunstone"
+    ]
+  },
+  {
+    "zodiac_key": "virgo",
+    "stones": [
+      "amethyst",
+      "citrine",
+      "quartz_crystal",
+      "amazonite",
+      "moon_stone",
+      "peridot",
+      "green_jasper",
+      "opal"
+    ]
+  },
+  {
+    "zodiac_key": "libra",
+    "stones": [
+      "black_tourmaline",
+      "red_garnet",
+      "apatite",
+      "orange_aventurine",
+      "pink_quartz",
+      "lepidolite",
+      "opal",
+      "green_jade"
+    ]
+  },
+  {
+    "zodiac_key": "scorpio",
+    "stones": [
+      "citrine",
+      "labradorite",
+      "black_obsidian",
+      "lapis_lazuli",
+      "malachite",
+      "red_jasper",
+      "smoky_quartz",
+      "aquamarine"
+    ]
+  },
+  {
+    "zodiac_key": "sagittarius",
+    "stones": [
+      "sunstone",
+      "turquoise",
+      "topaz",
+      "ruby",
+      "yellow_jasper",
+      "sodalite",
+      "chrysocolla",
+      "obsidian"
+    ]
+  },
+  {
+    "zodiac_key": "capricorn",
+    "stones": [
+      "black_tourmaline",
+      "red_garnet",
+      "obsidian",
+      "lapis_lazuli",
+      "fluorite",
+      "agate",
+      "smoky_quartz",
+      "amethyst"
+    ]
+  },
+  {
+    "zodiac_key": "aquarius",
+    "stones": [
+      "turquoise",
+      "aventurine",
+      "emerald",
+      "amethyst",
+      "fluorite",
+      "green_jasper",
+      "opal",
+      "lion_skin"
+    ]
+  },
+  {
+    "zodiac_key": "pisces",
+    "stones": [
+      "red_jasper",
+      "labradorite",
+      "apatite",
+      "lapis_lazuli",
+      "green_jade",
+      "yellow_quartz",
+      "ruby",
+      "aquamarine"
+    ]
+  }
+]
